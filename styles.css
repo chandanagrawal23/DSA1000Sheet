@@ -197,8 +197,8 @@ a {
     font-weight: 500;
 }
 
-/* Comment Area (Multiline Textarea) */
-.comment-area {
+/* Notes Area (Multiline Textarea) */
+.notes-area {
     width: 100%;
     min-height: 60px;
     padding: 8px;
@@ -211,7 +211,7 @@ a {
     transition: all var(--transition-normal);
 }
 
-.comment-area:focus {
+.notes-area:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.15);
@@ -402,11 +402,11 @@ a {
 }
 
 /*******************************************
- * Comment Modal - Basic Styles
+ * Notes Modal - Basic Styles
  *******************************************/
 
 /* The icon for opening the modal */
-.comment-icon {
+.notes-icon {
     cursor: pointer;
     color: #0355da;
     /* or your accent color */
@@ -415,12 +415,12 @@ a {
     margin-left: 4px;
 }
 
-.comment-icon:hover {
+.notes-icon:hover {
     transform: scale(1.15);
 }
 
 /* Modal backdrop hidden by default */
-.comment-modal {
+.notes-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -434,7 +434,7 @@ a {
     z-index: 9999;
 }
 
-.comment-modal.active {
+.notes-modal.active {
     display: flex;
 }
 

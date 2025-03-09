@@ -6,11 +6,11 @@ let totalMedium = 0;     // total # of medium
 let totalHard = 0;       // total # of hard
 let problemData = [];    // store fetched data
 
-// For storing comments: problemId -> comment text
-let comments = {};
+// For storing notess: problemId -> notes text
+let notess = {};
 
-// We'll track which problem's comment is currently being edited
-let currentCommentProblemId = null;
+// We'll track which problem's notes is currently being edited
+let currentNotesProblemId = null;
 
 /***************************************************************
  * GET GLOBAL SOLVED
@@ -78,8 +78,8 @@ function loadProgress() {
             }
         });
     }
-    // Then load comments from localStorage
-    loadComments();
+    // Then load notess from localStorage
+    loadNotess();
 
     // Update progress bars
     updateGlobalRectBar();
@@ -236,8 +236,8 @@ function renderSections(data) {
 
 /***************************************************************
  * GENERATE COLLAPSIBLE (with heading + mini bars + table)
- * Instead of an inline <textarea>, we add a "comment icon" 
- * that opens a modal for editing the comment.
+ * Instead of an inline <textarea>, we add a "notes icon" 
+ * that opens a modal for editing the notes.
  ***************************************************************/
 function generateAccordion(section) {
     const sectionId = section.title.replace(/\s+/g, '');
@@ -281,7 +281,7 @@ function generateAccordion(section) {
               <tr>
                 <th>Question</th>
                 <th>Solution</th>
-                <th>Comment</th>
+                <th>Notes</th>
                 <th>Done</th>
               </tr>
             </thead>
@@ -300,10 +300,10 @@ function generateAccordion(section) {
             }
                     </td>
                     <td>
-                      <!-- Instead of inline <textarea>, use a comment icon that opens the modal -->
-                      <i class="material-icons comment-icon" 
-                         onclick="openCommentModal('${problemId}', '${problem.label}')">
-                         mode_comment
+                      <!-- Instead of inline <textarea>, use a notes icon that opens the modal -->
+                      <i class="material-icons notes-icon" 
+                         onclick="openNotesModal('${problemId}', '${problem.label}')">
+                         mode_notes
                       </i>
                     </td>
                     <td>
@@ -328,52 +328,52 @@ function generateAccordion(section) {
  * COMMENTS - Using a Modal Instead of Inline <textarea>
  ***************************************************************/
 
-// We'll still store comment text in localStorage under 'dsaComments'.
-function loadComments() {
-    const stored = localStorage.getItem('dsaComments');
+// We'll still store notes text in localStorage under 'dsaNotess'.
+function loadNotess() {
+    const stored = localStorage.getItem('dsaNotess');
     if (stored) {
-        comments = JSON.parse(stored);
+        notess = JSON.parse(stored);
     } else {
-        comments = {};
+        notess = {};
     }
 }
 
 /* 
    Open the modal for a given problemId, 
-   fill the textarea with existing comment if any
+   fill the textarea with existing notes if any
 */
-function openCommentModal(problemId, label) {
-    currentCommentProblemId = problemId;
-    // If there's a stored comment, fill it
-    const existingComment = comments[problemId] || '';
-    document.getElementById('commentModalTextarea').value = existingComment;
+function openNotesModal(problemId, label) {
+    currentNotesProblemId = problemId;
+    // If there's a stored notes, fill it
+    const existingNotes = notess[problemId] || '';
+    document.getElementById('notesModalTextarea').value = existingNotes;
     // Set the modal title (e.g., problem label)
-    document.getElementById('commentModalTitle').textContent = label || 'Add Comment';
+    document.getElementById('notesModalTitle').textContent = label || 'Add Notes';
 
     // Show the modal
-    document.getElementById('commentModal').classList.add('active');
+    document.getElementById('notesModal').classList.add('active');
 }
 
-function closeCommentModal() {
-    document.getElementById('commentModal').classList.remove('active');
-    currentCommentProblemId = null;
+function closeNotesModal() {
+    document.getElementById('notesModal').classList.remove('active');
+    currentNotesProblemId = null;
 }
 
 /*
-   Save the comment from the modal's textarea 
+   Save the notes from the modal's textarea 
    into localStorage
 */
-function saveCommentModal() {
-    if (!currentCommentProblemId) return;
-    const text = document.getElementById('commentModalTextarea').value.trim();
+function saveNotesModal() {
+    if (!currentNotesProblemId) return;
+    const text = document.getElementById('notesModalTextarea').value.trim();
 
-    // store in comments object
-    comments[currentCommentProblemId] = text;
+    // store in notess object
+    notess[currentNotesProblemId] = text;
     // persist to localStorage
-    localStorage.setItem('dsaComments', JSON.stringify(comments));
+    localStorage.setItem('dsaNotess', JSON.stringify(notess));
 
-    closeCommentModal();
-    alert('Comment saved!');
+    closeNotesModal();
+    alert('Notes saved!');
 }
 
 /***************************************************************
@@ -428,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Build & update rectangular bar
             buildRectBar();
 
-            // Load progress states & comments
+            // Load progress states & notess
             loadProgress();
 
             // Hook up search
