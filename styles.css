@@ -1,0 +1,298 @@
+/* 
+   Material Flat UI - Final Version
+*/
+
+/* Color Palette & Base Variables */
+:root {
+    --primary-color: #3F51B5;            /* Indigo 500 */
+    --primary-gradient: linear-gradient(135deg, #3949AB, #3F51B5);
+    --primary-dark: #303F9F;
+    
+    --accent-color: #FF4081;             /* Pink A200 */
+    --accent-gradient: linear-gradient(135deg, #F50057, #FF4081);
+    
+    --background-color: #FAFAFA;
+    --card-background: #FFFFFF;
+    --text-color: #212121;
+    --text-secondary: #757575;
+    --border-color: #E0E0E0;
+    
+    /* Difficulty Colors */
+    --easy-color: #4CAF50;               /* Green 500 */
+    --medium-color: #FFC107;             /* Amber 500 */
+    --hard-color: #F44336;               /* Red 500 */
+    
+    /* Shadows & Effects */
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Rounding & Transitions */
+    --border-radius: 4px;
+    --transition-speed: 0.3s;
+    
+    --font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Dark Mode Override */
+  .dark-mode {
+    --primary-color: #7986CB;
+    --primary-gradient: linear-gradient(135deg, #5C6BC0, #7986CB);
+    --background-color: #121212;
+    --card-background: #1E1E1E;
+    --text-color: #E0E0E0;
+    --border-color: #333;
+    
+    --easy-color: #66BB6A;
+    --medium-color: #FFB300;
+    --hard-color: #E57373;
+  }
+  
+  /* Global Base Styling */
+  body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    transition: background var(--transition-speed), color var(--transition-speed);
+  }
+  
+  /* Collapsible (Topic Container) */
+  .collapsible {
+    border: none;
+    box-shadow: var(--shadow);
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: box-shadow var(--transition-speed);
+  }
+  
+  .collapsible-header {
+    background: var(--primary-gradient) !important;
+    color: #fff !important;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Left: topic; Right: mini bars */
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  
+  .collapsible-header:hover {
+    filter: brightness(1.05);
+  }
+  
+  .collapsible-body {
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin: 16px 0;
+  }
+  
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  th {
+    background: var(--accent-gradient);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  
+  tr:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Difficulty Row Coloring */
+  .easy {
+    background: var(--easy-color);
+    color: #fff;
+    font-weight: 500;
+  }
+  .medium {
+    background: var(--medium-color);
+    color: #fff;
+    font-weight: 500;
+  }
+  .hard {
+    background: var(--hard-color);
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  /* Comment Area (Multiline, for each row) */
+  .comment-area {
+    width: 100%;
+    min-height: 60px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: var(--card-background);
+    resize: vertical;
+    transition: all var(--transition-speed);
+  }
+  
+  .comment-area:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(63, 81, 181, 0.15);
+  }
+  
+  /* Collapsible Header Mini Progress Bars */
+  .mini-bars {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    margin-left: auto; /* Right align */
+  }
+  
+  .mini-bar-line {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .mini-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  
+  .mini-progress {
+    width: 80px;
+    height: 6px;
+    background: #E0E0E0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  .mini-fill {
+    height: 100%;
+    border-radius: var(--border-radius);
+    transition: width var(--transition-speed);
+  }
+  
+  .easy-fill {
+    background: var(--easy-color);
+  }
+  
+  .medium-fill {
+    background: var(--medium-color);
+  }
+  
+  .hard-fill {
+    background: var(--hard-color);
+  }
+  
+  .mini-count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    min-width: 40px;
+  }
+  
+  /* Rectangular Global Progress Bar */
+  .rect-chart-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  
+  .rect-chart-container h5 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+  
+  .rect-chart {
+    display: flex;
+    height: 20px;
+    background: var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .rect-segment {
+    height: 100%;
+    transition: width var(--transition-speed);
+  }
+  
+  .rect-easy {
+    background: var(--easy-color);
+  }
+  
+  .rect-medium {
+    background: var(--medium-color);
+  }
+  
+  .rect-hard {
+    background: var(--hard-color);
+  }
+  
+  .rect-progress-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+  
+  /* Done Icon */
+  .done-icon {
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+    color: var(--accent-color);
+  }
+  
+  .done-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Responsive */
+  @media only screen and (max-width: 768px) {
+    .collapsible-header {
+      font-size: 1rem;
+      padding: 12px 16px;
+    }
+    th, td {
+      padding: 10px;
+    }
+    .mini-progress {
+      width: 60px;
+    }
+    .mini-label, .mini-count {
+      font-size: 0.7rem;
+    }
+  }
+  

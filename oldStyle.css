@@ -1,0 +1,250 @@
+/* 
+   Main variable definitions
+*/
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #45a049;
+    --accent-color: #007BFF;
+    --nav-color: #26a69a;
+    --background-color: #fafafa;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --chart-text-color: #333;
+    --easy-color: #d4edda;
+    --medium-color: #ffeeba;
+    --hard-color: #f8d7da;
+}
+
+/* Dark mode overrides */
+.dark-mode {
+    --primary-color: #2e7d32;
+    --primary-dark: #1b5e20;
+    --accent-color: #1976D2;
+    --nav-color: #00796b;
+    --background-color: #121212;
+    --text-color: #eee;
+    --border-color: #333;
+    --chart-text-color: #ccc;
+    --easy-color: #1b5e20;
+    --medium-color: #f57f17;
+    --hard-color: #b71c1c;
+}
+
+/* Base body styling */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Collapsible inside each card */
+.collapsible {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+.collapsible-header {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    transition: background-color 0.2s ease;
+}
+.collapsible-header:hover {
+    background-color: var(--primary-dark) !important;
+}
+.collapsible-body {
+    padding: 20px;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+th, td {
+    padding: 14px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+th {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: 500;
+}
+tr:hover {
+    background-color: rgba(0,0,0,0.03);
+}
+
+/* Difficulty row color */
+.easy {
+    background-color: var(--easy-color) !important;
+}
+.medium {
+    background-color: var(--medium-color) !important;
+}
+.hard {
+    background-color: var(--hard-color) !important;
+}
+
+/* The "notes" text input in each row */
+.notes-input {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+.notes-input:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+/* The card containing the topic + mini bars + collapsible */
+.section-progress-card {
+    margin-bottom: 20px;
+}
+.section-progress-card .card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.topic-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* The row of mini bars for E/M/H */
+.mini-bars {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.mini-bar-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.mini-label {
+    font-weight: 400;
+    font-size: small;
+    white-space: nowrap;
+}
+.mini-progress {
+    width: 100px;
+    background-color: #ddd;
+    border-radius: 4px;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.mini-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+.easy-fill {
+    background-color: var(--easy-color);
+}
+.medium-fill {
+    background-color: var(--medium-color);
+}
+.hard-fill {
+    background-color: var(--hard-color);
+}
+.mini-count {
+    min-width: 50px;
+    font-size: 0.9rem;
+}
+
+/* The rectangular overall progress bar */
+.rect-chart-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.rect-chart-container h5 {
+    margin: 10px 0;
+    color: var(--accent-color);
+}
+.rect-chart {
+    display: flex;
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.rect-segment {
+    height: 100%;
+}
+.rect-easy {
+    background-color: var(--easy-color);
+}
+.rect-medium {
+    background-color: var(--medium-color);
+}
+.rect-hard {
+    background-color: var(--hard-color);
+}
+.rect-progress-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+/* Checkbox styling */
+.done-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: var(--accent-color);
+}
+.done-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive breakpoints */
+@media only screen and (max-width: 992px) {
+    .collapsible-header {
+        font-size: 1.1rem;
+    }
+    th, td {
+        padding: 10px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    .mini-bars {
+        flex-wrap: wrap;
+    }
+    .mini-progress {
+        width: 70px;
+    }
+}

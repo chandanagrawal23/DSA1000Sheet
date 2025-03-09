@@ -1,0 +1,1273 @@
+{
+  "sections": [
+    {
+      "title": "Stack",
+      "problems": [
+        {
+          "label": "Valid Parentheses",
+          "question": "https://leetcode.com/problems/valid-parentheses/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Valid_Parentheses.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Binary Tree Preorder Traversal",
+          "question": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreePreorder_using_stack.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "N-Ary Tree Preorder Traversal",
+          "question": "https://leetcode.com/problems/n-ary-tree-preorder-traversal/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/N_Array_Tree_PreOrder.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Make the String Great",
+          "question": "https://leetcode.com/problems/make-the-string-great/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeStringGreat.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Remove All Adjacent Duplicates in String",
+          "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacent.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Min Stack",
+          "question": "https://leetcode.com/problems/min-stack/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinStack.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Next Larger Element",
+          "question": "https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Next Greater Element II",
+          "question": "https://leetcode.com/problems/next-greater-element-ii/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement2.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Basic Calculator II",
+          "question": "https://leetcode.com/problems/basic-calculator-ii",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BasicCalculator_II.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Online Stock Span",
+          "question": "https://leetcode.com/problems/online-stock-span/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/StockSpanner.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Design Browser History",
+          "question": "https://leetcode.com/problems/design-browser-history/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BrowserHistory.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Remove K Digits",
+          "question": "https://leetcode.com/problems/remove-k-digits/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeKdigits.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Decode String",
+          "question": "https://leetcode.com/problems/decode-string",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Simplify Path",
+          "question": "https://leetcode.com/problems/simplify-path/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Asteroid Collision [PREMIUM Google]",
+          "question": "https://leetcode.com/problems/asteroid-collision/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AsteroidCollision.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Simple Text Editor",
+          "question": "https://www.hackerrank.com/challenges/simple-text-editor/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/simpleTextEditor.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Buildings with an Ocean View [PREMIUM Facebook]",
+          "question": "https://leetcode.com/problems/buildings-with-an-ocean-view/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BuildingsWithanOceanView.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Remove All Adjacent Duplicates in String II",
+          "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacentDuplicatesinStringII.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Remove to Make Valid Parentheses [FB]",
+          "question": "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minRemoveToMakeValid.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Add to Make Parentheses Valid [FB]",
+          "question": "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAddToMakeValid.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Daily Temperatures",
+          "question": "https://leetcode.com/problems/daily-temperatures/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DailyTemperatures.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Largest Rectangle in Histogram",
+          "question": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Trapping Rain Water",
+          "question": "https://leetcode.com/problems/trapping-rain-water/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Longest Valid Parentheses",
+          "question": "https://leetcode.com/problems/longest-valid-parentheses/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "FACEBOOK Question [count how many subarrays in which current element is max and end or start with current element]",
+          "question": "FACEBOOK Question [count how many subarrays in which current element is max and end or start with current element]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Queue",
+      "problems": [
+        {
+          "label": "Binary Tree Zigzag Level Order Traversal",
+          "question": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ZigZagLevelOrder.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Average of Levels in Binary Tree",
+          "question": "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AverageOfLevelsInBinaryTree.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Invert Binary Tree",
+          "question": "https://leetcode.com/problems/invert-binary-tree/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/InvertBinaryTree.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Same Tree",
+          "question": "https://leetcode.com/problems/same-tree/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SameTree.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sum of Left Leaves",
+          "question": "https://leetcode.com/problems/sum-of-left-leaves/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SumOfLeftLeaves.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Moving Average from Data Stream [PREMIUM, Google]",
+          "question": "https://leetcode.com/problems/moving-average-from-data-stream/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MovingAverage.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Binary Tree Right Side View [FACEBOOK]",
+          "question": "https://leetcode.com/problems/binary-tree-right-side-view/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RightSideView.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Populating Next Right Pointers in Each Node [DE SHAW]",
+          "question": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Populating_Next_Right.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Operations to Convert Number",
+          "question": "https://leetcode.com/problems/minimum-operations-to-convert-number/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumOperationsToConvertNumber.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Sum of Nodes with Even-Valued Grandparent",
+          "question": "https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sum%20of%20Nodes%20with%20Even-Valued%20Grandparent.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Monotone Increasing Digits",
+          "question": "https://leetcode.com/problems/monotone-increasing-digits/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/monotoneIncreasingDigits.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Open the Lock",
+          "question": "https://leetcode.com/problems/open-the-lock/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OpenTheLock.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "First Unique Number [PREMIUM]",
+          "question": "https://leetcode.com/problems/first-unique-number/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstUnique.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "PAYPAL Question",
+          "question": "PAYPAL Question",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PayPal_Queue.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "FACEBOOK Question [Queue Removals]",
+          "question": "FACEBOOK Question [Queue Removals]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Queue_Medium.cpp",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Heap",
+      "problems": [
+        {
+          "label": "Last Stone Weight",
+          "question": "https://leetcode.com/problems/last-stone-weight/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/lastStoneWeight.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Maximum Product of Two Elements in an Array",
+          "question": "https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxProduct.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Kth Largest Element in a Stream",
+          "question": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthLargest.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Seat Reservation Manager",
+          "question": "https://leetcode.com/problems/seat-reservation-manager/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeatManager.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Kth Largest Element in an Array",
+          "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findKthLargest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Top K Frequent Elements",
+          "question": "https://leetcode.com/problems/top-k-frequent-elements/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/topKFrequent.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Meeting Rooms II [Premium, FB, PayPal, Arcesium, Top Interview]",
+          "question": "https://leetcode.com/problems/meeting-rooms-ii/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minMeetingRooms.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Largest Triplet Product Stream [FACEBOOK MEDIUM]",
+          "question": "https://www.geeksforgeeks.org/largest-triplet-product-stream",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LargestTripletMultiplication.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find K Closest Elements",
+          "question": "https://leetcode.com/problems/find-k-closest-elements/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findClosestElements.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Width of Binary Tree",
+          "question": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/widthOfBinaryTree.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Single Threaded CPU [Google Important]",
+          "question": "https://leetcode.com/problems/single-threaded-cpu/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Single-ThreadedCPU.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Codechef FOUR21B S06E06",
+          "question": "https://www.codechef.com/FOUR21B/problems/S06E06",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find K Pairs with Smallest Sums",
+          "question": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "K-th Smallest Prime Fraction",
+          "question": "https://leetcode.com/problems/k-th-smallest-prime-fraction/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "K Closest Points to Origin - LeetCode",
+          "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Kth Smallest Element in a Sorted Matrix",
+          "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kthSmallest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Median from Data Stream",
+          "question": "https://leetcode.com/problems/find-median-from-data-stream",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Merge K Sorted Lists",
+          "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLists.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Merge K Sorted Arrays",
+          "question": "https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Range Sum of Sorted Subarray Sums",
+          "question": "https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Performance of a Team",
+          "question": "https://leetcode.com/problems/maximum-performance-of-a-team/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPerformance.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Sliding Window Maximum",
+          "question": "https://leetcode.com/problems/sliding-window-maximum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindow.cpp",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Linked List",
+      "problems": [
+        {
+          "label": "Convert Binary Number in a Linked List to Integer",
+          "question": "https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/getDecimalValue.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Middle of the Linked List",
+          "question": "https://leetcode.com/problems/middle-of-the-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/middleNode.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Delete Node in a Linked List",
+          "question": "https://leetcode.com/problems/delete-node-in-a-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteNode.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Reverse Linked List",
+          "question": "https://leetcode.com/problems/reverse-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseList.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Merge Two Sorted Lists",
+          "question": "https://leetcode.com/problems/merge-two-sorted-lists/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeTwoLists.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Remove Duplicates from Sorted List",
+          "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteDuplicates.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Palindrome Linked List",
+          "question": "https://leetcode.com/problems/palindrome-linked-list/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Linked List Cycle",
+          "question": "https://leetcode.com/problems/linked-list-cycle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/hasCycle.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Remove Linked List Elements",
+          "question": "https://leetcode.com/problems/remove-linked-list-elements/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeElements.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Add Two Numbers",
+          "question": "https://leetcode.com/problems/add-two-numbers/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/addTwoNumbers1.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Add Two Numbers II",
+          "question": "https://leetcode.com/problems/add-two-numbers-ii/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/addTwoNumbers2.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Sort List",
+          "question": "https://leetcode.com/problems/sort-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortList.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Odd Even Linked List",
+          "question": "https://leetcode.com/problems/odd-even-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/oddEvenList.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Next Greater Node in Linked List",
+          "question": "https://leetcode.com/problems/next-greater-node-in-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/nextLargerNodes.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Delete the Middle Node of a Linked List",
+          "question": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteMiddle.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Rotate List",
+          "question": "https://leetcode.com/problems/rotate-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/rotateRight.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "LRU Cache [IMPORTANT]",
+          "question": "https://leetcode.com/problems/lru-cache/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LRUcache.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Reorder List",
+          "question": "https://leetcode.com/problems/reorder-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reorderList.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Reverse Linked List II",
+          "question": "https://leetcode.com/problems/reverse-linked-list-ii/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseBetween.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Linked List Cycle II [IMPORTANT]",
+          "question": "https://leetcode.com/problems/linked-list-cycle-ii/ [IMPORTANT]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/detectCycle2.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Convert Sorted List to Binary Search Tree [IMPORTANT]",
+          "question": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/  [IMPORTANT]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortedListToBST.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Flatten a Multilevel Doubly Linked List [IMPORTANT]",
+          "question": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/  [IMPORTANT , google FB , paypal , apple]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flatten.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Split Linked List in Parts",
+          "question": "https://leetcode.com/problems/split-linked-list-in-parts/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/splitListToParts.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Remove Nth Node From End of List",
+          "question": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeNthFromEnd.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Flatten Binary Tree to Linked List",
+          "question": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flattenTreeToLinkedList.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Convert Binary Search Tree to Sorted Doubly Linked List",
+          "question": "https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BST_ToDoublyList.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Plus One Linked List [Premium]",
+          "question": "https://leetcode.com/problems/plus-one-linked-list/ [Premium]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/plusOne.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Remove Duplicates from an Unsorted Linked List [Premium]",
+          "question": "https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list/ [Premium]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteDuplicatesUnsorted.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Design Linked List",
+          "question": "https://leetcode.com/problems/design-linked-list/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MyLinkedList.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Merge K Sorted Lists [IMPORTANT]",
+          "question": "https://leetcode.com/problems/merge-k-sorted-lists/ [IMPORTANT]",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLinkedLists.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Reverse Nodes in k-Group",
+          "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseKGroup.cpp",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Binary Search",
+      "problems": [
+        {
+          "label": "Binary Search",
+          "question": "https://leetcode.com/problems/binary-search/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Target Indices After Sorting Array",
+          "question": "https://leetcode.com/problems/find-target-indices-after-sorting-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sqrtx",
+          "question": "https://leetcode.com/problems/sqrtx/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Peak Index in a Mountain Array",
+          "question": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Guess Number Higher or Lower",
+          "question": "https://leetcode.com/problems/guess-number-higher-or-lower/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Smallest Letter Greater Than Target",
+          "question": "https://leetcode.com/problems/find-smallest-letter-greater-than-target/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Valid Perfect Square",
+          "question": "https://leetcode.com/problems/valid-perfect-square/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "First Bad Version",
+          "question": "https://leetcode.com/problems/first-bad-version/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find the Distance Value Between Two Arrays",
+          "question": "https://leetcode.com/problems/find-the-distance-value-between-two-arrays/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Single Element in a Sorted Array",
+          "question": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Count Complete Tree Nodes",
+          "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Burgers With No Waste of Ingredients",
+          "question": "https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Valid Triangle Number",
+          "question": "https://leetcode.com/problems/valid-triangle-number/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Distance Between a Pair of Values",
+          "question": "https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Minimum in Rotated Sorted Array",
+          "question": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search a 2D Matrix",
+          "question": "https://leetcode.com/problems/search-a-2d-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search a 2D Matrix II",
+          "question": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Length of Repeated Subarray",
+          "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Random Pick with Weight",
+          "question": "https://leetcode.com/problems/random-pick-with-weight/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Peak Element",
+          "question": "https://leetcode.com/problems/find-peak-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find First and Last Position of Element in Sorted Array",
+          "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search in Rotated Sorted Array",
+          "question": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Median of Two Sorted Arrays",
+          "question": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Answer on Binary Search",
+      "problems": [
+        {
+          "label": "Arranging Coins",
+          "question": "https://leetcode.com/problems/arranging-coins/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Capacity to Ship Packages Within D Days",
+          "question": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Kth Smallest Element in a Sorted Matrix",
+          "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Duplicate Number",
+          "question": "https://leetcode.com/problems/find-the-duplicate-number/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Size Subarray Sum",
+          "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Limit of Balls in a Bag",
+          "question": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Time to Complete Trips",
+          "question": "https://leetcode.com/problems/minimum-time-to-complete-trips/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Koko Eating Bananas",
+          "question": "https://leetcode.com/problems/koko-eating-bananas/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Path with Minimum Effort",
+          "question": "https://leetcode.com/problems/path-with-minimum-effort/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Most Beautiful Item for Each Query",
+          "question": "https://leetcode.com/problems/most-beautiful-item-for-each-query/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Smallest Divisor Given a Threshold",
+          "question": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimized Maximum of Products Distributed to Any Store",
+          "question": "https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Heaters",
+          "question": "https://leetcode.com/problems/heaters/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Candies Allocated to K Children",
+          "question": "https://leetcode.com/problems/maximum-candies-allocated-to-k-children/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Absolute Sum Difference",
+          "question": "https://leetcode.com/problems/minimum-absolute-sum-difference/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Frequency of the Most Frequent Element",
+          "question": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Tastiness of Candy Basket",
+          "question": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Swim in Rising Water",
+          "question": "https://leetcode.com/problems/swim-in-rising-water/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Split Array Largest Sum",
+          "question": "https://leetcode.com/problems/split-array-largest-sum/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Kth Smallest Number in Multiplication Table",
+          "question": "https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Nth Magical Number",
+          "question": "https://leetcode.com/problems/nth-magical-number/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Find K-th Smallest Pair Distance",
+          "question": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimize Maximum Array Element by At Most K Splits",
+          "question": "https://www.geeksforgeeks.org/minimize-maximum-array-element-possible-by-at-most-k-splits-on-the-given-array/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Running Time of N Computers",
+          "question": "https://leetcode.com/problems/maximum-running-time-of-n-computers/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Last Day Where You Can Still Cross",
+          "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "BFS/DFS on Graph",
+      "problems": [
+        {
+          "label": "Find if Path Exists in Graph",
+          "question": "https://leetcode.com/problems/find-if-path-exists-in-graph/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Center of Star Graph",
+          "question": "https://leetcode.com/problems/find-center-of-star-graph/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Number of Provinces",
+          "question": "https://leetcode.com/problems/number-of-provinces/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Number of Vertices to Reach All Nodes",
+          "question": "https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "The Time When the Network Becomes Idle",
+          "question": "https://leetcode.com/problems/the-time-when-the-network-becomes-idle/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Is Graph Bipartite?",
+          "question": "https://leetcode.com/problems/is-graph-bipartite/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Path with Alternating Colors",
+          "question": "https://leetcode.com/problems/shortest-path-with-alternating-colors/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "All Paths from Source to Target",
+          "question": "https://leetcode.com/problems/all-paths-from-source-to-target/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "All Paths from Source Lead to Destination",
+          "question": "https://leetcode.com/problems/all-paths-from-source-lead-to-destination/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Flower Planting With No Adjacent",
+          "question": "https://leetcode.com/problems/flower-planting-with-no-adjacent/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Paths in Maze That Lead to Same Room",
+          "question": "https://leetcode.com/problems/paths-in-maze-that-lead-to-same-room/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Connected Components in an Undirected Graph",
+          "question": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Employee Importance",
+          "question": "https://leetcode.com/problems/employee-importance/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Snakes and Ladders",
+          "question": "https://leetcode.com/problems/snakes-and-ladders/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "N-ary Tree Level Order Traversal",
+          "question": "https://leetcode.com/problems/n-ary-tree-level-order-traversal/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Reorder Routes to Make All Paths Lead to the City Zero",
+          "question": "https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Operations to Make Network Connected",
+          "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Keys and Rooms",
+          "question": "https://leetcode.com/problems/keys-and-rooms/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Celebrity",
+          "question": "https://leetcode.com/problems/find-the-celebrity/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Bus Routes",
+          "question": "https://leetcode.com/problems/bus-routes/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Jump Game IV",
+          "question": "https://leetcode.com/problems/jump-game-iv/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "BFS/DFS on Grid",
+      "problems": [
+        {
+          "label": "01 Matrix",
+          "question": "https://leetcode.com/problems/01-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Islands",
+          "question": "https://leetcode.com/problems/number-of-islands/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Path in Binary Matrix",
+          "question": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Enclaves",
+          "question": "https://leetcode.com/problems/number-of-enclaves/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Closed Islands",
+          "question": "https://leetcode.com/problems/number-of-closed-islands/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count Sub Islands",
+          "question": "https://leetcode.com/problems/count-sub-islands/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Nearest Exit from Entrance in Maze",
+          "question": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Rotting Oranges",
+          "question": "https://leetcode.com/problems/rotting-oranges/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Bridge",
+          "question": "https://leetcode.com/problems/shortest-bridge/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Coloring a Border",
+          "question": "https://leetcode.com/problems/coloring-a-border/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find All Groups of Farmland",
+          "question": "https://leetcode.com/problems/find-all-groups-of-farmland/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "K Highest Ranked Items Within a Price Range",
+          "question": "https://leetcode.com/problems/k-highest-ranked-items-within-a-price-range/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Path With Minimum Effort",
+          "question": "https://leetcode.com/problems/path-with-minimum-effort/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Detect Cycles in 2D Grid",
+          "question": "https://leetcode.com/problems/detect-cycles-in-2d-grid/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Max Area of Island",
+          "question": "https://leetcode.com/problems/max-area-of-island/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "The Maze",
+          "question": "https://leetcode.com/problems/the-maze/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "The Maze II",
+          "question": "https://leetcode.com/problems/the-maze-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Walls and Gates",
+          "question": "https://leetcode.com/problems/walls-and-gates/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Pacific Atlantic Water Flow",
+          "question": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Surrounded Regions",
+          "question": "https://leetcode.com/problems/surrounded-regions/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Making a Large Island",
+          "question": "https://leetcode.com/problems/making-a-large-island/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Swim in Rising Water",
+          "question": "https://leetcode.com/problems/swim-in-rising-water/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Last Day Where You Can Still Cross",
+          "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Cut Off Trees for Golf Event",
+          "question": "https://leetcode.com/problems/cut-off-trees-for-golf-event/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimum Cost to Make At Least One Valid Path in a Grid",
+          "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Shortest Path in a Grid with Obstacles Elimination",
+          "question": "https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "TopoLogical Sorting Graph",
+      "problems": [
+        {
+          "label": "Course Schedule",
+          "question": "https://leetcode.com/problems/course-schedule/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Course Schedule II",
+          "question": "https://leetcode.com/problems/course-schedule-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Course Schedule IV",
+          "question": "https://leetcode.com/problems/course-schedule-iv/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Loud and Rich",
+          "question": "https://leetcode.com/problems/loud-and-rich/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Parallel Courses",
+          "question": "https://leetcode.com/problems/parallel-courses/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Eventual Safe States",
+          "question": "https://leetcode.com/problems/find-eventual-safe-states/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Height Trees",
+          "question": "https://leetcode.com/problems/minimum-height-trees/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Restricted Paths from First to Last Node",
+          "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find All Possible Recipes from Given Supplies",
+          "question": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "All Ancestors of a Node in a DAG",
+          "question": "https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Ways to Arrive at Destination",
+          "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Increasing Path in a Matrix",
+          "question": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Rank Transform of a Matrix",
+          "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Parallel Courses III",
+          "question": "https://leetcode.com/problems/parallel-courses-iii/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Alien Dictionary [IMPO]",
+          "question": "https://leetcode.com/problems/alien-dictionary/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Largest Color Value in a Directed Graph [DFS, Dijkstra, Topological Sort]",
+          "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    }
+  ]
+}
