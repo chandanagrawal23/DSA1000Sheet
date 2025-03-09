@@ -118,5 +118,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Your custom JS (which handles building the rectangular chart, etc.) -->
   <script src="script.js"></script>
+
+  <!-- Comment Modal -->
+<div class="comment-modal" id="commentModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="commentModalTitle">Add Comment</h2>
+    </div>
+    <div class="modal-body">
+      <textarea id="commentModalTextarea" placeholder="Your notes here..."></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn save-btn" onclick="saveCommentModal()">Save</button>
+      <button class="btn close-btn" onclick="closeCommentModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>
