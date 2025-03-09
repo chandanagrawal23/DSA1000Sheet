@@ -1,1 +1,122 @@
-<html><body><h1>Hello World</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DSA Problems Repository</title>
+
+  <!-- Materialize CSS -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar with Dark Mode toggle -->
+  <nav class="nav-wrapper teal lighten-2">
+    <div class="container">
+      <a href="#" class="brand-logo">DSA Problems</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <div class="input-field right-align" style="margin: 0; padding-right: 15px;">
+            <input id="searchBox" type="text" placeholder="Search problems...">
+          </div>
+        </li>
+        <li>
+          <a href="#!" id="darkModeToggle" class="tooltipped" data-position="bottom" data-tooltip="Toggle Dark Mode">
+            <i class="material-icons">brightness_4</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <ul class="sidenav" id="mobile-nav">
+    <li>
+      <div class="user-view">
+        <div class="background teal lighten-4"></div>
+        <span class="name">DSA Problems Repository</span>
+      </div>
+    </li>
+    <li>
+      <div class="input-field" style="margin: 0 16px;">
+        <input id="searchBoxMobile" type="text" placeholder="Search problems...">
+      </div>
+    </li>
+    <li>
+      <a href="#!" id="darkModeToggleMobile">
+        <i class="material-icons left">brightness_4</i>Dark Mode
+      </a>
+    </li>
+  </ul>
+
+  <!-- Main Content -->
+  <div class="container main-content">
+    <header class="center-align">
+      <h1 class="blue-text text-darken-2">DSA Problems Repository</h1>
+      <p class="flow-text">
+        Track your progress on Data Structures and Algorithms problems
+      </p>
+    </header>
+
+    <!-- Rectangular Overall Progress Chart Container -->
+    <div id="rectChartContainer" class="rect-chart-container">
+      <!-- Your script.js will insert the rectangular chart here, e.g.:
+           <h5>Overall Progress</h5>
+           <div class="rect-chart"> ... </div>
+           <div id="rectProgressText">...</div>
+      -->
+    </div>
+
+    <!-- Instructions -->
+    <div class="card-panel teal lighten-4">
+      <span class="teal-text text-darken-4">
+        <i class="material-icons left">info</i>
+        Click on a topic to view its problems. Click the checkbox to mark a problem as solved.
+        Your progress is automatically saved.
+      </span>
+    </div>
+
+    <!-- Sections (each topic card + collapsible) will be inserted here by script.js -->
+    <div id="sections"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer teal lighten-2">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="white-text">DSA Problems Repository</h5>
+          <p class="grey-text text-lighten-4">
+            Track your progress on data structures and algorithms problems.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="center-align" style="padding-bottom: 1rem;">
+      © 2025 DSA Problems Repository
+    </div>
+  </footer>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Your custom JS (which handles building the rectangular chart, etc.) -->
+  <script src="script.js"></script>
+</body>
+</html>
