@@ -687,3 +687,52 @@ a {
     }
   }
   
+
+  /* Custom Footer Styles */
+.custom-footer {
+  background-color: #26a69a;  /* Teal shade - adjust as desired */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.custom-footer .footer-img {
+  max-width: 120px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 10px;
+}
+
+.custom-footer h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.custom-footer p {
+  margin: 5px 0;
+}
+
+.custom-footer .social-links {
+  margin-top: 10px;
+}
+
+.custom-footer .social-links a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.custom-footer .social-links a:hover {
+  color: #FFC107;  /* Amber as hover accent */
+}
+
+.footer-bottom {
+  background-color: #00796b;  /* Darker teal */
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.footer-bottom .container {
+  font-size: 0.9rem;
+  color: #fff;
+}
