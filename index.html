@@ -66,6 +66,8 @@
     </li>
   </ul>
 
+  
+
   <!-- Main Content -->
   <div class="container main-content">
     <header class="center-align">
@@ -76,7 +78,13 @@
     </header>
 
     <!-- Rectangular Overall Progress Chart Container -->
-    <div id="rectChartContainer" class="rect-chart-container"></div>
+    <div id="rectChartContainer" class="rect-chart-container">
+      <!-- Your script.js will insert the rectangular chart here, e.g.:
+           <h5>Overall Progress</h5>
+           <div class="rect-chart"> ... </div>
+           <div id="rectProgressText">...</div>
+      -->
+    </div>
 
     <!-- Instructions -->
     <div class="card-panel teal lighten-4">
@@ -92,71 +100,59 @@
   </div>
 
   <!-- Include Font Awesome for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <footer class="page-footer custom-footer">
-    <div class="container">
-      <div class="row valign-wrapper">
-        <!-- Profile Image -->
-        <div class="col s12 m4 center-align">
-          <img src="./chandanwhite.jpg" alt="Chandan Agrawal" class="footer-img">
+<footer class="page-footer custom-footer">
+  <div class="container">
+    <div class="row valign-wrapper">
+      <!-- Profile Image -->
+      <div class="col s12 m4 center-align">
+        <img src="./chandanwhite.jpg" alt="Chandan Agrawal" class="footer-img">
+      </div>
+      <!-- Creator info and social links -->
+      <div class="col s12 m8">
+        <h5 class="white-text">Beautifully created by Chandan Agrawal</h5>
+        <p class="grey-text text-lighten-4">Connect with me:</p>
+        <div class="social-links">
+          <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/chandanagrawal23/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/chandan.agrawal23" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+
+          <!-- Add additional social icons as needed -->
         </div>
-        <!-- Creator info and social links -->
-        <div class="col s12 m8">
-          <h5 class="white-text">Beautifully created by Chandan Agrawal</h5>
-          <p class="grey-text text-lighten-4">Connect with me:</p>
-          <div class="social-links">
-            <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/chandanagrawal23/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/chandan.agrawal23" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Visitor Count Section -->
-      <div class="container center-align">
-        <p class="white-text">Total Visitors: <span id="visit-count">Loading...</span></p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container center-align">
-        © 2025 Chandan Agrawal
-      </div>
-    </div>
-  </footer>
-
-  <!-- Materialize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- Your custom JS -->
-  <script src="script.js"></script>
-
-  <!-- Notes Modal -->
-  <div class="notes-modal" id="notesModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 id="notesModalTitle">Add Notes</h2>
-      </div>
-      <div class="modal-body">
-        <textarea id="notesModalTextarea" placeholder="Your notes here..."></textarea>
-      </div>
-      <div class="modal-footer">
-        <button class="btn save-btn" onclick="saveNotesModal()">Save</button>
-        <button class="btn close-btn" onclick="closeNotesModal()">Close</button>
       </div>
     </div>
   </div>
+  <div class="footer-bottom">
+    <div class="container center-align">
+      © 2025 Chandan Agrawal
+    </div>
+  </div>
+</footer>
 
-  <!-- CountAPI Visit Counter -->
-  <script>
-    fetch("https://api.countapi.xyz/hit/chandanagrawal23.github.io/DSA1000Sheet/visits")
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("visit-count").innerText = data.value;
-      })
-      .catch(error => console.error("Error fetching visit count:", error));
-  </script>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Your custom JS (which handles building the rectangular chart, etc.) -->
+  <script src="script.js"></script>
+
+  <!-- Notes Modal -->
+<div class="notes-modal" id="notesModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="notesModalTitle">Add Notes</h2>
+    </div>
+    <div class="modal-body">
+      <textarea id="notesModalTextarea" placeholder="Your notes here..."></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn save-btn" onclick="saveNotesModal()">Save</button>
+      <button class="btn close-btn" onclick="closeNotesModal()">Close</button>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>
