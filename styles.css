@@ -32,11 +32,11 @@
 
     /* Difficulty Colors */
     --easy-color: #8BC34A;
-    --easy-gradient: linear-gradient(135deg, #8BC34A, #abe171);
+    --easy-gradient: linear-gradient(135deg, #8BC34A, #bfe794);
     --medium-color: #FFC107;
-    --medium-gradient: linear-gradient(135deg, #f29b30, #eab14f);
+    --medium-gradient: linear-gradient(135deg, #f29b30, #ebbb68);
     --hard-color: #F44336;
-    --hard-gradient: linear-gradient(135deg, #e84545, #f18b8b);
+    --hard-gradient: linear-gradient(135deg, #e84545, #ed9c9c);
 
     /* Shadows & Effects */
     --shadow-soft: 0 5px 10px rgba(0, 0, 0, 0.05);
@@ -565,3 +565,8 @@ a {
 .btn:hover {
     filter: brightness(1.1);
 }
+
+.centered-container {
+    text-align: center;
+  }
+  

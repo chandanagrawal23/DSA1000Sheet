@@ -301,10 +301,12 @@ function generateAccordion(section) {
                     </td>
                     <td>
                       <!-- Instead of inline <textarea>, use a notes icon that opens the modal -->
-                      <i class="material-icons notes-icon" 
-                         onclick="openNotesModal('${problemId}', '${problem.label}')">
-                         mode_notes
-                      </i>
+<div class="centered-container">
+  <i class="material-icons notes-icon" onclick="openNotesModal('${problemId}', '${problem.label}')">
+    sticky_note_2
+  </i>
+</div>
+
                     </td>
                     <td>
                       <i class="material-icons done-icon"
