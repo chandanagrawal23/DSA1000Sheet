@@ -570,3 +570,120 @@ a {
     text-align: center;
   }
   
+
+  .progress-card {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .progress-card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    position: relative;
+    display: inline-block;
+  }
+  .progress-card h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #FF4081; /* accent color */
+    margin: 4px auto 0;
+    border-radius: 9999px;
+  }
+  
+  /* The stacked bar container */
+  .stacked-bar {
+    width: 100%;
+    height: 20px;
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+    position: relative;
+  }
+  
+  /* Each color-coded segment */
+  .bar-segment {
+    height: 100%;
+    float: left; /* place segments side by side */
+    transition: width 0.3s ease;
+  }
+  
+  .easy-segment {
+    background-color: #8BC34A; /* green for easy */
+  }
+  .medium-segment {
+    background-color: #FFC107; /* amber for medium */
+  }
+  .hard-segment {
+    background-color: #F44336; /* red for hard */
+  }
+  .unsolved-segment {
+    background-color: #ccc; /* gray for remainder */
+  }
+  
+  /* Stats below the bar */
+  .progress-stats {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+  }
+  .percent-text {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FF4081;
+  }
+  .overall-text {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  /* Difficulty breakdown row */
+  .difficulty-breakdown {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+  }
+  .diff-easy {
+    color: #8BC34A;
+    font-weight: 600;
+    font-size: xx-large;
+  }
+  .diff-medium {
+    color: #FFC107;
+    font-weight: 600;
+    font-size: xx-large;
+  }
+  .diff-hard {
+    color: #F44336;
+    font-weight: 600;
+    font-size: xx-large;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .stacked-bar {
+      height: 16px;
+    }
+    .progress-card h2 {
+      font-size: 1.2rem;
+    }
+    .percent-text {
+      font-size: x-large;
+    }
+    .overall-text {
+      font-size: 0.85rem;
+    }
+  }
+  

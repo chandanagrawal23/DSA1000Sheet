@@ -127,51 +127,102 @@ function filterProblems() {
  * BUILD & UPDATE GLOBAL RECTANGULAR PROGRESS BAR
  ***************************************************************/
 function buildRectBar() {
-    let rectContainer = document.getElementById('rectChartContainer');
-    if (!rectContainer) {
-        rectContainer = document.createElement('div');
-        rectContainer.id = 'rectChartContainer';
-        rectContainer.className = 'rect-chart-container';
-        document.body.insertAdjacentElement('afterbegin', rectContainer);
-    }
-    rectContainer.innerHTML = `
-    <h5>Overall Progress</h5>
-    <div class="rect-chart">
-      <div class="rect-segment rect-easy" id="rectEasy"></div>
-      <div class="rect-segment rect-medium" id="rectMedium"></div>
-      <div class="rect-segment rect-hard" id="rectHard"></div>
-    </div>
-    <div class="rect-progress-text" id="rectProgressText">0% solved</div>
-  `;
+    const container = document.getElementById('rectChartContainer');
+    if (!container) return;
+  
+    // Insert the stacked bar + text into the container
+    container.innerHTML = `
+      <div class="progress-card">
+        <h2>Overall Progress</h2>
+        <!-- The stacked bar with 4 segments: easy, medium, hard, unsolved -->
+        <div class="stacked-bar">
+          <div class="bar-segment easy-segment" id="easySegment"></div>
+          <div class="bar-segment medium-segment" id="mediumSegment"></div>
+          <div class="bar-segment hard-segment" id="hardSegment"></div>
+          <div class="bar-segment unsolved-segment" id="unsolvedSegment"></div>
+        </div>
+  
+        <!-- Stats area: % solved, X/Y solved -->
+        <div class="progress-stats">
+          <span id="percentSolved" class="percent-text">0% solved</span>
+          <span id="overallSolvedText" class="overall-text">0/0 Solved</span>
+        </div>
+  
+        <!-- Difficulty breakdown row -->
+        <div class="difficulty-breakdown">
+          <span id="easyStats" class="diff-easy">Easy: 0/0</span>
+          <span id="mediumStats" class="diff-medium">Medium: 0/0</span>
+          <span id="hardStats" class="diff-hard">Hard: 0/0</span>
+        </div>
+      </div>
+    `;
+  
+    // Then call updateGlobalRectBar() to fill in widths & text
     updateGlobalRectBar();
-}
+  }
+  
 
-function updateGlobalRectBar() {
+  function updateGlobalRectBar() {
+    // 1) Count how many are solved by difficulty
     const solved = getGlobalSolved();
     const overallTotal = totalEasy + totalMedium + totalHard;
     const overallSolved = solved.easy + solved.medium + solved.hard;
-
-    const easyPercent = overallTotal > 0 ? (solved.easy / overallTotal) * 100 : 0;
-    const mediumPercent = overallTotal > 0 ? (solved.medium / overallTotal) * 100 : 0;
-    const hardPercent = overallTotal > 0 ? (solved.hard / overallTotal) * 100 : 0;
-
-    const rectEasy = document.getElementById('rectEasy');
-    const rectMedium = document.getElementById('rectMedium');
-    const rectHard = document.getElementById('rectHard');
-    if (rectEasy && rectMedium && rectHard) {
-        rectEasy.style.width = easyPercent + '%';
-        rectMedium.style.width = mediumPercent + '%';
-        rectHard.style.width = hardPercent + '%';
+  
+    // 2) Fractions for each difficulty
+    const easyFrac = overallTotal > 0 ? solved.easy / overallTotal : 0;
+    const medFrac = overallTotal > 0 ? solved.medium / overallTotal : 0;
+    const hardFrac = overallTotal > 0 ? solved.hard / overallTotal : 0;
+    const solvedFrac = easyFrac + medFrac + hardFrac;
+    const unsolvedFrac = 1 - solvedFrac;
+  
+    // 3) Convert to percentage
+    const easyWidth = (easyFrac * 100).toFixed(2) + '%';
+    const medWidth = (medFrac * 100).toFixed(2) + '%';
+    const hardWidth = (hardFrac * 100).toFixed(2) + '%';
+    const unsolvedWidth = (unsolvedFrac * 100).toFixed(2) + '%';
+  
+    // 4) Update the bar segments
+    const easySeg = document.getElementById('easySegment');
+    const medSeg = document.getElementById('mediumSegment');
+    const hardSeg = document.getElementById('hardSegment');
+    const unsolvedSeg = document.getElementById('unsolvedSegment');
+    if (easySeg && medSeg && hardSeg && unsolvedSeg) {
+      easySeg.style.width = easyWidth;
+      medSeg.style.width = medWidth;
+      hardSeg.style.width = hardWidth;
+      unsolvedSeg.style.width = unsolvedWidth;
     }
-
-    const progressText = document.getElementById('rectProgressText');
-    if (progressText) {
-        const progressOverall = overallTotal > 0
-            ? Math.round((overallSolved / overallTotal) * 100)
-            : 0;
-        progressText.textContent = `${progressOverall}% solved`;
+  
+    // 5) Update text for % solved
+    const progressOverall = overallTotal > 0
+      ? Math.round((overallSolved / overallTotal) * 100)
+      : 0;
+    const percentElem = document.getElementById('percentSolved');
+    if (percentElem) {
+      percentElem.textContent = `${progressOverall}% solved`;
     }
-}
+  
+    // 6) Update "X/Y Solved"
+    const overallElem = document.getElementById('overallSolvedText');
+    if (overallElem) {
+      overallElem.textContent = `${overallSolved}/${overallTotal} Solved`;
+    }
+  
+    // 7) Update breakdown text
+    const easyStatsElem = document.getElementById('easyStats');
+    const mediumStatsElem = document.getElementById('mediumStats');
+    const hardStatsElem = document.getElementById('hardStats');
+    if (easyStatsElem) {
+      easyStatsElem.textContent = `Easy: ${solved.easy}/${totalEasy}`;
+    }
+    if (mediumStatsElem) {
+      mediumStatsElem.textContent = `Medium: ${solved.medium}/${totalMedium}`;
+    }
+    if (hardStatsElem) {
+      hardStatsElem.textContent = `Hard: ${solved.hard}/${totalHard}`;
+    }
+  }
+  
 
 /***************************************************************
  * MINI PROGRESS BARS PER SECTION
