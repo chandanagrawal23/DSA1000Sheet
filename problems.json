@@ -251,143 +251,6 @@
       ]
     },
     {
-      "title": "Heap",
-      "problems": [
-        {
-          "label": "Last Stone Weight",
-          "question": "https://leetcode.com/problems/last-stone-weight/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/lastStoneWeight.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Maximum Product of Two Elements in an Array",
-          "question": "https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxProduct.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Kth Largest Element in a Stream",
-          "question": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthLargest.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Seat Reservation Manager",
-          "question": "https://leetcode.com/problems/seat-reservation-manager/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeatManager.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Kth Largest Element in an Array",
-          "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findKthLargest.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Top K Frequent Elements",
-          "question": "https://leetcode.com/problems/top-k-frequent-elements/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/topKFrequent.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Meeting Rooms II [Premium, FB, PayPal, Arcesium, Top Interview]",
-          "question": "https://leetcode.com/problems/meeting-rooms-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minMeetingRooms.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Largest Triplet Product Stream [FACEBOOK MEDIUM]",
-          "question": "https://www.geeksforgeeks.org/largest-triplet-product-stream",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LargestTripletMultiplication.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find K Closest Elements",
-          "question": "https://leetcode.com/problems/find-k-closest-elements/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findClosestElements.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Width of Binary Tree",
-          "question": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/widthOfBinaryTree.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Single Threaded CPU [Google Important]",
-          "question": "https://leetcode.com/problems/single-threaded-cpu/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Single-ThreadedCPU.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Codechef FOUR21B S06E06",
-          "question": "https://www.codechef.com/FOUR21B/problems/S06E06",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find K Pairs with Smallest Sums",
-          "question": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "K-th Smallest Prime Fraction",
-          "question": "https://leetcode.com/problems/k-th-smallest-prime-fraction/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "K Closest Points to Origin - LeetCode",
-          "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Kth Smallest Element in a Sorted Matrix",
-          "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kthSmallest.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find Median from Data Stream",
-          "question": "https://leetcode.com/problems/find-median-from-data-stream",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Merge K Sorted Lists",
-          "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLists.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Merge K Sorted Arrays",
-          "question": "https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Range Sum of Sorted Subarray Sums",
-          "question": "https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Maximum Performance of a Team",
-          "question": "https://leetcode.com/problems/maximum-performance-of-a-team/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPerformance.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Sliding Window Maximum",
-          "question": "https://leetcode.com/problems/sliding-window-maximum/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindow.cpp",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
       "title": "Linked List",
       "problems": [
         {
@@ -574,6 +437,143 @@
           "label": "Reverse Nodes in k-Group",
           "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseKGroup.cpp",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Heap",
+      "problems": [
+        {
+          "label": "Last Stone Weight",
+          "question": "https://leetcode.com/problems/last-stone-weight/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/lastStoneWeight.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Maximum Product of Two Elements in an Array",
+          "question": "https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxProduct.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Kth Largest Element in a Stream",
+          "question": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthLargest.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Seat Reservation Manager",
+          "question": "https://leetcode.com/problems/seat-reservation-manager/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeatManager.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Kth Largest Element in an Array",
+          "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findKthLargest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Top K Frequent Elements",
+          "question": "https://leetcode.com/problems/top-k-frequent-elements/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/topKFrequent.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Meeting Rooms II [Premium, FB, PayPal, Arcesium, Top Interview]",
+          "question": "https://leetcode.com/problems/meeting-rooms-ii/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minMeetingRooms.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Largest Triplet Product Stream [FACEBOOK MEDIUM]",
+          "question": "https://www.geeksforgeeks.org/largest-triplet-product-stream",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LargestTripletMultiplication.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find K Closest Elements",
+          "question": "https://leetcode.com/problems/find-k-closest-elements/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findClosestElements.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Width of Binary Tree",
+          "question": "https://leetcode.com/problems/maximum-width-of-binary-tree/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/widthOfBinaryTree.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Single Threaded CPU [Google Important]",
+          "question": "https://leetcode.com/problems/single-threaded-cpu/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Single-ThreadedCPU.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Codechef FOUR21B S06E06",
+          "question": "https://www.codechef.com/FOUR21B/problems/S06E06",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find K Pairs with Smallest Sums",
+          "question": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "K-th Smallest Prime Fraction",
+          "question": "https://leetcode.com/problems/k-th-smallest-prime-fraction/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "K Closest Points to Origin - LeetCode",
+          "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Kth Smallest Element in a Sorted Matrix",
+          "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kthSmallest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Median from Data Stream",
+          "question": "https://leetcode.com/problems/find-median-from-data-stream",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Merge K Sorted Lists",
+          "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLists.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Merge K Sorted Arrays",
+          "question": "https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Range Sum of Sorted Subarray Sums",
+          "question": "https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Performance of a Team",
+          "question": "https://leetcode.com/problems/maximum-performance-of-a-team/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPerformance.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Sliding Window Maximum",
+          "question": "https://leetcode.com/problems/sliding-window-maximum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindow.cpp",
           "difficulty": "hard"
         }
       ]
@@ -871,6 +871,190 @@
         {
           "label": "Last Day Where You Can Still Cross",
           "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Fixed Size Sliding Window",
+      "problems": [
+        {
+          "label": "Substrings of Size Three with Distinct Characters",
+          "question": "https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countGoodSubstrings.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Maximum Average Subarray I",
+          "question": "https://leetcode.com/problems/maximum-average-subarray-i/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findMaxAverage.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Contains Duplicate II [HASH]",
+          "question": "https://leetcode.com/problems/contains-duplicate-ii/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Number of Sub-arrays of Size K and Average Greater Than or Equal to Threshold",
+          "question": "https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numOfSubarrays.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Number of Vowels in a Substring of Given Length",
+          "question": "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxVowels.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Grumpy Bookstore Owner",
+          "question": "https://leetcode.com/problems/grumpy-bookstore-owner/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSatisfied.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Permutation in String",
+          "question": "https://leetcode.com/problems/permutation-in-string/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkInclusion.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Number of Occurrences of a Substring",
+          "question": "https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxFreq.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Substring of All Vowels in Order",
+          "question": "https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestBeautifulSubstring.cpp",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Dynamic Sliding Window (Shrink - Extend window)",
+      "problems": [
+        {
+          "label": "Longest Subarray of 1s After Deleting One Element",
+          "question": "https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestSubarray.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Max Consecutive Ones III",
+          "question": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestOnes.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Substrings Containing All Three Characters",
+          "question": "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numberOfSubstrings.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count Number of Nice Subarrays",
+          "question": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numberOfSubarrays.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximize the Confusion of an Exam",
+          "question": "https://leetcode.com/problems/maximize-the-confusion-of-an-exam/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxConsecutiveAnswers.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Erasure Value",
+          "question": "https://leetcode.com/problems/maximum-erasure-value/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maximumUniqueSubarray.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Binary Subarrays With Sum",
+          "question": "https://leetcode.com/problems/binary-subarrays-with-sum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numSubarraysWithSum.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Get Equal Substrings Within Budget",
+          "question": "https://leetcode.com/problems/get-equal-substrings-within-budget/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/equalSubstring.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Continuous Subarray with Absolute Diff ≤ Limit",
+          "question": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestSubarrayUsingMultiset.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Fruit Into Baskets [Google]",
+          "question": "https://leetcode.com/problems/fruit-into-baskets/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/totalFruit.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Subarray Product Less Than K",
+          "question": "https://leetcode.com/problems/subarray-product-less-than-k/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numSubarrayProductLessThanK.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Substrings with Only 1s",
+          "question": "https://leetcode.com/problems/number-of-substrings-with-only-1s/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numSub.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Size Subarray Sum",
+          "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minSubArrayLen.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Repeating Character Replacement",
+          "question": "https://leetcode.com/problems/longest-repeating-character-replacement/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/characterReplacement.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Substring with At Most K Distinct Characters [PREMIUM] [Google, FB, Apple]",
+          "question": "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/lengthOfLongestSubstringKDistinct.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Substring with At Least K Repeating Characters",
+          "question": "https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestSubstring.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Subarrays with K Different Integers",
+          "question": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/subarraysWithKDistinct.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Sliding Window Maximum [Google]",
+          "question": "https://leetcode.com/problems/sliding-window-maximum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindowUsingMap.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimum Window Substring [Very Important, widely asked]",
+          "question": "https://leetcode.com/problems/minimum-window-substring/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindow.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Sliding Window Median [Google]",
+          "question": "https://leetcode.com/problems/sliding-window-median/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -1264,190 +1448,6 @@
         {
           "label": "Largest Color Value in a Directed Graph [DFS, Dijkstra, Topological Sort]",
           "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
-          "solution": "-",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
-      "title": "Fixed Size Sliding Window",
-      "problems": [
-        {
-          "label": "Substrings of Size Three with Distinct Characters",
-          "question": "https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countGoodSubstrings.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Maximum Average Subarray I",
-          "question": "https://leetcode.com/problems/maximum-average-subarray-i/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findMaxAverage.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Contains Duplicate II [HASH]",
-          "question": "https://leetcode.com/problems/contains-duplicate-ii/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Number of Sub-arrays of Size K and Average Greater Than or Equal to Threshold",
-          "question": "https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numOfSubarrays.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Number of Vowels in a Substring of Given Length",
-          "question": "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxVowels.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Grumpy Bookstore Owner",
-          "question": "https://leetcode.com/problems/grumpy-bookstore-owner/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSatisfied.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Permutation in String",
-          "question": "https://leetcode.com/problems/permutation-in-string/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkInclusion.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Number of Occurrences of a Substring",
-          "question": "https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxFreq.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Longest Substring of All Vowels in Order",
-          "question": "https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestBeautifulSubstring.cpp",
-          "difficulty": "medium"
-        }
-      ]
-    },
-    {
-      "title": "Dynamic Sliding Window (Shrink - Extend window)",
-      "problems": [
-        {
-          "label": "Longest Subarray of 1s After Deleting One Element",
-          "question": "https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestSubarray.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Max Consecutive Ones III",
-          "question": "https://leetcode.com/problems/max-consecutive-ones-iii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestOnes.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Number of Substrings Containing All Three Characters",
-          "question": "https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numberOfSubstrings.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Count Number of Nice Subarrays",
-          "question": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numberOfSubarrays.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximize the Confusion of an Exam",
-          "question": "https://leetcode.com/problems/maximize-the-confusion-of-an-exam/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxConsecutiveAnswers.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Erasure Value",
-          "question": "https://leetcode.com/problems/maximum-erasure-value/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maximumUniqueSubarray.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Binary Subarrays With Sum",
-          "question": "https://leetcode.com/problems/binary-subarrays-with-sum/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numSubarraysWithSum.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Get Equal Substrings Within Budget",
-          "question": "https://leetcode.com/problems/get-equal-substrings-within-budget/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/equalSubstring.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Longest Continuous Subarray with Absolute Diff ≤ Limit",
-          "question": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestSubarrayUsingMultiset.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Fruit Into Baskets [Google]",
-          "question": "https://leetcode.com/problems/fruit-into-baskets/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/totalFruit.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Subarray Product Less Than K",
-          "question": "https://leetcode.com/problems/subarray-product-less-than-k/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numSubarrayProductLessThanK.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Number of Substrings with Only 1s",
-          "question": "https://leetcode.com/problems/number-of-substrings-with-only-1s/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numSub.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Size Subarray Sum",
-          "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minSubArrayLen.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Longest Repeating Character Replacement",
-          "question": "https://leetcode.com/problems/longest-repeating-character-replacement/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/characterReplacement.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Longest Substring with At Most K Distinct Characters [PREMIUM] [Google, FB, Apple]",
-          "question": "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/lengthOfLongestSubstringKDistinct.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Longest Substring with At Least K Repeating Characters",
-          "question": "https://leetcode.com/problems/longest-substring-with-at-least-k-repeating-characters/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestSubstring.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Subarrays with K Different Integers",
-          "question": "https://leetcode.com/problems/subarrays-with-k-different-integers/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/subarraysWithKDistinct.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Sliding Window Maximum [Google]",
-          "question": "https://leetcode.com/problems/sliding-window-maximum/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindowUsingMap.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Minimum Window Substring [Very Important, widely asked]",
-          "question": "https://leetcode.com/problems/minimum-window-substring/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindow.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Sliding Window Median [Google]",
-          "question": "https://leetcode.com/problems/sliding-window-median/",
           "solution": "-",
           "difficulty": "hard"
         }
