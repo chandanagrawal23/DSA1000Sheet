@@ -1271,7 +1271,62 @@
     },
     {
       "title": "Fixed Size Sliding Window",
-      "problems": []
+      "problems": [
+        {
+          "label": "Substrings of Size Three with Distinct Characters",
+          "question": "https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countGoodSubstrings.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Maximum Average Subarray I",
+          "question": "https://leetcode.com/problems/maximum-average-subarray-i/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findMaxAverage.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Contains Duplicate II [HASH]",
+          "question": "https://leetcode.com/problems/contains-duplicate-ii/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Number of Sub-arrays of Size K and Average Greater Than or Equal to Threshold",
+          "question": "https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numOfSubarrays.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Number of Vowels in a Substring of Given Length",
+          "question": "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxVowels.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Grumpy Bookstore Owner",
+          "question": "https://leetcode.com/problems/grumpy-bookstore-owner/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSatisfied.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Permutation in String",
+          "question": "https://leetcode.com/problems/permutation-in-string/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkInclusion.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Number of Occurrences of a Substring",
+          "question": "https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxFreq.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Substring of All Vowels in Order",
+          "question": "https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestBeautifulSubstring.cpp",
+          "difficulty": "medium"
+        }
+      ]
     },
     {
       "title": "Dynamic Sliding Window (Shrink - Extend window)",
@@ -1393,6 +1448,250 @@
         {
           "label": "Sliding Window Median [Google]",
           "question": "https://leetcode.com/problems/sliding-window-median/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Geometry",
+      "problems": [
+        {
+          "label": "Check if it is a Straight Line",
+          "question": "https://leetcode.com/problems/check-if-it-is-a-straight-line/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkStraightLine.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Rectangle Overlap",
+          "question": "https://leetcode.com/problems/rectangle-overlap/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/isRectangleOverlap.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Largest Triangle Area",
+          "question": "https://leetcode.com/problems/largest-triangle-area/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Matrix Cells in Distance Order",
+          "question": "https://leetcode.com/problems/matrix-cells-in-distance-order/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/allCellsDistOrder.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Minimum Time Visiting All Points",
+          "question": "https://leetcode.com/problems/minimum-time-visiting-all-points/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Rectangle Area",
+          "question": "https://leetcode.com/problems/rectangle-area/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/computeAreaOverlapRectangle.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Valid Square",
+          "question": "https://leetcode.com/problems/valid-square/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Circle and Rectangle Overlapping",
+          "question": "https://leetcode.com/problems/circle-and-rectangle-overlapping/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkOverlap.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Queries on Number of Points Inside a Circle",
+          "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countPoints.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Area Rectangle",
+          "question": "https://leetcode.com/problems/minimum-area-rectangle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAreaRect.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "K Closest Points to Origin",
+          "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Max Points on a Line",
+          "question": "https://leetcode.com/problems/max-points-on-a-line/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Number of Visible Points",
+          "question": "Maximum Number of Visible Points - LeetCode",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Disjoint Set Unions",
+      "problems": [
+        {
+          "label": "Find Cycle in undirected graph",
+          "question": "Find Cycle in undirected graph",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count connected Components in undirected graph",
+          "question": "Count connected Components in undirected graph",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of operations to make network connected",
+          "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "The earliest moment when everyone become friends",
+          "question": "https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Smallest string with swaps",
+          "question": "https://leetcode.com/problems/smallest-string-with-swaps/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Satisfiability of equality equations",
+          "question": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Accounts merge",
+          "question": "https://leetcode.com/problems/accounts-merge/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimize hamming distance after swap operations",
+          "question": "https://leetcode.com/problems/minimize-hamming-distance-after-swap-operations/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Min cost to connect all points",
+          "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Synonymous sentences [IMPO, google]",
+          "question": "https://leetcode.com/problems/synonymous-sentences/ [IMPO , google]",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Lexicographically smallest equivalent string [IMPO, google]",
+          "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/  [IMPO , google]",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Regions cut by slashes",
+          "question": "https://leetcode.com/problems/regions-cut-by-slashes/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Similar string groups",
+          "question": "https://leetcode.com/problems/similar-string-groups/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimize malware spread",
+          "question": "https://leetcode.com/problems/minimize-malware-spread/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Largest component size by common factor",
+          "question": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Find all people with secret",
+          "question": "https://leetcode.com/problems/find-all-people-with-secret/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Groups of strings",
+          "question": "https://leetcode.com/problems/groups-of-strings/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Process restricted friend requests [google]",
+          "question": "https://leetcode.com/problems/process-restricted-friend-requests/ [google]",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Checking existence of edge length limited paths",
+          "question": "https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Remove max number of edges to keep graph fully traversable",
+          "question": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Swim in rising water",
+          "question": "https://leetcode.com/problems/swim-in-rising-water/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Rank transform of a matrix",
+          "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Graph connectivity with threshold",
+          "question": "https://leetcode.com/problems/graph-connectivity-with-threshold/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimize malware spread II",
+          "question": "https://leetcode.com/problems/minimize-malware-spread-ii/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Bricks falling when hit [brilliant ToDO]",
+          "question": "https://leetcode.com/problems/bricks-falling-when-hit/  [brilliant ToDO]",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Optimize water distribution in a village",
+          "question": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
           "solution": "-",
           "difficulty": "hard"
         }
