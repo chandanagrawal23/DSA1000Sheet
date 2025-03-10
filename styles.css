@@ -717,13 +717,13 @@ a {
 
 .custom-footer .social-links a {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   margin-right: 15px;
   transition: color 0.3s;
 }
 
 .custom-footer .social-links a:hover {
-  color: #FFC107;  /* Amber as hover accent */
+  color: #d349b1;  /* Amber as hover accent */
 }
 
 .footer-bottom {
