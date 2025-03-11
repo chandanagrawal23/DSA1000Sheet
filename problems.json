@@ -1696,6 +1696,200 @@
           "difficulty": "hard"
         }
       ]
+    },
+    {
+      "title": "Dynamic Programming",
+      "subsections": [
+        {
+          "title": "LIS Pattern",
+          "problems": [
+            {
+              "label": "Longest Increasing Subsequence",
+              "question": "https://leetcode.com/problems/longest-increasing-subsequence/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Longest Increasing Subsequence",
+              "question": "https://leetcode.com/problems/number-of-longest-increasing-subsequence/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Russian Doll Envelopes",
+              "question": "https://leetcode.com/problems/russian-doll-envelopes/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Delete Columns to Make Sorted III",
+              "question": "https://leetcode.com/problems/delete-columns-to-make-sorted-iii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Number of Removals to Make Mountain Array",
+              "question": "https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximum Height by Stacking Cuboids",
+              "question": "https://leetcode.com/problems/maximum-height-by-stacking-cuboids/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Make Array Strictly Increasing",
+              "question": "https://leetcode.com/problems/make-array-strictly-increasing/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "LCS/LPS Pattern",
+          "problems": [
+            {
+              "label": "Longest Palindromic Substring",
+              "question": "https://leetcode.com/problems/longest-palindromic-substring/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest Palindromic Subsequence",
+              "question": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Length of Repeated Subarray",
+              "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest Common Subsequence",
+              "question": "https://leetcode.com/problems/longest-common-subsequence/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Interleaving String",
+              "question": "https://leetcode.com/problems/interleaving-string/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Edit Distance",
+              "question": "https://leetcode.com/problems/edit-distance/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Regular Expression Matching",
+              "question": "https://leetcode.com/problems/regular-expression-matching/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Wildcard Matching",
+              "question": "https://leetcode.com/problems/wildcard-matching/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Shortest Common Supersequence",
+              "question": "https://leetcode.com/problems/shortest-common-supersequence/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Insertion Steps to Make a String Palindrome",
+              "question": "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Max Dot Product of Two Subsequences",
+              "question": "https://leetcode.com/problems/max-dot-product-of-two-subsequences/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "0/1 Knapsack Pattern",
+          "problems": [
+            {
+              "label": "House Robber II",
+              "question": "https://leetcode.com/problems/house-robber-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Ones and Zeroes",
+              "question": "https://leetcode.com/problems/ones-and-zeroes/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Target Sum",
+              "question": "https://leetcode.com/problems/target-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Shopping Offers",
+              "question": "https://leetcode.com/problems/shopping-offers/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "2 Keys Keyboard",
+              "question": "https://leetcode.com/problems/2-keys-keyboard/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Best Team With No Conflicts",
+              "question": "https://leetcode.com/problems/best-team-with-no-conflicts/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Profitable Schemes",
+              "question": "https://leetcode.com/problems/profitable-schemes/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Swaps to Make Sequences Increasing",
+              "question": "https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Tallest Billboard",
+              "question": "https://leetcode.com/problems/tallest-billboard/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Pizza With 3n Slices",
+              "question": "https://leetcode.com/problems/pizza-with-3n-slices/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Reducing Dishes",
+              "question": "https://leetcode.com/problems/reducing-dishes/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        }        
+      ]
     }
   ]
 }

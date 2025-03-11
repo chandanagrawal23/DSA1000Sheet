@@ -736,3 +736,26 @@ a {
   font-size: 0.9rem;
   color: #fff;
 }
+
+
+/* Subsection collapsible styling */
+.subsection-collapsible .collapsible-header {
+    background: #fafafa;
+    color: #333;
+    font-size: 1rem;
+    border-left: 4px solid #FFC107; /* e.g. accent color for sub-lvl */
+  }
+  .subsection-header i {
+    margin-right: 6px;
+    color: #FFC107;
+    /* size: 2cm; */
+  }
+  
+  /* Smaller mini bars for subsections */
+  .mini-bars.small .mini-progress {
+    width: 60px;  /* narrower bar */
+  }
+  .mini-bars.small .mini-label,
+  .mini-bars.small .mini-count {
+    font-size: 0.7rem; /* smaller text */
+  }
