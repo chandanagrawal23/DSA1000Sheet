@@ -1546,13 +1546,13 @@
       "problems": [
         {
           "label": "Find Cycle in undirected graph",
-          "question": "Find Cycle in undirected graph",
+          "question": "https://www.geeksforgeeks.org/detect-cycle-in-graph-using-dsu/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
           "label": "Count connected Components in undirected graph",
-          "question": "Count connected Components in undirected graph",
+          "question": "https://www.geeksforgeeks.org/number-of-connected-components-of-a-graph-using-disjoint-set-union/",
           "solution": "-",
           "difficulty": "medium"
         },
