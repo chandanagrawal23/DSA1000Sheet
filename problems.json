@@ -369,19 +369,19 @@
         },
         {
           "label": "Linked List Cycle II [IMPORTANT]",
-          "question": "https://leetcode.com/problems/linked-list-cycle-ii/ [IMPORTANT]",
+          "question": "https://leetcode.com/problems/linked-list-cycle-ii/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/detectCycle2.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Convert Sorted List to Binary Search Tree [IMPORTANT]",
-          "question": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/  [IMPORTANT]",
+          "question": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortedListToBST.cpp",
           "difficulty": "medium"
         },
         {
-          "label": "Flatten a Multilevel Doubly Linked List [IMPORTANT]",
-          "question": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/  [IMPORTANT , google FB , paypal , apple]",
+          "label": "Flatten a Multilevel Doubly Linked List [IMPORTANT google FB , paypal , apple]",
+          "question": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flatten.cpp",
           "difficulty": "medium"
         },
@@ -429,7 +429,7 @@
         },
         {
           "label": "Merge K Sorted Lists [IMPORTANT]",
-          "question": "https://leetcode.com/problems/merge-k-sorted-lists/ [IMPORTANT]",
+          "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLinkedLists.cpp",
           "difficulty": "hard"
         },
@@ -1455,7 +1455,104 @@
               "difficulty": "hard"
             }
           ]
-        }
+        },
+        {
+          "title": "Dijkstra Algorithm Graph (Shortest Path)",
+          "problems": [
+            {
+              "label": "Network Delay Time",
+              "question": "https://leetcode.com/problems/network-delay-time/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Path With Maximum Probability",
+              "question": "https://leetcode.com/problems/path-with-maximum-probability/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Restricted Paths from First to Last Node",
+              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Cheapest Flights Within K Stops",
+              "question": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Ways to Arrive at Destination",
+              "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "The Maze II",
+              "question": "https://leetcode.com/problems/the-maze-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
+              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Reachable Nodes in Subdivided Graph",
+              "question": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Cost to Reach City With Discounts",
+              "question": "https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find Minimum Time to Reach Last Room I",
+              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find Edges in Shortest Paths",
+              "question": "https://leetcode.com/problems/find-edges-in-shortest-paths/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Time to Visit a Cell in a Grid",
+              "question": "http://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "0-1 BFS",
+          "problems": [
+            {
+
+            },
+            {
+              "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
+              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Obstacle Removal to Reach Corner",
+              "question": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        }                        
       ]
     },
     {
@@ -1600,13 +1697,13 @@
         },
         {
           "label": "Synonymous sentences [IMPO, google]",
-          "question": "https://leetcode.com/problems/synonymous-sentences/ [IMPO , google]",
+          "question": "https://leetcode.com/problems/synonymous-sentences/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
           "label": "Lexicographically smallest equivalent string [IMPO, google]",
-          "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/  [IMPO , google]",
+          "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
           "solution": "-",
           "difficulty": "medium"
         },
@@ -1705,6 +1802,227 @@
     {
       "title": "Dynamic Programming",
       "subsections": [
+        {
+          "title": "Linear DP",
+          "problems": [
+            {
+              "label": "Climbing Stairs",
+              "question": "https://leetcode.com/problems/climbing-stairs/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Best Time to Buy and Sell Stock",
+              "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Min Cost Climbing Stairs",
+              "question": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Divisor Game",
+              "question": "https://leetcode.com/problems/divisor-game/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Counting Bits",
+              "question": "https://leetcode.com/problems/counting-bits/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Integer Break",
+              "question": "https://leetcode.com/problems/integer-break/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Decode Ways",
+              "question": "https://leetcode.com/problems/decode-ways/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Unique Binary Search Trees",
+              "question": "https://leetcode.com/problems/unique-binary-search-trees/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "House Robber",
+              "question": "https://leetcode.com/problems/house-robber/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Perfect Squares",
+              "question": "https://leetcode.com/problems/perfect-squares/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Best Time to Buy and Sell Stock with Cooldown",
+              "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Coin Change",
+              "question": "https://leetcode.com/problems/coin-change/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Count Numbers with Unique Digits",
+              "question": "https://leetcode.com/problems/count-numbers-with-unique-digits/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Wiggle Subsequence",
+              "question": "https://leetcode.com/problems/wiggle-subsequence/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Partition Equal Subset Sum",
+              "question": "https://leetcode.com/problems/partition-equal-subset-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Length of Pair Chain",
+              "question": "https://leetcode.com/problems/maximum-length-of-pair-chain/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Best Time to Buy and Sell Stock with Transaction Fee",
+              "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Delete and Earn",
+              "question": "https://leetcode.com/problems/delete-and-earn/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Domino and Tromino Tiling",
+              "question": "https://leetcode.com/problems/domino-and-tromino-tiling/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Knight Dialer",
+              "question": "https://leetcode.com/problems/knight-dialer/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Cost for Tickets",
+              "question": "https://leetcode.com/problems/minimum-cost-for-tickets/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Partition Array for Maximum Sum",
+              "question": "https://leetcode.com/problems/partition-array-for-maximum-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Filling Bookcase Shelves",
+              "question": "https://leetcode.com/problems/filling-bookcase-shelves/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest Arithmetic Subsequence of Given Difference",
+              "question": "https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Greatest Sum Divisible by Three",
+              "question": "https://leetcode.com/problems/greatest-sum-divisible-by-three/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Best Time to Buy and Sell Stock III",
+              "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Student Attendance Record II",
+              "question": "https://leetcode.com/problems/student-attendance-record-ii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Decode Ways II",
+              "question": "https://leetcode.com/problems/decode-ways-ii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Form Largest Integer With Digits That Add up to Target",
+              "question": "https://leetcode.com/problems/form-largest-integer-with-digits-that-add-up-to-target/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Triples with Bitwise AND Equal to Zero",
+              "question": "https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximum Profit in Job Scheduling",
+              "question": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Number of Taps to Open to Water a Garden",
+              "question": "https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Count All Valid Pickup and Delivery Options",
+              "question": "https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Stone Game III",
+              "question": "https://leetcode.com/problems/stone-game-iii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Stone Game IV",
+              "question": "https://leetcode.com/problems/stone-game-iv/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Restore the Array",
+              "question": "https://leetcode.com/problems/restore-the-array/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
         {
           "title": "LIS Pattern",
           "problems": [
@@ -1893,8 +2211,353 @@
               "difficulty": "hard"
             }
           ]
+        },
+        {
+          "title": "Grid DP",
+          "problems": [
+            {
+              "label": "Unique Paths",
+              "question": "https://leetcode.com/problems/unique-paths/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Unique Paths II",
+              "question": "https://leetcode.com/problems/unique-paths-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Path Sum",
+              "question": "https://leetcode.com/problems/minimum-path-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Non-Negative Product in a Matrix",
+              "question": "https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Where Will the Ball Fall",
+              "question": "https://leetcode.com/problems/where-will-the-ball-fall/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Dungeon Game",
+              "question": "https://leetcode.com/problems/dungeon-game/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Cherry Pickup",
+              "question": "https://leetcode.com/problems/cherry-pickup/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Number of Paths with Max Score",
+              "question": "https://leetcode.com/problems/number-of-paths-with-max-score/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Cherry Pickup II",
+              "question": "https://leetcode.com/problems/cherry-pickup-ii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Kth Smallest Instructions",
+              "question": "https://leetcode.com/problems/kth-smallest-instructions/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "String DP",
+          "problems": [
+            {
+              "label": "Palindrome Partitioning",
+              "question": "https://leetcode.com/problems/palindrome-partitioning/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Word Break",
+              "question": "https://leetcode.com/problems/word-break/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Unique Substrings in Wraparound String",
+              "question": "https://leetcode.com/problems/unique-substrings-in-wraparound-string/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum ASCII Delete Sum for Two Strings",
+              "question": "https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest String Chain",
+              "question": "https://leetcode.com/problems/longest-string-chain/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest Happy String",
+              "question": "https://leetcode.com/problems/longest-happy-string/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Palindrome Partitioning II",
+              "question": "https://leetcode.com/problems/palindrome-partitioning-ii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Word Break II",
+              "question": "https://leetcode.com/problems/word-break-ii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Longest Valid Parentheses",
+              "question": "https://leetcode.com/problems/longest-valid-parentheses/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Distinct Subsequences",
+              "question": "https://leetcode.com/problems/distinct-subsequences/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Count the Repetitions",
+              "question": "https://leetcode.com/problems/count-the-repetitions/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Concatenated Words",
+              "question": "https://leetcode.com/problems/concatenated-words/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Count Different Palindromic Subsequences",
+              "question": "https://leetcode.com/problems/count-different-palindromic-subsequences/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Distinct Subsequences II",
+              "question": "https://leetcode.com/problems/distinct-subsequences-ii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Longest Chunked Palindrome Decomposition",
+              "question": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Palindrome Partitioning III",
+              "question": "https://leetcode.com/problems/palindrome-partitioning-iii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find All Good Strings",
+              "question": "https://leetcode.com/problems/find-all-good-strings/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "String Compression II",
+              "question": "https://leetcode.com/problems/string-compression-ii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Number of Ways to Form a Target String Given a Dictionary",
+              "question": "https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Bit DP",
+          "problems": [
+            {
+              "label": "Can I Win",
+              "question": "https://leetcode.com/problems/can-i-win/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Partition to K Equal Sum Subsets",
+              "question": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Stickers to Spell Word",
+              "question": "https://leetcode.com/problems/stickers-to-spell-word/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Shortest Path Visiting All Nodes",
+              "question": "https://leetcode.com/problems/shortest-path-visiting-all-nodes/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Smallest Sufficient Team",
+              "question": "https://leetcode.com/problems/smallest-sufficient-team/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximum Students Taking Exam",
+              "question": "https://leetcode.com/problems/maximum-students-taking-exam/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Number of Ways to Wear Different Hats to Each Other",
+              "question": "https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Cost to Connect Two Groups of Points",
+              "question": "https://leetcode.com/problems/minimum-cost-to-connect-two-groups-of-points/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximum Number of Achievable Transfer Requests",
+              "question": "https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Distribute Repeating Integers",
+              "question": "https://leetcode.com/problems/distribute-repeating-integers/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximize Grid Happiness",
+              "question": "https://leetcode.com/problems/maximize-grid-happiness/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find Minimum Time to Finish All Jobs",
+              "question": "https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        }                      
+      ]
+    },
+    {
+      "title": "Bit Manipulation",
+      "problems": [
+        {
+          "label": "Number of 1 Bits",
+          "question": "https://leetcode.com/problems/number-of-1-bits/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Power of Two",
+          "question": "http://leetcode.com/problems/power-of-two/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "First Letter to Appear Twice",
+          "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Convert a Number to Hexadecimal",
+          "question": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Subsets",
+          "question": "https://leetcode.com/problems/subsets/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Subarray With OR at Least K",
+          "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-i/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Single Number II",
+          "question": "https://leetcode.com/problems/single-number-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Single Number III",
+          "question": "https://leetcode.com/problems/single-number-iii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Subarray With OR at Least K II",
+          "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Wonderful Substrings",
+          "question": "https://leetcode.com/problems/number-of-wonderful-substrings/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum OR",
+          "question": "https://leetcode.com/problems/maximum-or/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Path to Get All Keys",
+          "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+          "question": "https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/",
+          "solution": "-",
+          "difficulty": "hard"
         }
       ]
     }
+    
   ]
 }
