@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DSA Problems Repository</title>
+
+  <!-- Materialize CSS -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Font Awesome for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar with Dark Mode toggle -->
+  <nav class="nav-wrapper teal lighten-2">
+    <div class="container">
+      <a href="#" class="brand-logo">DSA Problems</a>
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <div class="input-field right-align" style="margin: 0; padding-right: 15px;">
+            <input id="searchBox" type="text" placeholder="Search problems...">
+          </div>
+        </li>
+        <li>
+          <a href="#!" id="darkModeToggle" class="tooltipped" data-position="bottom" data-tooltip="Toggle Dark Mode">
+            <i class="material-icons">brightness_4</i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <ul class="sidenav" id="mobile-nav">
+    <li>
+      <div class="user-view">
+        <div class="background teal lighten-4"></div>
+        <span class="name">DSA Problems Repository</span>
+      </div>
+    </li>
+    <li>
+      <div class="input-field" style="margin: 0 16px;">
+        <input id="searchBoxMobile" type="text" placeholder="Search problems...">
+      </div>
+    </li>
+    <li>
+      <a href="#!" id="darkModeToggleMobile">
+        <i class="material-icons left">brightness_4</i>Dark Mode
+      </a>
+    </li>
+  </ul>
+
+  <!-- Main Content -->
+  <div class="container main-content">
+    <header class="center-align">
+      <h1 class="blue-text text-darken-2">DSA Problems Repository</h1>
+      <p class="flow-text">
+        Track your progress on Data Structures and Algorithms problems
+      </p>
+    </header>
+
+    <!-- Rectangular Overall Progress Chart Container -->
+    <div id="rectChartContainer" class="rect-chart-container">
+      <!-- The progress card is inserted by script.js -->
+    </div>
+
+    <!-- Instructions -->
+    <div class="card-panel teal lighten-4">
+      <span class="teal-text text-darken-4">
+        <i class="material-icons left">info</i>
+        Click on a topic to view its problems. Click the checkbox to mark a problem as solved.
+        Your progress is automatically saved.
+      </span>
+    </div>
+
+    <!-- Sections (collapsible accordions) are inserted here -->
+    <div id="sections"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer custom-footer">
+    <div class="container">
+      <div class="row valign-wrapper">
+        <!-- Profile Image -->
+        <div class="col s12 m4 center-align">
+          <img src="chandanwhite.jpg" alt="Chandan Agrawal" class="footer-img">
+        </div>
+        <!-- Creator info and social links -->
+        <div class="col s12 m8">
+          <h5 class="white-text">Beautifully created by Chandan Agrawal</h5>
+          <p class="grey-text text-lighten-4">Connect with me:</p>
+          <div class="social-links">
+            <a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/chandanagrawal23/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/chandan.agrawal23" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container center-align">
+        © 2025 Chandan Agrawal
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notes Modal -->
+  <div class="notes-modal" id="notesModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="notesModalTitle">Add Notes</h2>
+      </div>
+      <div class="modal-body">
+        <textarea id="notesModalTextarea" placeholder="Your notes here..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn save-btn" onclick="saveNotesModal()">Save</button>
+        <button class="btn close-btn" onclick="closeNotesModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
