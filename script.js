@@ -5,6 +5,10 @@ let totalEasy = 0;       // total # of easy problems
 let totalMedium = 0;     // total # of medium
 let totalHard = 0;       // total # of hard
 let problemData = [];    // store fetched data
+let uniqueProblems = new Set(); // store unique problem labels
+let uniqueEasy = new Set();
+let uniqueMedium = new Set();
+let uniqueHard = new Set();
 
 // For storing notess: problemId -> notes text
 let notes = {};
@@ -173,90 +177,144 @@ function loadProgress() {
  * FILTER PROBLEMS
  ***************************************************************/
 function filterProblems(event) {
-  const searchBox = document.getElementById('searchBox');
-  if (!searchBox) return;
-  const searchTerm = searchBox.value.toLowerCase();
-  
-  // Check if this was triggered by a checkbox click
-  const isCheckboxClick = event && event.target && event.target.classList.contains('circle-check');
-  
-  // If it's a checkbox click, get the section ID from the checkbox
-  const clickedSectionId = isCheckboxClick ? event.target.dataset.section : null;
-  
-  document.querySelectorAll('.collapsible').forEach(collapsible => {
-    let sectionHasMatch = false;
-    const sectionId = collapsible.getAttribute('id');
-    if (!sectionId) return;
+    const searchBox = document.getElementById('searchBox');
+    if (!searchBox) return;
     
-    // Get the difficulty filter states for this section
-    const easyCheckbox = collapsible.querySelector(`.circle-check.easy[data-section="${sectionId}"]`);
-    const mediumCheckbox = collapsible.querySelector(`.circle-check.medium[data-section="${sectionId}"]`);
-    const hardCheckbox = collapsible.querySelector(`.circle-check.hard[data-section="${sectionId}"]`);
+    const searchTerm = searchBox.value.toLowerCase();
+    console.log('Filtering with search term:', searchTerm);
     
-    const easyChecked = easyCheckbox ? easyCheckbox.checked : true;
-    const mediumChecked = mediumCheckbox ? mediumCheckbox.checked : true;
-    const hardChecked = hardCheckbox ? hardCheckbox.checked : true;
+    const sections = document.querySelectorAll('.collapsible');
+    const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
     
-    // If no difficulty is selected, show all difficulties (same as all selected)
-    const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+    // If there's no search term, collapse everything unless it was from a checkbox click
+    if (!searchTerm && !event?.target?.classList.contains('circle-check')) {
+        sections.forEach(section => {
+            const instance = M.Collapsible.getInstance(section);
+            if (instance) {
+                instance.close(0);
+            }
+            
+            // Also collapse all subsections
+            const subsectionCollapsible = section.querySelector('.subsection-collapsible');
+            if (subsectionCollapsible) {
+                const subsectionInstance = M.Collapsible.getInstance(subsectionCollapsible);
+                if (subsectionInstance) {
+                    for (let i = 0; i < subsectionInstance.$el[0].children.length; i++) {
+                        subsectionInstance.close(i);
+                    }
+                }
+            }
+        });
+    }
     
-    const rows = collapsible.querySelectorAll('tbody tr');
-    
-    // First hide/show rows based on search and difficulty
-    rows.forEach(row => {
-      const problemText = row.querySelector('td:first-child').textContent.toLowerCase();
-      const matchesSearch = problemText.includes(searchTerm);
-      
-      // Check if the row's difficulty matches the selected filters
-      let matchesDifficulty = false;
-      if (showAllDifficulties) {
-        matchesDifficulty = true; // Show all if none selected
-      } else if (row.classList.contains('easy') && easyChecked) {
-        matchesDifficulty = true;
-      } else if (row.classList.contains('medium') && mediumChecked) {
-        matchesDifficulty = true;
-      } else if (row.classList.contains('hard') && hardChecked) {
-        matchesDifficulty = true;
-      }
-      
-      if (matchesSearch && matchesDifficulty) {
-        row.style.display = '';
-        sectionHasMatch = true;
-      } else {
-        row.style.display = 'none';
-      }
+    sections.forEach(section => {
+        const sectionBody = section.querySelector('.collapsible-body');
+        const subsections = sectionBody.querySelectorAll('.subsection-collapsible li');
+        let hasMatchInSection = false;
+        
+        // Handle sections with subsections
+        if (subsections.length > 0) {
+            subsections.forEach(subsection => {
+                const subsectionBody = subsection.querySelector('.collapsible-body');
+                const rows = subsectionBody.querySelectorAll('tr');
+                let hasMatchInSubsection = false;
+                
+                // Get difficulty filters for this subsection
+                const subsectionId = subsection.querySelector('.mini-bars')?.dataset.id;
+                if (!subsectionId) return;
+                
+                const easyChecked = subsection.querySelector(`.circle-check.easy[data-section="${subsectionId}"]`)?.checked ?? true;
+                const mediumChecked = subsection.querySelector(`.circle-check.medium[data-section="${subsectionId}"]`)?.checked ?? true;
+                const hardChecked = subsection.querySelector(`.circle-check.hard[data-section="${subsectionId}"]`)?.checked ?? true;
+                
+                // Show all difficulties if none are checked
+                const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+                
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    const difficulty = row.classList.contains('easy') ? 'easy' :
+                                     row.classList.contains('medium') ? 'medium' :
+                                     row.classList.contains('hard') ? 'hard' : '';
+                    
+                    const difficultyMatch = showAllDifficulties || 
+                        (difficulty === 'easy' && easyChecked) ||
+                        (difficulty === 'medium' && mediumChecked) ||
+                        (difficulty === 'hard' && hardChecked);
+                    
+                    const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
+                    
+                    if (matchesSearch && difficultyMatch) {
+                        row.style.display = '';
+                        hasMatchInSubsection = true;
+                        hasMatchInSection = true;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                
+                // Handle subsection visibility and expansion
+                if (hasMatchInSubsection) {
+                    subsection.style.display = '';
+                    if (searchTerm) {
+                        const instance = M.Collapsible.getInstance(subsection.closest('.collapsible'));
+                        if (instance) {
+                            const index = Array.from(subsection.parentElement.children).indexOf(subsection);
+                            instance.open(index);
+                        }
+                    }
+                } else {
+                    subsection.style.display = 'none';
+                }
+            });
+        } else {
+            // Handle sections without subsections
+            const rows = sectionBody.querySelectorAll('tr');
+            const sectionId = section.getAttribute('id');
+            if (!sectionId) return;
+            
+            const easyChecked = section.querySelector(`.circle-check.easy[data-section="${sectionId}"]`)?.checked ?? true;
+            const mediumChecked = section.querySelector(`.circle-check.medium[data-section="${sectionId}"]`)?.checked ?? true;
+            const hardChecked = section.querySelector(`.circle-check.hard[data-section="${sectionId}"]`)?.checked ?? true;
+            
+            const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const difficulty = row.classList.contains('easy') ? 'easy' :
+                                 row.classList.contains('medium') ? 'medium' :
+                                 row.classList.contains('hard') ? 'hard' : '';
+                
+                const difficultyMatch = showAllDifficulties || 
+                    (difficulty === 'easy' && easyChecked) ||
+                    (difficulty === 'medium' && mediumChecked) ||
+                    (difficulty === 'hard' && hardChecked);
+                
+                const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
+                
+                if (matchesSearch && difficultyMatch) {
+                    row.style.display = '';
+                    hasMatchInSection = true;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+        
+        // Handle section visibility and expansion
+        if (hasMatchInSection) {
+            section.style.display = '';
+            if (searchTerm && sectionBody !== clickedSection) {
+                const instance = M.Collapsible.getInstance(section);
+                if (instance) {
+                    instance.open(0);
+                }
+            }
+        } else {
+            section.style.display = 'none';
+        }
     });
     
-    // Get the Materialize instance for this collapsible
-    const instance = M.Collapsible.getInstance(collapsible);
-    if (instance) {
-      // Check if this is the section where the checkbox was clicked
-      const isClickedSection = isCheckboxClick && sectionId === clickedSectionId;
-      
-      // Only handle collapsing/expanding if:
-      // 1. This is not the section where the checkbox was clicked, OR
-      // 2. This is a search operation (not a checkbox click)
-      if (!isClickedSection) {
-        if (searchTerm === '' && (easyChecked || mediumChecked || hardChecked || showAllDifficulties)) {
-          // When search is cleared and at least one difficulty is selected (or none, which means show all),
-          // collapse all sections EXCEPT the one where the checkbox was clicked
-          instance.close(0);
-        } else if (sectionHasMatch) {
-          // Only expand if there's actually a match in this section
-          instance.open(0);
-        } else {
-          // If no match in this section, collapse it
-          instance.close(0);
-        }
-      } else {
-        // For the section where the checkbox was clicked, only expand if there are matches
-        // but NEVER collapse it (let the user control it manually)
-        if (sectionHasMatch && instance._state === 0) { // 0 means closed
-          instance.open(0);
-        }
-      }
-    }
-  });
+    console.log('Filtering complete');
 }
 
 /***************************************************************
@@ -279,9 +337,20 @@ function buildRectBar() {
         <span id="overallSolvedText" class="overall-text">0/0 Solved</span>
       </div>
       <div class="difficulty-breakdown">
-        <span id="easyStats" class="diff-easy">Easy: 0/0</span>
-        <span id="mediumStats" class="diff-medium">Medium: 0/0</span>
-        <span id="hardStats" class="diff-hard">Hard: 0/0</span>
+        <div class="difficulty-counts">
+          <span id="easyStats" class="diff-easy">Easy: 0/0</span>
+          <span id="mediumStats" class="diff-medium">Medium: 0/0</span>
+          <span id="hardStats" class="diff-hard">Hard: 0/0</span>
+        </div>
+        <div class="unique-counts">
+          <span class="unique-count easy-unique">(0 unique)</span>
+          <span class="unique-count medium-unique">(0 unique)</span>
+          <span class="unique-count hard-unique">(0 unique)</span>
+        </div>
+      </div>
+      <div class="unique-stats">
+        <div class="total-unique">Unique Problems: ${uniqueProblems.size}</div>
+        <div class="unique-breakdown">(E: ${uniqueEasy.size}, M: ${uniqueMedium.size}, H: ${uniqueHard.size})</div>
       </div>
     </div>
   `;
@@ -326,19 +395,33 @@ function updateGlobalRectBar() {
     overallElem.textContent = `${overallSolved}/${overallTotal} Solved`;
   }
   
-  // Update difficulty stats
+  // Update difficulty stats with both total and unique counts
   const easyStatsElem = document.getElementById('easyStats');
   const mediumStatsElem = document.getElementById('mediumStats');
   const hardStatsElem = document.getElementById('hardStats');
   
   if (easyStatsElem) {
     easyStatsElem.textContent = `Easy: ${solved.easy}/${totalEasy}`;
+    document.querySelector('.easy-unique').textContent = `(${uniqueEasy.size} unique)`;
   }
   if (mediumStatsElem) {
     mediumStatsElem.textContent = `Medium: ${solved.medium}/${totalMedium}`;
+    document.querySelector('.medium-unique').textContent = `(${uniqueMedium.size} unique)`;
   }
   if (hardStatsElem) {
     hardStatsElem.textContent = `Hard: ${solved.hard}/${totalHard}`;
+    document.querySelector('.hard-unique').textContent = `(${uniqueHard.size} unique)`;
+  }
+  
+  // Update unique problems stats
+  const uniqueStatsElem = document.querySelector('.unique-stats');
+  if (uniqueStatsElem) {
+    const totalUnique = document.querySelector('.total-unique');
+    const uniqueBreakdown = document.querySelector('.unique-breakdown');
+    if (totalUnique && uniqueBreakdown) {
+      totalUnique.textContent = `Unique Problems: ${uniqueProblems.size}`;
+      uniqueBreakdown.textContent = `(E: ${uniqueEasy.size}, M: ${uniqueMedium.size}, H: ${uniqueHard.size})`;
+    }
   }
 }
 
@@ -825,73 +908,121 @@ function updateDarkModeIcon(isDark) {
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize Materialize components
-  M.AutoInit();
-  
-  // Initialize dark mode
-  initializeDarkMode();
-  
-  // Set up search
-  const searchBox = document.getElementById('searchBox');
-  if (searchBox) {
-    searchBox.addEventListener('input', function(e) {
-      filterProblems(e);
-    });
-  }
-  
-  // Load problems data
-  fetch('problems.json')
-    .then(res => {
-      if (!res.ok) throw new Error('Network response was not ok');
-      return res.json();
-    })
-    .then(data => {
-      problemData = data;
-      renderSections(data);
-      
-      // Count totals
-      data.sections.forEach(section => {
-        if (section.problems) {
-          section.problems.forEach(problem => {
-            if (problem.difficulty === 'easy') totalEasy++;
-            if (problem.difficulty === 'medium') totalMedium++;
-            if (problem.difficulty === 'hard') totalHard++;
-          });
-        }
-        if (section.subsections) {
-          section.subsections.forEach(subsec => {
-            subsec.problems.forEach(problem => {
-              if (problem.difficulty === 'easy') totalEasy++;
-              if (problem.difficulty === 'medium') totalMedium++;
-              if (problem.difficulty === 'hard') totalHard++;
+    // Initialize Materialize components
+    M.AutoInit();
+    
+    // Initialize dark mode
+    initializeDarkMode();
+    
+    // Set up search with debouncing
+    const searchBox = document.getElementById('searchBox');
+    if (searchBox) {
+        let searchTimeout;
+        searchBox.addEventListener('input', function(e) {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                console.log('Search triggered with:', e.target.value);
+                filterProblems(e);
+            }, 300); // Debounce for 300ms
+        });
+        console.log('Search listener attached to:', searchBox);
+    } else {
+        console.warn('Search box not found!');
+    }
+    
+    // Load problems data
+    fetch('problems.json')
+        .then(res => {
+            if (!res.ok) throw new Error('Network response was not ok');
+            return res.json();
+        })
+        .then(data => {
+            problemData = data;
+            
+            // Reset Sets before counting
+            uniqueProblems.clear();
+            uniqueEasy.clear();
+            uniqueMedium.clear();
+            uniqueHard.clear();
+            
+            // Count totals and track unique problems
+            data.sections.forEach(section => {
+                if (section.problems) {
+                    section.problems.forEach(problem => {
+                        uniqueProblems.add(problem.label);
+                        if (problem.difficulty === 'easy') {
+                            totalEasy++;
+                            uniqueEasy.add(problem.label);
+                        }
+                        if (problem.difficulty === 'medium') {
+                            totalMedium++;
+                            uniqueMedium.add(problem.label);
+                        }
+                        if (problem.difficulty === 'hard') {
+                            totalHard++;
+                            uniqueHard.add(problem.label);
+                        }
+                    });
+                }
+                if (section.subsections) {
+                    section.subsections.forEach(subsec => {
+                        subsec.problems.forEach(problem => {
+                            uniqueProblems.add(problem.label);
+                            if (problem.difficulty === 'easy') {
+                                totalEasy++;
+                                uniqueEasy.add(problem.label);
+                            }
+                            if (problem.difficulty === 'medium') {
+                                totalMedium++;
+                                uniqueMedium.add(problem.label);
+                            }
+                            if (problem.difficulty === 'hard') {
+                                totalHard++;
+                                uniqueHard.add(problem.label);
+                            }
+                        });
+                    });
+                }
             });
-          });
-        }
-      });
-      
-      // Initialize UI
-      const collapsibles = document.querySelectorAll('.collapsible');
-      M.Collapsible.init(collapsibles, { accordion: false });
-      
-      // Initialize all checkboxes - IMPORTANT: Make sure they're visible and checked
-      initializeCheckboxes();
-      
-      buildRectBar();
-      loadProgress();
-      updateGlobalRectBar();
-      updateSectionProgress();
-    })
-    .catch(err => {
-      console.error('Error loading problems:', err);
-      document.getElementById('sections').innerHTML = `
-        <div class="card-panel red lighten-4">
-          <span class="red-text text-darken-4">
-            <i class="material-icons left">error</i>
-            Failed to load problems data. Please check your connection and try again.
-          </span>
-        </div>
-      `;
-    });
+            
+            console.log('Unique problems:', {
+                total: uniqueProblems.size,
+                easy: uniqueEasy.size,
+                medium: uniqueMedium.size,
+                hard: uniqueHard.size
+            });
+            
+            renderSections(data);
+            
+            // Initialize UI
+            const collapsibles = document.querySelectorAll('.collapsible');
+            M.Collapsible.init(collapsibles, {
+                accordion: false,
+                onOpenStart: function(el) {
+                    // Store the state that this was manually opened
+                    el.dataset.manuallyOpened = 'true';
+                }
+            });
+            
+            // Initialize all checkboxes
+            initializeCheckboxes();
+            
+            buildRectBar();
+            loadProgress();
+            updateGlobalRectBar();
+            updateSectionProgress();
+        })
+        .catch(err => {
+            console.error('Error loading problems:', err);
+            document.getElementById('sections').innerHTML = `
+                <div class="card-panel red lighten-4">
+                    <span class="red-text text-darken-4">
+                        <i class="material-icons left">error</i>
+                        Failed to load problems data. Please check your connection and try again.
+                    </span>
+                </div>
+            `;
+        });
 });
 
 // Function to initialize checkboxes

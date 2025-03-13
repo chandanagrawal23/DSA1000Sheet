@@ -1067,6 +1067,41 @@
       ]
     },
     {
+      "title": "Recursion",
+      "problems": [
+        {
+          "label": "Climbing Stairs",
+          "question": "https://leetcode.com/problems/climbing-stairs/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Power of Two",
+          "question": "https://leetcode.com/problems/power-of-two/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Factorial",
+          "question": "https://www.geeksforgeeks.org/program-for-factorial-of-a-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Fibonacci Number",
+          "question": "https://leetcode.com/problems/fibonacci-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sum of Natural Numbers",
+          "question": "https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/",
+          "solution": "-",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
       "title": "Backtracking",
       "problems": [
         {
