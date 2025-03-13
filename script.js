@@ -7,10 +7,102 @@ let totalHard = 0;       // total # of hard
 let problemData = [];    // store fetched data
 
 // For storing notess: problemId -> notes text
-let notess = {};
+let notes = {};
 
 // We'll track which problem's notes is currently being edited
 let currentNotesProblemId = null;
+
+// Add confetti script dynamically
+const confettiScript = document.createElement('script');
+confettiScript.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js';
+document.head.appendChild(confettiScript);
+
+/***************************************************************
+ * CELEBRATION FUNCTIONS
+ ***************************************************************/
+function triggerCelebration() {
+    if (typeof confetti === 'undefined') {
+        console.warn('Confetti library not loaded yet');
+        return;
+    }
+
+    const colors = [
+        '#4F46E5', // Primary
+        '#10B981', // Accent
+        '#3B82F6', // Blue
+        '#6366F1', // Indigo
+        '#22C55E', // Success
+        '#F59E0B', // Warning
+        '#EF4444'  // Error
+    ];
+
+    // Center burst
+    confetti({
+        particleCount: 50,
+        spread: 360,
+        origin: { x: 0.5, y: 0.5 },
+        colors: colors
+    });
+
+    // Side bursts
+    setTimeout(() => {
+        confetti({
+            particleCount: 30,
+            spread: 90,
+            origin: { x: 0, y: 0.5 },
+            colors: colors
+        });
+        confetti({
+            particleCount: 30,
+            spread: 90,
+            origin: { x: 1, y: 0.5 },
+            colors: colors
+        });
+    }, 200);
+
+    // Top corner bursts
+    setTimeout(() => {
+        confetti({
+            particleCount: 30,
+            spread: 90,
+            origin: { x: 0, y: 0 },
+            colors: colors
+        });
+        confetti({
+            particleCount: 30,
+            spread: 90,
+            origin: { x: 1, y: 0 },
+            colors: colors
+        });
+    }, 400);
+
+    // Bottom corner bursts
+    setTimeout(() => {
+        confetti({
+            particleCount: 30,
+            spread: 90,
+            origin: { x: 0, y: 1 },
+            colors: colors
+        });
+        confetti({
+            particleCount: 30,
+            spread: 90,
+            origin: { x: 1, y: 1 },
+            colors: colors
+        });
+    }, 600);
+
+    // Final big burst
+    setTimeout(() => {
+        confetti({
+            particleCount: 100,
+            spread: 360,
+            origin: { x: 0.5, y: 0.5 },
+            colors: colors,
+            ticks: 300
+        });
+    }, 800);
+}
 
 /***************************************************************
  * GET GLOBAL SOLVED
@@ -30,23 +122,18 @@ function getGlobalSolved() {
  * TOGGLE SOLVED
  ***************************************************************/
 function toggleSolved(icon) {
-  const isSolved = icon.getAttribute('data-solved') === 'true';
-
-  // Simple pulse animation
-  icon.classList.add('pulse');
-  setTimeout(() => icon.classList.remove('pulse'), 300);
-
-  // Flip the state
-  if (isSolved) {
-    icon.setAttribute('data-solved', 'false');
-    icon.textContent = 'check_box_outline_blank';
-    icon.parentElement.parentElement.classList.remove('solved');
-  } else {
-    icon.setAttribute('data-solved', 'true');
-    icon.textContent = 'check_box';
-    icon.parentElement.parentElement.classList.add('solved');
+  const wasSolved = icon.getAttribute('data-solved') === 'true';
+  
+  // Toggle the solved state
+  icon.setAttribute('data-solved', !wasSolved);
+  icon.textContent = !wasSolved ? 'check_box' : 'check_box_outline_blank';
+  icon.parentElement.parentElement.classList.toggle('solved', !wasSolved);
+  
+  // If marking as solved, trigger celebration
+  if (!wasSolved) {
+    triggerCelebration();
   }
-
+  
   saveProgress();
   updateGlobalRectBar();
   updateSectionProgress();
@@ -89,9 +176,12 @@ function filterProblems() {
   const searchBox = document.getElementById('searchBox');
   if (!searchBox) return;
   const searchTerm = searchBox.value.toLowerCase();
+  
   document.querySelectorAll('.collapsible').forEach(collapsible => {
     let sectionHasMatch = false;
     const rows = collapsible.querySelectorAll('tbody tr');
+    
+    // First hide/show rows based on search
     rows.forEach(row => {
       const problemText = row.querySelector('td:first-child').textContent.toLowerCase();
       if (problemText.includes(searchTerm)) {
@@ -101,12 +191,19 @@ function filterProblems() {
         row.style.display = 'none';
       }
     });
-    const li = collapsible.querySelector('li');
-    if (li) {
-      if (searchTerm !== '' && sectionHasMatch) {
-        li.classList.add('active');
+    
+    // Get the Materialize instance for this collapsible
+    const instance = M.Collapsible.getInstance(collapsible);
+    if (instance) {
+      if (searchTerm === '') {
+        // When search is cleared, collapse all sections
+        instance.close(0);
+      } else if (sectionHasMatch) {
+        // Only expand if there's actually a match in this section
+        instance.open(0);
       } else {
-        li.classList.remove('active');
+        // If no match in this section, collapse it
+        instance.close(0);
       }
     }
   });
@@ -145,39 +242,45 @@ function updateGlobalRectBar() {
   const solved = getGlobalSolved();
   const overallTotal = totalEasy + totalMedium + totalHard;
   const overallSolved = solved.easy + solved.medium + solved.hard;
+  
+  // Calculate percentages
   const easyFrac = overallTotal > 0 ? solved.easy / overallTotal : 0;
   const medFrac = overallTotal > 0 ? solved.medium / overallTotal : 0;
   const hardFrac = overallTotal > 0 ? solved.hard / overallTotal : 0;
   const solvedFrac = easyFrac + medFrac + hardFrac;
   const unsolvedFrac = 1 - solvedFrac;
-  const easyWidth = (easyFrac * 100).toFixed(2) + '%';
-  const medWidth = (medFrac * 100).toFixed(2) + '%';
-  const hardWidth = (hardFrac * 100).toFixed(2) + '%';
-  const unsolvedWidth = (unsolvedFrac * 100).toFixed(2) + '%';
+  
+  // Update bar segments
   const easySeg = document.getElementById('easySegment');
   const medSeg = document.getElementById('mediumSegment');
   const hardSeg = document.getElementById('hardSegment');
   const unsolvedSeg = document.getElementById('unsolvedSegment');
+  
   if (easySeg && medSeg && hardSeg && unsolvedSeg) {
-    easySeg.style.width = easyWidth;
-    medSeg.style.width = medWidth;
-    hardSeg.style.width = hardWidth;
-    unsolvedSeg.style.width = unsolvedWidth;
+    easySeg.style.width = `${(easyFrac * 100).toFixed(2)}%`;
+    medSeg.style.width = `${(medFrac * 100).toFixed(2)}%`;
+    hardSeg.style.width = `${(hardFrac * 100).toFixed(2)}%`;
+    unsolvedSeg.style.width = `${(unsolvedFrac * 100).toFixed(2)}%`;
   }
-  const progressOverall = overallTotal > 0
-    ? Math.round((overallSolved / overallTotal) * 100)
-    : 0;
+  
+  // Update text stats
+  const progressOverall = overallTotal > 0 ? Math.round((overallSolved / overallTotal) * 100) : 0;
+  
   const percentElem = document.getElementById('percentSolved');
   if (percentElem) {
     percentElem.textContent = `${progressOverall}% solved`;
   }
+  
   const overallElem = document.getElementById('overallSolvedText');
   if (overallElem) {
     overallElem.textContent = `${overallSolved}/${overallTotal} Solved`;
   }
+  
+  // Update difficulty stats
   const easyStatsElem = document.getElementById('easyStats');
   const mediumStatsElem = document.getElementById('mediumStats');
   const hardStatsElem = document.getElementById('hardStats');
+  
   if (easyStatsElem) {
     easyStatsElem.textContent = `Easy: ${solved.easy}/${totalEasy}`;
   }
@@ -562,20 +665,24 @@ function generateAccordion(section) {
  * NOTES MODAL FUNCTIONS
  ***************************************************************/
 function loadNotess() {
-  const stored = localStorage.getItem('dsaNotess');
+  const stored = localStorage.getItem('dsaNotes');
   if (stored) {
-    notess = JSON.parse(stored);
+    notes = JSON.parse(stored);
   } else {
-    notess = {};
+    notes = {};
   }
 }
 
 function openNotesModal(problemId, label) {
   currentNotesProblemId = problemId;
-  const existingNotes = notess[problemId] || '';
-  document.getElementById('notesModalTextarea').value = existingNotes;
-  document.getElementById('notesModalTitle').textContent = label || 'Add Notes';
-  document.getElementById('notesModal').classList.add('active');
+  const modal = document.getElementById('notesModal');
+  const textarea = document.getElementById('notesModalTextarea');
+  const title = document.getElementById('notesModalTitle');
+  
+  textarea.value = notes[problemId] || '';
+  title.textContent = `Notes: ${label}`;
+  
+  modal.classList.add('active');
 }
 
 function closeNotesModal() {
@@ -585,50 +692,85 @@ function closeNotesModal() {
 
 function saveNotesModal() {
   if (!currentNotesProblemId) return;
+  
   const text = document.getElementById('notesModalTextarea').value.trim();
-  notess[currentNotesProblemId] = text;
-  localStorage.setItem('dsaNotess', JSON.stringify(notess));
+  notes[currentNotesProblemId] = text;
+  localStorage.setItem('dsaNotes', JSON.stringify(notes));
+  
+  // Show success message
+  M.toast({
+    html: '<span class="success-toast">Notes saved successfully!</span>',
+    classes: 'rounded green',
+    displayLength: 2000
+  });
+  
   closeNotesModal();
-  alert('Notes saved!');
 }
 
 /***************************************************************
- * DARK MODE TOGGLE
+ * DARK MODE FUNCTIONS
  ***************************************************************/
-const darkModeToggle = document.getElementById('darkModeToggle');
-if (darkModeToggle) {
+function initializeDarkMode() {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  if (!darkModeToggle) return;
+  
+  // Load saved preference
+  const isDarkMode = localStorage.getItem('dsaDarkMode') === 'true';
+  document.body.classList.toggle('dark-mode', isDarkMode);
+  updateDarkModeIcon(isDarkMode);
+  
+  // Add click handler
   darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('dsaDarkMode', document.body.classList.contains('dark-mode'));
+    const isDark = !document.body.classList.contains('dark-mode');
+    document.body.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('dsaDarkMode', isDark);
+    updateDarkModeIcon(isDark);
   });
 }
 
+function updateDarkModeIcon(isDark) {
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  if (darkModeToggle) {
+    darkModeToggle.innerHTML = `<span class="material-icons">${isDark ? 'light_mode' : 'dark_mode'}</span>`;
+  }
+}
+
 /***************************************************************
- * MAIN FETCH LOGIC (AFTER DOM LOADED)
+ * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function() {
-  const tooltips = document.querySelectorAll('.tooltipped');
-  M.Tooltip.init(tooltips);
-  const sideNav = document.querySelectorAll('.sidenav');
-  M.Sidenav.init(sideNav);
-  const searchBoxMobile = document.getElementById('searchBoxMobile');
-  if (searchBoxMobile) {
-    searchBoxMobile.addEventListener('input', filterProblems);
+  // Initialize Materialize components
+  M.AutoInit();
+  
+  // Initialize dark mode
+  initializeDarkMode();
+  
+  // Set up search
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.addEventListener('input', filterProblems);
   }
+  
+  // Load problems data
   fetch('problems.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Network response was not ok');
+      return res.json();
+    })
     .then(data => {
       problemData = data;
       renderSections(data);
-      const elems = document.querySelectorAll('.collapsible');
-      M.Collapsible.init(elems, { accordion: false });
+      
+      // Count totals
       data.sections.forEach(section => {
-        section.problems && section.problems.forEach(problem => {
-          if (problem.difficulty === 'easy') totalEasy++;
-          if (problem.difficulty === 'medium') totalMedium++;
-          if (problem.difficulty === 'hard') totalHard++;
-        });
-        if (section.subsections && Array.isArray(section.subsections)) {
+        if (section.problems) {
+          section.problems.forEach(problem => {
+            if (problem.difficulty === 'easy') totalEasy++;
+            if (problem.difficulty === 'medium') totalMedium++;
+            if (problem.difficulty === 'hard') totalHard++;
+          });
+        }
+        if (section.subsections) {
           section.subsections.forEach(subsec => {
             subsec.problems.forEach(problem => {
               if (problem.difficulty === 'easy') totalEasy++;
@@ -638,21 +780,25 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         }
       });
+      
+      // Initialize UI
+      const collapsibles = document.querySelectorAll('.collapsible');
+      M.Collapsible.init(collapsibles, { accordion: false });
+      
       buildRectBar();
       loadProgress();
-      const searchBox = document.getElementById('searchBox');
-      if (searchBox) {
-        searchBox.addEventListener('input', filterProblems);
-      }
+      updateGlobalRectBar();
+      updateSectionProgress();
     })
     .catch(err => {
-      console.error('Error loading JSON:', err);
+      console.error('Error loading problems:', err);
       document.getElementById('sections').innerHTML = `
         <div class="card-panel red lighten-4">
           <span class="red-text text-darken-4">
             <i class="material-icons left">error</i>
-            Failed to load problems data. Please check your JSON file.
+            Failed to load problems data. Please check your connection and try again.
           </span>
-        </div>`;
+        </div>
+      `;
     });
 });
