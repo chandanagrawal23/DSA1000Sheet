@@ -172,19 +172,54 @@ function loadProgress() {
 /***************************************************************
  * FILTER PROBLEMS
  ***************************************************************/
-function filterProblems() {
+function filterProblems(event) {
   const searchBox = document.getElementById('searchBox');
   if (!searchBox) return;
   const searchTerm = searchBox.value.toLowerCase();
   
+  // Check if this was triggered by a checkbox click
+  const isCheckboxClick = event && event.target && event.target.classList.contains('circle-check');
+  
+  // If it's a checkbox click, get the section ID from the checkbox
+  const clickedSectionId = isCheckboxClick ? event.target.dataset.section : null;
+  
   document.querySelectorAll('.collapsible').forEach(collapsible => {
     let sectionHasMatch = false;
+    const sectionId = collapsible.getAttribute('id');
+    if (!sectionId) return;
+    
+    // Get the difficulty filter states for this section
+    const easyCheckbox = collapsible.querySelector(`.circle-check.easy[data-section="${sectionId}"]`);
+    const mediumCheckbox = collapsible.querySelector(`.circle-check.medium[data-section="${sectionId}"]`);
+    const hardCheckbox = collapsible.querySelector(`.circle-check.hard[data-section="${sectionId}"]`);
+    
+    const easyChecked = easyCheckbox ? easyCheckbox.checked : true;
+    const mediumChecked = mediumCheckbox ? mediumCheckbox.checked : true;
+    const hardChecked = hardCheckbox ? hardCheckbox.checked : true;
+    
+    // If no difficulty is selected, show all difficulties (same as all selected)
+    const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+    
     const rows = collapsible.querySelectorAll('tbody tr');
     
-    // First hide/show rows based on search
+    // First hide/show rows based on search and difficulty
     rows.forEach(row => {
       const problemText = row.querySelector('td:first-child').textContent.toLowerCase();
-      if (problemText.includes(searchTerm)) {
+      const matchesSearch = problemText.includes(searchTerm);
+      
+      // Check if the row's difficulty matches the selected filters
+      let matchesDifficulty = false;
+      if (showAllDifficulties) {
+        matchesDifficulty = true; // Show all if none selected
+      } else if (row.classList.contains('easy') && easyChecked) {
+        matchesDifficulty = true;
+      } else if (row.classList.contains('medium') && mediumChecked) {
+        matchesDifficulty = true;
+      } else if (row.classList.contains('hard') && hardChecked) {
+        matchesDifficulty = true;
+      }
+      
+      if (matchesSearch && matchesDifficulty) {
         row.style.display = '';
         sectionHasMatch = true;
       } else {
@@ -195,15 +230,30 @@ function filterProblems() {
     // Get the Materialize instance for this collapsible
     const instance = M.Collapsible.getInstance(collapsible);
     if (instance) {
-      if (searchTerm === '') {
-        // When search is cleared, collapse all sections
-        instance.close(0);
-      } else if (sectionHasMatch) {
-        // Only expand if there's actually a match in this section
-        instance.open(0);
+      // Check if this is the section where the checkbox was clicked
+      const isClickedSection = isCheckboxClick && sectionId === clickedSectionId;
+      
+      // Only handle collapsing/expanding if:
+      // 1. This is not the section where the checkbox was clicked, OR
+      // 2. This is a search operation (not a checkbox click)
+      if (!isClickedSection) {
+        if (searchTerm === '' && (easyChecked || mediumChecked || hardChecked || showAllDifficulties)) {
+          // When search is cleared and at least one difficulty is selected (or none, which means show all),
+          // collapse all sections EXCEPT the one where the checkbox was clicked
+          instance.close(0);
+        } else if (sectionHasMatch) {
+          // Only expand if there's actually a match in this section
+          instance.open(0);
+        } else {
+          // If no match in this section, collapse it
+          instance.close(0);
+        }
       } else {
-        // If no match in this section, collapse it
-        instance.close(0);
+        // For the section where the checkbox was clicked, only expand if there are matches
+        // but NEVER collapse it (let the user control it manually)
+        if (sectionHasMatch && instance._state === 0) { // 0 means closed
+          instance.open(0);
+        }
       }
     }
   });
@@ -374,19 +424,31 @@ function generateAccordion(section) {
               <!-- Aggregated mini progress bars for the entire parent section -->
               <div class="mini-bars" data-id="${parentId}">
                 <div class="mini-bar-line">
-                  <span class="mini-label">Easy</span>
-                  <div class="mini-progress"><div class="mini-fill easy-fill" style="width:0%"></div></div>
-                  <span class="mini-count" data-diff="easy">(0/${aggEasy})</span>
+                  <label class="difficulty-filter-circle" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                    <input type="checkbox" class="circle-check easy" data-section="${parentId}" data-difficulty="easy" checked 
+                      style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
+                  </label>
+                  <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
+                  <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill easy-fill" style="width:0%"></div></div>
+                  <span class="mini-count" data-diff="easy" style="margin-left:0.25rem;">(0/${aggEasy})</span>
                 </div>
                 <div class="mini-bar-line">
-                  <span class="mini-label">Medium</span>
-                  <div class="mini-progress"><div class="mini-fill medium-fill" style="width:0%"></div></div>
-                  <span class="mini-count" data-diff="medium">(0/${aggMed})</span>
+                  <label class="difficulty-filter-circle" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                    <input type="checkbox" class="circle-check medium" data-section="${parentId}" data-difficulty="medium" checked
+                      style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
+                  </label>
+                  <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
+                  <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill medium-fill" style="width:0%"></div></div>
+                  <span class="mini-count" data-diff="medium" style="margin-left:0.25rem;">(0/${aggMed})</span>
                 </div>
                 <div class="mini-bar-line">
-                  <span class="mini-label">Hard</span>
-                  <div class="mini-progress"><div class="mini-fill hard-fill" style="width:0%"></div></div>
-                  <span class="mini-count" data-diff="hard">(0/${aggHard})</span>
+                  <label class="difficulty-filter-circle" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                    <input type="checkbox" class="circle-check hard" data-section="${parentId}" data-difficulty="hard" checked
+                      style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
+                  </label>
+                  <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
+                  <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill hard-fill" style="width:0%"></div></div>
+                  <span class="mini-count" data-diff="hard" style="margin-left:0.25rem;">(0/${aggHard})</span>
                 </div>
               </div>
             </div>
@@ -423,19 +485,31 @@ function generateAccordion(section) {
             </div>
             <div class="mini-bars" data-id="${sectionId}">
               <div class="mini-bar-line">
-                <span class="mini-label">Easy</span>
-                <div class="mini-progress"><div class="mini-fill easy-fill" style="width:0%"></div></div>
-                <span class="mini-count" data-diff="easy">(0/${easyCount})</span>
+                <label class="difficulty-filter-circle" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                  <input type="checkbox" class="circle-check easy" data-section="${sectionId}" data-difficulty="easy" checked 
+                    style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
+                </label>
+                <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
+                <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill easy-fill" style="width:0%"></div></div>
+                <span class="mini-count" data-diff="easy" style="margin-left:0.25rem;">(0/${easyCount})</span>
               </div>
               <div class="mini-bar-line">
-                <span class="mini-label">Medium</span>
-                <div class="mini-progress"><div class="mini-fill medium-fill" style="width:0%"></div></div>
-                <span class="mini-count" data-diff="medium">(0/${mediumCount})</span>
+                <label class="difficulty-filter-circle" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                  <input type="checkbox" class="circle-check medium" data-section="${sectionId}" data-difficulty="medium" checked
+                    style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
+                </label>
+                <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
+                <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill medium-fill" style="width:0%"></div></div>
+                <span class="mini-count" data-diff="medium" style="margin-left:0.25rem;">(0/${mediumCount})</span>
               </div>
               <div class="mini-bar-line">
-                <span class="mini-label">Hard</span>
-                <div class="mini-progress"><div class="mini-fill hard-fill" style="width:0%"></div></div>
-                <span class="mini-count" data-diff="hard">(0/${hardCount})</span>
+                <label class="difficulty-filter-circle" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                  <input type="checkbox" class="circle-check hard" data-section="${sectionId}" data-difficulty="hard" checked
+                    style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
+                </label>
+                <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
+                <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill hard-fill" style="width:0%"></div></div>
+                <span class="mini-count" data-diff="hard" style="margin-left:0.25rem;">(0/${hardCount})</span>
               </div>
             </div>
           </div>
@@ -463,19 +537,31 @@ function generateAccordion(section) {
           <span class="subsection-title">${subsec.title}</span>
           <div class="mini-bars small" data-id="${subsecId}">
             <div class="mini-bar-line">
-              <span class="mini-label">Easy</span>
-              <div class="mini-progress"><div class="mini-fill easy-fill" style="width:0%"></div></div>
-              <span class="mini-count" data-diff="easy">(0/${easyCount})</span>
+              <label class="difficulty-filter-circle" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                <input type="checkbox" class="circle-check easy" data-section="${subsecId}" data-difficulty="easy" checked 
+                  style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
+              </label>
+              <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
+              <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill easy-fill" style="width:0%"></div></div>
+              <span class="mini-count" data-diff="easy" style="margin-left:0.25rem;">(0/${easyCount})</span>
             </div>
             <div class="mini-bar-line">
-              <span class="mini-label">Medium</span>
-              <div class="mini-progress"><div class="mini-fill medium-fill" style="width:0%"></div></div>
-              <span class="mini-count" data-diff="medium">(0/${mediumCount})</span>
+              <label class="difficulty-filter-circle" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                <input type="checkbox" class="circle-check medium" data-section="${subsecId}" data-difficulty="medium" checked
+                  style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
+              </label>
+              <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
+              <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill medium-fill" style="width:0%"></div></div>
+              <span class="mini-count" data-diff="medium" style="margin-left:0.25rem;">(0/${mediumCount})</span>
             </div>
             <div class="mini-bar-line">
-              <span class="mini-label">Hard</span>
-              <div class="mini-progress"><div class="mini-fill hard-fill" style="width:0%"></div></div>
-              <span class="mini-count" data-diff="hard">(0/${hardCount})</span>
+              <label class="difficulty-filter-circle" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                <input type="checkbox" class="circle-check hard" data-section="${subsecId}" data-difficulty="hard" checked
+                  style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
+              </label>
+              <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
+              <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill hard-fill" style="width:0%"></div></div>
+              <span class="mini-count" data-diff="hard" style="margin-left:0.25rem;">(0/${hardCount})</span>
             </div>
           </div>
         </div>
@@ -748,7 +834,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Set up search
   const searchBox = document.getElementById('searchBox');
   if (searchBox) {
-    searchBox.addEventListener('input', filterProblems);
+    searchBox.addEventListener('input', function(e) {
+      filterProblems(e);
+    });
   }
   
   // Load problems data
@@ -785,6 +873,9 @@ document.addEventListener('DOMContentLoaded', function() {
       const collapsibles = document.querySelectorAll('.collapsible');
       M.Collapsible.init(collapsibles, { accordion: false });
       
+      // Initialize all checkboxes - IMPORTANT: Make sure they're visible and checked
+      initializeCheckboxes();
+      
       buildRectBar();
       loadProgress();
       updateGlobalRectBar();
@@ -802,3 +893,44 @@ document.addEventListener('DOMContentLoaded', function() {
       `;
     });
 });
+
+// Function to initialize checkboxes
+function initializeCheckboxes() {
+  // Wait a short time to ensure DOM is fully rendered
+  setTimeout(() => {
+    console.log('Initializing checkboxes...');
+    
+    // Get all checkboxes
+    const checkboxes = document.querySelectorAll('.circle-check');
+    console.log('Found checkboxes:', checkboxes.length);
+    
+    // Remove any existing event listeners
+    checkboxes.forEach(checkbox => {
+      const newCheckbox = checkbox.cloneNode(true);
+      checkbox.parentNode.replaceChild(newCheckbox, checkbox);
+    });
+    
+    // Add event listeners to the new checkboxes
+    document.querySelectorAll('.circle-check').forEach(checkbox => {
+      // Ensure checkbox is visible and checked by default
+      checkbox.checked = true;
+      
+      // Add click event listener
+      checkbox.addEventListener('click', function(e) {
+        // Stop event propagation to prevent collapsible from toggling
+        e.stopPropagation();
+        console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
+        
+        // Filter problems based on the new state - pass the event object
+        filterProblems(e);
+      });
+    });
+    
+    // Add event listeners to the labels to prevent propagation
+    document.querySelectorAll('.difficulty-filter-circle').forEach(label => {
+      label.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+    });
+  }, 500);
+}

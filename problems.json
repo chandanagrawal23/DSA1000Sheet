@@ -10,6 +10,18 @@
           "difficulty": "easy"
         },
         {
+          "label": "Remove All Adjacent Duplicates in String",
+          "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacent.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Make the String Great",
+          "question": "https://leetcode.com/problems/make-the-string-great/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeStringGreat.cpp",
+          "difficulty": "easy"
+        },
+        {
           "label": "Binary Tree Preorder Traversal",
           "question": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreePreorder_using_stack.cpp",
@@ -22,33 +34,27 @@
           "difficulty": "easy"
         },
         {
-          "label": "Make the String Great",
-          "question": "https://leetcode.com/problems/make-the-string-great/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeStringGreat.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Remove All Adjacent Duplicates in String",
-          "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacent.cpp",
-          "difficulty": "easy"
-        },
-        {
           "label": "Min Stack",
           "question": "https://leetcode.com/problems/min-stack/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinStack.cpp",
           "difficulty": "easy"
         },
         {
-          "label": "Next Larger Element",
+          "label": "Next Larger Element (Monotonic Stack)",
           "question": "https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement.cpp",
           "difficulty": "medium"
         },
         {
-          "label": "Next Greater Element II",
+          "label": "Next Greater Element II (Monotonic Stack)",
           "question": "https://leetcode.com/problems/next-greater-element-ii/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement2.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Beautiful Towers II (Monotonic Stack)",
+          "question": "http://leetcode.com/problems/beautiful-towers-ii",
+          "solution": "-",
           "difficulty": "medium"
         },
         {
@@ -58,7 +64,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Online Stock Span",
+          "label": "Online Stock Span (Monotonic Stack)",
           "question": "https://leetcode.com/problems/online-stock-span/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/StockSpanner.cpp",
           "difficulty": "medium"
@@ -70,7 +76,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Remove K Digits",
+          "label": "Remove K Digits (Monotonic Stack)",
           "question": "https://leetcode.com/problems/remove-k-digits/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeKdigits.cpp",
           "difficulty": "medium"
@@ -88,7 +94,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Asteroid Collision [PREMIUM Google]",
+          "label": "Asteroid Collision [PREMIUM Google] (Monotonic Stack)",
           "question": "https://leetcode.com/problems/asteroid-collision/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AsteroidCollision.cpp",
           "difficulty": "medium"
@@ -100,7 +106,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Buildings with an Ocean View [PREMIUM Facebook]",
+          "label": "Buildings with an Ocean View [PREMIUM Facebook] (Monotonic Stack)",
           "question": "https://leetcode.com/problems/buildings-with-an-ocean-view/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BuildingsWithanOceanView.cpp",
           "difficulty": "medium"
@@ -124,7 +130,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Daily Temperatures",
+          "label": "Daily Temperatures (Monotonic Stack)",
           "question": "https://leetcode.com/problems/daily-temperatures/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DailyTemperatures.cpp",
           "difficulty": "medium"
@@ -508,7 +514,7 @@
           "label": "Single Threaded CPU [Google Important]",
           "question": "https://leetcode.com/problems/single-threaded-cpu/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Single-ThreadedCPU.cpp",
-          "difficulty": "hard"
+          "difficulty": "medium"
         },
         {
           "label": "Codechef FOUR21B S06E06",
@@ -932,6 +938,18 @@
           "question": "https://leetcode.com/problems/longest-substring-of-all-vowels-in-order/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestBeautifulSubstring.cpp",
           "difficulty": "medium"
+        },
+        {
+          "label": "Sliding Window Maximum [Google] [Monotonic Queue/Deque]",
+          "question": "https://leetcode.com/problems/sliding-window-maximum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindowUsingMap.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Sliding Window Median [Google]",
+          "question": "https://leetcode.com/problems/sliding-window-median/",
+          "solution": "-",
+          "difficulty": "hard"
         }
       ]
     },
@@ -1041,759 +1059,115 @@
           "difficulty": "hard"
         },
         {
-          "label": "Sliding Window Maximum [Google]",
-          "question": "https://leetcode.com/problems/sliding-window-maximum/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindowUsingMap.cpp",
-          "difficulty": "hard"
-        },
-        {
           "label": "Minimum Window Substring [Very Important, widely asked]",
           "question": "https://leetcode.com/problems/minimum-window-substring/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindow.cpp",
           "difficulty": "hard"
-        },
-        {
-          "label": "Sliding Window Median [Google]",
-          "question": "https://leetcode.com/problems/sliding-window-median/",
-          "solution": "-",
-          "difficulty": "hard"
         }
       ]
     },
     {
-      "title": "Graph",
-      "subsections": [
-        {
-          "title": "BFS/DFS on Graph",
-          "problems": [
-            {
-              "label": "Find if Path Exists in Graph",
-              "question": "https://leetcode.com/problems/find-if-path-exists-in-graph/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Find Center of Star Graph",
-              "question": "https://leetcode.com/problems/find-center-of-star-graph/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Number of Provinces",
-              "question": "https://leetcode.com/problems/number-of-provinces/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Number of Vertices to Reach All Nodes",
-              "question": "https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "The Time When the Network Becomes Idle",
-              "question": "https://leetcode.com/problems/the-time-when-the-network-becomes-idle/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Is Graph Bipartite?",
-              "question": "https://leetcode.com/problems/is-graph-bipartite/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Shortest Path with Alternating Colors",
-              "question": "https://leetcode.com/problems/shortest-path-with-alternating-colors/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "All Paths from Source to Target",
-              "question": "https://leetcode.com/problems/all-paths-from-source-to-target/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "All Paths from Source Lead to Destination",
-              "question": "https://leetcode.com/problems/all-paths-from-source-lead-to-destination/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Flower Planting With No Adjacent",
-              "question": "https://leetcode.com/problems/flower-planting-with-no-adjacent/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Paths in Maze That Lead to Same Room",
-              "question": "https://leetcode.com/problems/paths-in-maze-that-lead-to-same-room/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Connected Components in an Undirected Graph",
-              "question": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Employee Importance",
-              "question": "https://leetcode.com/problems/employee-importance/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Snakes and Ladders",
-              "question": "https://leetcode.com/problems/snakes-and-ladders/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "N-ary Tree Level Order Traversal",
-              "question": "https://leetcode.com/problems/n-ary-tree-level-order-traversal/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Reorder Routes to Make All Paths Lead to the City Zero",
-              "question": "https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Operations to Make Network Connected",
-              "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Keys and Rooms",
-              "question": "https://leetcode.com/problems/keys-and-rooms/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find the Celebrity",
-              "question": "https://leetcode.com/problems/find-the-celebrity/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Bus Routes",
-              "question": "https://leetcode.com/problems/bus-routes/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Jump Game IV",
-              "question": "https://leetcode.com/problems/jump-game-iv/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
-        },
-        {
-          "title": "BFS/DFS on Grid",
-          "problems": [
-            {
-              "label": "01 Matrix",
-              "question": "https://leetcode.com/problems/01-matrix/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Islands",
-              "question": "https://leetcode.com/problems/number-of-islands/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Shortest Path in Binary Matrix",
-              "question": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Enclaves",
-              "question": "https://leetcode.com/problems/number-of-enclaves/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Closed Islands",
-              "question": "https://leetcode.com/problems/number-of-closed-islands/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Count Sub Islands",
-              "question": "https://leetcode.com/problems/count-sub-islands/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Nearest Exit from Entrance in Maze",
-              "question": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Rotting Oranges",
-              "question": "https://leetcode.com/problems/rotting-oranges/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Shortest Bridge",
-              "question": "https://leetcode.com/problems/shortest-bridge/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Coloring a Border",
-              "question": "https://leetcode.com/problems/coloring-a-border/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find All Groups of Farmland",
-              "question": "https://leetcode.com/problems/find-all-groups-of-farmland/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "K Highest Ranked Items Within a Price Range",
-              "question": "https://leetcode.com/problems/k-highest-ranked-items-within-a-price-range/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Path With Minimum Effort",
-              "question": "https://leetcode.com/problems/path-with-minimum-effort/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Detect Cycles in 2D Grid",
-              "question": "https://leetcode.com/problems/detect-cycles-in-2d-grid/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Max Area of Island",
-              "question": "https://leetcode.com/problems/max-area-of-island/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "The Maze",
-              "question": "https://leetcode.com/problems/the-maze/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "The Maze II",
-              "question": "https://leetcode.com/problems/the-maze-ii/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Walls and Gates",
-              "question": "https://leetcode.com/problems/walls-and-gates/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Pacific Atlantic Water Flow",
-              "question": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Surrounded Regions",
-              "question": "https://leetcode.com/problems/surrounded-regions/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Making a Large Island",
-              "question": "https://leetcode.com/problems/making-a-large-island/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Swim in Rising Water",
-              "question": "https://leetcode.com/problems/swim-in-rising-water/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Last Day Where You Can Still Cross",
-              "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Cut Off Trees for Golf Event",
-              "question": "https://leetcode.com/problems/cut-off-trees-for-golf-event/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Minimum Cost to Make At Least One Valid Path in a Grid",
-              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Shortest Path in a Grid with Obstacles Elimination",
-              "question": "https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
-        },
-        {
-          "title": "Topological Sorting",
-          "problems": [
-            {
-              "label": "Course Schedule",
-              "question": "https://leetcode.com/problems/course-schedule/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Course Schedule II",
-              "question": "https://leetcode.com/problems/course-schedule-ii/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Course Schedule IV",
-              "question": "https://leetcode.com/problems/course-schedule-iv/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Loud and Rich",
-              "question": "https://leetcode.com/problems/loud-and-rich/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Parallel Courses",
-              "question": "https://leetcode.com/problems/parallel-courses/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find Eventual Safe States",
-              "question": "https://leetcode.com/problems/find-eventual-safe-states/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Height Trees",
-              "question": "https://leetcode.com/problems/minimum-height-trees/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Restricted Paths from First to Last Node",
-              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find All Possible Recipes from Given Supplies",
-              "question": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "All Ancestors of a Node in a DAG",
-              "question": "https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Ways to Arrive at Destination",
-              "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Longest Increasing Path in a Matrix",
-              "question": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Rank Transform of a Matrix",
-              "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Parallel Courses III",
-              "question": "https://leetcode.com/problems/parallel-courses-iii/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Alien Dictionary [IMPO]",
-              "question": "https://leetcode.com/problems/alien-dictionary/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Largest Color Value in a Directed Graph [DFS, Dijkstra, Topological Sort]",
-              "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
-        },
-        {
-          "title": "Dijkstra Algorithm Graph (Shortest Path)",
-          "problems": [
-            {
-              "label": "Network Delay Time",
-              "question": "https://leetcode.com/problems/network-delay-time/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Path With Maximum Probability",
-              "question": "https://leetcode.com/problems/path-with-maximum-probability/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Restricted Paths from First to Last Node",
-              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Cheapest Flights Within K Stops",
-              "question": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Ways to Arrive at Destination",
-              "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "The Maze II",
-              "question": "https://leetcode.com/problems/the-maze-ii/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
-              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Reachable Nodes in Subdivided Graph",
-              "question": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Minimum Cost to Reach City With Discounts",
-              "question": "https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Find Minimum Time to Reach Last Room I",
-              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Find Edges in Shortest Paths",
-              "question": "https://leetcode.com/problems/find-edges-in-shortest-paths/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Minimum Time to Visit a Cell in a Grid",
-              "question": "http://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
-        },
-        {
-          "title": "0-1 BFS",
-          "problems": [
-            {
-
-            },
-            {
-              "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
-              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Minimum Obstacle Removal to Reach Corner",
-              "question": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
-        }                        
-      ]
-    },
-    {
-      "title": "Geometry",
+      "title": "Backtracking",
       "problems": [
         {
-          "label": "Check if it is a Straight Line",
-          "question": "https://leetcode.com/problems/check-if-it-is-a-straight-line/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkStraightLine.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Rectangle Overlap",
-          "question": "https://leetcode.com/problems/rectangle-overlap/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/isRectangleOverlap.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Largest Triangle Area",
-          "question": "https://leetcode.com/problems/largest-triangle-area/",
+          "label": "Letter Case Permutation",
+          "question": "https://leetcode.com/problems/letter-case-permutation/",
           "solution": "-",
           "difficulty": "easy"
         },
         {
-          "label": "Matrix Cells in Distance Order",
-          "question": "https://leetcode.com/problems/matrix-cells-in-distance-order/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/allCellsDistOrder.cpp",
+          "label": "Generate Parentheses",
+          "question": "https://leetcode.com/problems/generate-parentheses/",
+          "solution": "-",
           "difficulty": "easy"
         },
         {
-          "label": "Minimum Time Visiting All Points",
-          "question": "https://leetcode.com/problems/minimum-time-visiting-all-points/",
+          "label": "Combination Sum I",
+          "question": "https://leetcode.com/problems/combination-sum/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Rectangle Area",
-          "question": "https://leetcode.com/problems/rectangle-area/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/computeAreaOverlapRectangle.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Valid Square",
-          "question": "https://leetcode.com/problems/valid-square/",
+          "label": "Combination Sum II",
+          "question": "https://leetcode.com/problems/combination-sum-ii/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Circle and Rectangle Overlapping",
-          "question": "https://leetcode.com/problems/circle-and-rectangle-overlapping/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkOverlap.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Queries on Number of Points Inside a Circle",
-          "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countPoints.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Area Rectangle",
-          "question": "https://leetcode.com/problems/minimum-area-rectangle/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAreaRect.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "K Closest Points to Origin",
-          "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Max Points on a Line",
-          "question": "https://leetcode.com/problems/max-points-on-a-line/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Maximum Number of Visible Points",
-          "question": "Maximum Number of Visible Points - LeetCode",
-          "solution": "-",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
-      "title": "Disjoint Set Unions",
-      "problems": [
-        {
-          "label": "Find Cycle in undirected graph",
-          "question": "https://www.geeksforgeeks.org/detect-cycle-in-graph-using-dsu/",
+          "label": "Combination Sum III",
+          "question": "https://leetcode.com/problems/combination-sum-iii/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Count connected Components in undirected graph",
-          "question": "https://www.geeksforgeeks.org/number-of-connected-components-of-a-graph-using-disjoint-set-union/",
+          "label": "Subsets",
+          "question": "https://leetcode.com/problems/subsets/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Number of operations to make network connected",
-          "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+          "label": "Permutation",
+          "question": "https://leetcode.com/problems/permutations/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "The earliest moment when everyone become friends",
-          "question": "https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/",
+          "label": "Word Search",
+          "question": "https://leetcode.com/problems/word-search/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Smallest string with swaps",
-          "question": "https://leetcode.com/problems/smallest-string-with-swaps/",
+          "label": "Palindrome Partitioning",
+          "question": "https://leetcode.com/problems/palindrome-partitioning/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Satisfiability of equality equations",
-          "question": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
+          "label": "Rat in a Maze",
+          "question": "https://practice.geeksforgeeks.org/problems/rat-in-a-maze/1",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Accounts merge",
-          "question": "https://leetcode.com/problems/accounts-merge/",
+          "label": "Partition to K Equal Sum Subsets",
+          "question": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Minimize hamming distance after swap operations",
-          "question": "https://leetcode.com/problems/minimize-hamming-distance-after-swap-operations/",
+          "label": "Matchsticks to Square",
+          "question": "https://leetcode.com/problems/matchsticks-to-square/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Min cost to connect all points",
-          "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Synonymous sentences [IMPO, google]",
-          "question": "https://leetcode.com/problems/synonymous-sentences/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Lexicographically smallest equivalent string [IMPO, google]",
-          "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Regions cut by slashes",
-          "question": "https://leetcode.com/problems/regions-cut-by-slashes/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Similar string groups",
-          "question": "https://leetcode.com/problems/similar-string-groups/",
+          "label": "N-Queens",
+          "question": "https://leetcode.com/problems/n-queens/",
           "solution": "-",
           "difficulty": "hard"
         },
         {
-          "label": "Minimize malware spread",
-          "question": "https://leetcode.com/problems/minimize-malware-spread/",
+          "label": "Sudoku Solver",
+          "question": "https://leetcode.com/problems/sudoku-solver/",
           "solution": "-",
           "difficulty": "hard"
         },
         {
-          "label": "Largest component size by common factor",
-          "question": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
+          "label": "The Maze III",
+          "question": "https://leetcode.com/problems/the-maze-iii/",
           "solution": "-",
           "difficulty": "hard"
         },
         {
-          "label": "Find all people with secret",
-          "question": "https://leetcode.com/problems/find-all-people-with-secret/",
+          "label": "Knight's Tour",
+          "question": "https://www.geeksforgeeks.org/the-knights-tour-problem/",
           "solution": "-",
           "difficulty": "hard"
         },
         {
-          "label": "Groups of strings",
-          "question": "https://leetcode.com/problems/groups-of-strings/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Process restricted friend requests [google]",
-          "question": "https://leetcode.com/problems/process-restricted-friend-requests/ [google]",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Checking existence of edge length limited paths",
-          "question": "https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Remove max number of edges to keep graph fully traversable",
-          "question": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Swim in rising water",
-          "question": "https://leetcode.com/problems/swim-in-rising-water/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Rank transform of a matrix",
-          "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Graph connectivity with threshold",
-          "question": "https://leetcode.com/problems/graph-connectivity-with-threshold/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Minimize malware spread II",
-          "question": "https://leetcode.com/problems/minimize-malware-spread-ii/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Bricks falling when hit [Very Good Question]",
-          "question": "https://leetcode.com/problems/bricks-falling-when-hit/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Optimize water distribution in a village",
-          "question": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+          "label": "Remove Invalid Parentheses",
+          "question": "https://leetcode.com/problems/remove-invalid-parentheses/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -2472,7 +1846,725 @@
               "difficulty": "hard"
             }
           ]
-        }                      
+        }
+      ]
+    },
+    {
+      "title": "Graph",
+      "subsections": [
+        {
+          "title": "BFS/DFS on Graph",
+          "problems": [
+            {
+              "label": "Find if Path Exists in Graph",
+              "question": "https://leetcode.com/problems/find-if-path-exists-in-graph/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Find Center of Star Graph",
+              "question": "https://leetcode.com/problems/find-center-of-star-graph/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Number of Provinces",
+              "question": "https://leetcode.com/problems/number-of-provinces/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Number of Vertices to Reach All Nodes",
+              "question": "https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "The Time When the Network Becomes Idle",
+              "question": "https://leetcode.com/problems/the-time-when-the-network-becomes-idle/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Is Graph Bipartite?",
+              "question": "https://leetcode.com/problems/is-graph-bipartite/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Shortest Path with Alternating Colors",
+              "question": "https://leetcode.com/problems/shortest-path-with-alternating-colors/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "All Paths from Source to Target",
+              "question": "https://leetcode.com/problems/all-paths-from-source-to-target/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "All Paths from Source Lead to Destination",
+              "question": "https://leetcode.com/problems/all-paths-from-source-lead-to-destination/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Flower Planting With No Adjacent",
+              "question": "https://leetcode.com/problems/flower-planting-with-no-adjacent/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Paths in Maze That Lead to Same Room",
+              "question": "https://leetcode.com/problems/paths-in-maze-that-lead-to-same-room/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Connected Components in an Undirected Graph",
+              "question": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Employee Importance",
+              "question": "https://leetcode.com/problems/employee-importance/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Snakes and Ladders",
+              "question": "https://leetcode.com/problems/snakes-and-ladders/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "N-ary Tree Level Order Traversal",
+              "question": "https://leetcode.com/problems/n-ary-tree-level-order-traversal/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Reorder Routes to Make All Paths Lead to the City Zero",
+              "question": "https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Operations to Make Network Connected",
+              "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Keys and Rooms",
+              "question": "https://leetcode.com/problems/keys-and-rooms/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find the Celebrity",
+              "question": "https://leetcode.com/problems/find-the-celebrity/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Bus Routes",
+              "question": "https://leetcode.com/problems/bus-routes/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Jump Game IV",
+              "question": "https://leetcode.com/problems/jump-game-iv/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "BFS/DFS on Grid",
+          "problems": [
+            {
+              "label": "01 Matrix",
+              "question": "https://leetcode.com/problems/01-matrix/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Islands",
+              "question": "https://leetcode.com/problems/number-of-islands/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Shortest Path in Binary Matrix",
+              "question": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Enclaves",
+              "question": "https://leetcode.com/problems/number-of-enclaves/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Closed Islands",
+              "question": "https://leetcode.com/problems/number-of-closed-islands/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Count Sub Islands",
+              "question": "https://leetcode.com/problems/count-sub-islands/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Nearest Exit from Entrance in Maze",
+              "question": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Rotting Oranges",
+              "question": "https://leetcode.com/problems/rotting-oranges/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Shortest Bridge",
+              "question": "https://leetcode.com/problems/shortest-bridge/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Coloring a Border",
+              "question": "https://leetcode.com/problems/coloring-a-border/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find All Groups of Farmland",
+              "question": "https://leetcode.com/problems/find-all-groups-of-farmland/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "K Highest Ranked Items Within a Price Range",
+              "question": "https://leetcode.com/problems/k-highest-ranked-items-within-a-price-range/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Path With Minimum Effort",
+              "question": "https://leetcode.com/problems/path-with-minimum-effort/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Detect Cycles in 2D Grid",
+              "question": "https://leetcode.com/problems/detect-cycles-in-2d-grid/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Max Area of Island",
+              "question": "https://leetcode.com/problems/max-area-of-island/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "The Maze",
+              "question": "https://leetcode.com/problems/the-maze/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "The Maze II",
+              "question": "https://leetcode.com/problems/the-maze-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Walls and Gates",
+              "question": "https://leetcode.com/problems/walls-and-gates/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Pacific Atlantic Water Flow",
+              "question": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Surrounded Regions",
+              "question": "https://leetcode.com/problems/surrounded-regions/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Making a Large Island",
+              "question": "https://leetcode.com/problems/making-a-large-island/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Swim in Rising Water",
+              "question": "https://leetcode.com/problems/swim-in-rising-water/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Last Day Where You Can Still Cross",
+              "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Cut Off Trees for Golf Event",
+              "question": "https://leetcode.com/problems/cut-off-trees-for-golf-event/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Cost to Make At Least One Valid Path in a Grid",
+              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Shortest Path in a Grid with Obstacles Elimination",
+              "question": "https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Topological Sorting",
+          "problems": [
+            {
+              "label": "Course Schedule",
+              "question": "https://leetcode.com/problems/course-schedule/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Course Schedule II",
+              "question": "https://leetcode.com/problems/course-schedule-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Course Schedule IV",
+              "question": "https://leetcode.com/problems/course-schedule-iv/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Loud and Rich",
+              "question": "https://leetcode.com/problems/loud-and-rich/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Parallel Courses",
+              "question": "https://leetcode.com/problems/parallel-courses/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find Eventual Safe States",
+              "question": "https://leetcode.com/problems/find-eventual-safe-states/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Height Trees",
+              "question": "https://leetcode.com/problems/minimum-height-trees/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Restricted Paths from First to Last Node",
+              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find All Possible Recipes from Given Supplies",
+              "question": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "All Ancestors of a Node in a DAG",
+              "question": "https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Ways to Arrive at Destination",
+              "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest Increasing Path in a Matrix",
+              "question": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Rank Transform of a Matrix",
+              "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Parallel Courses III",
+              "question": "https://leetcode.com/problems/parallel-courses-iii/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Alien Dictionary [IMPO]",
+              "question": "https://leetcode.com/problems/alien-dictionary/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Largest Color Value in a Directed Graph [DFS, Dijkstra, Topological Sort]",
+              "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Dijkstra Algorithm Graph (Shortest Path)",
+          "problems": [
+            {
+              "label": "Network Delay Time",
+              "question": "https://leetcode.com/problems/network-delay-time/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Path With Maximum Probability",
+              "question": "https://leetcode.com/problems/path-with-maximum-probability/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Restricted Paths from First to Last Node",
+              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Cheapest Flights Within K Stops",
+              "question": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Ways to Arrive at Destination",
+              "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "The Maze II",
+              "question": "https://leetcode.com/problems/the-maze-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
+              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Reachable Nodes in Subdivided Graph",
+              "question": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Cost to Reach City With Discounts",
+              "question": "https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find Minimum Time to Reach Last Room I",
+              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find Edges in Shortest Paths",
+              "question": "https://leetcode.com/problems/find-edges-in-shortest-paths/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Time to Visit a Cell in a Grid",
+              "question": "http://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "0-1 BFS",
+          "problems": [
+            {
+              "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
+              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Obstacle Removal to Reach Corner",
+              "question": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Geometry",
+      "problems": [
+        {
+          "label": "Check if it is a Straight Line",
+          "question": "https://leetcode.com/problems/check-if-it-is-a-straight-line/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkStraightLine.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Rectangle Overlap",
+          "question": "https://leetcode.com/problems/rectangle-overlap/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/isRectangleOverlap.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Largest Triangle Area",
+          "question": "https://leetcode.com/problems/largest-triangle-area/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Matrix Cells in Distance Order",
+          "question": "https://leetcode.com/problems/matrix-cells-in-distance-order/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/allCellsDistOrder.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Minimum Time Visiting All Points",
+          "question": "https://leetcode.com/problems/minimum-time-visiting-all-points/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Rectangle Area",
+          "question": "https://leetcode.com/problems/rectangle-area/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/computeAreaOverlapRectangle.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Valid Square",
+          "question": "https://leetcode.com/problems/valid-square/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Circle and Rectangle Overlapping",
+          "question": "https://leetcode.com/problems/circle-and-rectangle-overlapping/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkOverlap.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Queries on Number of Points Inside a Circle",
+          "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countPoints.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Area Rectangle",
+          "question": "https://leetcode.com/problems/minimum-area-rectangle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAreaRect.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "K Closest Points to Origin",
+          "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Max Points on a Line",
+          "question": "https://leetcode.com/problems/max-points-on-a-line/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Number of Visible Points",
+          "question": "Maximum Number of Visible Points - LeetCode",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Disjoint Set Unions",
+      "problems": [
+        {
+          "label": "Find Cycle in undirected graph",
+          "question": "https://www.geeksforgeeks.org/detect-cycle-in-graph-using-dsu/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count connected Components in undirected graph",
+          "question": "https://www.geeksforgeeks.org/number-of-connected-components-of-a-graph-using-disjoint-set-union/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of operations to make network connected",
+          "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "The earliest moment when everyone become friends",
+          "question": "https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Smallest string with swaps",
+          "question": "https://leetcode.com/problems/smallest-string-with-swaps/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Satisfiability of equality equations [Nice Q.]",
+          "question": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Accounts merge",
+          "question": "https://leetcode.com/problems/accounts-merge/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Min cost to connect all points",
+          "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Synonymous sentences [IMPO, google]",
+          "question": "https://leetcode.com/problems/synonymous-sentences/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Lexicographically smallest equivalent string [IMPO, google]",
+          "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Regions cut by slashes [Good Q.]",
+          "question": "https://leetcode.com/problems/regions-cut-by-slashes/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Similar string groups",
+          "question": "https://leetcode.com/problems/similar-string-groups/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimize malware spread",
+          "question": "https://leetcode.com/problems/minimize-malware-spread/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Largest component size by common factor",
+          "question": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Find all people with secret",
+          "question": "https://leetcode.com/problems/find-all-people-with-secret/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Groups of strings",
+          "question": "https://leetcode.com/problems/groups-of-strings/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Process restricted friend requests [google]",
+          "question": "https://leetcode.com/problems/process-restricted-friend-requests/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Checking existence of edge length limited paths",
+          "question": "https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Remove max number of edges to keep graph fully traversable",
+          "question": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Swim in rising water",
+          "question": "https://leetcode.com/problems/swim-in-rising-water/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Graph connectivity with threshold",
+          "question": "https://leetcode.com/problems/graph-connectivity-with-threshold/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Bricks falling when hit [Very Good Question]",
+          "question": "https://leetcode.com/problems/bricks-falling-when-hit/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Optimize water distribution in a village [LC premium]",
+          "question": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
       ]
     },
     {
@@ -2558,6 +2650,5 @@
         }
       ]
     }
-    
   ]
 }
