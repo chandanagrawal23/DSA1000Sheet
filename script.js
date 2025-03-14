@@ -337,20 +337,20 @@ function buildRectBar() {
         <span id="overallSolvedText" class="overall-text">0/0 Solved</span>
       </div>
       <div class="difficulty-breakdown">
-        <div class="difficulty-counts">
-          <span id="easyStats" class="diff-easy">Easy: 0/0</span>
-          <span id="mediumStats" class="diff-medium">Medium: 0/0</span>
-          <span id="hardStats" class="diff-hard">Hard: 0/0</span>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+          <div style="text-align: center;">
+            <div id="easyStats" class="diff-easy">Easy: 0/0</div>
+            <div class="unique-count easy-unique" style="opacity: 0.7;">(0 unique)</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="mediumStats" class="diff-medium">Medium: 0/0</div>
+            <div class="unique-count medium-unique" style="opacity: 0.7;">(0 unique)</div>
+          </div>
+          <div style="text-align: center;">
+            <div id="hardStats" class="diff-hard">Hard: 0/0</div>
+            <div class="unique-count hard-unique" style="opacity: 0.7;">(0 unique)</div>
+          </div>
         </div>
-        <div class="unique-counts">
-          <span class="unique-count easy-unique">(0 unique)</span>
-          <span class="unique-count medium-unique">(0 unique)</span>
-          <span class="unique-count hard-unique">(0 unique)</span>
-        </div>
-      </div>
-      <div class="unique-stats">
-        <div class="total-unique">Unique Problems: ${uniqueProblems.size}</div>
-        <div class="unique-breakdown">(E: ${uniqueEasy.size}, M: ${uniqueMedium.size}, H: ${uniqueHard.size})</div>
       </div>
     </div>
   `;
@@ -913,6 +913,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize dark mode
     initializeDarkMode();
+    
+    // Add footer text with hyperlink
+    const footer = document.createElement('a');
+    footer.href = 'https://www.youtube.com/@BhajanMarg';
+    footer.target = '_blank';
+    footer.rel = 'noopener noreferrer';
+    footer.style.cssText = `
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+        font-size: 24px;
+        opacity: 0.08;
+        color: var(--text-primary);
+        font-family: 'Noto Sans Devanagari', sans-serif;
+        text-decoration: none;
+        z-index: 1;
+        user-select: none;
+        text-shadow: 0 0 1px rgba(0,0,0,0.1);
+        transition: opacity 0.3s ease;
+    `;
+    footer.textContent = 'श्री राधे';
+    footer.addEventListener('mouseover', () => footer.style.opacity = '0.3');
+    footer.addEventListener('mouseout', () => footer.style.opacity = '0.08');
+    document.body.appendChild(footer);
     
     // Set up search with debouncing
     const searchBox = document.getElementById('searchBox');
