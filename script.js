@@ -924,7 +924,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bottom: 10px;
         right: 20px;
         font-size: 24px;
-        opacity: 0.08;
+        opacity: 0.25;
         color: var(--text-primary);
         font-family: 'Noto Sans Devanagari', sans-serif;
         text-decoration: none;
@@ -934,8 +934,8 @@ document.addEventListener('DOMContentLoaded', function() {
         transition: opacity 0.3s ease;
     `;
     footer.textContent = 'श्री राधे';
-    footer.addEventListener('mouseover', () => footer.style.opacity = '0.3');
-    footer.addEventListener('mouseout', () => footer.style.opacity = '0.08');
+    footer.addEventListener('mouseover', () => footer.style.opacity = '0.5');
+    footer.addEventListener('mouseout', () => footer.style.opacity = '0.25');
     document.body.appendChild(footer);
     
     // Set up search with debouncing

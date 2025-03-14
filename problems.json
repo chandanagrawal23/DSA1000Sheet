@@ -2,162 +2,173 @@
   "sections": [
     {
       "title": "Stack",
-      "problems": [
+      "subsections": [
         {
-          "label": "Valid Parentheses",
-          "question": "https://leetcode.com/problems/valid-parentheses/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Valid_Parentheses.cpp",
-          "difficulty": "easy"
+          "title": "Normal Stack",
+          "problems": [
+            {
+              "label": "Valid Parentheses",
+              "question": "https://leetcode.com/problems/valid-parentheses/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Valid_Parentheses.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Remove All Adjacent Duplicates in String",
+              "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacent.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Make the String Great",
+              "question": "https://leetcode.com/problems/make-the-string-great/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeStringGreat.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Binary Tree Preorder Traversal",
+              "question": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreePreorder_using_stack.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "N-Ary Tree Preorder Traversal",
+              "question": "https://leetcode.com/problems/n-ary-tree-preorder-traversal/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/N_Array_Tree_PreOrder.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Min Stack",
+              "question": "https://leetcode.com/problems/min-stack/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinStack.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Basic Calculator II",
+              "question": "https://leetcode.com/problems/basic-calculator-ii",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BasicCalculator_II.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Design Browser History",
+              "question": "https://leetcode.com/problems/design-browser-history/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BrowserHistory.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Decode String",
+              "question": "https://leetcode.com/problems/decode-string",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Simplify Path",
+              "question": "https://leetcode.com/problems/simplify-path/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Simple Text Editor",
+              "question": "https://www.hackerrank.com/challenges/simple-text-editor/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/simpleTextEditor.cpp",
+              "difficulty": "medium"
+            },
+
+            {
+              "label": "Remove All Adjacent Duplicates in String II",
+              "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacentDuplicatesinStringII.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Remove to Make Valid Parentheses [FB]",
+              "question": "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minRemoveToMakeValid.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Add to Make Parentheses Valid [FB]",
+              "question": "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAddToMakeValid.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Largest Rectangle in Histogram",
+              "question": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Trapping Rain Water",
+              "question": "https://leetcode.com/problems/trapping-rain-water/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Longest Valid Parentheses",
+              "question": "https://leetcode.com/problems/longest-valid-parentheses/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
+              "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
+              "difficulty": "hard"
+            }
+          ]
         },
         {
-          "label": "Remove All Adjacent Duplicates in String",
-          "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacent.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Make the String Great",
-          "question": "https://leetcode.com/problems/make-the-string-great/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeStringGreat.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Binary Tree Preorder Traversal",
-          "question": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreePreorder_using_stack.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "N-Ary Tree Preorder Traversal",
-          "question": "https://leetcode.com/problems/n-ary-tree-preorder-traversal/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/N_Array_Tree_PreOrder.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Min Stack",
-          "question": "https://leetcode.com/problems/min-stack/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinStack.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Next Larger Element (Monotonic Stack)",
-          "question": "https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Next Greater Element II (Monotonic Stack)",
-          "question": "https://leetcode.com/problems/next-greater-element-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement2.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Beautiful Towers II (Monotonic Stack)",
-          "question": "http://leetcode.com/problems/beautiful-towers-ii",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Basic Calculator II",
-          "question": "https://leetcode.com/problems/basic-calculator-ii",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BasicCalculator_II.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Online Stock Span (Monotonic Stack)",
-          "question": "https://leetcode.com/problems/online-stock-span/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/StockSpanner.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Design Browser History",
-          "question": "https://leetcode.com/problems/design-browser-history/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BrowserHistory.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Remove K Digits (Monotonic Stack)",
-          "question": "https://leetcode.com/problems/remove-k-digits/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeKdigits.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Decode String",
-          "question": "https://leetcode.com/problems/decode-string",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Simplify Path",
-          "question": "https://leetcode.com/problems/simplify-path/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Asteroid Collision [PREMIUM Google] (Monotonic Stack)",
-          "question": "https://leetcode.com/problems/asteroid-collision/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AsteroidCollision.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Simple Text Editor",
-          "question": "https://www.hackerrank.com/challenges/simple-text-editor/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/simpleTextEditor.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Buildings with an Ocean View [PREMIUM Facebook] (Monotonic Stack)",
-          "question": "https://leetcode.com/problems/buildings-with-an-ocean-view/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BuildingsWithanOceanView.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Remove All Adjacent Duplicates in String II",
-          "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RemoveAllAdjacentDuplicatesinStringII.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Remove to Make Valid Parentheses [FB]",
-          "question": "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minRemoveToMakeValid.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Add to Make Parentheses Valid [FB]",
-          "question": "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAddToMakeValid.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Daily Temperatures (Monotonic Stack)",
-          "question": "https://leetcode.com/problems/daily-temperatures/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DailyTemperatures.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Largest Rectangle in Histogram",
-          "question": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Trapping Rain Water",
-          "question": "https://leetcode.com/problems/trapping-rain-water/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Longest Valid Parentheses",
-          "question": "https://leetcode.com/problems/longest-valid-parentheses/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
-          "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
-          "difficulty": "hard"
+          "title": "Monotonic Stack",
+          "problems": [
+            {
+              "label": "Next Larger Element",
+              "question": "https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Next Greater Element II",
+              "question": "https://leetcode.com/problems/next-greater-element-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement2.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Beautiful Towers II",
+              "question": "http://leetcode.com/problems/beautiful-towers-ii",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Online Stock Span",
+              "question": "https://leetcode.com/problems/online-stock-span/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/StockSpanner.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Remove K Digits",
+              "question": "https://leetcode.com/problems/remove-k-digits/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeKdigits.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Asteroid Collision [PREMIUM Google]",
+              "question": "https://leetcode.com/problems/asteroid-collision/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AsteroidCollision.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Buildings with an Ocean View [PREMIUM Facebook]",
+              "question": "https://leetcode.com/problems/buildings-with-an-ocean-view/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BuildingsWithanOceanView.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Daily Temperatures",
+              "question": "https://leetcode.com/problems/daily-temperatures/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DailyTemperatures.cpp",
+              "difficulty": "medium"
+            }
+          ]
         }
       ]
     },
@@ -535,7 +546,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "K Closest Points to Origin - LeetCode",
+          "label": "K Closest Points to Origin (Heap/Sorting)",
           "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
           "difficulty": "medium"
@@ -2440,9 +2451,9 @@
           "difficulty": "medium"
         },
         {
-          "label": "K Closest Points to Origin",
-          "question": "https://leetcode.com/problems/k-closest-points-to-origin/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
+          "label": "Separate Squares I (Google, Answer on Binary Search)",
+          "question": "https://leetcode.com/problems/separate-squares-i/description/",
+          "solution": "-",
           "difficulty": "medium"
         },
         {
@@ -2454,6 +2465,89 @@
         {
           "label": "Maximum Number of Visible Points",
           "question": "Maximum Number of Visible Points - LeetCode",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Bit Manipulation",
+      "problems": [
+        {
+          "label": "Number of 1 Bits",
+          "question": "https://leetcode.com/problems/number-of-1-bits/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Power of Two",
+          "question": "http://leetcode.com/problems/power-of-two/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "First Letter to Appear Twice",
+          "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Convert a Number to Hexadecimal",
+          "question": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Subsets",
+          "question": "https://leetcode.com/problems/subsets/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Subarray With OR at Least K",
+          "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-i/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Single Number II",
+          "question": "https://leetcode.com/problems/single-number-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Single Number III",
+          "question": "https://leetcode.com/problems/single-number-iii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Subarray With OR at Least K II",
+          "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Wonderful Substrings",
+          "question": "https://leetcode.com/problems/number-of-wonderful-substrings/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum OR",
+          "question": "https://leetcode.com/problems/maximum-or/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Shortest Path to Get All Keys",
+          "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+          "question": "https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -2603,83 +2697,89 @@
       ]
     },
     {
-      "title": "Bit Manipulation",
+      "title": "Tries",
       "problems": [
         {
-          "label": "Number of 1 Bits",
-          "question": "https://leetcode.com/problems/number-of-1-bits/",
+          "label": "Longest Common Prefix",
+          "question": "https://leetcode.com/problems/longest-common-prefix/",
           "solution": "-",
           "difficulty": "easy"
         },
         {
-          "label": "Power of Two",
-          "question": "http://leetcode.com/problems/power-of-two/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "First Letter to Appear Twice",
-          "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Convert a Number to Hexadecimal",
-          "question": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Subsets",
-          "question": "https://leetcode.com/problems/subsets/",
+          "label": "Implement Trie (Prefix Tree)",
+          "question": "https://leetcode.com/problems/implement-trie-prefix-tree/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Shortest Subarray With OR at Least K",
-          "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-i/",
+          "label": "Maximum XOR of Two Numbers in an Array",
+          "question": "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Single Number II",
-          "question": "https://leetcode.com/problems/single-number-ii/",
+          "label": "Map Sum Pairs",
+          "question": "https://leetcode.com/problems/map-sum-pairs/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Single Number III",
-          "question": "https://leetcode.com/problems/single-number-iii/",
+          "label": "Search Suggestions System",
+          "question": "https://leetcode.com/problems/search-suggestions-system/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Shortest Subarray With OR at Least K II",
-          "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
+          "label": "Add and Search Word - Data structure design",
+          "question": "https://leetcode.com/problems/add-and-search-word-data-structure-design/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Number of Wonderful Substrings",
-          "question": "https://leetcode.com/problems/number-of-wonderful-substrings/",
+          "label": "Longest Word in Dictionary",
+          "question": "https://leetcode.com/problems/longest-word-in-dictionary/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Maximum OR",
-          "question": "https://leetcode.com/problems/maximum-or/",
+          "label": "Replace Words",
+          "question": "https://leetcode.com/problems/replace-words/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Shortest Path to Get All Keys",
-          "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+          "label": "Prefix and Suffix Search",
+          "question": "https://leetcode.com/problems/prefix-and-suffix-search/",
           "solution": "-",
           "difficulty": "hard"
         },
         {
-          "label": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
-          "question": "https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/",
+          "label": "Design Search Autocomplete System",
+          "question": "https://leetcode.ca/all/642.html",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Word Search II ( Trie + Backtracking )",
+          "question": "https://leetcode.com/problems/word-search-ii/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Palindrome Pairs",
+          "question": "https://leetcode.com/problems/palindrome-pairs/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Stream of Characters",
+          "question": "https://leetcode.com/problems/stream-of-characters/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Concatenated Words",
+          "question": "https://leetcode.com/problems/concatenated-words/",
           "solution": "-",
           "difficulty": "hard"
         }
