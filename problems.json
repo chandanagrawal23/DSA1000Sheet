@@ -151,14 +151,14 @@
               "difficulty": "medium"
             },
             {
-              "label": "Asteroid Collision [PREMIUM Google]",
+              "label": "Asteroid Collision [Google]",
               "question": "https://leetcode.com/problems/asteroid-collision/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AsteroidCollision.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Buildings with an Ocean View [PREMIUM Facebook]",
-              "question": "https://leetcode.com/problems/buildings-with-an-ocean-view/",
+              "question": "https://leetcode.ca/2021-04-14-1762-Buildings-With-an-Ocean-View/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BuildingsWithanOceanView.cpp",
               "difficulty": "medium"
             },
@@ -1079,36 +1079,128 @@
     },
     {
       "title": "Recursion",
-      "problems": [
+      "subsections": [
         {
-          "label": "Climbing Stairs",
-          "question": "https://leetcode.com/problems/climbing-stairs/",
-          "solution": "-",
-          "difficulty": "easy"
+          "title": "Simple",
+          "problems": [
+            {
+              "label": "Factorial of a Number",
+              "question": "https://www.geeksforgeeks.org/program-for-factorial-of-a-number/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Fibonacci Number",
+              "question": "https://leetcode.com/problems/fibonacci-number/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Sum of Digits of a Number",
+              "question": "https://www.geeksforgeeks.org/sum-digits-number-using-recursion/",
+              "solution": "-",
+              "difficulty": "easy"
+            }
+          ]
         },
         {
-          "label": "Power of Two",
-          "question": "https://leetcode.com/problems/power-of-two/",
-          "solution": "-",
-          "difficulty": "easy"
+          "title": "Math",
+          "problems": [
+            {
+              "label": "Power of Two",
+              "question": "https://leetcode.com/problems/power-of-two/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "GCD of Two Numbers",
+              "question": "https://www.geeksforgeeks.org/program-to-find-gcd-or-hcf-of-two-numbers/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Tower of Hanoi",
+              "question": "https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/",
+              "solution": "-",
+              "difficulty": "medium"
+            }
+          ]
         },
         {
-          "label": "Factorial",
-          "question": "https://www.geeksforgeeks.org/program-for-factorial-of-a-number/",
-          "solution": "-",
-          "difficulty": "easy"
+          "title": "LinkedList",
+          "problems": [
+            {
+              "label": "Count Nodes in Linked List",
+              "question": "https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Reverse a Linked List",
+              "question": "https://leetcode.com/problems/reverse-linked-list/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Merge Two Sorted Linked Lists",
+              "question": "https://leetcode.com/problems/merge-two-sorted-lists/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Check if Linked List is Palindrome",
+              "question": "https://leetcode.com/problems/palindrome-linked-list/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Reverse Linked List II",
+              "question": "https://leetcode.com/problems/reverse-linked-list-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Flatten a Linked List",
+              "question": "https://www.geeksforgeeks.org/flattening-a-linked-list/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Sort List",
+              "question": "https://leetcode.com/problems/sort-list/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Reverse Nodes in K-Group",
+              "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
         },
         {
-          "label": "Fibonacci Number",
-          "question": "https://leetcode.com/problems/fibonacci-number/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Sum of Natural Numbers",
-          "question": "https://www.geeksforgeeks.org/sum-of-natural-numbers-using-recursion/",
-          "solution": "-",
-          "difficulty": "easy"
+          "title": "String",
+          "problems": [
+            {
+              "label": "Reverse a String using Recursion",
+              "question": "https://www.geeksforgeeks.org/reverse-a-string-using-recursion/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Check Palindrome using Recursion",
+              "question": "https://www.geeksforgeeks.org/c-program-check-given-string-palindrome/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "String to Integer (Atoi)",
+              "question": "https://leetcode.com/problems/string-to-integer-atoi/",
+              "solution": "-",
+              "difficulty": "medium"
+            }
+          ]
         }
       ]
     },
@@ -1128,6 +1220,36 @@
           "difficulty": "easy"
         },
         {
+          "label": "Permutation",
+          "question": "https://leetcode.com/problems/permutations/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Permutation II",
+          "question": "https://leetcode.com/problems/permutations-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Subsets",
+          "question": "https://leetcode.com/problems/subsets/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Subsets II",
+          "question": "https://leetcode.com/problems/subsets-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Target Sum",
+          "question": "https://leetcode.com/problems/target-sum/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Combination Sum I",
           "question": "https://leetcode.com/problems/combination-sum/",
           "solution": "-",
@@ -1142,18 +1264,6 @@
         {
           "label": "Combination Sum III",
           "question": "https://leetcode.com/problems/combination-sum-iii/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Subsets",
-          "question": "https://leetcode.com/problems/subsets/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Permutation",
-          "question": "https://leetcode.com/problems/permutations/",
           "solution": "-",
           "difficulty": "medium"
         },
@@ -1188,6 +1298,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Beautiful Arrangement",
+          "question": "https://leetcode.com/problems/beautiful-arrangement/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "N-Queens",
           "question": "https://leetcode.com/problems/n-queens/",
           "solution": "-",
@@ -1200,20 +1316,14 @@
           "difficulty": "hard"
         },
         {
-          "label": "The Maze III",
-          "question": "https://leetcode.com/problems/the-maze-iii/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
           "label": "Knight's Tour",
           "question": "https://www.geeksforgeeks.org/the-knights-tour-problem/",
           "solution": "-",
           "difficulty": "hard"
         },
         {
-          "label": "Remove Invalid Parentheses",
-          "question": "https://leetcode.com/problems/remove-invalid-parentheses/",
+          "label": "Unique Paths III (DFS + Backtracking)",
+          "question": "https://leetcode.com/problems/unique-paths-iii/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -1896,6 +2006,184 @@
       ]
     },
     {
+      "title": "Math",
+      "problems": [
+        {
+          "label": "Missing Number",
+          "question": "https://leetcode.com/problems/missing-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Smallest Even Multiple",
+          "question": "https://leetcode.com/problems/smallest-even-multiple/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Three Divisors",
+          "question": "https://leetcode.com/problems/three-divisors/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Greatest Common Divisor of Array",
+          "question": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sqrt(x)",
+          "question": "https://leetcode.com/problems/sqrtx/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Happy Number",
+          "question": "https://leetcode.com/problems/happy-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Convert Date to Binary",
+          "question": "https://leetcode.com/problems/convert-date-to-binary/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count Primes",
+          "question": "https://leetcode.com/problems/count-primes/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Bulb Switcher",
+          "question": "https://leetcode.com/problems/bulb-switcher/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Water and Jug Problem",
+          "question": "https://leetcode.com/problems/water-and-jug-problem/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Subarrays with LCM Equal to K",
+          "question": "https://leetcode.com/problems/number-of-subarrays-with-lcm-equal-to-k/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Sum of Square Numbers",
+          "question": "https://leetcode.com/problems/sum-of-square-numbers/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "The Kth Factor of N",
+          "question": "https://leetcode.com/problems/the-kth-factor-of-n/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Greatest Common Divisor Traversal",
+          "question": "https://leetcode.com/problems/greatest-common-divisor-traversal/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Nth Magical Number",
+          "question": "https://leetcode.com/problems/nth-magical-number/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Geometry",
+      "problems": [
+        {
+          "label": "Check if it is a Straight Line",
+          "question": "https://leetcode.com/problems/check-if-it-is-a-straight-line/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkStraightLine.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Rectangle Overlap",
+          "question": "https://leetcode.com/problems/rectangle-overlap/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/isRectangleOverlap.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Largest Triangle Area",
+          "question": "https://leetcode.com/problems/largest-triangle-area/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Matrix Cells in Distance Order",
+          "question": "https://leetcode.com/problems/matrix-cells-in-distance-order/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/allCellsDistOrder.cpp",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Minimum Time Visiting All Points",
+          "question": "https://leetcode.com/problems/minimum-time-visiting-all-points/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Rectangle Area",
+          "question": "https://leetcode.com/problems/rectangle-area/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/computeAreaOverlapRectangle.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Valid Square",
+          "question": "https://leetcode.com/problems/valid-square/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Circle and Rectangle Overlapping",
+          "question": "https://leetcode.com/problems/circle-and-rectangle-overlapping/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkOverlap.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Queries on Number of Points Inside a Circle",
+          "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countPoints.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Area Rectangle",
+          "question": "https://leetcode.com/problems/minimum-area-rectangle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAreaRect.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Separate Squares I (Google, Answer on Binary Search)",
+          "question": "https://leetcode.com/problems/separate-squares-i/description/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Max Points on a Line",
+          "question": "https://leetcode.com/problems/max-points-on-a-line/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Number of Visible Points",
+          "question": "Maximum Number of Visible Points - LeetCode",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
       "title": "Graph",
       "subsections": [
         {
@@ -2388,89 +2676,6 @@
       ]
     },
     {
-      "title": "Geometry",
-      "problems": [
-        {
-          "label": "Check if it is a Straight Line",
-          "question": "https://leetcode.com/problems/check-if-it-is-a-straight-line/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkStraightLine.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Rectangle Overlap",
-          "question": "https://leetcode.com/problems/rectangle-overlap/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/isRectangleOverlap.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Largest Triangle Area",
-          "question": "https://leetcode.com/problems/largest-triangle-area/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Matrix Cells in Distance Order",
-          "question": "https://leetcode.com/problems/matrix-cells-in-distance-order/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/allCellsDistOrder.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Minimum Time Visiting All Points",
-          "question": "https://leetcode.com/problems/minimum-time-visiting-all-points/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Rectangle Area",
-          "question": "https://leetcode.com/problems/rectangle-area/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/computeAreaOverlapRectangle.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Valid Square",
-          "question": "https://leetcode.com/problems/valid-square/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Circle and Rectangle Overlapping",
-          "question": "https://leetcode.com/problems/circle-and-rectangle-overlapping/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkOverlap.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Queries on Number of Points Inside a Circle",
-          "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countPoints.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Area Rectangle",
-          "question": "https://leetcode.com/problems/minimum-area-rectangle/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAreaRect.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Separate Squares I (Google, Answer on Binary Search)",
-          "question": "https://leetcode.com/problems/separate-squares-i/description/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Max Points on a Line",
-          "question": "https://leetcode.com/problems/max-points-on-a-line/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Maximum Number of Visible Points",
-          "question": "Maximum Number of Visible Points - LeetCode",
-          "solution": "-",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
       "title": "Bit Manipulation",
       "problems": [
         {
@@ -2748,6 +2953,18 @@
           "difficulty": "medium"
         },
         {
+          "label": "Implement Magic Dictionary",
+          "question": "https://leetcode.com/problems/implement-magic-dictionary/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Length of the Longest Common Prefix",
+          "question": "https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Prefix and Suffix Search",
           "question": "https://leetcode.com/problems/prefix-and-suffix-search/",
           "solution": "-",
@@ -2782,8 +2999,195 @@
           "question": "https://leetcode.com/problems/concatenated-words/",
           "solution": "-",
           "difficulty": "hard"
+        },
+        {
+          "label": "Word Break II",
+          "question": "https://leetcode.com/problems/word-break-ii/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum XOR With an Element From Array",
+          "question": "https://leetcode.com/problems/maximum-xor-with-an-element-from-array/",
+          "solution": "-",
+          "difficulty": "hard"
         }
       ]
-    }
+    },
+    {
+      "title": "Puzzles",
+      "subsections": [
+        {
+          "title": "Analytical / Mathematical Puzzles",
+          "problems": [
+            {
+              "label": "Find ages of daughters (Google, Microsoft)",
+              "question": "https://www.geeksforgeeks.org/puzzle-2-find-ages-of-daughters/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Monty Hall problem (VMWare)",
+              "question": "https://www.geeksforgeeks.org/puzzle-6-monty-hall-problem/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "6×6 Grid - Ways to Reach Bottom Right (Amazon, Zoho)",
+              "question": "https://www.geeksforgeeks.org/puzzle-6x6-grid-how-many-ways/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Calculate total distance traveled by bee (Yahoo)",
+              "question": "https://www.geeksforgeeks.org/calculate-total-distance-traveled-by-bee/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "2 Eggs and 100 Floors (Google, Microsoft)",
+              "question": "https://www.geeksforgeeks.org/2-eggs-100-floors-puzzle/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximize the probability of White Ball (Amazon)",
+              "question": "https://www.geeksforgeeks.org/maximize-probability-white-ball/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Hourglasses Puzzle (Bank of America, Yahoo)",
+              "question": "https://www.geeksforgeeks.org/hourglass-puzzle/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Poison and Rat (Amazon)",
+              "question": "https://www.geeksforgeeks.org/poison-and-rat-puzzle/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Logical Puzzles",
+          "problems": [
+            {
+              "label": "3 Bulbs and 3 Switches (MakeMyTrip, Qualcomm)",
+              "question": "https://www.geeksforgeeks.org/3-bulbs-3-switches-puzzle/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Water Jug Problem (Wells Fargo)",
+              "question": "https://www.geeksforgeeks.org/water-jug-problem/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Blind man and Pills (Mentor Graphics)",
+              "question": "https://www.geeksforgeeks.org/blind-man-and-pills-puzzle/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "5 Pirates and 100 Gold Coins (Microsoft)",
+              "question": "https://www.geeksforgeeks.org/5-pirates-and-100-gold-coins/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "100 Prisoners with Red/Black Hats (Google, Microsoft)",
+              "question": "https://www.geeksforgeeks.org/100-prisoners-hats-puzzle/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find the fastest 3 horses (Accolite, Goldman Sachs, MakeMyTrip)",
+              "question": "https://www.geeksforgeeks.org/find-the-fastest-3-horses/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Arrangement Puzzles",
+          "problems": [
+            {
+              "label": "10 Coins Puzzle (Google, Yahoo)",
+              "question": "https://www.geeksforgeeks.org/10-coins-puzzle/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Tic Tac Toe Puzzle (Amazon)",
+              "question": "https://www.geeksforgeeks.org/tic-tac-toe-puzzle/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Days of the month using 2 dice (Microsoft)",
+              "question": "https://www.geeksforgeeks.org/days-of-the-month-using-2-dice/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Matchstick Puzzle (Kirloskar Brothers, SLB)",
+              "question": "https://www.geeksforgeeks.org/matchstick-puzzle/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "10 Balls in 5 Lines (Publicis Sapient)",
+              "question": "https://www.geeksforgeeks.org/10-balls-in-5-lines-puzzle/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Round table coin game (ElectrifAi)",
+              "question": "https://www.geeksforgeeks.org/round-table-coin-game/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Shape-Based Puzzles",
+          "problems": [
+            {
+              "label": "3 cuts to cut the round cake into 8 equal pieces (Adobe, Citius Tech, Cognizant)",
+              "question": "https://www.geeksforgeeks.org/puzzle-3-cuts-cut-round-cake-8-equal-pieces/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Chessboard and dominos (Google)",
+              "question": "https://www.geeksforgeeks.org/puzzle-25chessboard-and-dominos/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Splitting a Cake with a Missing Piece in two equal portions (SAP)",
+              "question": "https://www.geeksforgeeks.org/puzzle-splitting-a-cake-with-a-missing-piece-in-two-equal-portion/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum pieces that can be cut from a Circle using 6 straight lines (TCS)",
+              "question": "https://www.geeksforgeeks.org/puzzle-maximum-pieces-that-can-be-cut-from-a-circle-using-6-straight-lines/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "3 Ants and Triangle (Intuit, ZS Associate, EXL)",
+              "question": "https://www.geeksforgeeks.org/3-ants-and-triangle-puzzle/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        }
+      ]
+    }    
   ]
 }
