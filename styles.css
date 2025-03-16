@@ -1419,3 +1419,220 @@ td:first-child {
     background-color: var(--text-secondary);
     opacity: 0.15;
   }
+  #go-to-top-button {
+    display: inline-block;
+    background-color: #3452c7;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s,
+        opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#go-to-top-button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
+
+#go-to-top-button:hover {
+    cursor: pointer;
+    background-color: #dc5c5c;
+}
+
+#go-to-top-button:active {
+    background-color: #555;
+}
+
+#go-to-top-button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Styles for the content section */
+
+.content {
+    width: 77%;
+    margin: 50px auto;
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
+    color: #6c767a;
+    line-height: 1.9;
+}
+
+@media (min-width: 500px) {
+    .content {
+        width: 43%;
+    }
+
+    #go-to-top-button {
+        margin: 30px;
+    }
+}
+
+.content h1 {
+    margin-bottom: -10px;
+    color: #03a9f4;
+    line-height: 1.5;
+}
+
+.content h3 {
+    font-style: italic;
+    color: #96a2a7;
+}
+/* Mobile table styles */
+@media screen and (max-width: 768px) {
+  .problem-table {
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .problem-table thead {
+    display: none;
+  }
+
+  .problem-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .problem-table tr {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--card-border);
+  }
+
+  .problem-table td {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: none;
+    min-height: 48px;
+  }
+
+  .problem-table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    min-width: 100px;
+    margin-right: 16px;
+    color: var(--text-secondary);
+  }
+
+  .problem-table td:not(:last-child) {
+    border-bottom: 1px solid rgba(var(--border-color-rgb), 0.1);
+  }
+
+  /* Question link styling for mobile */
+  .problem-table td[data-label="Question"] a {
+    flex: 1;
+    padding: 8px 16px;
+    border-radius: 8px;
+    min-width: 0;
+    height: auto;
+    text-align: left;
+    justify-content: flex-start;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.4;
+    display: inline-block;
+  }
+
+  /* Specific difficulty styles for question links only */
+  .problem-table tr.easy td[data-label="Question"] a {
+    background-color: rgba(16, 185, 129, 0.9);
+    color: white;
+  }
+
+  .problem-table tr.medium td[data-label="Question"] a {
+    background-color: rgba(245, 158, 11, 0.9);
+    color: white;
+  }
+
+  .problem-table tr.hard td[data-label="Question"] a {
+    background-color: rgba(239, 68, 68, 0.9);
+    color: white;
+  }
+
+  /* Center align specific columns in mobile */
+  .problem-table td[data-label="Solution"],
+  .problem-table td[data-label="Notes"],
+  .problem-table td[data-label="Status"] {
+    justify-content: flex-start;
+  }
+
+  /* Solution container and link styling */
+  .solution-container {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .solution-link {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    background-color: #f59e0b;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Override any potential transformations */
+  .solution-link {
+    transform: none !important;
+    writing-mode: unset !important;
+    text-orientation: unset !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    text-transform: none !important;
+    text-indent: 0 !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure solution cell has proper height and alignment */
+  .problem-table td[data-label="Solution"] {
+    min-height: 60px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* Remove previous solution button styles */
+  .solution-btn.btn-small {
+    display: none;
+  }
+
+  /* Difficulty-specific styling */
+  .problem-table tr.easy {
+    border-left: 4px solid var(--easy-color);
+  }
+
+  .problem-table tr.medium {
+    border-left: 4px solid var(--medium-color);
+  }
+
+  .problem-table tr.hard {
+    border-left: 4px solid var(--hard-color);
+  }
+}

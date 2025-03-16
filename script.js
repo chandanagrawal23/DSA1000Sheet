@@ -22,6 +22,26 @@ confettiScript.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/co
 document.head.appendChild(confettiScript);
 
 /***************************************************************
+ * GO TO TOP BUTTON
+ ***************************************************************/
+
+var btn = document.getElementById('go-to-top-button');
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 300) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+
+btn.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+/***************************************************************
  * CELEBRATION FUNCTIONS
  ***************************************************************/
 function triggerCelebration() {
@@ -660,7 +680,7 @@ function generateAccordion(section) {
    ***************************************************************/
   function generateProblemTable(problemArray, baseId) {
     return `
-      <table class="striped responsive-table highlight">
+      <table class="striped highlight problem-table">
         <thead>
           <tr>
             <th>Question</th>
@@ -674,24 +694,24 @@ function generateAccordion(section) {
             const problemId = `${baseId}-${index}`;
             return `
               <tr class="${problem.difficulty}">
-                <td>
+                <td data-label="Question">
                   <a href="${problem.question}" target="_blank">${problem.label}</a>
                 </td>
-                <td>
+                <td data-label="Solution">
                   ${
                     problem.solution !== "-"
-                      ? `<a href="${problem.solution}" target="_blank" class="btn-small waves-effect waves-light">Solution</a>`
+                      ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><span style="display:inline-block;">SOLUTION</span></a></div>`
                       : "-"
                   }
                 </td>
-                <td>
+                <td data-label="Notes">
                   <div class="centered-container">
                     <i class="material-icons notes-icon" onclick="openNotesModal('${problemId}', '${problem.label}')">
                       sticky_note_2
                     </i>
                   </div>
                 </td>
-                <td>
+                <td data-label="Status">
                   <i class="material-icons done-icon"
                      data-difficulty="${problem.difficulty}"
                      data-id="${problemId}"
@@ -922,7 +942,7 @@ document.addEventListener('DOMContentLoaded', function() {
     footer.style.cssText = `
         position: fixed;
         bottom: 10px;
-        right: 20px;
+        left: 20px;
         font-size: 24px;
         opacity: 0.25;
         color: var(--text-primary);
