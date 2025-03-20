@@ -197,7 +197,6 @@
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/simpleTextEditor.cpp",
               "difficulty": "medium"
             },
-
             {
               "label": "Remove All Adjacent Duplicates in String II",
               "question": "https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/",
@@ -2860,7 +2859,7 @@
           "label": "Minimum Time Visiting All Points",
           "question": "https://leetcode.com/problems/minimum-time-visiting-all-points/",
           "solution": "-",
-          "difficulty": "medium"
+          "difficulty": "easy"
         },
         {
           "label": "Rectangle Area",
@@ -2906,7 +2905,7 @@
         },
         {
           "label": "Maximum Number of Visible Points",
-          "question": "Maximum Number of Visible Points - LeetCode",
+          "question": "https://leetcode.com/problems/maximum-number-of-visible-points/description/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -3417,7 +3416,7 @@
               "solution": "-",
               "difficulty": "medium"
             },
-            { 
+            {
               "label": "Min Cost to Connect All Points",
               "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
               "solution": "-",
@@ -4099,7 +4098,7 @@
             },
             {
               "label": "Maximum pieces that can be cut from a Circle using 6 straight lines (TCS)",
-              "question": "https://www.geeksforgeeks.org/puzzle-maximum-pieces-that-can-be-cut-from-a-circle-using-6-straight-lines/",
+              "question": "https://www.geeksforgeeks.org/puzzle-maximum-pieces-that-can-be-cut-from-a-square-using-6-straight-lines/",
               "solution": "-",
               "difficulty": "hard"
             },
@@ -4140,7 +4139,7 @@
           "solution": "-",
           "difficulty": "medium"
         },
-        { 
+        {
           "label": "Spiral Matrix II",
           "question": "https://leetcode.com/problems/spiral-matrix-ii/",
           "solution": "-",

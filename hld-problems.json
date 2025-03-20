@@ -1,0 +1,38 @@
+{
+    "sections": [
+        {
+            "title": "Scalability Fundamentals",
+            "problems": [
+                {
+                    "label": "Design a URL Shortener like TinyURL",
+                    "difficulty": "medium",
+                    "question": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-url-shortening-service",
+                    "solution": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-url-shortening-service"
+                },
+                {
+                    "label": "Design a Rate Limiter",
+                    "difficulty": "hard",
+                    "question": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-api-rate-limiter",
+                    "solution": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-api-rate-limiter"
+                }
+            ]
+        },
+        {
+            "title": "Storage & Caching",
+            "problems": [
+                {
+                    "label": "Design a Key-Value Store",
+                    "difficulty": "hard",
+                    "question": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-key-value-store",
+                    "solution": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-key-value-store"
+                },
+                {
+                    "label": "Design a Cache System",
+                    "difficulty": "medium",
+                    "question": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-a-cache",
+                    "solution": "https://www.educative.io/courses/grokking-modern-system-design-interview-for-engineers-managers/system-design-a-cache"
+                }
+            ]
+        }
+    ]
+}

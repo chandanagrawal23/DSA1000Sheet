@@ -1536,9 +1536,7 @@
         {
           "title": "0-1 BFS",
           "problems": [
-            {
-
-            },
+            {},
             {
               "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
               "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
@@ -1552,7 +1550,7 @@
               "difficulty": "hard"
             }
           ]
-        }                        
+        }
       ]
     },
     {
@@ -1602,13 +1600,13 @@
         },
         {
           "label": "Circle and Rectangle Overlapping",
-          "question": "https://leetcode.com/problems/circle-and-rectangle-overlapping/",
+          "question": "https://leetcode.com/problems/square-and-rectangle-overlapping/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkOverlap.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Queries on Number of Points Inside a Circle",
-          "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/",
+          "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-square/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countPoints.cpp",
           "difficulty": "medium"
         },
@@ -2472,7 +2470,7 @@
               "difficulty": "hard"
             }
           ]
-        }                      
+        }
       ]
     },
     {
@@ -2558,6 +2556,5 @@
         }
       ]
     }
-    
   ]
 }

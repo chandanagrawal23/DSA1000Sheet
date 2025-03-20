@@ -108,7 +108,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
@@ -124,20 +124,20 @@ body {
 /* Search Input */
 .search-container {
     position: relative;
-    max-width: 600px;
+    max-width: 770px;
     width: 100%;
-    margin: 0 auto 2rem;
     display: flex;
     align-items: center;
+    margin: 0;
 }
-
+/* chandan */
 .search-input {
     width: 100%;
-    height: 54px;
-    padding: 0 56px;
+    height: 44px;
+    padding: 0 48px;
     background: var(--surface);
     border: 2px solid var(--card-border);
-    border-radius: 16px;
+    border-radius: 8px;
     color: var(--text-primary);
     font-size: 1.05rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -153,6 +153,7 @@ body {
     opacity: 0.8;
     font-weight: 500;
     text-align: center;
+    font-size: large;
 }
 
 .search-input:hover {
@@ -170,7 +171,7 @@ body {
 
 .search-icon {
     position: absolute;
-    right: 20px;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--text-secondary);
@@ -1097,7 +1098,7 @@ body.dark-mode .collapsible-header:hover {
 }
 
 /* Difficulty Filter Circle - IMPORTANT OVERRIDE */
-.difficulty-filter-circle {
+.difficulty-filter-square {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1119,9 +1120,9 @@ body.dark-mode .collapsible-header:hover {
   width: auto !important;
 }
 
-/* Specific override for our circle checkboxes */
-[type="checkbox"].circle-check:not(:checked),
-[type="checkbox"].circle-check:checked {
+/* Specific override for our square checkboxes */
+[type="checkbox"].square-check:not(:checked),
+[type="checkbox"].square-check:checked {
   position: static !important;
   opacity: 1 !important;
   pointer-events: auto !important;
@@ -1129,25 +1130,25 @@ body.dark-mode .collapsible-header:hover {
   height: 22px !important;
   margin: 0 !important;
   padding: 0 !important;
-  border-radius: 50% !important;
+  border-radius: 4px !important;
 }
 
 /* Override Materialize's checkbox styles */
-[type="checkbox"].circle-check:checked + span:not(.lever):before,
-[type="checkbox"].circle-check:not(:checked) + span:not(.lever):before,
-[type="checkbox"].circle-check:checked + span:not(.lever):after,
-[type="checkbox"].circle-check:not(:checked) + span:not(.lever):after {
+[type="checkbox"].square-check:checked + span:not(.lever):before,
+[type="checkbox"].square-check:not(:checked) + span:not(.lever):before,
+[type="checkbox"].square-check:checked + span:not(.lever):after,
+[type="checkbox"].square-check:not(:checked) + span:not(.lever):after {
   display: none !important;
 }
 
 /* Ensure our custom styles are applied */
-.circle-check {
+.square-check {
   appearance: none !important;
   -webkit-appearance: none !important;
   width: 22px !important;
   height: 22px !important;
   border: 3px solid var(--text-secondary) !important;
-  border-radius: 50% !important;
+  border-radius: 4px !important;
   cursor: pointer !important;
   position: relative !important;
   transition: all 0.2s ease !important;
@@ -1162,71 +1163,70 @@ body.dark-mode .collapsible-header:hover {
   display: block !important;
 }
 
-.circle-check:checked::after {
-  content: '' !important;
+.square-check:checked::after {
+  content: '\2714' !important;
   position: absolute !important;
-  width: 10px !important;
-  height: 10px !important;
-  background: white !important;
-  border-radius: 50% !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) !important;
+  font-size: 12px !important;
+  color: white !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
 }
 
 /* Easy difficulty */
-.circle-check.easy {
+.square-check.easy {
     border-color: var(--easy-color) !important;
 }
 
-.circle-check.easy:checked {
+.square-check.easy:checked {
     background-color: var(--easy-color) !important;
     border-color: var(--easy-color) !important;
 }
 
 /* Medium difficulty */
-.circle-check.medium {
+.square-check.medium {
     border-color: var(--medium-color) !important;
 }
 
-.circle-check.medium:checked {
+.square-check.medium:checked {
     background-color: var(--medium-color) !important;
     border-color: var(--medium-color) !important;
 }
 
 /* Hard difficulty */
-.circle-check.hard {
+.square-check.hard {
     border-color: var(--hard-color) !important;
 }
 
-.circle-check.hard:checked {
+.square-check.hard:checked {
     background-color: var(--hard-color) !important;
     border-color: var(--hard-color) !important;
 }
 
 /* Hover effects */
-.circle-check:hover {
+.square-check:hover {
     transform: scale(1.15) !important;
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
 }
 
 /* Dark mode styles */
-body.dark-mode .circle-check {
+body.dark-mode .square-check {
     border-color: var(--text-secondary);
 }
 
-body.dark-mode .circle-check.easy:checked {
+body.dark-mode .square-check.easy:checked {
     background-color: var(--easy-color);
     border-color: var(--easy-color);
 }
 
-body.dark-mode .circle-check.medium:checked {
+body.dark-mode .square-check.medium:checked {
     background-color: var(--medium-color);
     border-color: var(--medium-color);
 }
 
-body.dark-mode .circle-check.hard:checked {
+body.dark-mode .square-check.hard:checked {
     background-color: var(--hard-color);
     border-color: var(--hard-color);
 }
@@ -1370,8 +1370,13 @@ td {
 
 /* Materialize Overrides */
 .container {
-    width: 100% !important;
-    max-width: 1200px !important;
+    /* width: 100% !important; */
+    /* max-width: 1200px !important; */
+    display: flex;
+    align-items: center;       /* vertically center them */
+    justify-content: space-between; /* place them on opposite ends if desired */
+    flex-wrap: wrap;           /* let them wrap on smaller screens */
+    margin-bottom: 1rem;       /* spacing below this row */
 }
 
 /* Topic and Subtopic Styles */
@@ -1635,4 +1640,74 @@ td:first-child {
   .problem-table tr.hard {
     border-left: 4px solid var(--hard-color);
   }
+}
+.section-controls {
+    display: flex;
+    gap: 12px; /* Space between buttons */
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.control-button {
+    height: 49px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0px 16px;
+    background: var(--surface);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    min-width: 135px;
+}
+
+body.dark-mode .control-button {
+    background: rgba(30, 41, 59, 0.8);
+    color: white
+}
+
+.control-button i {
+    font-size: 18px;
+}
+
+body.dark-mode .control-button:hover {
+    /* background: linear-gradient(135deg, #2575FC, #6A11CB); */
+    background: rgba(89, 134, 207, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+}
+/* chandan */
+body .control-button:hover {
+    /* background: linear-gradient(135deg, #2575FC, #6A11CB); */
+    background: rgba(234, 225, 241, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+.control-button:active {
+    transform: scale(0.95);
+}
+
+.section-controls-container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-controls {
+        justify-content: center; /* Center on smaller screens */
+    }
 }

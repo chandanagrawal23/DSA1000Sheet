@@ -170,28 +170,48 @@ function saveProgress() {
   const solvedProblems = {};
   document.querySelectorAll('.done-icon[data-solved="true"]').forEach(icon => {
     const problemId = icon.getAttribute('data-id');
-    solvedProblems[problemId] = true;
+    const sectionName = problemId.split('-')[0];
+    const problemLabel = icon.parentElement.parentElement.querySelector('td a').textContent;
+    solvedProblems[sectionName+"-"+problemLabel] = true;
   });
   localStorage.setItem('dsaSolvedProblems', JSON.stringify(solvedProblems));
 }
 
+// Load progress from localStorage and update the UI accordingly
 function loadProgress() {
   const saved = localStorage.getItem('dsaSolvedProblems');
   if (saved) {
     const solvedProblems = JSON.parse(saved);
     document.querySelectorAll('.done-icon').forEach(icon => {
       const problemId = icon.getAttribute('data-id');
-      if (solvedProblems[problemId]) {
+      const sectionName = problemId.split('-')[0];
+      const problemLabel = icon.parentElement.parentElement.querySelector('td a').textContent;
+      if (solvedProblems[sectionName+"-"+problemLabel]) {
         icon.setAttribute('data-solved', 'true');
         icon.textContent = 'check_box';
         icon.parentElement.parentElement.classList.add('solved');
       }
     });
   }
-  loadNotess();
-  updateGlobalRectBar();
-  updateSectionProgress();
 }
+
+// function loadProgress() {
+//   const saved = localStorage.getItem('dsaSolvedProblems');
+//   if (saved) {
+//     const solvedProblems = JSON.parse(saved);
+//     document.querySelectorAll('.done-icon').forEach(icon => {
+//       const problemId = icon.getAttribute('data-id');
+//       if (solvedProblems[problemId]) {
+//         icon.setAttribute('data-solved', 'true');
+//         icon.textContent = 'check_box';
+//         icon.parentElement.parentElement.classList.add('solved');
+//       }
+//     });
+//   }
+//   loadNotess();
+//   updateGlobalRectBar();
+//   updateSectionProgress();
+// }
 
 /***************************************************************
  * FILTER PROBLEMS
@@ -207,7 +227,7 @@ function filterProblems(event) {
     const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
     
     // If there's no search term, collapse everything unless it was from a checkbox click
-    if (!searchTerm && !event?.target?.classList.contains('circle-check')) {
+    if (!searchTerm && !event?.target?.classList.contains('square-check')) {
         sections.forEach(section => {
             const instance = M.Collapsible.getInstance(section);
             if (instance) {
@@ -243,9 +263,9 @@ function filterProblems(event) {
                 const subsectionId = subsection.querySelector('.mini-bars')?.dataset.id;
                 if (!subsectionId) return;
                 
-                const easyChecked = subsection.querySelector(`.circle-check.easy[data-section="${subsectionId}"]`)?.checked ?? true;
-                const mediumChecked = subsection.querySelector(`.circle-check.medium[data-section="${subsectionId}"]`)?.checked ?? true;
-                const hardChecked = subsection.querySelector(`.circle-check.hard[data-section="${subsectionId}"]`)?.checked ?? true;
+                const easyChecked = subsection.querySelector(`.square-check.easy[data-section="${subsectionId}"]`)?.checked ?? true;
+                const mediumChecked = subsection.querySelector(`.square-check.medium[data-section="${subsectionId}"]`)?.checked ?? true;
+                const hardChecked = subsection.querySelector(`.square-check.hard[data-section="${subsectionId}"]`)?.checked ?? true;
                 
                 // Show all difficulties if none are checked
                 const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
@@ -292,9 +312,9 @@ function filterProblems(event) {
             const sectionId = section.getAttribute('id');
             if (!sectionId) return;
             
-            const easyChecked = section.querySelector(`.circle-check.easy[data-section="${sectionId}"]`)?.checked ?? true;
-            const mediumChecked = section.querySelector(`.circle-check.medium[data-section="${sectionId}"]`)?.checked ?? true;
-            const hardChecked = section.querySelector(`.circle-check.hard[data-section="${sectionId}"]`)?.checked ?? true;
+            const easyChecked = section.querySelector(`.square-check.easy[data-section="${sectionId}"]`)?.checked ?? true;
+            const mediumChecked = section.querySelector(`.square-check.medium[data-section="${sectionId}"]`)?.checked ?? true;
+            const hardChecked = section.querySelector(`.square-check.hard[data-section="${sectionId}"]`)?.checked ?? true;
             
             const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
             
@@ -527,8 +547,8 @@ function generateAccordion(section) {
               <!-- Aggregated mini progress bars for the entire parent section -->
               <div class="mini-bars" data-id="${parentId}">
                 <div class="mini-bar-line">
-                  <label class="difficulty-filter-circle" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                    <input type="checkbox" class="circle-check easy" data-section="${parentId}" data-difficulty="easy" checked 
+                  <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                    <input type="checkbox" class="square-check easy" data-section="${parentId}" data-difficulty="easy" checked 
                       style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
                   </label>
                   <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
@@ -536,8 +556,8 @@ function generateAccordion(section) {
                   <span class="mini-count" data-diff="easy" style="margin-left:0.25rem;">(0/${aggEasy})</span>
                 </div>
                 <div class="mini-bar-line">
-                  <label class="difficulty-filter-circle" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                    <input type="checkbox" class="circle-check medium" data-section="${parentId}" data-difficulty="medium" checked
+                  <label class="difficulty-filter-square" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                    <input type="checkbox" class="square-check medium" data-section="${parentId}" data-difficulty="medium" checked
                       style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
                   </label>
                   <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
@@ -545,8 +565,8 @@ function generateAccordion(section) {
                   <span class="mini-count" data-diff="medium" style="margin-left:0.25rem;">(0/${aggMed})</span>
                 </div>
                 <div class="mini-bar-line">
-                  <label class="difficulty-filter-circle" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                    <input type="checkbox" class="circle-check hard" data-section="${parentId}" data-difficulty="hard" checked
+                  <label class="difficulty-filter-square" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                    <input type="checkbox" class="square-check hard" data-section="${parentId}" data-difficulty="hard" checked
                       style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
                   </label>
                   <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
@@ -588,8 +608,8 @@ function generateAccordion(section) {
             </div>
             <div class="mini-bars" data-id="${sectionId}">
               <div class="mini-bar-line">
-                <label class="difficulty-filter-circle" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                  <input type="checkbox" class="circle-check easy" data-section="${sectionId}" data-difficulty="easy" checked 
+                <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                  <input type="checkbox" class="square-check easy" data-section="${sectionId}" data-difficulty="easy" checked 
                     style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
                 </label>
                 <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
@@ -597,8 +617,8 @@ function generateAccordion(section) {
                 <span class="mini-count" data-diff="easy" style="margin-left:0.25rem;">(0/${easyCount})</span>
               </div>
               <div class="mini-bar-line">
-                <label class="difficulty-filter-circle" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                  <input type="checkbox" class="circle-check medium" data-section="${sectionId}" data-difficulty="medium" checked
+                <label class="difficulty-filter-square" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                  <input type="checkbox" class="square-check medium" data-section="${sectionId}" data-difficulty="medium" checked
                     style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
                 </label>
                 <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
@@ -606,8 +626,8 @@ function generateAccordion(section) {
                 <span class="mini-count" data-diff="medium" style="margin-left:0.25rem;">(0/${mediumCount})</span>
               </div>
               <div class="mini-bar-line">
-                <label class="difficulty-filter-circle" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                  <input type="checkbox" class="circle-check hard" data-section="${sectionId}" data-difficulty="hard" checked
+                <label class="difficulty-filter-square" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                  <input type="checkbox" class="square-check hard" data-section="${sectionId}" data-difficulty="hard" checked
                     style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
                 </label>
                 <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
@@ -640,8 +660,8 @@ function generateAccordion(section) {
           <span class="subsection-title">${subsec.title}</span>
           <div class="mini-bars small" data-id="${subsecId}">
             <div class="mini-bar-line">
-              <label class="difficulty-filter-circle" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                <input type="checkbox" class="circle-check easy" data-section="${subsecId}" data-difficulty="easy" checked 
+              <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                <input type="checkbox" class="square-check easy" data-section="${subsecId}" data-difficulty="easy" checked 
                   style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
               </label>
               <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
@@ -649,8 +669,8 @@ function generateAccordion(section) {
               <span class="mini-count" data-diff="easy" style="margin-left:0.25rem;">(0/${easyCount})</span>
             </div>
             <div class="mini-bar-line">
-              <label class="difficulty-filter-circle" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                <input type="checkbox" class="circle-check medium" data-section="${subsecId}" data-difficulty="medium" checked
+              <label class="difficulty-filter-square" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                <input type="checkbox" class="square-check medium" data-section="${subsecId}" data-difficulty="medium" checked
                   style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
               </label>
               <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
@@ -658,8 +678,8 @@ function generateAccordion(section) {
               <span class="mini-count" data-diff="medium" style="margin-left:0.25rem;">(0/${mediumCount})</span>
             </div>
             <div class="mini-bar-line">
-              <label class="difficulty-filter-circle" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                <input type="checkbox" class="circle-check hard" data-section="${subsecId}" data-difficulty="hard" checked
+              <label class="difficulty-filter-square" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
+                <input type="checkbox" class="square-check hard" data-section="${subsecId}" data-difficulty="hard" checked
                   style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
               </label>
               <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
@@ -853,22 +873,57 @@ function generateAccordion(section) {
 /***************************************************************
  * NOTES MODAL FUNCTIONS
  ***************************************************************/
+/**
+ * Load notes from localStorage with migration support for compatibility
+ */
 function loadNotess() {
   const stored = localStorage.getItem('dsaNotes');
   if (stored) {
-    notes = JSON.parse(stored);
+    const storedNotes = JSON.parse(stored);
+    notes = {};
+    
+    // First copy all notes directly - these might be already in the new format
+    Object.assign(notes, storedNotes);
+    
+    // Then try to match any old-style notes with their corresponding problems
+    document.querySelectorAll('.done-icon').forEach(icon => {
+      const problemId = icon.getAttribute('data-id');
+      if (storedNotes[problemId]) {
+        // If we found an old-style note (using just problemId), convert it
+        const row = icon.parentElement.parentElement;
+        const label = row.querySelector('td a').textContent;
+        const sectionName = problemId.split('-')[0];
+        const stableNoteId = `${sectionName}-${label}`;
+        
+        // Copy the note to the new format
+        notes[stableNoteId] = storedNotes[problemId];
+      }
+    });
+    
+    // Save back in the new format for future use
+    localStorage.setItem('dsaNotes', JSON.stringify(notes));
   } else {
     notes = {};
   }
 }
 
+/**
+ * Updates the openNotesModal function to retrieve notes using stable identifiers
+ */
 function openNotesModal(problemId, label) {
   currentNotesProblemId = problemId;
   const modal = document.getElementById('notesModal');
   const textarea = document.getElementById('notesModalTextarea');
   const title = document.getElementById('notesModalTitle');
   
-  textarea.value = notes[problemId] || '';
+  // Extract section name from the problem ID
+  const sectionName = problemId.split('-')[0];
+  
+  // Create the stable ID for lookup
+  const stableNoteId = `${sectionName}-${label}`;
+  
+  // Try to find the note by stable ID first
+  textarea.value = notes[stableNoteId] || '';
   title.textContent = `Notes: ${label}`;
   
   modal.classList.add('active');
@@ -879,19 +934,38 @@ function closeNotesModal() {
   currentNotesProblemId = null;
 }
 
+/**
+ * Updates the saveNotesModal function to use stable identifiers
+ * that won't break when problems are reordered
+ */
 function saveNotesModal() {
   if (!currentNotesProblemId) return;
   
   const text = document.getElementById('notesModalTextarea').value.trim();
-  notes[currentNotesProblemId] = text;
-  localStorage.setItem('dsaNotes', JSON.stringify(notes));
   
-  // Show success message
-  M.toast({
-    html: '<span class="success-toast">Notes saved successfully!</span>',
-    classes: 'rounded green',
-    displayLength: 2000
-  });
+  // Get the label and section for this problem
+  const icon = document.querySelector(`.done-icon[data-id="${currentNotesProblemId}"]`);
+  if (icon) {
+    const row = icon.parentElement.parentElement;
+    const label = row.querySelector('td a').textContent;
+    const sectionName = currentNotesProblemId.split('-')[0];
+    
+    // Create a stable key using section + label
+    const stableNoteId = `${sectionName}-${label}`;
+    
+    // Store the note using the stable ID
+    notes[stableNoteId] = text;
+    
+    // Save to localStorage
+    localStorage.setItem('dsaNotes', JSON.stringify(notes));
+    
+    // Show success message
+    M.toast({
+      html: '<span class="success-toast">Notes saved successfully!</span>',
+      classes: 'rounded green',
+      displayLength: 2000
+    });
+  }
   
   closeNotesModal();
 }
@@ -933,6 +1007,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize dark mode
     initializeDarkMode();
+    
+    // Initialize section controls
+    initSectionControls();
+    loadProgress();
+    loadNotess();
+    updateGlobalRectBar();
+    updateSectionProgress();
     
     // Add footer text with hyperlink
     const footer = document.createElement('a');
@@ -1075,18 +1156,16 @@ function initializeCheckboxes() {
   setTimeout(() => {
     console.log('Initializing checkboxes...');
     
-    // Get all checkboxes
-    const checkboxes = document.querySelectorAll('.circle-check');
+    // Get all checkboxes and remove existing event listeners by cloning
+    const checkboxes = document.querySelectorAll('.square-check');
     console.log('Found checkboxes:', checkboxes.length);
-    
-    // Remove any existing event listeners
     checkboxes.forEach(checkbox => {
       const newCheckbox = checkbox.cloneNode(true);
       checkbox.parentNode.replaceChild(newCheckbox, checkbox);
     });
     
     // Add event listeners to the new checkboxes
-    document.querySelectorAll('.circle-check').forEach(checkbox => {
+    document.querySelectorAll('.square-check').forEach(checkbox => {
       // Ensure checkbox is visible and checked by default
       checkbox.checked = true;
       
@@ -1096,16 +1175,67 @@ function initializeCheckboxes() {
         e.stopPropagation();
         console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
         
-        // Filter problems based on the new state - pass the event object
+        // If this checkbox is a parent (i.e. not inside a subsection container)
+        if (!this.closest('.mini-bars.small')) {
+          // Get the parent section (collapsible) that contains both parent and child checkboxes
+          const parentSection = this.closest('.collapsible');
+          if (parentSection) {
+            const difficulty = this.dataset.difficulty; // e.g., "easy", "medium", or "hard"
+            // Find all child checkboxes in subsections with the same difficulty
+            const childCheckboxes = parentSection.querySelectorAll(`.mini-bars.small .square-check.${difficulty}`);
+            childCheckboxes.forEach(child => {
+              child.checked = this.checked;
+            });
+          }
+        }
+        
+        // Filter problems based on the updated state
         filterProblems(e);
       });
     });
     
-    // Add event listeners to the labels to prevent propagation
-    document.querySelectorAll('.difficulty-filter-circle').forEach(label => {
+    // Add event listeners to the labels to prevent event propagation
+    document.querySelectorAll('.difficulty-filter-square').forEach(label => {
       label.addEventListener('click', function(e) {
         e.stopPropagation();
       });
     });
   }, 500);
+}
+
+
+/***************************************************************
+ * EXPAND/COLLAPSE SECTION CONTROLS
+ ***************************************************************/
+function initSectionControls() {
+  const sectionControls = document.createElement('div');
+  sectionControls.className = 'section-controls';
+
+  sectionControls.innerHTML = `
+    <button class="control-button collapse-all">
+      <i class="material-icons">unfold_less</i><span>Collapse All</span>
+    </button>
+    <button class="control-button expand-all">
+      <i class="material-icons">unfold_more</i><span>Expand All</span>
+    </button>
+  `;
+
+  sectionControls.querySelector('.collapse-all').addEventListener('click', () => toggleSections(false));
+  sectionControls.querySelector('.expand-all').addEventListener('click', () => toggleSections(true));
+
+  // Append the section controls to the dedicated container
+  const controlsContainer = document.querySelector('.section-controls-container');
+  if (controlsContainer) {
+    controlsContainer.appendChild(sectionControls);
+  }
+}
+
+
+function toggleSections(expand) {
+    document.querySelectorAll('.collapsible').forEach(section => {
+        const instance = M.Collapsible.getInstance(section);
+        if (instance) {
+            instance[expand ? 'open' : 'close'](); // Open or Close in one step
+        }
+    });
 }
