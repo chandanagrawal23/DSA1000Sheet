@@ -796,8 +796,8 @@ body.dark-mode .collapsible-header:hover {
 }
 
 .profile-image {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary-color);
@@ -807,13 +807,13 @@ body.dark-mode .collapsible-header:hover {
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.25);
     box-shadow: var(--shadow-lg);
 }
 
 .created-by {
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin: 0;
 }
