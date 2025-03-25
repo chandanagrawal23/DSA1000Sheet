@@ -1,6 +1,373 @@
 {
   "sections": [
     {
+      "title": "Halwa Problems (School Level)",
+      "problems": [
+        {
+          "label": "Check Even or Odd",
+          "question": "https://www.geeksforgeeks.org/c-even-odd/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Print Numbers from 1 to N",
+          "question": "https://codeforwin.org/c-programming/c-program-to-print-natural-numbers-from-1-to-n",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sum of First N Natural Numbers",
+          "question": "https://www.geeksforgeeks.org/sum-of-first-n-natural-numbers/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Maximum of Two Numbers",
+          "question": "https://www.geeksforgeeks.org/c-program-to-find-the-largest-number-among-three-numbers/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Maximum of Three Numbers",
+          "question": "https://leetcode.com/problems/maximum-69-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Check Prime Number",
+          "question": "https://www.geeksforgeeks.org/c-program-to-check-prime-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Reverse a Number",
+          "question": "https://www.geeksforgeeks.org/write-a-program-to-reverse-digits-of-a-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Check Palindrome Number",
+          "question": "https://leetcode.com/problems/palindrome-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Factorial of a Number",
+          "question": "https://www.geeksforgeeks.org/factorial-large-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Fibonacci Series",
+          "question": "https://leetcode.com/problems/fibonacci-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Check Leap Year",
+          "question": "https://www.geeksforgeeks.org/program-check-given-year-leap-year/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Count Digits in a Number",
+          "question": "https://www.geeksforgeeks.org/program-count-digits-integer-3-different-methods/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sum of Digits of a Number",
+          "question": "https://www.geeksforgeeks.org/program-for-sum-of-the-digits-of-a-given-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Check Armstrong Number",
+          "question": "https://www.geeksforgeeks.org/program-for-armstrong-numbers/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Reverse a String",
+          "question": "https://leetcode.com/problems/reverse-string/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Check Palindrome String",
+          "question": "https://leetcode.com/problems/valid-palindrome/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Largest Element in an Array",
+          "question": "https://www.geeksforgeeks.org/program-to-find-largest-element-in-an-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Smallest Element in an Array",
+          "question": "https://www.geeksforgeeks.org/to-find-smallest-and-second-smallest-element-in-an-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sum of Array Elements",
+          "question": "https://www.geeksforgeeks.org/program-find-sum-elements-given-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Count Even and Odd Numbers in an Array",
+          "question": "https://www.geeksforgeeks.org/count-number-even-odd-elements-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Swap Two Numbers Without Using a Temporary Variable",
+          "question": "https://www.geeksforgeeks.org/swap-two-numbers-without-using-temporary-variable/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Print Multiplication Table",
+          "question": "https://www.geeksforgeeks.org/program-to-print-multiplication-table-of-a-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Check if a Number is Perfect Square",
+          "question": "https://www.geeksforgeeks.org/check-if-given-number-is-perfect-square-in-cpp/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find GCD of Two Numbers",
+          "question": "https://leetcode.com/problems/greatest-common-divisor-of-strings/",
+          "solution": "-",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "title": "Pattern Printing",
+      "problems": [
+        {
+          "label": "Print Pascal's Triangle",
+          "question": "https://leetcode.com/problems/pascals-triangle/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Print Pascal's Triangle II",
+          "question": "https://leetcode.com/problems/pascals-triangle-ii/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Print Floyd's Triangle",
+          "question": "https://www.geeksforgeeks.org/program-to-print-floyds-triangle/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Spiral Matrix I",
+          "question": "https://leetcode.com/problems/spiral-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Spiral Matrix II",
+          "question": "https://leetcode.com/problems/spiral-matrix-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Print Matrix Diagonal Pattern",
+          "question": "https://www.geeksforgeeks.org/print-matrix-diagonal-pattern/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Generate Matrix in Concentric Rectangular Pattern",
+          "question": "https://www.geeksforgeeks.org/print-concentric-rectangular-pattern-in-a-2d-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Print X in a rectangular box",
+          "question": "https://www.geeksforgeeks.org/pattern-print-x-rectangular-box/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Print Rectangular Pattern with Given Center",
+          "question": "https://www.geeksforgeeks.org/print-rectangular-pattern-with-given-center/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Prefix Sum",
+      "subsections": [
+        {
+          "title": "Basics and Applications",
+          "problems": [
+            {
+              "label": "Prefix Sum Array Basics and Implementation",
+              "question": "https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Find Pivot Index",
+              "question": "https://leetcode.com/problems/find-pivot-index/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Range Sum Query - Immutable",
+              "question": "https://leetcode.com/problems/range-sum-query-immutable/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Range Sum Query 2D - Immutable",
+              "question": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Occurred Integer in Ranges",
+              "question": "https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Count Number of Nice Subarrays",
+              "question": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Product of Array Except Self",
+              "question": "https://leetcode.com/problems/product-of-array-except-self/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Count of Interesting Subarrays",
+              "question": "https://www.geeksforgeeks.org/count-of-interesting-subarrays/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Count Submatrices with Top-Left Element and Sum Less Than k (2D Prefix Sum)",
+              "question": "https://www.geeksforgeeks.org/count-submatrices-with-top-left-element-and-sum-less-than-k/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Subarray Min-Product (Monotonic Stack + Prefix Sum)",
+              "question": "https://leetcode.com/problems/maximum-subarray-min-product/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Construct Product Matrix",
+              "question": "https://www.geeksforgeeks.org/construct-product-matrix/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Deque )",
+              "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Subarray Sum",
+          "problems": [
+            {
+              "label": "Maximum Subarray Sum – Kadane’s Algorithm",
+              "question": "https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Best Time to Buy and Sell Stock",
+              "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Maximum Product Subarray",
+              "question": "https://leetcode.com/problems/maximum-product-subarray/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Subarrays with Sum 0",
+              "question": "https://www.geeksforgeeks.org/find-if-there-is-a-subarray-with-0-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Subarray Sum Equals K",
+              "question": "https://leetcode.com/problems/subarray-sum-equals-k/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest Subarray with sum K",
+              "question": "https://www.geeksforgeeks.org/longest-sub-array-sum-k/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Subarray Sums Divisible by K",
+              "question": "https://leetcode.com/problems/subarray-sums-divisible-by-k/description/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Continuous Subarray Sum",
+              "question": "https://leetcode.com/problems/continuous-subarray-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Sum Circular Subarray",
+              "question": "https://leetcode.com/problems/maximum-sum-circular-subarray/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Length of a Subarray with Positive Product",
+              "question": "https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Binary Subarrays With Sum",
+              "question": "https://leetcode.com/problems/binary-subarrays-with-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Submatrices That Sum to Target",
+              "question": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "Two Pointers",
       "problems": [
         {
@@ -114,6 +481,546 @@
         {
           "label": "Trapping Rain Water",
           "question": "https://leetcode.com/problems/trapping-rain-water/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Binary Search",
+      "problems": [
+        {
+          "label": "Binary Search",
+          "question": "https://leetcode.com/problems/binary-search/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Target Indices After Sorting Array",
+          "question": "https://leetcode.com/problems/find-target-indices-after-sorting-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Sqrtx",
+          "question": "https://leetcode.com/problems/sqrtx/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Peak Index in a Mountain Array",
+          "question": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Guess Number Higher or Lower",
+          "question": "https://leetcode.com/problems/guess-number-higher-or-lower/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Smallest Letter Greater Than Target",
+          "question": "https://leetcode.com/problems/find-smallest-letter-greater-than-target/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Valid Perfect Square",
+          "question": "https://leetcode.com/problems/valid-perfect-square/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "First Bad Version",
+          "question": "https://leetcode.com/problems/first-bad-version/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find the Distance Value Between Two Arrays",
+          "question": "https://leetcode.com/problems/find-the-distance-value-between-two-arrays/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Single Element in a Sorted Array",
+          "question": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Count Complete Tree Nodes",
+          "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Burgers With No Waste of Ingredients",
+          "question": "https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Valid Triangle Number",
+          "question": "https://leetcode.com/problems/valid-triangle-number/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Distance Between a Pair of Values",
+          "question": "https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Minimum in Rotated Sorted Array",
+          "question": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search a 2D Matrix",
+          "question": "https://leetcode.com/problems/search-a-2d-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search a 2D Matrix II",
+          "question": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Length of Repeated Subarray",
+          "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Random Pick with Weight",
+          "question": "https://leetcode.com/problems/random-pick-with-weight/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Peak Element",
+          "question": "https://leetcode.com/problems/find-peak-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find First and Last Position of Element in Sorted Array",
+          "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search in Rotated Sorted Array",
+          "question": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find K Closest Elements",
+          "question": "https://leetcode.com/problems/find-k-closest-elements/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Median of Two Sorted Arrays",
+          "question": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Sorting",
+      "subsections": [
+        {
+          "title": "Basics and Applications",
+          "problems": [
+            {
+              "label": "Introduction to Sorting Algorithms",
+              "question": "https://www.geeksforgeeks.org/introduction-to-sorting-algorithm/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Bubble Sort",
+              "question": "https://www.geeksforgeeks.org/bubble-sort/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Selection Sort",
+              "question": "https://www.geeksforgeeks.org/selection-sort/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Insertion Sort",
+              "question": "https://www.geeksforgeeks.org/insertion-sort/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Merge Sort",
+              "question": "https://www.geeksforgeeks.org/merge-sort/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Quick Sort",
+              "question": "https://www.geeksforgeeks.org/quick-sort/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Heap Sort",
+              "question": "https://www.geeksforgeeks.org/heap-sort/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Counting Sort",
+              "question": "https://www.geeksforgeeks.org/counting-sort/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Radix Sort",
+              "question": "https://www.geeksforgeeks.org/radix-sort/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Bucket Sort",
+              "question": "https://www.geeksforgeeks.org/bucket-sort-2/",
+              "solution": "-",
+              "difficulty": "medium"
+            }
+          ]
+        },
+        {
+          "title": "General Questions",
+          "problems": [
+            {
+              "label": "Meeting Rooms",
+              "question": "https://leetcode.ca/all/252.html",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Kth Largest Element in an Array (using sort and return a[k-1]",
+              "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Largest Number",
+              "question": "https://leetcode.com/problems/largest-number/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Destroying Asteroids",
+              "question": "https://leetcode.com/problems/destroying-asteroids/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Meeting Rooms II",
+              "question": "https://leetcode.ca/all/253.html",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Count Days Without Meetings",
+              "question": "https://leetcode.com/problems/count-days-without-meetings/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Number of Arrows to Burst Balloons (IMP) ",
+              "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Number of Platforms Required for a Railway/Bus Station",
+              "question": "https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find K Bookings Possible Given Arrival and Departure Times",
+              "question": "https://www.geeksforgeeks.org/find-k-bookings-possible-given-arrival-departure-times/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Car Fleet (IMP) ",
+              "question": "https://leetcode.com/problems/car-fleet/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Group Anagrams",
+              "question": "https://leetcode.com/problems/group-anagrams/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Sort Characters By Frequency (custom comparator)",
+              "question": "https://leetcode.com/problems/sort-characters-by-frequency/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find K Closest Elements",
+              "question": "https://leetcode.com/problems/find-k-closest-elements/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Length of Pair Chain",
+              "question": "https://leetcode.com/problems/maximum-length-of-pair-chain/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Top K Frequent Words (Map + Sorting / Priority Queue)",
+              "question": "https://leetcode.com/problems/top-k-frequent-words/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Cost to Hire K Workers ( sort + priority queue )",
+              "question": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Meeting Rooms III",
+              "question": "https://leetcode.com/problems/meeting-rooms-iii/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Interval Questions",
+          "problems": [
+            {
+              "label": "Merge Intervals",
+              "question": "https://leetcode.com/problems/merge-intervals/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Non-overlapping Intervals",
+              "question": "https://leetcode.com/problems/non-overlapping-intervals/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find Right Interval",
+              "question": "https://leetcode.com/problems/find-right-interval/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Insert Interval",
+              "question": "https://leetcode.com/problems/insert-interval/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Remove Covered Intervals",
+              "question": "https://leetcode.com/problems/remove-covered-intervals/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Max Number of Overlapping Intervals",
+              "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Interval List Intersections",
+              "question": "https://leetcode.com/problems/interval-list-intersections/",
+              "solution": "-",
+              "difficulty": "medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Answer on Binary Search",
+      "problems": [
+        {
+          "label": "Arranging Coins",
+          "question": "https://leetcode.com/problems/arranging-coins/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Capacity to Ship Packages Within D Days",
+          "question": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Kth Smallest Element in a Sorted Matrix",
+          "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Duplicate Number",
+          "question": "https://leetcode.com/problems/find-the-duplicate-number/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Size Subarray Sum",
+          "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Limit of Balls in a Bag",
+          "question": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Time to Complete Trips",
+          "question": "https://leetcode.com/problems/minimum-time-to-complete-trips/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Koko Eating Bananas",
+          "question": "https://leetcode.com/problems/koko-eating-bananas/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Path with Minimum Effort",
+          "question": "https://leetcode.com/problems/path-with-minimum-effort/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Most Beautiful Item for Each Query",
+          "question": "https://leetcode.com/problems/most-beautiful-item-for-each-query/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Smallest Divisor Given a Threshold",
+          "question": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimized Maximum of Products Distributed to Any Store",
+          "question": "https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Heaters",
+          "question": "https://leetcode.com/problems/heaters/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Candies Allocated to K Children",
+          "question": "https://leetcode.com/problems/maximum-candies-allocated-to-k-children/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Absolute Sum Difference",
+          "question": "https://leetcode.com/problems/minimum-absolute-sum-difference/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Frequency of the Most Frequent Element",
+          "question": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Tastiness of Candy Basket",
+          "question": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "House Robber IV",
+          "question": "https://leetcode.com/problems/house-robber-iv/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Number of Days to Make m Bouquets",
+          "question": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Swim in Rising Water",
+          "question": "https://leetcode.com/problems/swim-in-rising-water/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Split Array Largest Sum",
+          "question": "https://leetcode.com/problems/split-array-largest-sum/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Kth Smallest Number in Multiplication Table",
+          "question": "https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Nth Magical Number",
+          "question": "https://leetcode.com/problems/nth-magical-number/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Find K-th Smallest Pair Distance",
+          "question": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimize Maximum Array Element by At Most K Splits",
+          "question": "https://www.geeksforgeeks.org/minimize-maximum-array-element-possible-by-at-most-k-splits-on-the-given-array/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Running Time of N Computers",
+          "question": "https://leetcode.com/problems/maximum-running-time-of-n-computers/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Last Day Where You Can Still Cross",
+          "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -553,7 +1460,7 @@
       ]
     },
     {
-      "title": "Heap",
+      "title": "Heap ( Priority Queue )",
       "problems": [
         {
           "label": "Last Stone Weight",
@@ -646,6 +1553,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Longest Happy String",
+          "question": "https://leetcode.com/problems/longest-happy-string/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Find Median from Data Stream",
           "question": "https://leetcode.com/problems/find-median-from-data-stream",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
@@ -676,319 +1589,15 @@
           "difficulty": "hard"
         },
         {
+          "label": "Minimum Number of Refueling Stops (Google)",
+          "question": "https://leetcode.com/problems/minimum-number-of-refueling-stops/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
           "label": "Sliding Window Maximum",
           "question": "https://leetcode.com/problems/sliding-window-maximum/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindow.cpp",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
-      "title": "Binary Search",
-      "problems": [
-        {
-          "label": "Binary Search",
-          "question": "https://leetcode.com/problems/binary-search/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Find Target Indices After Sorting Array",
-          "question": "https://leetcode.com/problems/find-target-indices-after-sorting-array/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Sqrtx",
-          "question": "https://leetcode.com/problems/sqrtx/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Peak Index in a Mountain Array",
-          "question": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Guess Number Higher or Lower",
-          "question": "https://leetcode.com/problems/guess-number-higher-or-lower/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Find Smallest Letter Greater Than Target",
-          "question": "https://leetcode.com/problems/find-smallest-letter-greater-than-target/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Valid Perfect Square",
-          "question": "https://leetcode.com/problems/valid-perfect-square/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "First Bad Version",
-          "question": "https://leetcode.com/problems/first-bad-version/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Find the Distance Value Between Two Arrays",
-          "question": "https://leetcode.com/problems/find-the-distance-value-between-two-arrays/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Single Element in a Sorted Array",
-          "question": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Count Complete Tree Nodes",
-          "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Number of Burgers With No Waste of Ingredients",
-          "question": "https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Valid Triangle Number",
-          "question": "https://leetcode.com/problems/valid-triangle-number/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Distance Between a Pair of Values",
-          "question": "https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find Minimum in Rotated Sorted Array",
-          "question": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Search a 2D Matrix",
-          "question": "https://leetcode.com/problems/search-a-2d-matrix/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Search a 2D Matrix II",
-          "question": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Length of Repeated Subarray",
-          "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Random Pick with Weight",
-          "question": "https://leetcode.com/problems/random-pick-with-weight/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find Peak Element",
-          "question": "https://leetcode.com/problems/find-peak-element/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find First and Last Position of Element in Sorted Array",
-          "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Search in Rotated Sorted Array",
-          "question": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find K Closest Elements",
-          "question": "https://leetcode.com/problems/find-k-closest-elements/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Median of Two Sorted Arrays",
-          "question": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
-          "solution": "-",
-          "difficulty": "hard"
-        }
-      ]
-    },
-    {
-      "title": "Answer on Binary Search",
-      "problems": [
-        {
-          "label": "Arranging Coins",
-          "question": "https://leetcode.com/problems/arranging-coins/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Capacity to Ship Packages Within D Days",
-          "question": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Kth Smallest Element in a Sorted Matrix",
-          "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find the Duplicate Number",
-          "question": "https://leetcode.com/problems/find-the-duplicate-number/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Size Subarray Sum",
-          "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Limit of Balls in a Bag",
-          "question": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Time to Complete Trips",
-          "question": "https://leetcode.com/problems/minimum-time-to-complete-trips/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Koko Eating Bananas",
-          "question": "https://leetcode.com/problems/koko-eating-bananas/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Path with Minimum Effort",
-          "question": "https://leetcode.com/problems/path-with-minimum-effort/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Most Beautiful Item for Each Query",
-          "question": "https://leetcode.com/problems/most-beautiful-item-for-each-query/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find the Smallest Divisor Given a Threshold",
-          "question": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimized Maximum of Products Distributed to Any Store",
-          "question": "https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Heaters",
-          "question": "https://leetcode.com/problems/heaters/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Candies Allocated to K Children",
-          "question": "https://leetcode.com/problems/maximum-candies-allocated-to-k-children/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Absolute Sum Difference",
-          "question": "https://leetcode.com/problems/minimum-absolute-sum-difference/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Frequency of the Most Frequent Element",
-          "question": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Tastiness of Candy Basket",
-          "question": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "House Robber IV",
-          "question": "https://leetcode.com/problems/house-robber-iv/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Swim in Rising Water",
-          "question": "https://leetcode.com/problems/swim-in-rising-water/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Split Array Largest Sum",
-          "question": "https://leetcode.com/problems/split-array-largest-sum/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Kth Smallest Number in Multiplication Table",
-          "question": "https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Nth Magical Number",
-          "question": "https://leetcode.com/problems/nth-magical-number/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Find K-th Smallest Pair Distance",
-          "question": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Minimize Maximum Array Element by At Most K Splits",
-          "question": "https://www.geeksforgeeks.org/minimize-maximum-array-element-possible-by-at-most-k-splits-on-the-given-array/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Maximum Running Time of N Computers",
-          "question": "https://leetcode.com/problems/maximum-running-time-of-n-computers/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Last Day Where You Can Still Cross",
-          "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
-          "solution": "-",
           "difficulty": "hard"
         }
       ]
@@ -1712,12 +2321,6 @@
               "question": "https://leetcode.com/problems/serialize-and-deserialize-binary-tree/",
               "solution": "-",
               "difficulty": "hard"
-            },
-            {
-              "label": "Binary Tree Cameras",
-              "question": "https://leetcode.com/problems/binary-tree-cameras/",
-              "solution": "-",
-              "difficulty": "hard"
             }
           ]
         },
@@ -1899,6 +2502,12 @@
               "question": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
               "solution": "-",
               "difficulty": "hard"
+            },
+            {
+              "label": "Longest Path With Different Adjacent Characters",
+              "question": "https://leetcode.com/problems/longest-path-with-different-adjacent-characters/",
+              "solution": "-",
+              "difficulty": "hard"
             }
           ]
         }
@@ -2070,26 +2679,8 @@
               "difficulty": "easy"
             },
             {
-              "label": "Best Time to Buy and Sell Stock",
-              "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
               "label": "Min Cost Climbing Stairs",
               "question": "https://leetcode.com/problems/min-cost-climbing-stairs/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Divisor Game",
-              "question": "https://leetcode.com/problems/divisor-game/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Counting Bits",
-              "question": "https://leetcode.com/problems/counting-bits/",
               "solution": "-",
               "difficulty": "easy"
             },
@@ -2106,20 +2697,8 @@
               "difficulty": "medium"
             },
             {
-              "label": "Unique Binary Search Trees",
-              "question": "https://leetcode.com/problems/unique-binary-search-trees/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "House Robber",
               "question": "https://leetcode.com/problems/house-robber/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Perfect Squares",
-              "question": "https://leetcode.com/problems/perfect-squares/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -2136,50 +2715,8 @@
               "difficulty": "medium"
             },
             {
-              "label": "Count Numbers with Unique Digits",
-              "question": "https://leetcode.com/problems/count-numbers-with-unique-digits/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Wiggle Subsequence",
-              "question": "https://leetcode.com/problems/wiggle-subsequence/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Partition Equal Subset Sum",
-              "question": "https://leetcode.com/problems/partition-equal-subset-sum/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Length of Pair Chain",
-              "question": "https://leetcode.com/problems/maximum-length-of-pair-chain/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Best Time to Buy and Sell Stock with Transaction Fee",
-              "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Delete and Earn",
               "question": "https://leetcode.com/problems/delete-and-earn/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Domino and Tromino Tiling",
-              "question": "https://leetcode.com/problems/domino-and-tromino-tiling/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Knight Dialer",
-              "question": "https://leetcode.com/problems/knight-dialer/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -2202,18 +2739,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Longest Arithmetic Subsequence of Given Difference",
-              "question": "https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Greatest Sum Divisible by Three",
-              "question": "https://leetcode.com/problems/greatest-sum-divisible-by-three/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Best Time to Buy and Sell Stock III",
               "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
               "solution": "-",
@@ -2226,25 +2751,13 @@
               "difficulty": "hard"
             },
             {
-              "label": "Decode Ways II",
-              "question": "https://leetcode.com/problems/decode-ways-ii/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Form Largest Integer With Digits That Add up to Target",
               "question": "https://leetcode.com/problems/form-largest-integer-with-digits-that-add-up-to-target/",
               "solution": "-",
               "difficulty": "hard"
             },
             {
-              "label": "Triples with Bitwise AND Equal to Zero",
-              "question": "https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Maximum Profit in Job Scheduling",
+              "label": "Maximum Profit in Job Scheduling (IMP) (DP + Binary Search)",
               "question": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
               "solution": "-",
               "difficulty": "hard"
@@ -2252,18 +2765,6 @@
             {
               "label": "Minimum Number of Taps to Open to Water a Garden",
               "question": "https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Count All Valid Pickup and Delivery Options",
-              "question": "https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Stone Game III",
-              "question": "https://leetcode.com/problems/stone-game-iii/",
               "solution": "-",
               "difficulty": "hard"
             },
@@ -2303,12 +2804,6 @@
               "difficulty": "hard"
             },
             {
-              "label": "Delete Columns to Make Sorted III",
-              "question": "https://leetcode.com/problems/delete-columns-to-make-sorted-iii/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Minimum Number of Removals to Make Mountain Array",
               "question": "https://leetcode.com/problems/minimum-number-of-removals-to-make-mountain-array/",
               "solution": "-",
@@ -2332,14 +2827,8 @@
           "title": "LCS/LPS Pattern",
           "problems": [
             {
-              "label": "Longest Palindromic Substring",
-              "question": "https://leetcode.com/problems/longest-palindromic-substring/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Longest Palindromic Subsequence",
-              "question": "https://leetcode.com/problems/longest-palindromic-subsequence/",
+              "label": "Longest Common Subsequence",
+              "question": "https://leetcode.com/problems/longest-common-subsequence/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -2350,14 +2839,14 @@
               "difficulty": "medium"
             },
             {
-              "label": "Longest Common Subsequence",
-              "question": "https://leetcode.com/problems/longest-common-subsequence/",
+              "label": "Longest Palindromic Substring",
+              "question": "https://leetcode.com/problems/longest-palindromic-substring/",
               "solution": "-",
               "difficulty": "medium"
             },
             {
-              "label": "Interleaving String",
-              "question": "https://leetcode.com/problems/interleaving-string/",
+              "label": "Longest Palindromic Subsequence",
+              "question": "https://leetcode.com/problems/longest-palindromic-subsequence/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -2403,6 +2892,12 @@
           "title": "0/1 Knapsack Pattern",
           "problems": [
             {
+              "label": "0/1 Knapsack Problem",
+              "question": "https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "House Robber II",
               "question": "https://leetcode.com/problems/house-robber-ii/",
               "solution": "-",
@@ -2439,14 +2934,14 @@
               "difficulty": "medium"
             },
             {
-              "label": "Profitable Schemes",
-              "question": "https://leetcode.com/problems/profitable-schemes/",
+              "label": "Partition Equal Subset Sum",
+              "question": "https://leetcode.com/problems/partition-equal-subset-sum/",
               "solution": "-",
-              "difficulty": "hard"
+              "difficulty": "medium"
             },
             {
-              "label": "Minimum Swaps to Make Sequences Increasing",
-              "question": "https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/",
+              "label": "Profitable Schemes",
+              "question": "https://leetcode.com/problems/profitable-schemes/",
               "solution": "-",
               "difficulty": "hard"
             },
@@ -2539,18 +3034,6 @@
           "title": "String DP",
           "problems": [
             {
-              "label": "Palindrome Partitioning",
-              "question": "https://leetcode.com/problems/palindrome-partitioning/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Word Break",
-              "question": "https://leetcode.com/problems/word-break/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Unique Substrings in Wraparound String",
               "question": "https://leetcode.com/problems/unique-substrings-in-wraparound-string/",
               "solution": "-",
@@ -2563,50 +3046,20 @@
               "difficulty": "medium"
             },
             {
-              "label": "Longest String Chain",
-              "question": "https://leetcode.com/problems/longest-string-chain/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Longest Happy String",
-              "question": "https://leetcode.com/problems/longest-happy-string/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Palindrome Partitioning II",
               "question": "https://leetcode.com/problems/palindrome-partitioning-ii/",
               "solution": "-",
               "difficulty": "hard"
             },
             {
-              "label": "Word Break II",
+              "label": "Word Break II (DP + Set/Map , no trie)",
               "question": "https://leetcode.com/problems/word-break-ii/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Longest Valid Parentheses",
-              "question": "https://leetcode.com/problems/longest-valid-parentheses/",
               "solution": "-",
               "difficulty": "hard"
             },
             {
               "label": "Distinct Subsequences",
               "question": "https://leetcode.com/problems/distinct-subsequences/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Count the Repetitions",
-              "question": "https://leetcode.com/problems/count-the-repetitions/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Concatenated Words",
-              "question": "https://leetcode.com/problems/concatenated-words/",
               "solution": "-",
               "difficulty": "hard"
             },
@@ -2623,19 +3076,13 @@
               "difficulty": "hard"
             },
             {
-              "label": "Longest Chunked Palindrome Decomposition",
-              "question": "https://leetcode.com/problems/longest-chunked-palindrome-decomposition/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Palindrome Partitioning III",
               "question": "https://leetcode.com/problems/palindrome-partitioning-iii/",
               "solution": "-",
               "difficulty": "hard"
             },
             {
-              "label": "Find All Good Strings",
+              "label": "Find All Good Strings (DP + String Matching)",
               "question": "https://leetcode.com/problems/find-all-good-strings/",
               "solution": "-",
               "difficulty": "hard"
@@ -2726,6 +3173,94 @@
             {
               "label": "Find Minimum Time to Finish All Jobs",
               "question": "https://leetcode.com/problems/find-minimum-time-to-finish-all-jobs/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Tree DP",
+          "problems": [
+            {
+              "label": "Calculate number of nodes in all subtrees",
+              "question": "https://www.geeksforgeeks.org/calculate-number-nodes-subtrees-using-dfs/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of Nodes in the Sub-Tree With the Same Label",
+              "question": "https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Cost Tree From Leaf Values",
+              "question": "https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Count Nodes With the Highest Score",
+              "question": "https://leetcode.com/problems/count-nodes-with-the-highest-score/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Subtree of the Same Color",
+              "question":"https://leetcode.ca/2024-01-19-3004-Maximum-Subtree-of-the-Same-Color/",
+              "solution":"-",
+              "difficulty":"medium"
+            },
+            {
+              "label": "Binary Tree Cameras (IMP) (With and Without DP)",
+              "question": "https://leetcode.com/problems/binary-tree-cameras/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Sum of Distances in Tree",
+              "question": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximum Sum BST in Binary Tree (IMP)",
+              "question": "https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Probabilistic DP",
+          "problems": [
+            {
+              "label": "New 21 Game",
+              "question": "https://leetcode.com/problems/new-21-game/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Knight Probability in Chessboard",
+              "question": "https://leetcode.com/problems/knight-probability-in-chessboard/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Soup Servings",
+              "question": "https://leetcode.com/problems/soup-servings/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Dice Roll Simulation",
+              "question": "https://leetcode.com/problems/dice-roll-simulation/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Number of Days to Eat N Oranges",
+              "question": "https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/",
               "solution": "-",
               "difficulty": "hard"
             }
@@ -2898,6 +3433,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Check if Grid can be Cut into Sections",
+          "question": "https://leetcode.com/problems/check-if-grid-can-be-cut-into-sections/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Max Points on a Line",
           "question": "https://leetcode.com/problems/max-points-on-a-line/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
@@ -2942,8 +3483,8 @@
               "difficulty": "medium"
             },
             {
-              "label": "Is Graph Bipartite?",
-              "question": "https://leetcode.com/problems/is-graph-bipartite/",
+              "label": "Is Graph Bipartite? (IMP)",
+              "question": "https://www.geeksforgeeks.org/bipartite-graph/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -2980,6 +3521,12 @@
             {
               "label": "Number of Connected Components in an Undirected Graph",
               "question": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Calculate number of nodes in all subtrees",
+              "question": "https://www.geeksforgeeks.org/calculate-number-nodes-subtrees-using-dfs/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -3775,6 +4322,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Word Break (Trie + DP)",
+          "question": "https://leetcode.com/problems/word-break/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Prefix and Suffix Search",
           "question": "https://leetcode.com/problems/prefix-and-suffix-search/",
           "solution": "-",
@@ -3805,13 +4358,13 @@
           "difficulty": "hard"
         },
         {
-          "label": "Concatenated Words",
+          "label": "Concatenated Words (Trie + DP)",
           "question": "https://leetcode.com/problems/concatenated-words/",
           "solution": "-",
           "difficulty": "hard"
         },
         {
-          "label": "Word Break II",
+          "label": "Word Break II (Trie + Backtracking)",
           "question": "https://leetcode.com/problems/word-break-ii/",
           "solution": "-",
           "difficulty": "hard"
@@ -3819,6 +4372,118 @@
         {
           "label": "Maximum XOR With an Element From Array",
           "question": "https://leetcode.com/problems/maximum-xor-with-an-element-from-array/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Binary Index Tree (FenWick Tree)",
+      "problems": [
+        {
+          "label": "Introduction and Implementation of Binary Indexed Tree",
+          "question": "https://www.geeksforgeeks.org/binary-indexed-tree-or-fenwick-tree-2/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Inversion count in Array using BIT",
+          "question": "https://www.geeksforgeeks.org/inversion-count-in-array-using-bit/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Range Sum Query - Mutable",
+          "question": "https://leetcode.com/problems/range-sum-query-mutable/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count of Smaller Numbers After Self (same as counting inversion)",
+          "question": "https://leetcode.com/problems/count-of-smaller-numbers-after-self/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Find the Longest Valid Obstacle Course at Each Position",
+          "question": "https://leetcode.com/problems/find-the-longest-valid-obstacle-course-at-each-position/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Counting Triangles in a Rectangular Space using 2D BIT",
+          "question": "https://www.geeksforgeeks.org/counting-triangles-in-a-rectangular-space-using-2d-bit/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Create Sorted Array through Instructions",
+          "question": "https://leetcode.com/problems/create-sorted-array-through-instructions/",
+          "solution": "-",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Sweep Line",
+      "problems": [
+        {
+          "label": "Meeting Rooms II",
+          "question": "https://leetcode.com/problems/meeting-rooms-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Number of Arrows to Burst Balloons",
+          "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+  {
+          "label": "Count of Intervals with Maximum Overlap (Google)",
+          "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Number of Arrows to Burst Balloons",
+          "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Interval List Intersections",
+          "question": "https://leetcode.com/problems/interval-list-intersections/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Skyline Problem",
+          "question": "https://leetcode.com/problems/the-skyline-problem/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Employee Free Time",
+          "question": "https://leetcode.ca/all/759.html",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Rectangle Area II",
+          "question": "https://leetcode.com/problems/rectangle-area-ii/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "minimum-interval-to-include-each-query",
+          "question": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Number of Flowers in Full Bloom",
+          "question": "https://leetcode.com/problems/number-of-flowers-in-full-bloom/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -4095,430 +4760,6 @@
               "question": "https://www.geeksforgeeks.org/puzzle-21-3-ants-and-triangle/",
               "solution": "-",
               "difficulty": "hard"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Pattern Printing",
-      "problems": [
-        {
-          "label": "Print Pascal's Triangle",
-          "question": "https://leetcode.com/problems/pascals-triangle/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Print Pascal's Triangle II",
-          "question": "https://leetcode.com/problems/pascals-triangle-ii/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Print Floyd's Triangle",
-          "question": "https://www.geeksforgeeks.org/program-to-print-floyds-triangle/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Spiral Matrix I",
-          "question": "https://leetcode.com/problems/spiral-matrix/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Spiral Matrix II",
-          "question": "https://leetcode.com/problems/spiral-matrix-ii/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Print Matrix Diagonal Pattern",
-          "question": "https://www.geeksforgeeks.org/print-matrix-diagonal-pattern/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Generate Matrix in Concentric Rectangular Pattern",
-          "question": "https://www.geeksforgeeks.org/print-concentric-rectangular-pattern-in-a-2d-matrix/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Print X in a rectangular box",
-          "question": "https://www.geeksforgeeks.org/pattern-print-x-rectangular-box/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Print Rectangular Pattern with Given Center",
-          "question": "https://www.geeksforgeeks.org/print-rectangular-pattern-with-given-center/",
-          "solution": "-",
-          "difficulty": "medium"
-        }
-      ]
-    },
-    {
-      "title": "Prefix Sum",
-      "subsections": [
-        {
-          "title": "Basics and Applications",
-          "problems": [
-            {
-              "label": "Prefix Sum Array Basics and Implementation",
-              "question": "https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Find Pivot Index",
-              "question": "https://leetcode.com/problems/find-pivot-index/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Range Sum Query - Immutable",
-              "question": "https://leetcode.com/problems/range-sum-query-immutable/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Range Sum Query 2D - Immutable",
-              "question": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Occurred Integer in Ranges",
-              "question": "https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Count Number of Nice Subarrays",
-              "question": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Product of Array Except Self",
-              "question": "https://leetcode.com/problems/product-of-array-except-self/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Count of Interesting Subarrays",
-              "question": "https://www.geeksforgeeks.org/count-of-interesting-subarrays/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Count Submatrices with Top-Left Element and Sum Less Than k (2D Prefix Sum)",
-              "question": "https://www.geeksforgeeks.org/count-submatrices-with-top-left-element-and-sum-less-than-k/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Subarray Min-Product (Monotonic Stack + Prefix Sum)",
-              "question": "https://leetcode.com/problems/maximum-subarray-min-product/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Construct Product Matrix",
-              "question": "https://www.geeksforgeeks.org/construct-product-matrix/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Deque )",
-              "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
-        },
-        {
-          "title": "Subarray Sum",
-          "problems": [
-            {
-              "label": "Maximum Subarray Sum – Kadane’s Algorithm",
-              "question": "https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Subarrays with Sum 0",
-              "question": "https://www.geeksforgeeks.org/find-if-there-is-a-subarray-with-0-sum/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Subarray Sum Equals K",
-              "question": "https://leetcode.com/problems/subarray-sum-equals-k/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Longest Subarray with sum K",
-              "question": "https://www.geeksforgeeks.org/longest-sub-array-sum-k/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Subarray Sums Divisible by K",
-              "question": "https://leetcode.com/problems/subarray-sums-divisible-by-k/description/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Continuous Subarray Sum",
-              "question": "https://leetcode.com/problems/continuous-subarray-sum/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Sum Circular Subarray",
-              "question": "https://leetcode.com/problems/maximum-sum-circular-subarray/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Length of a Subarray with Positive Product",
-              "question": "https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Binary Subarrays With Sum",
-              "question": "https://leetcode.com/problems/binary-subarrays-with-sum/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Submatrices That Sum to Target",
-              "question": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Sorting",
-      "subsections": [
-        {
-          "title": "Basics and Applications",
-          "problems": [
-            {
-              "label": "Introduction to Sorting Algorithms",
-              "question": "https://www.geeksforgeeks.org/introduction-to-sorting-algorithm/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Bubble Sort",
-              "question": "https://www.geeksforgeeks.org/bubble-sort/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Selection Sort",
-              "question": "https://www.geeksforgeeks.org/selection-sort/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Insertion Sort",
-              "question": "https://www.geeksforgeeks.org/insertion-sort/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Merge Sort",
-              "question": "https://www.geeksforgeeks.org/merge-sort/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Quick Sort",
-              "question": "https://www.geeksforgeeks.org/quick-sort/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Heap Sort",
-              "question": "https://www.geeksforgeeks.org/heap-sort/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Counting Sort",
-              "question": "https://www.geeksforgeeks.org/counting-sort/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Radix Sort",
-              "question": "https://www.geeksforgeeks.org/radix-sort/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Bucket Sort",
-              "question": "https://www.geeksforgeeks.org/bucket-sort-2/",
-              "solution": "-",
-              "difficulty": "medium"
-            }
-          ]
-        },
-        {
-          "title": "General Questions",
-          "problems": [
-            {
-              "label": "Meeting Rooms",
-              "question": "https://leetcode.ca/all/252.html",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Kth Largest Element in an Array (using sort and return a[k-1]",
-              "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Largest Number",
-              "question": "https://leetcode.com/problems/largest-number/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Destroying Asteroids",
-              "question": "https://leetcode.com/problems/destroying-asteroids/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Meeting Rooms II",
-              "question": "https://leetcode.ca/all/253.html",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Count Days Without Meetings",
-              "question": "https://leetcode.com/problems/count-days-without-meetings/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Number of Arrows to Burst Balloons (IMP) ",
-              "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Number of Platforms Required for a Railway/Bus Station",
-              "question": "https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find K Bookings Possible Given Arrival and Departure Times",
-              "question": "https://www.geeksforgeeks.org/find-k-bookings-possible-given-arrival-departure-times/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Car Fleet (IMP) ",
-              "question": "https://leetcode.com/problems/car-fleet/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Group Anagrams",
-              "question": "https://leetcode.com/problems/group-anagrams/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Sort Characters By Frequency (custom comparator)",
-              "question": "https://leetcode.com/problems/sort-characters-by-frequency/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find K Closest Elements",
-              "question": "https://leetcode.com/problems/find-k-closest-elements/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Top K Frequent Words (Map + Sorting / Priority Queue)",
-              "question": "https://leetcode.com/problems/top-k-frequent-words/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Cost to Hire K Workers ( sort + priority queue )",
-              "question": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Meeting Rooms III",
-              "question": "https://leetcode.com/problems/meeting-rooms-iii/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]          
-        },
-        {
-          "title": "Interval Questions",
-          "problems": [
-            {
-              "label": "Merge Intervals",
-              "question": "https://leetcode.com/problems/merge-intervals/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Non-overlapping Intervals",
-              "question": "https://leetcode.com/problems/non-overlapping-intervals/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find Right Interval",
-              "question": "https://leetcode.com/problems/find-right-interval/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Insert Interval",
-              "question": "https://leetcode.com/problems/insert-interval/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Remove Covered Intervals",
-              "question": "https://leetcode.com/problems/remove-covered-intervals/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Max Number of Overlapping Intervals",
-              "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Interval List Intersections",
-              "question": "https://leetcode.com/problems/interval-list-intersections/",
-              "solution": "-",
-              "difficulty": "medium"
             }
           ]
         }
