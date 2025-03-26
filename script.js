@@ -178,6 +178,7 @@ function saveProgress() {
 }
 
 // Load progress from localStorage and update the UI accordingly
+// Make sure loadNotess gets called during initialization
 function loadProgress() {
   const saved = localStorage.getItem('dsaSolvedProblems');
   if (saved) {
@@ -193,6 +194,11 @@ function loadProgress() {
       }
     });
   }
+  
+  // Load notes after DOM is fully loaded
+  setTimeout(() => {
+    loadNotess();
+  }, 500);
 }
 
 // function loadProgress() {
@@ -725,6 +731,9 @@ function generateProblemTable(problemArray, baseId) {
         <tbody>
           ${problemArray.map((problem, index) => {
     const problemId = `${baseId}-${index}`;
+     // Escape any single quotes in the label to prevent breaking the onclick attribute
+     const escapedLabel = problem.label.replace(/'/g, "\\'");
+    
     return `
               <tr class="${problem.difficulty}">
                 <td data-label="Question">
@@ -739,7 +748,7 @@ function generateProblemTable(problemArray, baseId) {
                 </td>
                 <td data-label="Notes">
                   <div class="centered-container">
-                    <i class="material-icons notes-icon" onclick="openNotesModal('${problemId}', '${problem.label}')">
+                    <i class="material-icons notes-icon" onclick="openNotesModal('${problemId}', '${escapedLabel}')">
                       sticky_note_2
                     </i>
                   </div>
@@ -915,9 +924,43 @@ function loadNotess() {
 
     // Save back in the new format for future use
     localStorage.setItem('dsaNotes', JSON.stringify(notes));
+    // Update notes icons to be green if they have content
+    updateNotesIcons();
   } else {
     notes = {};
   }
+}
+
+// Helper function to update all notes icons based on note content
+function updateNotesIcons() {
+  console.log("Updating notes icons based on content...");
+  document.querySelectorAll('.notes-icon').forEach(icon => {
+    // Extract the problem ID from the onclick attribute
+    const onclickAttr = icon.getAttribute('onclick');
+    if (!onclickAttr) return;
+    
+    // Use a more robust regex to handle the escaped quotes in your labels
+    const match = onclickAttr.match(/openNotesModal\('([^']+)',\s*'((?:[^'\\]|\\.)+)'\)/);
+    if (!match) {
+      console.log("No match found for:", onclickAttr);
+      return;
+    }
+    
+    const problemId = match[1];
+    const escapedLabel = match[2];
+    // Unescape the label to match how it's stored
+    const label = escapedLabel.replace(/\\'/g, "'");
+    const sectionName = problemId.split('-')[0];
+    const stableNoteId = `${sectionName}-${label}`;
+    
+    // Set data-has-notes attribute based on whether notes exist and aren't empty
+    if (notes[stableNoteId] && notes[stableNoteId].trim() !== '') {
+      icon.setAttribute('data-has-notes', 'true');
+      console.log(`Notes found for ${stableNoteId}, setting icon to green`);
+    } else {
+      icon.setAttribute('data-has-notes', 'false');
+    }
+  });
 }
 
 /**
@@ -971,6 +1014,16 @@ function saveNotesModal() {
 
     // Save to localStorage
     localStorage.setItem('dsaNotes', JSON.stringify(notes));
+    
+    // Update the notes icon color
+    const notesIcon = row.querySelector('.notes-icon');
+    if (notesIcon) {
+      if (text && text.trim() !== '') {
+        notesIcon.setAttribute('data-has-notes', 'true');
+      } else {
+        notesIcon.setAttribute('data-has-notes', 'false');
+      }
+    }
 
     // Show success message
     M.toast({

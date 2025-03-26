@@ -753,6 +753,11 @@ body.dark-mode .collapsible-header:hover {
     transform: scale(1.1);
 }
 
+/* Add this new style for notes icon when notes exist */
+.notes-icon[data-has-notes="true"] {
+    color: var(--success);
+}
+
 /* Enhanced Footer */
 .footer {
     background: linear-gradient(180deg, var(--surface) 0%, var(--background) 100%);
