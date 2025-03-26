@@ -130,7 +130,6 @@ body {
     align-items: center;
     margin: 0;
 }
-/* chandan */
 .search-input {
     width: 100%;
     height: 44px;
@@ -1496,7 +1495,6 @@ td:first-child {
     font-style: italic;
     color: #96a2a7;
 }
-/* Mobile table styles */
 @media screen and (max-width: 768px) {
   .problem-table {
     display: block;
@@ -1685,7 +1683,6 @@ body.dark-mode .control-button:hover {
     transform: translateY(-2px);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
-/* chandan */
 body .control-button:hover {
     /* background: linear-gradient(135deg, #2575FC, #6A11CB); */
     background: rgba(234, 225, 241, 0.8);
@@ -1709,5 +1706,133 @@ body .control-button:hover {
 @media (max-width: 768px) {
     .section-controls {
         justify-content: center; /* Center on smaller screens */
+    }
+}
+
+/* Banner styling */
+.filter-banner {
+    margin: 0 auto 15px;
+    max-width: 600px; /* Match progress card width */
+    background-color: var(--surface);
+    color: var(--text-primary);
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out forwards;
+    z-index: 1000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Animation for banner fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Filter checkboxes demo */
+.filter-demo {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.checkbox-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.difficulty-label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text-secondary);
+}
+
+.demo-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 3px solid;
+    border-radius: 4px;
+    position: relative;
+    background-color: transparent;
+    animation: pulseCheckbox 2.5s 3;
+    background-color: currentColor;
+    
+}
+
+.demo-checkbox.easy {
+    border-color: var(--easy-color);
+    color: var(--easy-color);
+}
+
+.demo-checkbox.medium {
+    border-color: var(--medium-color);
+    color: var(--medium-color);
+}
+
+.demo-checkbox.hard {
+    border-color: var(--hard-color);
+    color: var(--hard-color);
+}
+
+/* Checkbox pulse animation */
+@keyframes pulseCheckbox {
+    0%, 100% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Show checkmark in the demo checkbox */
+.demo-checkbox::after {
+    content: '\2714';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    opacity: 0;
+    animation: showCheckmark 6s 3;
+}
+
+@keyframes showCheckmark {
+    0%, 15% {
+        opacity: 0;
+    }
+    16%, 22% {
+        opacity: 1;
+    }
+    23%, 45% {
+        opacity: 0;
+    }
+    46%, 52% {
+        opacity: 1;
+    }
+    53%, 75% {
+        opacity: 0;
+    }
+    76%, 82% {
+        opacity: 1;
+    }
+    83%, 100% {
+        opacity: 0;
     }
 }

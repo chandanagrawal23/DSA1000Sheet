@@ -45,87 +45,87 @@ btn.addEventListener('click', function(e) {
  * CELEBRATION FUNCTIONS
  ***************************************************************/
 function triggerCelebration() {
-    if (typeof confetti === 'undefined') {
-        console.warn('Confetti library not loaded yet');
-        return;
-    }
+  if (typeof confetti === 'undefined') {
+    console.warn('Confetti library not loaded yet');
+    return;
+  }
 
-    const colors = [
-        '#4F46E5', // Primary
-        '#10B981', // Accent
-        '#3B82F6', // Blue
-        '#6366F1', // Indigo
-        '#22C55E', // Success
-        '#F59E0B', // Warning
-        '#EF4444'  // Error
-    ];
+  const colors = [
+    '#4F46E5', // Primary
+    '#10B981', // Accent
+    '#3B82F6', // Blue
+    '#6366F1', // Indigo
+    '#22C55E', // Success
+    '#F59E0B', // Warning
+    '#EF4444'  // Error
+  ];
 
-    // Center burst
+  // Center burst
+  confetti({
+    particleCount: 50,
+    spread: 360,
+    origin: { x: 0.5, y: 0.5 },
+    colors: colors
+  });
+
+  // Side bursts
+  setTimeout(() => {
     confetti({
-        particleCount: 50,
-        spread: 360,
-        origin: { x: 0.5, y: 0.5 },
-        colors: colors
+      particleCount: 30,
+      spread: 90,
+      origin: { x: 0, y: 0.5 },
+      colors: colors
     });
+    confetti({
+      particleCount: 30,
+      spread: 90,
+      origin: { x: 1, y: 0.5 },
+      colors: colors
+    });
+  }, 200);
 
-    // Side bursts
-    setTimeout(() => {
-        confetti({
-            particleCount: 30,
-            spread: 90,
-            origin: { x: 0, y: 0.5 },
-            colors: colors
-        });
-        confetti({
-            particleCount: 30,
-            spread: 90,
-            origin: { x: 1, y: 0.5 },
-            colors: colors
-        });
-    }, 200);
+  // Top corner bursts
+  setTimeout(() => {
+    confetti({
+      particleCount: 30,
+      spread: 90,
+      origin: { x: 0, y: 0 },
+      colors: colors
+    });
+    confetti({
+      particleCount: 30,
+      spread: 90,
+      origin: { x: 1, y: 0 },
+      colors: colors
+    });
+  }, 400);
 
-    // Top corner bursts
-    setTimeout(() => {
-        confetti({
-            particleCount: 30,
-            spread: 90,
-            origin: { x: 0, y: 0 },
-            colors: colors
-        });
-        confetti({
-            particleCount: 30,
-            spread: 90,
-            origin: { x: 1, y: 0 },
-            colors: colors
-        });
-    }, 400);
+  // Bottom corner bursts
+  setTimeout(() => {
+    confetti({
+      particleCount: 30,
+      spread: 90,
+      origin: { x: 0, y: 1 },
+      colors: colors
+    });
+    confetti({
+      particleCount: 30,
+      spread: 90,
+      origin: { x: 1, y: 1 },
+      colors: colors
+    });
+  }, 600);
 
-    // Bottom corner bursts
-    setTimeout(() => {
-        confetti({
-            particleCount: 30,
-            spread: 90,
-            origin: { x: 0, y: 1 },
-            colors: colors
-        });
-        confetti({
-            particleCount: 30,
-            spread: 90,
-            origin: { x: 1, y: 1 },
-            colors: colors
-        });
-    }, 600);
-
-    // Final big burst
-    setTimeout(() => {
-        confetti({
-            particleCount: 100,
-            spread: 360,
-            origin: { x: 0.5, y: 0.5 },
-            colors: colors,
-            ticks: 300
-        });
-    }, 800);
+  // Final big burst
+  setTimeout(() => {
+    confetti({
+      particleCount: 100,
+      spread: 360,
+      origin: { x: 0.5, y: 0.5 },
+      colors: colors,
+      ticks: 300
+    });
+  }, 800);
 }
 
 /***************************************************************
@@ -147,17 +147,17 @@ function getGlobalSolved() {
  ***************************************************************/
 function toggleSolved(icon) {
   const wasSolved = icon.getAttribute('data-solved') === 'true';
-  
+
   // Toggle the solved state
   icon.setAttribute('data-solved', !wasSolved);
   icon.textContent = !wasSolved ? 'check_box' : 'check_box_outline_blank';
   icon.parentElement.parentElement.classList.toggle('solved', !wasSolved);
-  
+
   // If marking as solved, trigger celebration
   if (!wasSolved) {
     triggerCelebration();
   }
-  
+
   saveProgress();
   updateGlobalRectBar();
   updateSectionProgress();
@@ -172,7 +172,7 @@ function saveProgress() {
     const problemId = icon.getAttribute('data-id');
     const sectionName = problemId.split('-')[0];
     const problemLabel = icon.parentElement.parentElement.querySelector('td a').textContent;
-    solvedProblems[sectionName+"-"+problemLabel] = true;
+    solvedProblems[sectionName + "-" + problemLabel] = true;
   });
   localStorage.setItem('dsaSolvedProblems', JSON.stringify(solvedProblems));
 }
@@ -186,7 +186,7 @@ function loadProgress() {
       const problemId = icon.getAttribute('data-id');
       const sectionName = problemId.split('-')[0];
       const problemLabel = icon.parentElement.parentElement.querySelector('td a').textContent;
-      if (solvedProblems[sectionName+"-"+problemLabel]) {
+      if (solvedProblems[sectionName + "-" + problemLabel]) {
         icon.setAttribute('data-solved', 'true');
         icon.textContent = 'check_box';
         icon.parentElement.parentElement.classList.add('solved');
@@ -217,144 +217,144 @@ function loadProgress() {
  * FILTER PROBLEMS
  ***************************************************************/
 function filterProblems(event) {
-    const searchBox = document.getElementById('searchBox');
-    if (!searchBox) return;
-    
-    const searchTerm = searchBox.value.toLowerCase();
-    console.log('Filtering with search term:', searchTerm);
-    
-    const sections = document.querySelectorAll('.collapsible');
-    const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
-    
-    // If there's no search term, collapse everything unless it was from a checkbox click
-    if (!searchTerm && !event?.target?.classList.contains('square-check')) {
-        sections.forEach(section => {
-            const instance = M.Collapsible.getInstance(section);
-            if (instance) {
-                instance.close(0);
-            }
-            
-            // Also collapse all subsections
-            const subsectionCollapsible = section.querySelector('.subsection-collapsible');
-            if (subsectionCollapsible) {
-                const subsectionInstance = M.Collapsible.getInstance(subsectionCollapsible);
-                if (subsectionInstance) {
-                    for (let i = 0; i < subsectionInstance.$el[0].children.length; i++) {
-                        subsectionInstance.close(i);
-                    }
-                }
-            }
-        });
-    }
-    
+  const searchBox = document.getElementById('searchBox');
+  if (!searchBox) return;
+
+  const searchTerm = searchBox.value.toLowerCase();
+  console.log('Filtering with search term:', searchTerm);
+
+  const sections = document.querySelectorAll('.collapsible');
+  const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
+
+  // If there's no search term, collapse everything unless it was from a checkbox click
+  if (!searchTerm && !event?.target?.classList.contains('square-check')) {
     sections.forEach(section => {
-        const sectionBody = section.querySelector('.collapsible-body');
-        const subsections = sectionBody.querySelectorAll('.subsection-collapsible li');
-        let hasMatchInSection = false;
-        
-        // Handle sections with subsections
-        if (subsections.length > 0) {
-            subsections.forEach(subsection => {
-                const subsectionBody = subsection.querySelector('.collapsible-body');
-                const rows = subsectionBody.querySelectorAll('tr');
-                let hasMatchInSubsection = false;
-                
-                // Get difficulty filters for this subsection
-                const subsectionId = subsection.querySelector('.mini-bars')?.dataset.id;
-                if (!subsectionId) return;
-                
-                const easyChecked = subsection.querySelector(`.square-check.easy[data-section="${subsectionId}"]`)?.checked ?? true;
-                const mediumChecked = subsection.querySelector(`.square-check.medium[data-section="${subsectionId}"]`)?.checked ?? true;
-                const hardChecked = subsection.querySelector(`.square-check.hard[data-section="${subsectionId}"]`)?.checked ?? true;
-                
-                // Show all difficulties if none are checked
-                const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
-                
-                rows.forEach(row => {
-                    const text = row.textContent.toLowerCase();
-                    const difficulty = row.classList.contains('easy') ? 'easy' :
-                                     row.classList.contains('medium') ? 'medium' :
-                                     row.classList.contains('hard') ? 'hard' : '';
-                    
-                    const difficultyMatch = showAllDifficulties || 
-                        (difficulty === 'easy' && easyChecked) ||
-                        (difficulty === 'medium' && mediumChecked) ||
-                        (difficulty === 'hard' && hardChecked);
-                    
-                    const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
-                    
-                    if (matchesSearch && difficultyMatch) {
-                        row.style.display = '';
-                        hasMatchInSubsection = true;
-                        hasMatchInSection = true;
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
-                
-                // Handle subsection visibility and expansion
-                if (hasMatchInSubsection) {
-                    subsection.style.display = '';
-                    if (searchTerm) {
-                        const instance = M.Collapsible.getInstance(subsection.closest('.collapsible'));
-                        if (instance) {
-                            const index = Array.from(subsection.parentElement.children).indexOf(subsection);
-                            instance.open(index);
-                        }
-                    }
-                } else {
-                    subsection.style.display = 'none';
-                }
-            });
-        } else {
-            // Handle sections without subsections
-            const rows = sectionBody.querySelectorAll('tr');
-            const sectionId = section.getAttribute('id');
-            if (!sectionId) return;
-            
-            const easyChecked = section.querySelector(`.square-check.easy[data-section="${sectionId}"]`)?.checked ?? true;
-            const mediumChecked = section.querySelector(`.square-check.medium[data-section="${sectionId}"]`)?.checked ?? true;
-            const hardChecked = section.querySelector(`.square-check.hard[data-section="${sectionId}"]`)?.checked ?? true;
-            
-            const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
-            
-            rows.forEach(row => {
-                const text = row.textContent.toLowerCase();
-                const difficulty = row.classList.contains('easy') ? 'easy' :
-                                 row.classList.contains('medium') ? 'medium' :
-                                 row.classList.contains('hard') ? 'hard' : '';
-                
-                const difficultyMatch = showAllDifficulties || 
-                    (difficulty === 'easy' && easyChecked) ||
-                    (difficulty === 'medium' && mediumChecked) ||
-                    (difficulty === 'hard' && hardChecked);
-                
-                const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
-                
-                if (matchesSearch && difficultyMatch) {
-                    row.style.display = '';
-                    hasMatchInSection = true;
-                } else {
-                    row.style.display = 'none';
-                }
-            });
+      const instance = M.Collapsible.getInstance(section);
+      if (instance) {
+        instance.close(0);
+      }
+
+      // Also collapse all subsections
+      const subsectionCollapsible = section.querySelector('.subsection-collapsible');
+      if (subsectionCollapsible) {
+        const subsectionInstance = M.Collapsible.getInstance(subsectionCollapsible);
+        if (subsectionInstance) {
+          for (let i = 0; i < subsectionInstance.$el[0].children.length; i++) {
+            subsectionInstance.close(i);
+          }
         }
-        
-        // Handle section visibility and expansion
-        if (hasMatchInSection) {
-            section.style.display = '';
-            if (searchTerm && sectionBody !== clickedSection) {
-                const instance = M.Collapsible.getInstance(section);
-                if (instance) {
-                    instance.open(0);
-                }
-            }
-        } else {
-            section.style.display = 'none';
-        }
+      }
     });
-    
-    console.log('Filtering complete');
+  }
+
+  sections.forEach(section => {
+    const sectionBody = section.querySelector('.collapsible-body');
+    const subsections = sectionBody.querySelectorAll('.subsection-collapsible li');
+    let hasMatchInSection = false;
+
+    // Handle sections with subsections
+    if (subsections.length > 0) {
+      subsections.forEach(subsection => {
+        const subsectionBody = subsection.querySelector('.collapsible-body');
+        const rows = subsectionBody.querySelectorAll('tr');
+        let hasMatchInSubsection = false;
+
+        // Get difficulty filters for this subsection
+        const subsectionId = subsection.querySelector('.mini-bars')?.dataset.id;
+        if (!subsectionId) return;
+
+        const easyChecked = subsection.querySelector(`.square-check.easy[data-section="${subsectionId}"]`)?.checked ?? true;
+        const mediumChecked = subsection.querySelector(`.square-check.medium[data-section="${subsectionId}"]`)?.checked ?? true;
+        const hardChecked = subsection.querySelector(`.square-check.hard[data-section="${subsectionId}"]`)?.checked ?? true;
+
+        // Show all difficulties if none are checked
+        const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          const difficulty = row.classList.contains('easy') ? 'easy' :
+            row.classList.contains('medium') ? 'medium' :
+              row.classList.contains('hard') ? 'hard' : '';
+
+          const difficultyMatch = showAllDifficulties ||
+            (difficulty === 'easy' && easyChecked) ||
+            (difficulty === 'medium' && mediumChecked) ||
+            (difficulty === 'hard' && hardChecked);
+
+          const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
+
+          if (matchesSearch && difficultyMatch) {
+            row.style.display = '';
+            hasMatchInSubsection = true;
+            hasMatchInSection = true;
+          } else {
+            row.style.display = 'none';
+          }
+        });
+
+        // Handle subsection visibility and expansion
+        if (hasMatchInSubsection) {
+          subsection.style.display = '';
+          if (searchTerm) {
+            const instance = M.Collapsible.getInstance(subsection.closest('.collapsible'));
+            if (instance) {
+              const index = Array.from(subsection.parentElement.children).indexOf(subsection);
+              instance.open(index);
+            }
+          }
+        } else {
+          subsection.style.display = 'none';
+        }
+      });
+    } else {
+      // Handle sections without subsections
+      const rows = sectionBody.querySelectorAll('tr');
+      const sectionId = section.getAttribute('id');
+      if (!sectionId) return;
+
+      const easyChecked = section.querySelector(`.square-check.easy[data-section="${sectionId}"]`)?.checked ?? true;
+      const mediumChecked = section.querySelector(`.square-check.medium[data-section="${sectionId}"]`)?.checked ?? true;
+      const hardChecked = section.querySelector(`.square-check.hard[data-section="${sectionId}"]`)?.checked ?? true;
+
+      const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        const difficulty = row.classList.contains('easy') ? 'easy' :
+          row.classList.contains('medium') ? 'medium' :
+            row.classList.contains('hard') ? 'hard' : '';
+
+        const difficultyMatch = showAllDifficulties ||
+          (difficulty === 'easy' && easyChecked) ||
+          (difficulty === 'medium' && mediumChecked) ||
+          (difficulty === 'hard' && hardChecked);
+
+        const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
+
+        if (matchesSearch && difficultyMatch) {
+          row.style.display = '';
+          hasMatchInSection = true;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Handle section visibility and expansion
+    if (hasMatchInSection) {
+      section.style.display = '';
+      if (searchTerm && sectionBody !== clickedSection) {
+        const instance = M.Collapsible.getInstance(section);
+        if (instance) {
+          instance.open(0);
+        }
+      }
+    } else {
+      section.style.display = 'none';
+    }
+  });
+
+  console.log('Filtering complete');
 }
 
 /***************************************************************
@@ -401,45 +401,45 @@ function updateGlobalRectBar() {
   const solved = getGlobalSolved();
   const overallTotal = totalEasy + totalMedium + totalHard;
   const overallSolved = solved.easy + solved.medium + solved.hard;
-  
+
   // Calculate percentages
   const easyFrac = overallTotal > 0 ? solved.easy / overallTotal : 0;
   const medFrac = overallTotal > 0 ? solved.medium / overallTotal : 0;
   const hardFrac = overallTotal > 0 ? solved.hard / overallTotal : 0;
   const solvedFrac = easyFrac + medFrac + hardFrac;
   const unsolvedFrac = 1 - solvedFrac;
-  
+
   // Update bar segments
   const easySeg = document.getElementById('easySegment');
   const medSeg = document.getElementById('mediumSegment');
   const hardSeg = document.getElementById('hardSegment');
   const unsolvedSeg = document.getElementById('unsolvedSegment');
-  
+
   if (easySeg && medSeg && hardSeg && unsolvedSeg) {
     easySeg.style.width = `${(easyFrac * 100).toFixed(2)}%`;
     medSeg.style.width = `${(medFrac * 100).toFixed(2)}%`;
     hardSeg.style.width = `${(hardFrac * 100).toFixed(2)}%`;
     unsolvedSeg.style.width = `${(unsolvedFrac * 100).toFixed(2)}%`;
   }
-  
+
   // Update text stats
   const progressOverall = overallTotal > 0 ? Math.round((overallSolved / overallTotal) * 100) : 0;
-  
+
   const percentElem = document.getElementById('percentSolved');
   if (percentElem) {
     percentElem.textContent = `${progressOverall}% solved`;
   }
-  
+
   const overallElem = document.getElementById('overallSolvedText');
   if (overallElem) {
     overallElem.textContent = `${overallSolved}/${overallTotal} Solved`;
   }
-  
+
   // Update difficulty stats with both total and unique counts
   const easyStatsElem = document.getElementById('easyStats');
   const mediumStatsElem = document.getElementById('mediumStats');
   const hardStatsElem = document.getElementById('hardStats');
-  
+
   if (easyStatsElem) {
     easyStatsElem.textContent = `Easy: ${solved.easy}/${totalEasy}`;
     document.querySelector('.easy-unique').textContent = `(${uniqueEasy.size} unique)`;
@@ -452,7 +452,7 @@ function updateGlobalRectBar() {
     hardStatsElem.textContent = `Hard: ${solved.hard}/${totalHard}`;
     document.querySelector('.hard-unique').textContent = `(${uniqueHard.size} unique)`;
   }
-  
+
   // Update unique problems stats
   const uniqueStatsElem = document.querySelector('.unique-stats');
   if (uniqueStatsElem) {
@@ -515,6 +515,19 @@ function updateMiniBar(miniBarsElem, diff, solved, total) {
  ***************************************************************/
 function renderSections(data) {
   const sectionsDiv = document.getElementById('sections');
+  
+  // Log all section and subsection names
+  // console.log("=== ALL SECTIONS AND SUBSECTIONS ===");
+  // data.sections.forEach(section => {
+  //   console.log(`SECTION: ${section.title}`);
+    
+  //   if (section.subsections && section.subsections.length > 0) {
+  //     section.subsections.forEach(subsection => {
+  //       console.log(`  SUBSECTION: ${subsection.title}`);
+  //     });
+  //   }
+  // });
+
   data.sections.forEach(section => {
     sectionsDiv.innerHTML += generateAccordion(section);
   });
@@ -526,17 +539,17 @@ function renderSections(data) {
  * for each subsection. If no subsections, just one collapsible.
  ***************************************************************/
 function generateAccordion(section) {
-    if (section.subsections && Array.isArray(section.subsections) && section.subsections.length > 0) {
-      const parentId = section.title.replace(/\s+/g, '');
-      // Aggregated counts across all subsections
-      let aggEasy = 0, aggMed = 0, aggHard = 0;
-      section.subsections.forEach(subsec => {
-        aggEasy += subsec.problems.filter(p => p.difficulty === 'easy').length;
-        aggMed += subsec.problems.filter(p => p.difficulty === 'medium').length;
-        aggHard += subsec.problems.filter(p => p.difficulty === 'hard').length;
-      });
-  
-      return `
+  if (section.subsections && Array.isArray(section.subsections) && section.subsections.length > 0) {
+    const parentId = section.title.replace(/\s+/g, '');
+    // Aggregated counts across all subsections
+    let aggEasy = 0, aggMed = 0, aggHard = 0;
+    section.subsections.forEach(subsec => {
+      aggEasy += subsec.problems.filter(p => p.difficulty === 'easy').length;
+      aggMed += subsec.problems.filter(p => p.difficulty === 'medium').length;
+      aggHard += subsec.problems.filter(p => p.difficulty === 'hard').length;
+    });
+
+    return `
         <ul class="collapsible z-depth-1" id="${parentId}">
           <li>
             <div class="collapsible-header main-collapsible-header">
@@ -584,21 +597,21 @@ function generateAccordion(section) {
           </li>
         </ul>
       `;
-    } else {
-      return generateAccordionForSection(section);
-    }
+  } else {
+    return generateAccordionForSection(section);
   }
-  
-  /***************************************************************
-   * Single-Level Accordion for a Plain Section
-   ***************************************************************/
-  function generateAccordionForSection(sec) {
-    const sectionId = sec.title.replace(/\s+/g, '');
-    const easyCount = sec.problems.filter(p => p.difficulty === 'easy').length;
-    const mediumCount = sec.problems.filter(p => p.difficulty === 'medium').length;
-    const hardCount = sec.problems.filter(p => p.difficulty === 'hard').length;
-  
-    return `
+}
+
+/***************************************************************
+ * Single-Level Accordion for a Plain Section
+ ***************************************************************/
+function generateAccordionForSection(sec) {
+  const sectionId = sec.title.replace(/\s+/g, '');
+  const easyCount = sec.problems.filter(p => p.difficulty === 'easy').length;
+  const mediumCount = sec.problems.filter(p => p.difficulty === 'medium').length;
+  const hardCount = sec.problems.filter(p => p.difficulty === 'hard').length;
+
+  return `
       <ul class="collapsible z-depth-1" id="${sectionId}">
         <li>
           <div class="collapsible-header">
@@ -642,18 +655,18 @@ function generateAccordion(section) {
         </li>
       </ul>
     `;
-  }
-  
-  /***************************************************************
-   * Subsection Collapsible
-   ***************************************************************/
-  function generateSubsectionCollapsible(subsec) {
-    const subsecId = subsec.title.replace(/\s+/g, '');
-    const easyCount = subsec.problems.filter(p => p.difficulty === 'easy').length;
-    const mediumCount = subsec.problems.filter(p => p.difficulty === 'medium').length;
-    const hardCount = subsec.problems.filter(p => p.difficulty === 'hard').length;
-  
-    return `
+}
+
+/***************************************************************
+ * Subsection Collapsible
+ ***************************************************************/
+function generateSubsectionCollapsible(subsec) {
+  const subsecId = subsec.title.replace(/\s+/g, '');
+  const easyCount = subsec.problems.filter(p => p.difficulty === 'easy').length;
+  const mediumCount = subsec.problems.filter(p => p.difficulty === 'medium').length;
+  const hardCount = subsec.problems.filter(p => p.difficulty === 'hard').length;
+
+  return `
       <li>
         <div class="collapsible-header subsection-header">
           <i class="material-icons subsection-icon">subdirectory_arrow_right</i>
@@ -693,13 +706,13 @@ function generateAccordion(section) {
         </div>
       </li>
     `;
-  }
-  
-  /***************************************************************
-   * Problem Table Helper
-   ***************************************************************/
-  function generateProblemTable(problemArray, baseId) {
-    return `
+}
+
+/***************************************************************
+ * Problem Table Helper
+ ***************************************************************/
+function generateProblemTable(problemArray, baseId) {
+  return `
       <table class="striped highlight problem-table">
         <thead>
           <tr>
@@ -711,18 +724,18 @@ function generateAccordion(section) {
         </thead>
         <tbody>
           ${problemArray.map((problem, index) => {
-            const problemId = `${baseId}-${index}`;
-            return `
+    const problemId = `${baseId}-${index}`;
+    return `
               <tr class="${problem.difficulty}">
                 <td data-label="Question">
                   <a href="${problem.question}" target="_blank">${problem.label}</a>
                 </td>
                 <td data-label="Solution">
                   ${
-                    problem.solution !== "-"
-                      ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><span style="display:inline-block;">SOLUTION</span></a></div>`
-                      : "-"
-                  }
+                problem.solution !== "-"
+        ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><span style="display:inline-block;">SOLUTION</span></a></div>`
+        : "-"
+      }
                 </td>
                 <td data-label="Notes">
                   <div class="centered-container">
@@ -740,136 +753,136 @@ function generateAccordion(section) {
                 </td>
               </tr>
             `;
-          }).join('')}
+  }).join('')}
         </tbody>
       </table>
     `;
-  }
-  
-  /***************************************************************
-   * UPDATE SECTION PROGRESS
-   * Now we must also update *subsection* progress bars
-   ***************************************************************/
-  function updateSectionProgress() {
-    // 1) Update top-level sections
-    const collapsibles = document.querySelectorAll('.collapsible');
-    collapsibles.forEach(sectionElem => {
-      const sectionId = sectionElem.getAttribute('id');
-      if (!sectionId) return;
-      // Collect the rows for that section's table (if it's a single-level)
-      const rows = sectionElem.querySelectorAll('tbody tr');
-      let solved = { easy: 0, medium: 0, hard: 0 };
-      let total = { easy: 0, medium: 0, hard: 0 };
-  
-      rows.forEach(row => {
+}
+
+/***************************************************************
+ * UPDATE SECTION PROGRESS
+ * Now we must also update *subsection* progress bars
+ ***************************************************************/
+function updateSectionProgress() {
+  // 1) Update top-level sections
+  const collapsibles = document.querySelectorAll('.collapsible');
+  collapsibles.forEach(sectionElem => {
+    const sectionId = sectionElem.getAttribute('id');
+    if (!sectionId) return;
+    // Collect the rows for that section's table (if it's a single-level)
+    const rows = sectionElem.querySelectorAll('tbody tr');
+    let solved = { easy: 0, medium: 0, hard: 0 };
+    let total = { easy: 0, medium: 0, hard: 0 };
+
+    rows.forEach(row => {
+      if (row.classList.contains('easy')) {
+        total.easy++;
+        const icon = row.querySelector('.done-icon');
+        if (icon && icon.getAttribute('data-solved') === 'true') solved.easy++;
+      }
+      if (row.classList.contains('medium')) {
+        total.medium++;
+        const icon = row.querySelector('.done-icon');
+        if (icon && icon.getAttribute('data-solved') === 'true') solved.medium++;
+      }
+      if (row.classList.contains('hard')) {
+        total.hard++;
+        const icon = row.querySelector('.done-icon');
+        if (icon && icon.getAttribute('data-solved') === 'true') solved.hard++;
+      }
+    });
+
+    // Update the mini bars for the top-level (no subsections) case
+    const miniBars = sectionElem.querySelector(`.mini-bars[data-id="${sectionId}"]`);
+    if (miniBars) {
+      updateMiniBar(miniBars, 'easy', solved.easy, total.easy);
+      updateMiniBar(miniBars, 'medium', solved.medium, total.medium);
+      updateMiniBar(miniBars, 'hard', solved.hard, total.hard);
+    }
+  });
+
+  // 2) Update subsections
+  // For each subsection we have data-id="someSubsecId"
+  document.querySelectorAll('.mini-bars.small').forEach(subMini => {
+    const subsecId = subMini.getAttribute('data-id');
+    if (!subsecId) return;
+    // Collect the rows that belong to that subsection
+    const subRows = document.querySelectorAll(`.collapsible-body.subsection-body table tbody tr`);
+    // But we only want the rows that match that subsection ID prefix
+    let solved = { easy: 0, medium: 0, hard: 0 };
+    let total = { easy: 0, medium: 0, hard: 0 };
+    subRows.forEach(row => {
+      // We can parse the row's problem ID
+      const icon = row.querySelector('.done-icon');
+      if (!icon) return;
+      const rowProblemId = icon.getAttribute('data-id') || '';
+      // If rowProblemId starts with subsecId + '-'
+      if (rowProblemId.startsWith(subsecId + '-')) {
+        // Then this row belongs to the current subsection
         if (row.classList.contains('easy')) {
           total.easy++;
-          const icon = row.querySelector('.done-icon');
-          if (icon && icon.getAttribute('data-solved') === 'true') solved.easy++;
+          if (icon.getAttribute('data-solved') === 'true') solved.easy++;
         }
         if (row.classList.contains('medium')) {
           total.medium++;
-          const icon = row.querySelector('.done-icon');
-          if (icon && icon.getAttribute('data-solved') === 'true') solved.medium++;
+          if (icon.getAttribute('data-solved') === 'true') solved.medium++;
         }
         if (row.classList.contains('hard')) {
           total.hard++;
-          const icon = row.querySelector('.done-icon');
-          if (icon && icon.getAttribute('data-solved') === 'true') solved.hard++;
+          if (icon.getAttribute('data-solved') === 'true') solved.hard++;
         }
-      });
-  
-      // Update the mini bars for the top-level (no subsections) case
-      const miniBars = sectionElem.querySelector(`.mini-bars[data-id="${sectionId}"]`);
-      if (miniBars) {
-        updateMiniBar(miniBars, 'easy', solved.easy, total.easy);
-        updateMiniBar(miniBars, 'medium', solved.medium, total.medium);
-        updateMiniBar(miniBars, 'hard', solved.hard, total.hard);
       }
     });
-  
-    // 2) Update subsections
-    // For each subsection we have data-id="someSubsecId"
-    document.querySelectorAll('.mini-bars.small').forEach(subMini => {
-      const subsecId = subMini.getAttribute('data-id');
-      if (!subsecId) return;
-      // Collect the rows that belong to that subsection
-      const subRows = document.querySelectorAll(`.collapsible-body.subsection-body table tbody tr`);
-      // But we only want the rows that match that subsection ID prefix
-      let solved = { easy: 0, medium: 0, hard: 0 };
-      let total = { easy: 0, medium: 0, hard: 0 };
+    // Now update the mini bars for this subsection
+    updateMiniBar(subMini, 'easy', solved.easy, total.easy);
+    updateMiniBar(subMini, 'medium', solved.medium, total.medium);
+    updateMiniBar(subMini, 'hard', solved.hard, total.hard);
+  });
+
+  // 3) Update aggregated parent sections that have subsections
+  document.querySelectorAll('.collapsible-header.main-collapsible-header .mini-bars').forEach(parentBars => {
+    const parentId = parentBars.getAttribute('data-id');
+    if (!parentId) return;
+    // We sum up the data from each subsection
+    // We'll find all subsections that belong to this parent
+    const parentElem = document.getElementById(parentId);
+    if (!parentElem) return;
+    let solved = { easy: 0, medium: 0, hard: 0 };
+    let total = { easy: 0, medium: 0, hard: 0 };
+    // For each subsection-collapsible in this parent's body
+    const subAccordions = parentElem.querySelectorAll('.subsection-collapsible li');
+    subAccordions.forEach(li => {
+      // Each li might have data for one subsection
+      const subHeader = li.querySelector('.collapsible-header.subsection-header .mini-bars.small');
+      if (!subHeader) return;
+      const subId = subHeader.getAttribute('data-id');
+      // We'll gather the final counts from the .mini-bars data-diff
+      // But simpler to recalc from the table rows
+      const subRows = li.querySelectorAll('tbody tr');
       subRows.forEach(row => {
-        // We can parse the row's problem ID
         const icon = row.querySelector('.done-icon');
         if (!icon) return;
-        const rowProblemId = icon.getAttribute('data-id') || '';
-        // If rowProblemId starts with subsecId + '-'
-        if (rowProblemId.startsWith(subsecId + '-')) {
-          // Then this row belongs to the current subsection
-          if (row.classList.contains('easy')) {
-            total.easy++;
-            if (icon.getAttribute('data-solved') === 'true') solved.easy++;
-          }
-          if (row.classList.contains('medium')) {
-            total.medium++;
-            if (icon.getAttribute('data-solved') === 'true') solved.medium++;
-          }
-          if (row.classList.contains('hard')) {
-            total.hard++;
-            if (icon.getAttribute('data-solved') === 'true') solved.hard++;
-          }
+        if (row.classList.contains('easy')) {
+          total.easy++;
+          if (icon.getAttribute('data-solved') === 'true') solved.easy++;
+        }
+        if (row.classList.contains('medium')) {
+          total.medium++;
+          if (icon.getAttribute('data-solved') === 'true') solved.medium++;
+        }
+        if (row.classList.contains('hard')) {
+          total.hard++;
+          if (icon.getAttribute('data-solved') === 'true') solved.hard++;
         }
       });
-      // Now update the mini bars for this subsection
-      updateMiniBar(subMini, 'easy', solved.easy, total.easy);
-      updateMiniBar(subMini, 'medium', solved.medium, total.medium);
-      updateMiniBar(subMini, 'hard', solved.hard, total.hard);
     });
-  
-    // 3) Update aggregated parent sections that have subsections
-    document.querySelectorAll('.collapsible-header.main-collapsible-header .mini-bars').forEach(parentBars => {
-      const parentId = parentBars.getAttribute('data-id');
-      if (!parentId) return;
-      // We sum up the data from each subsection
-      // We'll find all subsections that belong to this parent
-      const parentElem = document.getElementById(parentId);
-      if (!parentElem) return;
-      let solved = { easy: 0, medium: 0, hard: 0 };
-      let total = { easy: 0, medium: 0, hard: 0 };
-      // For each subsection-collapsible in this parent's body
-      const subAccordions = parentElem.querySelectorAll('.subsection-collapsible li');
-      subAccordions.forEach(li => {
-        // Each li might have data for one subsection
-        const subHeader = li.querySelector('.collapsible-header.subsection-header .mini-bars.small');
-        if (!subHeader) return;
-        const subId = subHeader.getAttribute('data-id');
-        // We'll gather the final counts from the .mini-bars data-diff
-        // But simpler to recalc from the table rows
-        const subRows = li.querySelectorAll('tbody tr');
-        subRows.forEach(row => {
-          const icon = row.querySelector('.done-icon');
-          if (!icon) return;
-          if (row.classList.contains('easy')) {
-            total.easy++;
-            if (icon.getAttribute('data-solved') === 'true') solved.easy++;
-          }
-          if (row.classList.contains('medium')) {
-            total.medium++;
-            if (icon.getAttribute('data-solved') === 'true') solved.medium++;
-          }
-          if (row.classList.contains('hard')) {
-            total.hard++;
-            if (icon.getAttribute('data-solved') === 'true') solved.hard++;
-          }
-        });
-      });
-      // Now update the parent's aggregated mini bars
-      updateMiniBar(parentBars, 'easy', solved.easy, total.easy);
-      updateMiniBar(parentBars, 'medium', solved.medium, total.medium);
-      updateMiniBar(parentBars, 'hard', solved.hard, total.hard);
-    });
-  }
-  
+    // Now update the parent's aggregated mini bars
+    updateMiniBar(parentBars, 'easy', solved.easy, total.easy);
+    updateMiniBar(parentBars, 'medium', solved.medium, total.medium);
+    updateMiniBar(parentBars, 'hard', solved.hard, total.hard);
+  });
+}
+
 /***************************************************************
  * NOTES MODAL FUNCTIONS
  ***************************************************************/
@@ -881,10 +894,10 @@ function loadNotess() {
   if (stored) {
     const storedNotes = JSON.parse(stored);
     notes = {};
-    
+
     // First copy all notes directly - these might be already in the new format
     Object.assign(notes, storedNotes);
-    
+
     // Then try to match any old-style notes with their corresponding problems
     document.querySelectorAll('.done-icon').forEach(icon => {
       const problemId = icon.getAttribute('data-id');
@@ -894,12 +907,12 @@ function loadNotess() {
         const label = row.querySelector('td a').textContent;
         const sectionName = problemId.split('-')[0];
         const stableNoteId = `${sectionName}-${label}`;
-        
+
         // Copy the note to the new format
         notes[stableNoteId] = storedNotes[problemId];
       }
     });
-    
+
     // Save back in the new format for future use
     localStorage.setItem('dsaNotes', JSON.stringify(notes));
   } else {
@@ -915,17 +928,17 @@ function openNotesModal(problemId, label) {
   const modal = document.getElementById('notesModal');
   const textarea = document.getElementById('notesModalTextarea');
   const title = document.getElementById('notesModalTitle');
-  
+
   // Extract section name from the problem ID
   const sectionName = problemId.split('-')[0];
-  
+
   // Create the stable ID for lookup
   const stableNoteId = `${sectionName}-${label}`;
-  
+
   // Try to find the note by stable ID first
   textarea.value = notes[stableNoteId] || '';
   title.textContent = `Notes: ${label}`;
-  
+
   modal.classList.add('active');
 }
 
@@ -940,25 +953,25 @@ function closeNotesModal() {
  */
 function saveNotesModal() {
   if (!currentNotesProblemId) return;
-  
+
   const text = document.getElementById('notesModalTextarea').value.trim();
-  
+
   // Get the label and section for this problem
   const icon = document.querySelector(`.done-icon[data-id="${currentNotesProblemId}"]`);
   if (icon) {
     const row = icon.parentElement.parentElement;
     const label = row.querySelector('td a').textContent;
     const sectionName = currentNotesProblemId.split('-')[0];
-    
+
     // Create a stable key using section + label
     const stableNoteId = `${sectionName}-${label}`;
-    
+
     // Store the note using the stable ID
     notes[stableNoteId] = text;
-    
+
     // Save to localStorage
     localStorage.setItem('dsaNotes', JSON.stringify(notes));
-    
+
     // Show success message
     M.toast({
       html: '<span class="success-toast">Notes saved successfully!</span>',
@@ -966,7 +979,7 @@ function saveNotesModal() {
       displayLength: 2000
     });
   }
-  
+
   closeNotesModal();
 }
 
@@ -976,12 +989,12 @@ function saveNotesModal() {
 function initializeDarkMode() {
   const darkModeToggle = document.getElementById('darkModeToggle');
   if (!darkModeToggle) return;
-  
+
   // Load saved preference
   const isDarkMode = localStorage.getItem('dsaDarkMode') === 'true';
   document.body.classList.toggle('dark-mode', isDarkMode);
   updateDarkModeIcon(isDarkMode);
-  
+
   // Add click handler
   darkModeToggle.addEventListener('click', () => {
     const isDark = !document.body.classList.contains('dark-mode');
@@ -997,30 +1010,61 @@ function updateDarkModeIcon(isDark) {
     darkModeToggle.innerHTML = `<span class="material-icons">${isDark ? 'light_mode' : 'dark_mode'}</span>`;
   }
 }
+// Initialize UI
+function initializeCollapsibles() {
+  // Initialize parent collapsibles first
+  const topLevelCollapsibles = document.querySelectorAll('.collapsible:not(.subsection-collapsible)');
+  M.Collapsible.init(topLevelCollapsibles, {
+    accordion: false,
+    onOpenStart: function (el) {
+      // When opening a parent section, collapse all its subsections
+      const subsectionCollapsible = el.querySelector('.subsection-collapsible');
+      if (subsectionCollapsible) {
+        const subsectionInstance = M.Collapsible.getInstance(subsectionCollapsible);
+        if (subsectionInstance) {
+          // Close all subsections when parent is opened
+          for (let i = 0; i < subsectionInstance.$el[0].children.length; i++) {
+            subsectionInstance.close(i);
+          }
+        }
+      }
+      el.dataset.manuallyOpened = 'true';
+    }
+  });
+
+  // Initialize subsection collapsibles
+  const subsectionCollapsibles = document.querySelectorAll('.subsection-collapsible');
+  M.Collapsible.init(subsectionCollapsibles, {
+    accordion: false,
+    onOpenStart: function (el) {
+      el.dataset.manuallyOpened = 'true';
+    }
+  });
+}
 
 /***************************************************************
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Materialize components
-    M.AutoInit();
-    
-    // Initialize dark mode
-    initializeDarkMode();
-    
-    // Initialize section controls
-    initSectionControls();
-    loadProgress();
-    loadNotess();
-    updateGlobalRectBar();
-    updateSectionProgress();
-    
-    // Add footer text with hyperlink
-    const footer = document.createElement('a');
-    footer.href = 'https://www.youtube.com/@BhajanMarg';
-    footer.target = '_blank';
-    footer.rel = 'noopener noreferrer';
-    footer.style.cssText = `
+  // Initialize Materialize components
+  M.AutoInit();
+
+  // Initialize dark mode
+  initializeDarkMode();
+
+  // Initialize section controls
+  initSectionControls();
+  loadProgress();
+  loadNotess();
+  updateGlobalRectBar();
+  updateSectionProgress();
+
+  // Add footer text with hyperlink
+  const footer = document.createElement('a');
+  footer.href = 'https://www.youtube.com/@BhajanMarg';
+  footer.target = '_blank';
+  footer.rel = 'noopener noreferrer';
+  footer.style.cssText = `
         position: fixed;
         bottom: 10px;
         left: 20px;
@@ -1034,112 +1078,104 @@ document.addEventListener('DOMContentLoaded', function() {
         text-shadow: 0 0 1px rgba(0,0,0,0.1);
         transition: opacity 0.3s ease;
     `;
-    footer.textContent = 'श्री राधे';
-    footer.addEventListener('mouseover', () => footer.style.opacity = '0.5');
-    footer.addEventListener('mouseout', () => footer.style.opacity = '0.25');
-    document.body.appendChild(footer);
-    
-    // Set up search with debouncing
-    const searchBox = document.getElementById('searchBox');
-    if (searchBox) {
-        let searchTimeout;
-        searchBox.addEventListener('input', function(e) {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                console.log('Search triggered with:', e.target.value);
-                filterProblems(e);
-            }, 300); // Debounce for 300ms
-        });
-        console.log('Search listener attached to:', searchBox);
-    } else {
-        console.warn('Search box not found!');
-    }
-    
-    // Load problems data
-    fetch('problems.json')
-        .then(res => {
-            if (!res.ok) throw new Error('Network response was not ok');
-            return res.json();
-        })
-        .then(data => {
-            problemData = data;
-            
-            // Reset Sets before counting
-            uniqueProblems.clear();
-            uniqueEasy.clear();
-            uniqueMedium.clear();
-            uniqueHard.clear();
-            
-            // Count totals and track unique problems
-            data.sections.forEach(section => {
-                if (section.problems) {
-                    section.problems.forEach(problem => {
-                        uniqueProblems.add(problem.label);
-                        if (problem.difficulty === 'easy') {
-                            totalEasy++;
-                            uniqueEasy.add(problem.label);
-                        }
-                        if (problem.difficulty === 'medium') {
-                            totalMedium++;
-                            uniqueMedium.add(problem.label);
-                        }
-                        if (problem.difficulty === 'hard') {
-                            totalHard++;
-                            uniqueHard.add(problem.label);
-                        }
-                    });
-                }
-                if (section.subsections) {
-                    section.subsections.forEach(subsec => {
-                        subsec.problems.forEach(problem => {
-                            uniqueProblems.add(problem.label);
-                            if (problem.difficulty === 'easy') {
-                                totalEasy++;
-                                uniqueEasy.add(problem.label);
-                            }
-                            if (problem.difficulty === 'medium') {
-                                totalMedium++;
-                                uniqueMedium.add(problem.label);
-                            }
-                            if (problem.difficulty === 'hard') {
-                                totalHard++;
-                                uniqueHard.add(problem.label);
-                            }
-                        });
-                    });
-                }
+  footer.textContent = 'श्री राधे';
+  footer.addEventListener('mouseover', () => footer.style.opacity = '0.5');
+  footer.addEventListener('mouseout', () => footer.style.opacity = '0.25');
+  document.body.appendChild(footer);
+
+  // Set up search with debouncing
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    let searchTimeout;
+    searchBox.addEventListener('input', function(e) {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        console.log('Search triggered with:', e.target.value);
+        filterProblems(e);
+      }, 300); // Debounce for 300ms
+    });
+    console.log('Search listener attached to:', searchBox);
+  } else {
+    console.warn('Search box not found!');
+  }
+
+  // Load problems data
+  fetch('problems.json')
+    .then(res => {
+      if (!res.ok) throw new Error('Network response was not ok');
+      return res.json();
+    })
+    .then(data => {
+      problemData = data;
+
+      // Reset Sets before counting
+      uniqueProblems.clear();
+      uniqueEasy.clear();
+      uniqueMedium.clear();
+      uniqueHard.clear();
+
+      // Count totals and track unique problems
+      data.sections.forEach(section => {
+        if (section.problems) {
+          section.problems.forEach(problem => {
+            uniqueProblems.add(problem.label);
+            if (problem.difficulty === 'easy') {
+              totalEasy++;
+              uniqueEasy.add(problem.label);
+            }
+            if (problem.difficulty === 'medium') {
+              totalMedium++;
+              uniqueMedium.add(problem.label);
+            }
+            if (problem.difficulty === 'hard') {
+              totalHard++;
+              uniqueHard.add(problem.label);
+            }
+          });
+        }
+        if (section.subsections) {
+          section.subsections.forEach(subsec => {
+            subsec.problems.forEach(problem => {
+              uniqueProblems.add(problem.label);
+              if (problem.difficulty === 'easy') {
+                totalEasy++;
+                uniqueEasy.add(problem.label);
+              }
+              if (problem.difficulty === 'medium') {
+                totalMedium++;
+                uniqueMedium.add(problem.label);
+              }
+              if (problem.difficulty === 'hard') {
+                totalHard++;
+                uniqueHard.add(problem.label);
+              }
             });
-            
-            console.log('Unique problems:', {
-                total: uniqueProblems.size,
-                easy: uniqueEasy.size,
-                medium: uniqueMedium.size,
-                hard: uniqueHard.size
-            });
-            
-            renderSections(data);
-            
-            // Initialize UI
-            const collapsibles = document.querySelectorAll('.collapsible');
-            M.Collapsible.init(collapsibles, {
-                accordion: false,
-                onOpenStart: function(el) {
-                    // Store the state that this was manually opened
-                    el.dataset.manuallyOpened = 'true';
-                }
-            });
-            
-            // Initialize all checkboxes
-            initializeCheckboxes();
-            
-            buildRectBar();
-            loadProgress();
-            updateGlobalRectBar();
-            updateSectionProgress();
-        })
-        .catch(err => {
-            console.error('Error loading problems:', err);
-            document.getElementById('sections').innerHTML = `
+          });
+        }
+      });
+
+      console.log('Unique problems:', {
+        total: uniqueProblems.size,
+        easy: uniqueEasy.size,
+        medium: uniqueMedium.size,
+        hard: uniqueHard.size
+      });
+
+      renderSections(data);
+
+      initializeCollapsibles();
+
+      // Initialize all checkboxes
+      initializeCheckboxes();
+
+      buildRectBar();
+      loadProgress();
+      updateGlobalRectBar();
+      updateSectionProgress();
+    })
+    .catch(err => {
+      console.error('Error loading problems:', err);
+      document.getElementById('sections').innerHTML = `
                 <div class="card-panel red lighten-4">
                     <span class="red-text text-darken-4">
                         <i class="material-icons left">error</i>
@@ -1147,7 +1183,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </span>
                 </div>
             `;
-        });
+    });
 });
 
 // Function to initialize checkboxes
@@ -1155,7 +1191,7 @@ function initializeCheckboxes() {
   // Wait a short time to ensure DOM is fully rendered
   setTimeout(() => {
     console.log('Initializing checkboxes...');
-    
+
     // Get all checkboxes and remove existing event listeners by cloning
     const checkboxes = document.querySelectorAll('.square-check');
     console.log('Found checkboxes:', checkboxes.length);
@@ -1163,18 +1199,18 @@ function initializeCheckboxes() {
       const newCheckbox = checkbox.cloneNode(true);
       checkbox.parentNode.replaceChild(newCheckbox, checkbox);
     });
-    
+
     // Add event listeners to the new checkboxes
     document.querySelectorAll('.square-check').forEach(checkbox => {
       // Ensure checkbox is visible and checked by default
       checkbox.checked = true;
-      
+
       // Add click event listener
       checkbox.addEventListener('click', function(e) {
         // Stop event propagation to prevent collapsible from toggling
         e.stopPropagation();
         console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
-        
+
         // If this checkbox is a parent (i.e. not inside a subsection container)
         if (!this.closest('.mini-bars.small')) {
           // Get the parent section (collapsible) that contains both parent and child checkboxes
@@ -1188,12 +1224,12 @@ function initializeCheckboxes() {
             });
           }
         }
-        
+
         // Filter problems based on the updated state
         filterProblems(e);
       });
     });
-    
+
     // Add event listeners to the labels to prevent event propagation
     document.querySelectorAll('.difficulty-filter-square').forEach(label => {
       label.addEventListener('click', function(e) {
@@ -1232,10 +1268,57 @@ function initSectionControls() {
 
 
 function toggleSections(expand) {
-    document.querySelectorAll('.collapsible').forEach(section => {
-        const instance = M.Collapsible.getInstance(section);
-        if (instance) {
-            instance[expand ? 'open' : 'close'](); // Open or Close in one step
-        }
-    });
+  document.querySelectorAll('.collapsible').forEach(section => {
+    const instance = M.Collapsible.getInstance(section);
+    if (instance) {
+      instance[expand ? 'open' : 'close'](); // Open or Close in one step
+    }
+  });
 }
+function showBanner(message, duration = 5000) {
+  const banner = document.createElement('div');
+  banner.className = 'filter-banner';
+
+  banner.innerHTML = `
+    <span>${message}</span>
+    <div class="filter-demo">
+      <div class="checkbox-container">
+        <span class="difficulty-label">Easy</span>
+        <div class="demo-checkbox easy"></div>
+      </div>
+      <div class="checkbox-container">
+        <span class="difficulty-label">Medium</span>
+        <div class="demo-checkbox medium"></div>
+      </div>
+      <div class="checkbox-container">
+        <span class="difficulty-label">Hard</span>
+        <div class="demo-checkbox hard"></div>
+      </div>
+      <div class="demo-cursor"></div>
+    </div>
+  `;
+
+  // Find the rect-chart-container and insert the banner AFTER it
+  const progressCard = document.getElementById('rectChartContainer');
+  if (progressCard) {
+    progressCard.insertAdjacentElement('afterend', banner);
+  } else {
+    // Fallback - insert before search container
+    const searchContainer = document.querySelector('.search-container');
+    if (searchContainer) {
+      searchContainer.parentNode.insertBefore(banner, searchContainer);
+    } else {
+      document.body.appendChild(banner);
+    }
+  }
+
+  // Remove the banner after the specified duration
+  setTimeout(() => {
+    banner.remove();
+  }, duration);
+}
+
+// Call the function to display the banner
+document.addEventListener('DOMContentLoaded', () => {
+  showBanner('Please check/uncheck to filter the problems');
+});

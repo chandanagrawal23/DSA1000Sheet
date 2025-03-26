@@ -145,7 +145,7 @@
           "label": "Find GCD of Two Numbers",
           "question": "https://leetcode.com/problems/greatest-common-divisor-of-strings/",
           "solution": "-",
-          "difficulty": "easy"
+          "difficulty": "medium"
         }
       ]
     },
@@ -983,7 +983,7 @@
           "difficulty": "hard"
         },
         {
-          "label": "Split Array Largest Sum",
+          "label": "Split Array Largest Sum (Can be solved using DP)",
           "question": "https://leetcode.com/problems/split-array-largest-sum/",
           "solution": "-",
           "difficulty": "hard"
@@ -1182,7 +1182,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Buildings with an Ocean View [PREMIUM Facebook]",
+              "label": "Buildings with an Ocean View [MAANGM]",
               "question": "https://leetcode.ca/2021-04-14-1762-Buildings-With-an-Ocean-View/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BuildingsWithanOceanView.cpp",
               "difficulty": "medium"
@@ -1219,8 +1219,8 @@
           "difficulty": "easy"
         },
         {
-          "label": "Moving Average from Data Stream [PREMIUM, Google]",
-          "question": "https://leetcode.com/problems/moving-average-from-data-stream/",
+          "label": "Moving Average from Data Stream [Google]",
+          "question": "https://leetcode.ca/all/346.html",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MovingAverage.cpp",
           "difficulty": "easy"
         },
@@ -1249,8 +1249,8 @@
           "difficulty": "medium"
         },
         {
-          "label": "First Unique Number [PREMIUM]",
-          "question": "https://leetcode.com/problems/first-unique-number/",
+          "label": "First Unique Number [Good Problem]",
+          "question": "https://leetcode.ca/all/1429.html",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstUnique.cpp",
           "difficulty": "medium"
         },
@@ -1270,192 +1270,248 @@
     },
     {
       "title": "Linked List",
-      "problems": [
+      "subsections": [
         {
-          "label": "Convert Binary Number in a Linked List to Integer",
-          "question": "https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/getDecimalValue.cpp",
-          "difficulty": "easy"
+          "title": "Basics (Insertion, Deletion, Traversal)",
+          "problems": [
+            {
+              "label": "Different Insertion into Linked List",
+              "question": "https://www.geeksforgeeks.org/insertion-in-linked-list/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Print Linked List",
+              "question": "https://www.geeksforgeeks.org/print-linked-list/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Different Deletion in Linked List",
+              "question": "https://www.geeksforgeeks.org/deletion-in-linked-list/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Delete Node in a Linked List (nice one without loop)",
+              "question": "https://leetcode.com/problems/delete-node-in-a-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteNode.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Middle of the Linked List",
+              "question": "https://leetcode.com/problems/middle-of-the-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/middleNode.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Convert Binary Number in a Linked List to Integer",
+              "question": "https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/getDecimalValue.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Reverse Linked List",
+              "question": "https://leetcode.com/problems/reverse-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseList.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Palindrome Linked List",
+              "question": "https://leetcode.com/problems/palindrome-linked-list/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Merge Two Sorted Lists",
+              "question": "https://leetcode.com/problems/merge-two-sorted-lists/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeTwoLists.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Remove Duplicates from Sorted List",
+              "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteDuplicates.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Remove Linked List Elements",
+              "question": "https://leetcode.com/problems/remove-linked-list-elements/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeElements.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Sort List",
+              "question": "https://leetcode.com/problems/sort-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortList.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Odd Even Linked List",
+              "question": "https://leetcode.com/problems/odd-even-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/oddEvenList.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Next Greater Node in Linked List",
+              "question": "https://leetcode.com/problems/next-greater-node-in-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/nextLargerNodes.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Delete the Middle Node of a Linked List",
+              "question": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteMiddle.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Rotate List",
+              "question": "https://leetcode.com/problems/rotate-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/rotateRight.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Linked List Random Node",
+              "question": "https://leetcode.com/problems/linked-list-random-node/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Remove Nth Node From End of List",
+              "question": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeNthFromEnd.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Remove Duplicates from an Unsorted Linked List",
+              "question": "https://leetcode.ca/all/1836.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteDuplicatesUnsorted.cpp",
+              "difficulty": "medium"
+            }
+          ]
         },
         {
-          "label": "Middle of the Linked List",
-          "question": "https://leetcode.com/problems/middle-of-the-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/middleNode.cpp",
-          "difficulty": "easy"
+          "title": "Linked List Cycle",
+          "problems": [
+            {
+              "label": "Linked List Cycle (Read proof too)",
+              "question": "https://leetcode.com/problems/linked-list-cycle/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/hasCycle.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Length of Cycle in Linked List",
+              "question": "https://www.geeksforgeeks.org/find-length-of-loop-in-linked-list/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Linked List Cycle II [IMPORTANT]",
+              "question": "https://leetcode.com/problems/linked-list-cycle-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/detectCycle2.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Remove Cycle in Linked List",
+              "question": "https://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Intersection of Two Linked Lists ( Solve using cycle too)",
+              "question": "https://leetcode.com/problems/intersection-of-two-linked-lists/description/",
+              "solution": "-",
+              "difficulty": "medium"
+            }
+          ]
         },
         {
-          "label": "Delete Node in a Linked List",
-          "question": "https://leetcode.com/problems/delete-node-in-a-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteNode.cpp",
-          "difficulty": "easy"
+          "title": "Advanced Problems",
+          "problems": [
+            {
+              "label": "Add Two Numbers",
+              "question": "https://leetcode.com/problems/add-two-numbers/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/addTwoNumbers1.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Add Two Numbers II (IMP)",
+              "question": "https://leetcode.com/problems/add-two-numbers-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/addTwoNumbers2.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Reorder List",
+              "question": "https://leetcode.com/problems/reorder-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reorderList.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Reverse Linked List II",
+              "question": "https://leetcode.com/problems/reverse-linked-list-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseBetween.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Design Linked List",
+              "question": "https://leetcode.com/problems/design-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MyLinkedList.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Plus One Linked List [Nice one]",
+              "question": "https://leetcode.ca/all/369.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/plusOne.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Split Linked List in Parts",
+              "question": "https://leetcode.com/problems/split-linked-list-in-parts/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/splitListToParts.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Merge K Sorted Lists [IMPORTANT]",
+              "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLinkedLists.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Reverse Nodes in k-Group",
+              "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseKGroup.cpp",
+              "difficulty": "hard"
+            }
+          ]
         },
         {
-          "label": "Reverse Linked List",
-          "question": "https://leetcode.com/problems/reverse-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseList.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Merge Two Sorted Lists",
-          "question": "https://leetcode.com/problems/merge-two-sorted-lists/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeTwoLists.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Remove Duplicates from Sorted List",
-          "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteDuplicates.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Palindrome Linked List",
-          "question": "https://leetcode.com/problems/palindrome-linked-list/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Linked List Cycle",
-          "question": "https://leetcode.com/problems/linked-list-cycle/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/hasCycle.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Remove Linked List Elements",
-          "question": "https://leetcode.com/problems/remove-linked-list-elements/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeElements.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Add Two Numbers",
-          "question": "https://leetcode.com/problems/add-two-numbers/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/addTwoNumbers1.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Add Two Numbers II",
-          "question": "https://leetcode.com/problems/add-two-numbers-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/addTwoNumbers2.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Sort List",
-          "question": "https://leetcode.com/problems/sort-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortList.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Odd Even Linked List",
-          "question": "https://leetcode.com/problems/odd-even-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/oddEvenList.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Next Greater Node in Linked List",
-          "question": "https://leetcode.com/problems/next-greater-node-in-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/nextLargerNodes.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Delete the Middle Node of a Linked List",
-          "question": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteMiddle.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Rotate List",
-          "question": "https://leetcode.com/problems/rotate-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/rotateRight.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "LRU Cache [IMPORTANT]",
-          "question": "https://leetcode.com/problems/lru-cache/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LRUcache.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Reorder List",
-          "question": "https://leetcode.com/problems/reorder-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reorderList.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Reverse Linked List II",
-          "question": "https://leetcode.com/problems/reverse-linked-list-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseBetween.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Linked List Cycle II [IMPORTANT]",
-          "question": "https://leetcode.com/problems/linked-list-cycle-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/detectCycle2.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Convert Sorted List to Binary Search Tree [IMPORTANT]",
-          "question": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortedListToBST.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Flatten a Multilevel Doubly Linked List [IMPORTANT google FB , paypal , apple]",
-          "question": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flatten.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Split Linked List in Parts",
-          "question": "https://leetcode.com/problems/split-linked-list-in-parts/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/splitListToParts.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Remove Nth Node From End of List",
-          "question": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeNthFromEnd.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Flatten Binary Tree to Linked List",
-          "question": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flattenTreeToLinkedList.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Convert Binary Search Tree to Sorted Doubly Linked List",
-          "question": "https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BST_ToDoublyList.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Plus One Linked List [Premium]",
-          "question": "https://leetcode.com/problems/plus-one-linked-list/ [Premium]",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/plusOne.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Remove Duplicates from an Unsorted Linked List [Premium]",
-          "question": "https://leetcode.com/problems/remove-duplicates-from-an-unsorted-linked-list/ [Premium]",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteDuplicatesUnsorted.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Design Linked List",
-          "question": "https://leetcode.com/problems/design-linked-list/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MyLinkedList.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Merge K Sorted Lists [IMPORTANT]",
-          "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLinkedLists.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Reverse Nodes in k-Group",
-          "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseKGroup.cpp",
-          "difficulty": "hard"
+          "title": "Convert / Flatten",
+          "problems": [
+            {
+              "label": "Flatten Binary Tree to Linked List",
+              "question": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flattenTreeToLinkedList.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Flatten a Multilevel Doubly Linked List [IMPORTANT MAANGM]",
+              "question": "https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flatten.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Convert Sorted List to Binary Search Tree [IMPORTANT]",
+              "question": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortedListToBST.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Convert Binary Search Tree to Sorted Doubly Linked List",
+              "question": "https://leetcode.ca/all/426.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BST_ToDoublyList.cpp",
+              "difficulty": "medium"
+            }
+          ]
         }
       ]
     },
@@ -1499,8 +1555,8 @@
           "difficulty": "medium"
         },
         {
-          "label": "Meeting Rooms II [Premium, FB, PayPal, Arcesium, Top Interview]",
-          "question": "https://leetcode.com/problems/meeting-rooms-ii/",
+          "label": "Meeting Rooms II [MAANGM and others]",
+          "question": "https://leetcode.ca/all/253.html",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minMeetingRooms.cpp",
           "difficulty": "medium"
         },
@@ -1761,8 +1817,8 @@
           "difficulty": "medium"
         },
         {
-          "label": "Longest Substring with At Most K Distinct Characters [PREMIUM] [Google, FB, Apple]",
-          "question": "https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/",
+          "label": "Longest Substring with At Most K Distinct Characters [Google/FB/Apple]",
+          "question": "https://leetcode.ca/all/340.html",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/lengthOfLongestSubstringKDistinct.cpp",
           "difficulty": "medium"
         },
@@ -3207,9 +3263,9 @@
             },
             {
               "label": "Maximum Subtree of the Same Color",
-              "question":"https://leetcode.ca/2024-01-19-3004-Maximum-Subtree-of-the-Same-Color/",
-              "solution":"-",
-              "difficulty":"medium"
+              "question": "https://leetcode.ca/2024-01-19-3004-Maximum-Subtree-of-the-Same-Color/",
+              "solution": "-",
+              "difficulty": "medium"
             },
             {
               "label": "Binary Tree Cameras (IMP) (With and Without DP)",
@@ -4251,8 +4307,8 @@
           "difficulty": "hard"
         },
         {
-          "label": "Optimize water distribution in a village [LC premium]",
-          "question": "https://leetcode.com/problems/optimize-water-distribution-in-a-village/",
+          "label": "Optimize water distribution in a village [Nice Q.]",
+          "question": "https://leetcode.ca/2019-02-10-1168-Optimize-Water-Distribution-in-a-Village/",
           "solution": "-",
           "difficulty": "hard"
         }
@@ -4439,7 +4495,7 @@
           "solution": "-",
           "difficulty": "medium"
         },
-  {
+        {
           "label": "Count of Intervals with Maximum Overlap (Google)",
           "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
           "solution": "-",
