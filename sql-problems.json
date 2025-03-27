@@ -1,0 +1,1248 @@
+{
+    "sections": [
+        {
+            "title": "Foundational SQL",
+            "subsections": [
+                {
+                    "title": "Data Manipulation (DML)",
+                    "problems": [
+                        {
+                            "label": "Insert Single Employee Record",
+                            "difficulty": "easy",
+                            "question": "https://www.hackerrank.com/challenges/insert-a-record/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert Multiple Rows into Orders",
+                            "difficulty": "easy",
+                            "question": "https://www.geeksforgeeks.org/sql-insert-statement/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert with Default Values",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/INSERT_with_DEFAULT",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert Records from Another Table",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/insert-from-select/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert Unique Product IDs",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert with Subquery",
+                            "difficulty": "medium",
+                            "question": "https://www.sqlzoo.net/wiki/INSERT_with_SUBQUERY",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Bulk Insert from CSV",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/how-to-import-csv-file-in-sql-server/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert with Conditional Logic",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete Duplicate Emails",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/delete-duplicate-emails/",
+                            "solution": "https://leetcode.com/problems/delete-duplicate-emails/solution/"
+                        },
+                        {
+                            "label": "Delete Inactive Users",
+                            "difficulty": "easy",
+                            "question": "https://www.hackerrank.com/challenges/delete-inactive-users/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete Records Older Than 30 Days",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/DELETE_with_WHERE",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete with Join",
+                            "difficulty": "medium",
+                            "question": "https://www.geeksforgeeks.org/sql-delete-join/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete Rows Based on Subquery",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete All Except Top N",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete Overlapping Intervals",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/non-overlapping-intervals/",
+                            "solution": "https://leetcode.com/problems/non-overlapping-intervals/solution/"
+                        },
+                        {
+                            "label": "Cascading Delete in Related Tables",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/sql-on-delete-cascade/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Swap Salary",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/swap-salary/",
+                            "solution": "https://leetcode.com/problems/swap-salary/solution/"
+                        },
+                        {
+                            "label": "Update Employee Status",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/UPDATE_statement",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Increase Salary by Percentage",
+                            "difficulty": "easy",
+                            "question": "https://www.hackerrank.com/challenges/update-salary/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Update Records with Join",
+                            "difficulty": "medium",
+                            "question": "https://www.geeksforgeeks.org/sql-update-with-join/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Update Based on Subquery",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Update Multiple Columns Conditionally",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Update Prices with Inflation Rate",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Update with Window Function",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Basic Queries (SELECT)",
+                    "problems": [
+                        {
+                            "label": "Big Countries",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/big-countries/",
+                            "solution": "https://leetcode.com/problems/big-countries/solution/"
+                        },
+                        {
+                            "label": "Customers Who Never Order",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/customers-who-never-order/",
+                            "solution": "https://leetcode.com/problems/customers-who-never-order/solution/"
+                        },
+                        {
+                            "label": "Find Customer Referee",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/find-customer-referee/",
+                            "solution": "https://leetcode.com/problems/find-customer-referee/solution/"
+                        },
+                        {
+                            "label": "Article Views I",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/article-views-i/",
+                            "solution": "https://leetcode.com/problems/article-views-i/solution/"
+                        },
+                        {
+                            "label": "Invalid Tweets",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/invalid-tweets/",
+                            "solution": "https://leetcode.com/problems/invalid-tweets/solution/"
+                        },
+                        {
+                            "label": "Product Sales Analysis I",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/product-sales-analysis-i/",
+                            "solution": "https://leetcode.com/problems/product-sales-analysis-i/solution/"
+                        },
+                        {
+                            "label": "Not Boring Movies",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/not-boring-movies/",
+                            "solution": "https://leetcode.com/problems/not-boring-movies/solution/"
+                        },
+                        {
+                            "label": "Classes More Than 5 Students",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/classes-more-than-5-students/",
+                            "solution": "https://leetcode.com/problems/classes-more-than-5-students/solution/"
+                        },
+                        {
+                            "label": "Rising Temperature",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/rising-temperature/",
+                            "solution": "https://leetcode.com/problems/rising-temperature/solution/"
+                        },
+                        {
+                            "label": "Average Selling Price",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/average-selling-price/",
+                            "solution": "https://leetcode.com/problems/average-selling-price/solution/"
+                        },
+                        {
+                            "label": "Second Highest Salary",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/second-highest-salary/",
+                            "solution": "https://leetcode.com/problems/second-highest-salary/solution/"
+                        },
+                        {
+                            "label": "Weather Observation Station 1",
+                            "difficulty": "easy",
+                            "question": "https://www.hackerrank.com/challenges/weather-observation-station-1/problem",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Joins",
+                    "problems": [
+                        {
+                            "label": "Combine Two Tables",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/combine-two-tables/",
+                            "solution": "https://leetcode.com/problems/combine-two-tables/solution/"
+                        },
+                        {
+                            "label": "Employees Earning More Than Managers",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/employees-earning-more-than-their-managers/",
+                            "solution": "https://leetcode.com/problems/employees-earning-more-than-their-managers/solution/"
+                        },
+                        {
+                            "label": "Duplicate Emails",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/duplicate-emails/",
+                            "solution": "https://leetcode.com/problems/duplicate-emails/solution/"
+                        },
+                        {
+                            "label": "Sales Analysis III",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/sales-analysis-iii/",
+                            "solution": "https://leetcode.com/problems/sales-analysis-iii/solution/"
+                        },
+                        {
+                            "label": "Customer Placing Largest Orders",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/",
+                            "solution": "https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/solution/"
+                        },
+                        {
+                            "label": "Managers with 5+ Direct Reports",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/managers-with-at-least-5-direct-reports/",
+                            "solution": "https://leetcode.com/problems/managers-with-at-least-5-direct-reports/solution/"
+                        },
+                        {
+                            "label": "Triangle Judgement",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/triangle-judgement/",
+                            "solution": "https://leetcode.com/problems/triangle-judgement/solution/"
+                        },
+                        {
+                            "label": "Unpopular Books",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/unpopular-books/",
+                            "solution": "https://leetcode.com/problems/unpopular-books/solution/"
+                        },
+                        {
+                            "label": "Product Price at Given Date",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/product-price-at-a-given-date/",
+                            "solution": "https://leetcode.com/problems/product-price-at-a-given-date/solution/"
+                        },
+                        {
+                            "label": "Highest Grade per Student",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/highest-grade-for-each-student/",
+                            "solution": "https://leetcode.com/problems/highest-grade-for-each-student/solution/"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Intermediate SQL",
+            "subsections": [
+                {
+                    "title": "Subqueries",
+                    "problems": [
+                        {
+                            "label": "Second Degree Follower",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/second-degree-follower/",
+                            "solution": "https://leetcode.com/problems/second-degree-follower/solution/"
+                        },
+                        {
+                            "label": "Biggest Single Number",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/biggest-single-number/",
+                            "solution": "https://leetcode.com/problems/biggest-single-number/solution/"
+                        },
+                        {
+                            "label": "Employees with Missing Info",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/employees-with-missing-information/",
+                            "solution": "https://leetcode.com/problems/employees-with-missing-information/solution/"
+                        },
+                        {
+                            "label": "Find Team Size",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/find-the-team-size/",
+                            "solution": "https://leetcode.com/problems/find-the-team-size/solution/"
+                        },
+                        {
+                            "label": "Count Students in Departments",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/count-students/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Most Frequent Customer",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Highest Salary in Department",
+                            "difficulty": "medium",
+                            "question": "https://www.geeksforgeeks.org/sql-query-to-find-the-highest-salary-of-each-department/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Users with Valid Emails",
+                            "difficulty": "easy",
+                            "question": "https://leetcode.com/problems/find-users-with-valid-e-mails/",
+                            "solution": "https://leetcode.com/problems/find-users-with-valid-e-mails/solution/"
+                        },
+                        {
+                            "label": "Top K Customers by Revenue",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Employees Not in Department",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Aggregations",
+                    "problems": [
+                        {
+                            "label": "Count Apples and Oranges",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/COUNT_and_GROUP_BY",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Average Salary by Department",
+                            "difficulty": "easy",
+                            "question": "https://www.hackerrank.com/challenges/average-salary-department/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Max Sales by Product",
+                            "difficulty": "easy",
+                            "question": "https://www.geeksforgeeks.org/sql-query-to-find-the-maximum-sales-of-a-product/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Total Orders per Customer",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/SUM_and_COUNT",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Group Employees by Age",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Sum Transactions by Month",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/monthly-transactions/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Average Time Between Orders",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Count Distinct Users per Day",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Top 5 Products by Revenue",
+                            "difficulty": "medium",
+                            "question": "https://www.geeksforgeeks.org/sql-query-to-find-top-5-products-by-revenue/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Min and Max Temps by Station",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/weather-observation-station-13/problem",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "String Functions",
+                    "problems": [
+                        {
+                            "label": "Capitalize Names",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/Using_string_functions",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Extract Domain from Email",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Concatenate First and Last Name",
+                            "difficulty": "easy",
+                            "question": "https://www.w3schools.com/sql/func_sqlserver_concat.asp",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Find Length of Product Names",
+                            "difficulty": "easy",
+                            "question": "https://www.hackerrank.com/challenges/name-length/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Replace Substring in Address",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/REPLACE",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Parse Date from String",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Split Full Name into Columns",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Format Phone Numbers",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Extract Initials from Name",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Reverse Customer Names",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Date Functions",
+                    "problems": [
+                        {
+                            "label": "Find Records from Last Week",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/SELECT_within_SELECT_Tutorial",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Calculate Age from Birthdate",
+                            "difficulty": "easy",
+                            "question": "https://www.geeksforgeeks.org/sql-query-to-calculate-age-from-date-of-birth/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Extract Month from Date",
+                            "difficulty": "easy",
+                            "question": "https://www.hackerrank.com/challenges/weather-observation-station-2/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Count Orders by Year",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Days Between Dates",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/DATEDIFF",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Sales by Quarter",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Find Overdue Payments",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Group by Week Number",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Latest Transaction per User",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Rolling 7-Day Sales",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Conditional Logic",
+                    "problems": [
+                        {
+                            "label": "Classify Salary Ranges",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/CASE",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Flag Active Users",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Assign Grades Based on Scores",
+                            "difficulty": "easy",
+                            "question": "https://www.geeksforgeeks.org/sql-case-statement/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Mark Orders as Shipped/Pending",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Categorize Products by Price",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Conditional Sales Count",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Dynamic Status by Date",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Nested Case Statements",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Rank with Conditions",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Complex Bonus Calculation",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Advanced SQL",
+            "subsections": [
+                {
+                    "title": "Complex Queries",
+                    "problems": [
+                        {
+                            "label": "Rank Scores",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/rank-scores/",
+                            "solution": "https://leetcode.com/problems/rank-scores/solution/"
+                        },
+                        {
+                            "label": "Consecutive Numbers",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/consecutive-numbers/",
+                            "solution": "https://leetcode.com/problems/consecutive-numbers/solution/"
+                        },
+                        {
+                            "label": "Department Highest Salary",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/department-highest-salary/",
+                            "solution": "https://leetcode.com/problems/department-highest-salary/solution/"
+                        },
+                        {
+                            "label": "Nth Highest Salary",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/nth-highest-salary/",
+                            "solution": "https://leetcode.com/problems/nth-highest-salary/solution/"
+                        },
+                        {
+                            "label": "Exchange Seats",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/exchange-seats/",
+                            "solution": "https://leetcode.com/problems/exchange-seats/solution/"
+                        },
+                        {
+                            "label": "Top Travellers",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/top-travellers/",
+                            "solution": "https://leetcode.com/problems/top-travellers/solution/"
+                        },
+                        {
+                            "label": "Sales Person",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/sales-person/",
+                            "solution": "https://leetcode.com/problems/sales-person/solution/"
+                        },
+                        {
+                            "label": "Tree Node",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/tree-node/",
+                            "solution": "https://leetcode.com/problems/tree-node/solution/"
+                        },
+                        {
+                            "label": "Friend Requests I",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/friend-requests-i-overall-acceptance-rate/",
+                            "solution": "https://leetcode.com/problems/friend-requests-i-overall-acceptance-rate/solution/"
+                        },
+                        {
+                            "label": "Game Play Analysis IV",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/game-play-analysis-iv/",
+                            "solution": "https://leetcode.com/problems/game-play-analysis-iv/solution/"
+                        },
+                        {
+                            "label": "Trips and Users",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/trips-and-users/",
+                            "solution": "https://leetcode.com/problems/trips-and-users/solution/"
+                        },
+                        {
+                            "label": "Department Top 3 Salaries",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/department-top-three-salaries/",
+                            "solution": "https://leetcode.com/problems/department-top-three-salaries/solution/"
+                        },
+                        {
+                            "label": "Median Employee Salary",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/median-employee-salary/",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Window Functions",
+                    "problems": [
+                        {
+                            "label": "Cumulative Salary",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/cumulative-salary/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Percentage of Contest Users",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/",
+                            "solution": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/solution/"
+                        },
+                        {
+                            "label": "Last Person in Elevator",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/last-person-to-fit-in-the-elevator/",
+                            "solution": "https://leetcode.com/problems/last-person-to-fit-in-the-elevator/solution/"
+                        },
+                        {
+                            "label": "Moving Average",
+                            "difficulty": "medium",
+                            "question": "https://www.geeksforgeeks.org/sql-window-functions/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Top K Frequent Elements",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Partition Sales by Month",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Dense Rank Scores",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Row Number for Sales",
+                            "difficulty": "easy",
+                            "question": "https://www.sqlzoo.net/wiki/Window_functions",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Lag for Previous Sales",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Lead for Next Event",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Common Table Expressions (CTE)",
+                    "problems": [
+                        {
+                            "label": "Employees Never Left",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Duplicate Subtrees",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/find-all-duplicate-subtrees/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Recursive Employee Hierarchy",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/hierarchical-data-sql-using-cte/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Paths in Graph",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Organizational Chart",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Find All Ancestors",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Shortest Path in Tree",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Employee Reporting Structure",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/reporting-structure/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Cycle Detection",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Bill of Materials",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Database Design and Optimization",
+            "subsections": [
+                {
+                    "title": "Indexes",
+                    "problems": [
+                        {
+                            "label": "Create Index on Employee ID",
+                            "difficulty": "easy",
+                            "question": "https://www.w3schools.com/sql/sql_create_index.asp",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Composite Index Optimization",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Analyze Query Performance",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/query-performance/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Drop Unused Index",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Index for Joins",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Optimize Large Table Scan",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Clustered vs Non-Clustered",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/difference-between-clustered-and-non-clustered-index/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Index for Date Ranges",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Tune Slow Aggregation",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Optimize Subquery",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Views and Temp Tables",
+                    "problems": [
+                        {
+                            "label": "View for Active Employees",
+                            "difficulty": "easy",
+                            "question": "https://www.w3schools.com/sql/sql_view.asp",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Temp Table for Sales Report",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "View for Top Customers",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Materialized View for Aggregates",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/materialized-view-in-sql/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Temp Table for Recursive Data",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "View with Joins",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Dynamic Temp Table",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "View for Monthly Sales",
+                            "difficulty": "easy",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Temp Table for Staging",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Optimize View Performance",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Transactions and Constraints",
+                    "problems": [
+                        {
+                            "label": "Add Primary Key",
+                            "difficulty": "easy",
+                            "question": "https://www.w3schools.com/sql/sql_primarykey.asp",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Enforce Foreign Key",
+                            "difficulty": "easy",
+                            "question": "https://www.w3schools.com/sql/sql_foreignkey.asp",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Simple Transfer Transaction",
+                            "difficulty": "medium",
+                            "question": "https://www.geeksforgeeks.org/sql-transactions/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Rollback Failed Update",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Unique Email Constraint",
+                            "difficulty": "easy",
+                            "question": "https://www.w3schools.com/sql/sql_unique.asp",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Transaction with Savepoint",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Check Age Constraint",
+                            "difficulty": "easy",
+                            "question": "https://www.w3schools.com/sql/sql_check.asp",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Batch Insert Transaction",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Handle Deadlock",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/deadlock-in-dbms/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Cascade Delete",
+                            "difficulty": "medium",
+                            "question": "https://www.sqlzoo.net/wiki/ON_DELETE_CASCADE",
+                            "solution": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Expert SQL",
+            "subsections": [
+                {
+                    "title": "Analytical Queries",
+                    "problems": [
+                        {
+                            "label": "Human Traffic of Stadium",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/human-traffic-of-stadium/",
+                            "solution": "https://leetcode.com/problems/human-traffic-of-stadium/solution/"
+                        },
+                        {
+                            "label": "Active Businesses",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/active-businesses/",
+                            "solution": "https://leetcode.com/problems/active-businesses/solution/"
+                        },
+                        {
+                            "label": "Investments in 2016",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/investments-in-2016/",
+                            "solution": "https://leetcode.com/problems/investments-in-2016/solution/"
+                        },
+                        {
+                            "label": "Friend Requests II",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/",
+                            "solution": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/solution/"
+                        },
+                        {
+                            "label": "Transactions per Visit",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/number-of-transactions-per-visit/",
+                            "solution": "https://leetcode.com/problems/number-of-transactions-per-visit/solution/"
+                        },
+                        {
+                            "label": "Find Median from Stream",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/find-median-from-data-stream/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Quiet Students in Exams",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/find-the-quiet-students-in-all-exams/",
+                            "solution": "https://leetcode.com/problems/find-the-quiet-students-in-all-exams/solution/"
+                        },
+                        {
+                            "label": "Rolling Average Sales",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Pivot Sales Data",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/pivot-in-sql/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Year-over-Year Growth",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Complex Joins and Aggregations",
+                    "problems": [
+                        {
+                            "label": "Shortest Distance in Line",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/shortest-distance-in-a-line/",
+                            "solution": "https://leetcode.com/problems/shortest-distance-in-a-line/solution/"
+                        },
+                        {
+                            "label": "Market Analysis I",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/market-analysis-i/",
+                            "solution": "https://leetcode.com/problems/market-analysis-i/solution/"
+                        },
+                        {
+                            "label": "Project Employees II",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/project-employees-ii/",
+                            "solution": "https://leetcode.com/problems/project-employees-ii/solution/"
+                        },
+                        {
+                            "label": "Students and Examinations",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/students-and-examinations/",
+                            "solution": "https://leetcode.com/problems/students-and-examinations/solution/"
+                        },
+                        {
+                            "label": "User Activity Past 30 Days",
+                            "difficulty": "medium",
+                            "question": "https://leetcode.com/problems/user-activity-for-the-past-30-days-ii/",
+                            "solution": "https://leetcode.com/problems/user-activity-for-the-past-30-days-ii/solution/"
+                        },
+                        {
+                            "label": "Join Three Tables for Report",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Multi-Condition Aggregation",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Overlapping Schedules",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Consecutive Login Days",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Complex Bonus with Joins",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        }
+                    ]
+                },
+                {
+                    "title": "Performance Tuning",
+                    "problems": [
+                        {
+                            "label": "Optimize Large Joins",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Tune Complex Subquery",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Index for Analytical Query",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Partition Large Table",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/table-partitioning-in-sql-server/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Optimize Window Function",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Reduce Query Execution Time",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Handle High Concurrency",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Optimize Recursive CTE",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Tune Pivot Query",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Analyze Explain Plan",
+                            "difficulty": "hard",
+                            "question": "https://www.hackerrank.com/challenges/explain-plan/problem",
+                            "solution": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

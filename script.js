@@ -260,7 +260,10 @@ function filterProblems(event) {
 
     // Handle sections with subsections
     if (subsections.length > 0) {
-      subsections.forEach(subsection => {
+      // First, get the parent section's collapsible instance
+      const parentInstance = M.Collapsible.getInstance(section);
+
+      subsections.forEach((subsection, subIndex) => {
         const subsectionBody = subsection.querySelector('.collapsible-body');
         const rows = subsectionBody.querySelectorAll('tr');
         let hasMatchInSubsection = false;
@@ -282,14 +285,15 @@ function filterProblems(event) {
             row.classList.contains('medium') ? 'medium' :
               row.classList.contains('hard') ? 'hard' : '';
 
-          const difficultyMatch = showAllDifficulties ||
+          const difficultyEnabled = showAllDifficulties ||
             (difficulty === 'easy' && easyChecked) ||
             (difficulty === 'medium' && mediumChecked) ||
             (difficulty === 'hard' && hardChecked);
 
           const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
-          if (matchesSearch && difficultyMatch) {
+          // Only show if both conditions are met
+          if (difficultyEnabled && matchesSearch) {
             row.style.display = '';
             hasMatchInSubsection = true;
             hasMatchInSection = true;
@@ -302,11 +306,18 @@ function filterProblems(event) {
         if (hasMatchInSubsection) {
           subsection.style.display = '';
           if (searchTerm) {
-            const instance = M.Collapsible.getInstance(subsection.closest('.collapsible'));
-            if (instance) {
-              const index = Array.from(subsection.parentElement.children).indexOf(subsection);
-              instance.open(index);
+            // First ensure parent section is open
+            if (parentInstance) {
+              parentInstance.open(0);
             }
+
+            // Then open the subsection after a small delay
+            setTimeout(() => {
+              const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
+              if (subsectionInstance) {
+                subsectionInstance.open(subIndex);
+              }
+            }, 100); // Small delay to ensure parent section is opened first
           }
         } else {
           subsection.style.display = 'none';
@@ -330,14 +341,16 @@ function filterProblems(event) {
           row.classList.contains('medium') ? 'medium' :
             row.classList.contains('hard') ? 'hard' : '';
 
-        const difficultyMatch = showAllDifficulties ||
+        const difficultyEnabled = showAllDifficulties ||
           (difficulty === 'easy' && easyChecked) ||
           (difficulty === 'medium' && mediumChecked) ||
           (difficulty === 'hard' && hardChecked);
 
+        // Then check if it matches the search term
         const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
-        if (matchesSearch && difficultyMatch) {
+        // Only show if both conditions are met
+        if (difficultyEnabled && matchesSearch) {
           row.style.display = '';
           hasMatchInSection = true;
         } else {
@@ -349,7 +362,7 @@ function filterProblems(event) {
     // Handle section visibility and expansion
     if (hasMatchInSection) {
       section.style.display = '';
-      if (searchTerm && sectionBody !== clickedSection) {
+      if (searchTerm) {
         const instance = M.Collapsible.getInstance(section);
         if (instance) {
           instance.open(0);
@@ -730,9 +743,9 @@ function generateProblemTable(problemArray, baseId) {
         </thead>
         <tbody>
           ${problemArray.map((problem, index) => {
-    const problemId = `${baseId}-${index}`;
+    const problemId = `${baseId}-${index}`.replace(/'/g, "$");
      // Escape any single quotes in the label to prevent breaking the onclick attribute
-     const escapedLabel = problem.label.replace(/'/g, "\\'");
+     const escapedLabel = problem.label.replace(/'/g, "$");
     
     return `
               <tr class="${problem.difficulty}">
@@ -913,7 +926,7 @@ function loadNotess() {
       if (storedNotes[problemId]) {
         // If we found an old-style note (using just problemId), convert it
         const row = icon.parentElement.parentElement;
-        const label = row.querySelector('td a').textContent;
+        const label = row.querySelector('td a').textContent.replace(/'/g, "$");
         const sectionName = problemId.split('-')[0];
         const stableNoteId = `${sectionName}-${label}`;
 
@@ -1003,7 +1016,7 @@ function saveNotesModal() {
   const icon = document.querySelector(`.done-icon[data-id="${currentNotesProblemId}"]`);
   if (icon) {
     const row = icon.parentElement.parentElement;
-    const label = row.querySelector('td a').textContent;
+    const label = row.querySelector('td a').textContent.replace(/'/g, "$");
     const sectionName = currentNotesProblemId.split('-')[0];
 
     // Create a stable key using section + label
@@ -1122,18 +1135,18 @@ document.addEventListener('DOMContentLoaded', function() {
         bottom: 10px;
         left: 20px;
         font-size: 24px;
-        opacity: 0.25;
+        opacity: 0.9;
         color: var(--text-primary);
         font-family: 'Noto Sans Devanagari', sans-serif;
         text-decoration: none;
         z-index: 1;
         user-select: none;
         text-shadow: 0 0 1px rgba(0,0,0,0.1);
-        transition: opacity 0.3s ease;
+        // transition: opacity 0.3s ease;
     `;
   footer.textContent = 'श्री राधे';
-  footer.addEventListener('mouseover', () => footer.style.opacity = '0.5');
-  footer.addEventListener('mouseout', () => footer.style.opacity = '0.25');
+  footer.addEventListener('mouseover', () => footer.style.opacity = '0.8');
+  footer.addEventListener('mouseout', () => footer.style.opacity = '0.7');
   document.body.appendChild(footer);
 
   // Set up search with debouncing
@@ -1328,50 +1341,53 @@ function toggleSections(expand) {
     }
   });
 }
-function showBanner(message, duration = 5000) {
-  const banner = document.createElement('div');
-  banner.className = 'filter-banner';
 
-  banner.innerHTML = `
-    <span>${message}</span>
-    <div class="filter-demo">
-      <div class="checkbox-container">
-        <span class="difficulty-label">Easy</span>
-        <div class="demo-checkbox easy"></div>
-      </div>
-      <div class="checkbox-container">
-        <span class="difficulty-label">Medium</span>
-        <div class="demo-checkbox medium"></div>
-      </div>
-      <div class="checkbox-container">
-        <span class="difficulty-label">Hard</span>
-        <div class="demo-checkbox hard"></div>
-      </div>
-      <div class="demo-cursor"></div>
-    </div>
-  `;
+// BANNER FUNCTION 
 
-  // Find the rect-chart-container and insert the banner AFTER it
-  const progressCard = document.getElementById('rectChartContainer');
-  if (progressCard) {
-    progressCard.insertAdjacentElement('afterend', banner);
-  } else {
-    // Fallback - insert before search container
-    const searchContainer = document.querySelector('.search-container');
-    if (searchContainer) {
-      searchContainer.parentNode.insertBefore(banner, searchContainer);
-    } else {
-      document.body.appendChild(banner);
-    }
-  }
+// function showBanner(message, duration = 5000) {
+//   const banner = document.createElement('div');
+//   banner.className = 'filter-banner';
 
-  // Remove the banner after the specified duration
-  setTimeout(() => {
-    banner.remove();
-  }, duration);
-}
+//   banner.innerHTML = `
+//     <span>${message}</span>
+//     <div class="filter-demo">
+//       <div class="checkbox-container">
+//         <span class="difficulty-label">Easy</span>
+//         <div class="demo-checkbox easy"></div>
+//       </div>
+//       <div class="checkbox-container">
+//         <span class="difficulty-label">Medium</span>
+//         <div class="demo-checkbox medium"></div>
+//       </div>
+//       <div class="checkbox-container">
+//         <span class="difficulty-label">Hard</span>
+//         <div class="demo-checkbox hard"></div>
+//       </div>
+//       <div class="demo-cursor"></div>
+//     </div>
+//   `;
 
-// Call the function to display the banner
-document.addEventListener('DOMContentLoaded', () => {
-  showBanner('Please check/uncheck to filter the problems');
-});
+//   // Find the rect-chart-container and insert the banner AFTER it
+//   const progressCard = document.getElementById('rectChartContainer');
+//   if (progressCard) {
+//     progressCard.insertAdjacentElement('afterend', banner);
+//   } else {
+//     // Fallback - insert before search container
+//     const searchContainer = document.querySelector('.search-container');
+//     if (searchContainer) {
+//       searchContainer.parentNode.insertBefore(banner, searchContainer);
+//     } else {
+//       document.body.appendChild(banner);
+//     }
+//   }
+
+//   // Remove the banner after the specified duration
+//   setTimeout(() => {
+//     banner.remove();
+//   }, duration);
+// }
+
+// // Call the function to display the banner
+// document.addEventListener('DOMContentLoaded', () => {
+//   showBanner('Please check/uncheck to filter the problems');
+// });

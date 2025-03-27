@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DSA Progress Tracker</title>
+  <title>Progress Tracker</title>
 
   <!-- Materialize CSS -->
   <link
@@ -34,9 +34,35 @@
     <div class="nav-content">
       <div class="logo">
         <span class="logo-icon">&lt;/&gt;</span>
-        <span>DSA Progress</span>
+        <span>Progress Tracker</span>
       </div>
-      <button id="darkModeToggle" class="theme-toggle">
+      <div class="nav-links">
+        <a href="index.html" class="nav-card active" id="dsaLink">
+          <i class="material-icons">code</i>
+          <span>DSA</span>
+        </a>
+        <a href="#" class="nav-card" id="sqlLink">
+          <i class="material-icons">storage</i>
+          <span>SQL</span>
+        </a>
+        <a href="#" class="nav-card" id="lldLink">
+          <i class="material-icons">design_services</i>
+          <span>LLD</span>
+        </a>
+        <a href="#" class="nav-card" id="hldLink">
+          <i class="material-icons">account_tree</i>
+          <span>HLD</span>
+        </a>
+        <!-- <a href="#" class="nav-card" id="resourcesLink">
+          <i class="material-icons">library_books</i>
+          <span>Resources</span>
+        </a> -->
+        <a href="#" class="nav-card" id="interviewLink">
+          <i class="material-icons">record_voice_over</i>
+          <span>Interviews</span>
+        </a>
+      </div>
+      <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
         <span class="material-icons">dark_mode</span>
       </button>
     </div>
