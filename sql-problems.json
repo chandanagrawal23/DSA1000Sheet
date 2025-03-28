@@ -25,36 +25,6 @@
                             "solution": ""
                         },
                         {
-                            "label": "Insert Records from Another Table",
-                            "difficulty": "medium",
-                            "question": "https://www.hackerrank.com/challenges/insert-from-select/problem",
-                            "solution": ""
-                        },
-                        {
-                            "label": "Insert Unique Product IDs",
-                            "difficulty": "medium",
-                            "question": "",
-                            "solution": ""
-                        },
-                        {
-                            "label": "Insert with Subquery",
-                            "difficulty": "medium",
-                            "question": "https://www.sqlzoo.net/wiki/INSERT_with_SUBQUERY",
-                            "solution": ""
-                        },
-                        {
-                            "label": "Bulk Insert from CSV",
-                            "difficulty": "hard",
-                            "question": "https://www.geeksforgeeks.org/how-to-import-csv-file-in-sql-server/",
-                            "solution": ""
-                        },
-                        {
-                            "label": "Insert with Conditional Logic",
-                            "difficulty": "hard",
-                            "question": "",
-                            "solution": ""
-                        },
-                        {
                             "label": "Delete Duplicate Emails",
                             "difficulty": "easy",
                             "question": "https://leetcode.com/problems/delete-duplicate-emails/",
@@ -73,36 +43,6 @@
                             "solution": ""
                         },
                         {
-                            "label": "Delete with Join",
-                            "difficulty": "medium",
-                            "question": "https://www.geeksforgeeks.org/sql-delete-join/",
-                            "solution": ""
-                        },
-                        {
-                            "label": "Delete Rows Based on Subquery",
-                            "difficulty": "medium",
-                            "question": "",
-                            "solution": ""
-                        },
-                        {
-                            "label": "Delete All Except Top N",
-                            "difficulty": "medium",
-                            "question": "",
-                            "solution": ""
-                        },
-                        {
-                            "label": "Delete Overlapping Intervals",
-                            "difficulty": "hard",
-                            "question": "https://leetcode.com/problems/non-overlapping-intervals/",
-                            "solution": "https://leetcode.com/problems/non-overlapping-intervals/solution/"
-                        },
-                        {
-                            "label": "Cascading Delete in Related Tables",
-                            "difficulty": "hard",
-                            "question": "https://www.geeksforgeeks.org/sql-on-delete-cascade/",
-                            "solution": ""
-                        },
-                        {
                             "label": "Swap Salary",
                             "difficulty": "easy",
                             "question": "https://leetcode.com/problems/swap-salary/",
@@ -118,6 +58,42 @@
                             "label": "Increase Salary by Percentage",
                             "difficulty": "easy",
                             "question": "https://www.hackerrank.com/challenges/update-salary/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert Records from Another Table",
+                            "difficulty": "medium",
+                            "question": "https://www.hackerrank.com/challenges/insert-from-select/problem",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert Unique Product IDs",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert with Subquery",
+                            "difficulty": "medium",
+                            "question": "https://www.sqlzoo.net/wiki/INSERT_with_SUBQUERY",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete with Join",
+                            "difficulty": "medium",
+                            "question": "https://www.geeksforgeeks.org/sql-delete-join/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete Rows Based on Subquery",
+                            "difficulty": "medium",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete All Except Top N",
+                            "difficulty": "medium",
+                            "question": "",
                             "solution": ""
                         },
                         {
@@ -148,6 +124,30 @@
                             "label": "Update with Window Function",
                             "difficulty": "hard",
                             "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Bulk Insert from CSV",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/how-to-import-csv-file-in-sql-server/",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Insert with Conditional Logic",
+                            "difficulty": "hard",
+                            "question": "",
+                            "solution": ""
+                        },
+                        {
+                            "label": "Delete Overlapping Intervals",
+                            "difficulty": "hard",
+                            "question": "https://leetcode.com/problems/non-overlapping-intervals/",
+                            "solution": "https://leetcode.com/problems/non-overlapping-intervals/solution/"
+                        },
+                        {
+                            "label": "Cascading Delete in Related Tables",
+                            "difficulty": "hard",
+                            "question": "https://www.geeksforgeeks.org/sql-on-delete-cascade/",
                             "solution": ""
                         }
                     ]

@@ -21,13 +21,16 @@ const confettiScript = document.createElement('script');
 confettiScript.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js';
 document.head.appendChild(confettiScript);
 
+// Track current section
+let currentSection = 'dsa';
+
 /***************************************************************
  * GO TO TOP BUTTON
  ***************************************************************/
 
 var btn = document.getElementById('go-to-top-button');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   if (window.scrollY > 300) {
     btn.classList.add('show');
   } else {
@@ -35,7 +38,7 @@ window.addEventListener('scroll', function() {
   }
 });
 
-btn.addEventListener('click', function(e) {
+btn.addEventListener('click', function (e) {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -174,13 +177,13 @@ function saveProgress() {
     const problemLabel = icon.parentElement.parentElement.querySelector('td a').textContent;
     solvedProblems[sectionName + "-" + problemLabel] = true;
   });
-  localStorage.setItem('dsaSolvedProblems', JSON.stringify(solvedProblems));
+  // Save to section-specific storage
+  localStorage.setItem(`${currentSection}SolvedProblems`, JSON.stringify(solvedProblems));
 }
 
-// Load progress from localStorage and update the UI accordingly
-// Make sure loadNotess gets called during initialization
 function loadProgress() {
-  const saved = localStorage.getItem('dsaSolvedProblems');
+  // Load from section-specific storage
+  const saved = localStorage.getItem(`${currentSection}SolvedProblems`);
   if (saved) {
     const solvedProblems = JSON.parse(saved);
     document.querySelectorAll('.done-icon').forEach(icon => {
@@ -194,30 +197,12 @@ function loadProgress() {
       }
     });
   }
-  
+
   // Load notes after DOM is fully loaded
   setTimeout(() => {
     loadNotess();
   }, 500);
 }
-
-// function loadProgress() {
-//   const saved = localStorage.getItem('dsaSolvedProblems');
-//   if (saved) {
-//     const solvedProblems = JSON.parse(saved);
-//     document.querySelectorAll('.done-icon').forEach(icon => {
-//       const problemId = icon.getAttribute('data-id');
-//       if (solvedProblems[problemId]) {
-//         icon.setAttribute('data-solved', 'true');
-//         icon.textContent = 'check_box';
-//         icon.parentElement.parentElement.classList.add('solved');
-//       }
-//     });
-//   }
-//   loadNotess();
-//   updateGlobalRectBar();
-//   updateSectionProgress();
-// }
 
 /***************************************************************
  * FILTER PROBLEMS
@@ -534,12 +519,12 @@ function updateMiniBar(miniBarsElem, diff, solved, total) {
  ***************************************************************/
 function renderSections(data) {
   const sectionsDiv = document.getElementById('sections');
-  
+
   // Log all section and subsection names
   // console.log("=== ALL SECTIONS AND SUBSECTIONS ===");
   // data.sections.forEach(section => {
   //   console.log(`SECTION: ${section.title}`);
-    
+
   //   if (section.subsections && section.subsections.length > 0) {
   //     section.subsections.forEach(subsection => {
   //       console.log(`  SUBSECTION: ${subsection.title}`);
@@ -744,17 +729,16 @@ function generateProblemTable(problemArray, baseId) {
         <tbody>
           ${problemArray.map((problem, index) => {
     const problemId = `${baseId}-${index}`.replace(/'/g, "$");
-     // Escape any single quotes in the label to prevent breaking the onclick attribute
-     const escapedLabel = problem.label.replace(/'/g, "$");
-    
+    // Escape any single quotes in the label to prevent breaking the onclick attribute
+    const escapedLabel = problem.label.replace(/'/g, "$");
+
     return `
               <tr class="${problem.difficulty}">
                 <td data-label="Question">
                   <a href="${problem.question}" target="_blank">${problem.label}</a>
                 </td>
                 <td data-label="Solution">
-                  ${
-                problem.solution !== "-"
+                  ${problem.solution !== "-"
         ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><span style="display:inline-block;">SOLUTION</span></a></div>`
         : "-"
       }
@@ -912,36 +896,14 @@ function updateSectionProgress() {
  * Load notes from localStorage with migration support for compatibility
  */
 function loadNotess() {
-  const stored = localStorage.getItem('dsaNotes');
+  const stored = localStorage.getItem(`${currentSection}Notes`);
   if (stored) {
-    const storedNotes = JSON.parse(stored);
-    notes = {};
-
-    // First copy all notes directly - these might be already in the new format
-    Object.assign(notes, storedNotes);
-
-    // Then try to match any old-style notes with their corresponding problems
-    document.querySelectorAll('.done-icon').forEach(icon => {
-      const problemId = icon.getAttribute('data-id');
-      if (storedNotes[problemId]) {
-        // If we found an old-style note (using just problemId), convert it
-        const row = icon.parentElement.parentElement;
-        const label = row.querySelector('td a').textContent.replace(/'/g, "$");
-        const sectionName = problemId.split('-')[0];
-        const stableNoteId = `${sectionName}-${label}`;
-
-        // Copy the note to the new format
-        notes[stableNoteId] = storedNotes[problemId];
-      }
-    });
-
-    // Save back in the new format for future use
-    localStorage.setItem('dsaNotes', JSON.stringify(notes));
-    // Update notes icons to be green if they have content
-    updateNotesIcons();
+    notes = JSON.parse(stored);
   } else {
     notes = {};
   }
+  // Update notes icons to be green if they have content
+  updateNotesIcons();
 }
 
 // Helper function to update all notes icons based on note content
@@ -951,25 +913,25 @@ function updateNotesIcons() {
     // Extract the problem ID from the onclick attribute
     const onclickAttr = icon.getAttribute('onclick');
     if (!onclickAttr) return;
-    
+
     // Use a more robust regex to handle the escaped quotes in your labels
     const match = onclickAttr.match(/openNotesModal\('([^']+)',\s*'((?:[^'\\]|\\.)+)'\)/);
     if (!match) {
       console.log("No match found for:", onclickAttr);
       return;
     }
-    
+
     const problemId = match[1];
     const escapedLabel = match[2];
     // Unescape the label to match how it's stored
     const label = escapedLabel.replace(/\\'/g, "'");
     const sectionName = problemId.split('-')[0];
     const stableNoteId = `${sectionName}-${label}`;
-    
+
     // Set data-has-notes attribute based on whether notes exist and aren't empty
     if (notes[stableNoteId] && notes[stableNoteId].trim() !== '') {
       icon.setAttribute('data-has-notes', 'true');
-      console.log(`Notes found for ${stableNoteId}, setting icon to green`);
+      // console.log(`Notes found for ${stableNoteId}, setting icon to green`);
     } else {
       icon.setAttribute('data-has-notes', 'false');
     }
@@ -1025,9 +987,8 @@ function saveNotesModal() {
     // Store the note using the stable ID
     notes[stableNoteId] = text;
 
-    // Save to localStorage
-    localStorage.setItem('dsaNotes', JSON.stringify(notes));
-    
+    // Save to localStorage with section-specific key
+    localStorage.setItem(`${currentSection}Notes`, JSON.stringify(notes));
     // Update the notes icon color
     const notesIcon = row.querySelector('.notes-icon');
     if (notesIcon) {
@@ -1057,7 +1018,7 @@ function initializeDarkMode() {
   if (!darkModeToggle) return;
 
   // Load saved preference
-  const isDarkMode = localStorage.getItem('dsaDarkMode') === 'true';
+  const isDarkMode = localStorage.getItem('dsaDarkMode') !== 'false';
   document.body.classList.toggle('dark-mode', isDarkMode);
   updateDarkModeIcon(isDarkMode);
 
@@ -1111,7 +1072,7 @@ function initializeCollapsibles() {
 /***************************************************************
  * INITIALIZATION
  ***************************************************************/
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Initialize Materialize components
   M.AutoInit();
 
@@ -1153,7 +1114,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const searchBox = document.getElementById('searchBox');
   if (searchBox) {
     let searchTimeout;
-    searchBox.addEventListener('input', function(e) {
+    searchBox.addEventListener('input', function (e) {
       clearTimeout(searchTimeout);
       searchTimeout = setTimeout(() => {
         console.log('Search triggered with:', e.target.value);
@@ -1220,12 +1181,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
-      console.log('Unique problems:', {
-        total: uniqueProblems.size,
-        easy: uniqueEasy.size,
-        medium: uniqueMedium.size,
-        hard: uniqueHard.size
-      });
+      // console.log('First load complete');
+      // console.log('Unique problems:', {
+      //   totalProblems: totalEasy + totalMedium + totalHard,
+      //   totalUnique: uniqueProblems.size,
+      //   totalEasy: totalEasy,
+      //   totalMedium: totalMedium,
+      //   totalHard: totalHard,
+      //   uniqueEasy: uniqueEasy.size,
+      //   uniqueMedium: uniqueMedium.size,
+      //   uniqueHard: uniqueHard.size
+      // });
 
       renderSections(data);
 
@@ -1250,6 +1216,67 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
     });
+
+  // Add event listeners for expand/collapse buttons
+  const expandAllBtn = document.querySelector('.expand-all');
+  const collapseAllBtn = document.querySelector('.collapse-all');
+
+  if (expandAllBtn) {
+    expandAllBtn.addEventListener('click', function () {
+      const sections = document.querySelectorAll('.collapsible');
+      sections.forEach(section => {
+        const instance = M.Collapsible.getInstance(section);
+        if (instance) {
+          instance.open();
+        }
+        // Also expand subsections if they exist
+        const subsections = section.querySelectorAll('.subsection-collapsible li');
+        subsections.forEach((subsection, index) => {
+          const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
+          if (subsectionInstance) {
+            subsectionInstance.open(index);
+          }
+        });
+      });
+    });
+  }
+
+  if (collapseAllBtn) {
+    collapseAllBtn.addEventListener('click', function () {
+      const sections = document.querySelectorAll('.collapsible');
+      sections.forEach(section => {
+        const instance = M.Collapsible.getInstance(section);
+        if (instance) {
+          instance.close();
+        }
+        // Also collapse subsections if they exist
+        const subsections = section.querySelectorAll('.subsection-collapsible li');
+        subsections.forEach((subsection, index) => {
+          const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
+          if (subsectionInstance) {
+            subsectionInstance.close(index);
+          }
+        });
+      });
+    });
+  }
+
+  // Add click handlers for navigation
+  document.getElementById('dsaLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('dsa');
+  });
+
+  document.getElementById('sqlLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('sql');
+  });
+
+  document.getElementById('interviewsLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSectionInterview('interviews');
+  });
+
 });
 
 // Function to initialize checkboxes
@@ -1272,7 +1299,7 @@ function initializeCheckboxes() {
       checkbox.checked = true;
 
       // Add click event listener
-      checkbox.addEventListener('click', function(e) {
+      checkbox.addEventListener('click', function (e) {
         // Stop event propagation to prevent collapsible from toggling
         e.stopPropagation();
         console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
@@ -1298,7 +1325,7 @@ function initializeCheckboxes() {
 
     // Add event listeners to the labels to prevent event propagation
     document.querySelectorAll('.difficulty-filter-square').forEach(label => {
-      label.addEventListener('click', function(e) {
+      label.addEventListener('click', function (e) {
         e.stopPropagation();
       });
     });
@@ -1342,52 +1369,376 @@ function toggleSections(expand) {
   });
 }
 
-// BANNER FUNCTION 
+// Function to switch between sections
+function switchSection(section) {
+  // Update active nav link
+  document.querySelectorAll('.nav-card').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.getElementById(`${section}Link`).classList.add('active');
 
-// function showBanner(message, duration = 5000) {
-//   const banner = document.createElement('div');
-//   banner.className = 'filter-banner';
+  // Update current section
+  currentSection = section;
 
-//   banner.innerHTML = `
-//     <span>${message}</span>
-//     <div class="filter-demo">
-//       <div class="checkbox-container">
-//         <span class="difficulty-label">Easy</span>
-//         <div class="demo-checkbox easy"></div>
-//       </div>
-//       <div class="checkbox-container">
-//         <span class="difficulty-label">Medium</span>
-//         <div class="demo-checkbox medium"></div>
-//       </div>
-//       <div class="checkbox-container">
-//         <span class="difficulty-label">Hard</span>
-//         <div class="demo-checkbox hard"></div>
-//       </div>
-//       <div class="demo-cursor"></div>
-//     </div>
-//   `;
+  // Show the progress bar and controls for DSA and SQL sections
+  const rectChartContainer = document.getElementById('rectChartContainer');
+  const searchControls = document.querySelector('.search-and-controls');
+  const sectionControls = document.querySelector('.section-controls');
 
-//   // Find the rect-chart-container and insert the banner AFTER it
-//   const progressCard = document.getElementById('rectChartContainer');
-//   if (progressCard) {
-//     progressCard.insertAdjacentElement('afterend', banner);
-//   } else {
-//     // Fallback - insert before search container
-//     const searchContainer = document.querySelector('.search-container');
-//     if (searchContainer) {
-//       searchContainer.parentNode.insertBefore(banner, searchContainer);
-//     } else {
-//       document.body.appendChild(banner);
-//     }
-//   }
+  if (rectChartContainer) rectChartContainer.style.display = 'block';
+  if (searchControls) searchControls.style.display = 'flex';
+  if (sectionControls) sectionControls.style.display = 'flex';
 
-//   // Remove the banner after the specified duration
-//   setTimeout(() => {
-//     banner.remove();
-//   }, duration);
-// }
+  // Clear existing content
+  document.getElementById('sections').innerHTML = '';
 
-// // Call the function to display the banner
-// document.addEventListener('DOMContentLoaded', () => {
-//   showBanner('Please check/uncheck to filter the problems');
-// });
+  // Reset all counters and sets before loading new data
+  totalEasy = 0;
+  totalMedium = 0;
+  totalHard = 0;
+  uniqueProblems.clear();
+  uniqueEasy.clear();
+  uniqueMedium.clear();
+  uniqueHard.clear();
+
+  // Load appropriate data
+  const dataFile = section === 'dsa' ? 'problems.json' : 'sql-problems.json';
+
+  // Load and display new content
+  fetch(dataFile)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      problemData = data;
+
+      // Count totals and track unique problems
+      data.sections.forEach(section => {
+        if (section.problems) {
+          section.problems.forEach(problem => {
+            uniqueProblems.add(problem.label);
+            if (problem.difficulty === 'easy') {
+              totalEasy++;
+              uniqueEasy.add(problem.label);
+            }
+            if (problem.difficulty === 'medium') {
+              totalMedium++;
+              uniqueMedium.add(problem.label);
+            }
+            if (problem.difficulty === 'hard') {
+              totalHard++;
+              uniqueHard.add(problem.label);
+            }
+          });
+        }
+        if (section.subsections) {
+          section.subsections.forEach(subsec => {
+            subsec.problems.forEach(problem => {
+              uniqueProblems.add(problem.label);
+              if (problem.difficulty === 'easy') {
+                totalEasy++;
+                uniqueEasy.add(problem.label);
+              }
+              if (problem.difficulty === 'medium') {
+                totalMedium++;
+                uniqueMedium.add(problem.label);
+              }
+              if (problem.difficulty === 'hard') {
+                totalHard++;
+                uniqueHard.add(problem.label);
+              }
+            });
+          });
+        }
+      });
+
+      // Build and update UI
+      buildRectBar();
+      renderSections(data);
+      initializeCollapsibles();
+      initializeCheckboxes();
+      loadProgress();
+      updateGlobalRectBar();
+      updateSectionProgress();
+    })
+    .catch(error => {
+      console.error('Error loading data:', error);
+      document.getElementById('sections').innerHTML = `
+        <div style="text-align: center; padding: 2rem; color: var(--error);">
+          <h2>Error Loading Data</h2>
+          <p>Unable to load ${section.toUpperCase()} problems. Please try again later.</p>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">Error details: ${error.message}</p>
+        </div>
+      `;
+    });
+}
+
+function switchSectionInterview(section) {
+  // Update active nav link
+  document.querySelectorAll('.nav-card').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.getElementById('interviewsLink').classList.add('active');
+
+  // Update current section
+  currentSection = section;
+
+  // Hide the progress bar and controls for interview section
+  const rectChartContainer = document.getElementById('rectChartContainer');
+  const searchControls = document.querySelector('.search-and-controls');
+  const sectionControls = document.querySelector('.section-controls');
+
+  if (rectChartContainer) rectChartContainer.style.display = 'none';
+  if (searchControls) searchControls.style.display = 'none';
+  if (sectionControls) sectionControls.style.display = 'none';
+
+  // Clear existing content
+  const sectionsDiv = document.getElementById('sections');
+  sectionsDiv.innerHTML = '';
+
+  // Load interviews data
+  fetch('interviews.json')
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      const container = document.createElement('div');
+      container.className = 'interview-container';
+
+      const content = document.createElement('div');
+      content.className = 'interview-content';
+
+      // Main Interview Section with outer card
+      const mainSection = document.createElement('div');
+      mainSection.className = 'interview-main-section';
+
+      // Companies List Section
+      const companiesList = document.createElement('div');
+      companiesList.className = 'companies-list';
+
+      // Add Interview Experiences Header
+      const interviewHeader = document.createElement('div');
+      interviewHeader.className = 'section-header';
+      interviewHeader.innerHTML = `
+        <i class="material-icons">record_voice_over</i>
+        <h2 class="section-title">Interview Experiences & Compensation</h2>
+      `;
+      companiesList.appendChild(interviewHeader);
+
+      // Add company sections
+      data.companies.forEach(company => {
+        const companySection = document.createElement('div');
+        companySection.className = 'company-section';
+
+        const companyHeader = document.createElement('div');
+        companyHeader.className = 'company-header';
+        companyHeader.innerHTML = `
+          <div class="company-icon">
+            <i class="material-icons">business</i>
+          </div>
+          <h2 class="company-name">${company.companyName}</h2>
+        `;
+
+        const companyContent = document.createElement('div');
+        companyContent.className = 'company-content';
+        companyContent.style.display = 'none';
+
+        const tabs = document.createElement('div');
+        tabs.className = 'content-tabs';
+        tabs.innerHTML = `
+          <button class="tab-button active" data-type="interview">
+            <i class="material-icons">description</i>
+            <span>Interview Experiences</span>
+          </button>
+          <button class="tab-button" data-type="compensation">
+            <i class="material-icons">payments</i>
+            <span>Compensation</span>
+          </button>
+        `;
+
+        const experienceList = document.createElement('div');
+        experienceList.className = 'experience-list interview-experiences';
+        experienceList.innerHTML = company.interview_experience.map(exp => `
+          <div class="experience-item">
+            <a href="${exp.link}" target="_blank" class="experience-link">
+              <div class="experience-icon">
+                <i class="material-icons">description</i>
+              </div>
+              <div class="experience-details">
+                <div class="experience-title">${exp.name}</div>
+                <div class="experience-meta">
+                  <i class="material-icons">schedule</i>
+                  Latest
+                </div>
+              </div>
+            </a>
+          </div>
+        `).join('');
+
+        const compensationList = document.createElement('div');
+        compensationList.className = 'experience-list compensation-experiences';
+        compensationList.style.display = 'none';
+        compensationList.innerHTML = company.compensation.map(comp => `
+          <div class="experience-item">
+            <a href="${comp.link}" target="_blank" class="experience-link">
+              <div class="experience-icon">
+                <i class="material-icons">payments</i>
+              </div>
+              <div class="experience-details">
+                <div class="experience-title">${comp.name}</div>
+                <div class="experience-meta">
+                  <i class="material-icons">schedule</i>
+                  Latest
+                </div>
+              </div>
+            </a>
+          </div>
+        `).join('');
+
+        // Add click handlers for tabs
+        tabs.querySelectorAll('.tab-button').forEach(tab => {
+          tab.addEventListener('click', (e) => {
+            e.stopPropagation();
+            tabs.querySelectorAll('.tab-button').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const type = tab.dataset.type;
+            experienceList.style.display = type === 'interview' ? 'grid' : 'none';
+            compensationList.style.display = type === 'compensation' ? 'grid' : 'none';
+          });
+        });
+
+        // Add click handler for company header
+        companyHeader.addEventListener('click', () => {
+          // Close all other sections first
+          document.querySelectorAll('.company-section').forEach(section => {
+            if (section !== companySection) {
+              section.classList.remove('expanded');
+              const content = section.querySelector('.company-content');
+              if (content) content.style.display = 'none';
+            }
+          });
+
+          // Toggle current section
+          companySection.classList.toggle('expanded');
+          companyContent.style.display = companyContent.style.display === 'none' ? 'block' : 'none';
+        });
+
+        companyContent.appendChild(tabs);
+        companyContent.appendChild(experienceList);
+        companyContent.appendChild(compensationList);
+        companySection.appendChild(companyHeader);
+        companySection.appendChild(companyContent);
+        companiesList.appendChild(companySection);
+      });
+
+      // Add companies list to main section
+      mainSection.appendChild(companiesList);
+
+      // Latest DSA Questions Section
+      const dsaSection = document.createElement('div');
+      dsaSection.className = 'latest-dsa';
+
+      const dsaHeader = document.createElement('div');
+      dsaHeader.className = 'section-header';
+      dsaHeader.innerHTML = `
+        <i class="material-icons">code</i>
+        <h2 class="section-title">Latest DSA Questions</h2>
+      `;
+
+      const dsaList = document.createElement('div');
+      dsaList.className = 'dsa-list';
+
+      // Pagination variables
+      const questionsPerPage = 5;
+      let currentPage = 1;
+      const totalQuestions = data.latest_dsa_questions.length;
+      const totalPages = Math.ceil(totalQuestions / questionsPerPage);
+
+      function showQuestionsForPage(page) {
+        const startIdx = (page - 1) * questionsPerPage;
+        const endIdx = startIdx + questionsPerPage;
+        const dsaQuestions = data.latest_dsa_questions.slice(startIdx, endIdx);
+
+        dsaList.innerHTML = dsaQuestions.map(question => `
+          <a href="${question.link}" target="_blank" class="dsa-link">
+            <div class="dsa-icon">
+              <i class="material-icons">code</i>
+            </div>
+            <div class="dsa-details">
+              <div class="dsa-title">${question.name}</div>
+              <div class="dsa-meta">
+                <i class="material-icons">schedule</i>
+                Latest
+              </div>
+            </div>
+          </a>
+        `).join('');
+      }
+
+      // Create pagination controls
+      const paginationContainer = document.createElement('div');
+      paginationContainer.className = 'pagination-container';
+
+      function updatePagination() {
+        paginationContainer.innerHTML = `
+          <button class="pagination-btn prev-btn" ${currentPage === 1 ? 'disabled' : ''}>
+            <i class="material-icons">chevron_left</i>
+          </button>
+          <span class="pagination-info">${currentPage} / ${totalPages}</span>
+          <button class="pagination-btn next-btn" ${currentPage === totalPages ? 'disabled' : ''}>
+            <i class="material-icons">chevron_right</i>
+          </button>
+        `;
+
+        // Add click event listeners to the new buttons
+        const prevBtn = paginationContainer.querySelector('.prev-btn');
+        const nextBtn = paginationContainer.querySelector('.next-btn');
+
+        prevBtn.addEventListener('click', () => {
+          if (currentPage > 1) {
+            currentPage--;
+            showQuestionsForPage(currentPage);
+            updatePagination();
+          }
+        });
+
+        nextBtn.addEventListener('click', () => {
+          if (currentPage < totalPages) {
+            currentPage++;
+            showQuestionsForPage(currentPage);
+            updatePagination();
+          }
+        });
+      }
+
+      // Initial display
+      showQuestionsForPage(currentPage);
+      updatePagination();
+
+      dsaSection.appendChild(dsaHeader);
+      dsaSection.appendChild(dsaList);
+      dsaSection.appendChild(paginationContainer);
+
+      content.appendChild(mainSection);
+      content.appendChild(dsaSection);
+      container.appendChild(content);
+      sectionsDiv.appendChild(container);
+    })
+    .catch(error => {
+      console.error('Error loading interview data:', error);
+      sectionsDiv.innerHTML = `
+        <div class="interview-container">
+          <div class="error-message" style="text-align: center; padding: 3rem;">
+            <i class="material-icons" style="font-size: 4rem; color: #EF4444; margin-bottom: 1rem;">error_outline</i>
+            <h2 style="color: #EF4444; margin-bottom: 1rem;">Error Loading Interview Data</h2>
+            <p style="color: #94a3b8; margin-bottom: 0.5rem;">Unable to load interview experiences. Please try again later.</p>
+            <p style="font-family: monospace; font-size: 0.9rem; color: #94a3b8;">${error.message}</p>
+          </div>
+        </div>
+      `;
+    });
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Progress Tracker</title>
+  <title>Algo Track</title>
 
   <!-- Materialize CSS -->
   <link
@@ -34,7 +34,10 @@
     <div class="nav-content">
       <div class="logo">
         <span class="logo-icon">&lt;/&gt;</span>
-        <span>Progress Tracker</span>
+        <div class="logo-text">
+          <span class="logo-title">Algo Track</span>
+          <span class="logo-subtitle">Track Your Progress</span>
+        </div>
       </div>
       <div class="nav-links">
         <a href="index.html" class="nav-card active" id="dsaLink">
@@ -57,7 +60,7 @@
           <i class="material-icons">library_books</i>
           <span>Resources</span>
         </a> -->
-        <a href="#" class="nav-card" id="interviewLink">
+        <a href="#" class="nav-card" id="interviewsLink">
           <i class="material-icons">record_voice_over</i>
           <span>Interviews</span>
         </a>
@@ -73,21 +76,30 @@
     <!-- The progress card is inserted by script.js -->
   </div>
 
-  <!-- Main Content / Problem Sections -->
+  <!-- Search and Controls Container -->
   <div class="container">
-    <!-- Search Box -->
-    <div class="search-container">
-      <span class="search-icon material-icons">search</span>
-      <input type="text" id="searchBox" class="search-input" placeholder="Search problems...">
+    <div class="search-and-controls">
+        <div class="search-container">
+            <span class="search-icon material-icons">search</span>
+            <input type="text" id="searchBox" class="search-input" placeholder="Search problems...">
+        </div>
+        <div class="section-controls">
+            <button class="control-button collapse-all">
+                <i class="material-icons">unfold_less</i>
+                <span>Collapse All</span>
+            </button>
+            <button class="control-button expand-all">
+                <i class="material-icons">unfold_more</i>
+                <span>Expand All</span>
+            </button>
+        </div>
     </div>
-    
-    <!-- Section Controls (Expand/Collapse) -->
-    <div class="section-controls-container"></div>
+</div>
 
-    <!-- Problem Sections -->
-    <div id="sections"></div>
-
-  </div>
+<!-- Rest of the content -->
+<div class="container" id="sections">
+    <!-- Sections will be inserted here -->
+</div>
 
 <!-- Go to top button -->
 <a id="go-to-top-button"></a> 

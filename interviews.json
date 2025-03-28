@@ -1,0 +1,208 @@
+{
+    "companies": [
+        {
+            "companyName": "Microsoft",
+            "interview_experience": [
+                {
+                    "name": "Interview Experience 1",
+                    "link": "https://example.com/microsoft-interview-1"
+                },
+                {
+                    "name": "Interview Experience 2",
+                    "link": "https://example.com/microsoft-interview-2"
+                },
+                {
+                    "name": "Interview Experience 3",
+                    "link": "https://example.com/microsoft-interview-3"
+                },
+                {
+                    "name": "Interview Experience 4",
+                    "link": "https://example.com/microsoft-interview-4"
+                }
+            ],
+            "compensation": [
+                {
+                    "name": "Compensation 1",
+                    "link": "https://example.com/microsoft-compensation-1"
+                },
+                {
+                    "name": "Compensation 2",
+                    "link": "https://example.com/microsoft-compensation-2"
+                }
+            ]
+        },
+        {
+            "companyName": "Google",
+            "interview_experience": [
+                {
+                    "name": "Interview Experience 1",
+                    "link": "https://example.com/google-interview-1"
+                },
+                {
+                    "name": "Interview Experience 2",
+                    "link": "https://example.com/google-interview-2"
+                }
+            ],
+            "compensation": [
+                {
+                    "name": "Compensation 1",
+                    "link": "https://example.com/google-compensation-1"
+                },
+                {
+                    "name": "Compensation 2",
+                    "link": "https://example.com/google-compensation-2"
+                }
+            ]
+        },
+        {
+            "companyName": "Amazon",
+            "interview_experience": [
+                {
+                    "name": "Interview Experience 1",
+                    "link": "https://example.com/amazon-interview-1"
+                },
+                {
+                    "name": "Interview Experience 2",
+                    "link": "https://example.com/amazon-interview-2"
+                }
+            ],
+            "compensation": [
+                {
+                    "name": "Compensation 1",
+                    "link": "https://example.com/amazon-compensation-1"
+                },
+                {
+                    "name": "Compensation 2",
+                    "link": "https://example.com/amazon-compensation-2"
+                }
+            ]
+        },
+        {
+            "companyName": "Flipkart",
+            "interview_experience": [
+                {
+                    "name": "Interview Experience 1",
+                    "link": "https://example.com/flipkart-interview-1"
+                },
+                {
+                    "name": "Interview Experience 2",
+                    "link": "https://example.com/flipkart-interview-2"
+                }
+            ],
+            "compensation": [
+                {
+                    "name": "Compensation 1",
+                    "link": "https://example.com/flipkart-compensation-1"
+                },
+                {
+                    "name": "Compensation 2",
+                    "link": "https://example.com/flipkart-compensation-2"
+                }
+            ]
+        },
+        {
+            "companyName": "Adobe",
+            "interview_experience": [
+                {
+                    "name": "Interview Experience 1",
+                    "link": "https://example.com/adobe-interview-1"
+                },
+                {
+                    "name": "Interview Experience 2",
+                    "link": "https://example.com/adobe-interview-2"
+                }
+            ],
+            "compensation": [
+                {
+                    "name": "Compensation 1",
+                    "link": "https://example.com/adobe-compensation-1"
+                },
+                {
+                    "name": "Compensation 2",
+                    "link": "https://example.com/adobe-compensation-2"
+                }
+            ]
+        },
+        {
+            "companyName": "Zoho",
+            "interview_experience": [
+                {
+                    "name": "Interview Experience 1",
+                    "link": "https://example.com/amazon-interview-1"
+                },
+                {
+                    "name": "Interview Experience 2",
+                    "link": "https://example.com/amazon-interview-2"
+                }
+            ],
+            "compensation": [
+                {
+                    "name": "Compensation 1",
+                    "link": "https://example.com/amazon-compensation-1"
+                },
+                {
+                    "name": "Compensation 2",
+                    "link": "https://example.com/amazon-compensation-2"
+                }
+            ]
+        }
+    ],
+    "latest_dsa_questions": [
+        {
+            "name": "Microsoft DSA 1",
+            "link": "https://example.com/microsoft-dsa-1"
+        },
+        {
+            "name": "Microsoft DSA 2",
+            "link": "https://example.com/microsoft-dsa-2"
+        },
+        {
+            "name": "Google DSA 1",
+            "link": "https://example.com/google-dsa-1"
+        },
+        {
+            "name": "Google DSA 2",
+            "link": "https://example.com/google-dsa-2"
+        },
+        {
+            "name": "Amazon DSA 1",
+            "link": "https://example.com/amazon-dsa-1"
+        },
+        {
+            "name": "Amazon DSA 2",
+            "link": "https://example.com/amazon-dsa-2"
+        },
+        {
+            "name": "Flipkart DSA 1",
+            "link": "https://example.com/flipkart-dsa-1"
+        },
+        {
+            "name": "Flipkart DSA 2",
+            "link": "https://example.com/flipkart-dsa-2"
+        },
+        {
+            "name": "Adobe DSA 1",
+            "link": "https://example.com/adobe-dsa-1"
+        },
+        {
+            "name": "Adobe DSA 2",
+            "link": "https://example.com/adobe-dsa-2"
+        },
+        {
+            "name": "TCS DSA 1",
+            "link": "https://example.com/tcs-dsa-1"
+        },
+        {
+            "name": "TCS DSA 2",
+            "link": "https://example.com/tcs-dsa-2"
+        },
+        {
+            "name": "Infosys DSA 1",
+            "link": "https://example.com/infosys-dsa-1"
+        },
+        {
+            "name": "Infosys DSA 2",
+            "link": "https://example.com/infosys-dsa-2"
+        }
+    ]
+}
