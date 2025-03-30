@@ -1,0 +1,564 @@
+{
+  "sections": [
+    {
+      "title": "Array / String",
+      "problems": [
+        {
+          "label": "Merge Strings Alternately",
+          "question": "https://leetcode.com/problems/merge-strings-alternately/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Greatest Common Divisor of Strings",
+          "question": "https://leetcode.com/problems/greatest-common-divisor-of-strings/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Kids With the Greatest Number of Candies",
+          "question": "https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Can Place Flowers",
+          "question": "https://leetcode.com/problems/can-place-flowers/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Reverse Vowels of a String",
+          "question": "https://leetcode.com/problems/reverse-vowels-of-a-string/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Reverse Words in a String",
+          "question": "https://leetcode.com/problems/reverse-words-in-a-string/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Product of Array Except Self",
+          "question": "https://leetcode.com/problems/product-of-array-except-self/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Increasing Triplet Subsequence",
+          "question": "https://leetcode.com/problems/increasing-triplet-subsequence/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "String Compression",
+          "question": "https://leetcode.com/problems/string-compression/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Hash Map / Set",
+      "problems": [
+        {
+          "label": "Find the Difference of Two Arrays",
+          "question": "https://leetcode.com/problems/find-the-difference-of-two-arrays/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Unique Number of Occurrences",
+          "question": "https://leetcode.com/problems/unique-number-of-occurrences/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Determine if Two Strings Are Close",
+          "question": "https://leetcode.com/problems/determine-if-two-strings-are-close/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Equal Row and Column Pairs",
+          "question": "https://leetcode.com/problems/equal-row-and-column-pairs/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Two Pointers",
+      "problems": [
+        {
+          "label": "Move Zeroes",
+          "question": "https://leetcode.com/problems/move-zeroes/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Is Subsequence",
+          "question": "https://leetcode.com/problems/is-subsequence/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Container With Most Water",
+          "question": "https://leetcode.com/problems/container-with-most-water/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Max Number of K-Sum Pairs",
+          "question": "https://leetcode.com/problems/max-number-of-k-sum-pairs/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Prefix Sum",
+      "problems": [
+        {
+          "label": "Find the Highest Altitude",
+          "question": "https://leetcode.com/problems/find-the-highest-altitude/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find Pivot Index",
+          "question": "https://leetcode.com/problems/find-pivot-index/",
+          "solution": "-",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "title": "Sliding Window",
+      "problems": [
+        {
+          "label": "Maximum Average Subarray I",
+          "question": "https://leetcode.com/problems/maximum-average-subarray-i/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Maximum Number of Vowels in a Substring of Given Length",
+          "question": "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Max Consecutive Ones III",
+          "question": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Subarray of 1's After Deleting One Element",
+          "question": "https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Binary Search",
+      "problems": [
+        {
+          "label": "Guess Number Higher or Lower",
+          "question": "https://leetcode.com/problems/guess-number-higher-or-lower/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Successful Pairs of Spells and Potions",
+          "question": "https://leetcode.com/problems/successful-pairs-of-spells-and-potions/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find Peak Element",
+          "question": "https://leetcode.com/problems/find-peak-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Koko Eating Bananas",
+          "question": "https://leetcode.com/problems/koko-eating-bananas/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Heap / Priority Queue",
+      "problems": [
+        {
+          "label": "Kth Largest Element in an Array",
+          "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Smallest Number in Infinite Set",
+          "question": "https://leetcode.com/problems/smallest-number-in-infinite-set/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Subsequence Score",
+          "question": "https://leetcode.com/problems/maximum-subsequence-score/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Total Cost to Hire K Workers",
+          "question": "https://leetcode.com/problems/total-cost-to-hire-k-workers/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Intervals",
+      "problems": [
+        {
+          "label": "Non-overlapping Intervals",
+          "question": "https://leetcode.com/problems/non-overlapping-intervals/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Number of Arrows to Burst Balloons",
+          "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Stack",
+      "problems": [
+        {
+          "label": "Removing Stars From a String",
+          "question": "https://leetcode.com/problems/removing-stars-from-a-string/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Asteroid Collision",
+          "question": "https://leetcode.com/problems/asteroid-collision/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Decode String",
+          "question": "https://leetcode.com/problems/decode-string/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Queue",
+      "problems": [
+        {
+          "label": "Number of Recent Calls",
+          "question": "https://leetcode.com/problems/number-of-recent-calls/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Dota2 Senate",
+          "question": "https://leetcode.com/problems/dota2-senate/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Linked List",
+      "problems": [
+        {
+          "label": "Delete the Middle Node of a Linked List",
+          "question": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Odd Even Linked List",
+          "question": "https://leetcode.com/problems/odd-even-linked-list/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Reverse Linked List",
+          "question": "https://leetcode.com/problems/reverse-linked-list/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Maximum Twin Sum of a Linked List",
+          "question": "https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Monotonic Stack",
+      "problems": [
+        {
+          "label": "Daily Temperatures",
+          "question": "https://leetcode.com/problems/daily-temperatures/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Online Stock Span",
+          "question": "https://leetcode.com/problems/online-stock-span/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Backtracking",
+      "problems": [
+        {
+          "label": "Letter Combinations of a Phone Number",
+          "question": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Combination Sum III",
+          "question": "https://leetcode.com/problems/combination-sum-iii/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Binary Tree - DFS",
+      "problems": [
+        {
+          "label": "Maximum Depth of Binary Tree",
+          "question": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Leaf-Similar Trees",
+          "question": "https://leetcode.com/problems/leaf-similar-trees/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Count Good Nodes in Binary Tree",
+          "question": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Path Sum III",
+          "question": "https://leetcode.com/problems/path-sum-iii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest ZigZag Path in a Binary Tree",
+          "question": "https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Lowest Common Ancestor of a Binary Tree",
+          "question": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Binary Tree - BFS",
+      "problems": [
+        {
+          "label": "Binary Tree Right Side View",
+          "question": "https://leetcode.com/problems/binary-tree-right-side-view/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Level Sum of a Binary Tree",
+          "question": "https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Binary Search Tree",
+      "problems": [
+        {
+          "label": "Search in a Binary Search Tree",
+          "question": "https://leetcode.com/problems/search-in-a-binary-search-tree/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Delete Node in a BST",
+          "question": "https://leetcode.com/problems/delete-node-in-a-bst/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Graphs - DFS",
+      "problems": [
+        {
+          "label": "Keys and Rooms",
+          "question": "https://leetcode.com/problems/keys-and-rooms/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Number of Provinces",
+          "question": "https://leetcode.com/problems/number-of-provinces/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Reorder Routes to Make All Paths Lead to the City Zero",
+          "question": "https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Evaluate Division",
+          "question": "https://leetcode.com/problems/evaluate-division/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Graphs - BFS",
+      "problems": [
+        {
+          "label": "Nearest Exit from Entrance in Maze",
+          "question": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Rotting Oranges",
+          "question": "https://leetcode.com/problems/rotting-oranges/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "DP - 1D",
+      "problems": [
+        {
+          "label": "N-th Tribonacci Number",
+          "question": "https://leetcode.com/problems/n-th-tribonacci-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Min Cost Climbing Stairs",
+          "question": "https://leetcode.com/problems/min-cost-climbing-stairs/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "House Robber",
+          "question": "https://leetcode.com/problems/house-robber/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Domino and Tromino Tiling",
+          "question": "https://leetcode.com/problems/domino-and-tromino-tiling/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "DP - Multidimensional",
+      "problems": [
+        {
+          "label": "Unique Paths",
+          "question": "https://leetcode.com/problems/unique-paths/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Longest Common Subsequence",
+          "question": "https://leetcode.com/problems/longest-common-subsequence/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Best Time to Buy and Sell Stock with Transaction Fee",
+          "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Edit Distance",
+          "question": "https://leetcode.com/problems/edit-distance/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Bit Manipulation",
+      "problems": [
+        {
+          "label": "Counting Bits",
+          "question": "https://leetcode.com/problems/counting-bits/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Single Number",
+          "question": "https://leetcode.com/problems/single-number/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Minimum Flips to Make a OR b Equal to c",
+          "question": "https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    },
+    {
+      "title": "Trie",
+      "problems": [
+        {
+          "label": "Implement Trie (Prefix Tree)",
+          "question": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search Suggestions System",
+          "question": "https://leetcode.com/problems/search-suggestions-system/",
+          "solution": "-",
+          "difficulty": "medium"
+        }
+      ]
+    }
+  ]
+}

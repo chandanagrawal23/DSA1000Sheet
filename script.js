@@ -1127,7 +1127,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Load problems data
-  fetch('problems.json')
+  fetch('dsa-problems.json')
     .then(res => {
       if (!res.ok) throw new Error('Network response was not ok');
       return res.json();
@@ -1267,6 +1267,16 @@ document.addEventListener('DOMContentLoaded', function () {
     switchSection('dsa');
   });
 
+  document.getElementById('blind75Link').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('blind75');
+  });
+
+  document.getElementById('leetcode150Link').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('leetcode150');
+  });
+
   document.getElementById('sqlLink').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('sql');
@@ -1402,7 +1412,7 @@ function switchSection(section) {
   uniqueHard.clear();
 
   // Load appropriate data
-  const dataFile = section === 'dsa' ? 'problems.json' : 'sql-problems.json';
+  const dataFile = `${section}-problems.json`;
 
   // Load and display new content
   fetch(dataFile)

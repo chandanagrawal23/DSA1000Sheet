@@ -95,7 +95,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 10 10rem;
     height: 100%;
     overflow: hidden;
 }
@@ -160,7 +160,7 @@ body.dark-mode .logo-subtitle {
     color: #CBD5E1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1440px) {
     .logo {
         gap: 0.5rem;
     }
