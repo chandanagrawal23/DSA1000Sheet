@@ -377,7 +377,7 @@
           "difficulty": "easy"
         },
         {
-          "label": "Move Zeroes",
+          "label": "Move Zeroes[Do no sort, do not count]",
           "question": "https://leetcode.com/problems/move-zeroes/",
           "solution": "-",
           "difficulty": "easy"
@@ -389,7 +389,7 @@
           "difficulty": "easy"
         },
         {
-          "label": "Squares of a Sorted Array",
+          "label": "Squares of a Sorted Array[Easy and nice question]",
           "question": "https://leetcode.com/problems/squares-of-a-sorted-array/",
           "solution": "-",
           "difficulty": "easy"
@@ -413,37 +413,25 @@
           "difficulty": "medium"
         },
         {
-          "label": "Container With Most Water",
-          "question": "https://leetcode.com/problems/container-with-most-water/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Remove Duplicates from Sorted Array II",
           "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Sort Colors[0,1,2] ( Dutch National Flag Problem )",
+          "label": "Sort Colors[0,1,2] ( Learn Dutch National Flag Problem IMP)",
           "question": "https://leetcode.com/problems/sort-colors/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Shortest Unsorted Continuous Subarray",
+          "label": "Shortest Unsorted Continuous Subarray(Two pointer / Monotonic Stack)",
           "question": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Maximize Distance to Closest Person",
-          "question": "https://leetcode.com/problems/maximize-distance-to-closest-person/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find K Closest Elements [Can be solved using 5 methods]",
+          "label": "Find K Closest Elements [Can be solved using 4 methods]",
           "question": "https://leetcode.com/problems/find-k-closest-elements/",
           "solution": "-",
           "difficulty": "medium"
@@ -455,15 +443,15 @@
           "difficulty": "medium"
         },
         {
-          "label": "Find the Duplicate Number",
-          "question": "https://leetcode.com/problems/find-the-duplicate-number/",
+          "label": "Container With Most Water",
+          "question": "https://leetcode.com/problems/container-with-most-water/",
           "solution": "-",
           "difficulty": "medium"
         },
         {
-          "label": "Maximum Twin Sum of a Linked List",
-          "question": "https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/",
-          "solution": "-",
+          "label": "Find the Duplicate Number(9 ways to solve)",
+          "question": "https://leetcode.com/problems/find-the-duplicate-number/",
+          "solution": "https://leetcode.com/problems/find-the-duplicate-number/solutions/1892921/9-approaches-count-hash-in-place-marked-sort-binary-search-bit-mask-fast-slow-pointers/",
           "difficulty": "medium"
         },
         {
@@ -508,18 +496,6 @@
           "difficulty": "easy"
         },
         {
-          "label": "Peak Index in a Mountain Array",
-          "question": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Guess Number Higher or Lower",
-          "question": "https://leetcode.com/problems/guess-number-higher-or-lower/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Find Smallest Letter Greater Than Target",
           "question": "https://leetcode.com/problems/find-smallest-letter-greater-than-target/",
           "solution": "-",
@@ -532,26 +508,38 @@
           "difficulty": "easy"
         },
         {
-          "label": "First Bad Version",
-          "question": "https://leetcode.com/problems/first-bad-version/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Find the Distance Value Between Two Arrays",
           "question": "https://leetcode.com/problems/find-the-distance-value-between-two-arrays/",
           "solution": "-",
           "difficulty": "easy"
         },
         {
+          "label": "Find Peak Element",
+          "question": "https://leetcode.com/problems/find-peak-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Single Element in a Sorted Array",
           "question": "https://leetcode.com/problems/single-element-in-a-sorted-array/",
           "solution": "-",
-          "difficulty": "easy"
+          "difficulty": "medium"
         },
         {
-          "label": "Count Complete Tree Nodes",
-          "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
+          "label": "Peak Index in a Mountain Array",
+          "question": "https://leetcode.com/problems/peak-index-in-a-mountain-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find First and Last Position of Element in Sorted Array",
+          "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Search in Rotated Sorted Array",
+          "question": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
           "solution": "-",
           "difficulty": "medium"
         },
@@ -568,7 +556,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Maximum Distance Between a Pair of Values",
+          "label": "Maximum Distance Between a Pair of Values( Can be solved using two pointer too)",
           "question": "https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/",
           "solution": "-",
           "difficulty": "medium"
@@ -592,37 +580,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Maximum Length of Repeated Subarray",
-          "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Random Pick with Weight",
-          "question": "https://leetcode.com/problems/random-pick-with-weight/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find Peak Element",
-          "question": "https://leetcode.com/problems/find-peak-element/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find First and Last Position of Element in Sorted Array",
-          "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Search in Rotated Sorted Array",
-          "question": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Find K Closest Elements",
+          "label": "Find K Closest Elements [Can be solved using 4 methods]",
           "question": "https://leetcode.com/problems/find-k-closest-elements/",
           "solution": "-",
           "difficulty": "medium"
@@ -779,7 +737,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Find K Closest Elements",
+              "label": "Find K Closest Elements [Can be solved using 4 methods]",
               "question": "https://leetcode.com/problems/find-k-closest-elements/",
               "solution": "-",
               "difficulty": "medium"
@@ -881,9 +839,9 @@
           "difficulty": "medium"
         },
         {
-          "label": "Find the Duplicate Number",
+          "label": "Find the Duplicate Number(9 ways to solve)",
           "question": "https://leetcode.com/problems/find-the-duplicate-number/",
-          "solution": "-",
+          "solution": "https://leetcode.com/problems/find-the-duplicate-number/solutions/1892921/9-approaches-count-hash-in-place-marked-sort-binary-search-bit-mask-fast-slow-pointers/",
           "difficulty": "medium"
         },
         {
@@ -1117,6 +1075,30 @@
               "difficulty": "medium"
             },
             {
+              "label": "Infix to Prefix Expression",
+              "question": "https://www.geeksforgeeks.org/convert-infix-prefix-notation/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Infix to Postfix Expression",
+              "question": "https://www.geeksforgeeks.org/convert-infix-expression-to-postfix-expression/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Evaluation of Prefix Expression",
+              "question": "https://www.geeksforgeeks.org/evaluation-prefix-expressions/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Evaluation of Postfix Expression",
+              "question": "https://www.geeksforgeeks.org/evaluation-of-postfix-expression/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Largest Rectangle in Histogram",
               "question": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
               "solution": "-",
@@ -1132,12 +1114,6 @@
               "label": "Longest Valid Parentheses",
               "question": "https://leetcode.com/problems/longest-valid-parentheses/",
               "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
-              "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
               "difficulty": "hard"
             }
           ]
@@ -1198,6 +1174,24 @@
               "question": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
               "solution": "-",
               "difficulty": "medium"
+            },
+            {
+              "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
+              "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Find the Number of Subarrays Where Boundary Elements Are Maximum",
+              "question": "https://leetcode.com/problems/find-the-number-of-subarrays-where-boundary-elements-are-maximum/",
+              "solution": "",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Next Greater Element IV (Monotonic Stack + Priority Queue)",
+              "question": "https://leetcode.com/problems/next-greater-element-iv/",
+              "solution": "-",
+              "difficulty": "hard"
             }
           ]
         }
@@ -1441,6 +1435,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Maximum Twin Sum of a Linked List",
+              "question": "https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Reorder List",
               "question": "https://leetcode.com/problems/reorder-list/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reorderList.cpp",
@@ -1567,7 +1567,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Find K Closest Elements",
+          "label": "Find K Closest Elements [Can be solved using 4 methods]",
           "question": "https://leetcode.com/problems/find-k-closest-elements/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findClosestElements.cpp",
           "difficulty": "medium"
@@ -2283,6 +2283,12 @@
               "difficulty": "easy"
             },
             {
+              "label": "Count Complete Tree Nodes",
+              "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
               "label": "Symmetric Tree",
               "question": "https://leetcode.com/problems/symmetric-tree/",
               "solution": "-",
@@ -2577,7 +2583,7 @@
           "problems": [
             {
               "label": "Count Vowels and Consonants",
-              "question": "https://www.geeksforgeeks.org/count-vowels-and-consonants-in-a-string-using-string-methods/",
+              "question": "https://docs.vultr.com/java/examples/count-the-number-of-vowels-and-consonants-in-a-sentence",
               "solution": "-",
               "difficulty": "easy"
             },
@@ -2613,7 +2619,7 @@
             },
             {
               "label": "Check if a string is subsequence of another string",
-              "question": "https://www.geeksforgeeks.org/check-string-subsequence-another-string-iterative-recursive/",
+              "question": "https://leetcode.com/problems/is-subsequence/description/",
               "solution": "-",
               "difficulty": "easy"
             },
@@ -2683,7 +2689,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Z Algorithm",
+              "label": "Z Function / Z Algorithm",
               "question": "https://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/",
               "solution": "-",
               "difficulty": "medium"
@@ -2715,6 +2721,12 @@
             {
               "label": "Shortest Palindrome (KMP)",
               "question": "https://leetcode.com/problems/shortest-palindrome/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Sum of Scores of Built Strings",
+              "question": "https://leetcode.com/problems/sum-of-scores-of-built-strings",
               "solution": "-",
               "difficulty": "hard"
             }
@@ -2889,7 +2901,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Maximum Length of Repeated Subarray",
+              "label": "Maximum Length of Repeated Subarray(Longest Common Subarray)",
               "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
               "solution": "-",
               "difficulty": "medium"
@@ -4643,6 +4655,53 @@
           "question": "https://leetcode.com/problems/design-skiplist/",
           "solution": "-",
           "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "title": "Randomization",
+      "problems": [
+        {
+          "label": "Shuffle an Array",
+          "question": "https://leetcode.com/problems/shuffle-an-array/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Implement Rand10() Using Rand7()",
+          "question": "https://leetcode.com/problems/implement-rand10-using-rand7/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Random Pick Index",
+          "question": "https://leetcode.com/problems/random-pick-index/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Random Pick with Weight",
+          "question": "https://leetcode.com/problems/random-pick-with-weight/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Random Flip Matrix",
+          "question": "https://leetcode.com/problems/random-flip-matrix/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Insert Delete GetRandom O(1) [Important  MAANG]",
+          "question": "https://leetcode.com/problems/insert-delete-getrandom-o1/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Linked List Random Node",
+          "question": "https://leetcode.com/problems/linked-list-random-node/",
+          "solution": "-",
+          "difficulty": "medium"
         }
       ]
     },
