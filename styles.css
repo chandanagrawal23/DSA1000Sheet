@@ -108,6 +108,7 @@ body {
     text-decoration: none;
     margin-right: 2rem;
     transition: all 0.3s ease;
+    min-width: 250px;
 }
 
 .logo:hover {
@@ -126,9 +127,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     line-height: 1;
-    margin-top: -0.4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .logo-title {
@@ -139,15 +140,15 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1;
-    margin-bottom: -0.5rem;
+    white-space: nowrap;
 }
 
 .logo-subtitle {
     font-size: 1rem;
     color: #000000;
     margin-top: 0.8rem;
-    margin-left:2rem;
-    font-weight: 200;
+    margin-left:0.5rem;
+    font-weight: 300;
     white-space: nowrap;
     opacity: 0.7;
 }
@@ -163,6 +164,7 @@ body.dark-mode .logo-subtitle {
 @media (max-width: 1440px) {
     .logo {
         gap: 0.5rem;
+        min-width: 200px;
     }
     
     .logo-icon {
@@ -170,41 +172,39 @@ body.dark-mode .logo-subtitle {
     }
     
     .logo-text {
-        margin-top: -0.25rem;
+        margin-top: 0;
     }
     
     .logo-title {
         font-size: 1.75rem;
-        margin-bottom: -0.25rem;
     }
     
     .logo-subtitle {
         font-size: 0.8rem;
-        margin-top: 0.55rem;
+        margin-top: 0.3rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .nav-content {
+        padding: 0 1rem;
+    }
+
     .logo {
-        gap: 0.25rem;
+        min-width: auto;
+        margin-right: 1rem;
     }
 
     .logo-icon {
         font-size: 2.5rem;
     }
     
-    .logo-text {
-        margin-top: -0.125rem;
-    }
-    
     .logo-title {
-        font-size: 1.65rem;
-        margin-bottom: -0.125rem;
+        font-size: 1.5rem;
     }
     
     .logo-subtitle {
-        font-size: 0.70rem;
-        margin-top: 0.425rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -1420,7 +1420,7 @@ body.dark-mode .square-check.hard:checked {
     }
     
     .logo {
-        font-size: 1.5rem;
+        min-width: auto;
         margin-right: 1rem;
     }
     
@@ -2061,45 +2061,58 @@ body.dark-mode .control-button:hover {
 
 .problem-table th,
 .problem-table td {
-    padding: 1rem !important;
+    padding: 12px 4px !important; /* Reduced padding for smaller height */
     vertical-align: middle !important;
     text-align: left !important;
+    height: 56px !important; /* Reduced row height */
 }
 
 /* Adjust column widths to prevent overlapping */
 .problem-table th:nth-child(1),
 .problem-table td:nth-child(1) {
-    width: 45% !important; /* Question column - slightly larger for better text display */
+    width: 60% !important; /* Question column - increased width */
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    padding-right: 20px !important;
 }
 
 .problem-table th:nth-child(2),
 .problem-table td:nth-child(2) {
-    width: 15% !important; /* Solution column - slightly smaller */
+    width: 10% !important; /* Solution column - reduced width */
     text-align: center !important;
+    padding: 8px 2px !important;
 }
 
 .problem-table th:nth-child(3),
 .problem-table td:nth-child(3) {
-    width: 20% !important; /* Notes column */
+    width: 10% !important; /* YouTube column - reduced width */
     text-align: center !important;
+    padding: 8px 2px !important;
 }
 
 .problem-table th:nth-child(4),
 .problem-table td:nth-child(4) {
-    width: 20% !important; /* Done column */
+    width: 10% !important; /* Notes column - reduced width */
     text-align: center !important;
+    padding: 8px 2px !important;
 }
 
-/* Center align the solution, notes and done columns */
+.problem-table th:nth-child(5),
+.problem-table td:nth-child(5) {
+    width: 10% !important; /* Done column - reduced width */
+    text-align: center !important;
+    padding: 8px 2px !important;
+}
+
+/* Center align all columns except Question */
 .problem-table td:nth-child(2),
 .problem-table td:nth-child(3),
-.problem-table td:nth-child(4) {
-    text-align: center !important;
-}
-
+.problem-table td:nth-child(4),
+.problem-table td:nth-child(5),
 .problem-table th:nth-child(2),
 .problem-table th:nth-child(3),
-.problem-table th:nth-child(4) {
+.problem-table th:nth-child(4),
+.problem-table th:nth-child(5) {
     text-align: center !important;
 }
 
@@ -2107,7 +2120,7 @@ body.dark-mode .control-button:hover {
 .problem-table td {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    white-space: normal !important;
+    white-space: nowrap !important;
     word-wrap: break-word !important;
 }
 
@@ -2117,6 +2130,7 @@ body.dark-mode .control-button:hover {
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
+    padding: 0 2px !important;
 }
 
 /* Container width consistency */
@@ -2126,7 +2140,6 @@ body.dark-mode .control-button:hover {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    overflow: visible !important;
 }
 
 /* Align search bar with sections */
@@ -2613,14 +2626,6 @@ body.dark-mode .experience-link:hover {
   font-size: 1.25rem;
 }
 
-.pagination-info {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  min-width: 60px;
-  text-align: center;
-}
-
 /* Dark mode specific styles */
 body.dark-mode .pagination-btn {
   background: var(--surface-dark);
@@ -2629,6 +2634,383 @@ body.dark-mode .pagination-btn {
 
 body.dark-mode .pagination-btn:hover:not(:disabled) {
   background: var(--surface-dark-hover);
+}
+
+/* YouTube link styling */
+.youtube-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px !important;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background-color: #FF0000 !important;
+    color: white !important;
+    min-width: 80px !important;
+    height: fit-content;
+    font-size: 0.9rem !important;
+}
+
+.youtube-link:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+    opacity: 0.9;
+}
+
+/* Mobile responsiveness for the new column */
+@media screen and (max-width: 768px) {
+    .problem-table td[data-label="YouTube"] {
+        justify-content: flex-start;
+    }
+    
+    .problem-table td[data-label="YouTube"] .solution-container {
+        display: block;
+        width: 100%;
+        max-width: 150px;
+    }
+    
+    .youtube-link {
+        display: block;
+        width: 100%;
+        padding: 4px 6px !important;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+}
+
+/* Question cell specific styling */
+.problem-table td:first-child a {
+    display: inline-block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    line-height: 1.4 !important;
+    padding: 6px 24px 6px 12px !important; /* Reduced vertical padding */
+}
+
+/* Action buttons styling */
+.solution-link, .youtube-link {
+    padding: 3px 6px !important; /* Reduced padding */
+    min-width: 65px !important; /* Slightly smaller min-width */
+    font-size: 0.85rem !important;
+    margin: 0 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 24px !important; /* Reduced height */
+    border-radius: 4px !important;
+}
+
+/* Center alignment of icons */
+.centered-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 2px !important;
+}
+
+/* Ensure proper spacing in the table */
+.problem-table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    table-layout: fixed !important;
+}
+
+/* Make sure the table takes full width */
+.problem-table {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Adjust the action columns container */
+.problem-table td:nth-child(2),
+.problem-table td:nth-child(3),
+.problem-table td:nth-child(4),
+.problem-table td:nth-child(5) {
+    padding-left: 1px !important;
+    padding-right: 1px !important;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .problem-table td[data-label="Question"] {
+        width: 100% !important;
+        padding: 12px !important;
+    }
+
+    .problem-table td[data-label="Question"] a {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        line-height: 1.4 !important;
+        padding: 6px 24px 6px 12px !important; /* Reduced vertical padding */
+    }
+
+    .problem-table td[data-label="Solution"],
+    .problem-table td[data-label="YouTube"],
+    .problem-table td[data-label="Notes"],
+    .problem-table td[data-label="Status"] {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        padding: 6px 12px !important;
+    }
+}
+
+/* Problem Table Column Widths */
+.problem-table th:nth-child(1),
+.problem-table td:nth-child(1) {
+    width: 55% !important; /* Question column */
+    padding-right: 24px !important; /* Increased padding between Question and Solution */
+}
+
+.problem-table th:nth-child(2),
+.problem-table td:nth-child(2) {
+    width: 12% !important; /* Solution column */
+    text-align: center !important;
+    padding: 8px 4px !important;
+}
+
+.problem-table th:nth-child(3),
+.problem-table td:nth-child(3) {
+    width: 11% !important; /* YouTube column */
+    text-align: center !important;
+    padding: 8px 4px !important;
+}
+
+.problem-table th:nth-child(4),
+.problem-table td:nth-child(4) {
+    width: 11% !important; /* Notes column */
+    text-align: center !important;
+    padding: 8px 4px !important;
+}
+
+.problem-table th:nth-child(5),
+.problem-table td:nth-child(5) {
+    width: 11% !important; /* Done column */
+    text-align: center !important;
+    padding: 8px 4px !important;
+}
+
+/* Question cell specific styling - Removed inline-block display */
+.problem-table td:first-child a {
+    padding: 3px 8px !important; /* Reduced padding around text */
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    line-height: 1.3 !important; /* Slightly reduced line height */
+    color: white !important;
+    font-size: 0.95rem !important; /* Slightly smaller font size */
+}
+
+/* Problem Links - Light Mode */
+tr.easy td:first-child a {
+    background-color: rgba(16, 185, 129, 0.9) !important;
+}
+
+tr.medium td:first-child a {
+    background-color: rgba(245, 158, 11, 0.9) !important;
+}
+
+tr.hard td:first-child a {
+    background-color: rgba(239, 68, 68, 0.9) !important;
+}
+
+tr.easy td:first-child a:hover {
+    background-color: var(--easy-color) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+tr.medium td:first-child a:hover {
+    background-color: var(--medium-color) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+tr.hard td:first-child a:hover {
+    background-color: var(--hard-color) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Action buttons styling with consistent spacing */
+.solution-link, .youtube-link {
+    padding: 3px 6px !important; /* Reduced padding */
+    min-width: 65px !important; /* Slightly smaller min-width */
+    font-size: 0.85rem !important;
+    margin: 0 4px !important; /* Increased margin for better spacing */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 24px !important; /* Reduced height */
+    border-radius: 4px !important;
+}
+
+/* Center alignment of action columns */
+.problem-table td:nth-child(2),
+.problem-table td:nth-child(3),
+.problem-table td:nth-child(4),
+.problem-table td:nth-child(5) {
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 6px 4px !important; /* Reduced padding */
+}
+
+/* Mobile responsiveness adjustments */
+@media screen and (max-width: 768px) {
+    .problem-table td[data-label="Question"] {
+        padding: 12px !important;
+    }
+
+    .problem-table td[data-label="Question"] a {
+        width: auto !important;
+        display: inline-block !important;
+    }
+
+    .problem-table td[data-label="Solution"],
+    .problem-table td[data-label="YouTube"],
+    .problem-table td[data-label="Notes"],
+    .problem-table td[data-label="Status"] {
+        padding: 6px 12px !important;
+    }
+}
+
+/* Problem Table Column Headers */
+.problem-table th {
+    text-align: center !important;
+    padding: 16px 4px !important;
+    font-weight: 500 !important;
+    color: #94a3b8 !important; /* Subtle gray color */
+    font-size: 1rem !important; /* Slightly larger header text */
+    letter-spacing: 0.5px !important;
+    border-bottom: 2px solid #e2e8f0 !important; /* Subtle border */
+    background-color: #f8fafc !important; /* Very light background */
+}
+
+/* Dark mode header styles */
+body.dark-mode .problem-table th {
+    color: #cbd5e1 !important;
+    border-bottom: 2px solid #334155 !important;
+    background-color: #1e293b !important;
+}
+
+/* Question cell styling */
+.problem-table td:first-child {
+    padding: 12px 24px 12px 12px !important;
+}
+
+.problem-table td:first-child a {
+    padding: 6px 14px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    display: block !important;
+    width: fit-content !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    line-height: 1.5 !important;
+    color: white !important;
+    font-size: 1.15rem !important;
+    font-weight: 600 !important; /* Increased font weight */
+    box-decoration-break: clone !important;
+    -webkit-box-decoration-break: clone !important;
+}
+
+/* Problem Links - Light Mode */
+tr.easy td:first-child a {
+    background-color: var(--easy-color) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+tr.medium td:first-child a {
+    background-color: var(--medium-color) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+tr.hard td:first-child a {
+    background-color: var(--hard-color) !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hover effects */
+tr.easy td:first-child a:hover,
+tr.medium td:first-child a:hover,
+tr.hard td:first-child a:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    opacity: 1 !important;
+}
+
+/* Dark mode adjustments */
+body.dark-mode tr.easy td:first-child a,
+body.dark-mode tr.medium td:first-child a,
+body.dark-mode tr.hard td:first-child a {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.dark-mode tr.easy td:first-child a:hover,
+body.dark-mode tr.medium td:first-child a:hover,
+body.dark-mode tr.hard td:first-child a:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Action buttons styling */
+.solution-link, .youtube-link {
+    padding: 4px 8px !important;
+    min-width: 70px !important;
+    font-size: 0.9rem !important;
+    margin: 0 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 26px !important; /* Slightly reduced button height */
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+}
+
+/* Center alignment of action columns */
+.problem-table td:nth-child(2),
+.problem-table td:nth-child(3),
+.problem-table td:nth-child(4),
+.problem-table td:nth-child(5) {
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 8px 4px !important;
+}
+
+/* Notes and Done icons */
+.notes-icon, .done-icon {
+    font-size: 1.3rem !important; /* Slightly larger icons */
+}
+
+/* Problem Links - Light Mode with adjusted opacity */
+tr.easy td:first-child a {
+    background-color: var(--easy-color) !important;
+    opacity: 0.95 !important;
+}
+
+tr.medium td:first-child a {
+    background-color: var(--medium-color) !important;
+    opacity: 0.95 !important;
+}
+
+tr.hard td:first-child a {
+    background-color: var(--hard-color) !important;
+    opacity: 0.95 !important;
+}
+
+/* Hover effects */
+tr.easy td:first-child a:hover,
+tr.medium td:first-child a:hover,
+tr.hard td:first-child a:hover {
+    opacity: 1 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-sm) !important;
 }
 
 

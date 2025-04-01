@@ -217,27 +217,6 @@ function filterProblems(event) {
   const sections = document.querySelectorAll('.collapsible');
   const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
 
-  // If there's no search term, collapse everything unless it was from a checkbox click
-  if (!searchTerm && !event?.target?.classList.contains('square-check')) {
-    sections.forEach(section => {
-      const instance = M.Collapsible.getInstance(section);
-      if (instance) {
-        instance.close(0);
-      }
-
-      // Also collapse all subsections
-      const subsectionCollapsible = section.querySelector('.subsection-collapsible');
-      if (subsectionCollapsible) {
-        const subsectionInstance = M.Collapsible.getInstance(subsectionCollapsible);
-        if (subsectionInstance) {
-          for (let i = 0; i < subsectionInstance.$el[0].children.length; i++) {
-            subsectionInstance.close(i);
-          }
-        }
-      }
-    });
-  }
-
   sections.forEach(section => {
     const sectionBody = section.querySelector('.collapsible-body');
     const subsections = sectionBody.querySelectorAll('.subsection-collapsible li');
@@ -250,7 +229,7 @@ function filterProblems(event) {
 
       subsections.forEach((subsection, subIndex) => {
         const subsectionBody = subsection.querySelector('.collapsible-body');
-        const rows = subsectionBody.querySelectorAll('tr');
+        const tableRows = subsectionBody.querySelectorAll('tbody tr'); // Only filter tbody rows
         let hasMatchInSubsection = false;
 
         // Get difficulty filters for this subsection
@@ -264,7 +243,7 @@ function filterProblems(event) {
         // Show all difficulties if none are checked
         const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
 
-        rows.forEach(row => {
+        tableRows.forEach(row => {
           const text = row.textContent.toLowerCase();
           const difficulty = row.classList.contains('easy') ? 'easy' :
             row.classList.contains('medium') ? 'medium' :
@@ -302,7 +281,7 @@ function filterProblems(event) {
               if (subsectionInstance) {
                 subsectionInstance.open(subIndex);
               }
-            }, 100); // Small delay to ensure parent section is opened first
+            }, 100);
           }
         } else {
           subsection.style.display = 'none';
@@ -310,7 +289,7 @@ function filterProblems(event) {
       });
     } else {
       // Handle sections without subsections
-      const rows = sectionBody.querySelectorAll('tr');
+      const tableRows = sectionBody.querySelectorAll('tbody tr'); // Only filter tbody rows
       const sectionId = section.getAttribute('id');
       if (!sectionId) return;
 
@@ -320,7 +299,7 @@ function filterProblems(event) {
 
       const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
 
-      rows.forEach(row => {
+      tableRows.forEach(row => {
         const text = row.textContent.toLowerCase();
         const difficulty = row.classList.contains('easy') ? 'easy' :
           row.classList.contains('medium') ? 'medium' :
@@ -331,7 +310,6 @@ function filterProblems(event) {
           (difficulty === 'medium' && mediumChecked) ||
           (difficulty === 'hard' && hardChecked);
 
-        // Then check if it matches the search term
         const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
         // Only show if both conditions are met
@@ -357,6 +335,27 @@ function filterProblems(event) {
       section.style.display = 'none';
     }
   });
+
+  // If there's no search term and it's not a checkbox click, collapse all sections
+  if (!searchTerm && !event?.target?.classList.contains('square-check')) {
+    sections.forEach(section => {
+      const instance = M.Collapsible.getInstance(section);
+      if (instance) {
+        instance.close(0);
+      }
+
+      // Also collapse all subsections
+      const subsectionCollapsible = section.querySelector('.subsection-collapsible');
+      if (subsectionCollapsible) {
+        const subsectionInstance = M.Collapsible.getInstance(subsectionCollapsible);
+        if (subsectionInstance) {
+          for (let i = 0; i < subsectionInstance.$el[0].children.length; i++) {
+            subsectionInstance.close(i);
+          }
+        }
+      }
+    });
+  }
 
   console.log('Filtering complete');
 }
@@ -722,6 +721,7 @@ function generateProblemTable(problemArray, baseId) {
           <tr>
             <th>Question</th>
             <th>Solution</th>
+            <th>YouTube</th>
             <th>Notes</th>
             <th>Done</th>
           </tr>
@@ -738,8 +738,14 @@ function generateProblemTable(problemArray, baseId) {
                   <a href="${problem.question}" target="_blank">${problem.label}</a>
                 </td>
                 <td data-label="Solution">
-                  ${problem.solution !== "-"
+                  ${problem.solution && problem.solution !== "-"
         ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><span style="display:inline-block;">SOLUTION</span></a></div>`
+        : "-"
+      }
+                </td>
+                <td data-label="YouTube">
+                  ${problem.youtube && problem.youtube !== "-"
+        ? `<div class="solution-container"><a href="${problem.youtube}" target="_blank" class="youtube-link"><span style="display:inline-block;">WATCH</span></a></div>`
         : "-"
       }
                 </td>

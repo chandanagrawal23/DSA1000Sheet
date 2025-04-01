@@ -7,7 +7,8 @@
           "label": "Check Even or Odd",
           "question": "https://www.geeksforgeeks.org/c-even-odd/",
           "solution": "-",
-          "difficulty": "easy"
+          "difficulty": "easy",
+          "youtube": "-"
         },
         {
           "label": "Print Numbers from 1 to N",
@@ -1730,7 +1731,7 @@
       ]
     },
     {
-      "title": "Dynamic Sliding Window (Shrink - Extend window)",
+      "title": "Dynamic Sliding Window",
       "problems": [
         {
           "label": "Longest Subarray of 1's After Deleting One Element",
