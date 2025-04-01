@@ -936,6 +936,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Magnetic Force Between Two Balls (Same as Aggressive Cows)",
+          "question": "https://leetcode.com/problems/magnetic-force-between-two-balls/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Swim in Rising Water",
           "question": "https://leetcode.com/problems/swim-in-rising-water/",
           "solution": "-",
@@ -1655,6 +1661,12 @@
           "label": "Sliding Window Maximum",
           "question": "https://leetcode.com/problems/sliding-window-maximum/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindow.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Number of Points From Grid Queries( Sort Queries + Heap + BFS )",
+          "question": "https://leetcode.com/problems/maximum-number-of-points-from-grid-queries/",
+          "solution": "-",
           "difficulty": "hard"
         }
       ]

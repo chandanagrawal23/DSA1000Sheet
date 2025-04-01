@@ -1318,7 +1318,7 @@ body.dark-mode .collapsible-header:hover {
   margin: 0 !important;
   outline: none !important;
   background: var(--surface) !important;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+  /* box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important; */
   z-index: 5 !important;
   opacity: 1 !important;
   pointer-events: auto !important;
@@ -1371,7 +1371,12 @@ body.dark-mode .collapsible-header:hover {
 /* Hover effects */
 .square-check:hover {
     transform: scale(1.15) !important;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.9) !important;
+}
+
+body.dark-mode .square-check:hover {
+    transform: scale(1.15) !important;
+    box-shadow: 0 0 0 1px rgba(213, 205, 205, 0.9) !important;
 }
 
 /* Dark mode styles */
