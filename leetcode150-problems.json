@@ -22,14 +22,38 @@
           "difficulty": "easy"
         },
         {
-          "label": "Remove Duplicates from Sorted Array II",
-          "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
+          "label": "Roman to Integer",
+          "question": "https://leetcode.com/problems/roman-to-integer/",
           "solution": "-",
-          "difficulty": "medium"
+          "difficulty": "easy"
+        },
+        {
+          "label": "Length of Last Word",
+          "question": "https://leetcode.com/problems/length-of-last-word/",
+          "solution": "-",
+          "difficulty": "easy"
         },
         {
           "label": "Majority Element",
           "question": "https://leetcode.com/problems/majority-element/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Longest Common Prefix",
+          "question": "https://leetcode.com/problems/longest-common-prefix/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Best Time to Buy and Sell Stock",
+          "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Find the Index of the First Occurrence in a String",
+          "question": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
           "solution": "-",
           "difficulty": "easy"
         },
@@ -40,10 +64,10 @@
           "difficulty": "medium"
         },
         {
-          "label": "Best Time to Buy and Sell Stock",
-          "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+          "label": "Remove Duplicates from Sorted Array II",
+          "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
           "solution": "-",
-          "difficulty": "easy"
+          "difficulty": "medium"
         },
         {
           "label": "Best Time to Buy and Sell Stock II",
@@ -88,40 +112,10 @@
           "difficulty": "medium"
         },
         {
-          "label": "Candy",
-          "question": "https://leetcode.com/problems/candy/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Trapping Rain Water",
-          "question": "https://leetcode.com/problems/trapping-rain-water/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Roman to Integer",
-          "question": "https://leetcode.com/problems/roman-to-integer/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Integer to Roman",
           "question": "https://leetcode.com/problems/integer-to-roman/",
           "solution": "-",
           "difficulty": "medium"
-        },
-        {
-          "label": "Length of Last Word",
-          "question": "https://leetcode.com/problems/length-of-last-word/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Longest Common Prefix",
-          "question": "https://leetcode.com/problems/longest-common-prefix/",
-          "solution": "-",
-          "difficulty": "easy"
         },
         {
           "label": "Reverse Words in a String",
@@ -136,10 +130,16 @@
           "difficulty": "medium"
         },
         {
-          "label": "Find the Index of the First Occurrence in a String",
-          "question": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/",
+          "label": "Candy",
+          "question": "https://leetcode.com/problems/candy/",
           "solution": "-",
-          "difficulty": "easy"
+          "difficulty": "hard"
+        },
+        {
+          "label": "Trapping Rain Water",
+          "question": "https://leetcode.com/problems/trapping-rain-water/",
+          "solution": "-",
+          "difficulty": "hard"
         },
         {
           "label": "Text Justification",
@@ -276,12 +276,6 @@
           "difficulty": "easy"
         },
         {
-          "label": "Group Anagrams",
-          "question": "https://leetcode.com/problems/group-anagrams/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Two Sum",
           "question": "https://leetcode.com/problems/two-sum/",
           "solution": "-",
@@ -302,6 +296,12 @@
         {
           "label": "Longest Consecutive Sequence",
           "question": "https://leetcode.com/problems/longest-consecutive-sequence/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Group Anagrams",
+          "question": "https://leetcode.com/problems/group-anagrams/",
           "solution": "-",
           "difficulty": "medium"
         }
@@ -381,16 +381,16 @@
           "difficulty": "easy"
         },
         {
-          "label": "Add Two Numbers",
-          "question": "https://leetcode.com/problems/add-two-numbers/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Merge Two Sorted Lists",
           "question": "https://leetcode.com/problems/merge-two-sorted-lists/",
           "solution": "-",
           "difficulty": "easy"
+        },
+        {
+          "label": "Add Two Numbers",
+          "question": "https://leetcode.com/problems/add-two-numbers/",
+          "solution": "-",
+          "difficulty": "medium"
         },
         {
           "label": "Copy List with Random Pointer",
@@ -403,12 +403,6 @@
           "question": "https://leetcode.com/problems/reverse-linked-list-ii/",
           "solution": "-",
           "difficulty": "medium"
-        },
-        {
-          "label": "Reverse Nodes in k-Group",
-          "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
-          "solution": "-",
-          "difficulty": "hard"
         },
         {
           "label": "Remove Nth Node From End of List",
@@ -439,6 +433,12 @@
           "question": "https://leetcode.com/problems/lru-cache/",
           "solution": "-",
           "difficulty": "medium"
+        },
+        {
+          "label": "Reverse Nodes in k-Group",
+          "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
+          "solution": "-",
+          "difficulty": "hard"
         }
       ]
     },
@@ -470,6 +470,18 @@
           "difficulty": "easy"
         },
         {
+          "label": "Path Sum",
+          "question": "https://leetcode.com/problems/path-sum/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Count Complete Tree Nodes",
+          "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
           "label": "Construct Binary Tree from Preorder and Inorder Traversal",
           "question": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
           "solution": "-",
@@ -494,22 +506,10 @@
           "difficulty": "medium"
         },
         {
-          "label": "Path Sum",
-          "question": "https://leetcode.com/problems/path-sum/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Sum Root to Leaf Numbers",
           "question": "https://leetcode.com/problems/sum-root-to-leaf-numbers/",
           "solution": "-",
           "difficulty": "medium"
-        },
-        {
-          "label": "Binary Tree Maximum Path Sum",
-          "question": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
-          "solution": "-",
-          "difficulty": "hard"
         },
         {
           "label": "Binary Search Tree Iterator",
@@ -518,16 +518,16 @@
           "difficulty": "medium"
         },
         {
-          "label": "Count Complete Tree Nodes",
-          "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Lowest Common Ancestor of a Binary Tree",
           "question": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
           "solution": "-",
           "difficulty": "medium"
+        },
+        {
+          "label": "Binary Tree Maximum Path Sum",
+          "question": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+          "solution": "-",
+          "difficulty": "hard"
         }
       ]
     },
@@ -535,16 +535,16 @@
       "title": "Binary Tree BFS",
       "problems": [
         {
-          "label": "Binary Tree Right Side View",
-          "question": "https://leetcode.com/problems/binary-tree-right-side-view/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Average of Levels in Binary Tree",
           "question": "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
           "solution": "-",
           "difficulty": "easy"
+        },
+        {
+          "label": "Binary Tree Right Side View",
+          "question": "https://leetcode.com/problems/binary-tree-right-side-view/",
+          "solution": "-",
+          "difficulty": "medium"
         },
         {
           "label": "Binary Tree Level Order Traversal",
@@ -638,18 +638,18 @@
           "question": "https://leetcode.com/problems/minimum-genetic-mutation/",
           "solution": "-",
           "difficulty": "medium"
+        },
+        {
+          "label": "Word Ladder",
+          "question": "https://leetcode.com/problems/word-ladder/",
+          "solution": "-",
+          "difficulty": "hard"
         }
       ]
     },
     {
       "title": "Trie",
       "problems": [
-        {
-          "label": "Word Ladder",
-          "question": "https://leetcode.com/problems/word-ladder/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
         {
           "label": "Implement Trie (Prefix Tree)",
           "question": "https://leetcode.com/problems/implement-trie-prefix-tree/",
@@ -698,12 +698,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "N-Queens II",
-          "question": "https://leetcode.com/problems/n-queens-ii/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
           "label": "Generate Parentheses",
           "question": "https://leetcode.com/problems/generate-parentheses/",
           "solution": "-",
@@ -714,6 +708,12 @@
           "question": "https://leetcode.com/problems/word-search/",
           "solution": "-",
           "difficulty": "medium"
+        },
+        {
+          "label": "N-Queens II",
+          "question": "https://leetcode.com/problems/n-queens-ii/",
+          "solution": "-",
+          "difficulty": "hard"
         }
       ]
     },
@@ -820,16 +820,16 @@
           "difficulty": "medium"
         },
         {
-          "label": "IPO",
-          "question": "https://leetcode.com/problems/ipo/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
           "label": "Find K Pairs with Smallest Sums",
           "question": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
           "solution": "-",
           "difficulty": "medium"
+        },
+        {
+          "label": "IPO",
+          "question": "https://leetcode.com/problems/ipo/",
+          "solution": "-",
+          "difficulty": "hard"
         },
         {
           "label": "Find Median from Data Stream",
@@ -896,16 +896,16 @@
           "difficulty": "easy"
         },
         {
-          "label": "Factorial Trailing Zeroes",
-          "question": "https://leetcode.com/problems/factorial-trailing-zeroes/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Sqrt(x)",
           "question": "https://leetcode.com/problems/sqrtx/",
           "solution": "-",
           "difficulty": "easy"
+        },
+        {
+          "label": "Factorial Trailing Zeroes",
+          "question": "https://leetcode.com/problems/factorial-trailing-zeroes/",
+          "solution": "-",
+          "difficulty": "medium"
         },
         {
           "label": "Pow(x, n)",
@@ -996,6 +996,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Maximal Square",
+          "question": "https://leetcode.com/problems/maximal-square/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Best Time to Buy and Sell Stock III",
           "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
           "solution": "-",
@@ -1006,12 +1012,6 @@
           "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
           "solution": "-",
           "difficulty": "hard"
-        },
-        {
-          "label": "Maximal Square",
-          "question": "https://leetcode.com/problems/maximal-square/",
-          "solution": "-",
-          "difficulty": "medium"
         }
       ]
     }
