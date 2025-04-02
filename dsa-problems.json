@@ -174,13 +174,13 @@
         {
           "label": "Spiral Matrix I",
           "question": "https://leetcode.com/problems/spiral-matrix/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/spiralMatrix-I.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Spiral Matrix II",
           "question": "https://leetcode.com/problems/spiral-matrix-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/spiralMatrix-II.cpp",
           "difficulty": "medium"
         },
         {
@@ -1183,6 +1183,12 @@
               "difficulty": "medium"
             },
             {
+              "label":"Jump Game VIII",
+              "question": "https://leetcode.ca/2022-03-15-2297-Jump-Game-VIII/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
               "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
@@ -1253,6 +1259,24 @@
           "label": "First Unique Number [Good Problem]",
           "question": "https://leetcode.ca/all/1429.html",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstUnique.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Jump Game III",
+          "question": "https://leetcode.com/problems/jump-game-iii/description/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Jump Game VII",
+          "question": "https://leetcode.com/problems/jump-game-vii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Jump Game VI ( Monotonic DeQueue)",
+          "question": "https://leetcode.com/problems/jump-game-vi/",
+          "solution": "-",
           "difficulty": "medium"
         },
         {
@@ -2816,6 +2840,18 @@
             {
               "label": "Filling Bookcase Shelves",
               "question": "https://leetcode.com/problems/filling-bookcase-shelves/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Jump Game I (Solve without DP too)",
+              "question": "https://leetcode.com/problems/jump-game",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Jump Game II",
+              "question": "https://leetcode.com/problems/jump-game-ii/",
               "solution": "-",
               "difficulty": "medium"
             },
