@@ -366,9 +366,25 @@ function filterProblems(event) {
 function buildRectBar() {
   const container = document.getElementById('rectChartContainer');
   if (!container) return;
+  
+  // Capitalize the first letter of current section name and format special cases
+  let sectionTitle = '';
+  if (currentSection === 'dsa') {
+    sectionTitle = 'DSA';
+  } else if (currentSection === 'blind75') {
+    sectionTitle = 'Blind 75';
+  } else if (currentSection === 'leetcode150') {
+    sectionTitle = 'LeetCode 150';
+  } else if (currentSection === 'sql') {
+    sectionTitle = 'SQL';
+  } else {
+    // Default formatting for other sections
+    sectionTitle = currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
+  }
+  
   container.innerHTML = `
     <div class="progress-card">
-      <h2>Overall Progress</h2>
+      <h2>${sectionTitle} Progress</h2>
       <div class="stacked-bar">
         <div class="bar-segment easy-segment" id="easySegment"></div>
         <div class="bar-segment medium-segment" id="mediumSegment"></div>
