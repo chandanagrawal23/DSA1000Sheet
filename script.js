@@ -669,7 +669,7 @@ function generateAccordionForSection(sec) {
             </div>
           </div>
           <div class="collapsible-body">
-            ${generateProblemTable(sec.problems, sectionId)}
+            ${generateProblemsTable(sec.problems, sectionId)}
           </div>
         </li>
       </ul>
@@ -679,58 +679,63 @@ function generateAccordionForSection(sec) {
 /***************************************************************
  * Subsection Collapsible
  ***************************************************************/
-function generateSubsectionCollapsible(subsec) {
-  const subsecId = subsec.title.replace(/\s+/g, '');
-  const easyCount = subsec.problems.filter(p => p.difficulty === 'easy').length;
-  const mediumCount = subsec.problems.filter(p => p.difficulty === 'medium').length;
-  const hardCount = subsec.problems.filter(p => p.difficulty === 'hard').length;
+function generateSubsectionCollapsible(subsection) {
+  const subsecTitle = subsection.title.replace(/\s+/g, '');
+  // Count total problems in the subsection
+  const totalEasy = subsection.problems.filter(p => p.difficulty === 'easy').length;
+  const totalMedium = subsection.problems.filter(p => p.difficulty === 'medium').length;
+  const totalHard = subsection.problems.filter(p => p.difficulty === 'hard').length;
+  const totalProblems = totalEasy + totalMedium + totalHard;
 
   return `
-      <li>
-        <div class="collapsible-header subsection-header">
+    <li>
+      <div class="collapsible-header subsection-header">
+        <div style="display:flex; align-items:center; gap:8px;">
           <i class="material-icons subsection-icon">subdirectory_arrow_right</i>
-          <span class="subsection-title">${subsec.title}</span>
-          <div class="mini-bars small" data-id="${subsecId}">
-            <div class="mini-bar-line">
-              <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                <input type="checkbox" class="square-check easy" data-section="${subsecId}" data-difficulty="easy" checked 
-                  style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
-              </label>
-              <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
-              <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill easy-fill" style="width:0%"></div></div>
-              <span class="mini-count" data-diff="easy" style="margin-left:0.25rem;">(0/${easyCount})</span>
-            </div>
-            <div class="mini-bar-line">
-              <label class="difficulty-filter-square" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                <input type="checkbox" class="square-check medium" data-section="${subsecId}" data-difficulty="medium" checked
-                  style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
-              </label>
-              <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
-              <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill medium-fill" style="width:0%"></div></div>
-              <span class="mini-count" data-diff="medium" style="margin-left:0.25rem;">(0/${mediumCount})</span>
-            </div>
-            <div class="mini-bar-line">
-              <label class="difficulty-filter-square" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                <input type="checkbox" class="square-check hard" data-section="${subsecId}" data-difficulty="hard" checked
-                  style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
-              </label>
-              <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
-              <div class="mini-progress" style="margin:0 0.25rem;"><div class="mini-fill hard-fill" style="width:0%"></div></div>
-              <span class="mini-count" data-diff="hard" style="margin-left:0.25rem;">(0/${hardCount})</span>
-            </div>
+          <span class="subsection-title">${subsection.title} <span class="subsec-count">[0/${totalProblems}]</span></span>
+        </div>
+        <!-- Mini progress bars for this individual subsection -->
+        <div class="mini-bars small" data-id="${subsecTitle}">
+          <div class="mini-bar-line small">
+            <label class="difficulty-filter-square small" title="Filter Easy Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
+              <input type="checkbox" class="square-check easy" data-section="${subsecTitle}" data-difficulty="easy" checked
+                style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--easy-color); display:block;">
+            </label>
+            <span class="mini-label small">Easy</span>
+            <div class="mini-progress small"><div class="mini-fill easy-fill" style="width:0%"></div></div>
+            <span class="mini-count small" data-diff="easy">(0/${totalEasy})</span>
+          </div>
+          <div class="mini-bar-line small">
+            <label class="difficulty-filter-square small" title="Filter Medium Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
+              <input type="checkbox" class="square-check medium" data-section="${subsecTitle}" data-difficulty="medium" checked
+                style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--medium-color); display:block;">
+            </label>
+            <span class="mini-label small">Medium</span>
+            <div class="mini-progress small"><div class="mini-fill medium-fill" style="width:0%"></div></div>
+            <span class="mini-count small" data-diff="medium">(0/${totalMedium})</span>
+          </div>
+          <div class="mini-bar-line small">
+            <label class="difficulty-filter-square small" title="Filter Hard Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
+              <input type="checkbox" class="square-check hard" data-section="${subsecTitle}" data-difficulty="hard" checked
+                style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--hard-color); display:block;">
+            </label>
+            <span class="mini-label small">Hard</span>
+            <div class="mini-progress small"><div class="mini-fill hard-fill" style="width:0%"></div></div>
+            <span class="mini-count small" data-diff="hard">(0/${totalHard})</span>
           </div>
         </div>
-        <div class="collapsible-body subsection-body">
-          ${generateProblemTable(subsec.problems, subsecId)}
-        </div>
-      </li>
-    `;
+      </div>
+      <div class="collapsible-body subsection-body">
+        ${generateProblemsTable(subsection.problems, subsecTitle)}
+      </div>
+    </li>
+  `;
 }
 
 /***************************************************************
  * Problem Table Helper
  ***************************************************************/
-function generateProblemTable(problemArray, baseId) {
+function generateProblemsTable(problemArray, baseId) {
   return `
       <table class="striped highlight problem-table">
         <thead>
@@ -826,6 +831,19 @@ function updateSectionProgress() {
       updateMiniBar(miniBars, 'easy', solved.easy, total.easy);
       updateMiniBar(miniBars, 'medium', solved.medium, total.medium);
       updateMiniBar(miniBars, 'hard', solved.hard, total.hard);
+      
+      // Update topic title with solved/total count for sections without subsections
+      const topicTitle = sectionElem.querySelector('.topic-title');
+      if (topicTitle && !sectionElem.querySelector('.subsection-collapsible')) {
+        const totalProblems = total.easy + total.medium + total.hard;
+        const solvedProblems = solved.easy + solved.medium + solved.hard;
+        const topicCount = topicTitle.querySelector('.topic-count');
+        if (topicCount) {
+          topicCount.textContent = `[${solvedProblems}/${totalProblems}]`;
+        } else {
+          topicTitle.innerHTML = `${topicTitle.textContent.split('[')[0]} <span class="topic-count" data-section="${sectionId}">[${solvedProblems}/${totalProblems}]</span>`;
+        }
+      }
     }
   });
 
@@ -865,6 +883,22 @@ function updateSectionProgress() {
     updateMiniBar(subMini, 'easy', solved.easy, total.easy);
     updateMiniBar(subMini, 'medium', solved.medium, total.medium);
     updateMiniBar(subMini, 'hard', solved.hard, total.hard);
+    
+    // Update subsection title with solved/total count
+    const subsectionHeader = subMini.closest('.collapsible-header.subsection-header');
+    if (subsectionHeader) {
+      const subsectionTitle = subsectionHeader.querySelector('.subsection-title');
+      if (subsectionTitle) {
+        const totalProblems = total.easy + total.medium + total.hard;
+        const solvedProblems = solved.easy + solved.medium + solved.hard;
+        const subsecCount = subsectionTitle.querySelector('.subsec-count');
+        if (subsecCount) {
+          subsecCount.textContent = `[${solvedProblems}/${totalProblems}]`;
+        } else {
+          subsectionTitle.innerHTML = `${subsectionTitle.textContent.split('[')[0]} <span class="subsec-count">[${solvedProblems}/${totalProblems}]</span>`;
+        }
+      }
+    }
   });
 
   // 3) Update aggregated parent sections that have subsections
@@ -908,9 +942,21 @@ function updateSectionProgress() {
     updateMiniBar(parentBars, 'easy', solved.easy, total.easy);
     updateMiniBar(parentBars, 'medium', solved.medium, total.medium);
     updateMiniBar(parentBars, 'hard', solved.hard, total.hard);
+    
+    // Update parent section title with solved/total count
+    const topicTitleContainer = parentElem.querySelector('.topic-title');
+    if (topicTitleContainer) {
+      const totalProblems = total.easy + total.medium + total.hard;
+      const solvedProblems = solved.easy + solved.medium + solved.hard;
+      const topicCount = topicTitleContainer.querySelector('.topic-count');
+      if (topicCount) {
+        topicCount.textContent = `[${solvedProblems}/${totalProblems}]`;
+      } else {
+        topicTitleContainer.innerHTML = `${topicTitleContainer.textContent.split('[')[0]} <span class="topic-count" data-section="${parentId}">[${solvedProblems}/${totalProblems}]</span>`;
+      }
+    }
   });
 }
-
 /***************************************************************
  * NOTES MODAL FUNCTIONS
  ***************************************************************/

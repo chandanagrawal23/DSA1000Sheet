@@ -3018,4 +3018,20 @@ tr.hard td:first-child a:hover {
     box-shadow: var(--shadow-sm) !important;
 }
 
+.topic-count {
+  font-size: 0.8em; /* Decreases the font size */
+  color: #ad3d3d;      /* Optional: changes color for better contrast */
+}
+
+.subsec-count{
+    font-size: 0.8em; /* Decreases the font size */
+    color: #ad3d3d;      /* Optional: changes color for better contrast */
+}
+
+body.dark-mode .topic-count {
+  color: #fca5a5; /* Adjusted color for dark mode */
+}
+body.dark-mode .subsec-count {
+  color: #fca5a5; /* Adjusted color for dark mode */
+}
 
