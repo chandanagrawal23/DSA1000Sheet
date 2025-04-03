@@ -277,7 +277,7 @@
             },
             {
               "label": "Construct Product Matrix",
-              "question": "https://www.geeksforgeeks.org/construct-product-matrix/",
+              "question": "https://leetcode.com/problems/construct-product-matrix/description/",
               "solution": "-",
               "difficulty": "medium"
             },
