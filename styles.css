@@ -3035,3 +3035,55 @@ body.dark-mode .subsec-count {
   color: #fca5a5; /* Adjusted color for dark mode */
 }
 
+/* Custom tooltip styling */
+.tooltip {
+  position: fixed;
+  padding: 8px 12px;
+  background: rgba(26, 32, 44, 0.95);
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: 250px;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tooltip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dark mode tooltip styling */
+body.dark-mode .tooltip {
+  background: rgba(48, 53, 64, 0.95);
+}
+
+/* Original Materialize tooltip styling - we'll hide these */
+.material-tooltip {
+  display: none !important;
+}
+
+/* Default tooltip arrow */
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent rgba(26, 32, 44, 0.95) transparent;
+}
+
+/* Dark mode tooltip arrow */
+body.dark-mode .tooltip::after {
+  border-color: transparent transparent rgba(48, 53, 64, 0.95) transparent;
+}
+

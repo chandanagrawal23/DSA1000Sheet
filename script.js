@@ -1138,11 +1138,120 @@ function initializeCollapsibles() {
 }
 
 /***************************************************************
+ * Custom Tooltip Implementation
+ ***************************************************************/
+function setupCustomTooltips() {
+  console.log("Setting up custom tooltips...");
+  
+  // Create a single tooltip element that we'll reuse
+  const tooltip = document.createElement('div');
+  tooltip.className = 'tooltip';
+  tooltip.id = 'custom-tooltip';
+  document.body.appendChild(tooltip);
+  
+  // Get all tooltip elements
+  const tooltippedElements = document.querySelectorAll('.tooltipped');
+  console.log(`Found ${tooltippedElements.length} tooltipped elements`);
+  
+  tooltippedElements.forEach(element => {
+    // Get tooltip content from data-tooltip attribute
+    const tooltipContent = element.getAttribute('data-tooltip');
+    console.log(`Element: ${element.id}, tooltip content: ${tooltipContent}`);
+    
+    // Add mouse events
+    element.addEventListener('mouseenter', function(e) {
+      console.log(`Mouse entered ${element.id}`);
+      // Set tooltip content
+      tooltip.textContent = tooltipContent;
+      
+      // Position tooltip based on data-position
+      const position = element.getAttribute('data-position') || 'bottom';
+      positionTooltip(tooltip, element, position);
+      
+      // Show tooltip immediately (removed delay)
+      tooltip.classList.add('visible');
+    });
+    
+    element.addEventListener('mouseleave', function() {
+      console.log(`Mouse left ${element.id}`);
+      // Hide tooltip
+      tooltip.classList.remove('visible');
+    });
+  });
+}
+
+// Position the tooltip relative to the target element
+function positionTooltip(tooltip, targetElement, position) {
+  const rect = targetElement.getBoundingClientRect();
+  const tooltipRect = tooltip.getBoundingClientRect();
+  
+  // Default positioning (for bottom)
+  let top = rect.bottom + 10;
+  let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+  
+  // Adjust based on position
+  switch(position) {
+    case 'top':
+      top = rect.top - tooltipRect.height - 10;
+      // Remove and re-add the arrow for proper styling
+      tooltip.style.setProperty('--arrow-position', 'bottom');
+      tooltip.setAttribute('data-position', 'top');
+      break;
+    case 'left':
+      top = rect.top + (rect.height / 2) - (tooltipRect.height / 2);
+      left = rect.left - tooltipRect.width - 10;
+      tooltip.style.setProperty('--arrow-position', 'right');
+      tooltip.setAttribute('data-position', 'left');
+      break;
+    case 'right':
+      top = rect.top + (rect.height / 2) - (tooltipRect.height / 2);
+      left = rect.right + 10;
+      tooltip.style.setProperty('--arrow-position', 'left');
+      tooltip.setAttribute('data-position', 'right');
+      break;
+    default: // bottom
+      tooltip.style.setProperty('--arrow-position', 'top');
+      tooltip.setAttribute('data-position', 'bottom');
+      break;
+  }
+  
+  // Make sure tooltip stays within viewport
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
+  
+  // Adjust horizontally if needed
+  if (left < 10) left = 10;
+  if (left + tooltipRect.width > viewportWidth - 10) {
+    left = viewportWidth - tooltipRect.width - 10;
+  }
+  
+  // Adjust vertically if needed
+  if (top < 10) top = 10;
+  if (top + tooltipRect.height > viewportHeight - 10) {
+    top = viewportHeight - tooltipRect.height - 10;
+  }
+  
+  // Set tooltip position
+  tooltip.style.left = `${left}px`;
+  tooltip.style.top = `${top}px`;
+}
+
+/***************************************************************
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function () {
   // Initialize Materialize components
   M.AutoInit();
+
+  // Initialize tooltips (we'll override this with our custom tooltips)
+  var tooltipElems = document.querySelectorAll('.tooltipped');
+  var tooltipInstances = M.Tooltip.init(tooltipElems, {
+    enterDelay: 300,
+    exitDelay: 100
+  });
+
+  // Custom tooltip implementation
+  setupCustomTooltips();
 
   // Initialize dark mode
   initializeDarkMode();
