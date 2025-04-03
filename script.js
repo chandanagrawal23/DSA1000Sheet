@@ -1237,6 +1237,112 @@ function positionTooltip(tooltip, targetElement, position) {
 }
 
 /***************************************************************
+ * FILTER CHECKBOX TUTORIAL TOOLTIP 
+ ***************************************************************/
+function showFirstCheckboxTooltip() {
+  // Get refresh count from localStorage (default to 0)
+  let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
+  
+  // Increment refresh count
+  refreshCount++;
+  localStorage.setItem('refreshCount', refreshCount);
+
+  // Show tooltip only every 5th refresh
+  if (refreshCount % 3 !== 0) {
+    return;
+  }
+
+  const firstSection = document.querySelector('.collapsible');
+  if (!firstSection) {
+    console.log('No sections found yet, will retry');
+    setTimeout(showFirstCheckboxTooltip, 1000);
+    return;
+  }
+
+  const instance = M.Collapsible.getInstance(firstSection);
+  if (instance) {
+    instance.open(0);
+  }
+
+  setTimeout(() => {
+    const firstEasyCheckbox = firstSection.querySelector('.square-check.easy');
+    if (!firstEasyCheckbox) {
+      console.log('No Easy checkbox found');
+      return;
+    }
+
+    // Simulate checkbox unchecking and checking
+    setTimeout(() => {
+      firstEasyCheckbox.click();
+      setTimeout(() => {
+        firstEasyCheckbox.click();
+      }, 1500);
+    }, 500);
+
+    // Create tooltip
+    const specialTooltip = document.createElement('div');
+    specialTooltip.className = 'filter-tooltip visible';
+    specialTooltip.id = 'filter-tutorial-tooltip';
+    specialTooltip.textContent = 'Click to filter problems by difficulty!';
+
+    document.body.appendChild(specialTooltip);
+
+    // Position the tooltip
+    const positionTooltipForCheckbox = () => {
+      const checkboxRect = firstEasyCheckbox.getBoundingClientRect();
+      specialTooltip.style.left = `${checkboxRect.left}px`;
+      specialTooltip.style.top = `${checkboxRect.top - specialTooltip.offsetHeight - 10}px`;
+      specialTooltip.style.opacity = '1';
+      specialTooltip.style.transform = 'translateY(0)';
+
+      // Add tooltip arrow
+      const arrow = document.createElement('div');
+      arrow.className = 'filter-tooltip-arrow';
+      specialTooltip.appendChild(arrow);
+    };
+
+    positionTooltipForCheckbox();
+
+    const keepTooltipFixed = () => {
+      if (!document.body.contains(specialTooltip)) {
+        window.removeEventListener('scroll', keepTooltipFixed);
+        window.removeEventListener('resize', keepTooltipFixed);
+        return;
+      }
+      const newCheckboxRect = firstEasyCheckbox.getBoundingClientRect();
+      specialTooltip.style.left = `${newCheckboxRect.left}px`;
+      specialTooltip.style.top = `${newCheckboxRect.top - specialTooltip.offsetHeight - 10}px`;
+    };
+
+    window.addEventListener('scroll', keepTooltipFixed);
+    window.addEventListener('resize', keepTooltipFixed);
+
+    // Hide tooltip after 3 seconds
+    setTimeout(() => {
+      specialTooltip.style.opacity = '0';
+      specialTooltip.style.transform = 'translateY(-5px)';
+      setTimeout(() => {
+        if (document.body.contains(specialTooltip)) {
+          document.body.removeChild(specialTooltip);
+        }
+        window.removeEventListener('scroll', keepTooltipFixed);
+        window.removeEventListener('resize', keepTooltipFixed);
+        if (instance) {
+          instance.close(0);
+        }
+      }, 500);
+    }, 4000);
+
+    // Reset refresh count if it gets too high (optional)
+    if (refreshCount > 50) {
+      localStorage.setItem('refreshCount', '0');
+    }
+  }, 500);
+}
+
+
+
+/***************************************************************
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function () {
@@ -1252,6 +1358,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Custom tooltip implementation
   setupCustomTooltips();
+  
+  // Show temporary filter tooltip for the first Easy checkbox
+  setTimeout(() => {
+    showFirstCheckboxTooltip();
+  }, 1000);
 
   // Initialize dark mode
   initializeDarkMode();

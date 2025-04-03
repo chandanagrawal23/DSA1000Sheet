@@ -141,16 +141,19 @@ body {
     padding: 0;
     line-height: 1;
     white-space: nowrap;
+    text-align: center; /* Center align the title */
 }
 
 .logo-subtitle {
     font-size: 1rem;
     color: #000000;
-    margin-top: 0.8rem;
-    margin-left:0.5rem;
-    font-weight: 300;
+    margin-top: 0.44rem; /* Reduced top margin to bring subtitle closer to title */
+    margin-left: 0; /* Remove left margin to center align with title */
+    font-weight: 600;
     white-space: nowrap;
     opacity: 0.7;
+    text-align: center; /* Center align the subtitle */
+    display: block; /* Make it a block element to ensure proper centering */
 }
 
 body.dark-mode .logo-title {
@@ -2812,18 +2815,6 @@ body.dark-mode .pagination-btn:hover:not(:disabled) {
     font-size: 0.95rem !important; /* Slightly smaller font size */
 }
 
-/* Problem Links - Light Mode */
-tr.easy td:first-child a {
-    background-color: rgba(16, 185, 129, 0.9) !important;
-}
-
-tr.medium td:first-child a {
-    background-color: rgba(245, 158, 11, 0.9) !important;
-}
-
-tr.hard td:first-child a {
-    background-color: rgba(239, 68, 68, 0.9) !important;
-}
 
 tr.easy td:first-child a:hover {
     background-color: var(--easy-color) !important;
@@ -2926,21 +2917,6 @@ body.dark-mode .problem-table th {
     -webkit-box-decoration-break: clone !important;
 }
 
-/* Problem Links - Light Mode */
-tr.easy td:first-child a {
-    background-color: var(--easy-color) !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-}
-
-tr.medium td:first-child a {
-    background-color: var(--medium-color) !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-}
-
-tr.hard td:first-child a {
-    background-color: var(--hard-color) !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
-}
 
 /* Hover effects */
 tr.easy td:first-child a:hover,
@@ -3087,3 +3063,56 @@ body.dark-mode .tooltip::after {
   border-color: transparent transparent rgba(48, 53, 64, 0.95) transparent;
 }
 
+/* Custom Tooltip Styling for Filter Checkbox */
+.filter-tooltip {
+  position: fixed;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #4F46E5 0%, rgb(75, 86, 185) 100%);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  max-width: none;
+  white-space: nowrap;
+  line-height: 0.3;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(116, 68, 206, 0.15);
+  animation: pulse-tooltip 2s infinite;
+}
+
+/* Tooltip Arrow */
+.filter-tooltip-arrow {
+  position: absolute;
+  bottom: -8px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #4F46E5;
+}
+
+/* Remove default tooltip arrow */
+#filter-tutorial-tooltip::before,
+#filter-tutorial-tooltip::after {
+  display: none !important;
+}
+
+/* Tooltip Animation */
+@keyframes pulse-tooltip {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+  }
+}
