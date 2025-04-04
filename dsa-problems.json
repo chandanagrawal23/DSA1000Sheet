@@ -4180,7 +4180,7 @@
           "label": "Count Pairs Of Similar Strings( Map + BitMask)",
           "question": "https://leetcode.com/problems/count-pairs-of-similar-strings/description/",
           "solution": "-",
-          "difficulty": "Easy"
+          "difficulty": "easy"
         },
         {
           "label": "Subsets",
