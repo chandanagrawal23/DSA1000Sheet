@@ -942,6 +942,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Minimize the Maximum Edge Weight of Graph ( Binary Search + DFS / Prim's Algorithm )",
+          "question": "https://leetcode.com/problems/minimize-the-maximum-edge-weight-of-path-in-a-graph/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Swim in Rising Water",
           "question": "https://leetcode.com/problems/swim-in-rising-water/",
           "solution": "-",
@@ -1643,6 +1649,12 @@
           "label": "Longest Happy String",
           "question": "https://leetcode.com/problems/longest-happy-string/",
           "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Course Schedule III",
+          "question": "https://leetcode.com/problems/course-schedule-iii/",
+          "solution":"-",
           "difficulty": "medium"
         },
         {
