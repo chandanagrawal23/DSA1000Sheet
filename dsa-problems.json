@@ -4237,6 +4237,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Maximum Xor Product",
+          "question": "https://leetcode.com/problems/maximum-xor-product/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Shortest Path to Get All Keys",
           "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
           "solution": "-",
