@@ -587,6 +587,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Online Election ( Design + Binary Search )",
+          "question": "https://leetcode.com/problems/online-election/description/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
           "label": "Median of Two Sorted Arrays",
           "question": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
           "solution": "-",
