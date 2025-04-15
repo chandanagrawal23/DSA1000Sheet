@@ -240,6 +240,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Car Pooling",
+              "question": "https://leetcode.com/problems/car-pooling/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Maximum Occurred Integer in Ranges",
               "question": "https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/",
               "solution": "-",
@@ -284,6 +290,12 @@
             {
               "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Deque )",
               "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "My Calendar III (Map + Prefix Sum)",
+              "question": "https://leetcode.com/problems/my-calendar-iii/",
               "solution": "-",
               "difficulty": "hard"
             }
@@ -950,6 +962,12 @@
         {
           "label": "Minimize the Maximum Edge Weight of Graph ( Binary Search + DFS / Prim's Algorithm )",
           "question": "https://leetcode.com/problems/minimize-the-maximum-edge-weight-of-path-in-a-graph/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label":"Zero Array Transformation II (Difference Array + Prefix Sum + Binary Search )",
+          "question": "https://leetcode.com/problems/zero-array-transformation-ii/",
           "solution": "-",
           "difficulty": "medium"
         },
@@ -4558,6 +4576,12 @@
           "difficulty": "hard"
         },
         {
+          "label": "Count Good Triplets in an Array",
+          "question": "https://leetcode.com/problems/count-good-triplets-in-an-array/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
           "label": "Counting Triangles in a Rectangular Space using 2D BIT",
           "question": "https://www.geeksforgeeks.org/counting-triangles-in-a-rectangular-space-using-2d-bit/",
           "solution": "-",
@@ -4601,6 +4625,12 @@
         {
           "label": "Interval List Intersections",
           "question": "https://leetcode.com/problems/interval-list-intersections/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Zero Array Transformation I",
+          "question": "https://leetcode.com/problems/zero-array-transformation-i/",
           "solution": "-",
           "difficulty": "medium"
         },
