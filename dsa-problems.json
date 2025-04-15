@@ -260,7 +260,7 @@
             {
               "label": "Product of Array Except Self",
               "question": "https://leetcode.com/problems/product-of-array-except-self/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ProductOfArrayExceptSelf.cpp",
               "difficulty": "medium"
             },
             {
@@ -1498,7 +1498,7 @@
             {
               "label": "Maximum Twin Sum of a Linked List",
               "question": "https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumTwinSumofaLinkedList.cpp",
               "difficulty": "medium"
             },
             {
@@ -2078,85 +2078,85 @@
         {
           "label": "Permutation",
           "question": "https://leetcode.com/problems/permutations/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Permutations.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Permutation II",
           "question": "https://leetcode.com/problems/permutations-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Permutations_II.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Subsets",
           "question": "https://leetcode.com/problems/subsets/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Subsets.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Subsets II",
           "question": "https://leetcode.com/problems/subsets-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubsetsII.cpp",
           "difficulty": "medium"
         },
         {
-          "label": "Target Sum",
+          "label": "Target Sum (Solve after learning DP)",
           "question": "https://leetcode.com/problems/target-sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TargetSum.cpp",
           "difficulty": "medium"
         },
         {
-          "label": "Combination Sum I",
+          "label": "Combination Sum",
           "question": "https://leetcode.com/problems/combination-sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CombinationSum.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Combination Sum II",
           "question": "https://leetcode.com/problems/combination-sum-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CombinationSumII.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Combination Sum III",
           "question": "https://leetcode.com/problems/combination-sum-iii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CombinationSumIII.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Word Search",
           "question": "https://leetcode.com/problems/word-search/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/WordSearch.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Palindrome Partitioning",
           "question": "https://leetcode.com/problems/palindrome-partitioning/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PalindromePartitioning.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Rat in a Maze",
-          "question": "https://practice.geeksforgeeks.org/problems/rat-in-a-maze/1",
+          "question": "https://www.geeksforgeeks.org/rat-in-a-maze",
           "solution": "-",
           "difficulty": "medium"
         },
         {
           "label": "Partition to K Equal Sum Subsets",
           "question": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PartitiontoKEqualSumSubsets.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Matchsticks to Square",
           "question": "https://leetcode.com/problems/matchsticks-to-square/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MatchstickstoSquare.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Beautiful Arrangement",
           "question": "https://leetcode.com/problems/beautiful-arrangement/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BeautifulArrangement.cpp",
           "difficulty": "medium"
         },
         {
@@ -3534,7 +3534,7 @@
         {
           "label": "Largest Triangle Area",
           "question": "https://leetcode.com/problems/largest-triangle-area/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LargestTriangleArea.cpp",
           "difficulty": "easy"
         },
         {
@@ -3546,7 +3546,7 @@
         {
           "label": "Minimum Time Visiting All Points",
           "question": "https://leetcode.com/problems/minimum-time-visiting-all-points/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumTimeVisitingAllPoints.cpp",
           "difficulty": "easy"
         },
         {
@@ -3582,7 +3582,7 @@
         {
           "label": "Separate Squares I (Google, Answer on Binary Search)",
           "question": "https://leetcode.com/problems/separate-squares-i/description/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeparateSquaresI.cpp",
           "difficulty": "medium"
         },
         {
