@@ -2635,7 +2635,7 @@
             {
               "label": "Binary Tree Maximum Path Sum",
               "question": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreeMaximumPathSum.cpp",
               "difficulty": "hard"
             },
             {
