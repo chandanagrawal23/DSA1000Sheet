@@ -1372,9 +1372,9 @@
               "difficulty": "easy"
             },
             {
-              "label": "Palindrome Linked List",
+              "label": "Palindrome Linked List(4 methods)",
               "question": "https://leetcode.com/problems/palindrome-linked-list/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PalindromeLinkedList.cpp",
               "difficulty": "easy"
             },
             {
@@ -1428,7 +1428,7 @@
             {
               "label": "Linked List Random Node",
               "question": "https://leetcode.com/problems/linked-list-random-node/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LinkedListRandomNode.cpp",
               "difficulty": "medium"
             },
             {
