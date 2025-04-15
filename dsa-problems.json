@@ -2247,7 +2247,7 @@
             {
               "label": "Search in Binary Search Tree",
               "question": "https://leetcode.com/problems/search-in-a-binary-search-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SearchinaBinarySearchTree.cpp",
               "difficulty": "easy"
             },
             {
@@ -2259,7 +2259,7 @@
             {
               "label": "Closest Nodes Queries in a Binary Search Tree",
               "question": "https://leetcode.com/problems/closest-nodes-queries-in-a-binary-search-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Closest%20NodesQueriesinaBinarySearchTree.cpp",
               "difficulty": "medium"
             }
           ]
@@ -2287,7 +2287,7 @@
             {
               "label": "Path Sum",
               "question": "https://leetcode.com/problems/path-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PathSum.cpp",
               "difficulty": "easy"
             },
             {
