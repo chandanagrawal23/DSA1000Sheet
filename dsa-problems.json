@@ -1640,12 +1640,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Codechef FOUR21B S06E06",
-          "question": "https://www.codechef.com/FOUR21B/problems/S06E06",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Find K Pairs with Smallest Sums",
           "question": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
           "solution": "-",
