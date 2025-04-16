@@ -1570,11 +1570,12 @@ document.addEventListener('DOMContentLoaded', function () {
     switchSection('sql');
   });
 
+  /* do not remove this yet, we will need it later
   document.getElementById('interviewsLink').addEventListener('click', (e) => {
     e.preventDefault();
     switchSectionInterview('interviews');
   });
-
+  */
 });
 
 // Function to initialize checkboxes
@@ -1774,6 +1775,7 @@ function switchSection(section) {
     });
 }
 
+/*
 function switchSectionInterview(section) {
   // Update active nav link
   document.querySelectorAll('.nav-card').forEach(link => {
@@ -2040,3 +2042,4 @@ function switchSectionInterview(section) {
       `;
     });
 }
+*/
