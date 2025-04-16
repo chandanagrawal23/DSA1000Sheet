@@ -2276,7 +2276,7 @@
             {
               "label": "Insert into BST (Recursive/Iterative)",
               "question": "https://leetcode.com/problems/insert-into-a-binary-search-tree",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/InsertintoABinarySearchTree.cpp",
               "difficulty": "medium"
             },
             {
@@ -2311,7 +2311,7 @@
             {
               "label": "Sum Root to Leaf Numbers",
               "question": "https://leetcode.com/problems/sum-root-to-leaf-numbers/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SumRootToLeafNumbers.cpp",
               "difficulty": "medium"
             },
             {
@@ -2323,7 +2323,7 @@
             {
               "label": "Most Frequent Subtree Sum",
               "question": "https://leetcode.com/problems/most-frequent-subtree-sum/description/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MostFrequentSubtreeSum.cpp",
               "difficulty": "medium"
             },
             {
