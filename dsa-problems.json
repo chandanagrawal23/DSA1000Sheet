@@ -1789,6 +1789,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Maximum Sum of Distinct Subarrays With Length K",
+          "question": "https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumSumofDistinctSubarraysWithLengthK.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Sliding Window Maximum [Google] [Monotonic Queue/Deque]",
           "question": "https://leetcode.com/problems/sliding-window-maximum/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindowUsingMap.cpp",
@@ -1911,6 +1917,12 @@
           "label": "Frequency of the Most Frequent Element",
           "question": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
           "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count the Number of Good Subarrays",
+          "question": "https://leetcode.com/problems/count-the-number-of-good-subarrays/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountTheNumberofGoodSubarrays.cpp",
           "difficulty": "medium"
         },
         {
@@ -2706,6 +2718,12 @@
               "label": "String to Integer (atoi)",
               "question": "https://leetcode.com/problems/string-to-integer-atoi/",
               "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Optimal Partition of String",
+              "question": "https://leetcode.com/problems/optimal-partition-of-string/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OptimalPartitionofString.cpp",
               "difficulty": "medium"
             },
             {
