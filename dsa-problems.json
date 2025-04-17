@@ -2092,18 +2092,6 @@
       "title": "Backtracking",
       "problems": [
         {
-          "label": "Letter Case Permutation",
-          "question": "https://leetcode.com/problems/letter-case-permutation/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Generate Parentheses",
-          "question": "https://leetcode.com/problems/generate-parentheses/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Permutation",
           "question": "https://leetcode.com/problems/permutations/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Permutations.cpp",
@@ -2128,12 +2116,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Target Sum (Solve after learning DP)",
-          "question": "https://leetcode.com/problems/target-sum/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TargetSum.cpp",
-          "difficulty": "medium"
-        },
-        {
           "label": "Combination Sum",
           "question": "https://leetcode.com/problems/combination-sum/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CombinationSum.cpp",
@@ -2149,6 +2131,24 @@
           "label": "Combination Sum III",
           "question": "https://leetcode.com/problems/combination-sum-iii/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CombinationSumIII.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Letter Case Permutation",
+          "question": "https://leetcode.com/problems/letter-case-permutation/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Generate Parentheses",
+          "question": "https://leetcode.com/problems/generate-parentheses/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Target Sum (Solve after learning DP)",
+          "question": "https://leetcode.com/problems/target-sum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TargetSum.cpp",
           "difficulty": "medium"
         },
         {
