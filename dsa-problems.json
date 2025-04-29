@@ -622,7 +622,7 @@
       "title": "Sorting",
       "subsections": [
         {
-          "title": "Basics and Applications",
+          "title": "Sorting Algorithms",
           "problems": [
             {
               "label": "Introduction to Sorting Algorithms",
@@ -687,7 +687,7 @@
           ]
         },
         {
-          "title": "General Questions",
+          "title": "Sorting General Questions",
           "problems": [
             {
               "label": "Meeting Rooms",
