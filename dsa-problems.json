@@ -294,6 +294,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Maximum Good Subarray Sum",
+              "question": "https://leetcode.com/problems/maximum-good-subarray-sum/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Deque )",
               "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
               "solution": "-",
@@ -1698,7 +1704,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Find Median from Data Stream",
+          "label": "Find Median from Data Stream (IMP MAANGM)",
           "question": "https://leetcode.com/problems/find-median-from-data-stream",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
           "difficulty": "hard"
@@ -1951,6 +1957,12 @@
           "label": "Minimum Window Substring [Very Important, widely asked]",
           "question": "https://leetcode.com/problems/minimum-window-substring/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindow.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label":"Count Subarrays With Score Less Than K",
+          "question": "https://leetcode.com/problems/count-subarrays-with-score-less-than-k/",
+          "solution": "-",
           "difficulty": "hard"
         }
       ]
@@ -2769,6 +2781,12 @@
             {
               "label": "Palindromic Substrings",
               "question": "https://leetcode.com/problems/palindromic-substrings/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "longest-palindrome-after-substring-concatenation-i",
+              "question": "https://leetcode.com/problems/longest-palindrome-after-substring-concatenation-i/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -4594,6 +4612,12 @@
         {
           "label": "Range Sum Query - Mutable",
           "question": "https://leetcode.com/problems/range-sum-query-mutable/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Count Number of Teams (Solve using N^3, N^2, NlogN)",
+          "question": "https://leetcode.com/problems/count-number-of-teams/description/",
           "solution": "-",
           "difficulty": "medium"
         },
