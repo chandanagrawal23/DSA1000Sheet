@@ -4142,7 +4142,7 @@
           ]
         },
         {
-          "title": "Minimum Spanning Tree ( Prim's and Kruskal's Algorithm )",
+          "title": "Minimum Spanning Tree ( Prim and Kruskal Algorithm )",
           "problems": [
             {
               "label": "Prim's Algorithm (Check optimized one)",
