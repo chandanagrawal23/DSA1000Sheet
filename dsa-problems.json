@@ -843,6 +843,12 @@
               "question": "https://leetcode.com/problems/interval-list-intersections/",
               "solution": "-",
               "difficulty": "medium"
+            },
+            {
+              "label": "Select K Disjoint Special Substrings",
+              "question": "https://leetcode.com/problems/select-k-disjoint-intervals/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SelectKDisjointSpecialSubstrings.cpp",
+              "difficulty": "medium"
             }
           ]
         }
@@ -1024,7 +1030,7 @@
             {
               "label": "Minimize the Maximum Edge Weight of Graph ( Binary Search + DFS / Prim's Algorithm )",
               "question": "https://leetcode.com/problems/minimize-the-maximum-edge-weight-of-graph/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizeTheMaximumEdgeWeightOfGraph.cpp",
               "difficulty": "medium"
             },
             {
