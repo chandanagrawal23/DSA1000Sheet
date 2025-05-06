@@ -899,7 +899,7 @@
             {
               "label": "Koko Eating Bananas",
               "question": "https://leetcode.com/problems/koko-eating-bananas/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KokoEatingBananas.cpp",
               "difficulty": "medium"
             },
             {
@@ -911,7 +911,7 @@
             {
               "label": "Find the Smallest Divisor Given a Threshold",
               "question": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindTheSmallestDivisorGivenThreshold.cpp",
               "difficulty": "medium"
             },
             {
