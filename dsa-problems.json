@@ -869,7 +869,7 @@
             {
               "label": "Capacity to Ship Packages Within D Days",
               "question": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CapacityToShipPackagesWithinDDays.cpp",
               "difficulty": "medium"
             },
             {
@@ -887,13 +887,13 @@
             {
               "label": "Minimum Limit of Balls in a Bag",
               "question": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumLimitofBallsinBag.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Minimum Time to Complete Trips",
               "question": "https://leetcode.com/problems/minimum-time-to-complete-trips/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumTimetoCompleteTrips.cpp",
               "difficulty": "medium"
             },
             {
