@@ -947,13 +947,13 @@
             {
               "label": "Maximum Tastiness of Candy Basket",
               "question": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumTastinessofCandyBasket.cpp",
               "difficulty": "medium"
             },
             {
               "label": "House Robber IV",
               "question": "https://leetcode.com/problems/house-robber-iv/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HouseRobberIV.cpp",
               "difficulty": "medium"
             },
             {
