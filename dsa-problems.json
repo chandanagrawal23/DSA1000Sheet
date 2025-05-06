@@ -917,7 +917,7 @@
             {
               "label": "Minimized Maximum of Products Distributed to Any Store",
               "question": "https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizedMaximumofProductsDistributedToAnyStore.cpp",
               "difficulty": "medium"
             },
             {
@@ -929,7 +929,7 @@
             {
               "label": "Maximum Candies Allocated to K Children",
               "question": "https://leetcode.com/problems/maximum-candies-allocated-to-k-children/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumCandiesAllocatedtoKChildren.cpp",
               "difficulty": "medium"
             },
             {
@@ -959,13 +959,13 @@
             {
               "label": "Minimum Number of Days to Make m Bouquets",
               "question": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumNumberofDaystoMakeMBouquets.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Magnetic Force Between Two Balls (Same as Aggressive Cows)",
               "question": "https://leetcode.com/problems/magnetic-force-between-two-balls/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MagneticForceBetweenTwoBalls.cpp",
               "difficulty": "medium"
             },
             {
