@@ -805,7 +805,7 @@
             {
               "label": "Merge Intervals",
               "question": "https://leetcode.com/problems/merge-intervals/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MergeIntervals_sorting.cpp",
               "difficulty": "medium"
             },
             {
@@ -823,7 +823,7 @@
             {
               "label": "Insert Interval",
               "question": "https://leetcode.com/problems/insert-interval/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/InsertInterval_sorting.cpp",
               "difficulty": "medium"
             },
             {
