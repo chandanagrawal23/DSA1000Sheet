@@ -2707,14 +2707,8 @@
               "difficulty": "easy"
             },
             {
-              "label": "Add Binary",
-              "question": "https://leetcode.com/problems/add-binary/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Add Strings",
-              "question": "https://leetcode.com/problems/add-strings/",
+              "label": "Reverse String",
+              "question": "https://leetcode.com/problems/reverse-string/",
               "solution": "-",
               "difficulty": "easy"
             },
@@ -2725,8 +2719,14 @@
               "difficulty": "easy"
             },
             {
-              "label": "Reverse String",
-              "question": "https://leetcode.com/problems/reverse-string/",
+              "label": "Add Binary",
+              "question": "https://leetcode.com/problems/add-binary/",
+              "solution": "-",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Add Strings",
+              "question": "https://leetcode.com/problems/add-strings/",
               "solution": "-",
               "difficulty": "easy"
             },
