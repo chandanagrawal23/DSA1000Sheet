@@ -3719,7 +3719,7 @@
             },
             {
               "label": "All Paths from Source Lead to Destination",
-              "question": "https://leetcode.com/problems/all-paths-from-source-lead-to-destination/",
+              "question": "https://leetcode.ca/all/1059.html",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -3731,13 +3731,13 @@
             },
             {
               "label": "Paths in Maze That Lead to Same Room",
-              "question": "https://leetcode.com/problems/paths-in-maze-that-lead-to-same-room/",
+              "question": "https://leetcode.ca/2021-11-30-2077-Paths-in-Maze-That-Lead-to-Same-Room/",
               "solution": "-",
               "difficulty": "medium"
             },
             {
               "label": "Number of Connected Components in an Undirected Graph",
-              "question": "https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/",
+              "question": "https://www.lintcode.com/problem/3651/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -3785,7 +3785,7 @@
             },
             {
               "label": "Find the Celebrity",
-              "question": "https://leetcode.com/problems/find-the-celebrity/",
+              "question": "https://www.lintcode.com/problem/645/",
               "solution": "-",
               "difficulty": "medium"
             },
