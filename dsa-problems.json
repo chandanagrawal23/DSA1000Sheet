@@ -2164,12 +2164,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Generate Parentheses",
-          "question": "https://leetcode.com/problems/generate-parentheses/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Target Sum (Solve after learning DP)",
           "question": "https://leetcode.com/problems/target-sum/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TargetSum.cpp",
