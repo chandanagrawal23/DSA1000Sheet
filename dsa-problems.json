@@ -2212,6 +2212,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Maximum Score Words Formed by Letters (same as Subsets)",
+          "question": "https://leetcode.com/problems/maximum-score-words-formed-by-letters/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumScoreWordsFormedByLetters.cpp",
+          "difficulty": "hard"
+        },
+        {
           "label": "N-Queens",
           "question": "https://leetcode.com/problems/n-queens/",
           "solution": "-",
