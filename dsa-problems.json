@@ -3821,7 +3821,7 @@
             {
               "label": "Shortest Path in Binary Matrix",
               "question": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestPathinBinaryMatrix.cpp",
               "difficulty": "medium"
             },
             {
