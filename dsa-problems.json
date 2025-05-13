@@ -4273,17 +4273,17 @@
         {
           "label": "Count Pairs Of Similar Strings( Map + BitMask)",
           "question": "https://leetcode.com/problems/count-pairs-of-similar-strings/description/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountPairsOfSimilarStrings.cpp",
           "difficulty": "easy"
         },
         {
           "label": "Subsets",
           "question": "https://leetcode.com/problems/subsets/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Subsets_Using_BIT_Manipulation.cpp",
           "difficulty": "medium"
         },
         {
-          "label": "Shortest Subarray With OR at Least K",
+          "label": "Shortest Subarray With OR at Least K I",
           "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-i/",
           "solution": "-",
           "difficulty": "medium"
@@ -4291,13 +4291,13 @@
         {
           "label": "Single Number II",
           "question": "https://leetcode.com/problems/single-number-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SingleNumberII.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Single Number III",
           "question": "https://leetcode.com/problems/single-number-iii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SingleNumberIII.cpp",
           "difficulty": "medium"
         },
         {
