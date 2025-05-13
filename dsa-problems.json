@@ -595,13 +595,13 @@
         {
           "label": "Search a 2D Matrix",
           "question": "https://leetcode.com/problems/search-a-2d-matrix/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Search_a_2DMatrix_I.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Search a 2D Matrix II",
           "question": "https://leetcode.com/problems/search-a-2d-matrix-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Search_a_2DMatrixII_BinarySearch.cpp",
           "difficulty": "medium"
         },
         {
