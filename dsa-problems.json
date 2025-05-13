@@ -3815,7 +3815,7 @@
             {
               "label": "Number of Islands",
               "question": "https://leetcode.com/problems/number-of-islands/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberofIslands.cpp",
               "difficulty": "medium"
             },
             {
