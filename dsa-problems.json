@@ -4331,6 +4331,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Substring XOR Queries",
+          "question": "https://leetcode.com/problems/substring-xor-queries/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubstringXOR_Queries.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Shortest Path to Get All Keys",
           "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
           "solution": "-",
