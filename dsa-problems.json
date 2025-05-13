@@ -714,15 +714,9 @@
               "difficulty": "easy"
             },
             {
-              "label": "Largest Number",
-              "question": "https://leetcode.com/problems/largest-number/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Destroying Asteroids",
               "question": "https://leetcode.com/problems/destroying-asteroids/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DestroyingAsteroids.cpp",
               "difficulty": "medium"
             },
             {
