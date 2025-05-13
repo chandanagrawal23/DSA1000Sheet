@@ -4283,12 +4283,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Shortest Subarray With OR at Least K I",
-          "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-i/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Single Number II",
           "question": "https://leetcode.com/problems/single-number-ii/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SingleNumberII.cpp",
@@ -4303,7 +4297,7 @@
         {
           "label": "Shortest Subarray With OR at Least K II",
           "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestSubarrayWithORatLeastK_II.cpp",
           "difficulty": "medium"
         },
         {
