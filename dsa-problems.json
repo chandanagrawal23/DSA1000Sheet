@@ -2564,25 +2564,25 @@
             {
               "label": "Left View of Binary Tree",
               "question": "https://www.geeksforgeeks.org/print-left-view-binary-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LeftViewOfBinaryTree.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Right View of Binary Tree",
               "question": "https://leetcode.com/problems/binary-tree-right-side-view/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RightViewOfBinaryTree.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Top View of Binary Tree",
               "question": "https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TopViewOfBinaryTree.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Bottom View of Binary Tree",
               "question": "https://www.geeksforgeeks.org/bottom-view-binary-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BottomViewOfBinaryTree.cpp",
               "difficulty": "medium"
             }
           ]
