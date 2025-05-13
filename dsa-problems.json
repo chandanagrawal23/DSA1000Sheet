@@ -4301,12 +4301,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Number of Wonderful Substrings",
-          "question": "https://leetcode.com/problems/number-of-wonderful-substrings/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Maximum OR",
           "question": "https://leetcode.com/problems/maximum-or/",
           "solution": "-",
