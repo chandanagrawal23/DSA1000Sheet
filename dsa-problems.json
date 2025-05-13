@@ -1994,12 +1994,12 @@
             {
               "label": "Fibonacci Number",
               "question": "https://leetcode.com/problems/fibonacci-number/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FibonacciNumber.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Sum of Digits of a Number",
-              "question": "https://www.geeksforgeeks.org/sum-digits-number-using-recursion/",
+              "question": "https://www.geeksforgeeks.org/sum-digit-number-using-recursion/",
               "solution": "-",
               "difficulty": "easy"
             }
@@ -2009,8 +2009,8 @@
           "title": "Math",
           "problems": [
             {
-              "label": "Power of Two",
-              "question": "https://leetcode.com/problems/power-of-two/",
+              "label": "Power of a Number",
+              "question": "https://www.programiz.com/c-programming/examples/power-recursion",
               "solution": "-",
               "difficulty": "easy"
             },
