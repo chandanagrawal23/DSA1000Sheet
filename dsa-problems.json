@@ -1190,7 +1190,7 @@
             {
               "label": "Longest Valid Parentheses",
               "question": "https://leetcode.com/problems/longest-valid-parentheses/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LongestValidParentheses.cpp",
               "difficulty": "hard"
             }
           ]
@@ -4261,18 +4261,12 @@
         {
           "label": "First Letter to Appear Twice",
           "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstLettertoAppearTwice.cpp",
           "difficulty": "easy"
         },
         {
           "label": "Convert a Number to Hexadecimal",
           "question": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "First Letter to Appear Twice (using bit manipulation)",
-          "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
           "solution": "-",
           "difficulty": "easy"
         },
