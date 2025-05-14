@@ -3813,6 +3813,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Rotting Oranges",
+              "question": "https://leetcode.com/problems/rotting-oranges/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Shortest Path in Binary Matrix",
               "question": "https://leetcode.com/problems/shortest-path-in-binary-matrix/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestPathinBinaryMatrix.cpp",
@@ -3821,7 +3827,7 @@
             {
               "label": "Number of Enclaves",
               "question": "https://leetcode.com/problems/number-of-enclaves/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberofEnclaves.cpp",
               "difficulty": "medium"
             },
             {
@@ -3839,12 +3845,6 @@
             {
               "label": "Nearest Exit from Entrance in Maze",
               "question": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Rotting Oranges",
-              "question": "https://leetcode.com/problems/rotting-oranges/",
               "solution": "-",
               "difficulty": "medium"
             },
