@@ -617,9 +617,9 @@
           "difficulty": "medium"
         },
         {
-          "label": "Longest Increasing Subsequence (Solve first using DP)",
+          "label": "Longest Increasing Subsequence using BS (Solve using DP first)",
           "question": "https://leetcode.com/problems/longest-increasing-subsequence/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LongestIncreasingSubsequence_UsingBinarySearch.cpp",
           "difficulty": "medium"
         },
         {
