@@ -539,6 +539,12 @@
           "difficulty": "easy"
         },
         {
+          "label": "Find First and Last Position of Element in Sorted Array",
+          "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindFirstandLastPositionofElementinSortedArray.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Find Peak Element",
           "question": "https://leetcode.com/problems/find-peak-element/",
           "solution": "-",
@@ -557,12 +563,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Find First and Last Position of Element in Sorted Array",
-          "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Search in Rotated Sorted Array",
           "question": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
           "solution": "-",
@@ -571,7 +571,7 @@
         {
           "label": "Number of Burgers With No Waste of Ingredients",
           "question": "https://leetcode.com/problems/number-of-burgers-with-no-waste-of-ingredients/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberofBurgerswithNoWasteofIngredients.cpp",
           "difficulty": "medium"
         },
         {
@@ -613,7 +613,7 @@
         {
           "label": "Online Election ( Design + Binary Search )",
           "question": "https://leetcode.com/problems/online-election/description/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OnlineElection.cpp",
           "difficulty": "medium"
         },
         {
