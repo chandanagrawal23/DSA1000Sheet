@@ -3151,6 +3151,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Painting the Walls",
+              "question": "https://leetcode.com/problems/painting-the-walls/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PaintingtheWalls.cpp",
+              "difficulty": "hard"
+            },
+            {
               "label": "Profitable Schemes",
               "question": "https://leetcode.com/problems/profitable-schemes/",
               "solution": "-",
