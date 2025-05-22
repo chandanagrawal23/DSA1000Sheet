@@ -300,6 +300,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Brick Wall",
+              "question": "https://leetcode.com/problems/brick-wall/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Deque )",
               "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
               "solution": "-",
