@@ -1259,6 +1259,18 @@
               "difficulty": "medium"
             },
             {
+              "label": "Sum of Subarray Ranges",
+              "question": "https://leetcode.com/problems/sum-of-subarray-ranges/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Sum of Subarray Minimums",
+              "question": "https://leetcode.com/problems/sum-of-subarray-minimums/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
               "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
