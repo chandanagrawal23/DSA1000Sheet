@@ -4117,6 +4117,18 @@
               "difficulty": "medium"
             },
             {
+              "label": "Find Minimum Time to Reach Last Room I",
+              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find Minimum Time to Reach Last Room II",
+              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-ii/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
               "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
               "solution": "-",
@@ -4131,12 +4143,6 @@
             {
               "label": "Minimum Cost to Reach City With Discounts",
               "question": "https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Find Minimum Time to Reach Last Room I",
-              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/",
               "solution": "-",
               "difficulty": "hard"
             },
