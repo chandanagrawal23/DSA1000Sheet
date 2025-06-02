@@ -4,13 +4,6 @@
       "title": "Halwa Problems (School Level)",
       "problems": [
         {
-          "label": "HALWA",
-          "question": "https://www.geeksforgeeks.org/c-even-odd/",
-          "solution": "-",
-          "difficulty": "easy",
-          "youtube": "-"
-        },
-        {
           "label": "Check Even or Odd",
           "question": "https://www.geeksforgeeks.org/c-even-odd/",
           "solution": "-",
