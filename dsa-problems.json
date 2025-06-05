@@ -4422,7 +4422,7 @@
         {
           "label": "Lexicographically smallest equivalent string [IMPO, google]",
           "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
-          "solution": "LexicographicallySmallestEquivalentString.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LexicographicallySmallestEquivalentString.cpp",
           "difficulty": "medium"
         },
         {
