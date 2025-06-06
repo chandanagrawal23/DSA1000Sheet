@@ -3921,8 +3921,8 @@
               "difficulty": "medium"
             },
             {
-              "label": "The Maze II",
-              "question": "https://leetcode.com/problems/the-maze-ii/[using bfs]",
+              "label": "The Maze II[using BFS]",
+              "question": "https://leetcode.com/problems/the-maze-ii/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TheMaze_II_BFS.cpp",
               "difficulty": "medium"
             },
