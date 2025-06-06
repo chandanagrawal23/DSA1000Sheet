@@ -3922,7 +3922,7 @@
             },
             {
               "label": "The Maze II",
-              "question": "https://leetcode.com/problems/the-maze-ii/",
+              "question": "https://leetcode.com/problems/the-maze-ii/[using bfs]",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TheMaze_II_BFS.cpp",
               "difficulty": "medium"
             },
@@ -4117,9 +4117,9 @@
               "difficulty": "medium"
             },
             {
-              "label": "The Maze II",
+              "label": "The Maze II[using Dijkstra]",
               "question": "https://leetcode.com/problems/the-maze-ii/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TheMaze_II_Dijkistra.cpp",
               "difficulty": "medium"
             },
             {
