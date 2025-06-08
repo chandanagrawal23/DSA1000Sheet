@@ -3224,7 +3224,7 @@
             {
               "label": "Maximum Non-Negative Product in a Matrix",
               "question": "https://leetcode.com/problems/maximum-non-negative-product-in-a-matrix/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumNonNegativeProductInMatrix.cpp",
               "difficulty": "medium"
             },
             {
