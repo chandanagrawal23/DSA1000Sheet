@@ -3218,7 +3218,7 @@
             {
               "label": "Minimum Path Sum",
               "question": "https://leetcode.com/problems/minimum-path-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumPathSum.cpp",
               "difficulty": "medium"
             },
             {
@@ -3230,7 +3230,7 @@
             {
               "label": "Where Will the Ball Fall",
               "question": "https://leetcode.com/problems/where-will-the-ball-fall/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/WhereWilltheBallFall.cpp",
               "difficulty": "medium"
             },
             {
