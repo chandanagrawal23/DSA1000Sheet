@@ -2244,7 +2244,7 @@
         {
           "label": "Unique Paths III (DFS + Backtracking)",
           "question": "https://leetcode.com/problems/unique-paths-iii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Unique_Path_III.cpp",
           "difficulty": "hard"
         }
       ]
@@ -3206,13 +3206,13 @@
             {
               "label": "Unique Paths",
               "question": "https://leetcode.com/problems/unique-paths/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Unique_Path_I.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Unique Paths II",
               "question": "https://leetcode.com/problems/unique-paths-ii/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Unique_Path_II.cpp",
               "difficulty": "medium"
             },
             {
