@@ -1613,12 +1613,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Convert Sorted List to Binary Search Tree [IMPORTANT]",
-              "question": "https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortedListToBST.cpp",
-              "difficulty": "medium"
-            },
-            {
               "label": "Convert Binary Search Tree to Sorted Doubly Linked List",
               "question": "https://leetcode.ca/all/426.html",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BST_ToDoublyList.cpp",
