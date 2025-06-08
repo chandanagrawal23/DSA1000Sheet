@@ -1021,6 +1021,12 @@
               "question": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
               "solution": "-",
               "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Window Substring [using Answer on Binary Search]",
+              "question": "https://leetcode.com/problems/minimum-window-substring/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindow.cpp",
+              "difficulty": "hard"
             }
           ]
         },
@@ -1972,7 +1978,7 @@
           "difficulty": "hard"
         },
         {
-          "label": "Minimum Window Substring [Very Important, widely asked]",
+          "label": "Minimum Window Substring [MAANGMS,V.IMP]",
           "question": "https://leetcode.com/problems/minimum-window-substring/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindow.cpp",
           "difficulty": "hard"
