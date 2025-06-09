@@ -43,6 +43,61 @@ btn.addEventListener('click', function (e) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+/***************************************************************
+ * MOBILE HAMBURGER MENU
+ ***************************************************************/
+function initializeMobileMenu() {
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileNavMenu = document.getElementById('mobileNavMenu');
+
+  if (mobileMenuToggle && mobileNavMenu) {
+    mobileMenuToggle.addEventListener('click', function() {
+      // Toggle menu visibility
+      mobileNavMenu.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!mobileMenuToggle.contains(event.target) && !mobileNavMenu.contains(event.target)) {
+        mobileNavMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      }
+    });
+
+    // Close menu when clicking on a nav item
+    const mobileNavCards = document.querySelectorAll('.mobile-nav-card');
+    mobileNavCards.forEach(card => {
+      card.addEventListener('click', function() {
+        mobileNavMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      });
+    });
+
+    // Handle window resize to close menu on desktop
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        mobileNavMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      }
+    });
+  }
+}
+
+// Function to update mobile navigation active state
+function updateMobileNavActive(activeId) {
+  // Remove active class from all mobile nav cards
+  document.querySelectorAll('.mobile-nav-card').forEach(card => {
+    card.classList.remove('active');
+  });
+
+  // Add active class to the clicked mobile nav card
+  const activeCard = document.getElementById(activeId);
+  if (activeCard) {
+    activeCard.classList.add('active');
+  }
+}
+
 
 /***************************************************************
  * CELEBRATION FUNCTIONS
@@ -164,6 +219,11 @@ function toggleSolved(icon) {
   saveProgress();
   updateGlobalRectBar();
   updateSectionProgress();
+
+  // Check for section completion/incompletion after updating progress
+  setTimeout(() => {
+    checkSectionCompletion(icon);
+  }, 100);
 }
 
 /***************************************************************
@@ -1079,6 +1139,262 @@ function saveNotesModal() {
 }
 
 /***************************************************************
+ * SECTION COMPLETION FUNCTIONS
+ ***************************************************************/
+function checkSectionCompletion(icon) {
+  // Get the section this problem belongs to
+  const problemRow = icon.parentElement.parentElement;
+  const sectionElement = problemRow.closest('.collapsible');
+
+  if (!sectionElement) return;
+
+  const sectionId = sectionElement.getAttribute('id');
+  if (!sectionId) return;
+
+  // Get section title
+  const sectionTitle = sectionElement.querySelector('.topic-title')?.textContent;
+  if (!sectionTitle) return;
+
+  // Count total and solved problems in this section
+  const allProblems = sectionElement.querySelectorAll('.done-icon');
+  const solvedProblems = sectionElement.querySelectorAll('.done-icon[data-solved="true"]');
+
+  const isCurrentlyCompleted = sectionElement.classList.contains('section-completed');
+  const shouldBeCompleted = allProblems.length > 0 && allProblems.length === solvedProblems.length;
+
+  if (shouldBeCompleted && !isCurrentlyCompleted) {
+    // Section just became complete
+    markSectionAsCompleted(sectionElement, sectionTitle);
+    showCongratulationsBanner(sectionTitle);
+    saveSectionCompletion(sectionId, sectionTitle);
+  } else if (!shouldBeCompleted && isCurrentlyCompleted) {
+    // Section is no longer complete
+    markSectionAsIncomplete(sectionElement, sectionTitle);
+    removeSectionCompletion(sectionId);
+  }
+}
+
+function markSectionAsCompleted(sectionElement, sectionTitle) {
+  // Add completed class to section
+  sectionElement.classList.add('section-completed');
+
+  // Change folder icon to indicate completion
+  const folderIcon = sectionElement.querySelector('.material-icons');
+  if (folderIcon && folderIcon.textContent === 'folder') {
+    folderIcon.textContent = 'folder';
+    // The CSS will handle the green color via the .section-completed class
+  }
+
+  console.log(`Section "${sectionTitle}" marked as completed!`);
+}
+
+function markSectionAsIncomplete(sectionElement, sectionTitle) {
+  // Remove completed class from section
+  sectionElement.classList.remove('section-completed');
+
+  // The folder icon will automatically return to normal color via CSS
+  console.log(`Section "${sectionTitle}" marked as incomplete.`);
+}
+
+function showCongratulationsBanner(sectionTitle) {
+  const banner = document.getElementById('congratulationsBanner');
+  const sectionNameSpan = document.getElementById('sectionName');
+
+  if (banner && sectionNameSpan) {
+    sectionNameSpan.textContent = sectionTitle;
+    banner.classList.add('active');
+    // Prevent body scroll when banner is open
+    document.body.style.overflow = 'hidden';
+
+    // Trigger confetti celebration
+    setTimeout(() => {
+      triggerCelebration();
+    }, 300);
+  }
+}
+
+function hideCongratulationsBanner() {
+  const banner = document.getElementById('congratulationsBanner');
+  if (banner) {
+    banner.classList.remove('active');
+    // Restore body scroll
+    document.body.style.overflow = '';
+  }
+}
+
+function saveSectionCompletion(sectionId, sectionTitle) {
+  try {
+    const completedSections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSections`) || '{}');
+    completedSections[sectionId] = {
+      title: sectionTitle,
+      completedAt: new Date().toISOString()
+    };
+    localStorage.setItem(`${currentSection}CompletedSections`, JSON.stringify(completedSections));
+  } catch (error) {
+    console.error('Error saving section completion:', error);
+  }
+}
+
+function removeSectionCompletion(sectionId) {
+  try {
+    const completedSections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSections`) || '{}');
+    delete completedSections[sectionId];
+    localStorage.setItem(`${currentSection}CompletedSections`, JSON.stringify(completedSections));
+    console.log(`Section completion removed for: ${sectionId}`);
+  } catch (error) {
+    console.error('Error removing section completion:', error);
+  }
+}
+
+function loadSectionCompletions() {
+  try {
+    const completedSections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSections`) || '{}');
+
+    Object.keys(completedSections).forEach(sectionId => {
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        const sectionData = completedSections[sectionId];
+        markSectionAsCompleted(sectionElement, sectionData.title);
+      }
+    });
+  } catch (error) {
+    console.error('Error loading section completions:', error);
+  }
+}
+
+/***************************************************************
+ * RESET PROGRESS FUNCTIONS
+ ***************************************************************/
+function showResetConfirmation() {
+  const banner = document.getElementById('resetConfirmationBanner');
+  if (banner) {
+    banner.classList.add('active');
+    // Prevent body scroll when banner is open
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function hideResetConfirmation() {
+  const banner = document.getElementById('resetConfirmationBanner');
+  if (banner) {
+    banner.classList.remove('active');
+    // Restore body scroll
+    document.body.style.overflow = '';
+  }
+}
+
+// Close banner when clicking outside the content or pressing ESC
+function initResetBannerClickOutside() {
+  const resetBanner = document.getElementById('resetConfirmationBanner');
+  const congratsBanner = document.getElementById('congratulationsBanner');
+
+  if (resetBanner) {
+    resetBanner.addEventListener('click', function(e) {
+      if (e.target === resetBanner) {
+        hideResetConfirmation();
+      }
+    });
+  }
+
+  if (congratsBanner) {
+    congratsBanner.addEventListener('click', function(e) {
+      if (e.target === congratsBanner) {
+        hideCongratulationsBanner();
+      }
+    });
+  }
+
+  // Add ESC key support for both banners
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (resetBanner && resetBanner.classList.contains('active')) {
+        hideResetConfirmation();
+      }
+      if (congratsBanner && congratsBanner.classList.contains('active')) {
+        hideCongratulationsBanner();
+      }
+    }
+  });
+}
+
+function resetAllProgress() {
+  try {
+    // Get all localStorage keys that contain progress or notes data
+    const keysToRemove = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && (
+        key.includes('SolvedProblems') ||
+        key.includes('Notes') ||
+        key.includes('CompletedSections') ||
+        key === 'dsaSolvedProblems' || // Legacy key
+        key === 'dsaNotess' || // Legacy key
+        key === 'sqlSolvedProblems' ||
+        key === 'sqlNotes'
+      )) {
+        keysToRemove.push(key);
+      }
+    }
+
+    // Remove all progress-related keys
+    keysToRemove.forEach(key => {
+      localStorage.removeItem(key);
+    });
+
+    // Reset all solved states in the UI
+    document.querySelectorAll('.done-icon').forEach(icon => {
+      icon.setAttribute('data-solved', 'false');
+      icon.textContent = 'check_box_outline_blank';
+      icon.parentElement.parentElement.classList.remove('solved');
+    });
+
+    // Reset all notes icons
+    document.querySelectorAll('.notes-icon').forEach(icon => {
+      icon.setAttribute('data-has-notes', 'false');
+    });
+
+    // Reset all completed sections
+    document.querySelectorAll('.section-completed').forEach(section => {
+      section.classList.remove('section-completed');
+    });
+
+    // Clear the notes object
+    if (typeof notes !== 'undefined') {
+      notes = {};
+    }
+
+    // Update all progress displays
+    updateGlobalRectBar();
+    updateSectionProgress();
+
+    // Hide the confirmation banner
+    hideResetConfirmation();
+
+    // Show success message
+    M.toast({
+      html: '<span class="success-toast">All progress has been reset successfully!</span>',
+      classes: 'rounded green',
+      displayLength: 3000
+    });
+
+    console.log('Progress reset completed. Removed keys:', keysToRemove);
+
+  } catch (error) {
+    console.error('Error resetting progress:', error);
+
+    // Hide the confirmation banner
+    hideResetConfirmation();
+
+    // Show error message
+    M.toast({
+      html: '<span class="error-toast">Error resetting progress. Please try again.</span>',
+      classes: 'rounded red',
+      displayLength: 3000
+    });
+  }
+}
+
+/***************************************************************
  * DARK MODE FUNCTIONS
  ***************************************************************/
 function initializeDarkMode() {
@@ -1247,8 +1563,8 @@ function showFirstCheckboxTooltip() {
   refreshCount++;
   localStorage.setItem('refreshCount', refreshCount);
 
-  // Show tooltip only every 5th refresh
-  if (refreshCount % 3 !== 0) {
+  // Show tooltip only every 7th refresh
+  if (refreshCount % 7 !== 0) {
     return;
   }
 
@@ -1367,8 +1683,21 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize dark mode
   initializeDarkMode();
 
+  // Initialize mobile menu
+  initializeMobileMenu();
+
   // Initialize section controls
   initSectionControls();
+
+  // Initialize reset progress button
+  const resetBtn = document.getElementById('resetProgressBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', showResetConfirmation);
+  }
+
+  // Initialize reset banner click outside functionality
+  initResetBannerClickOutside();
+
   loadProgress();
   loadNotess();
   updateGlobalRectBar();
@@ -1490,6 +1819,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       buildRectBar();
       loadProgress();
+      loadSectionCompletions();
       updateGlobalRectBar();
       updateSectionProgress();
     })
@@ -1549,7 +1879,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Add click handlers for navigation
+  // Add click handlers for navigation (desktop)
   document.getElementById('dsaLink').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('dsa');
@@ -1568,6 +1898,31 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('sqlLink').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('sql');
+  });
+
+  // Add click handlers for mobile navigation
+  document.getElementById('dsaLinkMobile').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('dsa');
+    updateMobileNavActive('dsaLinkMobile');
+  });
+
+  document.getElementById('blind75LinkMobile').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('blind75');
+    updateMobileNavActive('blind75LinkMobile');
+  });
+
+  document.getElementById('leetcode150LinkMobile').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('leetcode150');
+    updateMobileNavActive('leetcode150LinkMobile');
+  });
+
+  document.getElementById('sqlLinkMobile').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('sql');
+    updateMobileNavActive('sqlLinkMobile');
   });
 
   /* do not remove this yet, we will need it later
@@ -1670,11 +2025,17 @@ function toggleSections(expand) {
 
 // Function to switch between sections
 function switchSection(section) {
-  // Update active nav link
+  // Update active nav link (desktop)
   document.querySelectorAll('.nav-card').forEach(link => {
     link.classList.remove('active');
   });
   document.getElementById(`${section}Link`).classList.add('active');
+
+  // Update active nav link (mobile)
+  document.querySelectorAll('.mobile-nav-card').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.getElementById(`${section}LinkMobile`).classList.add('active');
 
   // Update current section
   currentSection = section;
@@ -1760,6 +2121,7 @@ function switchSection(section) {
       initializeCollapsibles();
       initializeCheckboxes();
       loadProgress();
+      loadSectionCompletions();
       updateGlobalRectBar();
       updateSectionProgress();
     })
