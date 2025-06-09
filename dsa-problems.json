@@ -1368,12 +1368,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "PAYPAL Question",
-          "question": "PAYPAL Question",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PayPal_Queue.cpp",
-          "difficulty": "hard"
-        },
-        {
           "label": "FACEBOOK Question [Queue Removals]",
           "question": "FACEBOOK Question [Queue Removals]",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Queue_Medium.cpp",
