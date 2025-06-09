@@ -1144,7 +1144,15 @@ function saveNotesModal() {
 function checkSectionCompletion(icon) {
   // Get the section this problem belongs to
   const problemRow = icon.parentElement.parentElement;
-  const sectionElement = problemRow.closest('.collapsible');
+  let sectionElement = problemRow.closest('.collapsible');
+
+  if (!sectionElement) return;
+
+  // Check if this is a subsection - if so, get the parent section
+  if (sectionElement.classList.contains('subsection-collapsible')) {
+    // This is a subsection collapsible, find the parent section
+    sectionElement = sectionElement.closest('.collapsible.z-depth-1');
+  }
 
   if (!sectionElement) return;
 
@@ -1161,6 +1169,15 @@ function checkSectionCompletion(icon) {
 
   const isCurrentlyCompleted = sectionElement.classList.contains('section-completed');
   const shouldBeCompleted = allProblems.length > 0 && allProblems.length === solvedProblems.length;
+
+  //log all problems and solved problems for debugging
+  console.log(`Section ID: ${sectionId}`);
+  console.log(`Section Title: ${sectionTitle}`);
+  console.log(`Total Problems: ${allProblems.length}`);
+  console.log(`Solved Problems: ${solvedProblems.length}`);
+  console.log(`Should be completed: ${shouldBeCompleted}`);
+  console.log(`Is currently completed: ${isCurrentlyCompleted}`);
+  
 
   if (shouldBeCompleted && !isCurrentlyCompleted) {
     // Section just became complete
@@ -1650,13 +1667,40 @@ function showFirstCheckboxTooltip() {
     }, 4000);
 
     // Reset refresh count if it gets too high (optional)
-    if (refreshCount > 50) {
+    if (refreshCount > 150) {
       localStorage.setItem('refreshCount', '0');
     }
   }, 500);
 }
 
 
+
+/***************************************************************
+ * MOBILE ALIGNMENT FIX
+ ***************************************************************/
+function fixMobileAlignment() {
+  // Only apply on mobile screens
+  if (window.innerWidth <= 768) {
+    // Remove problematic inline styles from mini-bar elements
+    document.querySelectorAll('.mini-bars .mini-bar-line').forEach(line => {
+      // Remove inline styles from all child elements
+      const elements = line.querySelectorAll('*');
+      elements.forEach(el => {
+        if (el.classList.contains('difficulty-filter-square') ||
+            el.classList.contains('mini-label') ||
+            el.classList.contains('mini-progress') ||
+            el.classList.contains('mini-count')) {
+          // Remove margin and width styles that interfere with grid
+          el.style.marginLeft = '';
+          el.style.marginRight = '';
+          el.style.margin = '';
+          el.style.width = '';
+          el.style.minWidth = '';
+        }
+      });
+    });
+  }
+}
 
 /***************************************************************
  * INITIALIZATION
