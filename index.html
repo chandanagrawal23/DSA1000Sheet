@@ -55,7 +55,9 @@
           <!-- <span class="logo-subtitle-extra">codewithchandan</span> -->
         </div>
       </div>
-      <div class="nav-links">
+
+      <!-- Desktop Navigation -->
+      <div class="nav-links desktop-nav">
         <a href="index.html" class="nav-card active tooltipped" id="dsaLink" data-position="bottom" data-tooltip="Prepare DSA from 0 to Hero">
           <i class="material-icons">code</i>
           <span>DSA</span>
@@ -80,14 +82,48 @@
           <i class="material-icons">account_tree</i>
           <span>HLD</span>
         </a>
-        <!-- <a href="#" class="nav-card" id="resourcesLink">
-          <i class="material-icons">library_books</i>
-          <span>Resources</span>
-        </a> -->
       </div>
+
+      <!-- Mobile Hamburger Menu -->
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
       <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
         <span class="material-icons">dark_mode</span>
       </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+      <div class="mobile-nav-content">
+        <a href="index.html" class="mobile-nav-card active" id="dsaLinkMobile">
+          <i class="material-icons">code</i>
+          <span>DSA</span>
+        </a>
+        <a href="#" class="mobile-nav-card" id="blind75LinkMobile">
+          <i class="material-icons">lightbulb</i>
+          <span>Blind75</span>
+        </a>
+        <a href="#" class="mobile-nav-card" id="leetcode150LinkMobile">
+          <i class="material-icons">lightbulb</i>
+          <span>LC150</span>
+        </a>
+        <a href="#" class="mobile-nav-card" id="sqlLinkMobile">
+          <i class="material-icons">storage</i>
+          <span>SQL</span>
+        </a>
+        <a href="#" class="mobile-nav-card" id="lldLinkMobile">
+          <i class="material-icons">design_services</i>
+          <span>LLD</span>
+        </a>
+        <a href="#" class="mobile-nav-card" id="hldLinkMobile">
+          <i class="material-icons">account_tree</i>
+          <span>HLD</span>
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -169,6 +205,40 @@
       <div class="modal-footer">
         <button onclick="saveNotesModal()" class="btn-save btn">Save</button>
         <button onclick="closeNotesModal()" class="btn-close btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reset Confirmation Banner -->
+  <div id="resetConfirmationBanner" class="reset-confirmation-banner">
+    <div class="banner-content">
+      <div class="banner-icon">
+        <i class="material-icons">warning</i>
+      </div>
+      <div class="banner-text">
+        <h3>Are you sure you want to clear all of your progress?</h3>
+        <p>This action cannot be undone. All solved problems and notes will be permanently deleted.</p>
+      </div>
+      <div class="banner-actions">
+        <button onclick="resetAllProgress()" class="btn-confirm">Yes, Reset All</button>
+        <button onclick="hideResetConfirmation()" class="btn-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Completion Congratulations Banner -->
+  <div id="congratulationsBanner" class="congratulations-banner">
+    <div class="banner-content celebration-content">
+      <div class="banner-icon celebration-icon">
+        <i class="material-icons folder-icon">folder</i>
+        <i class="material-icons check-icon">check_circle</i>
+      </div>
+      <div class="banner-text">
+        <h3 id="congratsTitle">Congratulations!</h3>
+        <p id="congratsMessage">You completed <span id="sectionName"></span>. Great going!</p>
+      </div>
+      <div class="banner-actions">
+        <button onclick="hideCongratulationsBanner()" class="btn-continue">Continue</button>
       </div>
     </div>
   </div>
