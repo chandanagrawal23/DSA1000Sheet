@@ -710,7 +710,7 @@
             {
               "label": "Meeting Rooms",
               "question": "https://leetcode.ca/all/252.html",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_I.cpp",
               "difficulty": "easy"
             },
             {
@@ -729,12 +729,6 @@
               "label": "Group Anagrams",
               "question": "https://leetcode.com/problems/group-anagrams/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/GroupAnagram.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Meeting Rooms II",
-              "question": "https://leetcode.ca/all/253.html",
-              "solution": "-",
               "difficulty": "medium"
             },
             {
@@ -1664,7 +1658,7 @@
         {
           "label": "Meeting Rooms II [MAANGM and others]",
           "question": "https://leetcode.ca/all/253.html",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minMeetingRooms.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
           "difficulty": "medium"
         },
         {
@@ -4683,7 +4677,7 @@
         {
           "label": "Meeting Rooms II",
           "question": "https://leetcode.com/problems/meeting-rooms-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_SweepLine.cpp",
           "difficulty": "medium"
         },
         {
