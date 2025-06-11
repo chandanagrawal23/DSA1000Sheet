@@ -714,10 +714,10 @@
               "difficulty": "easy"
             },
             {
-              "label": "Kth Largest Element in an Array (using sort and return a[k-1]",
+              "label": "Kth Largest Element in an Array (using sort and return a[k-1])",
               "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-              "solution": "-",
-              "difficulty": "easy"
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Kth_largest_in_array_sorting.cpp",
+              "difficulty": "medium"
             },
             {
               "label": "Destroying Asteroids",
@@ -1646,7 +1646,7 @@
         {
           "label": "Kth Largest Element in an Array",
           "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findKthLargest.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Kth_largest_in_array_heap.cpp",
           "difficulty": "medium"
         },
         {
