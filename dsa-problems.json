@@ -284,7 +284,7 @@
             {
               "label": "Construct Product Matrix",
               "question": "https://leetcode.com/problems/construct-product-matrix/description/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ConstructProductMatrix.cpp",
               "difficulty": "medium"
             },
             {
@@ -738,7 +738,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Minimum Number of Arrows to Burst Balloons (IMP) ",
+              "label": "Minimum Number of Arrows to Burst Balloons[google]",
               "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
               "solution": "-",
               "difficulty": "medium"
@@ -4689,12 +4689,6 @@
         {
           "label": "Count of Intervals with Maximum Overlap (Google)",
           "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Number of Arrows to Burst Balloons",
-          "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
           "solution": "-",
           "difficulty": "medium"
         },
