@@ -651,25 +651,25 @@
             {
               "label": "Bubble Sort",
               "question": "https://www.geeksforgeeks.org/bubble-sort/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BubbleSort.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Selection Sort",
               "question": "https://www.geeksforgeeks.org/selection-sort/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SelectionSort.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Insertion Sort",
               "question": "https://www.geeksforgeeks.org/insertion-sort/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/InsertionSort.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Merge Sort",
               "question": "https://www.geeksforgeeks.org/merge-sort/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MergeSort.cpp",
               "difficulty": "medium"
             },
             {
