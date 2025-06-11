@@ -4681,12 +4681,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Minimum Number of Arrows to Burst Balloons",
-          "question": "https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Count of Intervals with Maximum Overlap (Google)",
           "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
           "solution": "-",
