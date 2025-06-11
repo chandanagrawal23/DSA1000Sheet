@@ -230,14 +230,8 @@
             {
               "label": "Range Sum Query - Immutable",
               "question": "https://leetcode.com/problems/range-sum-query-immutable/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RangeSumQuery_Immutable.cpp",
               "difficulty": "easy"
-            },
-            {
-              "label": "Range Sum Query 2D - Immutable",
-              "question": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
-              "solution": "-",
-              "difficulty": "medium"
             },
             {
               "label": "Car Pooling",
@@ -270,8 +264,14 @@
               "difficulty": "medium"
             },
             {
-              "label": "Count Submatrices with Top-Left Element and Sum Less Than k (2D Prefix Sum)",
+              "label": "Count Submatrices with Top-Left Element and Sum Less Than K (2D Prefix Sum)",
               "question": "https://leetcode.com/problems/count-submatrices-with-top-left-element-and-sum-less-than-k/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountSubmatriceswithTop-LeftElementAndSumLessThanK.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Range Sum Query 2D - Immutable",
+              "question": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
               "solution": "-",
               "difficulty": "medium"
             },
