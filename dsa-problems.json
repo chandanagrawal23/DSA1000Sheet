@@ -450,6 +450,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Shortest Word Distance III",
+          "question": "https://leetcode.ca/all/245.html",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestWordDistance_III.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Remove Duplicates from Sorted Array II",
           "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
           "solution": "-",
@@ -3941,7 +3947,7 @@
             {
               "label": "Surrounded Regions",
               "question": "https://leetcode.com/problems/surrounded-regions/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SurroundedRegions.cpp",
               "difficulty": "medium"
             },
             {
