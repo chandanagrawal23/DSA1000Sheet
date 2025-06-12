@@ -1035,6 +1035,12 @@
               "difficulty": "hard"
             },
             {
+              "label": "Divide Chocolate",
+              "question": "https://leetcode.com/problems/divide-chocolate/description/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DivideChocolate.cpp",
+              "difficulty" : "hard"
+            },
+            {
               "label": "Minimum Window Substring [Very Important]",
               "question": "https://leetcode.com/problems/minimum-window-substring/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindowAnswerOnBinarySearch.cpp",
@@ -1722,12 +1728,6 @@
           "difficulty": "medium"
         },
         {
-          "label": "Longest Happy String",
-          "question": "https://leetcode.com/problems/longest-happy-string/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
           "label": "Course Schedule III",
           "question": "https://leetcode.com/problems/course-schedule-iii/",
           "solution": "-",
@@ -1747,7 +1747,7 @@
         },
         {
           "label": "Merge K Sorted Arrays",
-          "question": "https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1",
+          "question": "https://www.geeksforgeeks.org/merge-k-sorted-arrays/",
           "solution": "-",
           "difficulty": "hard"
         },
