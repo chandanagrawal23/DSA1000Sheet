@@ -3708,13 +3708,13 @@
             {
               "label": "Number of Provinces",
               "question": "https://leetcode.com/problems/number-of-provinces/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberOfProvinces.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Minimum Number of Vertices to Reach All Nodes",
               "question": "https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumNumberOfVerticesToReachAllNodes.cpp",
               "difficulty": "medium"
             },
             {
@@ -3750,12 +3750,6 @@
             {
               "label": "Paths in Maze That Lead to Same Room",
               "question": "https://leetcode.ca/2021-11-30-2077-Paths-in-Maze-That-Lead-to-Same-Room/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Connected Components in an Undirected Graph",
-              "question": "https://www.lintcode.com/problem/3651/",
               "solution": "-",
               "difficulty": "medium"
             },
