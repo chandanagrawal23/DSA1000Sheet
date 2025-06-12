@@ -444,6 +444,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Shortest Word Distance II",
+          "question": "https://leetcode.ca/all/244.html",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestWordDistance_II.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Remove Duplicates from Sorted Array II",
           "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
           "solution": "-",
@@ -783,6 +789,12 @@
               "label": "Top K Frequent Words (Map + Sorting / Priority Queue)",
               "question": "https://leetcode.com/problems/top-k-frequent-words/",
               "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Swaps to Sort by Digit Sum",
+              "question": "https://leetcode.com/problems/minimum-swaps-to-sort-by-digit-sum/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumSwapsToSortByDigitSum.cpp",
               "difficulty": "medium"
             },
             {
