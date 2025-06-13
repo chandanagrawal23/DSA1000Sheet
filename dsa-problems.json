@@ -923,7 +923,7 @@
             {
               "label": "Most Beautiful Item for Each Query",
               "question": "https://leetcode.com/problems/most-beautiful-item-for-each-query/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MostBeautifulItemForEachQuery.cpp",
               "difficulty": "medium"
             },
             {
@@ -1007,19 +1007,19 @@
             {
               "label": "Split Array Largest Sum (Can be solved using DP)",
               "question": "https://leetcode.com/problems/split-array-largest-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SplitArrayLargestSum_BinarySearch.cpp",
               "difficulty": "hard"
             },
             {
               "label": "Kth Smallest Number in Multiplication Table",
               "question": "https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthSmallestNumberinMultiplicationTable.cpp",
               "difficulty": "hard"
             },
             {
               "label": "Nth Magical Number",
               "question": "https://leetcode.com/problems/nth-magical-number/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NthMagicalNumber.cpp",
               "difficulty": "hard"
             },
             {
@@ -1031,13 +1031,13 @@
             {
               "label": "Maximum Running Time of N Computers",
               "question": "https://leetcode.com/problems/maximum-running-time-of-n-computers/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumRunningTimeOfNComputers.cpp",
               "difficulty": "hard"
             },
             {
               "label": "Find K-th Smallest Pair Distance",
               "question": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindKthSmallestPairDistance.cpp",
               "difficulty": "hard"
             },
             {
