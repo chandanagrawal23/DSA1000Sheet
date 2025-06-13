@@ -999,6 +999,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Minimize the Maximum Difference of Pairs",
+              "question": "https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizeTheMaximumDifferenceOfPairs.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Split Array Largest Sum (Can be solved using DP)",
               "question": "https://leetcode.com/problems/split-array-largest-sum/",
               "solution": "-",
