@@ -941,7 +941,7 @@
             {
               "label": "Heaters",
               "question": "https://leetcode.com/problems/heaters/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heaters_BinarySearch.cpp",
               "difficulty": "medium"
             },
             {
@@ -995,7 +995,7 @@
             {
               "label": "Kth Smallest Element in a Sorted Matrix",
               "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthSmallestElementInASortedMatrix_BinarySearch.cpp",
               "difficulty": "medium"
             },
             {
@@ -1044,7 +1044,7 @@
               "label": "Divide Chocolate",
               "question": "https://leetcode.ca/all/1231.html",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DivideChocolate.cpp",
-              "difficulty" : "hard"
+              "difficulty": "hard"
             },
             {
               "label": "Minimum Window Substring [Very Important]",
@@ -1996,7 +1996,7 @@
           "difficulty": "hard"
         },
         {
-          "label":"Count Subarrays With Score Less Than K",
+          "label": "Count Subarrays With Score Less Than K",
           "question": "https://leetcode.com/problems/count-subarrays-with-score-less-than-k/",
           "solution": "-",
           "difficulty": "hard"
@@ -3938,7 +3938,6 @@
               "solution": "-",
               "difficulty": "medium"
             },
-
             {
               "label": "Surrounded Regions",
               "question": "https://leetcode.com/problems/surrounded-regions/",
