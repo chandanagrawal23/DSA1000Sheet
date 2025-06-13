@@ -1036,7 +1036,7 @@
             },
             {
               "label": "Divide Chocolate",
-              "question": "https://leetcode.com/problems/divide-chocolate/description/",
+              "question": "https://leetcode.ca/all/1231.html",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DivideChocolate.cpp",
               "difficulty" : "hard"
             },
@@ -1148,7 +1148,7 @@
             {
               "label": "Simplify Path",
               "question": "https://leetcode.com/problems/simplify-path/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SimplifyPath.cpp",
               "difficulty": "medium"
             },
             {
