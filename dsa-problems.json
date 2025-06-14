@@ -3658,7 +3658,7 @@
         {
           "label": "Circle and Rectangle Overlapping",
           "question": "https://leetcode.com/problems/circle-and-rectangle-overlapping/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/checkOverlap.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CircleAndRectangleOverlapping.cpp",
           "difficulty": "medium"
         },
         {
@@ -3677,6 +3677,18 @@
           "label": "Separate Squares I (Google, Answer on Binary Search)",
           "question": "https://leetcode.com/problems/separate-squares-i/description/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeparateSquaresI.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Area Rectangle With Point Constraints I",
+          "question": "https://leetcode.com/problems/maximum-area-rectangle-with-point-constraints-i/",
+          "solution": "",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Area Rectangle With Point Constraints II",
+          "question": "https://leetcode.com/problems/maximum-area-rectangle-with-point-constraints-ii/",
+          "solution": "-",
           "difficulty": "medium"
         },
         {
