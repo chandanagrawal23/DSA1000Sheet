@@ -4081,12 +4081,6 @@
           "title": "Dijkstra Algorithm Graph (Shortest Path)",
           "problems": [
             {
-              "label": "CHANDAN",
-              "question": "https://leetcode.com/problems/network-delay-time/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Network Delay Time",
               "question": "https://leetcode.com/problems/network-delay-time/",
               "solution": "-",
