@@ -3652,7 +3652,7 @@
         {
           "label": "Valid Square",
           "question": "https://leetcode.com/problems/valid-square/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ValidSquare.cpp",
           "difficulty": "medium"
         },
         {
@@ -3670,7 +3670,7 @@
         {
           "label": "Minimum Area Rectangle",
           "question": "https://leetcode.com/problems/minimum-area-rectangle/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minAreaRect.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumAreaRectangle.cpp",
           "difficulty": "medium"
         },
         {
