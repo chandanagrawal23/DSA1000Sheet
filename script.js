@@ -24,6 +24,9 @@ document.head.appendChild(confettiScript);
 // Track current section
 let currentSection = 'dsa';
 
+// Track banner calls for debugging
+let bannerCallCount = 0;
+
 /***************************************************************
  * GO TO TOP BUTTON
  ***************************************************************/
@@ -1358,13 +1361,21 @@ function checkSectionCompletion(icon) {
   console.log(`Is currently completed: ${isCurrentlyCompleted}`);
 
 
-  if (shouldBeCompleted && !isCurrentlyCompleted) {
-    // Section just became complete
+  // Simple logic: if section should be completed, ALWAYS show banner
+  if (shouldBeCompleted) {
+    console.log(`🎉 SECTION COMPLETED: ${sectionTitle} - ALWAYS showing banner!`);
+
+    // Mark as completed (this is safe to call multiple times)
     markSectionAsCompleted(sectionElement, sectionTitle);
-    showCongratulationsBanner(sectionTitle);
     saveSectionCompletion(sectionId, sectionTitle);
-  } else if (!shouldBeCompleted && isCurrentlyCompleted) {
-    // Section is no longer complete
+
+    // ALWAYS show banner - no conditions, no checks
+    showCongratulationsBanner(sectionTitle);
+  }
+
+  // Handle incompletion separately
+  if (!shouldBeCompleted && isCurrentlyCompleted) {
+    console.log(`❌ SECTION INCOMPLETE: ${sectionTitle}`);
     markSectionAsIncomplete(sectionElement, sectionTitle);
     removeSectionCompletion(sectionId);
   }
@@ -1592,41 +1603,60 @@ window.testWelcomeModal = function() {
 };
 
 function showCongratulationsBanner(sectionTitle) {
-  const banner = document.getElementById('congratulationsBanner');
-  const sectionNameSpan = document.getElementById('sectionName');
-  const congratsMessage = document.getElementById('congratsMessage');
-  const congratsTitle = document.getElementById('congratsTitle');
+  bannerCallCount++;
+  const timestamp = Date.now();
+  console.log(`🎊 [Call #${bannerCallCount}] [${timestamp}] showCongratulationsBanner called for: ${sectionTitle}`);
 
-  if (banner && sectionNameSpan && congratsMessage && congratsTitle) {
-    sectionNameSpan.textContent = sectionTitle;
-
-    // Personalize the message if user name is available
-    const userName = getUserName();
-    if (userName) {
-      congratsTitle.textContent = `Congratulations, ${userName}!`;
-      congratsMessage.innerHTML = `Great job! You completed <strong>${sectionTitle}</strong>. Keep up the excellent work! 🎉`;
-    } else {
-      congratsTitle.textContent = 'Congratulations!';
-      congratsMessage.innerHTML = `You completed <strong>${sectionTitle}</strong>. Great going!`;
-    }
-
-    banner.classList.add('active');
-    // Prevent body scroll when banner is open
-    document.body.style.overflow = 'hidden';
-
-    // Trigger confetti celebration
-    setTimeout(() => {
-      triggerCelebration();
-    }, 300);
+  // FORCE REMOVE ANY EXISTING BANNER FIRST
+  const existingBanner = document.getElementById('congratulationsBanner');
+  if (existingBanner) {
+    existingBanner.remove();
+    console.log(`🎊 [Call #${bannerCallCount}] Removed existing banner`);
   }
+
+  // CREATE A COMPLETELY NEW BANNER ELEMENT
+  const userName = getUserName();
+  const congratsTitle = userName ? `Congratulations, ${userName}!` : 'Congratulations!';
+  const congratsMessage = userName
+    ? `Great job! You completed <strong>${sectionTitle}</strong>. Keep up the excellent work! 🎉`
+    : `You completed <strong>${sectionTitle}</strong>. Great going!`;
+
+  const bannerHTML = `
+    <div id="congratulationsBanner" class="congratulations-banner active">
+      <div class="banner-content celebration-content">
+        <div class="banner-icon celebration-icon">
+          <i class="material-icons folder-icon">folder</i>
+          <i class="material-icons check-icon">check_circle</i>
+        </div>
+        <div class="banner-text">
+          <h3 id="congratsTitle">${congratsTitle}</h3>
+          <p id="congratsMessage">${congratsMessage}</p>
+        </div>
+        <div class="banner-actions">
+          <button onclick="hideCongratulationsBanner()" class="btn-continue">Continue</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Add the new banner to the body
+  document.body.insertAdjacentHTML('beforeend', bannerHTML);
+  document.body.style.overflow = 'hidden';
+
+  console.log(`🎊 [Call #${bannerCallCount}] NEW banner created and shown for: ${sectionTitle}`);
+
+  // Trigger confetti celebration immediately
+  console.log(`🎊 [Call #${bannerCallCount}] Triggering confetti for: ${sectionTitle}`);
+  triggerCelebration();
 }
 
 function hideCongratulationsBanner() {
   const banner = document.getElementById('congratulationsBanner');
   if (banner) {
-    banner.classList.remove('active');
+    banner.remove();
     // Restore body scroll
     document.body.style.overflow = '';
+    console.log(`🎊 Banner hidden and removed from DOM`);
   }
 }
 
