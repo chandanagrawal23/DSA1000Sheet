@@ -541,7 +541,7 @@
         {
           "label": "Sqrtx",
           "question": "https://leetcode.com/problems/sqrtx/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SQRT_BinarySearch.cpp",
           "difficulty": "easy"
         },
         {
@@ -3545,12 +3545,6 @@
         {
           "label": "Find Greatest Common Divisor of Array",
           "question": "https://leetcode.com/problems/find-greatest-common-divisor-of-array/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Sqrt(x)",
-          "question": "https://leetcode.com/problems/sqrtx/",
           "solution": "-",
           "difficulty": "easy"
         },
