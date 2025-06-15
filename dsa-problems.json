@@ -3700,7 +3700,7 @@
         {
           "label": "Check if Grid can be Cut into Sections",
           "question": "https://leetcode.com/problems/check-if-grid-can-be-cut-into-sections/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CheckIfGridCanBeCutIntoSections.cpp",
           "difficulty": "medium"
         },
         {
