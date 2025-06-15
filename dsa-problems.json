@@ -306,6 +306,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Maximum Product of First and Last Elements of a Subsequence",
+              "question": "https://leetcode.com/problems/maximum-product-of-first-and-last-elements-of-a-subsequence/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumProductOfFirstandLastElementsOfASubsequence.cpp.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Deque )",
               "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
               "solution": "-",
