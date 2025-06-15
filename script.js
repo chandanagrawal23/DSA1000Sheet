@@ -437,6 +437,8 @@ function buildRectBar() {
     sectionTitle = 'LeetCode 150';
   } else if (currentSection === 'sql') {
     sectionTitle = 'SQL';
+  } else if (currentSection === 'lld') {
+    sectionTitle = 'LLD';
   } else {
     // Default formatting for other sections
     sectionTitle = currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
@@ -452,22 +454,31 @@ function buildRectBar() {
         <div class="bar-segment unsolved-segment" id="unsolvedSegment"></div>
       </div>
       <div class="progress-stats">
-        <span id="percentSolved" class="percent-text">0% solved</span>
-        <span id="overallSolvedText" class="overall-text">0/0 Solved</span>
+        <div class="progress-stats-container">
+          <div class="progress-stat-item">
+            <span id="percentSolved" class="percent-text">0% solved</span>
+          </div>
+          <div class="progress-stat-item">
+            <span id="sectionsSolvedText" class="sections-text">0/0 Sections Completed</span>
+          </div>
+          <div class="progress-stat-item">
+            <span id="overallSolvedText" class="overall-text">0/0 Solved</span>
+          </div>
+        </div>
       </div>
       <div class="difficulty-breakdown">
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-          <div style="text-align: center;">
+        <div class="difficulty-stats-container">
+          <div class="difficulty-stat-item">
             <div id="easyStats" class="diff-easy">Easy: 0/0</div>
-            <div class="unique-count easy-unique" style="opacity: 0.7;">(0 unique)</div>
+            <div class="unique-count easy-unique">(0 unique)</div>
           </div>
-          <div style="text-align: center;">
+          <div class="difficulty-stat-item">
             <div id="mediumStats" class="diff-medium">Medium: 0/0</div>
-            <div class="unique-count medium-unique" style="opacity: 0.7;">(0 unique)</div>
+            <div class="unique-count medium-unique">(0 unique)</div>
           </div>
-          <div style="text-align: center;">
+          <div class="difficulty-stat-item">
             <div id="hardStats" class="diff-hard">Hard: 0/0</div>
-            <div class="unique-count hard-unique" style="opacity: 0.7;">(0 unique)</div>
+            <div class="unique-count hard-unique">(0 unique)</div>
           </div>
         </div>
       </div>
@@ -541,6 +552,52 @@ function updateGlobalRectBar() {
       totalUnique.textContent = `Unique Problems: ${uniqueProblems.size}`;
       uniqueBreakdown.textContent = `(E: ${uniqueEasy.size}, M: ${uniqueMedium.size}, H: ${uniqueHard.size})`;
     }
+  }
+
+  // Update sections solved count
+  updateSectionsSolvedCount();
+}
+
+/***************************************************************
+ * UPDATE SECTIONS SOLVED COUNT
+ ***************************************************************/
+function updateSectionsSolvedCount() {
+  const collapsibles = document.querySelectorAll('.collapsible');
+  let totalSections = 0;
+  let completedSections = 0;
+
+  collapsibles.forEach(sectionElem => {
+    const sectionId = sectionElem.getAttribute('id');
+    if (!sectionId) return;
+
+    // Check if this is a main section (not a subsection)
+    if (!sectionElem.classList.contains('subsection-collapsible')) {
+      totalSections++;
+
+      // Count total problems and solved problems in this section
+      const rows = sectionElem.querySelectorAll('tbody tr');
+      let totalProblems = 0;
+      let solvedProblems = 0;
+
+      rows.forEach(row => {
+        totalProblems++;
+        const doneIcon = row.querySelector('.done-icon');
+        if (doneIcon && doneIcon.getAttribute('data-solved') === 'true') {
+          solvedProblems++;
+        }
+      });
+
+      // Consider section completed if all problems are solved
+      if (totalProblems > 0 && solvedProblems === totalProblems) {
+        completedSections++;
+      }
+    }
+  });
+
+  // Update the sections solved text
+  const sectionsSolvedElem = document.getElementById('sectionsSolvedText');
+  if (sectionsSolvedElem) {
+    sectionsSolvedElem.textContent = `${completedSections}/${totalSections} Sections Completed`;
   }
 }
 
@@ -729,7 +786,7 @@ function generateAccordionForSection(sec) {
             </div>
           </div>
           <div class="collapsible-body">
-            ${generateProblemsTable(sec.problems, sectionId)}
+            ${currentSection === 'lld' ? generateProblemsTableLLD(sec.problems, sectionId, sec.problems.length > 5) : generateProblemsTable(sec.problems, sectionId, sec.problems.length > 5)}
           </div>
         </li>
       </ul>
@@ -786,7 +843,7 @@ function generateSubsectionCollapsible(subsection) {
         </div>
       </div>
       <div class="collapsible-body subsection-body">
-        ${generateProblemsTable(subsection.problems, subsecTitle)}
+        ${currentSection === 'lld' ? generateProblemsTableLLD(subsection.problems, subsecTitle, totalProblems > 5) : generateProblemsTable(subsection.problems, subsecTitle, totalProblems > 5)}
       </div>
     </li>
   `;
@@ -795,7 +852,7 @@ function generateSubsectionCollapsible(subsection) {
 /***************************************************************
  * Problem Table Helper
  ***************************************************************/
-function generateProblemsTable(problemArray, baseId) {
+function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
   return `
       <table class="striped highlight problem-table">
         <thead>
@@ -812,6 +869,7 @@ function generateProblemsTable(problemArray, baseId) {
     const problemId = `${baseId}-${index}`.replace(/'/g, "$");
     // Escape any single quotes in the label to prevent breaking the onclick attribute
     const escapedLabel = problem.label.replace(/'/g, "$");
+    const isLastRow = index === problemArray.length - 1;
 
     return `
               <tr class="${problem.difficulty}">
@@ -837,12 +895,125 @@ function generateProblemsTable(problemArray, baseId) {
                     </i>
                   </div>
                 </td>
-                <td data-label="Status">
+                <td data-label="Status" style="position: relative;">
                   <i class="material-icons done-icon"
                      data-difficulty="${problem.difficulty}"
                      data-id="${problemId}"
                      data-solved="false"
                      onclick="toggleSolved(this)">check_box_outline_blank</i>
+                  ${isLastRow && showCollapseBtn ? `
+                    <button class="subsection-collapse-btn" onclick="smartCollapse(this)" title="Collapse">
+                      <i class="material-icons">keyboard_arrow_up</i>
+                    </button>
+                  ` : ''}
+                </td>
+              </tr>
+            `;
+  }).join('')}
+        </tbody>
+      </table>
+    `;
+}
+
+// Separate function for LLD problems with multiple solutions and videos
+function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false) {
+  return `
+      <table class="striped highlight problem-table lld-table">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Solutions</th>
+            <th>Videos</th>
+            <th>Notes</th>
+            <th>Done</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${problemArray.map((problem, index) => {
+    const problemId = `${baseId}-${index}`.replace(/'/g, "$");
+    // Escape any single quotes in the label to prevent breaking the onclick attribute
+    const escapedLabel = problem.label.replace(/'/g, "$");
+    const isLastRow = index === problemArray.length - 1;
+
+    // Handle multiple solutions with icon + numbered labels
+    let solutionsHtml = "-";
+    if (problem.solutions && Array.isArray(problem.solutions) && problem.solutions.length > 0) {
+      solutionsHtml = `
+        <div class="lld-links-grid">
+          ${problem.solutions.map((solution, idx) => `
+            <a href="${solution.url}" target="_blank" class="lld-resource-btn solution-btn" title="${solution.title}">
+              <i class="material-icons">article</i>
+              <span class="btn-label">Sol${idx + 1}</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    } else if (problem.solution && problem.solution !== "-") {
+      // Consistent fallback for old format
+      solutionsHtml = `
+        <div class="lld-links-grid">
+          <a href="${problem.solution}" target="_blank" class="lld-resource-btn solution-btn" title="Solution">
+            <i class="material-icons">article</i>
+            <span class="btn-label">Sol1</span>
+          </a>
+        </div>
+      `;
+    }
+
+    // Handle multiple YouTube videos with icon + numbered labels
+    let youtubeHtml = "-";
+    if (problem.youtube && Array.isArray(problem.youtube) && problem.youtube.length > 0) {
+      youtubeHtml = `
+        <div class="lld-links-grid">
+          ${problem.youtube.map((video, idx) => `
+            <a href="${video.url}" target="_blank" class="lld-resource-btn video-btn" title="${video.title}">
+              <i class="material-icons">smart_display</i>
+              <span class="btn-label">Vid${idx + 1}</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    } else if (problem.youtube && typeof problem.youtube === 'string' && problem.youtube !== "-") {
+      // Consistent fallback for old format
+      youtubeHtml = `
+        <div class="lld-links-grid">
+          <a href="${problem.youtube}" target="_blank" class="lld-resource-btn video-btn" title="Video Tutorial">
+            <i class="material-icons">smart_display</i>
+            <span class="btn-label">Vid1</span>
+          </a>
+        </div>
+      `;
+    }
+
+    return `
+              <tr class="${problem.difficulty}">
+                <td data-label="Question">
+                  <a href="${problem.question}" target="_blank" class="question-link">${problem.label}</a>
+                </td>
+                <td data-label="Solutions">
+                  ${solutionsHtml}
+                </td>
+                <td data-label="Videos">
+                  ${youtubeHtml}
+                </td>
+                <td data-label="Notes">
+                  <div class="centered-container">
+                    <i class="material-icons notes-icon" onclick="openNotesModal('${problemId}', '${escapedLabel}')">
+                      sticky_note_2
+                    </i>
+                  </div>
+                </td>
+                <td data-label="Status" style="position: relative;">
+                  <i class="material-icons done-icon"
+                     data-difficulty="${problem.difficulty}"
+                     data-id="${problemId}"
+                     data-solved="false"
+                     onclick="toggleSolved(this)">check_box_outline_blank</i>
+                  ${isLastRow && showCollapseBtn ? `
+                    <button class="subsection-collapse-btn" onclick="smartCollapse(this)" title="Collapse">
+                      <i class="material-icons">keyboard_arrow_up</i>
+                    </button>
+                  ` : ''}
                 </td>
               </tr>
             `;
@@ -1148,8 +1319,16 @@ function checkSectionCompletion(icon) {
 
   if (!sectionElement) return;
 
-  // Check if this is a subsection - if so, get the parent section
-  if (sectionElement.classList.contains('subsection-collapsible')) {
+  // Check if this is a subsection
+  const isSubsection = sectionElement.classList.contains('subsection-collapsible');
+
+  // If subsection, also check subsection completion
+  if (isSubsection) {
+    checkSubsectionCompletion(problemRow);
+  }
+
+  // Continue with parent section check (existing code)
+  if (isSubsection) {
     // This is a subsection collapsible, find the parent section
     sectionElement = sectionElement.closest('.collapsible.z-depth-1');
   }
@@ -1177,7 +1356,7 @@ function checkSectionCompletion(icon) {
   console.log(`Solved Problems: ${solvedProblems.length}`);
   console.log(`Should be completed: ${shouldBeCompleted}`);
   console.log(`Is currently completed: ${isCurrentlyCompleted}`);
-  
+
 
   if (shouldBeCompleted && !isCurrentlyCompleted) {
     // Section just became complete
@@ -1188,6 +1367,49 @@ function checkSectionCompletion(icon) {
     // Section is no longer complete
     markSectionAsIncomplete(sectionElement, sectionTitle);
     removeSectionCompletion(sectionId);
+  }
+}
+
+function checkSubsectionCompletion(problemRow) {
+  // Find the specific subsection li element that contains this problem
+  const subsectionLi = problemRow.closest('.subsection-collapsible li');
+  if (!subsectionLi) return;
+
+  // Get subsection header and title
+  const subsectionHeader = subsectionLi.querySelector('.collapsible-header.subsection-header');
+  if (!subsectionHeader) return;
+
+  const subsectionTitle = subsectionHeader.querySelector('.subsection-title')?.textContent?.split('[')[0]?.trim();
+  if (!subsectionTitle) return;
+
+  // Get the subsection ID from the mini-bars data-id
+  const miniBars = subsectionHeader.querySelector('.mini-bars.small');
+  const subsectionId = miniBars?.getAttribute('data-id');
+  if (!subsectionId) return;
+
+  // Count total and solved problems in this specific subsection
+  const allProblems = subsectionLi.querySelectorAll('.done-icon');
+  const solvedProblems = subsectionLi.querySelectorAll('.done-icon[data-solved="true"]');
+
+  const isCurrentlyCompleted = subsectionHeader.classList.contains('subsection-completed');
+  const shouldBeCompleted = allProblems.length > 0 && allProblems.length === solvedProblems.length;
+
+  console.log(`Subsection ID: ${subsectionId}`);
+  console.log(`Subsection Title: ${subsectionTitle}`);
+  console.log(`Total Problems: ${allProblems.length}`);
+  console.log(`Solved Problems: ${solvedProblems.length}`);
+  console.log(`Should be completed: ${shouldBeCompleted}`);
+  console.log(`Is currently completed: ${isCurrentlyCompleted}`);
+
+  if (shouldBeCompleted && !isCurrentlyCompleted) {
+    // Subsection just became complete
+    markSubsectionAsCompleted(subsectionHeader, subsectionTitle);
+    showSubsectionCompletionToast(subsectionTitle);
+    saveSubsectionCompletion(subsectionId, subsectionTitle);
+  } else if (!shouldBeCompleted && isCurrentlyCompleted) {
+    // Subsection is no longer complete
+    markSubsectionAsIncomplete(subsectionHeader, subsectionTitle);
+    removeSubsectionCompletion(subsectionId);
   }
 }
 
@@ -1213,12 +1435,181 @@ function markSectionAsIncomplete(sectionElement, sectionTitle) {
   console.log(`Section "${sectionTitle}" marked as incomplete.`);
 }
 
+function markSubsectionAsCompleted(subsectionHeader, subsectionTitle) {
+  // Add completed class to subsection header
+  subsectionHeader.classList.add('subsection-completed');
+
+  console.log(`Subsection "${subsectionTitle}" marked as completed!`);
+}
+
+function markSubsectionAsIncomplete(subsectionHeader, subsectionTitle) {
+  // Remove completed class from subsection header
+  subsectionHeader.classList.remove('subsection-completed');
+
+  console.log(`Subsection "${subsectionTitle}" marked as incomplete.`);
+}
+
+function showSubsectionCompletionToast(subsectionTitle) {
+  // Show a toast notification for subsection completion
+  M.toast({
+    html: `<i class="material-icons">check_circle</i><span>Subsection: ${subsectionTitle} completed!</span>`,
+    classes: 'subsection-completion-toast',
+    displayLength: 3000
+  });
+}
+
+/***************************************************************
+ * WELCOME MODAL FUNCTIONS
+ ***************************************************************/
+function checkFirstVisit() {
+  const userProfile = getUserProfile();
+  if (!userProfile.hasSeenWelcome) {
+    showWelcomeModal();
+  }
+}
+
+function showWelcomeModal() {
+  const modal = document.getElementById('welcomeModal');
+  const nameInput = document.getElementById('userName');
+
+  if (modal) {
+    modal.classList.add('active');
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+
+    // Start binary rain animation
+    startBinaryRain();
+
+    // Focus on the input field after animation
+    setTimeout(() => {
+      if (nameInput) {
+        nameInput.focus();
+      }
+    }, 600);
+
+    // Add enter key listener for the input (only once)
+    if (nameInput && !nameInput.hasEventListener) {
+      nameInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          saveUserName();
+        }
+      });
+      nameInput.hasEventListener = true;
+    }
+
+    // Add click outside to close (but encourage name entry)
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        // Don't close immediately, show a gentle reminder
+        const nameInput = document.getElementById('userName');
+        if (nameInput) {
+          nameInput.style.borderBottomColor = 'rgba(255, 255, 255, 0.8)';
+          nameInput.placeholder = 'Please enter your name or just click Start My Journey for "Coder"';
+          nameInput.focus();
+
+          setTimeout(() => {
+            nameInput.style.borderBottomColor = 'rgba(255, 255, 255, 0.3)';
+            nameInput.placeholder = 'Enter your name or leave empty for \'Coder\'';
+          }, 3000);
+        }
+      }
+    });
+  }
+}
+
+function hideWelcomeModal() {
+  const modal = document.getElementById('welcomeModal');
+  if (modal) {
+    modal.classList.remove('active');
+    // Restore body scroll
+    document.body.style.overflow = '';
+    // Stop binary rain animation
+    stopBinaryRain();
+  }
+}
+
+function saveUserName() {
+  const nameInput = document.getElementById('userName');
+  let name = nameInput ? nameInput.value.trim() : '';
+
+  // If no name provided, use default "Coder"
+  if (name === '') {
+    name = 'Coder';
+  }
+
+  // Sanitize the name (remove any potentially harmful characters)
+  const sanitizedName = name.replace(/[<>]/g, '').substring(0, 50);
+
+  // Save user profile
+  const userProfile = {
+    name: sanitizedName,
+    hasSeenWelcome: true,
+    firstVisit: new Date().toISOString()
+  };
+
+  localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+  // Hide the modal
+  hideWelcomeModal();
+
+  // Show a welcome toast
+  if (typeof M !== 'undefined' && M.toast) {
+    M.toast({
+      html: `<span class="success-toast">Welcome to Algo Tracker, ${sanitizedName}! 🎉</span>`,
+      classes: 'rounded green',
+      displayLength: 4000
+    });
+  }
+}
+
+function getUserProfile() {
+  try {
+    const stored = localStorage.getItem('userProfile');
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (error) {
+    console.error('Error loading user profile:', error);
+  }
+
+  // Return default profile for new users
+  return {
+    name: '',
+    hasSeenWelcome: false,
+    firstVisit: null
+  };
+}
+
+function getUserName() {
+  const userProfile = getUserProfile();
+  return userProfile.name || '';
+}
+
+// Temporary test function - remove in production
+window.testWelcomeModal = function() {
+  console.log('Manual test of welcome modal');
+  showWelcomeModal();
+};
+
 function showCongratulationsBanner(sectionTitle) {
   const banner = document.getElementById('congratulationsBanner');
   const sectionNameSpan = document.getElementById('sectionName');
+  const congratsMessage = document.getElementById('congratsMessage');
+  const congratsTitle = document.getElementById('congratsTitle');
 
-  if (banner && sectionNameSpan) {
+  if (banner && sectionNameSpan && congratsMessage && congratsTitle) {
     sectionNameSpan.textContent = sectionTitle;
+
+    // Personalize the message if user name is available
+    const userName = getUserName();
+    if (userName) {
+      congratsTitle.textContent = `Congratulations, ${userName}!`;
+      congratsMessage.innerHTML = `Great job! You completed <strong>${sectionTitle}</strong>. Keep up the excellent work! 🎉`;
+    } else {
+      congratsTitle.textContent = 'Congratulations!';
+      congratsMessage.innerHTML = `You completed <strong>${sectionTitle}</strong>. Great going!`;
+    }
+
     banner.classList.add('active');
     // Prevent body scroll when banner is open
     document.body.style.overflow = 'hidden';
@@ -1263,6 +1654,30 @@ function removeSectionCompletion(sectionId) {
   }
 }
 
+function saveSubsectionCompletion(subsectionId, subsectionTitle) {
+  try {
+    const completedSubsections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSubsections`) || '{}');
+    completedSubsections[subsectionId] = {
+      title: subsectionTitle,
+      completedAt: new Date().toISOString()
+    };
+    localStorage.setItem(`${currentSection}CompletedSubsections`, JSON.stringify(completedSubsections));
+  } catch (error) {
+    console.error('Error saving subsection completion:', error);
+  }
+}
+
+function removeSubsectionCompletion(subsectionId) {
+  try {
+    const completedSubsections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSubsections`) || '{}');
+    delete completedSubsections[subsectionId];
+    localStorage.setItem(`${currentSection}CompletedSubsections`, JSON.stringify(completedSubsections));
+    console.log(`Subsection completion removed for: ${subsectionId}`);
+  } catch (error) {
+    console.error('Error removing subsection completion:', error);
+  }
+}
+
 function loadSectionCompletions() {
   try {
     const completedSections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSections`) || '{}');
@@ -1276,6 +1691,95 @@ function loadSectionCompletions() {
     });
   } catch (error) {
     console.error('Error loading section completions:', error);
+  }
+}
+
+function loadSubsectionCompletions() {
+  try {
+    const completedSubsections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSubsections`) || '{}');
+
+    Object.keys(completedSubsections).forEach(subsectionId => {
+      // Find the subsection header by looking for mini-bars with matching data-id
+      const subsectionHeader = document.querySelector(`.mini-bars.small[data-id="${subsectionId}"]`)?.closest('.collapsible-header.subsection-header');
+      if (subsectionHeader) {
+        const subsectionData = completedSubsections[subsectionId];
+        markSubsectionAsCompleted(subsectionHeader, subsectionData.title);
+      }
+    });
+  } catch (error) {
+    console.error('Error loading subsection completions:', error);
+  }
+}
+
+/***************************************************************
+ * SMART COLLAPSE FUNCTIONALITY
+ ***************************************************************/
+function smartCollapse(button) {
+  // Check if this is a subsection or regular section
+  const subsectionLi = button.closest('.subsection-collapsible li');
+
+  if (subsectionLi) {
+    // This is a subsection - collapse the subsection and scroll to main section
+    collapseSubsection(button);
+  } else {
+    // This is a regular section - collapse the section and scroll to section header
+    collapseRegularSection(button);
+  }
+}
+
+function collapseSubsection(button) {
+  // Find the subsection li element that contains this button
+  const subsectionLi = button.closest('.subsection-collapsible li');
+  if (!subsectionLi) return;
+
+  // Find the parent section header for scrolling
+  const parentSection = subsectionLi.closest('.collapsible.z-depth-1');
+  const sectionHeader = parentSection?.querySelector('.collapsible-header.main-collapsible-header');
+  if (!sectionHeader) return;
+
+  // Find the parent subsection collapsible
+  const subsectionCollapsible = subsectionLi.closest('.subsection-collapsible');
+  if (!subsectionCollapsible) return;
+
+  // Get the index of this subsection
+  const subsectionIndex = Array.from(subsectionCollapsible.children).indexOf(subsectionLi);
+
+  // Get the Materialize collapsible instance and close this specific subsection
+  const instance = M.Collapsible.getInstance(subsectionCollapsible);
+  if (instance) {
+    instance.close(subsectionIndex);
+
+    // Scroll to the main section header after a short delay to allow collapse animation
+    setTimeout(() => {
+      sectionHeader.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }, 300);
+  }
+}
+
+function collapseRegularSection(button) {
+  // Find the regular section that contains this button
+  const sectionElement = button.closest('.collapsible.z-depth-1');
+  if (!sectionElement) return;
+
+  // Find the section header for scrolling
+  const sectionHeader = sectionElement.querySelector('.collapsible-header');
+  if (!sectionHeader) return;
+
+  // Get the Materialize collapsible instance and close this section
+  const instance = M.Collapsible.getInstance(sectionElement);
+  if (instance) {
+    instance.close(0);
+
+    // Scroll to the section header after a short delay to allow collapse animation
+    setTimeout(() => {
+      sectionHeader.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }, 300);
   }
 }
 
@@ -1344,10 +1848,12 @@ function resetAllProgress() {
         key.includes('SolvedProblems') ||
         key.includes('Notes') ||
         key.includes('CompletedSections') ||
+        key.includes('CompletedSubsections') ||
         key === 'dsaSolvedProblems' || // Legacy key
         key === 'dsaNotess' || // Legacy key
         key === 'sqlSolvedProblems' ||
-        key === 'sqlNotes'
+        key === 'sqlNotes' ||
+        key === 'userProfile' // Include user profile in reset
       )) {
         keysToRemove.push(key);
       }
@@ -1375,6 +1881,11 @@ function resetAllProgress() {
       section.classList.remove('section-completed');
     });
 
+    // Reset all completed subsections
+    document.querySelectorAll('.subsection-completed').forEach(subsection => {
+      subsection.classList.remove('subsection-completed');
+    });
+
     // Clear the notes object
     if (typeof notes !== 'undefined') {
       notes = {};
@@ -1389,9 +1900,9 @@ function resetAllProgress() {
 
     // Show success message
     M.toast({
-      html: '<span class="success-toast">All progress has been reset successfully!</span>',
+      html: '<span class="success-toast">All progress and user data have been reset successfully! Welcome modal will appear on next visit.</span>',
       classes: 'rounded green',
-      displayLength: 3000
+      displayLength: 4000
     });
 
     console.log('Progress reset completed. Removed keys:', keysToRemove);
@@ -1580,8 +2091,8 @@ function showFirstCheckboxTooltip() {
   refreshCount++;
   localStorage.setItem('refreshCount', refreshCount);
 
-  // Show tooltip only every 7th refresh
-  if (refreshCount % 7 !== 0) {
+  // Show tooltip only every 10th refresh
+  if (refreshCount > 5 && refreshCount % 10 !== 0) {
     return;
   }
 
@@ -1663,11 +2174,11 @@ function showFirstCheckboxTooltip() {
         if (instance) {
           instance.close(0);
         }
-      }, 500);
-    }, 4000);
+      }, 300);
+    }, 3000);
 
     // Reset refresh count if it gets too high (optional)
-    if (refreshCount > 150) {
+    if (refreshCount > 400) {
       localStorage.setItem('refreshCount', '0');
     }
   }, 500);
@@ -1699,6 +2210,75 @@ function fixMobileAlignment() {
         }
       });
     });
+  }
+}
+
+/***************************************************************
+ * BINARY RAIN ANIMATION FUNCTIONS
+ ***************************************************************/
+let binaryRainInterval;
+let binaryRainActive = false;
+
+function startBinaryRain() {
+  const binaryRainContainer = document.getElementById('binaryRain');
+  if (!binaryRainContainer) return;
+
+  binaryRainActive = true;
+
+  // Clear any existing rain
+  binaryRainContainer.innerHTML = '';
+
+  // Create fewer columns for better performance (every 60px instead of 20px)
+  const numberOfColumns = Math.floor(window.innerWidth / 60);
+
+  for (let i = 0; i < numberOfColumns; i++) {
+    createBinaryColumn(binaryRainContainer, i);
+  }
+}
+
+function createBinaryColumn(container, columnIndex) {
+  const column = document.createElement('div');
+  column.className = 'binary-column';
+
+  // Generate shorter rain of 0s and 1s for better performance
+  const binaryLength = Math.floor(Math.random() * 15) + 10; // Reduced from 40+30 to 15+10
+  let binaryString = '';
+  for (let i = 0; i < binaryLength; i++) {
+    binaryString += Math.random() > 0.5 ? '1' : '0';
+    if (i % 1 === 0 && i > 0) binaryString += '<br>'; // Each digit on new line
+  }
+
+  column.innerHTML = binaryString;
+  column.style.left = `${columnIndex * 60}px`; // Increased spacing from 20px to 60px
+  column.style.animationDuration = `${Math.random() * 3 + 6}s`; // Reduced from 8-12s to 6-9s
+  column.style.animationDelay = `${Math.random() * 3}s`;
+
+  container.appendChild(column);
+
+  // Remove column after animation completes (shorter timeout for better performance)
+  setTimeout(() => {
+    if (column.parentNode) {
+      column.parentNode.removeChild(column);
+    }
+  }, 12000); // Reduced from 15000 to 12000
+
+  // Create new column to replace this one (longer interval to reduce load)
+  setTimeout(() => {
+    if (binaryRainActive && container.parentNode && container.parentNode.classList.contains('active')) {
+      createBinaryColumn(container, columnIndex);
+    }
+  }, Math.random() * 3000 + 5000); // Increased from 2000+3000 to 3000+5000
+}
+
+function stopBinaryRain() {
+  binaryRainActive = false;
+  const binaryRainContainer = document.getElementById('binaryRain');
+  if (binaryRainContainer) {
+    binaryRainContainer.innerHTML = '';
+  }
+  if (binaryRainInterval) {
+    clearInterval(binaryRainInterval);
+    binaryRainInterval = null;
   }
 }
 
@@ -1796,63 +2376,8 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       problemData = data;
 
-      // Reset Sets before counting
-      uniqueProblems.clear();
-      uniqueEasy.clear();
-      uniqueMedium.clear();
-      uniqueHard.clear();
-
-      // Count totals and track unique problems
-      data.sections.forEach(section => {
-        if (section.problems) {
-          section.problems.forEach(problem => {
-            uniqueProblems.add(problem.label);
-            if (problem.difficulty === 'easy') {
-              totalEasy++;
-              uniqueEasy.add(problem.label);
-            }
-            if (problem.difficulty === 'medium') {
-              totalMedium++;
-              uniqueMedium.add(problem.label);
-            }
-            if (problem.difficulty === 'hard') {
-              totalHard++;
-              uniqueHard.add(problem.label);
-            }
-          });
-        }
-        if (section.subsections) {
-          section.subsections.forEach(subsec => {
-            subsec.problems.forEach(problem => {
-              uniqueProblems.add(problem.label);
-              if (problem.difficulty === 'easy') {
-                totalEasy++;
-                uniqueEasy.add(problem.label);
-              }
-              if (problem.difficulty === 'medium') {
-                totalMedium++;
-                uniqueMedium.add(problem.label);
-              }
-              if (problem.difficulty === 'hard') {
-                totalHard++;
-                uniqueHard.add(problem.label);
-              }
-            });
-          });
-        }
-      });
-
-      // console.log('First load complete');
-      // console.log('Unique problems:', {
-      //   totalProblems: totalEasy + totalMedium + totalHard,
-      //   totalUnique: uniqueProblems.size,
-      //   totalEasy: totalEasy,
-      //   totalMedium: totalMedium,
-      //   totalHard: totalHard,
-      //   uniqueEasy: uniqueEasy.size,
-      //   uniqueMedium: uniqueMedium.size,
-      //   uniqueHard: uniqueHard.size
-      // });
+      // Count unique problems
+      countUniqueProblems(data);
 
       renderSections(data);
 
@@ -1864,8 +2389,14 @@ document.addEventListener('DOMContentLoaded', function () {
       buildRectBar();
       loadProgress();
       loadSectionCompletions();
+      loadSubsectionCompletions();
       updateGlobalRectBar();
       updateSectionProgress();
+
+      // Check if this is the user's first visit and show welcome modal
+      setTimeout(() => {
+        checkFirstVisit();
+      }, 1000);
     })
     .catch(err => {
       console.error('Error loading problems:', err);
@@ -1938,11 +2469,21 @@ document.addEventListener('DOMContentLoaded', function () {
     e.preventDefault();
     switchSection('leetcode150');
   });
+  //chandan
+  // document.getElementById('sqlLink').addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   switchSection('sql');
+  // });
 
-  document.getElementById('sqlLink').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('sql');
-  });
+  // document.getElementById('lldLink').addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   switchSection('lld');
+  // });
+
+  // document.getElementById('hldLink').addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   switchSection('hld');
+  // });
 
   // Add click handlers for mobile navigation
   document.getElementById('dsaLinkMobile').addEventListener('click', (e) => {
@@ -1963,11 +2504,24 @@ document.addEventListener('DOMContentLoaded', function () {
     updateMobileNavActive('leetcode150LinkMobile');
   });
 
-  document.getElementById('sqlLinkMobile').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('sql');
-    updateMobileNavActive('sqlLinkMobile');
-  });
+  // chandan
+  // document.getElementById('sqlLinkMobile').addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   switchSection('sql');
+  //   updateMobileNavActive('sqlLinkMobile');
+  // });
+
+  // document.getElementById('lldLinkMobile').addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   switchSection('lld');
+  //   updateMobileNavActive('lldLinkMobile');
+  // });
+
+  // document.getElementById('hldLinkMobile').addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   switchSection('hld');
+  //   updateMobileNavActive('hldLinkMobile');
+  // });
 
   /* do not remove this yet, we will need it later
   document.getElementById('interviewsLink').addEventListener('click', (e) => {
@@ -2067,6 +2621,88 @@ function toggleSections(expand) {
   });
 }
 
+/***************************************************************
+ * COUNT UNIQUE PROBLEMS
+ * Counts total and unique problems from the data
+ ***************************************************************/
+function countUniqueProblems(data) {
+  // Reset counters and sets
+  totalEasy = 0;
+  totalMedium = 0;
+  totalHard = 0;
+  uniqueProblems.clear();
+  uniqueEasy.clear();
+  uniqueMedium.clear();
+  uniqueHard.clear();
+
+  // Count totals and track unique problems
+  data.sections.forEach(section => {
+    if (section.problems) {
+      section.problems.forEach(problem => {
+        // Use question URL as the unique identifier
+        const questionUrl = problem.question;
+        
+        // Skip problems without a valid URL
+        if (!questionUrl || questionUrl === '-') return;
+        
+        // Extract the base URL without query parameters
+        const baseUrl = questionUrl.split('?')[0];
+        
+        uniqueProblems.add(baseUrl);
+        if (problem.difficulty === 'easy') {
+          totalEasy++;
+          uniqueEasy.add(baseUrl);
+        }
+        if (problem.difficulty === 'medium') {
+          totalMedium++;
+          uniqueMedium.add(baseUrl);
+        }
+        if (problem.difficulty === 'hard') {
+          totalHard++;
+          uniqueHard.add(baseUrl);
+        }
+      });
+    }
+    if (section.subsections) {
+      section.subsections.forEach(subsec => {
+        subsec.problems.forEach(problem => {
+          // Use question URL as the unique identifier
+          const questionUrl = problem.question;
+          
+          // Skip problems without a valid URL
+          if (!questionUrl || questionUrl === '-') return;
+          
+          // Extract the base URL without query parameters
+          const baseUrl = questionUrl.split('?')[0];
+          
+          uniqueProblems.add(baseUrl);
+          if (problem.difficulty === 'easy') {
+            totalEasy++;
+            uniqueEasy.add(baseUrl);
+          }
+          if (problem.difficulty === 'medium') {
+            totalMedium++;
+            uniqueMedium.add(baseUrl);
+          }
+          if (problem.difficulty === 'hard') {
+            totalHard++;
+            uniqueHard.add(baseUrl);
+          }
+        });
+      });
+    }
+  });
+
+  // Optional: Log counts for debugging
+  console.log('Problem counts:', {
+    totalProblems: totalEasy + totalMedium + totalHard,
+    totalUnique: uniqueProblems.size,
+    uniqueEasy: uniqueEasy.size,
+    uniqueMedium: uniqueMedium.size,
+    uniqueHard: uniqueHard.size
+  });
+}
+
 // Function to switch between sections
 function switchSection(section) {
   // Update active nav link (desktop)
@@ -2095,16 +2731,6 @@ function switchSection(section) {
 
   // Clear existing content
   document.getElementById('sections').innerHTML = '';
-
-  // Reset all counters and sets before loading new data
-  totalEasy = 0;
-  totalMedium = 0;
-  totalHard = 0;
-  uniqueProblems.clear();
-  uniqueEasy.clear();
-  uniqueMedium.clear();
-  uniqueHard.clear();
-
   // Load appropriate data
   const dataFile = `${section}-problems.json`;
 
@@ -2119,45 +2745,8 @@ function switchSection(section) {
     .then(data => {
       problemData = data;
 
-      // Count totals and track unique problems
-      data.sections.forEach(section => {
-        if (section.problems) {
-          section.problems.forEach(problem => {
-            uniqueProblems.add(problem.label);
-            if (problem.difficulty === 'easy') {
-              totalEasy++;
-              uniqueEasy.add(problem.label);
-            }
-            if (problem.difficulty === 'medium') {
-              totalMedium++;
-              uniqueMedium.add(problem.label);
-            }
-            if (problem.difficulty === 'hard') {
-              totalHard++;
-              uniqueHard.add(problem.label);
-            }
-          });
-        }
-        if (section.subsections) {
-          section.subsections.forEach(subsec => {
-            subsec.problems.forEach(problem => {
-              uniqueProblems.add(problem.label);
-              if (problem.difficulty === 'easy') {
-                totalEasy++;
-                uniqueEasy.add(problem.label);
-              }
-              if (problem.difficulty === 'medium') {
-                totalMedium++;
-                uniqueMedium.add(problem.label);
-              }
-              if (problem.difficulty === 'hard') {
-                totalHard++;
-                uniqueHard.add(problem.label);
-              }
-            });
-          });
-        }
-      });
+      // Count unique problems
+      countUniqueProblems(data);
 
       // Build and update UI
       buildRectBar();
@@ -2166,6 +2755,7 @@ function switchSection(section) {
       initializeCheckboxes();
       loadProgress();
       loadSectionCompletions();
+      loadSubsectionCompletions();
       updateGlobalRectBar();
       updateSectionProgress();
     })

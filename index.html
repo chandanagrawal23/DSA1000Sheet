@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Algo Tracker</title>
+  <title>Algo Tracker - Master Data Structures & Algorithms | DSA Practice Platform</title>
+  <meta name="description" content="Master Data Structures & Algorithms with Algo Tracker. Practice 800+ DSA problems, track progress, get C++ solutions, and prepare for coding interviews. Includes Blind75, LeetCode150, SQL, LLD & HLD." />
+  <meta name="keywords" content="DSA, Data Structures, Algorithms, Coding Interview, LeetCode, Programming Practice, C++, Blind75, SQL, System Design" />
+  <meta name="author" content="Chandan Agrawal" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://algotracker.in/" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Algo Tracker - Master Data Structures & Algorithms" />
+  <meta property="og:description" content="Practice 800+ DSA problems, track your progress, and master coding interviews with organized problems and C++ solutions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://algotracker.in/" />
+  <meta property="og:image" content="https://algotracker.in/favicon.png" />
+  <meta property="og:site_name" content="Algo Tracker" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Algo Tracker - Master Data Structures & Algorithms" />
+  <meta name="twitter:description" content="Practice 800+ DSA problems, track your progress, and master coding interviews." />
+  <meta name="twitter:image" content="https://algotracker.in/favicon.png" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="theme-color" content="#1976d2" />
+  <meta name="application-name" content="Algo Tracker" />
+  
 
   <!-- Materialize CSS -->
   <link
@@ -127,7 +151,25 @@
     </div>
   </nav>
 
-  <!-- Progress Section -->
+  <!-- Main Content with SEO Structure -->
+  <main>
+    <!-- Hero Section for SEO -->
+    <section class="hero-section" style="display: none;">
+      <div class="container">
+        <h1>Algo Tracker - Master Data Structures & Algorithms</h1>
+        <p>Practice and track your progress through 800+ carefully curated DSA problems. Get C++ solutions, prepare for coding interviews with Blind75, LeetCode150, SQL, and System Design problems.</p>
+        <div class="features">
+          <span>✓ 800+ DSA Problems</span>
+          <span>✓ Progress Tracking</span>
+          <span>✓ C++ Solutions</span>
+          <span>✓ Interview Preparation</span>
+          <span>✓ Blind75 & LeetCode150</span>
+          <span>✓ SQL & System Design</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress Section -->
   <div id="rectChartContainer" class="rect-chart-container">
     <!-- The progress card is inserted by script.js -->
   </div>
@@ -158,7 +200,8 @@
 </div>
 
 <!-- Go to top button -->
-<a id="go-to-top-button"></a> 
+<a id="go-to-top-button"></a>
+</main>
 
 
   <!-- Modern Footer -->
@@ -226,6 +269,29 @@
     </div>
   </div>
 
+  <!-- Welcome Modal -->
+  <div id="welcomeModal" class="welcome-modal">
+    <div class="binary-rain" id="binaryRain"></div>
+    <div class="modal-content welcome-content">
+      <div class="welcome-header">
+        <div class="welcome-icon">
+          <i class="material-icons">waving_hand</i>
+        </div>
+        <h2>Welcome to Algo Tracker!</h2>
+        <p>Let's personalize your coding journey</p>
+      </div>
+      <div class="welcome-body">
+        <div class="input-field">
+          <label for="userName">What should we call you?</label>
+          <input type="text" id="userName" placeholder="Enter your name or leave empty for 'Coder'" maxlength="50">
+        </div>
+      </div>
+      <div class="welcome-footer">
+        <button onclick="saveUserName()" class="btn-welcome-save">Start My Journey</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Section Completion Congratulations Banner -->
   <div id="congratulationsBanner" class="congratulations-banner">
     <div class="banner-content celebration-content">
@@ -242,6 +308,38 @@
       </div>
     </div>
   </div>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Algo Tracker",
+    "description": "Master Data Structures & Algorithms with 800+ practice problems, progress tracking, and interview preparation resources.",
+    "url": "https://algotracker.in",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Chandan Agrawal",
+      "url": "https://linkedin.com/in/chandanagrawal23"
+    },
+    "featureList": [
+      "800+ DSA Problems",
+      "Progress Tracking",
+      "C++ Solutions",
+      "Blind75 Problems",
+      "LeetCode150 Problems",
+      "SQL Practice",
+      "System Design (LLD & HLD)"
+    ]
+  }
+  </script>
 
   <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
