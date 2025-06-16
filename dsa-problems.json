@@ -2958,19 +2958,19 @@
             {
               "label": "Minimum Cost for Tickets",
               "question": "https://leetcode.com/problems/minimum-cost-for-tickets/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/MinimumCostForTickets.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Partition Array for Maximum Sum",
               "question": "https://leetcode.com/problems/partition-array-for-maximum-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/PartitionArrayForMaximumSum.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Filling Bookcase Shelves",
               "question": "https://leetcode.com/problems/filling-bookcase-shelves/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/FillingBookcaseShelves.cpp",
               "difficulty": "medium"
             },
             {
@@ -3035,7 +3035,7 @@
             {
               "label": "Longest Increasing Subsequence",
               "question": "https://leetcode.com/problems/longest-increasing-subsequence/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/LongestIncreasingSubsequence_usingDP.cpp",
               "difficulty": "medium"
             },
             {
