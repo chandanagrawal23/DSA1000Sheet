@@ -2946,13 +2946,13 @@
             {
               "label": "Coin Change",
               "question": "https://leetcode.com/problems/coin-change/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/CoinChange.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Delete and Earn",
               "question": "https://leetcode.com/problems/delete-and-earn/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/DeleteAndEarn.cpp",
               "difficulty": "medium"
             },
             {
