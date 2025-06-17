@@ -174,25 +174,67 @@
     <!-- The progress card is inserted by script.js -->
   </div>
 
-  <!-- Search and Controls Container -->
-  <div class="container">
-    <div class="search-and-controls">
-        <div class="search-container">
-            <span class="search-icon material-icons">search</span>
-            <input type="text" id="searchBox" class="search-input" placeholder="Search problems...">
+  <!-- Unified Control Bar -->
+  <div class="unified-control-bar-wrapper">
+    <div class="unified-control-bar">
+        <div class="control-item search-item">
+            <input type="text" id="searchBox" class="control-input" placeholder="Search problems...">
+            <span class="control-icon material-icons">search</span>
         </div>
-        <div class="section-controls">
+        <div class="control-item filter-item">
+            <div class="multi-select-container">
+                <div class="multi-select-display" id="filterDisplay">
+                    <span class="filter-text">Filter By</span>
+                    <span class="selected-count" id="selectedCount"></span>
+                </div>
+                <span class="control-icon material-icons">filter_list</span>
+                <div class="multi-select-dropdown" id="filterDropdown">
+                    <div class="filter-row">
+                        <button class="filter-toggle" data-value="easy" id="filter-easy">
+                            <span class="difficulty-badge easy">Easy</span>
+                        </button>
+                        <button class="filter-toggle" data-value="medium" id="filter-medium">
+                            <span class="difficulty-badge medium">Medium</span>
+                        </button>
+                        <button class="filter-toggle" data-value="hard" id="filter-hard">
+                            <span class="difficulty-badge hard">Hard</span>
+                        </button>
+                    </div>
+                    <div class="filter-row">
+                        <button class="filter-toggle" data-value="completed" id="filter-completed">
+                            <span class="status-badge completed">Done</span>
+                        </button>
+                        <button class="filter-toggle" data-value="incomplete" id="filter-incomplete">
+                            <span class="status-badge incomplete">Todo</span>
+                        </button>
+                        <button class="filter-clear-btn" id="clearFilters">
+                            <i class="material-icons">clear_all</i>
+                            <span>Clear</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="control-item button-item">
+            <button class="control-button random-btn tooltipped" id="randomButton" data-position="top" data-tooltip="🎲 Feeling lucky? Let's pick a random unsolved problem!">
+                <i class="material-icons">shuffle</i>
+                <span>Random</span>
+            </button>
+        </div>
+        <div class="control-item button-item">
             <button class="control-button collapse-all">
                 <i class="material-icons">unfold_less</i>
                 <span>Collapse All</span>
             </button>
+        </div>
+        <div class="control-item button-item">
             <button class="control-button expand-all">
                 <i class="material-icons">unfold_more</i>
                 <span>Expand All</span>
             </button>
         </div>
     </div>
-</div>
+  </div>
 
 <!-- Rest of the content -->
 <div class="container" id="sections">

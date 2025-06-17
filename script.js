@@ -268,6 +268,273 @@ function loadProgress() {
 }
 
 /***************************************************************
+ * MULTI-SELECT FILTER FUNCTIONS
+ ***************************************************************/
+function getSelectedFilters() {
+  const activeToggles = document.querySelectorAll('#filterDropdown .filter-toggle.active');
+  const filters = {
+    difficulties: [],
+    statuses: []
+  };
+
+  activeToggles.forEach(toggle => {
+    const value = toggle.getAttribute('data-value');
+    if (['easy', 'medium', 'hard'].includes(value)) {
+      filters.difficulties.push(value);
+    } else if (['completed', 'incomplete'].includes(value)) {
+      filters.statuses.push(value);
+    }
+  });
+
+  return filters;
+}
+
+function updateFilterDisplay() {
+  const selectedFilters = getSelectedFilters();
+  const totalSelected = selectedFilters.difficulties.length + selectedFilters.statuses.length;
+  const countElement = document.getElementById('selectedCount');
+
+  if (totalSelected > 0) {
+    countElement.textContent = `${totalSelected} selected`;
+    countElement.style.display = 'inline-block';
+  } else {
+    countElement.style.display = 'none';
+  }
+}
+
+function clearAllFilters() {
+  // Clear all active filter toggles
+  const toggleButtons = document.querySelectorAll('#filterDropdown .filter-toggle');
+  toggleButtons.forEach(toggle => {
+    toggle.classList.remove('active');
+  });
+
+  // Update the display
+  updateFilterDisplay();
+
+  // Clear search box
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.value = '';
+  }
+
+  // Apply the cleared filters
+  filterProblems();
+}
+
+// Save current section's filter state
+function saveFilterState() {
+  if (!currentSection) return;
+
+  const selectedFilters = getSelectedFilters();
+  const searchBox = document.getElementById('searchBox');
+  const searchTerm = searchBox ? searchBox.value : '';
+
+  const filterState = {
+    difficulties: selectedFilters.difficulties,
+    statuses: selectedFilters.statuses,
+    searchTerm: searchTerm
+  };
+
+  localStorage.setItem(`filterState_${currentSection}`, JSON.stringify(filterState));
+}
+
+// Restore filter state for current section
+function restoreFilterState() {
+  if (!currentSection) return;
+
+  const savedState = localStorage.getItem(`filterState_${currentSection}`);
+  if (!savedState) return;
+
+  try {
+    const filterState = JSON.parse(savedState);
+
+    // Clear all current filters first
+    const toggleButtons = document.querySelectorAll('#filterDropdown .filter-toggle');
+    toggleButtons.forEach(toggle => {
+      toggle.classList.remove('active');
+    });
+
+    // Restore difficulty filters
+    filterState.difficulties.forEach(difficulty => {
+      const toggle = document.querySelector(`#filterDropdown .filter-toggle[data-value="${difficulty}"]`);
+      if (toggle) {
+        toggle.classList.add('active');
+      }
+    });
+
+    // Restore status filters
+    filterState.statuses.forEach(status => {
+      const toggle = document.querySelector(`#filterDropdown .filter-toggle[data-value="${status}"]`);
+      if (toggle) {
+        toggle.classList.add('active');
+      }
+    });
+
+    // Restore search term
+    const searchBox = document.getElementById('searchBox');
+    if (searchBox && filterState.searchTerm) {
+      searchBox.value = filterState.searchTerm;
+    }
+
+    // Update display and apply filters
+    updateFilterDisplay();
+    filterProblems();
+
+  } catch (error) {
+    console.error('Error restoring filter state:', error);
+  }
+}
+
+function setupMultiSelectFilter() {
+  const filterDisplay = document.getElementById('filterDisplay');
+  const filterDropdown = document.getElementById('filterDropdown');
+  const clearButton = document.getElementById('clearFilters');
+
+  // Toggle dropdown on click
+  if (filterDisplay) {
+    filterDisplay.addEventListener('click', function(e) {
+      e.stopPropagation();
+      filterDropdown.classList.toggle('active');
+    });
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.multi-select-container')) {
+      filterDropdown.classList.remove('active');
+    }
+  });
+
+  // Handle toggle button clicks
+  const toggleButtons = document.querySelectorAll('#filterDropdown .filter-toggle');
+  toggleButtons.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.toggle('active');
+      updateFilterDisplay();
+      filterProblems();
+      saveFilterState(); // Save filter state when changed
+    });
+  });
+
+  // Handle clear all button
+  if (clearButton) {
+    clearButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleButtons.forEach(toggle => {
+        toggle.classList.remove('active');
+      });
+      updateFilterDisplay();
+      filterProblems();
+    });
+  }
+
+  // Initialize display
+  updateFilterDisplay();
+}
+
+function setupRandomButton() {
+  const randomButton = document.getElementById('randomButton');
+  if (!randomButton) return;
+
+  randomButton.addEventListener('click', function() {
+    openRandomUnsolvedProblem();
+  });
+}
+
+function openRandomUnsolvedProblem() {
+  // Get all unsolved problems
+  const unsolvedProblems = [];
+
+  // Find all problem rows that are not solved
+  const allRows = document.querySelectorAll('tbody tr');
+  allRows.forEach(row => {
+    const doneIcon = row.querySelector('.done-icon');
+    const isCompleted = doneIcon ? doneIcon.getAttribute('data-solved') === 'true' : false;
+
+    if (!isCompleted) {
+      const questionLink = row.querySelector('td a[href]');
+      if (questionLink && questionLink.href) {
+        unsolvedProblems.push({
+          element: row,
+          link: questionLink.href,
+          title: questionLink.textContent,
+          section: row.closest('.collapsible')
+        });
+      }
+    }
+  });
+
+  if (unsolvedProblems.length === 0) {
+    // Show a celebration message if all problems are solved
+    showRandomMessage('🎉 Congratulations! All problems are solved!');
+    return;
+  }
+
+  // Pick a random unsolved problem
+  const randomIndex = Math.floor(Math.random() * unsolvedProblems.length);
+  const randomProblem = unsolvedProblems[randomIndex];
+
+  // Show message with problem info immediately
+  showRandomMessage(`🎯 Random Problem: ${randomProblem.title}`);
+
+  // Open the problem link after 2 seconds of banner being shown
+  setTimeout(() => {
+    window.open(randomProblem.link, '_blank');
+  }, 2000);
+}
+
+function showRandomMessage(message) {
+  // Create or update a temporary message element
+  let messageElement = document.getElementById('randomMessage');
+  if (!messageElement) {
+    messageElement = document.createElement('div');
+    messageElement.id = 'randomMessage';
+    messageElement.style.cssText = `
+      position: fixed;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 16px;
+      z-index: 10000;
+      box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    `;
+    document.body.appendChild(messageElement);
+  }
+
+  messageElement.textContent = message;
+
+  // Show animation
+  setTimeout(() => {
+    messageElement.style.opacity = '1';
+    messageElement.style.transform = 'translateX(-50%) translateY(0)';
+  }, 50);
+
+  // Hide after exactly 3 seconds
+  setTimeout(() => {
+    messageElement.style.opacity = '0';
+    messageElement.style.transform = 'translateX(-50%) translateY(-20px)';
+
+    // Remove element after animation completes
+    setTimeout(() => {
+      if (messageElement.parentNode) {
+        messageElement.parentNode.removeChild(messageElement);
+      }
+    }, 400);
+  }, 3000);
+}
+
+/***************************************************************
  * FILTER PROBLEMS
  ***************************************************************/
 function filterProblems(event) {
@@ -275,7 +542,10 @@ function filterProblems(event) {
   if (!searchBox) return;
 
   const searchTerm = searchBox.value.toLowerCase();
-  console.log('Filtering with search term:', searchTerm);
+
+  // Get selected filters from multi-select
+  const selectedFilters = getSelectedFilters();
+  console.log('Filtering with search term:', searchTerm, 'filters:', selectedFilters);
 
   const sections = document.querySelectorAll('.collapsible');
   const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
@@ -317,10 +587,21 @@ function filterProblems(event) {
             (difficulty === 'medium' && mediumChecked) ||
             (difficulty === 'hard' && hardChecked);
 
+          // Apply difficulty filter
+          const difficultyMatch = selectedFilters.difficulties.length === 0 ||
+            selectedFilters.difficulties.includes(difficulty);
+
+          // Apply status filter
+          const doneIcon = row.querySelector('.done-icon');
+          const isCompleted = doneIcon ? doneIcon.getAttribute('data-solved') === 'true' : false;
+          const statusMatch = selectedFilters.statuses.length === 0 ||
+            (selectedFilters.statuses.includes('completed') && isCompleted) ||
+            (selectedFilters.statuses.includes('incomplete') && !isCompleted);
+
           const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
-          // Only show if both conditions are met
-          if (difficultyEnabled && matchesSearch) {
+          // Only show if all conditions are met
+          if (difficultyEnabled && difficultyMatch && statusMatch && matchesSearch) {
             row.style.display = '';
             hasMatchInSubsection = true;
             hasMatchInSection = true;
@@ -332,7 +613,8 @@ function filterProblems(event) {
         // Handle subsection visibility and expansion
         if (hasMatchInSubsection) {
           subsection.style.display = '';
-          if (searchTerm) {
+          const hasActiveFilters = searchTerm || selectedFilters.difficulties.length > 0 || selectedFilters.statuses.length > 0;
+          if (hasActiveFilters) {
             // First ensure parent section is open
             if (parentInstance) {
               parentInstance.open(0);
@@ -373,10 +655,21 @@ function filterProblems(event) {
           (difficulty === 'medium' && mediumChecked) ||
           (difficulty === 'hard' && hardChecked);
 
+        // Apply difficulty filter
+        const difficultyMatch = selectedFilters.difficulties.length === 0 ||
+          selectedFilters.difficulties.includes(difficulty);
+
+        // Apply status filter
+        const doneIcon = row.querySelector('.done-icon');
+        const isCompleted = doneIcon ? doneIcon.getAttribute('data-solved') === 'true' : false;
+        const statusMatch = selectedFilters.statuses.length === 0 ||
+          (selectedFilters.statuses.includes('completed') && isCompleted) ||
+          (selectedFilters.statuses.includes('incomplete') && !isCompleted);
+
         const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
-        // Only show if both conditions are met
-        if (difficultyEnabled && matchesSearch) {
+        // Only show if all conditions are met
+        if (difficultyEnabled && difficultyMatch && statusMatch && matchesSearch) {
           row.style.display = '';
           hasMatchInSection = true;
         } else {
@@ -388,7 +681,8 @@ function filterProblems(event) {
     // Handle section visibility and expansion
     if (hasMatchInSection) {
       section.style.display = '';
-      if (searchTerm) {
+      const hasActiveFilters = searchTerm || selectedFilters.difficulties.length > 0 || selectedFilters.statuses.length > 0;
+      if (hasActiveFilters) {
         const instance = M.Collapsible.getInstance(section);
         if (instance) {
           instance.open(0);
@@ -399,8 +693,9 @@ function filterProblems(event) {
     }
   });
 
-  // If there's no search term and it's not a checkbox click, collapse all sections
-  if (!searchTerm && !event?.target?.classList.contains('square-check')) {
+  // If there's no search term and no filters, and it's not a checkbox click, collapse all sections
+  const hasActiveFilters = searchTerm || selectedFilters.difficulties.length > 0 || selectedFilters.statuses.length > 0;
+  if (!hasActiveFilters && !event?.target?.classList.contains('square-check')) {
     sections.forEach(section => {
       const instance = M.Collapsible.getInstance(section);
       if (instance) {
@@ -2340,8 +2635,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize mobile menu
   initializeMobileMenu();
 
-  // Initialize section controls
-  initSectionControls();
+
 
   // Initialize reset progress button
   const resetBtn = document.getElementById('resetProgressBtn');
@@ -2396,6 +2690,14 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     console.warn('Search box not found!');
   }
+
+  // Set up multi-select filter
+  setupMultiSelectFilter();
+
+  // Set up random button
+  setupRandomButton();
+
+
 
   // Load problems data
   fetch('dsa-problems.json')
@@ -2615,31 +2917,7 @@ function initializeCheckboxes() {
 }
 
 
-/***************************************************************
- * EXPAND/COLLAPSE SECTION CONTROLS
- ***************************************************************/
-function initSectionControls() {
-  const sectionControls = document.createElement('div');
-  sectionControls.className = 'section-controls';
 
-  sectionControls.innerHTML = `
-    <button class="control-button collapse-all">
-      <i class="material-icons">unfold_less</i><span>Collapse All</span>
-    </button>
-    <button class="control-button expand-all">
-      <i class="material-icons">unfold_more</i><span>Expand All</span>
-    </button>
-  `;
-
-  sectionControls.querySelector('.collapse-all').addEventListener('click', () => toggleSections(false));
-  sectionControls.querySelector('.expand-all').addEventListener('click', () => toggleSections(true));
-
-  // Append the section controls to the dedicated container
-  const controlsContainer = document.querySelector('.section-controls-container');
-  if (controlsContainer) {
-    controlsContainer.appendChild(sectionControls);
-  }
-}
 
 
 function toggleSections(expand) {
@@ -2735,6 +3013,9 @@ function countUniqueProblems(data) {
 
 // Function to switch between sections
 function switchSection(section) {
+  // Save current section's filter state before switching
+  saveFilterState();
+
   // Update active nav link (desktop)
   document.querySelectorAll('.nav-card').forEach(link => {
     link.classList.remove('active');
@@ -2752,12 +3033,10 @@ function switchSection(section) {
 
   // Show the progress bar and controls for DSA and SQL sections
   const rectChartContainer = document.getElementById('rectChartContainer');
-  const searchControls = document.querySelector('.search-and-controls');
-  const sectionControls = document.querySelector('.section-controls');
+  const unifiedControlBarWrapper = document.querySelector('.unified-control-bar-wrapper');
 
   if (rectChartContainer) rectChartContainer.style.display = 'block';
-  if (searchControls) searchControls.style.display = 'flex';
-  if (sectionControls) sectionControls.style.display = 'flex';
+  if (unifiedControlBarWrapper) unifiedControlBarWrapper.style.display = 'block';
 
   // Clear existing content
   document.getElementById('sections').innerHTML = '';
@@ -2788,6 +3067,9 @@ function switchSection(section) {
       loadSubsectionCompletions();
       updateGlobalRectBar();
       updateSectionProgress();
+
+      // Restore filter state for this section
+      restoreFilterState();
     })
     .catch(error => {
       console.error('Error loading data:', error);
@@ -2814,12 +3096,10 @@ function switchSectionInterview(section) {
 
   // Hide the progress bar and controls for interview section
   const rectChartContainer = document.getElementById('rectChartContainer');
-  const searchControls = document.querySelector('.search-and-controls');
-  const sectionControls = document.querySelector('.section-controls');
+  const unifiedControlBarWrapper = document.querySelector('.unified-control-bar-wrapper');
 
   if (rectChartContainer) rectChartContainer.style.display = 'none';
-  if (searchControls) searchControls.style.display = 'none';
-  if (sectionControls) sectionControls.style.display = 'none';
+  if (unifiedControlBarWrapper) unifiedControlBarWrapper.style.display = 'none';
 
   // Clear existing content
   const sectionsDiv = document.getElementById('sections');
