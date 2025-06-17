@@ -2833,6 +2833,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Partition Labels",
+              "question": "https://leetcode.com/problems/partition-labels/description/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PartitionLabels.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Next Greater Element III",
               "question": "https://leetcode.com/problems/next-greater-element-iii/",
               "solution": "-",
