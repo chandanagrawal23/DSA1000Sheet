@@ -50,7 +50,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
   <!-- Custom CSS - Must be loaded last to override Materialize -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2.0" />
 
    <!-- Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J0W3KQNCS7"></script>
@@ -69,85 +69,122 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-content">
-      <div class="logo">
-        <span class="logo-icon">&lt;/&gt;</span>
-        <div class="logo-text">
-          <span class="logo-title">Algo Tracker</span>
-          <span class="logo-subtitle">Track Your Progress</span>
-          <!-- <span class="logo-subtitle-extra">codewithchandan</span> -->
-        </div>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <!-- Logo Section -->
+      <div class="navbar-brand">
+        <a href="index.html" class="brand-link" aria-label="Algo Tracker Home">
+          <div class="brand-icon">
+            <span class="brand-symbol">&lt;/&gt;</span>
+          </div>
+          <div class="brand-text">
+            <h1 class="brand-title">Algo Tracker</h1>
+            <p class="brand-subtitle">Track Your Progress</p>
+          </div>
+        </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="nav-links desktop-nav">
-        <a href="index.html" class="nav-card active tooltipped" id="dsaLink" data-position="bottom" data-tooltip="Prepare DSA from 0 to Hero">
-          <i class="material-icons">code</i>
-          <span>DSA</span>
+      <div class="navbar-nav desktop-nav" role="menubar">
+        <a href="index.html" class="nav-item active" id="dsaLink" role="menuitem"
+           aria-label="DSA - Prepare Data Structures and Algorithms from 0 to Hero">
+          <span class="nav-icon">
+            <i class="material-icons" aria-hidden="true">code</i>
+          </span>
+          <span class="nav-text">DSA</span>
+          <span class="nav-indicator"></span>
         </a>
-        <a href="#" class="nav-card tooltipped" id="blind75Link" data-position="bottom" data-tooltip="Best for 2 week preparation">
-          <i class="material-icons">lightbulb</i>
-          <span>Blind75</span>
+        <a href="#" class="nav-item" id="blind75Link" role="menuitem"
+           aria-label="Blind75 - Best for 2 week preparation">
+          <span class="nav-icon">
+            <i class="material-icons" aria-hidden="true">lightbulb</i>
+          </span>
+          <span class="nav-text">Blind75</span>
+          <span class="nav-indicator"></span>
         </a>
-        <a href="#" class="nav-card tooltipped" id="leetcode150Link" data-position="bottom" data-tooltip="Best for 1-2 months preparation">
-          <i class="material-icons">lightbulb</i>
-          <span>LC150</span>
+        <a href="#" class="nav-item" id="leetcode150Link" role="menuitem"
+           aria-label="LeetCode150 - Best for 1-2 months preparation">
+          <span class="nav-icon">
+            <i class="material-icons" aria-hidden="true">lightbulb</i>
+          </span>
+          <span class="nav-text">LC150</span>
+          <span class="nav-indicator"></span>
         </a>
-        <a href="#" class="nav-card tooltipped" id="sqlLink" data-position="bottom" data-tooltip="Master SQL for interviews">
-          <i class="material-icons">storage</i>
-          <span>SQL</span>
+        <a href="#" class="nav-item" id="sqlLink" role="menuitem"
+           aria-label="SQL - Master SQL for interviews">
+          <span class="nav-icon">
+            <i class="material-icons" aria-hidden="true">storage</i>
+          </span>
+          <span class="nav-text">SQL</span>
+          <span class="nav-indicator"></span>
         </a>
-        <a href="#" class="nav-card tooltipped" id="lldLink" data-position="bottom" data-tooltip="Learn Low Level Design">
-          <i class="material-icons">design_services</i>
-          <span>LLD</span>
+        <a href="#" class="nav-item" id="lldLink" role="menuitem"
+           aria-label="LLD - Learn Low Level Design">
+          <span class="nav-icon">
+            <i class="material-icons" aria-hidden="true">design_services</i>
+          </span>
+          <span class="nav-text">LLD</span>
+          <span class="nav-indicator"></span>
         </a>
-        <a href="#" class="nav-card tooltipped" id="hldLink" data-position="bottom" data-tooltip="Master High Level Design">
-          <i class="material-icons">account_tree</i>
-          <span>HLD</span>
+        <a href="#" class="nav-item" id="hldLink" role="menuitem"
+           aria-label="HLD - Master High Level Design">
+          <span class="nav-icon">
+            <i class="material-icons" aria-hidden="true">account_tree</i>
+          </span>
+          <span class="nav-text">HLD</span>
+          <span class="nav-indicator"></span>
         </a>
       </div>
 
-      <!-- Mobile Hamburger Menu -->
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
+      <!-- Navigation Controls -->
+      <div class="navbar-controls">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="darkModeToggle"
+                aria-label="Toggle dark mode" title="Toggle dark mode">
+          <span class="theme-icon">
+            <i class="material-icons" aria-hidden="true">dark_mode</i>
+          </span>
+        </button>
 
-      <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="material-icons">dark_mode</span>
-      </button>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuToggle"
+                aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
     </div>
 
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav-menu" id="mobileNavMenu">
-      <div class="mobile-nav-content">
-        <a href="index.html" class="mobile-nav-card active" id="dsaLinkMobile">
-          <i class="material-icons">code</i>
-          <span>DSA</span>
-        </a>
-        <a href="#" class="mobile-nav-card" id="blind75LinkMobile">
-          <i class="material-icons">lightbulb</i>
-          <span>Blind75</span>
-        </a>
-        <a href="#" class="mobile-nav-card" id="leetcode150LinkMobile">
-          <i class="material-icons">lightbulb</i>
-          <span>LC150</span>
-        </a>
-        <a href="#" class="mobile-nav-card" id="sqlLinkMobile">
-          <i class="material-icons">storage</i>
-          <span>SQL</span>
-        </a>
-        <a href="#" class="mobile-nav-card" id="lldLinkMobile">
-          <i class="material-icons">design_services</i>
-          <span>LLD</span>
-        </a>
-        <a href="#" class="mobile-nav-card" id="hldLinkMobile">
-          <i class="material-icons">account_tree</i>
-          <span>HLD</span>
-        </a>
-      </div>
+
+    <!-- Simple Mobile Menu Dropdown -->
+    <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+      <a href="index.html" class="mobile-menu-item active" id="dsaLinkMobile">
+        <i class="material-icons">code</i>
+        <span>DSA</span>
+      </a>
+      <a href="#" class="mobile-menu-item" id="blind75LinkMobile">
+        <i class="material-icons">lightbulb</i>
+        <span>Blind75</span>
+      </a>
+      <a href="#" class="mobile-menu-item" id="leetcode150LinkMobile">
+        <i class="material-icons">lightbulb</i>
+        <span>LC150</span>
+      </a>
+      <a href="#" class="mobile-menu-item" id="sqlLinkMobile">
+        <i class="material-icons">storage</i>
+        <span>SQL</span>
+      </a>
+      <a href="#" class="mobile-menu-item" id="lldLinkMobile">
+        <i class="material-icons">design_services</i>
+        <span>LLD</span>
+      </a>
+      <a href="#" class="mobile-menu-item" id="hldLinkMobile">
+        <i class="material-icons">account_tree</i>
+        <span>HLD</span>
+      </a>
     </div>
   </nav>
 
@@ -216,7 +253,7 @@
             </div>
         </div>
         <div class="control-item button-item">
-            <button class="control-button random-btn tooltipped" id="randomButton" data-position="top" data-tooltip="🎲 Feeling lucky? Let's pick a random unsolved problem!">
+            <button class="control-button random-btn tooltipped" id="randomButton" data-tooltip="🎲 Feeling lucky? Let me surprise you with a challenge!" data-position="top">
                 <i class="material-icons">shuffle</i>
                 <span>Random</span>
             </button>
@@ -386,6 +423,6 @@
   <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Custom JS -->
-  <script src="script.js"></script>
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>

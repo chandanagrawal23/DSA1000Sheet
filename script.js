@@ -47,57 +47,74 @@ btn.addEventListener('click', function (e) {
 });
 
 /***************************************************************
- * MOBILE HAMBURGER MENU
+ * MODERN MOBILE NAVIGATION
  ***************************************************************/
 function initializeMobileMenu() {
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const mobileNavMenu = document.getElementById('mobileNavMenu');
+  const mobileMenuDropdown = document.getElementById('mobileMenuDropdown');
 
-  if (mobileMenuToggle && mobileNavMenu) {
-    mobileMenuToggle.addEventListener('click', function() {
-      // Toggle menu visibility
-      mobileNavMenu.classList.toggle('active');
-      mobileMenuToggle.classList.toggle('active');
+  if (mobileMenuToggle && mobileMenuDropdown) {
+    // Toggle dropdown on hamburger click
+    mobileMenuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      this.classList.toggle('active');
+      mobileMenuDropdown.classList.toggle('active');
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!mobileMenuToggle.contains(event.target) && !mobileNavMenu.contains(event.target)) {
-        mobileNavMenu.classList.remove('active');
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.navbar')) {
         mobileMenuToggle.classList.remove('active');
+        mobileMenuDropdown.classList.remove('active');
       }
     });
 
-    // Close menu when clicking on a nav item
-    const mobileNavCards = document.querySelectorAll('.mobile-nav-card');
-    mobileNavCards.forEach(card => {
-      card.addEventListener('click', function() {
-        mobileNavMenu.classList.remove('active');
+    // Close dropdown when clicking on a menu item
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+    mobileMenuItems.forEach(item => {
+      item.addEventListener('click', function() {
         mobileMenuToggle.classList.remove('active');
+        mobileMenuDropdown.classList.remove('active');
       });
     });
 
-    // Handle window resize to close menu on desktop
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 768) {
-        mobileNavMenu.classList.remove('active');
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenuDropdown.classList.contains('active')) {
         mobileMenuToggle.classList.remove('active');
+        mobileMenuDropdown.classList.remove('active');
       }
     });
   }
 }
 
-// Function to update mobile navigation active state
-function updateMobileNavActive(activeId) {
-  // Remove active class from all mobile nav cards
-  document.querySelectorAll('.mobile-nav-card').forEach(card => {
-    card.classList.remove('active');
+// Function to update mobile menu active state
+function updateMobileMenuActive(activeId) {
+  // Remove active class from all mobile menu items
+  document.querySelectorAll('.mobile-menu-item').forEach(item => {
+    item.classList.remove('active');
   });
 
-  // Add active class to the clicked mobile nav card
-  const activeCard = document.getElementById(activeId);
-  if (activeCard) {
-    activeCard.classList.add('active');
+  // Add active class to the clicked mobile menu item
+  const activeItem = document.getElementById(activeId);
+  if (activeItem) {
+    activeItem.classList.add('active');
+  }
+}
+
+
+
+// Function to update desktop navigation active state
+function updateDesktopNavActive(activeId) {
+  // Remove active class from all desktop nav items
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.classList.remove('active');
+  });
+
+  // Add active class to the clicked nav item
+  const activeItem = document.getElementById(activeId);
+  if (activeItem) {
+    activeItem.classList.add('active');
   }
 }
 
@@ -436,11 +453,20 @@ function setupMultiSelectFilter() {
 
 function setupRandomButton() {
   const randomButton = document.getElementById('randomButton');
-  if (!randomButton) return;
+  if (!randomButton) {
+    console.error('Random button not found!');
+    return;
+  }
+
+  console.log('Setting up random button:', randomButton);
+  console.log('Random button position:', randomButton.getBoundingClientRect());
 
   randomButton.addEventListener('click', function() {
     openRandomUnsolvedProblem();
   });
+
+  // Ensure tooltip is set up for the random button
+  setupTooltipForElement(randomButton);
 }
 
 function openRandomUnsolvedProblem() {
@@ -737,6 +763,8 @@ function buildRectBar() {
     sectionTitle = 'SQL';
   } else if (currentSection === 'lld') {
     sectionTitle = 'LLD';
+  } else if (currentSection === 'hld') {
+    sectionTitle = 'HLD';
   } else {
     // Default formatting for other sections
     sectionTitle = currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
@@ -1176,7 +1204,7 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
                 </td>
                 <td data-label="Solution">
                   ${problem.solution && problem.solution !== "-"
-        ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><span style="display:inline-block;">SOLUTION</span></a></div>`
+        ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><i class="fa-brands fa-github github-icon"></i></a></div>`
         : "-"
       }
                 </td>
@@ -2311,98 +2339,190 @@ function initializeCollapsibles() {
  ***************************************************************/
 function setupCustomTooltips() {
   console.log("Setting up custom tooltips...");
-  
+
   // Create a single tooltip element that we'll reuse
   const tooltip = document.createElement('div');
   tooltip.className = 'tooltip';
   tooltip.id = 'custom-tooltip';
   document.body.appendChild(tooltip);
-  
+
   // Get all tooltip elements
   const tooltippedElements = document.querySelectorAll('.tooltipped');
   console.log(`Found ${tooltippedElements.length} tooltipped elements`);
-  
+
   tooltippedElements.forEach(element => {
-    // Get tooltip content from data-tooltip attribute
-    const tooltipContent = element.getAttribute('data-tooltip');
-    console.log(`Element: ${element.id}, tooltip content: ${tooltipContent}`);
-    
-    // Add mouse events
-    element.addEventListener('mouseenter', function(e) {
-      console.log(`Mouse entered ${element.id}`);
-      // Set tooltip content
-      tooltip.textContent = tooltipContent;
-      
-      // Position tooltip based on data-position
-      const position = element.getAttribute('data-position') || 'bottom';
-      positionTooltip(tooltip, element, position);
-      
-      // Show tooltip immediately (removed delay)
-      tooltip.classList.add('visible');
-    });
-    
-    element.addEventListener('mouseleave', function() {
-      console.log(`Mouse left ${element.id}`);
-      // Hide tooltip
-      tooltip.classList.remove('visible');
-    });
+    setupTooltipForElement(element);
   });
 }
 
-// Position the tooltip relative to the target element
-function positionTooltip(tooltip, targetElement, position) {
-  const rect = targetElement.getBoundingClientRect();
-  const tooltipRect = tooltip.getBoundingClientRect();
-  
-  // Default positioning (for bottom)
-  let top = rect.bottom + 10;
-  let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
-  
-  // Adjust based on position
-  switch(position) {
-    case 'top':
-      top = rect.top - tooltipRect.height - 10;
-      // Remove and re-add the arrow for proper styling
-      tooltip.style.setProperty('--arrow-position', 'bottom');
-      tooltip.setAttribute('data-position', 'top');
-      break;
-    case 'left':
-      top = rect.top + (rect.height / 2) - (tooltipRect.height / 2);
-      left = rect.left - tooltipRect.width - 10;
-      tooltip.style.setProperty('--arrow-position', 'right');
-      tooltip.setAttribute('data-position', 'left');
-      break;
-    case 'right':
-      top = rect.top + (rect.height / 2) - (tooltipRect.height / 2);
-      left = rect.right + 10;
-      tooltip.style.setProperty('--arrow-position', 'left');
-      tooltip.setAttribute('data-position', 'right');
-      break;
-    default: // bottom
-      tooltip.style.setProperty('--arrow-position', 'top');
-      tooltip.setAttribute('data-position', 'bottom');
-      break;
+// Helper function to set up tooltip for a single element
+function setupTooltipForElement(element) {
+  // Get tooltip content from data-tooltip attribute
+  const tooltipContent = element.getAttribute('data-tooltip');
+  if (!tooltipContent) return;
+
+  console.log(`Setting up tooltip for element: ${element.id}, content: ${tooltipContent}`);
+
+  // Destroy any existing Materialize tooltip instance
+  const existingTooltip = M.Tooltip.getInstance(element);
+  if (existingTooltip) {
+    existingTooltip.destroy();
   }
-  
-  // Make sure tooltip stays within viewport
-  const viewportWidth = window.innerWidth;
-  const viewportHeight = window.innerHeight;
-  
-  // Adjust horizontally if needed
-  if (left < 10) left = 10;
-  if (left + tooltipRect.width > viewportWidth - 10) {
-    left = viewportWidth - tooltipRect.width - 10;
+
+  // Remove existing event listeners to avoid duplicates
+  if (element._tooltipMouseEnter) {
+    element.removeEventListener('mouseenter', element._tooltipMouseEnter);
   }
-  
-  // Adjust vertically if needed
-  if (top < 10) top = 10;
-  if (top + tooltipRect.height > viewportHeight - 10) {
-    top = viewportHeight - tooltipRect.height - 10;
+  if (element._tooltipMouseLeave) {
+    element.removeEventListener('mouseleave', element._tooltipMouseLeave);
   }
-  
-  // Set tooltip position
-  tooltip.style.left = `${left}px`;
-  tooltip.style.top = `${top}px`;
+
+  // Create new event handlers
+  element._tooltipMouseEnter = function() {
+    console.log(`Mouse entered ${element.id}`);
+
+    // Remove any existing tooltips first
+    const existingTooltips = document.querySelectorAll('.custom-tooltip');
+    existingTooltips.forEach(t => t.remove());
+
+    // Double-check we have the right element
+    if (element.id !== 'randomButton') {
+      console.warn('Wrong element! Expected randomButton, got:', element.id);
+      return;
+    }
+
+    // Create a simple tooltip using CSS transform for positioning
+    const tooltip = document.createElement('div');
+    tooltip.className = 'custom-tooltip';
+    tooltip.textContent = tooltipContent;
+
+    // Set the parent element to relative positioning if not already
+    const buttonContainer = element.closest('.control-item') || element.parentElement;
+    if (buttonContainer) {
+      buttonContainer.style.position = 'relative';
+    }
+
+    // Detect current theme mode
+    const isDarkMode = document.body.classList.contains('dark-mode') ||
+                      document.documentElement.classList.contains('dark-mode') ||
+                      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Subtle, elegant tooltip design for both modes
+    const tooltipColors = isDarkMode ? {
+      background: '#374151',
+      color: '#f9fafb',
+      border: '#4b5563',
+      shadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+      arrowColor: '#374151'
+    } : {
+      background: '#374151',
+      color: '#f9fafb',
+      border: '#4b5563',
+      shadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+      arrowColor: '#374151'
+    };
+
+    // Style the tooltip with clean, simple design
+    tooltip.style.cssText = `
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 14px;
+      background: ${tooltipColors.background};
+      color: ${tooltipColors.color};
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: ${tooltipColors.shadow};
+      z-index: 99999;
+      max-width: 280px;
+      min-width: 200px;
+      width: max-content;
+      line-height: 1.4;
+      pointer-events: none;
+      border: 1px solid ${tooltipColors.border};
+      text-align: center;
+      white-space: normal;
+      word-wrap: break-word;
+      opacity: 0;
+      transition: all 0.2s ease;
+      letter-spacing: 0.2px;
+    `;
+
+    // Add a clean arrow pointing to the button
+    const arrow = document.createElement('div');
+    arrow.style.cssText = `
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid ${tooltipColors.arrowColor};
+    `;
+    tooltip.appendChild(arrow);
+
+    // Append tooltip directly to the button's container
+    if (buttonContainer) {
+      buttonContainer.appendChild(tooltip);
+    } else {
+      element.appendChild(tooltip);
+    }
+
+    // Show tooltip with smooth animation
+    requestAnimationFrame(() => {
+      tooltip.style.opacity = '1';
+      tooltip.style.transform = 'translateX(-50%) translateY(0) scale(1)';
+    });
+
+    // Initial state for animation
+    tooltip.style.transform = 'translateX(-50%) translateY(4px) scale(0.95)';
+
+    // Store reference for cleanup
+    element._currentTooltip = tooltip;
+  };
+
+  element._tooltipMouseLeave = function() {
+    console.log(`Mouse left ${element.id}`);
+
+    // Remove the tooltip
+    if (element._currentTooltip) {
+      element._currentTooltip.style.opacity = '0';
+      setTimeout(() => {
+        if (element._currentTooltip && element._currentTooltip.parentNode) {
+          element._currentTooltip.remove();
+        }
+        element._currentTooltip = null;
+      }, 200);
+    }
+
+    // Also remove any stray tooltips
+    const existingTooltips = document.querySelectorAll('.custom-tooltip');
+    existingTooltips.forEach(t => {
+      t.style.opacity = '0';
+      setTimeout(() => t.remove(), 200);
+    });
+  };
+
+  // Add mouse events
+  element.addEventListener('mouseenter', element._tooltipMouseEnter);
+  element.addEventListener('mouseleave', element._tooltipMouseLeave);
+}
+
+// Clean up any stray tooltips (utility function)
+function cleanupTooltips() {
+  const existingTooltips = document.querySelectorAll('.custom-tooltip');
+  existingTooltips.forEach(tooltip => {
+    tooltip.style.opacity = '0';
+    setTimeout(() => {
+      if (tooltip.parentNode) {
+        tooltip.remove();
+      }
+    }, 200);
+  });
 }
 
 /***************************************************************
@@ -2417,28 +2537,33 @@ function showFirstCheckboxTooltip() {
   localStorage.setItem('refreshCount', refreshCount);
 
   // Show tooltip only every 10th refresh
-  if (refreshCount > 5 && refreshCount % 10 !== 0) {
+  if (refreshCount > 50 && refreshCount % 10 !== 0) {
     return;
   }
 
-  const firstSection = document.querySelector('.collapsible');
-  if (!firstSection) {
-    console.log('No sections found yet, will retry');
+  // Find the first collapsible section (this will be the first problem section)
+  const firstCollapsible = document.querySelector('.collapsible');
+  if (!firstCollapsible) {
+    console.log('No collapsible sections found yet, will retry');
     setTimeout(showFirstCheckboxTooltip, 1000);
     return;
   }
 
-  const instance = M.Collapsible.getInstance(firstSection);
+  // Open the first section
+  const instance = M.Collapsible.getInstance(firstCollapsible);
   if (instance) {
     instance.open(0);
   }
 
   setTimeout(() => {
-    const firstEasyCheckbox = firstSection.querySelector('.square-check.easy');
+    // Target the Easy checkbox in the first section's header mini-bars
+    const firstEasyCheckbox = firstCollapsible.querySelector('.collapsible-header .mini-bars .square-check.easy');
     if (!firstEasyCheckbox) {
-      console.log('No Easy checkbox found');
+      console.log('No Easy checkbox found in first section header');
       return;
     }
+
+    console.log('Found Easy checkbox:', firstEasyCheckbox);
 
     // Simulate checkbox unchecking and checking
     setTimeout(() => {
@@ -2459,11 +2584,27 @@ function showFirstCheckboxTooltip() {
     // Position the tooltip
     const positionTooltipForCheckbox = () => {
       const checkboxRect = firstEasyCheckbox.getBoundingClientRect();
+      
+      // Make sure the checkbox is in view
+      if (checkboxRect.top <= 0 || checkboxRect.bottom >= window.innerHeight) {
+        firstEasyCheckbox.scrollIntoView({behavior: 'smooth', block: 'center'});
+        // Wait for scrolling to complete before positioning
+        setTimeout(() => positionTooltipForCheckbox(), 300);
+        return;
+      }
+      
+      // Position tooltip above the checkbox
       specialTooltip.style.left = `${checkboxRect.left}px`;
       specialTooltip.style.top = `${checkboxRect.top - specialTooltip.offsetHeight - 10}px`;
       specialTooltip.style.opacity = '1';
       specialTooltip.style.transform = 'translateY(0)';
 
+      // Remove any existing arrows before adding a new one
+      const existingArrow = specialTooltip.querySelector('.filter-tooltip-arrow');
+      if (existingArrow) {
+        existingArrow.remove();
+      }
+      
       // Add tooltip arrow
       const arrow = document.createElement('div');
       arrow.className = 'filter-tooltip-arrow';
@@ -2478,9 +2619,19 @@ function showFirstCheckboxTooltip() {
         window.removeEventListener('resize', keepTooltipFixed);
         return;
       }
+      
       const newCheckboxRect = firstEasyCheckbox.getBoundingClientRect();
+      
+      // Check if checkbox is visible in viewport
+      if (newCheckboxRect.top < 0 || newCheckboxRect.bottom > window.innerHeight) {
+        specialTooltip.style.opacity = '0';
+        return;
+      }
+      
+      // Position tooltip and make it visible
       specialTooltip.style.left = `${newCheckboxRect.left}px`;
       specialTooltip.style.top = `${newCheckboxRect.top - specialTooltip.offsetHeight - 10}px`;
+      specialTooltip.style.opacity = '1';
     };
 
     window.addEventListener('scroll', keepTooltipFixed);
@@ -2611,23 +2762,23 @@ function stopBinaryRain() {
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize Materialize components
-  M.AutoInit();
+  // Initialize Materialize components (excluding tooltips to avoid conflicts)
+  M.Collapsible.init(document.querySelectorAll('.collapsible'));
+  M.Sidenav.init(document.querySelectorAll('.sidenav'));
+  M.Modal.init(document.querySelectorAll('.modal'));
+  M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'));
 
-  // Initialize tooltips (we'll override this with our custom tooltips)
-  var tooltipElems = document.querySelectorAll('.tooltipped');
-  var tooltipInstances = M.Tooltip.init(tooltipElems, {
-    enterDelay: 300,
-    exitDelay: 100
-  });
+  // Clean up any existing tooltips first
+  cleanupTooltips();
 
   // Custom tooltip implementation
   setupCustomTooltips();
+
+  // Global cleanup for tooltips when mouse leaves window
+  document.addEventListener('mouseleave', cleanupTooltips);
+  window.addEventListener('blur', cleanupTooltips);
   
-  // Show temporary filter tooltip for the first Easy checkbox
-  setTimeout(() => {
-    showFirstCheckboxTooltip();
-  }, 1000);
+  // Filter tooltip removed per user request
 
   // Initialize dark mode
   initializeDarkMode();
@@ -2637,11 +2788,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
+
   // Initialize reset progress button
   const resetBtn = document.getElementById('resetProgressBtn');
   if (resetBtn) {
     resetBtn.addEventListener('click', showResetConfirmation);
   }
+
+  // Initialize random button
+  setupRandomButton();
 
   // Initialize reset banner click outside functionality
   initResetBannerClickOutside();
@@ -2694,9 +2850,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Set up multi-select filter
   setupMultiSelectFilter();
 
-  // Set up random button
-  setupRandomButton();
-
 
 
   // Load problems data
@@ -2729,6 +2882,11 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
         checkFirstVisit();
       }, 1000);
+
+      // Show filter checkbox tutorial tooltip - wait longer for DOM to be fully rendered
+      setTimeout(() => {
+        showFirstCheckboxTooltip();
+      }, 3000);
     })
     .catch(err => {
       console.error('Error loading problems:', err);
@@ -2790,70 +2948,77 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('dsaLink').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('dsa');
+    updateDesktopNavActive('dsaLink');
   });
 
   document.getElementById('blind75Link').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('blind75');
+    updateDesktopNavActive('blind75Link');
   });
 
   document.getElementById('leetcode150Link').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('leetcode150');
+    updateDesktopNavActive('leetcode150Link');
   });
-  //chandan
-  // document.getElementById('sqlLink').addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   switchSection('sql');
-  // });
 
-  // document.getElementById('lldLink').addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   switchSection('lld');
-  // });
+  document.getElementById('sqlLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('sql');
+    updateDesktopNavActive('sqlLink');
+  });
 
-  // document.getElementById('hldLink').addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   switchSection('hld');
-  // });
+  document.getElementById('lldLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('lld');
+    updateDesktopNavActive('lldLink');
+  });
+
+  document.getElementById('hldLink').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('hld');
+    updateDesktopNavActive('hldLink');
+  });
 
   // Add click handlers for mobile navigation
   document.getElementById('dsaLinkMobile').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('dsa');
-    updateMobileNavActive('dsaLinkMobile');
+    updateMobileMenuActive('dsaLinkMobile');
   });
 
   document.getElementById('blind75LinkMobile').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('blind75');
-    updateMobileNavActive('blind75LinkMobile');
+    updateMobileMenuActive('blind75LinkMobile');
   });
 
   document.getElementById('leetcode150LinkMobile').addEventListener('click', (e) => {
     e.preventDefault();
     switchSection('leetcode150');
-    updateMobileNavActive('leetcode150LinkMobile');
+    updateMobileMenuActive('leetcode150LinkMobile');
   });
 
-  // chandan
-  // document.getElementById('sqlLinkMobile').addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   switchSection('sql');
-  //   updateMobileNavActive('sqlLinkMobile');
-  // });
+  document.getElementById('sqlLinkMobile').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('sql');
+    updateMobileMenuActive('sqlLinkMobile');
+  });
 
-  // document.getElementById('lldLinkMobile').addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   switchSection('lld');
-  //   updateMobileNavActive('lldLinkMobile');
-  // });
+  document.getElementById('lldLinkMobile').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('lld');
+    updateMobileMenuActive('lldLinkMobile');
+  });
 
-  // document.getElementById('hldLinkMobile').addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   switchSection('hld');
-  //   updateMobileNavActive('hldLinkMobile');
-  // });
+  document.getElementById('hldLinkMobile').addEventListener('click', (e) => {
+    e.preventDefault();
+    switchSection('hld');
+    updateMobileMenuActive('hldLinkMobile');
+  });
+
+
 
   /* do not remove this yet, we will need it later
   document.getElementById('interviewsLink').addEventListener('click', (e) => {
@@ -3017,16 +3182,18 @@ function switchSection(section) {
   saveFilterState();
 
   // Update active nav link (desktop)
-  document.querySelectorAll('.nav-card').forEach(link => {
+  document.querySelectorAll('.nav-item').forEach(link => {
     link.classList.remove('active');
   });
   document.getElementById(`${section}Link`).classList.add('active');
 
-  // Update active nav link (mobile)
-  document.querySelectorAll('.mobile-nav-card').forEach(link => {
+  // Update active mobile menu item
+  document.querySelectorAll('.mobile-menu-item').forEach(link => {
     link.classList.remove('active');
   });
   document.getElementById(`${section}LinkMobile`).classList.add('active');
+
+
 
   // Update current section
   currentSection = section;
