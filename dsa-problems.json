@@ -64,12 +64,6 @@
           "difficulty": "easy"
         },
         {
-          "label": "Sum of Digits of a Number",
-          "question": "https://www.geeksforgeeks.org/program-for-sum-of-the-digits-of-a-given-number/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Check Armstrong Number",
           "question": "https://www.geeksforgeeks.org/program-for-armstrong-numbers/",
           "solution": "-",
@@ -96,12 +90,6 @@
         {
           "label": "Find Smallest Element in an Array",
           "question": "https://www.geeksforgeeks.org/to-find-smallest-and-second-smallest-element-in-an-array/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Sum of Array Elements",
-          "question": "https://www.geeksforgeeks.org/program-find-sum-elements-given-array/",
           "solution": "-",
           "difficulty": "easy"
         },
