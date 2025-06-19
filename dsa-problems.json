@@ -725,6 +725,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Partition Array Such That Maximum Difference Is K",
+              "question": "https://leetcode.com/problems/partition-array-such-that-maximum-difference-is-k/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PartitionArraySuchThatMaximumDifferenceIsK.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Destroying Asteroids",
               "question": "https://leetcode.com/problems/destroying-asteroids/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DestroyingAsteroids.cpp",
