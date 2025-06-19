@@ -534,65 +534,58 @@ body.dark-mode .mobile-menu-item.active {
 
 /* iPad and Large Tablets (834px - 1024px) */
 @media (min-width: 834px) and (max-width: 1024px) {
-    .navbar-nav {
+    .navbar-container {
         padding: 0 1rem;
-        gap: 0.5rem;
+    }
+
+    .navbar-nav {
+        padding: 0 0.5rem;
+        gap: 0.4rem;
+        overflow: visible;
+        flex-wrap: nowrap;
     }
 
     .nav-item {
-        padding: 0.875rem 1.25rem;
-        min-width: 90px;
-        height: 54px;
+        padding: 0.875rem 1.1rem;
+        min-width: 85px;
+        height: 52px;
+        flex-shrink: 0;
     }
 
     .nav-text {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
+        white-space: nowrap;
     }
 
     .nav-item.active .nav-text {
-        font-size: 1.35rem;
-        transform: scale(1.08);
+        font-size: 1.2rem;
+        transform: scale(1.05);
     }
 
     .nav-icon i {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .brand-icon {
-        width: 62px;
-        height: 62px;
+        width: 58px;
+        height: 58px;
         border-radius: 14px;
     }
 
     .brand-symbol {
-        font-size: 1.95rem;
+        font-size: 1.8rem;
     }
 
     .brand-title {
-        font-size: 1.95rem;
+        font-size: 1.8rem;
     }
 
     .brand-subtitle {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     /* Ensure theme toggle is clearly visible on iPad */
     .theme-toggle-btn {
-        width: 54px !important;
-        height: 54px !important;
-        background: var(--surface) !important;
-        border: 2px solid var(--card-border) !important;
-        opacity: 1 !important;
-    }
-
-    .theme-icon i {
-        font-size: 1.6rem !important;
-        font-weight: 600 !important;
-    }
-
-    /* Ensure mobile menu button is also visible and functional on iPad */
-    .mobile-menu-btn {
-        display: flex !important;
         width: 50px !important;
         height: 50px !important;
         background: var(--surface) !important;
@@ -600,19 +593,29 @@ body.dark-mode .mobile-menu-item.active {
         opacity: 1 !important;
     }
 
-    .hamburger-line {
-        background: var(--text-primary) !important;
-        opacity: 1 !important;
-        width: 20px !important;
-        height: 2px !important;
+    .theme-icon i {
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
     }
 
-    /* Ensure desktop nav is hidden on iPad when in portrait mode */
+    /* Ensure desktop navigation is visible on iPad */
     .desktop-nav {
+        display: flex !important;
+    }
+
+    /* Hide mobile menu button on iPad since desktop nav will be visible */
+    .mobile-menu-btn {
         display: none !important;
     }
 
-    /* Mobile menu dropdown positioning for iPad */
+    /* Ensure all nav items are visible and don't overflow */
+    .navbar-nav .nav-item {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Mobile menu dropdown positioning for iPad (fallback) */
     .mobile-menu-dropdown {
         right: 0;
         top: 100%;
@@ -633,28 +636,48 @@ body.dark-mode .mobile-menu-item.active {
 
 /* Standard Tablet (below 834px) */
 @media (max-width: 833px) and (min-width: 769px) {
+    .navbar-container {
+        padding: 0 0.75rem;
+    }
+
     .navbar-nav {
-        padding: 0 1rem;
-        gap: 0.25rem;
+        padding: 0 0.5rem;
+        gap: 0.3rem;
+        overflow: visible;
+        flex-wrap: nowrap;
     }
 
     .nav-item {
-        padding: 0.875rem 1.25rem;
-        min-width: 85px;
-        height: 52px;
+        padding: 0.75rem 1rem;
+        min-width: 80px;
+        height: 50px;
+        flex-shrink: 0;
     }
 
     .nav-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        white-space: nowrap;
     }
 
     .nav-item.active .nav-text {
-        font-size: 1.3rem;
-        transform: scale(1.08);
+        font-size: 1.15rem;
+        transform: scale(1.05);
     }
 
     .nav-icon i {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
+    }
+
+    /* Ensure desktop navigation is visible on standard tablets */
+    .desktop-nav {
+        display: flex !important;
+    }
+
+    /* Ensure all nav items are visible */
+    .navbar-nav .nav-item {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .brand-icon {
