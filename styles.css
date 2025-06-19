@@ -532,8 +532,107 @@ body.dark-mode .mobile-menu-item.active {
     }
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
+/* iPad and Large Tablets (834px - 1024px) */
+@media (min-width: 834px) and (max-width: 1024px) {
+    .navbar-nav {
+        padding: 0 1rem;
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        padding: 0.875rem 1.25rem;
+        min-width: 90px;
+        height: 54px;
+    }
+
+    .nav-text {
+        font-size: 1.15rem;
+    }
+
+    .nav-item.active .nav-text {
+        font-size: 1.35rem;
+        transform: scale(1.08);
+    }
+
+    .nav-icon i {
+        font-size: 1.6rem;
+    }
+
+    .brand-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 14px;
+    }
+
+    .brand-symbol {
+        font-size: 1.95rem;
+    }
+
+    .brand-title {
+        font-size: 1.95rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.95rem;
+    }
+
+    /* Ensure theme toggle is clearly visible on iPad */
+    .theme-toggle-btn {
+        width: 54px !important;
+        height: 54px !important;
+        background: var(--surface) !important;
+        border: 2px solid var(--card-border) !important;
+        opacity: 1 !important;
+    }
+
+    .theme-icon i {
+        font-size: 1.6rem !important;
+        font-weight: 600 !important;
+    }
+
+    /* Ensure mobile menu button is also visible and functional on iPad */
+    .mobile-menu-btn {
+        display: flex !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: var(--surface) !important;
+        border: 2px solid var(--card-border) !important;
+        opacity: 1 !important;
+    }
+
+    .hamburger-line {
+        background: var(--text-primary) !important;
+        opacity: 1 !important;
+        width: 20px !important;
+        height: 2px !important;
+    }
+
+    /* Ensure desktop nav is hidden on iPad when in portrait mode */
+    .desktop-nav {
+        display: none !important;
+    }
+
+    /* Mobile menu dropdown positioning for iPad */
+    .mobile-menu-dropdown {
+        right: 0;
+        top: 100%;
+        min-width: 200px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .mobile-menu-item {
+        padding: 14px 18px;
+        font-size: 1rem;
+    }
+
+    .mobile-menu-item i {
+        font-size: 22px;
+        width: 26px;
+    }
+}
+
+/* Standard Tablet (below 834px) */
+@media (max-width: 833px) and (min-width: 769px) {
     .navbar-nav {
         padding: 0 1rem;
         gap: 0.25rem;
@@ -550,7 +649,7 @@ body.dark-mode .mobile-menu-item.active {
     }
 
     .nav-item.active .nav-text {
-        font-size: 1.3rem; /* Enhanced for tablet */
+        font-size: 1.3rem;
         transform: scale(1.08);
     }
 
@@ -561,7 +660,7 @@ body.dark-mode .mobile-menu-item.active {
     .brand-icon {
         width: 60px;
         height: 60px;
-        border-radius: 14px; /* Adjusted border-radius for tablet to maintain rounded square appearance */
+        border-radius: 14px;
     }
 
     .brand-symbol {
@@ -740,6 +839,37 @@ body.dark-mode .theme-toggle-btn:hover {
 /* Dark mode mobile menu */
 body.dark-mode .mobile-menu-btn:hover {
     background: rgba(255, 255, 255, 0.05);
+}
+
+/* iPad-specific dark mode fixes */
+@media (min-width: 834px) and (max-width: 1024px) {
+    body.dark-mode .theme-toggle-btn {
+        background: #1E293B !important;
+        border-color: #334155 !important;
+        color: #F1F5F9 !important;
+        opacity: 1 !important;
+    }
+
+    body.dark-mode .theme-toggle-btn:hover {
+        background: #334155 !important;
+        border-color: #475569 !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    body.dark-mode .mobile-menu-btn {
+        background: #1E293B !important;
+        border-color: #334155 !important;
+        opacity: 1 !important;
+    }
+
+    body.dark-mode .mobile-menu-btn:hover {
+        background: #334155 !important;
+        border-color: #475569 !important;
+    }
+
+    body.dark-mode .hamburger-line {
+        background: #F1F5F9 !important;
+    }
 }
 
 
@@ -2625,8 +2755,66 @@ body.dark-mode .square-check.hard:checked {
     border-color: var(--hard-color);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* iPad-specific responsive design for better performance */
+@media (min-width: 834px) and (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        padding: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Optimize progress card for iPad */
+    .rect-chart-container {
+        padding: 1.25rem;
+        margin: 1rem auto;
+    }
+
+    .progress-text {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .progress-bar {
+        height: 12px;
+        border-radius: 6px;
+    }
+
+    /* Better control bar layout for iPad */
+    .unified-control-bar {
+        padding: 1rem 1.25rem;
+        gap: 1rem;
+        flex-wrap: nowrap;
+    }
+
+    .control-input,
+    .control-select {
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        min-height: 44px;
+    }
+
+    .control-button {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+        min-height: 44px;
+        min-width: 120px;
+    }
+}
+
+/* Standard tablet responsive design */
+@media (max-width: 833px) and (min-width: 769px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2639,8 +2827,6 @@ body.dark-mode .square-check.hard:checked {
     .footer-brand {
         grid-column: 1 / -1;
     }
-
-
 }
 
 @media (max-width: 768px) {
@@ -3518,7 +3704,70 @@ body.dark-mode .control-button:hover {
     }
 }
 
-@media (max-width: 1024px) {
+/* iPad-specific optimizations for better performance and layout */
+@media (min-width: 834px) and (max-width: 1024px) {
+    .unified-control-bar-wrapper {
+        width: 92% !important;
+        max-width: 900px !important;
+    }
+
+    .container {
+        width: 92% !important;
+        max-width: 900px !important;
+    }
+
+    .rect-chart-container {
+        width: 92% !important;
+        max-width: 900px !important;
+    }
+
+    /* Optimize table performance on iPad */
+    .problem-table {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .problem-table th,
+    .problem-table td {
+        padding: 12px 8px;
+    }
+
+    /* Improve touch targets for iPad */
+    .solution-link,
+    .youtube-link,
+    .notes-icon,
+    .done-icon {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Optimize collapsible headers for iPad */
+    .collapsible-header {
+        padding: 1rem 1.25rem;
+        min-height: 60px;
+    }
+
+    .topic-title {
+        font-size: 1.1rem;
+        line-height: 1.3;
+    }
+
+    /* Better spacing for mini-bars on iPad */
+    .mini-bars {
+        gap: 0.75rem;
+        padding: 0.5rem 0;
+    }
+
+    .square-check {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 833px) and (min-width: 769px) {
     .unified-control-bar-wrapper {
         width: 90% !important;
     }

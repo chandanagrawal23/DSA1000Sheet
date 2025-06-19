@@ -1894,6 +1894,11 @@ function saveUserName() {
       displayLength: 4000
     });
   }
+
+  // Now that the welcome modal is dismissed, show the checkbox tooltip after a short delay
+  setTimeout(() => {
+    showFirstCheckboxTooltip();
+  }, 2000); // Wait 2 seconds after welcome modal is dismissed
 }
 
 function getUserProfile() {
@@ -2878,15 +2883,18 @@ document.addEventListener('DOMContentLoaded', function () {
       updateGlobalRectBar();
       updateSectionProgress();
 
-      // Check if this is the user's first visit and show welcome modal
+      // Check if this is the user's first visit and show welcome modal - reduced timeout for faster loading
       setTimeout(() => {
         checkFirstVisit();
-      }, 1000);
+      }, 500);
 
-      // Show filter checkbox tutorial tooltip - wait longer for DOM to be fully rendered
+      // Only show filter checkbox tutorial tooltip if user is not a first-time visitor
       setTimeout(() => {
-        showFirstCheckboxTooltip();
-      }, 3000);
+        const userProfile = getUserProfile();
+        if (userProfile.hasSeenWelcome) {
+          showFirstCheckboxTooltip();
+        }
+      }, 1500);
     })
     .catch(err => {
       console.error('Error loading problems:', err);
@@ -3028,57 +3036,62 @@ document.addEventListener('DOMContentLoaded', function () {
   */
 });
 
-// Function to initialize checkboxes
+// Optimized function to initialize checkboxes with better performance
 function initializeCheckboxes() {
-  // Wait a short time to ensure DOM is fully rendered
-  setTimeout(() => {
-    console.log('Initializing checkboxes...');
+  console.log('Initializing checkboxes...');
 
-    // Get all checkboxes and remove existing event listeners by cloning
-    const checkboxes = document.querySelectorAll('.square-check');
-    console.log('Found checkboxes:', checkboxes.length);
-    checkboxes.forEach(checkbox => {
-      const newCheckbox = checkbox.cloneNode(true);
-      checkbox.parentNode.replaceChild(newCheckbox, checkbox);
-    });
+  // Use event delegation for better performance - single listener for all checkboxes
+  const sectionsContainer = document.getElementById('sections');
+  if (!sectionsContainer) {
+    console.warn('Sections container not found, retrying...');
+    setTimeout(initializeCheckboxes, 100);
+    return;
+  }
 
-    // Add event listeners to the new checkboxes
-    document.querySelectorAll('.square-check').forEach(checkbox => {
-      // Ensure checkbox is visible and checked by default
-      checkbox.checked = true;
+  // Remove existing delegated listener if any
+  if (sectionsContainer._checkboxHandler) {
+    sectionsContainer.removeEventListener('click', sectionsContainer._checkboxHandler);
+  }
 
-      // Add click event listener
-      checkbox.addEventListener('click', function (e) {
-        // Stop event propagation to prevent collapsible from toggling
-        e.stopPropagation();
-        console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
+  // Add single delegated event listener for all checkboxes
+  sectionsContainer._checkboxHandler = function(e) {
+    if (e.target.classList.contains('square-check')) {
+      e.stopPropagation();
+      console.log('Checkbox clicked:', e.target.dataset.section, e.target.dataset.difficulty, e.target.checked);
 
-        // If this checkbox is a parent (i.e. not inside a subsection container)
-        if (!this.closest('.mini-bars.small')) {
-          // Get the parent section (collapsible) that contains both parent and child checkboxes
-          const parentSection = this.closest('.collapsible');
-          if (parentSection) {
-            const difficulty = this.dataset.difficulty; // e.g., "easy", "medium", or "hard"
-            // Find all child checkboxes in subsections with the same difficulty
-            const childCheckboxes = parentSection.querySelectorAll(`.mini-bars.small .square-check.${difficulty}`);
-            childCheckboxes.forEach(child => {
-              child.checked = this.checked;
-            });
-          }
+      // If this checkbox is a parent (i.e. not inside a subsection container)
+      if (!e.target.closest('.mini-bars.small')) {
+        // Get the parent section (collapsible) that contains both parent and child checkboxes
+        const parentSection = e.target.closest('.collapsible');
+        if (parentSection) {
+          const difficulty = e.target.dataset.difficulty;
+          // Find all child checkboxes in subsections with the same difficulty
+          const childCheckboxes = parentSection.querySelectorAll(`.mini-bars.small .square-check.${difficulty}`);
+          childCheckboxes.forEach(child => {
+            child.checked = e.target.checked;
+          });
         }
+      }
 
-        // Filter problems based on the updated state
-        filterProblems(e);
-      });
-    });
+      // Filter problems based on the updated state
+      filterProblems(e);
+    }
 
-    // Add event listeners to the labels to prevent event propagation
-    document.querySelectorAll('.difficulty-filter-square').forEach(label => {
-      label.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
-    });
-  }, 500);
+    // Handle label clicks to prevent event propagation
+    if (e.target.classList.contains('difficulty-filter-square')) {
+      e.stopPropagation();
+    }
+  };
+
+  sectionsContainer.addEventListener('click', sectionsContainer._checkboxHandler);
+
+  // Set all checkboxes to checked by default for better performance
+  const checkboxes = sectionsContainer.querySelectorAll('.square-check');
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = true;
+  });
+
+  console.log('Checkboxes initialized with event delegation:', checkboxes.length);
 }
 
 
@@ -3224,16 +3237,24 @@ function switchSection(section) {
       // Count unique problems
       countUniqueProblems(data);
 
-      // Build and update UI
+      // Build and update UI - optimized order for better performance
       buildRectBar();
       renderSections(data);
-      initializeCollapsibles();
-      initializeCheckboxes();
-      loadProgress();
-      loadSectionCompletions();
-      loadSubsectionCompletions();
-      updateGlobalRectBar();
-      updateSectionProgress();
+
+      // Batch DOM operations for better performance
+      requestAnimationFrame(() => {
+        initializeCollapsibles();
+        initializeCheckboxes();
+        loadProgress();
+        loadSectionCompletions();
+        loadSubsectionCompletions();
+
+        // Update progress in next frame to avoid layout thrashing
+        requestAnimationFrame(() => {
+          updateGlobalRectBar();
+          updateSectionProgress();
+        });
+      });
 
       // Restore filter state for this section
       restoreFilterState();
