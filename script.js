@@ -2542,7 +2542,7 @@ function showFirstCheckboxTooltip() {
   localStorage.setItem('refreshCount', refreshCount);
 
   // Show tooltip only every 10th refresh
-  if (refreshCount > 50 && refreshCount % 10 !== 0) {
+  if (refreshCount > 5 && refreshCount % 10 !== 0) {
     return;
   }
 
@@ -2817,6 +2817,7 @@ document.addEventListener('DOMContentLoaded', function () {
   footer.href = 'https://www.youtube.com/@BhajanMarg';
   footer.target = '_blank';
   footer.rel = 'noopener noreferrer';
+  footer.className = 'shree-radhe-footer'; // Add class for CSS targeting
   footer.style.cssText = `
         position: fixed;
         bottom: 10px;
