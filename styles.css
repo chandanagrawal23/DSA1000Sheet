@@ -8,8 +8,8 @@
     --background-light: #F5F2E9; /* Light beige background */
     --surface-light: #FFFBF0; /* Lighter beige surface */
     --surface-light-hover: #F0EBE1; /* Beige hover state */
-    --text-primary-light: #3C3A36; /* Darker text for contrast on beige */
-    --text-secondary-light: #6B6963; /* Medium contrast text for beige */
+    --text-primary-light: #2D2B27; /* Much darker text for better contrast on beige */
+    --text-secondary-light: #5A5651; /* Darker secondary text for better contrast */
     
     /* Dark Mode Colors */
     --background-dark: #0B1120;
@@ -333,6 +333,65 @@ body {
     transform: rotate(180deg) scale(1.15);
 }
 
+/* Profile Button */
+.profile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    width: 54px;
+    height: 54px;
+    background: var(--surface);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0.9;
+}
+
+.profile-btn:hover {
+    background: var(--surface-hover);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+    opacity: 1;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.profile-btn:active {
+    transform: translateY(0);
+}
+
+.profile-picture-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-icon-default i {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+    font-weight: 600;
+}
+
+.profile-btn:hover .profile-icon-default i {
+    transform: scale(1.15);
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
@@ -522,6 +581,12 @@ body.dark-mode .mobile-menu-item.active {
         font-size: 1.35rem;
     }
 
+    .profile-btn {
+        width: 60px;
+        height: 60px;
+        padding: 0.5rem;
+    }
+
     .theme-toggle-btn {
         width: 60px;
         height: 60px;
@@ -633,7 +698,11 @@ body.dark-mode .mobile-menu-item.active {
         width: 26px;
     }
 
-    /* Hide श्री राधे text on iPad */
+    /* Keep श्री राधे text visible on iPad (1024px+) */
+}
+
+/* Hide Shree Radhe text for screens less than 900px */
+@media (max-width: 899px) {
     .shree-radhe-footer {
         display: none !important;
     }
@@ -685,10 +754,7 @@ body.dark-mode .mobile-menu-item.active {
         opacity: 1 !important;
     }
 
-    /* Hide श्री राधे text on standard tablets */
-    .shree-radhe-footer {
-        display: none !important;
-    }
+    /* Keep श्री राधे text visible on standard tablets (769-833px) */
 
     .brand-icon {
         width: 60px;
@@ -706,6 +772,12 @@ body.dark-mode .mobile-menu-item.active {
 
     .brand-subtitle {
         font-size: 0.9rem;
+    }
+
+    .profile-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0.4rem;
     }
 
     .theme-toggle-btn {
@@ -745,6 +817,12 @@ body.dark-mode .mobile-menu-item.active {
     /* Hide desktop navigation on mobile */
     .desktop-nav {
         display: none;
+    }
+
+    .profile-btn {
+        width: 60px;
+        height: 60px;
+        padding: 0.5rem;
     }
 
     /* Show mobile menu button */
@@ -800,6 +878,12 @@ body.dark-mode .mobile-menu-item.active {
 
     .navbar-controls {
         gap: 0.5rem;
+    }
+
+    .profile-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0.4rem;
     }
 
     .theme-toggle-btn,
@@ -869,6 +953,21 @@ body.dark-mode .nav-item.active {
     box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
 }
 
+/* Dark mode profile button */
+body.dark-mode .profile-btn {
+    color: #F1F5F9;
+    opacity: 0.9;
+    background: var(--surface);
+    border-color: var(--card-border);
+}
+
+body.dark-mode .profile-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: var(--primary-color);
+}
+
 /* Dark mode theme toggle */
 body.dark-mode .theme-toggle-btn {
     color: #F1F5F9;
@@ -926,6 +1025,7 @@ body.dark-mode .mobile-menu-btn:hover {
 .navbar-container,
 .brand-link,
 .nav-item,
+.profile-btn,
 .theme-toggle-btn,
 .mobile-menu-btn {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -934,6 +1034,7 @@ body.dark-mode .mobile-menu-btn:hover {
 /* Focus states for accessibility */
 .brand-link:focus,
 .nav-item:focus,
+.profile-btn:focus,
 .theme-toggle-btn:focus,
 .mobile-menu-btn:focus {
     outline: 2px solid var(--primary-color);
@@ -946,6 +1047,7 @@ body.dark-mode .mobile-menu-btn:hover {
     .navbar-container,
     .brand-link,
     .nav-item,
+    .profile-btn,
     .theme-toggle-btn,
     .mobile-menu-btn,
     .hamburger-line,
@@ -969,6 +1071,125 @@ body.dark-mode .mobile-menu-btn:hover {
         border-color: var(--primary-color);
         border-width: 2px;
     }
+}
+
+/* Navbar Tooltips - Pure CSS approach */
+.nav-item {
+    position: relative;
+    overflow: visible;
+}
+
+/* CSS-only tooltip - Full text visible with smart positioning */
+.nav-item[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 999999;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease-out;
+    pointer-events: none;
+    margin-top: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    min-width: 250px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Arrow - Properly sized */
+.nav-item[data-tooltip]::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #667eea;
+    z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease-out;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.3));
+}
+
+/* Show on hover - Closer positioning */
+.nav-item[data-tooltip]:hover::after,
+.nav-item[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(6px);
+}
+
+.nav-item[data-tooltip]:hover::before {
+    transform: translateX(-50%) translateY(-1px);
+}
+
+/* Special positioning for DSA tooltip (longer text) */
+.nav-item[data-tooltip*="Master Data Structures"]::after {
+    transform: translateX(-50%) translateY(12px);
+    left: 50%;
+    right: auto;
+    max-width: 450px;
+    min-width: 300px;
+}
+
+/* Dark mode navbar tooltips */
+body.dark-mode .nav-item[data-tooltip]::after {
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e2e8f0;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .nav-item[data-tooltip]::before {
+    border-bottom-color: #4a5568;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* Responsive tooltip sizing */
+@media (max-width: 768px) {
+    .nav-item[data-tooltip]::after {
+        max-width: 90vw;
+        min-width: 200px;
+        font-size: 0.85rem;
+        padding: 10px 14px;
+    }
+
+    .nav-item[data-tooltip*="Master Data Structures"]::after {
+        max-width: 95vw;
+        min-width: 250px;
+    }
+}
+
+/* Hide tooltips on mobile and tablet screens */
+@media (max-width: 899px) {
+    .nav-item[data-tooltip]::after,
+    .nav-item[data-tooltip]::before {
+        display: none !important;
+    }
+}
+
+/* Ensure navbar container doesn't clip tooltips */
+.navbar,
+.navbar-container,
+.navbar-nav {
+    overflow: visible !important;
 }
 
 /* Unified Control Bar Wrapper - Match progress card alignment */
@@ -2164,9 +2385,27 @@ th:nth-child(4) {
     background: var(--surface-hover);
 }
 
+/* Active/Expanded state for collapsible headers */
+.collapsible li.active .collapsible-header {
+    background: var(--surface) !important;
+}
+
+.collapsible li.active .collapsible-header:hover {
+    background: var(--surface-hover) !important;
+}
+
 /* Dark mode specific hover state */
 body.dark-mode .collapsible-header:hover {
     background: rgba(51, 65, 85, 0.6); /* Darker hover color for dark mode */
+}
+
+/* Dark mode active/expanded state */
+body.dark-mode .collapsible li.active .collapsible-header {
+    background: var(--surface) !important;
+}
+
+body.dark-mode .collapsible li.active .collapsible-header:hover {
+    background: rgba(51, 65, 85, 0.6) !important;
 }
 
 .collapsible-header .topic-title {
@@ -5852,6 +6091,411 @@ body.dark-mode .tooltip::after {
   }
 }
 
+/* ===== PROFILE MODAL STYLES ===== */
+
+/* Profile Modal */
+.profile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.profile-content {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+  z-index: 10002;
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-modal.active .profile-content {
+  transform: scale(1);
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--error-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.profile-icon-large {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-icon-large i {
+  font-size: 3rem;
+  color: white;
+}
+
+.profile-picture-large {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* File input styling */
+.file-input-container {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.file-input-btn,
+.file-remove-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  position: relative;
+  overflow: visible;
+}
+
+.file-input-btn:hover {
+  border-color: var(--primary-color);
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+}
+
+.file-remove-btn {
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+.file-remove-btn:hover {
+  background: var(--error-color);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.file-input-btn i,
+.file-remove-btn i {
+  font-size: 1.1rem;
+}
+
+.file-input-btn span,
+.file-remove-btn span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file-input-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.profile-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.profile-body {
+  margin-bottom: 2rem;
+}
+
+.profile-body .input-field {
+  margin-bottom: 1.5rem;
+}
+
+.profile-body .input-field label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.profile-body .input-field input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.profile-body .input-field input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.profile-stats {
+  background: var(--surface-hover);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--card-border);
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.profile-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn-profile-cancel,
+.btn-profile-save {
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  min-width: 100px;
+}
+
+.btn-profile-cancel {
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+}
+
+.btn-profile-cancel:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.btn-profile-save {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  font-weight: 600;
+}
+
+.btn-profile-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Light mode specific overrides for profile modal */
+body:not(.dark-mode) .profile-content {
+  background: var(--surface-light);
+  color: var(--text-primary-light);
+  border-color: var(--card-border);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+body:not(.dark-mode) .profile-body .input-field label {
+  color: var(--text-primary-light);
+}
+
+body:not(.dark-mode) .profile-body .input-field input {
+  color: var(--text-primary-light);
+  background: var(--surface-light);
+}
+
+body:not(.dark-mode) .file-input-hint {
+  color: var(--text-secondary-light);
+}
+
+body:not(.dark-mode) .modal-close-btn {
+  color: var(--text-secondary-light);
+}
+
+body:not(.dark-mode) .profile-icon-large {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+body:not(.dark-mode) .profile-icon-large i {
+  color: white !important;
+}
+
+body:not(.dark-mode) .btn-profile-save {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color)) !important;
+  color: white !important;
+}
+
+body:not(.dark-mode) .file-input-btn {
+  background: var(--surface-light) !important;
+  color: var(--text-primary-light) !important;
+  border-color: var(--primary-color) !important;
+}
+
+body:not(.dark-mode) .file-input-btn span {
+  color: var(--text-primary-light) !important;
+}
+
+/* Dark mode support for profile modal */
+body.dark-mode .profile-content {
+  background: var(--surface);
+  border-color: var(--card-border);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .modal-close-btn {
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+  border-color: var(--card-border);
+}
+
+body.dark-mode .modal-close-btn:hover {
+  background: var(--error-color);
+  color: white;
+}
+
+/* Mobile responsiveness for profile modal */
+@media (max-width: 768px) {
+  .profile-content {
+    padding: 1.5rem;
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  .profile-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .profile-icon-large {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-icon-large i {
+    font-size: 2.5rem;
+  }
+
+  .profile-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-profile-cancel,
+  .btn-profile-save {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-content {
+    padding: 1.2rem;
+    max-width: calc(100% - 1rem);
+    margin: 0.5rem;
+  }
+
+  .profile-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-close-btn {
+    width: 35px;
+    height: 35px;
+    top: -8px;
+    right: -8px;
+  }
+}
+
 /* Section Completion Congratulations Banner */
 .congratulations-banner {
   position: fixed;
@@ -6612,15 +7256,91 @@ body.dark-mode .lld-table .question-link:hover {
         line-height: 35px !important;
     }
 
-    /* Hide श्री राधे text on mobile screens */
-    .shree-radhe-footer {
-        display: none !important;
-    }
+
 }
 
-/* MEDIUM SCREENS - Horizontal layout for 601px to 768px */
-@media (min-width: 601px) and (max-width: 768px) {
-    /* RESTORE HORIZONTAL LAYOUT for medium screens */
+/* MEDIUM SCREENS - Mobile menu for 601px to 768px */
+@media (min-width: 601px) and (max-width: 800px) {
+    /* Navbar adjustments for medium screens */
+    .navbar-container {
+        padding: 0 0.75rem;
+    }
+
+    .brand-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .brand-title {
+        font-size: 1.4rem;
+    }
+
+    .brand-subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-btn {
+        width: 58px;
+        height: 58px;
+        padding: 0.5rem;
+    }
+
+    /* Hide desktop navigation on medium screens */
+    .desktop-nav {
+        display: none !important;
+    }
+
+    /* Show mobile hamburger menu */
+    .mobile-menu-btn {
+        display: flex !important;
+        width: 58px;
+        height: 58px;
+        padding: 0.5rem;
+    }
+
+    /* Mobile menu dropdown styling */
+    .mobile-menu-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+        z-index: 1000;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+    }
+
+    .mobile-menu-dropdown .nav-item {
+        display: flex !important;
+        width: 100%;
+        padding: 0.875rem 1.25rem;
+        border: none;
+        background: transparent;
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .mobile-menu-dropdown .nav-item:hover {
+        background: var(--hover-bg);
+        color: var(--accent-color);
+    }
+
+    .mobile-menu-dropdown .nav-item.active {
+        background: var(--accent-color);
+        color: white;
+    }
+
+
+
+    /* RESTORE HORIZONTAL LAYOUT for medium screens - mini-bars */
     .mini-bars {
         display: flex !important;
         flex-direction: row !important;
@@ -6692,14 +7412,7 @@ body.dark-mode .lld-table .question-link:hover {
         flex: none !important;
     }
 
-    /* Hide mobile navigation on medium screens */
-    .desktop-nav {
-        display: flex !important;
-    }
 
-    .mobile-menu-btn {
-        display: none !important;
-    }
 }
 
 /* Medium mobile screens - fix go-to-top positioning for 481px-600px */
@@ -6718,10 +7431,7 @@ body.dark-mode .lld-table .question-link:hover {
         line-height: 40px !important;
     }
 
-    /* Hide श्री राधे on medium mobile screens */
-    .shree-radhe-footer {
-        display: none !important;
-    }
+
 }
 
 /* Extra small screens - even better Go to Top positioning */
@@ -6736,10 +7446,7 @@ body.dark-mode .lld-table .question-link:hover {
         line-height: 32px !important;
     }
 
-    /* Hide श्री राधे on small screens */
-    .shree-radhe-footer {
-        display: none !important;
-    }
+
 
     /* Fix table headers for very small screens */
     .problem-table th {
@@ -6811,10 +7518,7 @@ body.dark-mode .lld-table .question-link:hover {
         top: 50%;        transform: translateY(-50%);
     }
 
-    /* Hide श्री राधे on very small screens */
-    .shree-radhe-footer {
-        display: none !important;
-    }
+
 
     #go-to-top-button {
         bottom: 12px !important;

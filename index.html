@@ -87,7 +87,8 @@
       <!-- Desktop Navigation -->
       <div class="navbar-nav desktop-nav" role="menubar">
         <a href="index.html" class="nav-item active" id="dsaLink" role="menuitem"
-           aria-label="DSA - Prepare Data Structures and Algorithms from 0 to Hero">
+           aria-label="DSA - Prepare Data Structures and Algorithms from 0 to Hero"
+           data-tooltip="Master Data Structures & Algorithms 🚀">
           <span class="nav-icon">
             <i class="material-icons" aria-hidden="true">code</i>
           </span>
@@ -95,7 +96,8 @@
           <span class="nav-indicator"></span>
         </a>
         <a href="#" class="nav-item" id="blind75Link" role="menuitem"
-           aria-label="Blind75 - Best for 2 week preparation">
+           aria-label="Blind75 - Best for 2 week preparation"
+           data-tooltip="Crack interviews in 2 weeks! 💡">
           <span class="nav-icon">
             <i class="material-icons" aria-hidden="true">lightbulb</i>
           </span>
@@ -103,7 +105,8 @@
           <span class="nav-indicator"></span>
         </a>
         <a href="#" class="nav-item" id="leetcode150Link" role="menuitem"
-           aria-label="LeetCode150 - Best for 1-2 months preparation">
+           aria-label="LeetCode150 - Best for 1-2 months preparation"
+           data-tooltip="LeetCode Top 150 - Interview Ready! 🎯">
           <span class="nav-icon">
             <i class="material-icons" aria-hidden="true">lightbulb</i>
           </span>
@@ -111,7 +114,8 @@
           <span class="nav-indicator"></span>
         </a>
         <a href="#" class="nav-item" id="sqlLink" role="menuitem"
-           aria-label="SQL - Master SQL for interviews">
+           aria-label="SQL - Master SQL for interviews"
+           data-tooltip="Database mastery for interviews! 🗄️">
           <span class="nav-icon">
             <i class="material-icons" aria-hidden="true">storage</i>
           </span>
@@ -119,7 +123,8 @@
           <span class="nav-indicator"></span>
         </a>
         <a href="#" class="nav-item" id="lldLink" role="menuitem"
-           aria-label="LLD - Learn Low Level Design">
+           aria-label="LLD - Learn Low Level Design"
+           data-tooltip="Low Level Design patterns! 🔧">
           <span class="nav-icon">
             <i class="material-icons" aria-hidden="true">design_services</i>
           </span>
@@ -127,7 +132,8 @@
           <span class="nav-indicator"></span>
         </a>
         <a href="#" class="nav-item" id="hldLink" role="menuitem"
-           aria-label="HLD - Master High Level Design">
+           aria-label="HLD - Master High Level Design"
+           data-tooltip="System Design at scale! 🏗️">
           <span class="nav-icon">
             <i class="material-icons" aria-hidden="true">account_tree</i>
           </span>
@@ -138,6 +144,17 @@
 
       <!-- Navigation Controls -->
       <div class="navbar-controls">
+        <!-- Profile Button -->
+        <button class="profile-btn" id="profileBtn"
+                aria-label="User profile" title="">
+          <div class="profile-picture-container">
+            <img class="profile-picture" id="profilePicture" src="" alt="Profile" style="display: none;">
+            <span class="profile-icon-default" id="profileIconDefault">
+              <i class="material-icons" aria-hidden="true">account_circle</i>
+            </span>
+          </div>
+        </button>
+
         <!-- Theme Toggle -->
         <button class="theme-toggle-btn" id="darkModeToggle"
                 aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -367,6 +384,56 @@
       </div>
       <div class="welcome-footer">
         <button onclick="saveUserName()" class="btn-welcome-save">Start My Journey</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Modal -->
+  <div id="profileModal" class="profile-modal">
+    <div class="modal-overlay" onclick="hideProfileModal()"></div>
+    <div class="modal-content profile-content">
+      <div class="profile-header">
+        <div class="profile-icon-large" id="profileIconLarge">
+          <img class="profile-picture-large" id="profilePictureLarge" src="" alt="Profile" style="display: none;">
+          <i class="material-icons" id="profileIconLargeDefault">account_circle</i>
+        </div>
+        <h2>Profile Settings</h2>
+        <button class="modal-close-btn" onclick="hideProfileModal()" aria-label="Close profile modal">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+      <div class="profile-body">
+        <div class="input-field">
+          <label for="profileUserName">Display Name</label>
+          <input type="text" id="profileUserName" placeholder="Enter your name" maxlength="50">
+        </div>
+
+        <div class="input-field">
+          <label for="profilePictureInput"></label>
+          <div class="file-input-container">
+            <input type="file" id="profilePictureInput" accept="image/*" style="display: none;">
+            <button type="button" class="file-input-btn" onclick="document.getElementById('profilePictureInput').click()">
+              <i class="material-icons">photo_camera</i>
+              <span>Choose Picture</span>
+            </button>
+            <button type="button" class="file-remove-btn" id="removePictureBtn" onclick="removeProfilePicture()" style="display: none;">
+              <i class="material-icons">delete</i>
+              <span>Remove</span>
+            </button>
+          </div>
+          <div class="file-input-hint">JPG, PNG, or GIF (max 2MB)</div>
+        </div>
+
+        <div class="profile-stats">
+          <div class="stat-item">
+            <span class="stat-label">Member since</span>
+            <span class="stat-value" id="memberSince">Today</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-footer">
+        <button onclick="hideProfileModal()" class="btn-profile-cancel">Cancel</button>
+        <button onclick="updateUserProfile()" class="btn-profile-save">Save Changes</button>
       </div>
     </div>
   </div>

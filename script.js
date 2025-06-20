@@ -47,6 +47,11 @@ btn.addEventListener('click', function (e) {
 });
 
 /***************************************************************
+ * NAVBAR TOOLTIPS - NOW USING PURE CSS
+ * No JavaScript needed - tooltips handled by CSS ::after pseudo-elements
+ ***************************************************************/
+
+/***************************************************************
  * MODERN MOBILE NAVIGATION
  ***************************************************************/
 function initializeMobileMenu() {
@@ -993,8 +998,8 @@ function renderSections(data) {
 }
 /***************************************************************
  * GENERATE COLLAPSIBLE
- * If a section has subsections, create a top-level collapsible 
- * with aggregated mini bars. Inside, create another collapsible 
+ * If a section has subsections, create a top-level collapsible
+ * with aggregated mini bars. Inside, create another collapsible
  * for each subsection. If no subsections, just one collapsible.
  ***************************************************************/
 function generateAccordion(section) {
@@ -1020,7 +1025,7 @@ function generateAccordion(section) {
               <div class="mini-bars" data-id="${parentId}">
                 <div class="mini-bar-line">
                   <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                    <input type="checkbox" class="square-check easy" data-section="${parentId}" data-difficulty="easy" checked 
+                    <input type="checkbox" class="square-check easy" data-section="${parentId}" data-difficulty="easy" checked
                       style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
                   </label>
                   <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
@@ -1081,7 +1086,7 @@ function generateAccordionForSection(sec) {
             <div class="mini-bars" data-id="${sectionId}">
               <div class="mini-bar-line">
                 <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
-                  <input type="checkbox" class="square-check easy" data-section="${sectionId}" data-difficulty="easy" checked 
+                  <input type="checkbox" class="square-check easy" data-section="${sectionId}" data-difficulty="easy" checked
                     style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
                 </label>
                 <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
@@ -1880,6 +1885,9 @@ function saveUserName() {
 
   localStorage.setItem('userProfile', JSON.stringify(userProfile));
 
+  // Update profile name in navbar
+  updateProfileDisplay();
+
   // Hide the modal
   hideWelcomeModal();
 
@@ -1919,6 +1927,244 @@ function getUserProfile() {
 function getUserName() {
   const userProfile = getUserProfile();
   return userProfile.name || '';
+}
+
+/***************************************************************
+ * PROFILE MODAL FUNCTIONS
+ ***************************************************************/
+function showProfileModal() {
+  const modal = document.getElementById('profileModal');
+  const nameInput = document.getElementById('profileUserName');
+  const memberSince = document.getElementById('memberSince');
+  const profilePictureLarge = document.getElementById('profilePictureLarge');
+  const profileIconLargeDefault = document.getElementById('profileIconLargeDefault');
+  const removePictureBtn = document.getElementById('removePictureBtn');
+
+  if (modal && nameInput) {
+    // Load current user profile
+    const userProfile = getUserProfile();
+    nameInput.value = userProfile.name || '';
+
+    // Load profile picture
+    if (userProfile.profilePicture) {
+      profilePictureLarge.src = userProfile.profilePicture;
+      profilePictureLarge.style.display = 'block';
+      profileIconLargeDefault.style.display = 'none';
+      removePictureBtn.style.display = 'flex';
+    } else {
+      profilePictureLarge.style.display = 'none';
+      profileIconLargeDefault.style.display = 'block';
+      removePictureBtn.style.display = 'none';
+    }
+
+    // Set member since date
+    if (memberSince && userProfile.firstVisit) {
+      const date = new Date(userProfile.firstVisit);
+      memberSince.textContent = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } else if (memberSince) {
+      memberSince.textContent = 'Today';
+    }
+
+    // Show modal
+    modal.classList.add('active');
+
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+
+    // Focus on input
+    setTimeout(() => {
+      nameInput.focus();
+      nameInput.select();
+    }, 300);
+  }
+}
+
+function hideProfileModal() {
+  const modal = document.getElementById('profileModal');
+  if (modal) {
+    modal.classList.remove('active');
+    // Restore body scroll
+    document.body.style.overflow = '';
+  }
+}
+
+function updateUserProfile() {
+  const nameInput = document.getElementById('profileUserName');
+  let name = nameInput ? nameInput.value.trim() : '';
+
+  // If no name provided, use default "Coder"
+  if (name === '') {
+    name = 'Coder';
+  }
+
+  // Sanitize the name (remove any potentially harmful characters)
+  const sanitizedName = name.replace(/[<>]/g, '').substring(0, 50);
+
+  // Get existing profile
+  const existingProfile = getUserProfile();
+
+  // Update user profile (preserve profile picture)
+  const userProfile = {
+    name: sanitizedName,
+    hasSeenWelcome: existingProfile.hasSeenWelcome || true,
+    firstVisit: existingProfile.firstVisit || new Date().toISOString(),
+    profilePicture: existingProfile.profilePicture || null
+  };
+
+  localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+  // Update profile display in navbar
+  updateProfileDisplay();
+
+  // Hide the modal
+  hideProfileModal();
+
+  // Show a success toast
+  if (typeof M !== 'undefined' && M.toast) {
+    M.toast({
+      html: `<span class="success-toast">Profile updated successfully! 👤</span>`,
+      classes: 'rounded green',
+      displayLength: 3000
+    });
+  }
+}
+
+function updateProfileDisplay() {
+  const profilePicture = document.getElementById('profilePicture');
+  const profileIconDefault = document.getElementById('profileIconDefault');
+  const profileBtn = document.getElementById('profileBtn');
+
+  if (profilePicture && profileIconDefault && profileBtn) {
+    const userProfile = getUserProfile();
+    const displayName = userProfile.name || 'Coder';
+
+    // Update tooltip with funny name display
+    const funnyNames = [
+      `Hey there, ${displayName}! 👋`,
+      `Look who's here - ${displayName}! 🎉`,
+      `${displayName} in the house! 🏠`,
+      `The amazing ${displayName}! ⭐`,
+      `${displayName} is coding! 💻`,
+      `Master ${displayName}! 🧙‍♂️`,
+      `${displayName} the Great! 👑`,
+      `Captain ${displayName}! 🚀`
+    ];
+    const randomFunnyName = funnyNames[Math.floor(Math.random() * funnyNames.length)];
+    profileBtn.setAttribute('title', randomFunnyName);
+
+    // Update profile picture
+    if (userProfile.profilePicture) {
+      profilePicture.src = userProfile.profilePicture;
+      profilePicture.style.display = 'block';
+      profileIconDefault.style.display = 'none';
+    } else {
+      profilePicture.style.display = 'none';
+      profileIconDefault.style.display = 'block';
+    }
+  }
+}
+
+function handleProfilePictureUpload() {
+  const fileInput = document.getElementById('profilePictureInput');
+  const file = fileInput.files[0];
+
+  if (file) {
+    // Validate file size (max 2MB)
+    if (file.size > 2 * 1024 * 1024) {
+      if (typeof M !== 'undefined' && M.toast) {
+        M.toast({
+          html: `<span class="error-toast">File size must be less than 2MB</span>`,
+          classes: 'rounded red',
+          displayLength: 3000
+        });
+      }
+      return;
+    }
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      if (typeof M !== 'undefined' && M.toast) {
+        M.toast({
+          html: `<span class="error-toast">Please select an image file</span>`,
+          classes: 'rounded red',
+          displayLength: 3000
+        });
+      }
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const imageData = e.target.result;
+
+      // Update profile in localStorage
+      const userProfile = getUserProfile();
+      userProfile.profilePicture = imageData;
+      localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+      // Update modal display
+      const profilePictureLarge = document.getElementById('profilePictureLarge');
+      const profileIconLargeDefault = document.getElementById('profileIconLargeDefault');
+      const removePictureBtn = document.getElementById('removePictureBtn');
+
+      if (profilePictureLarge && profileIconLargeDefault && removePictureBtn) {
+        profilePictureLarge.src = imageData;
+        profilePictureLarge.style.display = 'block';
+        profileIconLargeDefault.style.display = 'none';
+        removePictureBtn.style.display = 'flex';
+      }
+
+      // Update navbar display
+      updateProfileDisplay();
+
+      // Show success message
+      if (typeof M !== 'undefined' && M.toast) {
+        M.toast({
+          html: `<span class="success-toast">Profile picture updated! 📸</span>`,
+          classes: 'rounded green',
+          displayLength: 3000
+        });
+      }
+    };
+
+    reader.readAsDataURL(file);
+  }
+}
+
+function removeProfilePicture() {
+  // Update profile in localStorage
+  const userProfile = getUserProfile();
+  userProfile.profilePicture = null;
+  localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+  // Update modal display
+  const profilePictureLarge = document.getElementById('profilePictureLarge');
+  const profileIconLargeDefault = document.getElementById('profileIconLargeDefault');
+  const removePictureBtn = document.getElementById('removePictureBtn');
+  const fileInput = document.getElementById('profilePictureInput');
+
+  if (profilePictureLarge && profileIconLargeDefault && removePictureBtn && fileInput) {
+    profilePictureLarge.style.display = 'none';
+    profileIconLargeDefault.style.display = 'block';
+    removePictureBtn.style.display = 'none';
+    fileInput.value = ''; // Clear file input
+  }
+
+  // Update navbar display
+  updateProfileDisplay();
+
+  // Show success message
+  if (typeof M !== 'undefined' && M.toast) {
+    M.toast({
+      html: `<span class="success-toast">Profile picture removed! 🗑️</span>`,
+      classes: 'rounded green',
+      displayLength: 3000
+    });
+  }
 }
 
 // Temporary test function - remove in production
@@ -2528,12 +2774,12 @@ function cleanupTooltips() {
 }
 
 /***************************************************************
- * FILTER CHECKBOX TUTORIAL TOOLTIP 
+ * FILTER CHECKBOX TUTORIAL TOOLTIP
  ***************************************************************/
 function showFirstCheckboxTooltip() {
   // Get refresh count from localStorage (default to 0)
   let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
-  
+
   // Increment refresh count
   refreshCount++;
   localStorage.setItem('refreshCount', refreshCount);
@@ -2586,7 +2832,7 @@ function showFirstCheckboxTooltip() {
     // Position the tooltip
     const positionTooltipForCheckbox = () => {
       const checkboxRect = firstEasyCheckbox.getBoundingClientRect();
-      
+
       // Make sure the checkbox is in view
       if (checkboxRect.top <= 0 || checkboxRect.bottom >= window.innerHeight) {
         firstEasyCheckbox.scrollIntoView({behavior: 'smooth', block: 'center'});
@@ -2594,7 +2840,7 @@ function showFirstCheckboxTooltip() {
         setTimeout(() => positionTooltipForCheckbox(), 300);
         return;
       }
-      
+
       // Position tooltip above the checkbox
       specialTooltip.style.left = `${checkboxRect.left}px`;
       specialTooltip.style.top = `${checkboxRect.top - specialTooltip.offsetHeight - 10}px`;
@@ -2788,10 +3034,26 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize mobile menu
   initializeMobileMenu();
 
+  // Navbar tooltips now handled by pure CSS
 
 
 
 
+
+  // Initialize profile button
+  const profileBtn = document.getElementById('profileBtn');
+  if (profileBtn) {
+    profileBtn.addEventListener('click', showProfileModal);
+  }
+
+  // Initialize profile picture upload
+  const profilePictureInput = document.getElementById('profilePictureInput');
+  if (profilePictureInput) {
+    profilePictureInput.addEventListener('change', handleProfilePictureUpload);
+  }
+
+  // Update profile display on page load
+  updateProfileDisplay();
   // Initialize reset progress button
   const resetBtn = document.getElementById('resetProgressBtn');
   if (resetBtn) {
