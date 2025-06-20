@@ -430,7 +430,7 @@ function setupMultiSelectFilter() {
       e.stopPropagation();
       this.classList.toggle('active');
       updateFilterDisplay();
-      filterProblems();
+      filterProblems(e); // Pass the event parameter!
       saveFilterState(); // Save filter state when changed
     });
   });
@@ -443,7 +443,7 @@ function setupMultiSelectFilter() {
         toggle.classList.remove('active');
       });
       updateFilterDisplay();
-      filterProblems();
+      filterProblems(e); // Pass the event parameter!
     });
   }
 
@@ -639,8 +639,7 @@ function filterProblems(event) {
         // Handle subsection visibility and expansion
         if (hasMatchInSubsection) {
           subsection.style.display = '';
-          const hasActiveFilters = searchTerm || selectedFilters.difficulties.length > 0 || selectedFilters.statuses.length > 0;
-          if (hasActiveFilters) {
+          if (searchTerm) {
             // First ensure parent section is open
             if (parentInstance) {
               parentInstance.open(0);
@@ -707,8 +706,7 @@ function filterProblems(event) {
     // Handle section visibility and expansion
     if (hasMatchInSection) {
       section.style.display = '';
-      const hasActiveFilters = searchTerm || selectedFilters.difficulties.length > 0 || selectedFilters.statuses.length > 0;
-      if (hasActiveFilters) {
+      if (searchTerm) {
         const instance = M.Collapsible.getInstance(section);
         if (instance) {
           instance.open(0);
@@ -719,9 +717,8 @@ function filterProblems(event) {
     }
   });
 
-  // If there's no search term and no filters, and it's not a checkbox click, collapse all sections
-  const hasActiveFilters = searchTerm || selectedFilters.difficulties.length > 0 || selectedFilters.statuses.length > 0;
-  if (!hasActiveFilters && !event?.target?.classList.contains('square-check')) {
+  // If there's no search term and it's not a checkbox click, collapse all sections
+  if (!searchTerm && !event?.target?.classList.contains('square-check')) {
     sections.forEach(section => {
       const instance = M.Collapsible.getInstance(section);
       if (instance) {
@@ -3037,63 +3034,60 @@ document.addEventListener('DOMContentLoaded', function () {
   */
 });
 
-// Optimized function to initialize checkboxes with better performance
+// Function to initialize checkboxes (copied from working.js)
 function initializeCheckboxes() {
-  console.log('Initializing checkboxes...');
+  // Wait a short time to ensure DOM is fully rendered
+  setTimeout(() => {
+    console.log('Initializing checkboxes...');
 
-  // Use event delegation for better performance - single listener for all checkboxes
-  const sectionsContainer = document.getElementById('sections');
-  if (!sectionsContainer) {
-    console.warn('Sections container not found, retrying...');
-    setTimeout(initializeCheckboxes, 100);
-    return;
-  }
+    // Get all checkboxes and remove existing event listeners by cloning
+    const checkboxes = document.querySelectorAll('.square-check');
+    console.log('Found checkboxes:', checkboxes.length);
+    checkboxes.forEach(checkbox => {
+      const newCheckbox = checkbox.cloneNode(true);
+      checkbox.parentNode.replaceChild(newCheckbox, checkbox);
+    });
 
-  // Remove existing delegated listener if any
-  if (sectionsContainer._checkboxHandler) {
-    sectionsContainer.removeEventListener('click', sectionsContainer._checkboxHandler);
-  }
+    // Add event listeners to the new checkboxes
+    document.querySelectorAll('.square-check').forEach(checkbox => {
+      // Ensure checkbox is visible and checked by default
+      checkbox.checked = true;
 
-  // Add single delegated event listener for all checkboxes
-  sectionsContainer._checkboxHandler = function(e) {
-    if (e.target.classList.contains('square-check')) {
-      e.stopPropagation();
-      console.log('Checkbox clicked:', e.target.dataset.section, e.target.dataset.difficulty, e.target.checked);
+      // Add click event listener
+      checkbox.addEventListener('click', function (e) {
+        // Stop event propagation to prevent collapsible from toggling
+        e.stopPropagation();
+        console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
 
-      // If this checkbox is a parent (i.e. not inside a subsection container)
-      if (!e.target.closest('.mini-bars.small')) {
-        // Get the parent section (collapsible) that contains both parent and child checkboxes
-        const parentSection = e.target.closest('.collapsible');
-        if (parentSection) {
-          const difficulty = e.target.dataset.difficulty;
-          // Find all child checkboxes in subsections with the same difficulty
-          const childCheckboxes = parentSection.querySelectorAll(`.mini-bars.small .square-check.${difficulty}`);
-          childCheckboxes.forEach(child => {
-            child.checked = e.target.checked;
-          });
+        // If this checkbox is a parent (i.e. not inside a subsection container)
+        if (!this.closest('.mini-bars.small')) {
+          // Get the parent section (collapsible) that contains both parent and child checkboxes
+          const parentSection = this.closest('.collapsible');
+          if (parentSection) {
+            const difficulty = this.dataset.difficulty; // e.g., "easy", "medium", or "hard"
+            // Find all child checkboxes in subsections with the same difficulty
+            const childCheckboxes = parentSection.querySelectorAll(`.mini-bars.small .square-check.${difficulty}`);
+            childCheckboxes.forEach(child => {
+              child.checked = this.checked;
+            });
+          }
         }
-      }
 
-      // Filter problems based on the updated state
-      filterProblems(e);
-    }
+        // Filter problems based on the updated state
+        filterProblems(e);
+      });
+    });
 
-    // Handle label clicks to prevent event propagation
-    if (e.target.classList.contains('difficulty-filter-square')) {
-      e.stopPropagation();
-    }
-  };
-
-  sectionsContainer.addEventListener('click', sectionsContainer._checkboxHandler);
-
-  // Set all checkboxes to checked by default for better performance
-  const checkboxes = sectionsContainer.querySelectorAll('.square-check');
-  checkboxes.forEach(checkbox => {
-    checkbox.checked = true;
-  });
-
-  console.log('Checkboxes initialized with event delegation:', checkboxes.length);
+    // Add event listeners to the labels to prevent event propagation
+    document.querySelectorAll('.difficulty-filter-square').forEach(label => {
+      label.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+    });
+  }, 500);
 }
+
+
 
 
 
