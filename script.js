@@ -143,23 +143,52 @@ function triggerCelebration() {
     '#EF4444'  // Error
   ];
 
-  // Center burst
-  confetti({
+  // Create a custom canvas that spans the entire viewport
+  const canvas = document.createElement('canvas');
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100vw';
+  canvas.style.height = '100vh';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '99999';
+  
+  // Account for zoom by scaling the canvas
+  const zoomLevel = 0.8; // Your body zoom is 80%
+  canvas.width = window.innerWidth / zoomLevel;
+  canvas.height = window.innerHeight / zoomLevel;
+  canvas.style.transform = `scale(${1/zoomLevel})`;
+  canvas.style.transformOrigin = 'top left';
+  
+  // Add canvas to body
+  document.body.appendChild(canvas);
+
+  // Create confetti instance with our custom canvas
+  const myConfetti = confetti.create(canvas, {
+    resize: true,
+    useWorker: false, // Changed to false for better control
+    disableForReducedMotion: true
+  });
+
+  // Center burst - full screen coverage
+  myConfetti({
     particleCount: 50,
     spread: 360,
     origin: { x: 0.5, y: 0.5 },
-    colors: colors
+    colors: colors,
+    scalar: 1.2,
+    gravity: 1.2
   });
 
   // Side bursts
   setTimeout(() => {
-    confetti({
+    myConfetti({
       particleCount: 30,
       spread: 90,
       origin: { x: 0, y: 0.5 },
       colors: colors
     });
-    confetti({
+    myConfetti({
       particleCount: 30,
       spread: 90,
       origin: { x: 1, y: 0.5 },
@@ -169,44 +198,54 @@ function triggerCelebration() {
 
   // Top corner bursts
   setTimeout(() => {
-    confetti({
+    myConfetti({
       particleCount: 30,
       spread: 90,
       origin: { x: 0, y: 0 },
-      colors: colors
+      colors: colors,
+      scalar: 1.2,
+      gravity: 1.2
     });
-    confetti({
+    myConfetti({
       particleCount: 30,
       spread: 90,
       origin: { x: 1, y: 0 },
-      colors: colors
+      colors: colors,
+      scalar: 1.2,
+      gravity: 1.2
     });
   }, 400);
 
   // Bottom corner bursts
   setTimeout(() => {
-    confetti({
+    myConfetti({
       particleCount: 30,
       spread: 90,
       origin: { x: 0, y: 1 },
-      colors: colors
+      colors: colors,
+      scalar: 1.2,
+      gravity: 1.2
     });
-    confetti({
+    myConfetti({
       particleCount: 30,
       spread: 90,
       origin: { x: 1, y: 1 },
-      colors: colors
+      colors: colors,
+      scalar: 1.2,
+      gravity: 1.2
     });
   }, 600);
 
   // Final big burst
   setTimeout(() => {
-    confetti({
+    myConfetti({
       particleCount: 100,
       spread: 360,
       origin: { x: 0.5, y: 0.5 },
       colors: colors,
-      ticks: 300
+      ticks: 300,
+      scalar: 1.2,
+      gravity: 1.2
     });
   }, 800);
 }
