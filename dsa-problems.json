@@ -3063,13 +3063,13 @@
             {
               "label": "Longest Common Subsequence",
               "question": "https://leetcode.com/problems/longest-common-subsequence/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/LongestCommonSubsequence.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Maximum Length of Repeated Subarray(Longest Common Subarray)",
               "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/MaximumLengthOfRepeatedSubarray.cpp",
               "difficulty": "medium"
             },
             {
@@ -3081,13 +3081,13 @@
             {
               "label": "Longest Palindromic Subsequence",
               "question": "https://leetcode.com/problems/longest-palindromic-subsequence/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/LongestPalindromicSubsequence.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Edit Distance",
               "question": "https://leetcode.com/problems/edit-distance/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/EditDistance.cpp",
               "difficulty": "medium"
             },
             {
@@ -3111,7 +3111,7 @@
             {
               "label": "Minimum Insertion Steps to Make a String Palindrome",
               "question": "https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/MinimumInsertionStepsToMakeAStringPalindrome.cpp",
               "difficulty": "hard"
             },
             {
@@ -3826,7 +3826,7 @@
             {
               "label": "01 Matrix",
               "question": "https://leetcode.com/problems/01-matrix/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/01_Matrix.cpp",
               "difficulty": "medium"
             },
             {
