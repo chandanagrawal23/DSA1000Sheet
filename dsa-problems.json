@@ -1727,6 +1727,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Maximum Number of Events That Can Be Attended",
+          "question": "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
+          "solution": "",
+          "difficulty": "medium"
+        },
+        {
           "label": "Find Median from Data Stream (IMP MAANGM)",
           "question": "https://leetcode.com/problems/find-median-from-data-stream",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
@@ -2720,37 +2726,37 @@
             {
               "label": "Count Vowels and Consonants",
               "question": "https://docs.vultr.com/java/examples/count-the-number-of-vowels-and-consonants-in-a-sentence",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/CountVowelsAndConsonants.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Reverse String",
               "question": "https://leetcode.com/problems/reverse-string/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/ReverseString.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Valid Anagram",
               "question": "https://leetcode.com/problems/valid-anagram/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/ValidAnagram.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Add Binary",
               "question": "https://leetcode.com/problems/add-binary/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/AddBinary.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Add Strings",
               "question": "https://leetcode.com/problems/add-strings/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/AddStrings.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Roman to Integer",
               "question": "https://leetcode.com/problems/roman-to-integer/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/RomanToInteger.cpp",
               "difficulty": "easy"
             },
             {
@@ -2786,7 +2792,7 @@
             {
               "label": "Integer to Roman",
               "question": "https://leetcode.com/problems/integer-to-roman/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/IntToRoman.cpp",
               "difficulty": "medium"
             },
             {
@@ -2909,7 +2915,7 @@
             {
               "label": "Integer Break",
               "question": "https://leetcode.com/problems/integer-break/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/IntegerBreak.cpp",
               "difficulty": "medium"
             },
             {
@@ -3128,7 +3134,7 @@
             {
               "label": "0/1 Knapsack Problem",
               "question": "https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/0_1KnapsackProblem.cpp",
               "difficulty": "medium"
             },
             {
@@ -3140,13 +3146,13 @@
             {
               "label": "Ones and Zeroes",
               "question": "https://leetcode.com/problems/ones-and-zeroes/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/OnesAndZeroes.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Target Sum",
               "question": "https://leetcode.com/problems/target-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/TargetSum.cpp",
               "difficulty": "medium"
             },
             {
@@ -3520,7 +3526,7 @@
         {
           "label": "Smallest Even Multiple",
           "question": "https://leetcode.com/problems/smallest-even-multiple/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SmallestEvenMultiple.cpp",
           "difficulty": "easy"
         },
         {
@@ -4272,13 +4278,13 @@
         {
           "label": "Number of 1 Bits",
           "question": "https://leetcode.com/problems/number-of-1-bits/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/NumberOf1Bits.cpp",
           "difficulty": "easy"
         },
         {
           "label": "Power of Two",
           "question": "http://leetcode.com/problems/power-of-two/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/PowerOfTwo.cpp",
           "difficulty": "easy"
         },
         {
