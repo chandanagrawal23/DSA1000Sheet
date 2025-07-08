@@ -16,12 +16,6 @@
           "difficulty": "easy"
         },
         {
-          "label": "Find Maximum of Three Numbers",
-          "question": "https://leetcode.com/problems/maximum-69-number/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Check Prime Number",
           "question": "https://www.geeksforgeeks.org/c-program-to-check-prime-number/",
           "solution": "-",
@@ -58,32 +52,14 @@
           "difficulty": "easy"
         },
         {
-          "label": "Count Digits in a Number",
-          "question": "https://www.geeksforgeeks.org/program-count-digits-integer-3-different-methods/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Check Armstrong Number",
           "question": "https://www.geeksforgeeks.org/program-for-armstrong-numbers/",
           "solution": "-",
           "difficulty": "easy"
         },
         {
-          "label": "Reverse a String",
-          "question": "https://leetcode.com/problems/reverse-string/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Check Palindrome String",
           "question": "https://leetcode.com/problems/valid-palindrome/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Find Largest Element in an Array",
-          "question": "https://www.geeksforgeeks.org/program-to-find-largest-element-in-an-array/",
           "solution": "-",
           "difficulty": "easy"
         },
@@ -102,12 +78,6 @@
         {
           "label": "Swap Two Numbers Without Using a Temporary Variable",
           "question": "https://www.geeksforgeeks.org/swap-two-numbers-without-using-temporary-variable/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Print Multiplication Table",
-          "question": "https://www.geeksforgeeks.org/program-to-print-multiplication-table-of-a-number/",
           "solution": "-",
           "difficulty": "easy"
         },
