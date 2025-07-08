@@ -245,6 +245,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Maximum Length of a Subarray with Positive Product",
+              "question": "https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumLengthOfASubarrayWithPositiveProduct.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Brick Wall",
               "question": "https://leetcode.com/problems/brick-wall/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BrickWall.cpp",
@@ -316,6 +322,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Make Sum Divisible by P",
+              "question": "https://leetcode.com/problems/make-sum-divisible-by-p/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeSumDivisibleByP.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Maximum Subarray Sum With Length Divisible by K",
               "question": "https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSubarraySumWhoseLengthDivByK.cpp",
@@ -324,25 +336,19 @@
             {
               "label": "Continuous Subarray Sum",
               "question": "https://leetcode.com/problems/continuous-subarray-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ContinuousSubarraySum.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Maximum Sum Circular Subarray",
               "question": "https://leetcode.com/problems/maximum-sum-circular-subarray/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumSumCircularSubarray.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Maximum Product Subarray",
               "question": "https://leetcode.com/problems/maximum-product-subarray/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumProductSubarray.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Length of a Subarray with Positive Product",
-              "question": "https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/",
-              "solution": "-",
               "difficulty": "medium"
             },
             {
