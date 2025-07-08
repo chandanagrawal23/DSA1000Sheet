@@ -3655,7 +3655,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Queries on Number of Points Inside a Circle",
+          "label": "Queries on Number of Points Inside a Circle(Google Learn 3 Approaches)",
           "question": "https://leetcode.com/problems/queries-on-number-of-points-inside-a-circle/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/countPoints.cpp",
           "difficulty": "medium"
