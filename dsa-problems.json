@@ -306,43 +306,49 @@
             {
               "label": "Maximum Subarray Sum – Kadane’s Algorithm",
               "question": "https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KadaneMaxSubArraySum.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Best Time to Buy and Sell Stock",
               "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BestTimeToBuyAndSellStock.cpp",
               "difficulty": "easy"
-            },
-            {
-              "label": "Maximum Product Subarray",
-              "question": "https://leetcode.com/problems/maximum-product-subarray/",
-              "solution": "-",
-              "difficulty": "medium"
             },
             {
               "label": "Subarrays with Sum 0",
               "question": "https://www.geeksforgeeks.org/find-if-there-is-a-subarray-with-0-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubarrayWith0sum.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Subarray Sum Equals K",
               "question": "https://leetcode.com/problems/subarray-sum-equals-k/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubArraySumK.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Longest Subarray with sum K",
               "question": "https://www.geeksforgeeks.org/longest-sub-array-sum-k/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LongestSubarrayWithSumK.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Contiguous Array(Convert values to ±1 then same as Subarray Sum Equals 0)",
+              "question": "https://leetcode.com/problems/contiguous-array/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ContiguousArray.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Subarray Sums Divisible by K",
               "question": "https://leetcode.com/problems/subarray-sums-divisible-by-k/description/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubarraySumsDivisibleByK.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Maximum Subarray Sum With Length Divisible by K",
+              "question": "https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSubarraySumWhoseLengthDivByK.cpp",
               "difficulty": "medium"
             },
             {
@@ -358,6 +364,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Maximum Product Subarray",
+              "question": "https://leetcode.com/problems/maximum-product-subarray/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumProductSubarray.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Maximum Length of a Subarray with Positive Product",
               "question": "https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/",
               "solution": "-",
@@ -366,13 +378,13 @@
             {
               "label": "Binary Subarrays With Sum",
               "question": "https://leetcode.com/problems/binary-subarrays-with-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinarySubarrayWithSum.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Number of Submatrices That Sum to Target",
               "question": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberOfSubmatricesThatSumToTarget.cpp",
               "difficulty": "hard"
             }
           ]
@@ -1993,6 +2005,12 @@
           "question": "https://leetcode.com/problems/count-subarrays-with-score-less-than-k/",
           "solution": "-",
           "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Fruits Harvested After at Most K Steps",
+          "question": "https://leetcode.com/problems/maximum-fruits-harvested-after-at-most-k-steps/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumFruitsHarvestedAfterAtMostKSteps.cpp",
+          "difficulty": "hard"
         }
       ]
     },
@@ -3207,6 +3225,12 @@
               "label": "Reducing Dishes",
               "question": "https://leetcode.com/problems/reducing-dishes/",
               "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximum Number of Events That Can Be Attended II (DP + Binary Search)",
+              "question": "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumNumberOfEventsThatCanBeAttendedII.cpp",
               "difficulty": "hard"
             }
           ]
