@@ -2402,10 +2402,10 @@
               "difficulty": "medium"
             },
             {
-              "label": "Maximum Sum BST in Binary Tree",
-              "question": "https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/",
+              "label": "Minimum Increments to Equalize Leaf Paths",
+              "question": "https://leetcode.com/problems/minimum-increments-to-equalize-leaf-paths/",
               "solution": "-",
-              "difficulty": "hard"
+              "difficulty": "medium"
             }
           ]
         },
