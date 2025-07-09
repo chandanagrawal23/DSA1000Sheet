@@ -3987,13 +3987,13 @@
             {
               "label": "Course Schedule",
               "question": "https://leetcode.com/problems/course-schedule/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_I.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Course Schedule II",
               "question": "https://leetcode.com/problems/course-schedule-ii/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_II.cpp",
               "difficulty": "medium"
             },
             {
@@ -4003,14 +4003,8 @@
               "difficulty": "medium"
             },
             {
-              "label": "Loud and Rich",
-              "question": "https://leetcode.com/problems/loud-and-rich/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Parallel Courses",
-              "question": "https://leetcode.com/problems/parallel-courses/",
+              "question": "https://leetcode.ca/all/1136.html",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -4033,15 +4027,9 @@
               "difficulty": "medium"
             },
             {
-              "label": "All Ancestors of a Node in a DAG",
-              "question": "https://leetcode.com/problems/all-ancestors-of-a-node-in-a-directed-acyclic-graph/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Longest Increasing Path in a Matrix",
               "question": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LongestIncreasingPathInAMatrix.cpp",
               "difficulty": "hard"
             },
             {
