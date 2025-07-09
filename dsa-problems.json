@@ -3999,7 +3999,7 @@
             {
               "label": "Course Schedule IV",
               "question": "https://leetcode.com/problems/course-schedule-iv/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_IV.cpp",
               "difficulty": "medium"
             },
             {
@@ -4009,21 +4009,15 @@
               "difficulty": "medium"
             },
             {
-              "label": "Find Eventual Safe States",
-              "question": "https://leetcode.com/problems/find-eventual-safe-states/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Minimum Height Trees",
               "question": "https://leetcode.com/problems/minimum-height-trees/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumHeightTrees.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Find All Possible Recipes from Given Supplies",
               "question": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindAllPossibleRecipesFromGivenSupplies.cpp",
               "difficulty": "medium"
             },
             {
