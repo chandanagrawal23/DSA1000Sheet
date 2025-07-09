@@ -4033,27 +4033,21 @@
               "difficulty": "hard"
             },
             {
-              "label": "Rank Transform of a Matrix",
-              "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Parallel Courses III",
               "question": "https://leetcode.com/problems/parallel-courses-iii/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ParallelCourses_III.cpp",
               "difficulty": "hard"
             },
             {
-              "label": "Alien Dictionary [IMPO]",
-              "question": "https://leetcode.com/problems/alien-dictionary/",
-              "solution": "-",
+              "label": "Alien Dictionary [IMPO, FAANGM]",
+              "question": "https://leetcode.ca/all/269.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/AlienDictionary.cpp",
               "difficulty": "hard"
             },
             {
-              "label": "Largest Color Value in a Directed Graph [DFS, Dijkstra, Topological Sort]",
+              "label": "Largest Color Value in a Directed Graph [Topological Sort + DP or DFS]",
               "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LargestColorValueInADirectedGraph.cpp",
               "difficulty": "hard"
             }
           ]
@@ -4504,6 +4498,12 @@
         {
           "label": "Optimize water distribution in a village [Nice Q.]",
           "question": "https://leetcode.ca/2019-02-10-1168-Optimize-Water-Distribution-in-a-Village/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Rank Transform of a Matrix",
+          "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
           "solution": "-",
           "difficulty": "hard"
         }
