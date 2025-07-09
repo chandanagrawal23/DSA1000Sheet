@@ -4335,6 +4335,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Minimum Moves to Clean the Classroom (Graph + Bit Manipulation)",
+          "question": "https://leetcode.com/problems/minimum-moves-to-clean-the-classroom/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumMovesToCleanTheClassroom.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Shortest Path to Get All Keys",
           "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
           "solution": "-",
