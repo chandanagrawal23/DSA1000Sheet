@@ -467,9 +467,9 @@
           "difficulty": "medium"
         },
         {
-          "label": "Create Maximum Number ( Super Problem )",
+          "label": "Create Maximum Number(Stack + Two Pointer ,Superb Problem)",
           "question": "https://leetcode.com/problems/create-maximum-number/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CreateMaximumNumber.cpp",
           "difficulty": "hard"
         },
         {
