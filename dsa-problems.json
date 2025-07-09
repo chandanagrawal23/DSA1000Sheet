@@ -3675,13 +3675,7 @@
         {
           "label": "Maximum Area Rectangle With Point Constraints I",
           "question": "https://leetcode.com/problems/maximum-area-rectangle-with-point-constraints-i/",
-          "solution": "",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Maximum Area Rectangle With Point Constraints II",
-          "question": "https://leetcode.com/problems/maximum-area-rectangle-with-point-constraints-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumAreaWithPointConstraints_I.cpp",
           "difficulty": "medium"
         },
         {
