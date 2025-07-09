@@ -1022,6 +1022,12 @@
               "difficulty": "hard"
             },
             {
+              "label": "Maximum Number of Tasks You Can Assign(Monotonic Queue + Answer on Binary Search)",
+              "question": "https://leetcode.com/problems/maximum-number-of-tasks-you-can-assign/",
+              "solution": "",
+              "difficulty": "hard"
+            },
+            {
               "label": "Minimum Window Substring [Very Important]",
               "question": "https://leetcode.com/problems/minimum-window-substring/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindowAnswerOnBinarySearch.cpp",
