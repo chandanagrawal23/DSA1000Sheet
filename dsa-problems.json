@@ -2826,6 +2826,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Find Maximum Number of Non Intersecting Substrings",
+              "question": "https://leetcode.com/problems/find-maximum-number-of-non-intersecting-substrings/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMaximumNumberOfNonIntersectingSubstrings.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "Next Greater Element III",
               "question": "https://leetcode.com/problems/next-greater-element-iii/",
               "solution": "-",
