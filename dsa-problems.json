@@ -4199,37 +4199,37 @@
             {
               "label": "Prim's Algorithm (Check optimized one)",
               "question": "https://www.geeksforgeeks.org/prims-minimum-spanning-tree-mst-greedy-algo-5/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/PrimsAlgorithm.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Kruskal's Algorithm ( Using Disjoint Set Union )",
               "question": "https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/KruskalAlgorithm.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Min Cost to Connect All Points",
               "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinCostToConnectAllPoints.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Connecting Cities With Minimum Cost",
               "question": "https://leetcode.ca/all/1135.html",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ConnectingCitiesWithMinimumCost.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Minimum Product Spanning Tree",
               "question": "https://www.geeksforgeeks.org/minimum-product-spanning-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumProductSpanningTree.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Second Best Minimum Spanning Tree",
               "question": "https://www.geeksforgeeks.org/second-best-minimum-spanning-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/SecondBestMinimumSpanningTree.cpp",
               "difficulty": "medium"
             },
             {
@@ -4241,7 +4241,7 @@
             {
               "label": "Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree",
               "question": "https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.cpp",
               "difficulty": "hard"
             }
           ]
