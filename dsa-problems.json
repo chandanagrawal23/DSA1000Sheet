@@ -4027,12 +4027,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Number of Restricted Paths from First to Last Node",
-              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Find All Possible Recipes from Given Supplies",
               "question": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/",
               "solution": "-",
@@ -4082,31 +4076,31 @@
             {
               "label": "Network Delay Time",
               "question": "https://leetcode.com/problems/network-delay-time/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NetworkDelayTime.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Path With Maximum Probability",
               "question": "https://leetcode.com/problems/path-with-maximum-probability/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Number of Restricted Paths from First to Last Node",
-              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/PathWithMaximumProbability.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Cheapest Flights Within K Stops",
               "question": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CheapestFlightsWithinK_Stops.cpp",
               "difficulty": "medium"
             },
             {
-              "label": "Number of Ways to Arrive at Destination",
-              "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
-              "solution": "-",
+              "label": "Find Minimum Time to Reach Last Room I",
+              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindMinimumTimeToReachLastRoom_I.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find Minimum Time to Reach Last Room II",
+              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindMinimumTimeToReachLastRoom_II.cpp",
               "difficulty": "medium"
             },
             {
@@ -4116,21 +4110,33 @@
               "difficulty": "medium"
             },
             {
-              "label": "Find Minimum Time to Reach Last Room I",
-              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/",
-              "solution": "-",
+              "label": "Number of Ways to Arrive at Destination",
+              "question": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NumberOfWaysToArriveAtDestination.cpp",
               "difficulty": "medium"
             },
             {
-              "label": "Find Minimum Time to Reach Last Room II",
-              "question": "https://leetcode.com/problems/find-minimum-time-to-reach-last-room-ii/",
-              "solution": "-",
+              "label": "Number of Restricted Paths from First to Last Node (Dijkstra + DP)",
+              "question": "https://leetcode.com/problems/number-of-restricted-paths-from-first-to-last-node/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NumberOfRestrictedPathsFromFirstToLastNode.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
               "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToMakeAtLeastOneValidPathInAGrid_Dijkstra.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Time to Visit a Cell in a Grid",
+              "question": "http://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumTimeToVisitACellInAGrid.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Minimum Obstacle Removal to Reach Corner",
+              "question": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumObstacleToReachCorner_Dijkstra.cpp",
               "difficulty": "hard"
             },
             {
@@ -4150,18 +4156,18 @@
               "question": "https://leetcode.com/problems/find-edges-in-shortest-paths/",
               "solution": "-",
               "difficulty": "hard"
-            },
-            {
-              "label": "Minimum Time to Visit a Cell in a Grid",
-              "question": "http://leetcode.com/problems/minimum-time-to-visit-a-cell-in-a-grid/",
-              "solution": "-",
-              "difficulty": "hard"
             }
           ]
         },
         {
           "title": "0-1 BFS",
           "problems": [
+            {
+              "label": "Find a Safe Walk Through a Grid",
+              "question": "https://leetcode.com/problems/find-a-safe-walk-through-a-grid/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindASafeWalkThroughAGrid.cpp",
+              "difficulty": "medium"
+            },
             {
               "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
               "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
@@ -4171,7 +4177,18 @@
             {
               "label": "Minimum Obstacle Removal to Reach Corner",
               "question": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumObstacleToReachCorner_0_1_BFS.cpp",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "0-K BFS",
+          "problems": [
+            {
+              "label": "Minimum Magic Path Cost",
+              "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumMagicPathCost_0_K_BFS.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumMagicPathCost_0_K_BFS.cpp",
               "difficulty": "hard"
             }
           ]
