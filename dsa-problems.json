@@ -4147,8 +4147,8 @@
             },
             {
               "label": "Minimum Cost to Reach City With Discounts",
-              "question": "https://leetcode.com/problems/minimum-cost-to-reach-city-with-discounts/",
-              "solution": "-",
+              "question": "https://leetcode.ca/2021-12-16-2093-Minimum-Cost-to-Reach-City-With-Discounts/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToReachCityWithDiscounts.cpp",
               "difficulty": "hard"
             },
             {
