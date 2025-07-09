@@ -4235,7 +4235,13 @@
             {
               "label": "Check if an edge is a part of any minimum spanning tree",
               "question": "https://www.geeksforgeeks.org/check-if-an-edge-is-a-part-of-any-minimum-spanning-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CheckIfAnEdgeIsAPartOfAnyMinimumSpanningTree.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Optimize Water Distribution in a Village",
+              "question": "https://leetcode.ca/2019-02-10-1168-Optimize-Water-Distribution-in-a-Village/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/OptimizeWaterDistributionInAVillage.cpp",
               "difficulty": "medium"
             },
             {
