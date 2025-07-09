@@ -3974,12 +3974,6 @@
               "difficulty": "hard"
             },
             {
-              "label": "Minimum Cost to Make At Least One Valid Path in a Grid",
-              "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Shortest Path in a Grid with Obstacles Elimination",
               "question": "https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/",
               "solution": "-",
@@ -4136,7 +4130,7 @@
             {
               "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
               "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToMakeAtLeastOneValidPathInAGrid_Dijkstra.cpp",
               "difficulty": "hard"
             },
             {
@@ -4171,7 +4165,7 @@
             {
               "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
               "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToMakeAtLeastOneValidPathInAGrid_0_1_BFS.cpp",
               "difficulty": "hard"
             },
             {
