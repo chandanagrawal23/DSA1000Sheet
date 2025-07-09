@@ -1993,6 +1993,12 @@
           "question": "https://leetcode.com/problems/maximum-fruits-harvested-after-at-most-k-steps/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumFruitsHarvestedAfterAtMostKSteps.cpp",
           "difficulty": "hard"
+        },
+        {
+          "label": "Maximize the Minimum Powered City (Dynamic Sliding Window + Binary Search)",
+          "question": "https://leetcode.com/problems/maximize-the-minimum-powered-city/",
+          "solution": "",
+          "difficulty": "hard"
         }
       ]
     },
