@@ -4005,7 +4005,7 @@
             {
               "label": "Parallel Courses",
               "question": "https://leetcode.ca/all/1136.html",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ParallelCourses_I.cpp",
               "difficulty": "medium"
             },
             {
@@ -4041,7 +4041,7 @@
             {
               "label": "Parallel Courses III",
               "question": "https://leetcode.com/problems/parallel-courses-iii/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ParallelCourses_III.cpp",
               "difficulty": "hard"
             },
             {
