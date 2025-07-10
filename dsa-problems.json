@@ -1254,7 +1254,7 @@
             {
               "label": "Shortest Unsorted Continuous Subarray",
               "question": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestUnsortedContinuousSubarray.cpp",
               "difficulty": "medium"
             },
             {
@@ -1266,7 +1266,7 @@
             {
               "label": "Jump Game VIII",
               "question": "https://leetcode.ca/2022-03-15-2297-Jump-Game-VIII/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/JumpGame_VIII.cpp",
               "difficulty": "medium"
             },
             {
