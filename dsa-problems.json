@@ -1391,6 +1391,12 @@
               "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
               "solution": "-",
               "difficulty": "hard"
+            },
+            {
+              "label": "Max Value of Equation ( Monotonic Deque / Heap )",
+              "question": "https://leetcode.com/problems/max-value-of-equation/",
+              "solution": "",
+              "difficulty": "hard"
             }
           ]
         }
@@ -1860,6 +1866,12 @@
           "question": "https://leetcode.com/problems/sliding-window-median/",
           "solution": "-",
           "difficulty": "hard"
+        },
+        {
+          "label": "Maximize the Minimum Powered City (Sliding Window + Answer on Binary Search)",
+          "question": "https://leetcode.com/problems/maximize-the-minimum-powered-city/",
+          "solution": "",
+          "difficulty": "hard"
         }
       ]
     },
@@ -1995,7 +2007,7 @@
         {
           "label": "Count Subarrays With Score Less Than K",
           "question": "https://leetcode.com/problems/count-subarrays-with-score-less-than-k/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountSubarraysWithScoreLessThanK.cpp",
           "difficulty": "hard"
         },
         {
@@ -2005,15 +2017,9 @@
           "difficulty": "hard"
         },
         {
-          "label": "Maximize the Minimum Powered City (Dynamic Sliding Window + Binary Search)",
-          "question": "https://leetcode.com/problems/maximize-the-minimum-powered-city/",
-          "solution": "",
-          "difficulty": "hard"
-        },
-        {
           "label" : "Maximum Number of Robots Within Budget [Dynamic Sliding Window + (Heap or Multisets or Monotonic DeQueue)]",
           "question": "https://leetcode.com/problems/maximum-number-of-robots-within-budget/",
-          "solution": "",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumNumberOfRobotsWithinBudget.cpp",
           "difficulty": "hard"
         }
       ]
