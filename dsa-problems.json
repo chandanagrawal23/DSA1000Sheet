@@ -3809,7 +3809,7 @@
             {
               "label": "Maximize the Number of Target Nodes After Connecting Trees I",
               "question": "https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-i/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MaximizeTheNumberOfTargetNodesAfterConnectingTrees_I.cpp",
               "difficulty": "medium"
             },
             {
