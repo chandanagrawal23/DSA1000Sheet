@@ -3807,8 +3807,8 @@
               "difficulty": "medium"
             },
             {
-              "label": "Number of Operations to Make Network Connected",
-              "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+              "label": "Maximize the Number of Target Nodes After Connecting Trees I",
+              "question": "https://leetcode.com/problems/maximize-the-number-of-target-nodes-after-connecting-trees-i/",
               "solution": "-",
               "difficulty": "medium"
             },
