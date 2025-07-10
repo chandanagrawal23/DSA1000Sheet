@@ -1290,7 +1290,7 @@
             {
               "label": "Find the Number of Subarrays Where Boundary Elements Are Maximum",
               "question": "https://leetcode.com/problems/find-the-number-of-subarrays-where-boundary-elements-are-maximum/",
-              "solution": "",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindTheNumberOfSubarraysWhereBoundaryElementsAreMaximum.cpp",
               "difficulty": "hard"
             },
             {
