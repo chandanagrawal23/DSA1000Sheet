@@ -1211,7 +1211,7 @@
           "problems": [
             {
               "label": "Next Larger Element",
-              "question": "https://practice.geeksforgeeks.org/problems/next-larger-element-1587115620/1",
+              "question": "https://www.geeksforgeeks.org/dsa/next-greater-element/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement.cpp",
               "difficulty": "medium"
             },
@@ -1219,12 +1219,6 @@
               "label": "Next Greater Element II",
               "question": "https://leetcode.com/problems/next-greater-element-ii/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement2.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Beautiful Towers II",
-              "question": "http://leetcode.com/problems/beautiful-towers-ii",
-              "solution": "-",
               "difficulty": "medium"
             },
             {
@@ -1260,6 +1254,12 @@
             {
               "label": "Shortest Unsorted Continuous Subarray",
               "question": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Beautiful Towers II",
+              "question": "http://leetcode.com/problems/beautiful-towers-ii",
               "solution": "-",
               "difficulty": "medium"
             },
