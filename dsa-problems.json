@@ -263,12 +263,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Deque )",
-              "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "My Calendar III (Map + Prefix Sum)",
               "question": "https://leetcode.com/problems/my-calendar-iii/",
               "solution": "-",
@@ -1305,78 +1299,100 @@
     },
     {
       "title": "Queue",
-      "problems": [
+      "subsections": [
         {
-          "label": "Average of Levels in Binary Tree",
-          "question": "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AverageOfLevelsInBinaryTree.cpp",
-          "difficulty": "easy"
+          "title": "Normal Queue",
+          "problems": [
+            {
+              "label": "Average of Levels in Binary Tree",
+              "question": "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AverageOfLevelsInBinaryTree.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Sum of Left Leaves (TREE)",
+              "question": "https://leetcode.com/problems/sum-of-left-leaves/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SumOfLeftLeaves.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Moving Average from Data Stream [Google]",
+              "question": "https://leetcode.ca/all/346.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MovingAverage.cpp",
+              "difficulty": "easy"
+            },
+            {
+              "label": "Populating Next Right Pointers in Each Node [DE SHAW]",
+              "question": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Populating_Next_Right.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Operations to Convert Number",
+              "question": "https://leetcode.com/problems/minimum-operations-to-convert-number/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumOperationsToConvertNumber.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Monotone Increasing Digits",
+              "question": "https://leetcode.com/problems/monotone-increasing-digits/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/monotoneIncreasingDigits.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Open the Lock",
+              "question": "https://leetcode.com/problems/open-the-lock/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OpenTheLock.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "First Unique Number [Good Problem]",
+              "question": "https://leetcode.ca/all/1429.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstUnique.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Jump Game III",
+              "question": "https://leetcode.com/problems/jump-game-iii/description/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/JumpGame_III.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Jump Game VII",
+              "question": "https://leetcode.com/problems/jump-game-vii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/JumpGame_VII.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "FACEBOOK Question [Queue Removals]",
+              "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Queue_Medium.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Queue_Medium.cpp",
+              "difficulty": "hard"
+            }
+          ]
         },
         {
-          "label": "Sum of Left Leaves (TREE)",
-          "question": "https://leetcode.com/problems/sum-of-left-leaves/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SumOfLeftLeaves.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Moving Average from Data Stream [Google]",
-          "question": "https://leetcode.ca/all/346.html",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MovingAverage.cpp",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Populating Next Right Pointers in Each Node [DE SHAW]",
-          "question": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Populating_Next_Right.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Minimum Operations to Convert Number",
-          "question": "https://leetcode.com/problems/minimum-operations-to-convert-number/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumOperationsToConvertNumber.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Monotone Increasing Digits",
-          "question": "https://leetcode.com/problems/monotone-increasing-digits/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/monotoneIncreasingDigits.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Open the Lock",
-          "question": "https://leetcode.com/problems/open-the-lock/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OpenTheLock.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "First Unique Number [Good Problem]",
-          "question": "https://leetcode.ca/all/1429.html",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstUnique.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Jump Game III",
-          "question": "https://leetcode.com/problems/jump-game-iii/description/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Jump Game VII",
-          "question": "https://leetcode.com/problems/jump-game-vii/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Jump Game VI ( Monotonic DeQueue)",
-          "question": "https://leetcode.com/problems/jump-game-vi/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "FACEBOOK Question [Queue Removals]",
-          "question": "FACEBOOK Question [Queue Removals]",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Queue_Medium.cpp",
-          "difficulty": "hard"
+          "title": "Monotonic Queue/Deque",
+          "problems": [
+            {
+              "label": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
+              "question": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/",
+              "solution": "",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Jump Game VI ( Monotonic DeQueue + DP)",
+              "question": "https://leetcode.com/problems/jump-game-vi/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/JumpGame_VI.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Shortest Subarray with Sum at Least K ( Prefix Sum + Monotonic Deque )",
+              "question": "https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
         }
       ]
     },
@@ -1763,12 +1779,6 @@
           "difficulty": "hard"
         },
         {
-          "label": "Sliding Window Maximum",
-          "question": "https://leetcode.com/problems/sliding-window-maximum/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindow.cpp",
-          "difficulty": "hard"
-        },
-        {
           "label": "Maximum Number of Points From Grid Queries( Sort Queries + Heap + BFS )",
           "question": "https://leetcode.com/problems/maximum-number-of-points-from-grid-queries/",
           "solution": "-",
@@ -1840,7 +1850,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Sliding Window Maximum [Google] [Monotonic Queue/Deque]",
+          "label": "Sliding Window Maximum[Monotonic Deque or Heap or Map or DP]",
           "question": "https://leetcode.com/problems/sliding-window-maximum/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindowUsingMap.cpp",
           "difficulty": "hard"
@@ -1997,6 +2007,12 @@
         {
           "label": "Maximize the Minimum Powered City (Dynamic Sliding Window + Binary Search)",
           "question": "https://leetcode.com/problems/maximize-the-minimum-powered-city/",
+          "solution": "",
+          "difficulty": "hard"
+        },
+        {
+          "label" : "Maximum Number of Robots Within Budget [Dynamic Sliding Window + (Heap or Multisets or Monotonic DeQueue)]",
+          "question": "https://leetcode.com/problems/maximum-number-of-robots-within-budget/",
           "solution": "",
           "difficulty": "hard"
         }
