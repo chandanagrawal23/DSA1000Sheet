@@ -2434,6 +2434,12 @@
               "question": "https://leetcode.com/problems/deepest-leaves-sum/",
               "solution": "-",
               "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Increments to Equalize Leaf Paths",
+              "question": "https://leetcode.com/problems/minimum-increments-to-equalize-leaf-paths/",
+              "solution": "-",
+              "difficulty": "medium"
             }
           ]
         },
@@ -3397,12 +3403,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Partition Array to Minimize XOR",
-              "question": "https://leetcode.com/problems/partition-array-to-minimize-xor/description/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Stickers to Spell Word",
               "question": "https://leetcode.com/problems/stickers-to-spell-word/",
               "solution": "-",
@@ -3817,9 +3817,9 @@
               "difficulty": "medium"
             },
             {
-              "label": "Minimum Increments to Equalize Leaf Paths",
-              "question": "https://leetcode.com/problems/minimum-increments-to-equalize-leaf-paths/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumIncrementsToEqualizeLeafPaths.cpp",
+              "label": "N-ary Tree Level Order Traversal",
+              "question": "https://leetcode.com/problems/n-ary-tree-level-order-traversal/",
+              "solution": "-",
               "difficulty": "medium"
             },
             {
