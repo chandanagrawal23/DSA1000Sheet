@@ -4249,12 +4249,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Minimize Maximum Component Cost (MST or DSU + Binary Search)",
-              "question": "https://leetcode.com/problems/minimize-maximum-component-cost/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizeMaximumComponentCost.cpp",
-              "difficulty": "medium"
-            },
-            {
               "label": "Optimize Water Distribution in a Village",
               "question": "https://leetcode.ca/2019-02-10-1168-Optimize-Water-Distribution-in-a-Village/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/OptimizeWaterDistributionInAVillage.cpp",
@@ -4559,9 +4553,9 @@
           "difficulty": "easy"
         },
         {
-          "label": "Implement Trie Prefix Tree",
+          "label": "Implement Trie (Prefix Tree)",
           "question": "https://leetcode.com/problems/implement-trie-prefix-tree/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TRIE/ImplementTriePrefixTree.cpp",
+          "solution": "-",
           "difficulty": "medium"
         },
         {
