@@ -4452,9 +4452,9 @@
           "difficulty": "medium"
         },
         {
-          "label": "Regions cut by slashes [Good Q.]",
+          "label": "Regions cut by slashes [MAANGM]",
           "question": "https://leetcode.com/problems/regions-cut-by-slashes/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/RegionsCutBySlashes.cpp",
           "difficulty": "medium"
         },
         {
@@ -4472,7 +4472,7 @@
         {
           "label": "Largest component size by common factor",
           "question": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/LargestComponentSizeByCommonFactor.cpp",
           "difficulty": "hard"
         },
         {
