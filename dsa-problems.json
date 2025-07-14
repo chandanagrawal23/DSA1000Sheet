@@ -4389,7 +4389,7 @@
         {
           "label": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
           "question": "https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/MinimumNumberOfFlipsToConvertBinaryMatrixToZeroMatrix.cpp",
           "difficulty": "hard"
         }
       ]
