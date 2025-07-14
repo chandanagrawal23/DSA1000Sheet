@@ -725,9 +725,9 @@
               "difficulty": "medium"
             },
             {
-              "label": "Minimum Number of Platforms Required for a Railway/Bus Station",
+              "label": "Minimum Number of Platforms Required for a Railway/Bus Station(Sorting / Heap / Line Sweep)",
               "question": "https://www.geeksforgeeks.org/minimum-number-platforms-required-railwaybus-station/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumNumberOfPlatformsRequiredForARailwayStation.cpp",
               "difficulty": "medium"
             },
             {
@@ -792,13 +792,13 @@
             {
               "label": "Merge Intervals",
               "question": "https://leetcode.com/problems/merge-intervals/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MergeIntervals_sorting.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/MergeIntervals_sorting.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Non-overlapping Intervals",
               "question": "https://leetcode.com/problems/non-overlapping-intervals/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/NonOverlappingIntervals.cpp",
               "difficulty": "medium"
             },
             {
@@ -810,13 +810,13 @@
             {
               "label": "Insert Interval",
               "question": "https://leetcode.com/problems/insert-interval/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/InsertInterval_sorting.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/InsertInterval_sorting.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Remove Covered Intervals",
               "question": "https://leetcode.com/problems/remove-covered-intervals/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/RemoveCoveredIntervals.cpp",
               "difficulty": "medium"
             },
             {
@@ -828,13 +828,13 @@
             {
               "label": "Interval List Intersections",
               "question": "https://leetcode.com/problems/interval-list-intersections/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/IntervalListIntersections.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Select K Disjoint Special Substrings",
               "question": "https://leetcode.com/problems/select-k-disjoint-intervals/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SelectKDisjointSpecialSubstrings.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/SelectKDisjointSpecialSubstrings.cpp",
               "difficulty": "medium"
             }
           ]
