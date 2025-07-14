@@ -4249,7 +4249,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Optimize Water Distribution in a Village",
+              "label": "Optimize Water Distribution in a Village[MAANGM]",
               "question": "https://leetcode.ca/2019-02-10-1168-Optimize-Water-Distribution-in-a-Village/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/OptimizeWaterDistributionInAVillage.cpp",
               "difficulty": "medium"
@@ -4412,7 +4412,7 @@
         {
           "label": "The earliest moment when everyone become friends",
           "question": "https://leetcode.ca/all/1101.html",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/TheEarliestMomentWhenEveryoneBecomeFriends.cpp",
           "difficulty": "medium"
         },
         {
@@ -4514,12 +4514,6 @@
         {
           "label": "Bricks falling when hit [Very Good Question]",
           "question": "https://leetcode.com/problems/bricks-falling-when-hit/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Optimize water distribution in a village [Nice Q.]",
-          "question": "https://leetcode.ca/2019-02-10-1168-Optimize-Water-Distribution-in-a-Village/",
           "solution": "-",
           "difficulty": "hard"
         },
