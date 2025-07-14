@@ -4430,7 +4430,7 @@
         {
           "label": "Accounts merge",
           "question": "https://leetcode.com/problems/accounts-merge/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/AccountsMerge.cpp",
           "difficulty": "medium"
         },
         {
@@ -4484,7 +4484,7 @@
         {
           "label": "Groups of strings",
           "question": "https://leetcode.com/problems/groups-of-strings/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/GroupsOfStrings.cpp",
           "difficulty": "hard"
         },
         {
