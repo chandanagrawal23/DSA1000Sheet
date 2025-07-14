@@ -4317,7 +4317,7 @@
         {
           "label": "First Letter to Appear Twice",
           "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstLettertoAppearTwice.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/FirstLettertoAppearTwice.cpp",
           "difficulty": "easy"
         },
         {
@@ -4329,31 +4329,31 @@
         {
           "label": "Count Pairs Of Similar Strings( Map + BitMask)",
           "question": "https://leetcode.com/problems/count-pairs-of-similar-strings/description/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountPairsOfSimilarStrings.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfSimilarStrings.cpp",
           "difficulty": "easy"
         },
         {
           "label": "Subsets",
           "question": "https://leetcode.com/problems/subsets/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Subsets_Using_BIT_Manipulation.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/Subsets_Using_BIT_Manipulation.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Single Number II",
           "question": "https://leetcode.com/problems/single-number-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SingleNumberII.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/SingleNumber_II.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Single Number III",
           "question": "https://leetcode.com/problems/single-number-iii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SingleNumberIII.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/SingleNumber_III.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Shortest Subarray With OR at Least K II",
           "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestSubarrayWithORatLeastK_II.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ShortestSubarrayWithORatLeastK_II.cpp",
           "difficulty": "medium"
         },
         {
@@ -4377,7 +4377,7 @@
         {
           "label": "Minimum Moves to Clean the Classroom (Graph + Bit Manipulation)",
           "question": "https://leetcode.com/problems/minimum-moves-to-clean-the-classroom/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumMovesToCleanTheClassroom.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/MinimumMovesToCleanTheClassroom.cpp",
           "difficulty": "medium"
         },
         {
