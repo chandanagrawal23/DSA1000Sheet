@@ -4411,7 +4411,7 @@
         },
         {
           "label": "The earliest moment when everyone become friends",
-          "question": "https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/",
+          "question": "https://leetcode.ca/all/1101.html",
           "solution": "-",
           "difficulty": "medium"
         },
@@ -4441,7 +4441,7 @@
         },
         {
           "label": "Synonymous sentences [IMPO, google]",
-          "question": "https://leetcode.com/problems/synonymous-sentences/",
+          "question": "https://leetcode.ca/all/1258.html",
           "solution": "-",
           "difficulty": "medium"
         },
@@ -4502,12 +4502,6 @@
         {
           "label": "Remove max number of edges to keep graph fully traversable",
           "question": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Swim in rising water",
-          "question": "https://leetcode.com/problems/swim-in-rising-water/",
           "solution": "-",
           "difficulty": "hard"
         },
