@@ -10,12 +10,6 @@
           "difficulty": "easy"
         },
         {
-          "label": "Find Maximum of Two Numbers",
-          "question": "https://www.geeksforgeeks.org/c-program-to-find-the-largest-number-among-three-numbers/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
           "label": "Check Prime Number",
           "question": "https://www.geeksforgeeks.org/c-program-to-check-prime-number/",
           "solution": "-",
@@ -66,12 +60,6 @@
         {
           "label": "Find Smallest Element in an Array",
           "question": "https://www.geeksforgeeks.org/to-find-smallest-and-second-smallest-element-in-an-array/",
-          "solution": "-",
-          "difficulty": "easy"
-        },
-        {
-          "label": "Count Even and Odd Numbers in an Array",
-          "question": "https://www.geeksforgeeks.org/count-number-even-odd-elements-array/",
           "solution": "-",
           "difficulty": "easy"
         },
@@ -3721,7 +3709,7 @@
         {
           "label": "Find Maximum Area of a Triangle",
           "question": "https://leetcode.com/problems/find-maximum-area-of-a-triangle/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMaximumAreaOfTriangle.cpp",
+          "solution": "",
           "difficulty": "medium"
         },
         {
