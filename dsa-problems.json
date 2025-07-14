@@ -3719,6 +3719,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Find Maximum Area of a Triangle",
+          "question": "https://leetcode.com/problems/find-maximum-area-of-a-triangle/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMaximumAreaOfTriangle.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Max Points on a Line",
           "question": "https://leetcode.com/problems/max-points-on-a-line/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
