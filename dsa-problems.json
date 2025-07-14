@@ -4466,7 +4466,7 @@
         {
           "label": "Minimize malware spread",
           "question": "https://leetcode.com/problems/minimize-malware-spread/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinimizeMalwareSpread.cpp",
           "difficulty": "hard"
         },
         {
