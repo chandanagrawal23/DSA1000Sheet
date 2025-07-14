@@ -4398,21 +4398,15 @@
       "title": "Disjoint Set Unions",
       "problems": [
         {
-          "label": "Find Cycle in undirected graph",
+          "label": "Find Cycle in Undirected Graph",
           "question": "https://www.geeksforgeeks.org/detect-cycle-in-graph-using-dsu/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Count connected Components in undirected graph",
-          "question": "https://www.geeksforgeeks.org/number-of-connected-components-of-a-graph-using-disjoint-set-union/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/FindCycleInUndirectedGraph.cpp",
           "difficulty": "medium"
         },
         {
           "label": "Number of operations to make network connected",
           "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/NumberOfOperationsToMakeNetworkConnected.cpp",
           "difficulty": "medium"
         },
         {
@@ -4424,13 +4418,13 @@
         {
           "label": "Smallest string with swaps",
           "question": "https://leetcode.com/problems/smallest-string-with-swaps/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SmallestStringWithSwaps.cpp",
           "difficulty": "medium"
         },
         {
-          "label": "Satisfiability of equality equations [Nice Q.]",
+          "label": "Satisfiability of equality equations[MAANGM]",
           "question": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SatisfiabilityOfEqualityEquations.cpp",
           "difficulty": "medium"
         },
         {
@@ -4442,7 +4436,7 @@
         {
           "label": "Min cost to connect all points",
           "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinCostToConnectAllPoints.cpp",
           "difficulty": "medium"
         },
         {
@@ -4454,7 +4448,7 @@
         {
           "label": "Lexicographically smallest equivalent string [IMPO, google]",
           "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LexicographicallySmallestEquivalentString.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/LexicographicallySmallestEquivalentString.cpp",
           "difficulty": "medium"
         },
         {
@@ -4466,7 +4460,7 @@
         {
           "label": "Similar string groups",
           "question": "https://leetcode.com/problems/similar-string-groups/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SimilarStringGroups.cpp",
           "difficulty": "hard"
         },
         {
