@@ -820,9 +820,9 @@
               "difficulty": "medium"
             },
             {
-              "label": "Max Number of Overlapping Intervals",
+              "label": "Max Number of Overlapping Intervals(HOTSTAR)",
               "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/MaximumNumberOfOverlappingIntervals.cpp",
               "difficulty": "medium"
             },
             {
