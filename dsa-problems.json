@@ -4323,7 +4323,7 @@
         {
           "label": "Convert a Number to Hexadecimal",
           "question": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ConvertANumberToHexadecimal.cpp",
           "difficulty": "easy"
         },
         {
@@ -4359,7 +4359,7 @@
         {
           "label": "Maximum OR",
           "question": "https://leetcode.com/problems/maximum-or/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/Maximum_OR.cpp",
           "difficulty": "medium"
         },
         {
@@ -4383,7 +4383,7 @@
         {
           "label": "Shortest Path to Get All Keys",
           "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ShortestPathToGetAllKeys.cpp",
           "difficulty": "hard"
         },
         {
