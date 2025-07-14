@@ -802,12 +802,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Find Right Interval",
-              "question": "https://leetcode.com/problems/find-right-interval/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
               "label": "Insert Interval",
               "question": "https://leetcode.com/problems/insert-interval/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/InsertInterval_sorting.cpp",
@@ -829,6 +823,12 @@
               "label": "Interval List Intersections",
               "question": "https://leetcode.com/problems/interval-list-intersections/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/IntervalListIntersections.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find Right Interval",
+              "question": "https://leetcode.com/problems/find-right-interval/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/FindRightInterval.cpp",
               "difficulty": "medium"
             },
             {
