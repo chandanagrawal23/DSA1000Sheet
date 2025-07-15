@@ -802,7 +802,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Max Number of Overlapping Intervals(HOTSTAR)",
+              "label": "Maximum Number of Overlapping Intervals(HOTSTAR)",
               "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/MaximumNumberOfOverlappingIntervals.cpp",
               "difficulty": "medium"
@@ -3612,6 +3612,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Fast Modulo Power (Exponentiation) (a^b) % m",
+          "question": "https://www.geeksforgeeks.org/dsa/modular-exponentiation-power-in-modular-arithmetic/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ModularFastExponentation.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Greatest Common Divisor Traversal",
           "question": "https://leetcode.com/problems/greatest-common-divisor-traversal/",
           "solution": "-",
@@ -4709,12 +4715,6 @@
         {
           "label": "Count of Intervals with Maximum Overlap (Google)",
           "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Interval List Intersections",
-          "question": "https://leetcode.com/problems/interval-list-intersections/",
           "solution": "-",
           "difficulty": "medium"
         },
