@@ -2140,6 +2140,12 @@
               "question": "https://leetcode.com/problems/integer-to-english-words/",
               "solution": "-",
               "difficulty": "hard"
+            },
+            {
+              "label": "Apply Substitutions(Google IMP)",
+              "question": "https://leetcode.ca/2025-04-04-3481-Apply-Substitutions/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ApplySubstitutions.cpp",
+              "difficulty": "hard"
             }
           ]
         }
