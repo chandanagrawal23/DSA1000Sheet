@@ -1016,41 +1016,6 @@
               "difficulty": "hard"
             }
           ]
-        },
-        {
-          "title": "Graph Questions",
-          "problems": [
-            {
-              "label": "Path with Minimum Effort",
-              "question": "https://leetcode.com/problems/path-with-minimum-effort/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PathWithMinimumEffort.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimize the Maximum Edge Weight of Graph ( Binary Search + DFS / Prim's Algorithm )",
-              "question": "https://leetcode.com/problems/minimize-the-maximum-edge-weight-of-graph/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizeTheMaximumEdgeWeightOfGraph.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Swim in Rising Water",
-              "question": "https://leetcode.com/problems/swim-in-rising-water/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SwimInRisingWater.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Last Day Where You Can Still Cross",
-              "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Escape the Spreading Fire (can be solved using only BFS too)",
-              "question": "https://leetcode.com/problems/escape-the-spreading-fire/",
-              "solution": "-",
-              "difficulty": "hard"
-            }
-          ]
         }
       ]
     },
@@ -4158,6 +4123,41 @@
               "label": "Largest Color Value in a Directed Graph [Topological Sort + DP or DFS]",
               "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LargestColorValueInADirectedGraph.cpp",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Answer on Binary Search Type",
+          "problems": [
+            {
+              "label": "Path with Minimum Effort",
+              "question": "https://leetcode.com/problems/path-with-minimum-effort/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/PathWithMinimumEffort.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimize the Maximum Edge Weight of Graph ( Binary Search + DFS OR Prim's Algorithm )",
+              "question": "https://leetcode.com/problems/minimize-the-maximum-edge-weight-of-graph/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimizeTheMaximumEdgeWeightOfGraph.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Swim in Rising Water",
+              "question": "https://leetcode.com/problems/swim-in-rising-water/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/SwimInRisingWater.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Last Day Where You Can Still Cross",
+              "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Escape the Spreading Fire (Multi Source BFS + Answer on Binary Search OR 2 BFS)",
+              "question": "https://leetcode.com/problems/escape-the-spreading-fire/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/EscapeTheSpreadingFire.cpp",
               "difficulty": "hard"
             }
           ]
