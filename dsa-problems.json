@@ -2005,7 +2005,7 @@
           "difficulty": "hard"
         },
         {
-          "label" : "Maximum Number of Robots Within Budget [Dynamic Sliding Window + (Heap or Multisets or Monotonic DeQueue)]",
+          "label": "Maximum Number of Robots Within Budget [Dynamic Sliding Window + (Heap or Multisets or Monotonic DeQueue)]",
           "question": "https://leetcode.com/problems/maximum-number-of-robots-within-budget/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumNumberOfRobotsWithinBudget.cpp",
           "difficulty": "hard"
@@ -4004,71 +4004,6 @@
           ]
         },
         {
-          "title": "Topological Sorting",
-          "problems": [
-            {
-              "label": "Course Schedule",
-              "question": "https://leetcode.com/problems/course-schedule/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_I.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Course Schedule II",
-              "question": "https://leetcode.com/problems/course-schedule-ii/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_II.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Course Schedule IV",
-              "question": "https://leetcode.com/problems/course-schedule-iv/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_IV.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Parallel Courses",
-              "question": "https://leetcode.ca/all/1136.html",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ParallelCourses_I.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Height Trees",
-              "question": "https://leetcode.com/problems/minimum-height-trees/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumHeightTrees.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find All Possible Recipes from Given Supplies",
-              "question": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindAllPossibleRecipesFromGivenSupplies.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Longest Increasing Path in a Matrix",
-              "question": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LongestIncreasingPathInAMatrix.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Parallel Courses III",
-              "question": "https://leetcode.com/problems/parallel-courses-iii/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ParallelCourses_III.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Alien Dictionary [IMPO, FAANGM]",
-              "question": "https://leetcode.ca/all/269.html",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/AlienDictionary.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Largest Color Value in a Directed Graph [Topological Sort + DP or DFS]",
-              "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LargestColorValueInADirectedGraph.cpp",
-              "difficulty": "hard"
-            }
-          ]
-        },
-        {
           "title": "Dijkstra Algorithm Graph (Shortest Path)",
           "problems": [
             {
@@ -4158,6 +4093,71 @@
               "label": "Minimum Obstacle Removal to Reach Corner",
               "question": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumObstacleToReachCorner_Dijkstra.cpp",
+              "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "Topological Sorting",
+          "problems": [
+            {
+              "label": "Course Schedule",
+              "question": "https://leetcode.com/problems/course-schedule/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_I.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Course Schedule II",
+              "question": "https://leetcode.com/problems/course-schedule-ii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_II.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Course Schedule IV",
+              "question": "https://leetcode.com/problems/course-schedule-iv/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_IV.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Parallel Courses",
+              "question": "https://leetcode.ca/all/1136.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ParallelCourses_I.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimum Height Trees",
+              "question": "https://leetcode.com/problems/minimum-height-trees/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumHeightTrees.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find All Possible Recipes from Given Supplies",
+              "question": "https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindAllPossibleRecipesFromGivenSupplies.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Longest Increasing Path in a Matrix",
+              "question": "https://leetcode.com/problems/longest-increasing-path-in-a-matrix/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LongestIncreasingPathInAMatrix.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Parallel Courses III",
+              "question": "https://leetcode.com/problems/parallel-courses-iii/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ParallelCourses_III.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Alien Dictionary [IMPO, FAANGM]",
+              "question": "https://leetcode.ca/all/269.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/AlienDictionary.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Largest Color Value in a Directed Graph [Topological Sort + DP or DFS]",
+              "question": "https://leetcode.com/problems/largest-color-value-in-a-directed-graph/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LargestColorValueInADirectedGraph.cpp",
               "difficulty": "hard"
             }
           ]
