@@ -1023,7 +1023,7 @@
             {
               "label": "Path with Minimum Effort",
               "question": "https://leetcode.com/problems/path-with-minimum-effort/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PathWithMinimumEffort.cpp",
               "difficulty": "medium"
             },
             {
@@ -3932,12 +3932,6 @@
             {
               "label": "K Highest Ranked Items Within a Price Range",
               "question": "https://leetcode.com/problems/k-highest-ranked-items-within-a-price-range/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Path With Minimum Effort",
-              "question": "https://leetcode.com/problems/path-with-minimum-effort/",
               "solution": "-",
               "difficulty": "medium"
             },
