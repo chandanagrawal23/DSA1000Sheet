@@ -216,7 +216,7 @@
             },
             {
               "label": "Construct Product Matrix",
-              "question": "https://leetcode.com/problems/construct-product-matrix/description/",
+              "question": "https://leetcode.com/problems/construct-product-matrix/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ConstructProductMatrix.cpp",
               "difficulty": "medium"
             },
@@ -299,7 +299,7 @@
             },
             {
               "label": "Subarray Sums Divisible by K",
-              "question": "https://leetcode.com/problems/subarray-sums-divisible-by-k/description/",
+              "question": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubarraySumsDivisibleByK.cpp",
               "difficulty": "medium"
             },
@@ -581,7 +581,7 @@
         },
         {
           "label": "Online Election ( Design + Binary Search )",
-          "question": "https://leetcode.com/problems/online-election/description/",
+          "question": "https://leetcode.com/problems/online-election/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OnlineElection.cpp",
           "difficulty": "medium"
         },
@@ -1306,7 +1306,7 @@
             },
             {
               "label": "Jump Game III",
-              "question": "https://leetcode.com/problems/jump-game-iii/description/",
+              "question": "https://leetcode.com/problems/jump-game-iii/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/JumpGame_III.cpp",
               "difficulty": "medium"
             },
@@ -1506,7 +1506,7 @@
             },
             {
               "label": "Intersection of Two Linked Lists ( Solve using cycle too)",
-              "question": "https://leetcode.com/problems/intersection-of-two-linked-lists/description/",
+              "question": "https://leetcode.com/problems/intersection-of-two-linked-lists/",
               "solution": "-",
               "difficulty": "medium"
             }
@@ -2249,19 +2249,19 @@
           "problems": [
             {
               "label": "Inorder Traversal",
-              "question": "https://leetcode.com/problems/binary-tree-inorder-traversal/description/",
+              "question": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreeInorderTraversal.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Preorder Traversal",
-              "question": "https://leetcode.com/problems/binary-tree-preorder-traversal/description/",
+              "question": "https://leetcode.com/problems/binary-tree-preorder-traversal/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreePreorderTraversal.cpp",
               "difficulty": "easy"
             },
             {
               "label": "Postorder Traversal",
-              "question": "https://leetcode.com/problems/binary-tree-postorder-traversal/description/",
+              "question": "https://leetcode.com/problems/binary-tree-postorder-traversal/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreePostorderTraversal.cpp",
               "difficulty": "easy"
             },
@@ -2372,7 +2372,7 @@
             },
             {
               "label": "Most Frequent Subtree Sum",
-              "question": "https://leetcode.com/problems/most-frequent-subtree-sum/description/",
+              "question": "https://leetcode.com/problems/most-frequent-subtree-sum/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MostFrequentSubtreeSum.cpp",
               "difficulty": "medium"
             },
@@ -2742,7 +2742,7 @@
             },
             {
               "label": "Check if a string is subsequence of another string",
-              "question": "https://leetcode.com/problems/is-subsequence/description/",
+              "question": "https://leetcode.com/problems/is-subsequence/",
               "solution": "-",
               "difficulty": "easy"
             },
@@ -2802,7 +2802,7 @@
             },
             {
               "label": "Partition Labels",
-              "question": "https://leetcode.com/problems/partition-labels/description/",
+              "question": "https://leetcode.com/problems/partition-labels/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PartitionLabels.cpp",
               "difficulty": "medium"
             },
@@ -3667,7 +3667,7 @@
         },
         {
           "label": "Separate Squares I (Google, Answer on Binary Search)",
-          "question": "https://leetcode.com/problems/separate-squares-i/description/",
+          "question": "https://leetcode.com/problems/separate-squares-i/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeparateSquaresI.cpp",
           "difficulty": "medium"
         },
@@ -4156,7 +4156,7 @@
             },
             {
               "label": "Network Recovery Pathways (Answer on Binary Search + Dijkstra)",
-              "question": "https://leetcode.com/problems/network-recovery-pathways/description/",
+              "question": "https://leetcode.com/problems/network-recovery-pathways/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NetworkRecoveryPathways.cpp",
               "difficulty": "hard"
             },
@@ -4333,7 +4333,7 @@
         },
         {
           "label": "Count Pairs Of Similar Strings( Map + BitMask)",
-          "question": "https://leetcode.com/problems/count-pairs-of-similar-strings/description/",
+          "question": "https://leetcode.com/problems/count-pairs-of-similar-strings/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfSimilarStrings.cpp",
           "difficulty": "easy"
         },
@@ -4672,7 +4672,7 @@
         },
         {
           "label": "Count Number of Teams (Solve using N^3, N^2, NlogN)",
-          "question": "https://leetcode.com/problems/count-number-of-teams/description/",
+          "question": "https://leetcode.com/problems/count-number-of-teams/",
           "solution": "-",
           "difficulty": "medium"
         },
