@@ -3690,6 +3690,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Count Number of Trapezoids I",
+          "question": "https://leetcode.com/problems/count-number-of-trapezoids-i/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountNumberOfTrapezoids_I.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Max Points on a Line",
           "question": "https://leetcode.com/problems/max-points-on-a-line/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
