@@ -4155,6 +4155,12 @@
               "difficulty": "hard"
             },
             {
+              "label": "Network Recovery Pathways (Answer on Binary Search + Dijkstra)",
+              "question": "https://leetcode.com/problems/network-recovery-pathways/description/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NetworkRecoveryPathways.cpp",
+              "difficulty": "hard"
+            },
+            {
               "label": "Escape the Spreading Fire (Multi Source BFS + Answer on Binary Search OR 2 BFS)",
               "question": "https://leetcode.com/problems/escape-the-spreading-fire/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/EscapeTheSpreadingFire.cpp",
