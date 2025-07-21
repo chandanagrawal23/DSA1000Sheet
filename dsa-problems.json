@@ -1134,12 +1134,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Largest Rectangle in Histogram",
-              "question": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Trapping Rain Water",
               "question": "https://leetcode.com/problems/trapping-rain-water/",
               "solution": "-",
@@ -1244,6 +1238,12 @@
               "label": "Next Greater Element IV (Monotonic Stack + Priority Queue)",
               "question": "https://leetcode.com/problems/next-greater-element-iv/",
               "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Largest Rectangle in Histogram(MAANGM)",
+              "question": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/LargestRectangleInHistogram.cpp",
               "difficulty": "hard"
             }
           ]
