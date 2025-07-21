@@ -4392,6 +4392,12 @@
           "difficulty": "medium"
         },
         {
+          "label": "Count Pairs of Points With Distance k",
+          "question": "https://leetcode.com/problems/count-pairs-of-points-with-distance-k/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfPointsWithDistanceK.cpp",
+          "difficulty": "medium"
+        },
+        {
           "label": "Shortest Path to Get All Keys",
           "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ShortestPathToGetAllKeys.cpp",
