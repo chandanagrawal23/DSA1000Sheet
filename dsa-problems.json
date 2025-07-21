@@ -1159,19 +1159,19 @@
             {
               "label": "Next Greater Element II",
               "question": "https://leetcode.com/problems/next-greater-element-ii/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NextGreaterElement2.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/NextGreaterElement2.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Online Stock Span",
               "question": "https://leetcode.com/problems/online-stock-span/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/StockSpanner.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/StockSpanner.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Remove K Digits",
               "question": "https://leetcode.com/problems/remove-k-digits/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeKdigits.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/removeKdigits.cpp",
               "difficulty": "medium"
             },
             {
@@ -1183,19 +1183,19 @@
             {
               "label": "Buildings with an Ocean View [MAANGM]",
               "question": "https://leetcode.ca/2021-04-14-1762-Buildings-With-an-Ocean-View/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BuildingsWithanOceanView.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/BuildingsWithanOceanView.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Daily Temperatures",
               "question": "https://leetcode.com/problems/daily-temperatures/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DailyTemperatures.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/DailyTemperatures.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Shortest Unsorted Continuous Subarray",
               "question": "https://leetcode.com/problems/shortest-unsorted-continuous-subarray/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ShortestUnsortedContinuousSubarray.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/ShortestUnsortedContinuousSubarray.cpp",
               "difficulty": "medium"
             },
             {
@@ -1207,7 +1207,7 @@
             {
               "label": "Jump Game VIII",
               "question": "https://leetcode.ca/2022-03-15-2297-Jump-Game-VIII/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/JumpGame_VIII.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/JumpGame_VIII.cpp",
               "difficulty": "medium"
             },
             {
@@ -1231,7 +1231,7 @@
             {
               "label": "Find the Number of Subarrays Where Boundary Elements Are Maximum",
               "question": "https://leetcode.com/problems/find-the-number-of-subarrays-where-boundary-elements-are-maximum/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindTheNumberOfSubarraysWhereBoundaryElementsAreMaximum.cpp",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/FindTheNumberOfSubarraysWhereBoundaryElementsAreMaximum.cpp",
               "difficulty": "hard"
             },
             {
