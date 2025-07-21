@@ -4392,7 +4392,7 @@
           "difficulty": "medium"
         },
         {
-          "label": "Count Pairs of Points With Distance k",
+          "label": "Count Pairs of Points With Distance K(Just like Two Sum)",
           "question": "https://leetcode.com/problems/count-pairs-of-points-with-distance-k/",
           "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfPointsWithDistanceK.cpp",
           "difficulty": "medium"
