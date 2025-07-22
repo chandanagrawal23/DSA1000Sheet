@@ -4008,12 +4008,6 @@
               "difficulty": "medium"
             },
             {
-              "label": "Reachable Nodes in Subdivided Graph",
-              "question": "https://leetcode.com/problems/reachable-nodes-in-subdivided-graph/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Minimum Cost to Reach City With Discounts",
               "question": "https://leetcode.ca/2021-12-16-2093-Minimum-Cost-to-Reach-City-With-Discounts/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToReachCityWithDiscounts.cpp",
