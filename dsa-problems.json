@@ -4402,132 +4402,147 @@
     },
     {
       "title": "Disjoint Set Unions",
-      "problems": [
+      "subsections": [
         {
-          "label": "Find Cycle in Undirected Graph",
-          "question": "https://www.geeksforgeeks.org/detect-cycle-in-graph-using-dsu/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/FindCycleInUndirectedGraph.cpp",
-          "difficulty": "medium"
+          "title": "Normal Array String Problems",
+          "problems": [
+            {
+              "label": "The earliest moment when everyone become friends",
+              "question": "https://leetcode.ca/all/1101.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/TheEarliestMomentWhenEveryoneBecomeFriends.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Smallest string with swaps",
+              "question": "https://leetcode.com/problems/smallest-string-with-swaps/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SmallestStringWithSwaps.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Satisfiability of equality equations[MAANGM]",
+              "question": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SatisfiabilityOfEqualityEquations.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Accounts merge",
+              "question": "https://leetcode.com/problems/accounts-merge/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/AccountsMerge.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Min cost to connect all points",
+              "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinCostToConnectAllPoints.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Synonymous sentences [IMPO, google]",
+              "question": "https://leetcode.ca/all/1258.html",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Lexicographically smallest equivalent string [IMPO, google]",
+              "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/LexicographicallySmallestEquivalentString.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Find all people with secret",
+              "question": "https://leetcode.com/problems/find-all-people-with-secret/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Groups of strings(Use of BitMasking)",
+              "question": "https://leetcode.com/problems/groups-of-strings/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/GroupsOfStrings.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Process restricted friend requests [google]",
+              "question": "https://leetcode.com/problems/process-restricted-friend-requests/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
         },
         {
-          "label": "Number of operations to make network connected",
-          "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/NumberOfOperationsToMakeNetworkConnected.cpp",
-          "difficulty": "medium"
+          "title": "Graph Problems",
+          "problems": [
+            {
+              "label": "Find Cycle in Undirected Graph",
+              "question": "https://www.geeksforgeeks.org/detect-cycle-in-graph-using-dsu/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/FindCycleInUndirectedGraph.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Number of operations to make network connected",
+              "question": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/NumberOfOperationsToMakeNetworkConnected.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Similar string groups",
+              "question": "https://leetcode.com/problems/similar-string-groups/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SimilarStringGroups.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Largest component size by common factor",
+              "question": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/LargestComponentSizeByCommonFactor.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Checking existence of edge length limited paths(Offline Query)",
+              "question": "https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Remove max number of edges to keep graph fully traversable",
+              "question": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Graph connectivity with threshold",
+              "question": "https://leetcode.com/problems/graph-connectivity-with-threshold/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
         },
         {
-          "label": "The earliest moment when everyone become friends",
-          "question": "https://leetcode.ca/all/1101.html",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/TheEarliestMomentWhenEveryoneBecomeFriends.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Smallest string with swaps",
-          "question": "https://leetcode.com/problems/smallest-string-with-swaps/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SmallestStringWithSwaps.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Satisfiability of equality equations[MAANGM]",
-          "question": "https://leetcode.com/problems/satisfiability-of-equality-equations/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SatisfiabilityOfEqualityEquations.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Accounts merge",
-          "question": "https://leetcode.com/problems/accounts-merge/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/AccountsMerge.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Min cost to connect all points",
-          "question": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinCostToConnectAllPoints.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Synonymous sentences [IMPO, google]",
-          "question": "https://leetcode.ca/all/1258.html",
-          "solution": "-",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Lexicographically smallest equivalent string [IMPO, google]",
-          "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/LexicographicallySmallestEquivalentString.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Regions cut by slashes [MAANGM]",
-          "question": "https://leetcode.com/problems/regions-cut-by-slashes/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/RegionsCutBySlashes.cpp",
-          "difficulty": "medium"
-        },
-        {
-          "label": "Similar string groups",
-          "question": "https://leetcode.com/problems/similar-string-groups/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SimilarStringGroups.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Minimize malware spread",
-          "question": "https://leetcode.com/problems/minimize-malware-spread/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinimizeMalwareSpread.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Largest component size by common factor",
-          "question": "https://leetcode.com/problems/largest-component-size-by-common-factor/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/LargestComponentSizeByCommonFactor.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Find all people with secret",
-          "question": "https://leetcode.com/problems/find-all-people-with-secret/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Groups of strings",
-          "question": "https://leetcode.com/problems/groups-of-strings/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/GroupsOfStrings.cpp",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Process restricted friend requests [google]",
-          "question": "https://leetcode.com/problems/process-restricted-friend-requests/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Checking existence of edge length limited paths",
-          "question": "https://leetcode.com/problems/checking-existence-of-edge-length-limited-paths/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Remove max number of edges to keep graph fully traversable",
-          "question": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Graph connectivity with threshold",
-          "question": "https://leetcode.com/problems/graph-connectivity-with-threshold/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Bricks falling when hit [Very Good Question]",
-          "question": "https://leetcode.com/problems/bricks-falling-when-hit/",
-          "solution": "-",
-          "difficulty": "hard"
-        },
-        {
-          "label": "Rank Transform of a Matrix",
-          "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
-          "solution": "-",
-          "difficulty": "hard"
+          "title": "Grid/Matrix Problems",
+          "problems": [
+            {
+              "label": "Regions cut by slashes [MAANGM]",
+              "question": "https://leetcode.com/problems/regions-cut-by-slashes/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/RegionsCutBySlashes.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Minimize malware spread",
+              "question": "https://leetcode.com/problems/minimize-malware-spread/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinimizeMalwareSpread.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Bricks falling when hit [Very Good Question]",
+              "question": "https://leetcode.com/problems/bricks-falling-when-hit/",
+              "solution": "-",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Rank Transform of a Matrix",
+              "question": "https://leetcode.com/problems/rank-transform-of-a-matrix/",
+              "solution": "-",
+              "difficulty": "hard"
+            }
+          ]
         }
       ]
     },
