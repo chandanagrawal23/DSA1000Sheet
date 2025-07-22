@@ -3950,12 +3950,6 @@
               "difficulty": "hard"
             },
             {
-              "label": "Last Day Where You Can Still Cross",
-              "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
               "label": "Cut Off Trees for Golf Event",
               "question": "https://leetcode.com/problems/cut-off-trees-for-golf-event/",
               "solution": "-",
@@ -4011,7 +4005,7 @@
             {
               "label": "Find Edges in Shortest Paths",
               "question": "https://leetcode.com/problems/find-edges-in-shortest-paths/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindEdgesInShortestPaths.cpp",
               "difficulty": "hard"
             }
           ]
@@ -4146,7 +4140,7 @@
             {
               "label": "Last Day Where You Can Still Cross",
               "question": "https://leetcode.com/problems/last-day-where-you-can-still-cross/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/LastDayWhereYouCanStillCross.cpp",
               "difficulty": "hard"
             },
             {
