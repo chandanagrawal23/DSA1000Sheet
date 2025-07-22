@@ -3970,13 +3970,13 @@
               "label": "Word Ladder I",
               "question": "https://leetcode.com/problems/word-ladder/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/WordLadder_I.cpp",
-              "difficulty": "medium"
+              "difficulty": "hard"
             },
             {
               "label": "Word Ladder II",
               "question": "https://leetcode.com/problems/word-ladder-ii/",
               "solution": "",
-              "difficulty": "medium"
+              "difficulty": "hard"
             }
           ]
         },
