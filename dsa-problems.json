@@ -3892,13 +3892,7 @@
             {
               "label": "Find All Groups of Farmland",
               "question": "https://leetcode.com/problems/find-all-groups-of-farmland/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "K Highest Ranked Items Within a Price Range",
-              "question": "https://leetcode.com/problems/k-highest-ranked-items-within-a-price-range/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindAllGroupsOfFarmland.cpp",
               "difficulty": "medium"
             },
             {
@@ -3944,6 +3938,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Minesweeper",
+              "question": "https://leetcode.com/problems/minesweeper/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Making a Large Island",
               "question": "https://leetcode.com/problems/making-a-large-island/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakingALargeIsland.cpp",
@@ -3958,8 +3958,25 @@
             {
               "label": "Shortest Path in a Grid with Obstacles Elimination",
               "question": "https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ShortestPathInAGridWithObstaclesElimination.cpp",
               "difficulty": "hard"
+            }
+          ]
+        },
+        {
+          "title": "BFS/DFS on String/Array",
+          "problems": [
+            {
+              "label": "Word Ladder I",
+              "question": "https://leetcode.com/problems/word-ladder/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/WordLadder_I.cpp",
+              "difficulty": "medium"
+            },
+            {
+              "label": "Word Ladder II",
+              "question": "https://leetcode.com/problems/word-ladder-ii/",
+              "solution": "",
+              "difficulty": "medium"
             }
           ]
         },
