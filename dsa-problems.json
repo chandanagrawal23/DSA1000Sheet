@@ -3874,7 +3874,7 @@
             {
               "label": "Nearest Exit from Entrance in Maze",
               "question": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NearestExitFromEntranceInMaze.cpp",
               "difficulty": "medium"
             },
             {
