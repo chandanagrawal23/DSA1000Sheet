@@ -831,191 +831,186 @@
     },
     {
       "title": "Answer on Binary Search",
-      "subsections": [
+      "problems": [
         {
-          "title": "Array and Normal Questions",
-          "problems": [
-            {
-              "label": "Arranging Coins",
-              "question": "https://leetcode.com/problems/arranging-coins/",
-              "solution": "-",
-              "difficulty": "easy"
-            },
-            {
-              "label": "Capacity to Ship Packages Within D Days",
-              "question": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CapacityToShipPackagesWithinDDays.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find the Duplicate Number(9 ways to solve)",
-              "question": "https://leetcode.com/problems/find-the-duplicate-number/",
-              "solution": "https://leetcode.com/problems/find-the-duplicate-number/solutions/1892921/9-approaches-count-hash-in-place-marked-sort-binary-search-bit-mask-fast-slow-pointers/",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Size Subarray Sum",
-              "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Limit of Balls in a Bag",
-              "question": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumLimitofBallsinBag.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Time to Complete Trips",
-              "question": "https://leetcode.com/problems/minimum-time-to-complete-trips/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumTimetoCompleteTrips.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Koko Eating Bananas",
-              "question": "https://leetcode.com/problems/koko-eating-bananas/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KokoEatingBananas.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Most Beautiful Item for Each Query",
-              "question": "https://leetcode.com/problems/most-beautiful-item-for-each-query/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MostBeautifulItemForEachQuery.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Find the Smallest Divisor Given a Threshold",
-              "question": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindTheSmallestDivisorGivenThreshold.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimized Maximum of Products Distributed to Any Store",
-              "question": "https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizedMaximumofProductsDistributedToAnyStore.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Heaters",
-              "question": "https://leetcode.com/problems/heaters/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heaters_BinarySearch.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Candies Allocated to K Children",
-              "question": "https://leetcode.com/problems/maximum-candies-allocated-to-k-children/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumCandiesAllocatedtoKChildren.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Absolute Sum Difference",
-              "question": "https://leetcode.com/problems/minimum-absolute-sum-difference/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Frequency of the Most Frequent Element",
-              "question": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Tastiness of Candy Basket",
-              "question": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumTastinessofCandyBasket.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "House Robber IV",
-              "question": "https://leetcode.com/problems/house-robber-iv/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HouseRobberIV.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimum Number of Days to Make m Bouquets",
-              "question": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumNumberofDaystoMakeMBouquets.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Magnetic Force Between Two Balls (Same as Aggressive Cows)",
-              "question": "https://leetcode.com/problems/magnetic-force-between-two-balls/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MagneticForceBetweenTwoBalls.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Zero Array Transformation II (Difference Array + Prefix Sum + Binary Search )",
-              "question": "https://leetcode.com/problems/zero-array-transformation-ii/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Kth Smallest Element in a Sorted Matrix",
-              "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthSmallestElementInASortedMatrix_BinarySearch.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Minimize the Maximum Difference of Pairs",
-              "question": "https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizeTheMaximumDifferenceOfPairs.cpp",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Split Array Largest Sum (Can be solved using DP)",
-              "question": "https://leetcode.com/problems/split-array-largest-sum/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SplitArrayLargestSum_BinarySearch.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Kth Smallest Number in Multiplication Table",
-              "question": "https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthSmallestNumberinMultiplicationTable.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Nth Magical Number",
-              "question": "https://leetcode.com/problems/nth-magical-number/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NthMagicalNumber.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Minimize Maximum Array Element by At Most K Splits",
-              "question": "https://www.geeksforgeeks.org/minimize-maximum-array-element-possible-by-at-most-k-splits-on-the-given-array/",
-              "solution": "-",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Maximum Running Time of N Computers",
-              "question": "https://leetcode.com/problems/maximum-running-time-of-n-computers/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumRunningTimeOfNComputers.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Find K-th Smallest Pair Distance",
-              "question": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindKthSmallestPairDistance.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Divide Chocolate",
-              "question": "https://leetcode.ca/all/1231.html",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DivideChocolate.cpp",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Maximum Number of Tasks You Can Assign(Monotonic Queue + Answer on Binary Search)",
-              "question": "https://leetcode.com/problems/maximum-number-of-tasks-you-can-assign/",
-              "solution": "",
-              "difficulty": "hard"
-            },
-            {
-              "label": "Minimum Window Substring [Very Important]",
-              "question": "https://leetcode.com/problems/minimum-window-substring/",
-              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindowAnswerOnBinarySearch.cpp",
-              "difficulty": "hard"
-            }
-          ]
+          "label": "Arranging Coins",
+          "question": "https://leetcode.com/problems/arranging-coins/",
+          "solution": "-",
+          "difficulty": "easy"
+        },
+        {
+          "label": "Capacity to Ship Packages Within D Days",
+          "question": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CapacityToShipPackagesWithinDDays.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Duplicate Number(9 ways to solve)",
+          "question": "https://leetcode.com/problems/find-the-duplicate-number/",
+          "solution": "https://leetcode.com/problems/find-the-duplicate-number/solutions/1892921/9-approaches-count-hash-in-place-marked-sort-binary-search-bit-mask-fast-slow-pointers/",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Size Subarray Sum",
+          "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Limit of Balls in a Bag",
+          "question": "https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumLimitofBallsinBag.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Time to Complete Trips",
+          "question": "https://leetcode.com/problems/minimum-time-to-complete-trips/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumTimetoCompleteTrips.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Koko Eating Bananas",
+          "question": "https://leetcode.com/problems/koko-eating-bananas/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KokoEatingBananas.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Most Beautiful Item for Each Query",
+          "question": "https://leetcode.com/problems/most-beautiful-item-for-each-query/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MostBeautifulItemForEachQuery.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Find the Smallest Divisor Given a Threshold",
+          "question": "https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindTheSmallestDivisorGivenThreshold.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimized Maximum of Products Distributed to Any Store",
+          "question": "https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizedMaximumofProductsDistributedToAnyStore.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Heaters",
+          "question": "https://leetcode.com/problems/heaters/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heaters_BinarySearch.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Candies Allocated to K Children",
+          "question": "https://leetcode.com/problems/maximum-candies-allocated-to-k-children/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumCandiesAllocatedtoKChildren.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Absolute Sum Difference",
+          "question": "https://leetcode.com/problems/minimum-absolute-sum-difference/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Frequency of the Most Frequent Element",
+          "question": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Maximum Tastiness of Candy Basket",
+          "question": "https://leetcode.com/problems/maximum-tastiness-of-candy-basket/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumTastinessofCandyBasket.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "House Robber IV",
+          "question": "https://leetcode.com/problems/house-robber-iv/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HouseRobberIV.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimum Number of Days to Make m Bouquets",
+          "question": "https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumNumberofDaystoMakeMBouquets.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Magnetic Force Between Two Balls (Same as Aggressive Cows)",
+          "question": "https://leetcode.com/problems/magnetic-force-between-two-balls/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MagneticForceBetweenTwoBalls.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Zero Array Transformation II (Difference Array + Prefix Sum + Binary Search )",
+          "question": "https://leetcode.com/problems/zero-array-transformation-ii/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Kth Smallest Element in a Sorted Matrix",
+          "question": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthSmallestElementInASortedMatrix_BinarySearch.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Minimize the Maximum Difference of Pairs",
+          "question": "https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimizeTheMaximumDifferenceOfPairs.cpp",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Split Array Largest Sum (Can be solved using DP)",
+          "question": "https://leetcode.com/problems/split-array-largest-sum/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SplitArrayLargestSum_BinarySearch.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Kth Smallest Number in Multiplication Table",
+          "question": "https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthSmallestNumberinMultiplicationTable.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Nth Magical Number",
+          "question": "https://leetcode.com/problems/nth-magical-number/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NthMagicalNumber.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimize Maximum Array Element by At Most K Splits",
+          "question": "https://www.geeksforgeeks.org/minimize-maximum-array-element-possible-by-at-most-k-splits-on-the-given-array/",
+          "solution": "-",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Running Time of N Computers",
+          "question": "https://leetcode.com/problems/maximum-running-time-of-n-computers/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumRunningTimeOfNComputers.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Find K-th Smallest Pair Distance",
+          "question": "https://leetcode.com/problems/find-k-th-smallest-pair-distance/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindKthSmallestPairDistance.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Divide Chocolate",
+          "question": "https://leetcode.ca/all/1231.html",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DivideChocolate.cpp",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Maximum Number of Tasks You Can Assign(Monotonic Queue + Answer on Binary Search)",
+          "question": "https://leetcode.com/problems/maximum-number-of-tasks-you-can-assign/",
+          "solution": "",
+          "difficulty": "hard"
+        },
+        {
+          "label": "Minimum Window Substring [Very Important]",
+          "question": "https://leetcode.com/problems/minimum-window-substring/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindowAnswerOnBinarySearch.cpp",
+          "difficulty": "hard"
         }
       ]
     },
