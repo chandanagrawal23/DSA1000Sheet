@@ -457,13 +457,13 @@
         {
           "label": "Count the Number of Incremovable Subarrays II (Nice Problem)",
           "question": "https://leetcode.com/problems/count-the-number-of-incremovable-subarrays-ii",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TrappingRainWater.cpp",
+          "solution": "-",
           "difficulty": "hard"
         },
         {
           "label": "Trapping Rain Water",
           "question": "https://leetcode.com/problems/trapping-rain-water/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TrappingRainWater.cpp",
           "difficulty": "hard"
         }
       ]
