@@ -359,7 +359,7 @@
           "difficulty": "easy"
         },
         {
-          "label": "Move Zeroes[Do no sort, do not count]",
+          "label": "Move Zeroes[Do no sort, No extra array]",
           "question": "https://leetcode.com/problems/move-zeroes/",
           "solution": "-",
           "difficulty": "easy"
@@ -373,25 +373,25 @@
         {
           "label": "Squares of a Sorted Array[Easy and nice question]",
           "question": "https://leetcode.com/problems/squares-of-a-sorted-array/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/SquaresOfASortedArray.cpp",
           "difficulty": "easy"
         },
         {
           "label": "Two Sum II - Input Array Is Sorted",
           "question": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TwoSumII-InputArrayIsSorted.cpp",
           "difficulty": "medium"
         },
         {
           "label": "3Sum",
           "question": "https://leetcode.com/problems/3sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/3Sum.cpp",
           "difficulty": "medium"
         },
         {
           "label": "4Sum",
           "question": "https://leetcode.com/problems/4sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/4Sum.cpp",
           "difficulty": "medium"
         },
         {
@@ -451,13 +451,13 @@
         {
           "label": "Create Maximum Number(Stack + Two Pointer ,Superb Problem)",
           "question": "https://leetcode.com/problems/create-maximum-number/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CreateMaximumNumber.cpp",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/CreateMaximumNumber.cpp",
           "difficulty": "hard"
         },
         {
           "label": "Count the Number of Incremovable Subarrays II (Nice Problem)",
           "question": "https://leetcode.com/problems/count-the-number-of-incremovable-subarrays-ii",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TrappingRainWater.cpp",
           "difficulty": "hard"
         },
         {
