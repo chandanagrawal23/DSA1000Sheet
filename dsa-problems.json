@@ -251,6 +251,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Sum of Distances(MAANGM)",
+              "question": "https://leetcode.com/problems/sum-of-distances/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/SumOfDistances.cpp",
+              "difficulty": "medium"
+            },
+            {
               "label": "My Calendar III (Map + Prefix Sum)",
               "question": "https://leetcode.com/problems/my-calendar-iii/",
               "solution": "-",
@@ -367,7 +373,7 @@
         {
           "label": "Remove Duplicates from Sorted Array",
           "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/RemoveDuplicatesFromSortedArray.cpp",
           "difficulty": "easy"
         },
         {
