@@ -2636,25 +2636,25 @@
             {
               "label": "Inorder Traversal without Recursion / Space",
               "question": "https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTree/MorrisInorder.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Preorder Traversal without Recursion / Space",
               "question": "https://www.geeksforgeeks.org/morris-traversal-for-preorder/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTree/MorrisPreorder.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Postorder Traversal without Recursion / Space",
               "question": "https://www.geeksforgeeks.org/morris-traversal-for-postorder/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTree/MorrisPostorder.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Morris Traversal for Level Order Traversal",
               "question": "https://www.geeksforgeeks.org/level-order-traversal-of-binary-tree-using-morris-traversal/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTree/MorrisLevelorder.cpp",
               "difficulty": "medium"
             }
           ]
@@ -4887,6 +4887,12 @@
         {
           "label": "Design Bitset",
           "question": "https://leetcode.com/problems/design-bitset/",
+          "solution": "-",
+          "difficulty": "medium"
+        },
+        {
+          "label": "Design Memory Allocator",
+          "question": "https://leetcode.com/problems/design-memory-allocator/",
           "solution": "-",
           "difficulty": "medium"
         },
