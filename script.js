@@ -2326,7 +2326,21 @@ function loadSectionCompletions() {
       const sectionElement = document.getElementById(sectionId);
       if (sectionElement) {
         const sectionData = completedSections[sectionId];
-        markSectionAsCompleted(sectionElement, sectionData.title);
+        
+        // Validate that the section is still actually complete
+        const allProblems = sectionElement.querySelectorAll('.done-icon');
+        const solvedProblems = sectionElement.querySelectorAll('.done-icon[data-solved="true"]');
+        
+        // Check if all problems are still solved
+        if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
+          // Section is still complete, mark it as completed
+          markSectionAsCompleted(sectionElement, sectionData.title);
+        } else {
+          // Section is no longer complete (new problems were added or some were unchecked)
+          console.log(`Section ${sectionId} is no longer complete. Total: ${allProblems.length}, Solved: ${solvedProblems.length}`);
+          // Remove from completed sections
+          removeSectionCompletion(sectionId);
+        }
       }
     });
   } catch (error) {
@@ -2334,16 +2348,34 @@ function loadSectionCompletions() {
   }
 }
 
+
 function loadSubsectionCompletions() {
   try {
     const completedSubsections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSubsections`) || '{}');
 
     Object.keys(completedSubsections).forEach(subsectionId => {
       // Find the subsection header by looking for mini-bars with matching data-id
-      const subsectionHeader = document.querySelector(`.mini-bars.small[data-id="${subsectionId}"]`)?.closest('.collapsible-header.subsection-header');
-      if (subsectionHeader) {
+      const miniBars = document.querySelector(`.mini-bars.small[data-id="${subsectionId}"]`);
+      const subsectionLi = miniBars?.closest('.subsection-collapsible li');
+      const subsectionHeader = miniBars?.closest('.collapsible-header.subsection-header');
+      
+      if (subsectionHeader && subsectionLi) {
         const subsectionData = completedSubsections[subsectionId];
-        markSubsectionAsCompleted(subsectionHeader, subsectionData.title);
+        
+        // Validate that the subsection is still actually complete
+        const allProblems = subsectionLi.querySelectorAll('.done-icon');
+        const solvedProblems = subsectionLi.querySelectorAll('.done-icon[data-solved="true"]');
+        
+        // Check if all problems are still solved
+        if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
+          // Subsection is still complete, mark it as completed
+          markSubsectionAsCompleted(subsectionHeader, subsectionData.title);
+        } else {
+          // Subsection is no longer complete (new problems were added or some were unchecked)
+          console.log(`Subsection ${subsectionId} is no longer complete. Total: ${allProblems.length}, Solved: ${solvedProblems.length}`);
+          // Remove from completed subsections
+          removeSubsectionCompletion(subsectionId);
+        }
       }
     });
   } catch (error) {
