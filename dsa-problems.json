@@ -169,18 +169,12 @@
             {
               "label": "Car Pooling",
               "question": "https://leetcode.com/problems/car-pooling/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/CarPooling.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Maximum Occurred Integer in Ranges",
               "question": "https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Count Number of Nice Subarrays",
-              "question": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
               "solution": "-",
               "difficulty": "medium"
             },
@@ -205,13 +199,7 @@
             {
               "label": "Range Sum Query 2D - Immutable",
               "question": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
-              "solution": "-",
-              "difficulty": "medium"
-            },
-            {
-              "label": "Maximum Subarray Min-Product (Monotonic Stack + Prefix Sum)",
-              "question": "https://leetcode.com/problems/maximum-subarray-min-product/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/RangeSumQuery_2DImmutable.cpp",
               "difficulty": "medium"
             },
             {
@@ -229,7 +217,7 @@
             {
               "label": "Maximum Good Subarray Sum",
               "question": "https://leetcode.com/problems/maximum-good-subarray-sum/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/MaximumGoodSubarraySum.cpp",
               "difficulty": "medium"
             },
             {
@@ -255,12 +243,6 @@
               "question": "https://leetcode.com/problems/sum-of-distances/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/SumOfDistances.cpp",
               "difficulty": "medium"
-            },
-            {
-              "label": "My Calendar III (Map + Prefix Sum)",
-              "question": "https://leetcode.com/problems/my-calendar-iii/",
-              "solution": "-",
-              "difficulty": "hard"
             }
           ]
         },
@@ -356,6 +338,33 @@
       ]
     },
     {
+      "title": "HashMap/HashSet",
+      "subsections": [
+        {
+          "title": "HashSet",
+          "problems": [
+            {
+              "label": "Introduction to HashSet",
+              "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
+              "solution": "-",
+              "difficulty": "easy"
+            }
+          ]
+        },
+        {
+          "title": "HashMap",
+          "problems": [
+            {
+              "label": "Introduction to HashMap",
+              "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
+              "solution": "-",
+              "difficulty": "easy"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "title": "Two Pointers",
       "problems": [
         {
@@ -365,9 +374,9 @@
           "difficulty": "easy"
         },
         {
-          "label": "Move Zeroes[Do no sort, No extra array]",
-          "question": "https://leetcode.com/problems/move-zeroes/",
-          "solution": "-",
+          "label": "Two Sum II - Input Array Is Sorted",
+          "question": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TwoSumII-InputArrayIsSorted.cpp",
           "difficulty": "easy"
         },
         {
@@ -383,10 +392,10 @@
           "difficulty": "easy"
         },
         {
-          "label": "Two Sum II - Input Array Is Sorted",
-          "question": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
-          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TwoSumII-InputArrayIsSorted.cpp",
-          "difficulty": "medium"
+          "label": "Move Zeroes[Do no sort, No extra array]",
+          "question": "https://leetcode.com/problems/move-zeroes/",
+          "solution": "-",
+          "difficulty": "easy"
         },
         {
           "label": "3Sum",
@@ -415,7 +424,7 @@
         {
           "label": "Remove Duplicates from Sorted Array II",
           "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/RemoveDuplicatesFromSortedArray_II.cpp",
           "difficulty": "medium"
         },
         {
@@ -1224,6 +1233,12 @@
               "difficulty": "medium"
             },
             {
+              "label": "Maximum Subarray Min-Product (Monotonic Stack + Prefix Sum)",
+              "question": "https://leetcode.com/problems/maximum-subarray-min-product/",
+              "solution": "-",
+              "difficulty": "medium"
+            },
+            {
               "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
               "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FaceBook_Stack_Hard.cpp",
@@ -1245,6 +1260,12 @@
               "label": "Largest Rectangle in Histogram(MAANGM)",
               "question": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/LargestRectangleInHistogram.cpp",
+              "difficulty": "hard"
+            },
+            {
+              "label": "Maximal Rectangle(Google)",
+              "question": "https://leetcode.com/problems/maximal-rectangle/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/MaximalRectangle.cpp",
               "difficulty": "hard"
             }
           ]
@@ -3868,13 +3889,13 @@
             {
               "label": "Number of Closed Islands",
               "question": "https://leetcode.com/problems/number-of-closed-islands/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NumberOfClosedIslands.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Count Sub Islands",
               "question": "https://leetcode.com/problems/count-sub-islands/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CountSubIslands.cpp",
               "difficulty": "medium"
             },
             {
@@ -3886,13 +3907,13 @@
             {
               "label": "Shortest Bridge",
               "question": "https://leetcode.com/problems/shortest-bridge/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ShortestBridge.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Coloring a Border",
               "question": "https://leetcode.com/problems/coloring-a-border/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ColoringA_Border.cpp",
               "difficulty": "medium"
             },
             {
@@ -3910,7 +3931,7 @@
             {
               "label": "Max Area of Island",
               "question": "https://leetcode.com/problems/max-area-of-island/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MaxAreaOfIsland.cpp",
               "difficulty": "medium"
             },
             {
@@ -3927,14 +3948,14 @@
             },
             {
               "label": "Walls and Gates",
-              "question": "https://leetcode.com/problems/walls-and-gates/",
-              "solution": "-",
+              "question": "https://leetcode.ca/all/286.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/WallsAndGates.cpp",
               "difficulty": "medium"
             },
             {
               "label": "Pacific Atlantic Water Flow",
               "question": "https://leetcode.com/problems/pacific-atlantic-water-flow/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/PacificAtlanticWaterFlow.cpp",
               "difficulty": "medium"
             },
             {
@@ -4761,6 +4782,12 @@
           "question": "https://leetcode.com/problems/zero-array-transformation-i/",
           "solution": "-",
           "difficulty": "medium"
+        },
+        {
+          "label": "My Calendar III (Map + Prefix Sum)",
+          "question": "https://leetcode.com/problems/my-calendar-iii/",
+          "solution": "-",
+          "difficulty": "hard"
         },
         {
           "label": "Skyline Problem",
