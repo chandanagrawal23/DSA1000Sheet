@@ -1799,7 +1799,7 @@ function markSectionAsCompleted(sectionElement, sectionTitle) {
     // The CSS will handle the green color via the .section-completed class
   }
 
-  console.log(`Section "${sectionTitle}" marked as completed!`);
+  // console.log(`Section "${sectionTitle}" marked as completed!`);
 }
 
 function markSectionAsIncomplete(sectionElement, sectionTitle) {
@@ -1807,21 +1807,21 @@ function markSectionAsIncomplete(sectionElement, sectionTitle) {
   sectionElement.classList.remove('section-completed');
 
   // The folder icon will automatically return to normal color via CSS
-  console.log(`Section "${sectionTitle}" marked as incomplete.`);
+  // console.log(`Section "${sectionTitle}" marked as incomplete.`);
 }
 
 function markSubsectionAsCompleted(subsectionHeader, subsectionTitle) {
   // Add completed class to subsection header
   subsectionHeader.classList.add('subsection-completed');
 
-  console.log(`Subsection "${subsectionTitle}" marked as completed!`);
+  // console.log(`Subsection "${subsectionTitle}" marked as completed!`);
 }
 
 function markSubsectionAsIncomplete(subsectionHeader, subsectionTitle) {
   // Remove completed class from subsection header
   subsectionHeader.classList.remove('subsection-completed');
 
-  console.log(`Subsection "${subsectionTitle}" marked as incomplete.`);
+  // console.log(`Subsection "${subsectionTitle}" marked as incomplete.`);
 }
 
 function showSubsectionCompletionToast(subsectionTitle) {
@@ -2815,6 +2815,9 @@ function cleanupTooltips() {
 /***************************************************************
  * FILTER CHECKBOX TUTORIAL TOOLTIP
  ***************************************************************/
+// Helper function to set up tooltip for a single element
+// Add this function after the setupTooltipForElement function
+
 function showFirstCheckboxTooltip() {
   // Get refresh count from localStorage (default to 0)
   let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
@@ -3407,7 +3410,25 @@ function toggleSections(expand) {
  * COUNT UNIQUE PROBLEMS
  * Counts total and unique problems from the data
  ***************************************************************/
+let uniqueCountsCache = {}; // Cache for unique problem counts
 function countUniqueProblems(data) {
+  // Check if we have cached counts for this section
+  if (uniqueCountsCache[currentSection]) {
+    // Use cached values
+    const cached = uniqueCountsCache[currentSection];
+    totalEasy = cached.totalEasy;
+    totalMedium = cached.totalMedium;
+    totalHard = cached.totalHard;
+    uniqueProblems = new Set(cached.uniqueProblems);
+    uniqueEasy = new Set(cached.uniqueEasy);
+    uniqueMedium = new Set(cached.uniqueMedium);
+    uniqueHard = new Set(cached.uniqueHard);
+    return;
+  }
+
+  // // If not cached, calculate as normal
+  // console.log(`Calculating unique counts for ${currentSection}`);
+  
   // Reset counters and sets
   totalEasy = 0;
   totalMedium = 0;
@@ -3475,14 +3496,24 @@ function countUniqueProblems(data) {
     }
   });
 
+  // Cache the results for this section
+  uniqueCountsCache[currentSection] = {
+    totalEasy: totalEasy,
+    totalMedium: totalMedium,
+    totalHard: totalHard,
+    uniqueProblems: Array.from(uniqueProblems),
+    uniqueEasy: Array.from(uniqueEasy),
+    uniqueMedium: Array.from(uniqueMedium),
+    uniqueHard: Array.from(uniqueHard)
+  };
   // Optional: Log counts for debugging
-  console.log('Problem counts:', {
-    totalProblems: totalEasy + totalMedium + totalHard,
-    totalUnique: uniqueProblems.size,
-    uniqueEasy: uniqueEasy.size,
-    uniqueMedium: uniqueMedium.size,
-    uniqueHard: uniqueHard.size
-  });
+  // console.log('Problem counts:', {
+  //   totalProblems: totalEasy + totalMedium + totalHard,
+  //   totalUnique: uniqueProblems.size,
+  //   uniqueEasy: uniqueEasy.size,
+  //   uniqueMedium: uniqueMedium.size,
+  //   uniqueHard: uniqueHard.size
+  // });
 }
 
 // Function to switch between sections
