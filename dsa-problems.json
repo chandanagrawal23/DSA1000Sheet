@@ -2302,7 +2302,7 @@
             {
               "label": "Boundary Traversal of Binary Tree",
               "question": "https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTree/BoundaryTraversalBinaryTree.cpp",
               "difficulty": "medium"
             },
             {
@@ -2494,7 +2494,7 @@
               "difficulty": "medium"
             },
             {
-              "label": "Amount of Time for Binary Tree to be Infected( Same as Burn Tree )",
+              "label": "Amount of Time for Binary Tree to be Infected(Burn Tree)",
               "question": "https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/",
               "solution": "-",
               "difficulty": "medium"
