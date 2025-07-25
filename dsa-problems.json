@@ -139,6 +139,12 @@
           "question": "https://www.geeksforgeeks.org/print-rectangular-pattern-with-given-center/",
           "solution": "-",
           "difficulty": "medium"
+        },
+        {
+          "label": "Print Square Pattern with Given Center",
+          "question": "https://www.geeksforgeeks.org/print-rectangular-pattern-with-given-center/",
+          "solution": "-",
+          "difficulty": "medium"
         }
       ]
     },
