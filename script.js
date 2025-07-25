@@ -296,12 +296,12 @@ function toggleSolved(icon) {
 function saveProgress() {
   const solvedProblems = {};
   document.querySelectorAll('.done-icon[data-solved="true"]').forEach(icon => {
-    const problemId = icon.getAttribute('data-id');
-    const sectionName = problemId.split('-')[0];
-    const problemLabel = icon.parentElement.parentElement.querySelector('td a').textContent;
-    solvedProblems[sectionName + "-" + problemLabel] = true;
+    const problemId = icon.getAttribute('data-problem-id'); // We'll set this when rendering
+    if (problemId) {
+      solvedProblems[problemId] = true;
+    }
   });
-  // Save to section-specific storage
+  
   localStorage.setItem(`${currentSection}SolvedProblems`, JSON.stringify(solvedProblems));
 }
 
@@ -311,10 +311,8 @@ function loadProgress() {
   if (saved) {
     const solvedProblems = JSON.parse(saved);
     document.querySelectorAll('.done-icon').forEach(icon => {
-      const problemId = icon.getAttribute('data-id');
-      const sectionName = problemId.split('-')[0];
-      const problemLabel = icon.parentElement.parentElement.querySelector('td a').textContent;
-      if (solvedProblems[sectionName + "-" + problemLabel]) {
+      const problemId = icon.getAttribute('data-problem-id');
+      if (problemId && solvedProblems[problemId]) {
         icon.setAttribute('data-solved', 'true');
         icon.textContent = 'check_box';
         icon.parentElement.parentElement.classList.add('solved');
@@ -502,8 +500,8 @@ function setupRandomButton() {
     return;
   }
 
-  console.log('Setting up random button:', randomButton);
-  console.log('Random button position:', randomButton.getBoundingClientRect());
+  // console.log('Setting up random button:', randomButton);
+  // console.log('Random button position:', randomButton.getBoundingClientRect());
 
   randomButton.addEventListener('click', function() {
     openRandomUnsolvedProblem();
@@ -1257,8 +1255,10 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
                 </td>
                 <td data-label="Notes">
                   <div class="centered-container">
-                    <i class="material-icons notes-icon" onclick="openNotesModal('${problemId}', '${escapedLabel}')">
-                      sticky_note_2
+                    <i class="material-icons notes-icon" 
+                        data-problem-id="${problem.id || problemId}"
+                        onclick="openNotesModal('${problem.id || problemId}', '${escapedLabel}')">
+                        sticky_note_2
                     </i>
                   </div>
                 </td>
@@ -1266,6 +1266,7 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
                   <i class="material-icons done-icon"
                      data-difficulty="${problem.difficulty}"
                      data-id="${problemId}"
+                     data-problem-id="${problem.id || problemId}"  
                      data-solved="false"
                      onclick="toggleSolved(this)">check_box_outline_blank</i>
                   ${isLastRow && showCollapseBtn ? `
@@ -1282,7 +1283,7 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
     `;
 }
 
-// Separate function for LLD problems with multiple solutions and videos
+// Modified generateProblemsTableLLD function for LLD problems
 function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false) {
   return `
       <table class="striped highlight problem-table lld-table">
@@ -1365,15 +1366,18 @@ function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false)
                 </td>
                 <td data-label="Notes">
                   <div class="centered-container">
-                    <i class="material-icons notes-icon" onclick="openNotesModal('${problemId}', '${escapedLabel}')">
-                      sticky_note_2
-                    </i>
+                        <i class="material-icons notes-icon" 
+                            data-problem-id="${problem.id || problemId}"
+                            onclick="openNotesModal('${problem.id || problemId}', '${escapedLabel}')">
+                            sticky_note_2
+                        </i>
                   </div>
                 </td>
                 <td data-label="Status" style="position: relative;">
                   <i class="material-icons done-icon"
                      data-difficulty="${problem.difficulty}"
                      data-id="${problemId}"
+                     data-problem-id="${problem.id || ''}"
                      data-solved="false"
                      onclick="toggleSolved(this)">check_box_outline_blank</i>
                   ${isLastRow && showCollapseBtn ? `
@@ -1574,30 +1578,25 @@ function loadNotess() {
 
 // Helper function to update all notes icons based on note content
 function updateNotesIcons() {
-  console.log("Updating notes icons based on content...");
+  // console.log("Updating notes icons based on content...");
   document.querySelectorAll('.notes-icon').forEach(icon => {
-    // Extract the problem ID from the onclick attribute
-    const onclickAttr = icon.getAttribute('onclick');
-    if (!onclickAttr) return;
-
-    // Use a more robust regex to handle the escaped quotes in your labels
-    const match = onclickAttr.match(/openNotesModal\('([^']+)',\s*'((?:[^'\\]|\\.)+)'\)/);
-    if (!match) {
-      console.log("No match found for:", onclickAttr);
-      return;
+    // Get the problem ID from data attribute
+    let problemId = icon.getAttribute('data-problem-id');
+    
+    if (!problemId) {
+      // Fallback: Extract from onclick if data-problem-id is missing
+      const onclickAttr = icon.getAttribute('onclick');
+      if (onclickAttr) {
+        const match = onclickAttr.match(/openNotesModal\('([^']+)',/);
+        if (match) {
+          problemId = match[1];
+        }
+      }
     }
 
-    const problemId = match[1];
-    const escapedLabel = match[2];
-    // Unescape the label to match how it's stored
-    const label = escapedLabel.replace(/\\'/g, "'");
-    const sectionName = problemId.split('-')[0];
-    const stableNoteId = `${sectionName}-${label}`;
-
     // Set data-has-notes attribute based on whether notes exist and aren't empty
-    if (notes[stableNoteId] && notes[stableNoteId].trim() !== '') {
+    if (problemId && notes[problemId] && notes[problemId].trim() !== '') {
       icon.setAttribute('data-has-notes', 'true');
-      // console.log(`Notes found for ${stableNoteId}, setting icon to green`);
     } else {
       icon.setAttribute('data-has-notes', 'false');
     }
@@ -1608,19 +1607,16 @@ function updateNotesIcons() {
  * Updates the openNotesModal function to retrieve notes using stable identifiers
  */
 function openNotesModal(problemId, label) {
-  currentNotesProblemId = problemId;
+  const doneIcon = document.querySelector(`.done-icon[data-id="${problemId}"]`);
+  const actualProblemId = doneIcon ? doneIcon.getAttribute('data-problem-id') : problemId;
+  
+  currentNotesProblemId = actualProblemId;
   const modal = document.getElementById('notesModal');
   const textarea = document.getElementById('notesModalTextarea');
   const title = document.getElementById('notesModalTitle');
 
-  // Extract section name from the problem ID
-  const sectionName = problemId.split('-')[0];
-
-  // Create the stable ID for lookup
-  const stableNoteId = `${sectionName}-${label}`;
-
-  // Try to find the note by stable ID first
-  textarea.value = notes[stableNoteId] || '';
+  // Use the actual problem ID to retrieve notes
+  textarea.value = notes[actualProblemId] || '';
   title.textContent = `Notes: ${label}`;
 
   modal.classList.add('active');
@@ -1640,41 +1636,287 @@ function saveNotesModal() {
 
   const text = document.getElementById('notesModalTextarea').value.trim();
 
-  // Get the label and section for this problem
-  const icon = document.querySelector(`.done-icon[data-id="${currentNotesProblemId}"]`);
-  if (icon) {
-    const row = icon.parentElement.parentElement;
-    const label = row.querySelector('td a').textContent.replace(/'/g, "$");
-    const sectionName = currentNotesProblemId.split('-')[0];
-
-    // Create a stable key using section + label
-    const stableNoteId = `${sectionName}-${label}`;
-
-    // Store the note using the stable ID
-    notes[stableNoteId] = text;
-
-    // Save to localStorage with section-specific key
-    localStorage.setItem(`${currentSection}Notes`, JSON.stringify(notes));
-    // Update the notes icon color
-    const notesIcon = row.querySelector('.notes-icon');
-    if (notesIcon) {
-      if (text && text.trim() !== '') {
-        notesIcon.setAttribute('data-has-notes', 'true');
-      } else {
-        notesIcon.setAttribute('data-has-notes', 'false');
-      }
-    }
-
-    // Show success message
-    M.toast({
-      html: '<span class="success-toast">Notes saved successfully!</span>',
-      classes: 'rounded green',
-      displayLength: 2000
-    });
+  // Simply use the problemId to store notes
+  if (text) {
+    notes[currentNotesProblemId] = text;
+  } else {
+    // If text is empty, remove the note
+    delete notes[currentNotesProblemId];
   }
+
+  // Save to localStorage with section-specific key
+  localStorage.setItem(`${currentSection}Notes`, JSON.stringify(notes));
+  
+  // Update the notes icon color - find by actual problem ID
+  const notesIcon = document.querySelector(`.notes-icon[data-problem-id="${currentNotesProblemId}"]`);
+  if (notesIcon) {
+    if (text && text.trim() !== '') {
+      notesIcon.setAttribute('data-has-notes', 'true');
+    } else {
+      notesIcon.setAttribute('data-has-notes', 'false');
+    }
+  }
+
+  // Show success message
+  M.toast({
+    html: '<span class="success-toast">Notes saved successfully!</span>',
+    classes: 'rounded green',
+    displayLength: 2000
+  });
 
   closeNotesModal();
 }
+
+/***************************************************************
+ * TABLE SORTING FUNCTIONALITY
+ ***************************************************************/
+// Store original order of rows for each table
+const tableOriginalOrders = new WeakMap();
+function initializeTableSorting() {
+  // Add click handlers to all table headers
+  document.querySelectorAll('.problem-table thead tr').forEach(headerRow => {
+    // Skip if already initialized
+    if (headerRow.hasAttribute('data-sort-initialized')) return;
+    
+    headerRow.setAttribute('data-sort-initialized', 'true');
+    headerRow.style.cursor = 'pointer';
+    headerRow.title = 'Click to sort by completion status';
+    
+    // Add sort indicator to the FIRST th (Question column)
+    const firstTh = headerRow.querySelector('th:first-child');
+    if (firstTh && !firstTh.querySelector('.sort-indicator')) {
+      const sortIndicator = document.createElement('div');
+      sortIndicator.className = 'sort-indicator';
+      sortIndicator.innerHTML = `
+        <span class="sort-icon" style="
+          font-family: Arial, sans-serif !important;
+          font-size: 22px;
+          opacity: 0.6;
+          color: var(--text-secondary);
+        ">⇅</span>
+      `;
+      firstTh.style.position = 'relative';
+      firstTh.prepend(sortIndicator); // Use prepend to add at the beginning
+    }
+    
+    headerRow.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleTableSort(this);
+    });
+  });
+}
+
+// Replace the toggleTableSort function (around line 1737)
+function toggleTableSort(headerRow) {
+  const table = headerRow.closest('.problem-table');
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+  // Check if this table should have a collapse button (more than 5 rows)
+  const shouldHaveCollapseBtn = rows.length > 5;
+  // Store original order if not already stored
+  if (!tableOriginalOrders.has(table)) {
+    // Store the initial order as indices
+    const originalOrder = rows.map((row, index) => ({
+      row: row,
+      originalIndex: index
+    }));
+    tableOriginalOrders.set(table, originalOrder);
+  }
+  
+  // Get current sort state
+  const currentSort = headerRow.getAttribute('data-sort-state') || 'default';
+  
+  if (currentSort === 'default') {
+      const sortIcon = headerRow.querySelector('.sort-icon');
+      if (sortIcon) {
+        sortIcon.textContent = '↓';
+        sortIcon.style.opacity = '1';
+        sortIcon.style.color = 'var(--primary)';
+      }
+    // Sort by unsolved first
+    headerRow.setAttribute('data-sort-state', 'unsolved-first');
+    headerRow.classList.remove('sorted-default');
+    headerRow.classList.add('sorted-unsolved');
+    
+    sortRowsByCompletion(tbody, rows, 'unsolved-first');
+    
+    // Show toast notification
+    M.toast({
+      html: '<span>Sorted: Unsolved problems first</span>',
+      classes: 'rounded',
+      displayLength: 2000
+    });
+  } else {
+      const sortIcon = headerRow.querySelector('.sort-icon');
+      if (sortIcon) {
+        sortIcon.textContent = '↑';
+        sortIcon.style.opacity = '1';
+        sortIcon.style.color = 'var(--primary)';
+      }
+    // Restore default order
+    headerRow.setAttribute('data-sort-state', 'default');
+    headerRow.classList.remove('sorted-unsolved');
+    headerRow.classList.add('sorted-default');
+
+    // First, remove any existing collapse buttons
+    rows.forEach(row => {
+      const existingBtn = row.querySelector('.subsection-collapse-btn');
+      if (existingBtn) {
+        existingBtn.remove();
+      }
+    });
+    
+    // Get the original order mapping
+    const originalOrder = tableOriginalOrders.get(table);
+    
+    // Create a map of current rows by their problem ID or unique identifier
+    const currentRowsMap = new Map();
+    rows.forEach(row => {
+      const doneIcon = row.querySelector('.done-icon');
+      if (doneIcon) {
+        const problemId = doneIcon.getAttribute('data-problem-id') || 
+                         doneIcon.getAttribute('data-id');
+        if (problemId) {
+          currentRowsMap.set(problemId, row);
+        }
+      }
+    });
+    
+    // Clear tbody
+    tbody.innerHTML = '';
+    
+// Restore rows in original order but with current state
+    let lastRow = null;
+    originalOrder.forEach(({row: originalRow}) => {
+      const doneIcon = originalRow.querySelector('.done-icon');
+      if (doneIcon) {
+        const problemId = doneIcon.getAttribute('data-problem-id') || 
+                         doneIcon.getAttribute('data-id');
+        if (problemId && currentRowsMap.has(problemId)) {
+          // Append the current row (with current state) instead of cloned original
+          const currentRow = currentRowsMap.get(problemId);
+          tbody.appendChild(currentRow);
+          lastRow = currentRow;
+        } else {
+          // Fallback: append the original row if we can't find the current one
+          tbody.appendChild(originalRow);
+          lastRow = originalRow;
+        }
+      }
+    });
+    
+    // Add collapse button to the last row if needed
+    if (shouldHaveCollapseBtn && lastRow) {
+      addCollapseButtonToLastRow(lastRow);
+    }
+    
+    // Show toast notification
+    M.toast({
+      html: '<span>Sorted: Default order restored</span>',
+      classes: 'rounded',
+      displayLength: 2000
+    });
+  }
+}
+
+function sortRowsByCompletion(tbody, rows, sortType) {
+  // First, remove any existing collapse buttons from all rows
+  rows.forEach(row => {
+    const existingBtn = row.querySelector('.subsection-collapse-btn');
+    if (existingBtn) {
+      existingBtn.remove();
+    }
+  });
+  if (sortType === 'unsolved-first') {
+    // Separate rows into solved and unsolved
+    const unsolvedRows = [];
+    const solvedRows = [];
+    
+    rows.forEach(row => {
+      const doneIcon = row.querySelector('.done-icon');
+      const isSolved = doneIcon && doneIcon.getAttribute('data-solved') === 'true';
+      
+      if (isSolved) {
+        solvedRows.push(row);
+      } else {
+        unsolvedRows.push(row);
+      }
+    });
+    
+    // Sort each group by difficulty (Easy -> Medium -> Hard)
+    const difficultyOrder = { 'easy': 1, 'medium': 2, 'hard': 3 };
+    
+    const sortByDifficulty = (a, b) => {
+      const aDiff = a.classList.contains('easy') ? 'easy' : 
+                     a.classList.contains('medium') ? 'medium' : 'hard';
+      const bDiff = b.classList.contains('easy') ? 'easy' : 
+                     b.classList.contains('medium') ? 'medium' : 'hard';
+      return difficultyOrder[aDiff] - difficultyOrder[bDiff];
+    };
+    
+    unsolvedRows.sort(sortByDifficulty);
+    solvedRows.sort(sortByDifficulty);
+    
+    // Clear tbody and append sorted rows
+    tbody.innerHTML = '';
+    
+    // Add unsolved rows first
+    unsolvedRows.forEach(row => tbody.appendChild(row));
+    
+    // Then add solved rows
+    solvedRows.forEach(row => tbody.appendChild(row));
+
+        // Now add the collapse button to the NEW last row
+    const allRows = [...unsolvedRows, ...solvedRows];
+    if (allRows.length > 0) {
+      addCollapseButtonToLastRow(allRows[allRows.length - 1]);
+    }
+  }
+}
+
+function addCollapseButtonToLastRow(row) {
+  // Only add if not already present
+  if (row && !row.querySelector('.subsection-collapse-btn')) {
+    const lastTd = row.querySelector('td:last-child');
+    if (lastTd) {
+      const collapseBtn = document.createElement('button');
+      collapseBtn.className = 'subsection-collapse-btn';
+      collapseBtn.setAttribute('onclick', 'smartCollapse(this)');
+      collapseBtn.setAttribute('title', 'Collapse');
+      collapseBtn.innerHTML = '<i class="material-icons">keyboard_arrow_up</i>';
+      lastTd.appendChild(collapseBtn);
+    }
+  }
+}
+
+// Helper function to initialize checkboxes for a specific table
+function initializeCheckboxesForTable(table) {
+  const checkboxes = table.querySelectorAll('.done-icon');
+  checkboxes.forEach(icon => {
+    // Remove existing onclick to avoid duplicates
+    icon.onclick = null;
+    // Add new onclick
+    icon.onclick = function() { toggleSolved(this); };
+  });
+}
+
+// Helper function to load progress for a specific table
+function loadProgressForTable(table) {
+  const saved = localStorage.getItem(`${currentSection}SolvedProblems`);
+  if (saved) {
+    const solvedProblems = JSON.parse(saved);
+    table.querySelectorAll('.done-icon').forEach(icon => {
+      const problemId = icon.getAttribute('data-problem-id');
+      if (problemId && solvedProblems[problemId]) {
+        icon.setAttribute('data-solved', 'true');
+        icon.textContent = 'check_box';
+        icon.parentElement.parentElement.classList.add('solved');
+      }
+    });
+  }
+}
+
+
 
 /***************************************************************
  * SECTION COMPLETION FUNCTIONS
@@ -1689,102 +1931,51 @@ function checkSectionCompletion(icon) {
   // Check if this is a subsection
   const isSubsection = sectionElement.classList.contains('subsection-collapsible');
 
-  // If subsection, also check subsection completion
   if (isSubsection) {
     checkSubsectionCompletion(problemRow);
-  }
-
-  // Continue with parent section check (existing code)
-  if (isSubsection) {
-    // This is a subsection collapsible, find the parent section
     sectionElement = sectionElement.closest('.collapsible.z-depth-1');
   }
 
   if (!sectionElement) return;
 
-  const sectionId = sectionElement.getAttribute('id');
-  if (!sectionId) return;
-
-  // Get section title
   const sectionTitle = sectionElement.querySelector('.topic-title')?.textContent;
   if (!sectionTitle) return;
 
-  // Count total and solved problems in this section
   const allProblems = sectionElement.querySelectorAll('.done-icon');
   const solvedProblems = sectionElement.querySelectorAll('.done-icon[data-solved="true"]');
 
   const isCurrentlyCompleted = sectionElement.classList.contains('section-completed');
   const shouldBeCompleted = allProblems.length > 0 && allProblems.length === solvedProblems.length;
 
-  //log all problems and solved problems for debugging
-  console.log(`Section ID: ${sectionId}`);
-  console.log(`Section Title: ${sectionTitle}`);
-  console.log(`Total Problems: ${allProblems.length}`);
-  console.log(`Solved Problems: ${solvedProblems.length}`);
-  console.log(`Should be completed: ${shouldBeCompleted}`);
-  console.log(`Is currently completed: ${isCurrentlyCompleted}`);
-
-
-  // Simple logic: if section should be completed, ALWAYS show banner
-  if (shouldBeCompleted) {
-    console.log(`🎉 SECTION COMPLETED: ${sectionTitle} - ALWAYS showing banner!`);
-
-    // Mark as completed (this is safe to call multiple times)
+  if (shouldBeCompleted && !isCurrentlyCompleted) {
     markSectionAsCompleted(sectionElement, sectionTitle);
-    saveSectionCompletion(sectionId, sectionTitle);
-
-    // ALWAYS show banner - no conditions, no checks
     showCongratulationsBanner(sectionTitle);
-  }
-
-  // Handle incompletion separately
-  if (!shouldBeCompleted && isCurrentlyCompleted) {
-    console.log(`❌ SECTION INCOMPLETE: ${sectionTitle}`);
+  } else if (!shouldBeCompleted && isCurrentlyCompleted) {
     markSectionAsIncomplete(sectionElement, sectionTitle);
-    removeSectionCompletion(sectionId);
   }
 }
 
 function checkSubsectionCompletion(problemRow) {
-  // Find the specific subsection li element that contains this problem
   const subsectionLi = problemRow.closest('.subsection-collapsible li');
   if (!subsectionLi) return;
 
-  // Get subsection header and title
   const subsectionHeader = subsectionLi.querySelector('.collapsible-header.subsection-header');
   if (!subsectionHeader) return;
 
   const subsectionTitle = subsectionHeader.querySelector('.subsection-title')?.textContent?.split('[')[0]?.trim();
   if (!subsectionTitle) return;
 
-  // Get the subsection ID from the mini-bars data-id
-  const miniBars = subsectionHeader.querySelector('.mini-bars.small');
-  const subsectionId = miniBars?.getAttribute('data-id');
-  if (!subsectionId) return;
-
-  // Count total and solved problems in this specific subsection
   const allProblems = subsectionLi.querySelectorAll('.done-icon');
   const solvedProblems = subsectionLi.querySelectorAll('.done-icon[data-solved="true"]');
 
   const isCurrentlyCompleted = subsectionHeader.classList.contains('subsection-completed');
   const shouldBeCompleted = allProblems.length > 0 && allProblems.length === solvedProblems.length;
 
-  console.log(`Subsection ID: ${subsectionId}`);
-  console.log(`Subsection Title: ${subsectionTitle}`);
-  console.log(`Total Problems: ${allProblems.length}`);
-  console.log(`Solved Problems: ${solvedProblems.length}`);
-  console.log(`Should be completed: ${shouldBeCompleted}`);
-  console.log(`Is currently completed: ${isCurrentlyCompleted}`);
-
   if (shouldBeCompleted && !isCurrentlyCompleted) {
-    // Subsection just became complete
     markSubsectionAsCompleted(subsectionHeader, subsectionTitle);
     showSubsectionCompletionToast(subsectionTitle);
-    saveSubsectionCompletion(subsectionId, subsectionTitle);
   } else if (!shouldBeCompleted && isCurrentlyCompleted) {
-    // Subsection is no longer complete
     markSubsectionAsIncomplete(subsectionHeader, subsectionTitle);
-    removeSubsectionCompletion(subsectionId);
   }
 }
 
@@ -2215,13 +2406,13 @@ window.testWelcomeModal = function() {
 function showCongratulationsBanner(sectionTitle) {
   bannerCallCount++;
   const timestamp = Date.now();
-  console.log(`🎊 [Call #${bannerCallCount}] [${timestamp}] showCongratulationsBanner called for: ${sectionTitle}`);
+  // console.log(`🎊 [Call #${bannerCallCount}] [${timestamp}] showCongratulationsBanner called for: ${sectionTitle}`);
 
   // FORCE REMOVE ANY EXISTING BANNER FIRST
   const existingBanner = document.getElementById('congratulationsBanner');
   if (existingBanner) {
     existingBanner.remove();
-    console.log(`🎊 [Call #${bannerCallCount}] Removed existing banner`);
+    // console.log(`🎊 [Call #${bannerCallCount}] Removed existing banner`);
   }
 
   // CREATE A COMPLETELY NEW BANNER ELEMENT
@@ -2253,10 +2444,10 @@ function showCongratulationsBanner(sectionTitle) {
   document.body.insertAdjacentHTML('beforeend', bannerHTML);
   document.body.style.overflow = 'hidden';
 
-  console.log(`🎊 [Call #${bannerCallCount}] NEW banner created and shown for: ${sectionTitle}`);
+  // console.log(`🎊 [Call #${bannerCallCount}] NEW banner created and shown for: ${sectionTitle}`);
 
   // Trigger confetti celebration immediately
-  console.log(`🎊 [Call #${bannerCallCount}] Triggering confetti for: ${sectionTitle}`);
+  // console.log(`🎊 [Call #${bannerCallCount}] Triggering confetti for: ${sectionTitle}`);
   triggerCelebration();
 }
 
@@ -2269,7 +2460,7 @@ function hideCongratulationsBanner() {
     console.log(`🎊 Banner hidden and removed from DOM`);
   }
 }
-
+/*
 function saveSectionCompletion(sectionId, sectionTitle) {
   try {
     const completedSections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSections`) || '{}');
@@ -2317,70 +2508,48 @@ function removeSubsectionCompletion(subsectionId) {
     console.error('Error removing subsection completion:', error);
   }
 }
-
+*/
+// Replace loadSectionCompletions() with this simpler version
 function loadSectionCompletions() {
-  try {
-    const completedSections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSections`) || '{}');
-
-    Object.keys(completedSections).forEach(sectionId => {
-      const sectionElement = document.getElementById(sectionId);
-      if (sectionElement) {
-        const sectionData = completedSections[sectionId];
-        
-        // Validate that the section is still actually complete
-        const allProblems = sectionElement.querySelectorAll('.done-icon');
-        const solvedProblems = sectionElement.querySelectorAll('.done-icon[data-solved="true"]');
-        
-        // Check if all problems are still solved
-        if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
-          // Section is still complete, mark it as completed
-          markSectionAsCompleted(sectionElement, sectionData.title);
-        } else {
-          // Section is no longer complete (new problems were added or some were unchecked)
-          console.log(`Section ${sectionId} is no longer complete. Total: ${allProblems.length}, Solved: ${solvedProblems.length}`);
-          // Remove from completed sections
-          removeSectionCompletion(sectionId);
-        }
-      }
-    });
-  } catch (error) {
-    console.error('Error loading section completions:', error);
-  }
+  // Don't load from localStorage - just compute based on current state
+  const collapsibles = document.querySelectorAll('.collapsible');
+  
+  collapsibles.forEach(sectionElem => {
+    const sectionId = sectionElem.getAttribute('id');
+    if (!sectionId || sectionElem.classList.contains('subsection-collapsible')) return;
+    
+    // Count problems
+    const allProblems = sectionElem.querySelectorAll('.done-icon');
+    const solvedProblems = sectionElem.querySelectorAll('.done-icon[data-solved="true"]');
+    
+    // If all problems are solved, mark as completed
+    if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
+      const sectionTitle = sectionElem.querySelector('.topic-title')?.textContent;
+      markSectionAsCompleted(sectionElem, sectionTitle);
+    }
+  });
 }
 
 
+// Replace loadSubsectionCompletions() with this simpler version
 function loadSubsectionCompletions() {
-  try {
-    const completedSubsections = JSON.parse(localStorage.getItem(`${currentSection}CompletedSubsections`) || '{}');
-
-    Object.keys(completedSubsections).forEach(subsectionId => {
-      // Find the subsection header by looking for mini-bars with matching data-id
-      const miniBars = document.querySelector(`.mini-bars.small[data-id="${subsectionId}"]`);
-      const subsectionLi = miniBars?.closest('.subsection-collapsible li');
-      const subsectionHeader = miniBars?.closest('.collapsible-header.subsection-header');
-      
-      if (subsectionHeader && subsectionLi) {
-        const subsectionData = completedSubsections[subsectionId];
-        
-        // Validate that the subsection is still actually complete
-        const allProblems = subsectionLi.querySelectorAll('.done-icon');
-        const solvedProblems = subsectionLi.querySelectorAll('.done-icon[data-solved="true"]');
-        
-        // Check if all problems are still solved
-        if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
-          // Subsection is still complete, mark it as completed
-          markSubsectionAsCompleted(subsectionHeader, subsectionData.title);
-        } else {
-          // Subsection is no longer complete (new problems were added or some were unchecked)
-          console.log(`Subsection ${subsectionId} is no longer complete. Total: ${allProblems.length}, Solved: ${solvedProblems.length}`);
-          // Remove from completed subsections
-          removeSubsectionCompletion(subsectionId);
-        }
-      }
-    });
-  } catch (error) {
-    console.error('Error loading subsection completions:', error);
-  }
+  // Don't load from localStorage - just compute based on current state
+  const subsections = document.querySelectorAll('.subsection-collapsible li');
+  
+  subsections.forEach(subsectionLi => {
+    const subsectionHeader = subsectionLi.querySelector('.collapsible-header.subsection-header');
+    if (!subsectionHeader) return;
+    
+    // Count problems in this subsection
+    const allProblems = subsectionLi.querySelectorAll('.done-icon');
+    const solvedProblems = subsectionLi.querySelectorAll('.done-icon[data-solved="true"]');
+    
+    // If all problems are solved, mark as completed
+    if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
+      const subsectionTitle = subsectionHeader.querySelector('.subsection-title')?.textContent?.split('[')[0]?.trim();
+      markSubsectionAsCompleted(subsectionHeader, subsectionTitle);
+    }
+  });
 }
 
 /***************************************************************
@@ -2519,13 +2688,10 @@ function resetAllProgress() {
       if (key && (
         key.includes('SolvedProblems') ||
         key.includes('Notes') ||
-        key.includes('CompletedSections') ||
-        key.includes('CompletedSubsections') ||
         key === 'dsaSolvedProblems' || // Legacy key
         key === 'dsaNotess' || // Legacy key
         key === 'sqlSolvedProblems' ||
-        key === 'sqlNotes' ||
-        key === 'userProfile' // Include user profile in reset
+        key === 'sqlNotes'
       )) {
         keysToRemove.push(key);
       }
@@ -2640,6 +2806,12 @@ function initializeCollapsibles() {
         }
       }
       el.dataset.manuallyOpened = 'true';
+    },
+    onOpenEnd: function(el) {
+      // Initialize table sorting when section is opened
+      setTimeout(() => {
+        initializeTableSorting();
+      }, 100);
     }
   });
 
@@ -2649,6 +2821,12 @@ function initializeCollapsibles() {
     accordion: false,
     onOpenStart: function (el) {
       el.dataset.manuallyOpened = 'true';
+    },
+    onOpenEnd: function(el) {
+      // Initialize table sorting when subsection is opened
+      setTimeout(() => {
+        initializeTableSorting();
+      }, 100);
     }
   });
 }
@@ -2657,7 +2835,7 @@ function initializeCollapsibles() {
  * Custom Tooltip Implementation
  ***************************************************************/
 function setupCustomTooltips() {
-  console.log("Setting up custom tooltips...");
+  // console.log("Setting up custom tooltips...");
 
   // Create a single tooltip element that we'll reuse
   const tooltip = document.createElement('div');
@@ -2667,7 +2845,7 @@ function setupCustomTooltips() {
 
   // Get all tooltip elements
   const tooltippedElements = document.querySelectorAll('.tooltipped');
-  console.log(`Found ${tooltippedElements.length} tooltipped elements`);
+  // console.log(`Found ${tooltippedElements.length} tooltipped elements`);
 
   tooltippedElements.forEach(element => {
     setupTooltipForElement(element);
@@ -2680,7 +2858,7 @@ function setupTooltipForElement(element) {
   const tooltipContent = element.getAttribute('data-tooltip');
   if (!tooltipContent) return;
 
-  console.log(`Setting up tooltip for element: ${element.id}, content: ${tooltipContent}`);
+  // console.log(`Setting up tooltip for element: ${element.id}, content: ${tooltipContent}`);
 
   // Destroy any existing Materialize tooltip instance
   const existingTooltip = M.Tooltip.getInstance(element);
@@ -2698,7 +2876,7 @@ function setupTooltipForElement(element) {
 
   // Create new event handlers
   element._tooltipMouseEnter = function() {
-    console.log(`Mouse entered ${element.id}`);
+    // console.log(`Mouse entered ${element.id}`);
 
     // Remove any existing tooltips first
     const existingTooltips = document.querySelectorAll('.custom-tooltip');
@@ -2805,7 +2983,7 @@ function setupTooltipForElement(element) {
   };
 
   element._tooltipMouseLeave = function() {
-    console.log(`Mouse left ${element.id}`);
+    // console.log(`Mouse left ${element.id}`);
 
     // Remove the tooltip
     if (element._currentTooltip) {
@@ -2866,7 +3044,7 @@ function showFirstCheckboxTooltip() {
   // Find the first collapsible section (this will be the first problem section)
   const firstCollapsible = document.querySelector('.collapsible');
   if (!firstCollapsible) {
-    console.log('No collapsible sections found yet, will retry');
+    // console.log('No collapsible sections found yet, will retry');
     setTimeout(showFirstCheckboxTooltip, 1000);
     return;
   }
@@ -2881,7 +3059,7 @@ function showFirstCheckboxTooltip() {
     // Target the Easy checkbox in the first section's header mini-bars
     const firstEasyCheckbox = firstCollapsible.querySelector('.collapsible-header .mini-bars .square-check.easy');
     if (!firstEasyCheckbox) {
-      console.log('No Easy checkbox found in first section header');
+      // console.log('No Easy checkbox found in first section header');
       return;
     }
 
@@ -3181,7 +3359,7 @@ document.addEventListener('DOMContentLoaded', function () {
         filterProblems(e);
       }, 300); // Debounce for 300ms
     });
-    console.log('Search listener attached to:', searchBox);
+    // console.log('Search listener attached to:', searchBox);
   } else {
     console.warn('Search box not found!');
   }
@@ -3192,7 +3370,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Load problems data
-  fetch('dsa-problems.json')
+  fetch('dsaWithId-problems.json')
     .then(res => {
       if (!res.ok) throw new Error('Network response was not ok');
       return res.json();
@@ -3374,11 +3552,11 @@ document.addEventListener('DOMContentLoaded', function () {
 function initializeCheckboxes() {
   // Wait a short time to ensure DOM is fully rendered
   setTimeout(() => {
-    console.log('Initializing checkboxes...');
+    // console.log('Initializing checkboxes...');
 
     // Get all checkboxes and remove existing event listeners by cloning
     const checkboxes = document.querySelectorAll('.square-check');
-    console.log('Found checkboxes:', checkboxes.length);
+    // console.log('Found checkboxes:', checkboxes.length);
     checkboxes.forEach(checkbox => {
       const newCheckbox = checkbox.cloneNode(true);
       checkbox.parentNode.replaceChild(newCheckbox, checkbox);
@@ -3579,8 +3757,9 @@ function switchSection(section) {
 
   // Clear existing content
   document.getElementById('sections').innerHTML = '';
-  // Load appropriate data
-  const dataFile = `${section}-problems.json`;
+
+  // Load appropriate data - use the correct filename
+  const dataFile = section === 'dsa' ? 'dsaWithId-problems.json' : `${section}-problems.json`;
 
   // Load and display new content
   fetch(dataFile)
@@ -3612,6 +3791,9 @@ function switchSection(section) {
         requestAnimationFrame(() => {
           updateGlobalRectBar();
           updateSectionProgress();
+
+          // Initialize table sorting after everything is loaded
+          initializeTableSorting();
         });
       });
 

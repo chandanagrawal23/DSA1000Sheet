@@ -35,6 +35,8 @@
     --medium-color: #F59E0B;
     --hard-color: #EF4444;
     
+    /* --resource-color: #cd78dd; Purple for Resource (visual only) */
+    
     /* UI Elements - Light Mode Default */
     --background: var(--background-light);
     --surface: var(--surface-light);
@@ -1557,6 +1559,7 @@ body.dark-mode .control-select:hover + .control-icon {
 .filter-toggle.difficulty-badge.easy,
 .filter-toggle.difficulty-badge.medium,
 .filter-toggle.difficulty-badge.hard,
+/* .filter-toggle.difficulty-badge.resource, */
 .filter-toggle.status-badge.completed,
 .filter-toggle.status-badge.incomplete {
     background: var(--card-bg) !important;
@@ -1565,6 +1568,7 @@ body.dark-mode .control-select:hover + .control-icon {
 .filter-toggle.difficulty-badge.easy:hover:not(.active),
 .filter-toggle.difficulty-badge.medium:hover:not(.active),
 .filter-toggle.difficulty-badge.hard:hover:not(.active),
+/* .filter-toggle.difficulty-badge.resource:hover:not(.active), */
 .filter-toggle.status-badge.completed:hover:not(.active),
 .filter-toggle.status-badge.incomplete:hover:not(.active) {
     background: var(--surface-hover) !important;
@@ -1599,6 +1603,12 @@ body.dark-mode .control-select:hover + .control-icon {
     background: rgba(239, 68, 68, 0.1);
     color: var(--hard-color);
 }
+
+/* .difficulty-badge.resource {
+    background: rgba(156, 39, 176, 0.08);
+    color: var(--resource-color);
+} */
+
 
 .status-badge.completed {
     background: rgba(34, 197, 94, 0.1);
@@ -1822,6 +1832,7 @@ body.dark-mode .filter-toggle.active {
 body.dark-mode .filter-toggle.difficulty-badge.easy,
 body.dark-mode .filter-toggle.difficulty-badge.medium,
 body.dark-mode .filter-toggle.difficulty-badge.hard,
+/* body.dark-mode .filter-toggle.difficulty-badge.resource, */
 body.dark-mode .filter-toggle.status-badge.completed,
 body.dark-mode .filter-toggle.status-badge.incomplete {
     background: var(--card-bg) !important;
@@ -1830,6 +1841,7 @@ body.dark-mode .filter-toggle.status-badge.incomplete {
 body.dark-mode .filter-toggle.difficulty-badge.easy:hover:not(.active),
 body.dark-mode .filter-toggle.difficulty-badge.medium:hover:not(.active),
 body.dark-mode .filter-toggle.difficulty-badge.hard:hover:not(.active),
+/* body.dark-mode .filter-toggle.difficulty-badge.resource:hover:not(.active), */
 body.dark-mode .filter-toggle.status-badge.completed:hover:not(.active),
 body.dark-mode .filter-toggle.status-badge.incomplete:hover:not(.active) {
     background: #2D3748 !important;
@@ -1870,6 +1882,9 @@ body.dark-mode .difficulty-badge.medium {
 body.dark-mode .difficulty-badge.hard {
     background: rgba(239, 68, 68, 0.2) !important;
 }
+/* body.dark-mode .difficulty-badge.resource {
+    background: rgba(78, 38, 180, 0.674) !important;
+} */
 
 body.dark-mode .status-badge.completed {
     background: rgba(34, 197, 94, 0.2) !important;
@@ -2112,6 +2127,10 @@ tr.medium {
 tr.hard {
     background-color: rgba(239, 68, 68, 0.05) !important;
 }
+/* tr.resource {
+  background-color: rgba(156, 39, 176, 0.05) !important;
+} */
+
 
 tr.easy:hover {
     background-color: rgba(16, 185, 129, 0.1) !important;
@@ -2168,6 +2187,20 @@ tr.hard a {
     height: fit-content;
 }
 
+/* tr.resource a {
+    color: white;
+    background-color: rgba(174, 77, 195, 0.9);
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    height: fit-content;
+} */
+
 tr.easy a:hover {
     background-color: var(--easy-color);
     transform: translateY(-1px);
@@ -2185,6 +2218,12 @@ tr.hard a:hover {
     transform: translateY(-1px);
     box-shadow: var(--shadow-sm);
 }
+/* 
+tr.resource a:hover {
+    background-color: var(--resource-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+} */
 
 /* Problem Links - Dark Mode */
 body.dark-mode tr.easy a {
@@ -2201,6 +2240,11 @@ body.dark-mode tr.hard a {
     background-color: rgba(239, 68, 68, 0.8);
     color: white;
 }
+
+/* body.dark-mode tr.resource a {
+    background-color: rgba(174, 77, 195, 0.8);
+    color: white;
+} */
 
 /* Center align specific columns */
 td:nth-child(2), /* Solution column */
@@ -3987,6 +4031,7 @@ td:first-child {
   .solution-link .github-icon {
     font-size: 1.2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -5338,8 +5383,8 @@ tr.hard .solution-link .github-icon {
 .problem-table th {
     text-align: center !important;
     padding: 16px 4px !important;
-    font-weight: 500 !important;
-    color: #94a3b8 !important; /* Subtle gray color */
+    font-weight: 600 !important;
+    color: #13154e !important; /* Subtle gray color */
     font-size: 1rem !important; /* Slightly larger header text */
     letter-spacing: 0.5px !important;
     border-bottom: 2px solid #e2e8f0 !important; /* Subtle border */
@@ -5446,7 +5491,7 @@ tr.hard .solution-link .github-icon {
 
 /* Notes and Done icons */
 .notes-icon, .done-icon {
-    font-size: 1.3rem !important; /* Slightly larger icons */
+    font-size: 1.4rem !important; /* Slightly larger icons */
 }
 
 /* Problem Links - Light Mode with adjusted opacity */
@@ -7535,4 +7580,150 @@ body.dark-mode .lld-table .question-link:hover {
 
 
 
+
+/* Sortable table header styles */
+.problem-table thead tr {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.problem-table thead tr:hover {
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+.problem-table thead tr.sorted-unsolved::after {
+  content: ' ↓';
+  color: var(--primary);
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.problem-table thead tr.sorted-default::after {
+  content: ' ↑';
+  color: var(--text-secondary);
+  font-weight: bold;
+  margin-left: 5px;
+}
+/* Sortable table header indicator */
+.problem-table thead tr {
+  position: relative;
+}
+
+/* Sort indicator arrows - always visible */
+.sort-indicator {
+  position: absolute;
+  left: 8px; /* Position on the left side */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sort-icon {
+  font-size: 18px !important;
+  opacity: 0.8 !important;
+  color: var(--text-secondary) !important;
+  transition: all 0.2s ease;
+  font-family: Arial, sans-serif !important; /* Use Arial for arrows */
+}
+
+/* Hover state */
+.problem-table thead tr:hover .sort-icon {
+  opacity: 0.7;
+}
+
+/* Active states */
+.problem-table thead tr.sorted-unsolved .sort-icon,
+.problem-table thead tr.sorted-default .sort-icon {
+  opacity: 1 !important;
+  color: var(--primary) !important;
+}
+
+/* Make sure the last th has room for the icon */
+.problem-table th:first-child {
+  position: relative !important;
+  padding-left: 35px !important; /* Make room for the icon on the left */
+}
+
+.problem-table thead tr:hover .sort-indicator {
+  opacity: 1;
+}
+
+/* Arrow styles */
+.sort-arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  transition: opacity 0.2s ease;
+}
+
+.sort-arrow.up {
+  border-bottom: 5px solid var(--text-secondary);
+  opacity: 0.5;
+}
+
+.sort-arrow.down {
+  border-top: 5px solid var(--text-secondary);
+  opacity: 0.5;
+}
+
+/* Active state styling */
+.problem-table thead tr.sorted-unsolved .sort-arrow.down {
+  border-top-color: var(--primary);
+  opacity: 1;
+}
+
+.problem-table thead tr.sorted-default .sort-arrow.up {
+  border-bottom-color: var(--primary);
+  opacity: 1;
+}
+
+/* Dark mode support */
+.dark-mode .sort-arrow.up {
+  border-bottom-color: var(--text-secondary);
+}
+
+.dark-mode .sort-arrow.down {
+  border-top-color: var(--text-secondary);
+}
+
+.dark-mode .problem-table thead tr.sorted-unsolved .sort-arrow.down {
+  border-top-color: var(--primary);
+}
+
+.dark-mode .problem-table thead tr.sorted-default .sort-arrow.up {
+  border-bottom-color: var(--primary);
+}
+
+body.dark-mode .problem-table thead tr:hover .sort-icon {
+  opacity: 1 !important;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sort-indicator {
+    left: 5px !important; /* Changed from right: 5px to left: 5px */
+  }
+  
+  /* Adjust padding for mobile to accommodate the icon */
+  .problem-table th:first-child {
+    padding-left: 30px !important; /* Slightly less padding on mobile */
+  }
+  
+  .sort-arrow {
+    border-left-width: 4px;
+    border-right-width: 4px;
+  }
+  
+  .sort-arrow.up {
+    border-bottom-width: 4px;
+  }
+  
+  .sort-arrow.down {
+    border-top-width: 4px;
+  }
+}
 
