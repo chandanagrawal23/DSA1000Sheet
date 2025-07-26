@@ -387,7 +387,7 @@ function saveFilterState() {
 
   const selectedFilters = getSelectedFilters();
   const searchBox = document.getElementById('searchBox');
-  const searchTerm = searchBox ? searchBox.value : '';
+  const searchTerm = '';
 
   const filterState = {
     difficulties: selectedFilters.difficulties,
@@ -430,12 +430,11 @@ function restoreFilterState() {
       }
     });
 
-    // Restore search term
+    // Don't restore search term - keep it empty
     const searchBox = document.getElementById('searchBox');
-    if (searchBox && filterState.searchTerm) {
-      searchBox.value = filterState.searchTerm;
+    if (searchBox) {
+      searchBox.value = '';
     }
-
     // Update display and apply filters
     updateFilterDisplay();
     filterProblems();
@@ -3730,6 +3729,11 @@ function countUniqueProblems(data) {
 function switchSection(section) {
   // Save current section's filter state before switching
   saveFilterState();
+    // Clear the search box when switching sections
+  const searchBox = document.getElementById('searchBox');
+  if (searchBox) {
+    searchBox.value = '';
+  }
 
   // Update active nav link (desktop)
   document.querySelectorAll('.nav-item').forEach(link => {
