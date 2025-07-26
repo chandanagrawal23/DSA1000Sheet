@@ -5179,13 +5179,6 @@
                             "id": 1683
                         },
                         {
-                            "label": "Synonymous sentences [IMPO, google]",
-                            "question": "https://leetcode.ca/all/1258.html",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SynonymousSentences.cpp",
-                            "difficulty": "medium",
-                            "id": 1684
-                        },
-                        {
                             "label": "Lexicographically smallest equivalent string [IMPO, google]",
                             "question": "https://leetcode.com/problems/lexicographically-smallest-equivalent-string/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/LexicographicallySmallestEquivalentString.cpp",
@@ -5205,6 +5198,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/GroupsOfStrings.cpp",
                             "difficulty": "hard",
                             "id": 1687
+                        },
+                        {
+                            "label": "Synonymous sentences[Google, DSU+Backtracking]",
+                            "question": "https://leetcode.ca/all/1258.html",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SynonymousSentences.cpp",
+                            "difficulty": "hard",
+                            "id": 1684
                         },
                         {
                             "label": "Process restricted friend requests [google]",
