@@ -1518,13 +1518,6 @@
                             "id": 1203
                         },
                         {
-                            "label": "Open the Lock",
-                            "question": "https://leetcode.com/problems/open-the-lock/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OpenTheLock.cpp",
-                            "difficulty": "medium",
-                            "id": 1204
-                        },
-                        {
                             "label": "First Unique Number [Good Problem]",
                             "question": "https://leetcode.ca/all/1429.html",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FirstUnique.cpp",
@@ -4599,12 +4592,33 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ShortestPathInAGridWithObstaclesElimination.cpp",
                             "difficulty": "hard",
                             "id": 1612
+                        },
+                        {
+                            "label": "Minimum Moves to Move a Box to Their Target Location",
+                            "question": "https://leetcode.com/problems/minimum-moves-to-move-a-box-to-their-target-location/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1787
                         }
                     ]
                 },
                 {
                     "title": "BFS/DFS on String/Array",
                     "problems": [
+                        {
+                            "label": "Open the Lock",
+                            "question": "https://leetcode.com/problems/open-the-lock/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/OpenTheLock.cpp",
+                            "difficulty": "medium",
+                            "id": 1204
+                        },
+                        {
+                            "label": "Minimum Genetic Mutation",
+                            "question": "https://leetcode.com/problems/minimum-genetic-mutation/",
+                            "solution": "",
+                            "difficulty": "medium",
+                            "id": 1786
+                        },
                         {
                             "label": "Word Ladder I",
                             "question": "https://leetcode.com/problems/word-ladder/",
@@ -4618,6 +4632,13 @@
                             "solution": "",
                             "difficulty": "hard",
                             "id": 1614
+                        },
+                        {
+                            "label": "Remove Invalid Parentheses",
+                            "question": "https://leetcode.com/problems/remove-invalid-parentheses/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1788
                         }
                     ]
                 },
@@ -5160,7 +5181,7 @@
                         {
                             "label": "Synonymous sentences [IMPO, google]",
                             "question": "https://leetcode.ca/all/1258.html",
-                            "solution": "-",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/SynonymousSentences.cpp",
                             "difficulty": "medium",
                             "id": 1684
                         },
@@ -5235,7 +5256,7 @@
                         {
                             "label": "Remove max number of edges to keep graph fully traversable",
                             "question": "https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/",
-                            "solution": "-",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable.cpp",
                             "difficulty": "hard",
                             "id": 1694
                         },
