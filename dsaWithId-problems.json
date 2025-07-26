@@ -165,10 +165,39 @@
             ]
         },
         {
-            "title": "Prefix Sum",
+            "title": "HashMap/HashSet",
             "subsections": [
                 {
-                    "title": "Basics and Applications",
+                    "title": "HashSet",
+                    "problems": [
+                        {
+                            "label": "Introduction to HashSet",
+                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
+                            "solution": "-",
+                            "difficulty": "easy",
+                            "id": 1053
+                        }
+                    ]
+                },
+                {
+                    "title": "HashMap",
+                    "problems": [
+                        {
+                            "label": "Introduction to HashMap",
+                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
+                            "solution": "-",
+                            "difficulty": "easy",
+                            "id": 1054
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Prefix Sum / Difference Array",
+            "subsections": [
+                {
+                    "title": "Prefix Sum Only",
                     "problems": [
                         {
                             "label": "Prefix Sum Array Basics and Implementation",
@@ -190,20 +219,6 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RangeSumQuery_Immutable.cpp",
                             "difficulty": "easy",
                             "id": 1025
-                        },
-                        {
-                            "label": "Car Pooling",
-                            "question": "https://leetcode.com/problems/car-pooling/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/CarPooling.cpp",
-                            "difficulty": "medium",
-                            "id": 1026
-                        },
-                        {
-                            "label": "Maximum Occurred Integer in Ranges",
-                            "question": "https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/",
-                            "solution": "-",
-                            "difficulty": "medium",
-                            "id": 1027
                         },
                         {
                             "label": "Product of Array Except Self",
@@ -386,33 +401,44 @@
                             "id": 1052
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "title": "HashMap/HashSet",
-            "subsections": [
-                {
-                    "title": "HashSet",
-                    "problems": [
-                        {
-                            "label": "Introduction to HashSet",
-                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
-                            "solution": "-",
-                            "difficulty": "easy",
-                            "id": 1053
-                        }
-                    ]
                 },
                 {
-                    "title": "HashMap",
+                    "title": "Prefix Sum + Difference Array",
                     "problems": [
                         {
-                            "label": "Introduction to HashMap",
-                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
+                            "label": "Introduction to Difference Array",
+                            "question": "https://www.geeksforgeeks.org/dsa/difference-array-range-update-query-o1/",
                             "solution": "-",
                             "difficulty": "easy",
-                            "id": 1054
+                            "id": 1790
+                        },
+                        {
+                            "label": "Range Addition",
+                            "question": "https://leetcode.com/problems/range-addition/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1791
+                        },
+                        {
+                            "label": "Car Pooling",
+                            "question": "https://leetcode.com/problems/car-pooling/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/CarPooling.cpp",
+                            "difficulty": "medium",
+                            "id": 1026
+                        },
+                        {
+                            "label": "Maximum Occurred Integer in Ranges",
+                            "question": "https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1027
+                        },
+                        {
+                            "label": "Corporate Flight Bookings",
+                            "question": "https://leetcode.com/problems/corporate-flight-bookings/",
+                            "solution": "",
+                            "difficulty": "medium",
+                            "id": 1792
                         }
                     ]
                 }
@@ -5535,6 +5561,13 @@
                     "id": 1730
                 },
                 {
+                    "label": "Describe the Painting",
+                    "question": "https://leetcode.com/problems/describe-the-painting/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1789
+                },
+                {
                     "label": "My Calendar III (Map + Prefix Sum)",
                     "question": "https://leetcode.com/problems/my-calendar-iii/",
                     "solution": "-",
@@ -5664,7 +5697,6 @@
                     "solution": "-",
                     "difficulty": "medium",
                     "id": 1785
-
                 },
                 {
                     "label": "Design In Memory File System (TRIE)",
