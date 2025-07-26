@@ -20,14 +20,14 @@
         {
           "label": "Remove Duplicates from Sorted Array",
           "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/RemoveDuplicatesFromSortedArray.cpp",
           "difficulty": "easy",
           "id": 4003
         },
         {
           "label": "Roman to Integer",
           "question": "https://leetcode.com/problems/roman-to-integer/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/RomanToInteger.cpp",
           "difficulty": "easy",
           "id": 4004
         },
@@ -55,7 +55,7 @@
         {
           "label": "Best Time to Buy and Sell Stock",
           "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BestTimeToBuyAndSellStock.cpp",
           "difficulty": "easy",
           "id": 4008
         },
@@ -76,7 +76,7 @@
         {
           "label": "Remove Duplicates from Sorted Array II",
           "question": "https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/RemoveDuplicatesFromSortedArray_II.cpp",
           "difficulty": "medium",
           "id": 4011
         },
@@ -118,7 +118,7 @@
         {
           "label": "Product of Array Except Self",
           "question": "https://leetcode.com/problems/product-of-array-except-self/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ProductOfArrayExceptSelf.cpp",
           "difficulty": "medium",
           "id": 4017
         },
@@ -132,7 +132,7 @@
         {
           "label": "Integer to Roman",
           "question": "https://leetcode.com/problems/integer-to-roman/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/IntToRoman.cpp",
           "difficulty": "medium",
           "id": 4019
         },
@@ -160,7 +160,7 @@
         {
           "label": "Trapping Rain Water",
           "question": "https://leetcode.com/problems/trapping-rain-water/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TrappingRainWater.cpp",
           "difficulty": "hard",
           "id": 4023
         },
@@ -193,7 +193,7 @@
         {
           "label": "Two Sum II - Input Array Is Sorted",
           "question": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/TwoSumII-InputArrayIsSorted.cpp",
           "difficulty": "medium",
           "id": 4027
         },
@@ -207,7 +207,7 @@
         {
           "label": "3Sum",
           "question": "https://leetcode.com/problems/3sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TwoPointer/3Sum.cpp",
           "difficulty": "medium",
           "id": 4029
         }
@@ -219,7 +219,7 @@
         {
           "label": "Minimum Size Subarray Sum",
           "question": "https://leetcode.com/problems/minimum-size-subarray-sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minSubArrayLen.cpp",
           "difficulty": "medium",
           "id": 4030
         },
@@ -240,7 +240,7 @@
         {
           "label": "Minimum Window Substring",
           "question": "https://leetcode.com/problems/minimum-window-substring/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/minWindowDynamicSlidingWindow.cpp",
           "difficulty": "hard",
           "id": 4033
         }
@@ -259,7 +259,7 @@
         {
           "label": "Spiral Matrix",
           "question": "https://leetcode.com/problems/spiral-matrix/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/spiralMatrix-I.cpp",
           "difficulty": "medium",
           "id": 4035
         },
@@ -313,7 +313,7 @@
         {
           "label": "Valid Anagram",
           "question": "https://leetcode.com/problems/valid-anagram/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/ValidAnagram.cpp",
           "difficulty": "easy",
           "id": 4042
         },
@@ -348,7 +348,7 @@
         {
           "label": "Group Anagrams",
           "question": "https://leetcode.com/problems/group-anagrams/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/GroupAnagram.cpp",
           "difficulty": "medium",
           "id": 4047
         }
@@ -367,14 +367,14 @@
         {
           "label": "Merge Intervals",
           "question": "https://leetcode.com/problems/merge-intervals/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/MergeIntervals_sorting.cpp",
           "difficulty": "medium",
           "id": 4049
         },
         {
           "label": "Insert Interval",
           "question": "https://leetcode.com/problems/insert-interval/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/InsertInterval_sorting.cpp",
           "difficulty": "medium",
           "id": 4050
         },
@@ -393,21 +393,21 @@
         {
           "label": "Valid Parentheses",
           "question": "https://leetcode.com/problems/valid-parentheses/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Valid_Parentheses.cpp",
           "difficulty": "easy",
           "id": 4052
         },
         {
           "label": "Simplify Path",
           "question": "https://leetcode.com/problems/simplify-path/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SimplifyPath.cpp",
           "difficulty": "medium",
           "id": 4053
         },
         {
           "label": "Min Stack",
           "question": "https://leetcode.com/problems/min-stack/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinStack.cpp",
           "difficulty": "medium",
           "id": 4054
         },
@@ -433,21 +433,21 @@
         {
           "label": "Linked List Cycle",
           "question": "https://leetcode.com/problems/linked-list-cycle/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/hasCycle.cpp",
           "difficulty": "easy",
           "id": 4057
         },
         {
           "label": "Merge Two Sorted Lists",
           "question": "https://leetcode.com/problems/merge-two-sorted-lists/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeTwoLists.cpp",
           "difficulty": "easy",
           "id": 4058
         },
         {
           "label": "Add Two Numbers",
           "question": "https://leetcode.com/problems/add-two-numbers/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/addTwoNumbers1.cpp",
           "difficulty": "medium",
           "id": 4059
         },
@@ -461,14 +461,14 @@
         {
           "label": "Reverse Linked List II",
           "question": "https://leetcode.com/problems/reverse-linked-list-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseBetween.cpp",
           "difficulty": "medium",
           "id": 4061
         },
         {
           "label": "Remove Nth Node From End of List",
           "question": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/removeNthFromEnd.cpp",
           "difficulty": "medium",
           "id": 4062
         },
@@ -482,7 +482,7 @@
         {
           "label": "Rotate List",
           "question": "https://leetcode.com/problems/rotate-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/rotateRight.cpp",
           "difficulty": "medium",
           "id": 4064
         },
@@ -503,7 +503,7 @@
         {
           "label": "Reverse Nodes in k-Group",
           "question": "https://leetcode.com/problems/reverse-nodes-in-k-group/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseKGroup.cpp",
           "difficulty": "hard",
           "id": 4067
         }
@@ -515,49 +515,49 @@
         {
           "label": "Maximum Depth of Binary Tree",
           "question": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumDepthofBinaryTree.cpp",
           "difficulty": "easy",
           "id": 4068
         },
         {
           "label": "Same Tree",
           "question": "https://leetcode.com/problems/same-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SameTree.cpp",
           "difficulty": "easy",
           "id": 4069
         },
         {
           "label": "Invert Binary Tree",
           "question": "https://leetcode.com/problems/invert-binary-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/InvertBinaryTree.cpp",
           "difficulty": "easy",
           "id": 4070
         },
         {
           "label": "Symmetric Tree",
           "question": "https://leetcode.com/problems/symmetric-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SymmetricTree.cpp",
           "difficulty": "easy",
           "id": 4071
         },
         {
           "label": "Path Sum",
           "question": "https://leetcode.com/problems/path-sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PathSum.cpp",
           "difficulty": "easy",
           "id": 4072
         },
         {
           "label": "Count Complete Tree Nodes",
           "question": "https://leetcode.com/problems/count-complete-tree-nodes/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountCompleteTreeNodes.cpp",
           "difficulty": "easy",
           "id": 4073
         },
         {
           "label": "Construct Binary Tree from Preorder and Inorder Traversal",
           "question": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ConstructBinaryTreefromPreorderandInorderTraversal.cpp",
           "difficulty": "medium",
           "id": 4074
         },
@@ -578,14 +578,14 @@
         {
           "label": "Flatten Binary Tree to Linked List",
           "question": "https://leetcode.com/problems/flatten-binary-tree-to-linked-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/flattenTreeToLinkedList.cpp",
           "difficulty": "medium",
           "id": 4077
         },
         {
           "label": "Sum Root to Leaf Numbers",
           "question": "https://leetcode.com/problems/sum-root-to-leaf-numbers/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SumRootToLeafNumbers.cpp",
           "difficulty": "medium",
           "id": 4078
         },
@@ -606,7 +606,7 @@
         {
           "label": "Binary Tree Maximum Path Sum",
           "question": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreeMaximumPathSum.cpp",
           "difficulty": "hard",
           "id": 4081
         }
@@ -618,28 +618,28 @@
         {
           "label": "Average of Levels in Binary Tree",
           "question": "https://leetcode.com/problems/average-of-levels-in-binary-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AverageOfLevelsInBinaryTree.cpp",
           "difficulty": "easy",
           "id": 4082
         },
         {
           "label": "Binary Tree Right Side View",
           "question": "https://leetcode.com/problems/binary-tree-right-side-view/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RightViewOfBinaryTree.cpp",
           "difficulty": "medium",
           "id": 4083
         },
         {
           "label": "Binary Tree Level Order Traversal",
           "question": "https://leetcode.com/problems/binary-tree-level-order-traversal/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreeLevelOrderTraversal.cpp",
           "difficulty": "medium",
           "id": 4084
         },
         {
           "label": "Binary Tree Zigzag Level Order Traversal",
           "question": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreeZigzagLevelOrderTraversal.cpp",
           "difficulty": "medium",
           "id": 4085
         }
@@ -677,14 +677,14 @@
         {
           "label": "Number of Islands",
           "question": "https://leetcode.com/problems/number-of-islands/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberofIslands.cpp",
           "difficulty": "medium",
           "id": 4089
         },
         {
           "label": "Surrounded Regions",
           "question": "https://leetcode.com/problems/surrounded-regions/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SurroundedRegions.cpp",
           "difficulty": "medium",
           "id": 4090
         },
@@ -705,14 +705,14 @@
         {
           "label": "Course Schedule",
           "question": "https://leetcode.com/problems/course-schedule/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_I.cpp",
           "difficulty": "medium",
           "id": 4093
         },
         {
           "label": "Course Schedule II",
           "question": "https://leetcode.com/problems/course-schedule-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CourseSchedule_II.cpp",
           "difficulty": "medium",
           "id": 4094
         }
@@ -738,7 +738,7 @@
         {
           "label": "Word Ladder",
           "question": "https://leetcode.com/problems/word-ladder/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/WordLadder_I.cpp",
           "difficulty": "hard",
           "id": 4097
         }
@@ -750,7 +750,7 @@
         {
           "label": "Implement Trie (Prefix Tree)",
           "question": "https://leetcode.com/problems/implement-trie-prefix-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TRIE/ImplementTriePrefixTree.cpp",
           "difficulty": "medium",
           "id": 4098
         },
@@ -790,14 +790,14 @@
         {
           "label": "Permutations",
           "question": "https://leetcode.com/problems/permutations/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Permutations.cpp",
           "difficulty": "medium",
           "id": 4103
         },
         {
           "label": "Combination Sum",
           "question": "https://leetcode.com/problems/combination-sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CombinationSum.cpp",
           "difficulty": "medium",
           "id": 4104
         },
@@ -811,7 +811,7 @@
         {
           "label": "Word Search",
           "question": "https://leetcode.com/problems/word-search/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/WordSearch.cpp",
           "difficulty": "medium",
           "id": 4106
         },
@@ -830,14 +830,14 @@
         {
           "label": "Convert Sorted Array to Binary Search Tree",
           "question": "https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ConvertSortedArraytoBinarySearchTree.cpp",
           "difficulty": "easy",
           "id": 4108
         },
         {
           "label": "Sort List",
           "question": "https://leetcode.com/problems/sort-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/sortList.cpp",
           "difficulty": "medium",
           "id": 4109
         },
@@ -851,7 +851,7 @@
         {
           "label": "Merge k Sorted Lists",
           "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLists.cpp",
           "difficulty": "hard",
           "id": 4111
         }
@@ -870,7 +870,7 @@
         {
           "label": "Maximum Sum Circular Subarray",
           "question": "https://leetcode.com/problems/maximum-sum-circular-subarray/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumSumCircularSubarray.cpp",
           "difficulty": "medium",
           "id": 4113
         }
@@ -889,7 +889,7 @@
         {
           "label": "Search a 2D Matrix",
           "question": "https://leetcode.com/problems/search-a-2d-matrix/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Search_a_2DMatrix_I.cpp",
           "difficulty": "medium",
           "id": 4115
         },
@@ -910,7 +910,7 @@
         {
           "label": "Find First and Last Position of Element in Sorted Array",
           "question": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindFirstandLastPositionofElementinSortedArray.cpp",
           "difficulty": "medium",
           "id": 4118
         },
@@ -936,7 +936,7 @@
         {
           "label": "Kth Largest Element in an Array",
           "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Kth_largest_in_array_heap.cpp",
           "difficulty": "medium",
           "id": 4121
         },
@@ -969,7 +969,7 @@
         {
           "label": "Add Binary",
           "question": "https://leetcode.com/problems/add-binary/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/AddBinary.cpp",
           "difficulty": "easy",
           "id": 4125
         },
@@ -983,7 +983,7 @@
         {
           "label": "Number of 1 Bits",
           "question": "https://leetcode.com/problems/number-of-1-bits/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/NumberOf1Bits.cpp",
           "difficulty": "easy",
           "id": 4127
         },
@@ -997,7 +997,7 @@
         {
           "label": "Single Number II",
           "question": "https://leetcode.com/problems/single-number-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/SingleNumber_II.cpp",
           "difficulty": "medium",
           "id": 4129
         },
@@ -1030,7 +1030,7 @@
         {
           "label": "Sqrt(x)",
           "question": "https://leetcode.com/problems/sqrtx/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SQRT_BinarySearch.cpp",
           "difficulty": "easy",
           "id": 4133
         },
@@ -1051,7 +1051,7 @@
         {
           "label": "Max Points on a Line",
           "question": "https://leetcode.com/problems/max-points-on-a-line/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
           "difficulty": "hard",
           "id": 4136
         }
@@ -1084,14 +1084,14 @@
         {
           "label": "Coin Change",
           "question": "https://leetcode.com/problems/coin-change/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/CoinChange.cpp",
           "difficulty": "medium",
           "id": 4140
         },
         {
           "label": "Longest Increasing Subsequence",
           "question": "https://leetcode.com/problems/longest-increasing-subsequence/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/LongestIncreasingSubsequence_usingDP.cpp",
           "difficulty": "medium",
           "id": 4141
         }
@@ -1110,14 +1110,14 @@
         {
           "label": "Minimum Path Sum",
           "question": "https://leetcode.com/problems/minimum-path-sum/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumPathSum.cpp",
           "difficulty": "medium",
           "id": 4143
         },
         {
           "label": "Unique Paths II",
           "question": "https://leetcode.com/problems/unique-paths-ii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Unique_Path_II.cpp",
           "difficulty": "medium",
           "id": 4144
         },
@@ -1138,7 +1138,7 @@
         {
           "label": "Edit Distance",
           "question": "https://leetcode.com/problems/edit-distance/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/EditDistance.cpp",
           "difficulty": "medium",
           "id": 4147
         },

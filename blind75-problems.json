@@ -48,7 +48,7 @@
         {
           "label": "Product of Array Except Self",
           "question": "https://leetcode.com/problems/product-of-array-except-self/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ProductOfArrayExceptSelf.cpp",
           "difficulty": "medium",
           "id": 3007
         },
@@ -159,28 +159,28 @@
         {
           "label": "Maximum Average Subarray I",
           "question": "https://leetcode.com/problems/maximum-average-subarray-i/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findMaxAverage.cpp",
           "difficulty": "easy",
           "id": 3020
         },
         {
           "label": "Maximum Number of Vowels in a Substring of Given Length",
           "question": "https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxVowels.cpp",
           "difficulty": "medium",
           "id": 3021
         },
         {
           "label": "Max Consecutive Ones III",
           "question": "https://leetcode.com/problems/max-consecutive-ones-iii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestOnes.cpp",
           "difficulty": "medium",
           "id": 3022
         },
         {
           "label": "Longest Subarray of 1's After Deleting One Element",
           "question": "https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestSubarray.cpp",
           "difficulty": "medium",
           "id": 3023
         }
@@ -213,7 +213,7 @@
         {
           "label": "Koko Eating Bananas",
           "question": "https://leetcode.com/problems/koko-eating-bananas/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KokoEatingBananas.cpp",
           "difficulty": "medium",
           "id": 3027
         }
@@ -225,7 +225,7 @@
         {
           "label": "Kth Largest Element in an Array",
           "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Kth_largest_in_array_heap.cpp",
           "difficulty": "medium",
           "id": 3028
         },
@@ -258,7 +258,7 @@
         {
           "label": "Non-overlapping Intervals",
           "question": "https://leetcode.com/problems/non-overlapping-intervals/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/NonOverlappingIntervals.cpp",
           "difficulty": "medium",
           "id": 3032
         },
@@ -284,7 +284,7 @@
         {
           "label": "Asteroid Collision",
           "question": "https://leetcode.com/problems/asteroid-collision/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/AsteroidCollision.cpp",
           "difficulty": "medium",
           "id": 3035
         },
@@ -322,28 +322,28 @@
         {
           "label": "Delete the Middle Node of a Linked List",
           "question": "https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/deleteMiddle.cpp",
           "difficulty": "medium",
           "id": 3039
         },
         {
           "label": "Odd Even Linked List",
           "question": "https://leetcode.com/problems/odd-even-linked-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/oddEvenList.cpp",
           "difficulty": "medium",
           "id": 3040
         },
         {
           "label": "Reverse Linked List",
           "question": "https://leetcode.com/problems/reverse-linked-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseList.cpp",
           "difficulty": "easy",
           "id": 3041
         },
         {
           "label": "Maximum Twin Sum of a Linked List",
           "question": "https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumTwinSumofaLinkedList.cpp",
           "difficulty": "medium",
           "id": 3042
         }
@@ -355,14 +355,14 @@
         {
           "label": "Daily Temperatures",
           "question": "https://leetcode.com/problems/daily-temperatures/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/DailyTemperatures.cpp",
           "difficulty": "medium",
           "id": 3043
         },
         {
           "label": "Online Stock Span",
           "question": "https://leetcode.com/problems/online-stock-span/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/StockSpanner.cpp",
           "difficulty": "medium",
           "id": 3044
         }
@@ -381,7 +381,7 @@
         {
           "label": "Combination Sum III",
           "question": "https://leetcode.com/problems/combination-sum-iii/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CombinationSumIII.cpp",
           "difficulty": "medium",
           "id": 3046
         }
@@ -393,7 +393,7 @@
         {
           "label": "Maximum Depth of Binary Tree",
           "question": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumDepthofBinaryTree.cpp",
           "difficulty": "easy",
           "id": 3047
         },
@@ -440,7 +440,7 @@
         {
           "label": "Binary Tree Right Side View",
           "question": "https://leetcode.com/problems/binary-tree-right-side-view/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/RightViewOfBinaryTree.cpp",
           "difficulty": "medium",
           "id": 3053
         },
@@ -459,7 +459,7 @@
         {
           "label": "Search in a Binary Search Tree",
           "question": "https://leetcode.com/problems/search-in-a-binary-search-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SearchinaBinarySearchTree.cpp",
           "difficulty": "easy",
           "id": 3055
         },
@@ -485,7 +485,7 @@
         {
           "label": "Number of Provinces",
           "question": "https://leetcode.com/problems/number-of-provinces/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberOfProvinces.cpp",
           "difficulty": "medium",
           "id": 3058
         },
@@ -511,7 +511,7 @@
         {
           "label": "Nearest Exit from Entrance in Maze",
           "question": "https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/NearestExitFromEntranceInMaze.cpp",
           "difficulty": "medium",
           "id": 3061
         },
@@ -563,14 +563,14 @@
         {
           "label": "Unique Paths",
           "question": "https://leetcode.com/problems/unique-paths/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Unique_Path_I.cpp",
           "difficulty": "medium",
           "id": 3067
         },
         {
           "label": "Longest Common Subsequence",
           "question": "https://leetcode.com/problems/longest-common-subsequence/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/LongestCommonSubsequence.cpp",
           "difficulty": "medium",
           "id": 3068
         },
@@ -584,7 +584,7 @@
         {
           "label": "Edit Distance",
           "question": "https://leetcode.com/problems/edit-distance/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/EditDistance.cpp",
           "difficulty": "medium",
           "id": 3070
         }
@@ -622,7 +622,7 @@
         {
           "label": "Implement Trie (Prefix Tree)",
           "question": "https://leetcode.com/problems/implement-trie-prefix-tree/",
-          "solution": "-",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TRIE/ImplementTriePrefixTree.cpp",
           "difficulty": "medium",
           "id": 3074
         },
