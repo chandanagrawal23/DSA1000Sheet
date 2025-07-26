@@ -414,8 +414,8 @@
                         },
                         {
                             "label": "Range Addition",
-                            "question": "https://leetcode.com/problems/range-addition/",
-                            "solution": "-",
+                            "question": "https://leetcode.ca/all/370.html",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/RangeAddition.cpp",
                             "difficulty": "medium",
                             "id": 1791
                         },
@@ -429,16 +429,30 @@
                         {
                             "label": "Maximum Occurred Integer in Ranges",
                             "question": "https://www.geeksforgeeks.org/maximum-occurred-integer-n-ranges/",
-                            "solution": "-",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/MaximumOccurringIntegerInGivenRanges.cpp",
                             "difficulty": "medium",
                             "id": 1027
                         },
                         {
                             "label": "Corporate Flight Bookings",
                             "question": "https://leetcode.com/problems/corporate-flight-bookings/",
-                            "solution": "",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/CorporateFlightBookings.cpp",
                             "difficulty": "medium",
                             "id": 1792
+                        },
+                        {
+                            "label": "Zero Array Transformation I",
+                            "question": "https://leetcode.com/problems/zero-array-transformation-i/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/ZeroArrayTransformation_I.cpp",
+                            "difficulty": "medium",
+                            "id": 1730
+                        },
+                        {
+                            "label": "Increment Submatrices by One",
+                            "question": "https://leetcode.com/problems/increment-submatrices-by-one/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/IncrementSubmatricesByOne.cpp",
+                            "difficulty": "medium",
+                            "id": 1793
                         }
                     ]
                 }
@@ -2055,6 +2069,13 @@
                     "solution": "-",
                     "difficulty": "hard",
                     "id": 1272
+                },
+                {
+                    "label": "Minimum Interval to Include Each Query(Sort Queries + Heap)",
+                    "question": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumIntervalToIncludeEachQuery_Heap.cpp",
+                    "difficulty": "hard",
+                    "id": 1795
                 }
             ]
         },
@@ -5541,73 +5562,66 @@
             "problems": [
                 {
                     "label": "Meeting Rooms II",
-                    "question": "https://leetcode.com/problems/meeting-rooms-ii/",
+                    "question": "https://leetcode.ca/all/253.html",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_SweepLine.cpp",
                     "difficulty": "medium",
                     "id": 1728
                 },
                 {
-                    "label": "Count of Intervals with Maximum Overlap (Google)",
+                    "label": "Count of Intervals with Maximum Overlap[3 ways for Difference Array/Sweep Line]",
                     "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MaximumNumberOfOverlappingIntervals_SweepLine.cpp",
                     "difficulty": "medium",
                     "id": 1729
                 },
                 {
-                    "label": "Zero Array Transformation I",
-                    "question": "https://leetcode.com/problems/zero-array-transformation-i/",
-                    "solution": "-",
-                    "difficulty": "medium",
-                    "id": 1730
-                },
-                {
                     "label": "Describe the Painting",
                     "question": "https://leetcode.com/problems/describe-the-painting/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/DescribeThePainting.cpp",
                     "difficulty": "medium",
                     "id": 1789
                 },
                 {
-                    "label": "My Calendar III (Map + Prefix Sum)",
+                    "label": "Brightest Position on Street",
+                    "question": "https://leetcode.ca/2021-10-05-2021-Brightest-Position-on-Street/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/BrightestPositionOnStreet.cpp",
+                    "difficulty": "medium",
+                    "id": 1794
+                },
+                {
+                    "label": "My Calendar III",
                     "question": "https://leetcode.com/problems/my-calendar-iii/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MyCalendar_III.cpp",
                     "difficulty": "hard",
                     "id": 1731
                 },
                 {
-                    "label": "Skyline Problem",
-                    "question": "https://leetcode.com/problems/the-skyline-problem/",
-                    "solution": "-",
-                    "difficulty": "hard",
-                    "id": 1732
-                },
-                {
                     "label": "Employee Free Time",
                     "question": "https://leetcode.ca/all/759.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/EmployeeFreeTime.cpp",
                     "difficulty": "hard",
                     "id": 1733
                 },
                 {
-                    "label": "Rectangle Area II",
-                    "question": "https://leetcode.com/problems/rectangle-area-ii/",
-                    "solution": "-",
-                    "difficulty": "hard",
-                    "id": 1734
-                },
-                {
-                    "label": "minimum-interval-to-include-each-query",
+                    "label": "Minimum Interval to Include Each Query",
                     "question": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MinimumIntervalToIncludeEachQuery.cpp",
                     "difficulty": "hard",
                     "id": 1735
                 },
                 {
                     "label": "Number of Flowers in Full Bloom",
                     "question": "https://leetcode.com/problems/number-of-flowers-in-full-bloom/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/NumberOfFlowersInFullBloom.cpp",
                     "difficulty": "hard",
                     "id": 1736
+                },
+                {
+                    "label": "Skyline Problem(Heap + Sweep Line)",
+                    "question": "https://leetcode.com/problems/the-skyline-problem/",
+                    "solution": "-",
+                    "difficulty": "hard",
+                    "id": 1732
                 }
             ]
         },
