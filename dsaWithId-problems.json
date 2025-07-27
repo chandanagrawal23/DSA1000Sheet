@@ -5563,7 +5563,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_SweepLine.cpp",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MeetingRooms_II_SweepLine.cpp",
                     "difficulty": "medium",
                     "id": 1728
                 },
@@ -5804,7 +5804,7 @@
             ]
         },
         {
-            "title": "Puzzles",
+            "title": "Puzzles(Not counted in DSA)",
             "subsections": [
                 {
                     "title": "Analytical / Mathematical Puzzles",

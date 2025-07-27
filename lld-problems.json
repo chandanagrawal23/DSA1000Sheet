@@ -421,6 +421,14 @@
                             "id": 6021
                         },
                         {
+                            "label": "Abstract Factory Pattern",
+                            "question": "https://www.geeksforgeeks.org/abstract-factory-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/abstract-factory",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=EcFVTgRHJLM",
+                            "id": 6069
+                        },
+                        {
                             "label": "Prototype Pattern",
                             "question": "https://www.geeksforgeeks.org/prototype-design-pattern/",
                             "solution": "https://refactoring.guru/design-patterns/prototype",
@@ -434,20 +442,20 @@
                     "title": "Structural Patterns",
                     "problems": [
                         {
-                            "label": "Adapter Pattern",
-                            "question": "https://www.geeksforgeeks.org/adapter-pattern/",
-                            "solution": "https://refactoring.guru/design-patterns/adapter",
-                            "difficulty": "medium",
-                            "youtube": "https://www.youtube.com/watch?v=2PKQtcJjYvc",
-                            "id": 6023
-                        },
-                        {
                             "label": "Composite Pattern",
                             "question": "https://www.geeksforgeeks.org/composite-design-pattern/",
                             "solution": "https://refactoring.guru/design-patterns/composite",
                             "difficulty": "medium",
                             "youtube": "https://www.youtube.com/watch?v=EWDmWbJ4wRA",
                             "id": 6024
+                        },
+                        {
+                            "label": "Adapter Pattern",
+                            "question": "https://www.geeksforgeeks.org/adapter-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/adapter",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=2PKQtcJjYvc",
+                            "id": 6023
                         },
                         {
                             "label": "Decorator Pattern",
@@ -464,6 +472,30 @@
                             "difficulty": "medium",
                             "youtube": "https://www.youtube.com/watch?v=NwaabHqPHeM",
                             "id": 6026
+                        },
+                        {
+                            "label": "Facade Pattern",
+                            "question": "https://www.geeksforgeeks.org/facade-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/facade",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=1j8d2a6b3gk",
+                            "id": 6070
+                        },
+                        {
+                            "label": "Bridge Pattern",
+                            "question": "https://www.geeksforgeeks.org/bridge-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/bridge",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=8bZh5S7-2c4",
+                            "id": 6072
+                        },
+                        {
+                            "label": "Flyweight Pattern",
+                            "question": "https://www.geeksforgeeks.org/flyweight-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/flyweight",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=8bZh5S7-2c4",
+                            "id": 6071
                         }
                     ]
                 },
@@ -487,6 +519,14 @@
                             "id": 6028
                         },
                         {
+                            "label": "Iterator Pattern",
+                            "question": "https://www.geeksforgeeks.org/iterator-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/iterator",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=v9ejT8FO-7I",
+                            "id": 6074
+                        },
+                        {
                             "label": "Command Pattern",
                             "question": "https://www.geeksforgeeks.org/command-pattern/",
                             "solution": "https://refactoring.guru/design-patterns/command",
@@ -495,12 +535,52 @@
                             "id": 6029
                         },
                         {
+                            "label": "Template Pattern",
+                            "question": "https://www.geeksforgeeks.org/template-method-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/template-method",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=0bK8g1g1g1g",
+                            "id": 6077
+                        },
+                        {
+                            "label": "Visitor Pattern",
+                            "question": "https://www.geeksforgeeks.org/visitor-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/visitor",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=0bK8g1g1g1g",
+                            "id": 6078
+                        },
+                        {
                             "label": "State Pattern",
                             "question": "https://www.geeksforgeeks.org/state-design-pattern/",
                             "solution": "https://refactoring.guru/design-patterns/state",
                             "difficulty": "medium",
                             "youtube": "https://www.youtube.com/watch?v=N12L5D78MAA",
                             "id": 6030
+                        },
+                        {
+                            "label": "Chain of Responsibility Pattern",
+                            "question": "https://www.geeksforgeeks.org/chain-of-responsibility-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/chain-of-responsibility",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=4t8c6a1b2d0",
+                            "id": 6073
+                        },
+                        {
+                            "label": "Memento Pattern",
+                            "question": "https://www.geeksforgeeks.org/memento-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/memento",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=0bK8g1g1g1g",
+                            "id": 6076
+                        },
+                        {
+                            "label": "Mediator Pattern",
+                            "question": "https://www.geeksforgeeks.org/mediator-design-pattern/",
+                            "solution": "https://refactoring.guru/design-patterns/mediator",
+                            "difficulty": "medium",
+                            "youtube": "https://www.youtube.com/watch?v=0bK8g1g1g1g",
+                            "id": 6075
                         }
                     ]
                 }

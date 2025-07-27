@@ -1,1 +1,4 @@
-https://chandan1000dsasheet.netlify.app/* https://www.algotracker.in/:splat 301!
+https://algotracker.in/* https://www.algotracker.in/:splat 301!
+http://algotracker.in/* https://www.algotracker.in/:splat 301!
+http://www.algotracker.in/* https://www.algotracker.in/:splat 301!
+/*    /index.html   200
