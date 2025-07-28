@@ -837,6 +837,13 @@
                             "id": 1105
                         },
                         {
+                            "label": "Maximum Median Sum of Subsequences of Size 3",
+                            "question": "https://leetcode.com/problems/maximum-median-sum-of-subsequences-of-size-3/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/MaximumMedianSumOfSubsequencesOfSize3.cpp",
+                            "difficulty": "medium",
+                            "id": 1796
+                        },
+                        {
                             "label": "Kth Largest Element in an Array (using sort and return a[k-1])",
                             "question": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Kth_largest_in_array_sorting.cpp",
@@ -2536,6 +2543,13 @@
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubsetsII.cpp",
                     "difficulty": "medium",
                     "id": 1332
+                },
+                {
+                    "label": "Combinations",
+                    "question": "https://leetcode.com/problems/combinations/",
+                    "solution": "",
+                    "difficulty": "medium",
+                    "id": 1734
                 },
                 {
                     "label": "Combination Sum",
@@ -5589,6 +5603,13 @@
                     "id": 1794
                 },
                 {
+                    "label": "Merge Intervals(using Difference Array OR Sweep Line)",
+                    "question": "https://leetcode.com/problems/merge-intervals/",
+                    "solution": "",
+                    "difficulty": "medium",
+                    "id": 1798
+                },
+                {
                     "label": "My Calendar III",
                     "question": "https://leetcode.com/problems/my-calendar-iii/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MyCalendar_III.cpp",
@@ -5615,6 +5636,13 @@
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/NumberOfFlowersInFullBloom.cpp",
                     "difficulty": "hard",
                     "id": 1736
+                },
+                {
+                    "label": "Count Integers in Intervals",
+                    "question": "https://leetcode.com/problems/count-integers-in-intervals/",
+                    "solution": "",
+                    "difficulty": "hard",
+                    "id": 1797
                 },
                 {
                     "label": "Skyline Problem(Heap + Sweep Line)",
