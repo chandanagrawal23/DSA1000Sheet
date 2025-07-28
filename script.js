@@ -257,9 +257,49 @@ function triggerCelebration() {
 function getGlobalSolved() {
   const icons = document.querySelectorAll('.done-icon');
   let solved = { easy: 0, medium: 0, hard: 0 };
+  
   icons.forEach(icon => {
+    // Skip if we're not in DSA section
+    if (currentSection !== 'dsa') {
+      if (icon.getAttribute('data-solved') === 'true') {
+        const difficulty = icon.getAttribute('data-difficulty');
+        if (difficulty && solved[difficulty] !== undefined) {
+          solved[difficulty]++;
+        }
+      }
+      return;
+    }
+    
+    // For DSA section, check if this is in Puzzles section
+    // Need to find the main section, not just any collapsible
+    let section = icon.closest('.collapsible.z-depth-1');
+    
+    // If not found, try to find it through the subsection
+    if (!section) {
+      const subsection = icon.closest('.subsection-collapsible');
+      if (subsection) {
+        section = subsection.closest('.collapsible.z-depth-1');
+      }
+    }
+    
+    if (section) {
+      const sectionId = section.getAttribute('id');
+      
+      // Check if this is the Puzzles section by ID
+      // The ID is "Puzzles(NotcountedInDSA)" based on the title
+      if (sectionId && (sectionId.toLowerCase() === 'puzzles' || 
+                       sectionId.toLowerCase().includes('puzzles') ||
+                       sectionId === 'Puzzles(NotcountedInDSA)')) {
+        return; // Skip Puzzle section problems
+      }
+    }
+    
+    // Count the problem if it's solved and not in Puzzle section
     if (icon.getAttribute('data-solved') === 'true') {
-      solved[icon.getAttribute('data-difficulty')]++;
+      const difficulty = icon.getAttribute('data-difficulty');
+      if (difficulty && solved[difficulty] !== undefined) {
+        solved[difficulty]++;
+      }
     }
   });
   return solved;
@@ -269,6 +309,56 @@ function getGlobalSolved() {
  * TOGGLE SOLVED
  ***************************************************************/
 function toggleSolved(icon) {
+  // Check if this problem is in the Puzzle section FIRST
+  let section = icon.closest('.collapsible.z-depth-1');
+  
+  // If not found, try to find it through the subsection
+  if (!section) {
+    const subsection = icon.closest('.subsection-collapsible');
+    if (subsection) {
+      section = subsection.closest('.collapsible.z-depth-1');
+    }
+  }
+  
+  if (section && currentSection === 'dsa') {
+    const sectionId = section.getAttribute('id');
+    
+    // Debug log to see what's happening
+    console.log('Toggle Solved - Section ID:', sectionId);
+    
+    // Check if this is the Puzzles section by ID
+    // The ID is "Puzzles(NotcountedInDSA)" based on the title
+    if (sectionId && (sectionId.toLowerCase() === 'puzzles' || 
+                     sectionId.toLowerCase().includes('puzzles') ||
+                     sectionId === 'Puzzles(NotcountedInDSA)')) {
+      console.log('This is a Puzzle problem - skipping global update');
+      
+      // Get current state
+      const wasSolved = icon.getAttribute('data-solved') === 'true';
+      
+      // Toggle the visual state
+      icon.setAttribute('data-solved', !wasSolved);
+      icon.textContent = !wasSolved ? 'check_box' : 'check_box_outline_blank';
+      icon.parentElement.parentElement.classList.toggle('solved', !wasSolved);
+      
+      // For Puzzle section, only save progress and trigger celebration
+      if (!wasSolved) {
+        triggerCelebration();
+      }
+      // IMPORTANT: Still update section progress for mini-bars!
+      updateSectionProgress();
+      saveProgress();
+      // Check for section completion/incompletion after updating progress
+      setTimeout(() => {
+        checkSectionCompletion(icon);
+      }, 100);
+      
+      // IMPORTANT: Exit here to prevent global updates
+      return; // This should prevent the rest of the function from executing
+    }
+  }
+
+  // For non-puzzle sections, proceed normally
   const wasSolved = icon.getAttribute('data-solved') === 'true';
 
   // Toggle the solved state
@@ -937,6 +1027,14 @@ function updateSectionsSolvedCount() {
 
     // Check if this is a main section (not a subsection)
     if (!sectionElem.classList.contains('subsection-collapsible')) {
+      // Skip Puzzle section from section count in DSA
+      if (currentSection === 'dsa' && 
+          (sectionId.toLowerCase() === 'puzzles' || 
+           sectionId.toLowerCase().includes('puzzles') ||
+           sectionId === 'Puzzles(NotcountedInDSA)')) {
+        return;
+      }
+
       totalSections++;
 
       // Count total problems and solved problems in this section
@@ -1949,6 +2047,9 @@ function checkSectionCompletion(icon) {
 
   if (shouldBeCompleted && !isCurrentlyCompleted) {
     markSectionAsCompleted(sectionElement, sectionTitle);
+    
+    // Show celebration banner for ALL sections including Puzzles
+    // Don't skip Puzzle section here - we want the visual feedback
     showCongratulationsBanner(sectionTitle);
   } else if (!shouldBeCompleted && isCurrentlyCompleted) {
     markSectionAsIncomplete(sectionElement, sectionTitle);
@@ -2523,6 +2624,7 @@ function loadSectionCompletions() {
     const solvedProblems = sectionElem.querySelectorAll('.done-icon[data-solved="true"]');
     
     // If all problems are solved, mark as completed
+    // Don't skip Puzzle section here - we want visual feedback
     if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
       const sectionTitle = sectionElem.querySelector('.topic-title')?.textContent;
       markSectionAsCompleted(sectionElem, sectionTitle);
@@ -3658,6 +3760,20 @@ function countUniqueProblems(data) {
 
   // Count totals and track unique problems
   data.sections.forEach(section => {
+    // Skip Puzzle section from counting - check multiple ways
+    if (currentSection === 'dsa') {
+      // Check by title
+      if (section.title && section.title.toLowerCase().includes('puzzle')) {
+        console.log('Skipping Puzzle section from total count:', section.title);
+        return;
+      }
+      // Check if title is exactly "Puzzles"
+      if (section.title && section.title.trim() === 'Puzzles') {
+        console.log('Skipping Puzzles section from total count');
+        return;
+      }
+    }
+
     if (section.problems) {
       section.problems.forEach(problem => {
         // Use question URL as the unique identifier

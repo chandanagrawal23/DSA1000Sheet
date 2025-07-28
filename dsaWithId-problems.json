@@ -942,13 +942,6 @@
                             "id": 1119
                         },
                         {
-                            "label": "Minimum Cost to Hire K Workers ( sort + priority queue )",
-                            "question": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
-                            "solution": "-",
-                            "difficulty": "hard",
-                            "id": 1120
-                        },
-                        {
                             "label": "Meeting Rooms III",
                             "question": "https://leetcode.com/problems/meeting-rooms-iii/",
                             "solution": "-",
@@ -1924,25 +1917,11 @@
                     "id": 1250
                 },
                 {
-                    "label": "Maximum Product of Two Elements in an Array",
-                    "question": "https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxProduct.cpp",
-                    "difficulty": "easy",
-                    "id": 1251
-                },
-                {
                     "label": "Kth Largest Element in a Stream",
                     "question": "https://leetcode.com/problems/kth-largest-element-in-a-stream/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KthLargest.cpp",
                     "difficulty": "easy",
                     "id": 1252
-                },
-                {
-                    "label": "Seat Reservation Manager",
-                    "question": "https://leetcode.com/problems/seat-reservation-manager/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeatManager.cpp",
-                    "difficulty": "medium",
-                    "id": 1253
                 },
                 {
                     "label": "Kth Largest Element in an Array",
@@ -1952,11 +1931,25 @@
                     "id": 1254
                 },
                 {
+                    "label": "Seat Reservation Manager",
+                    "question": "https://leetcode.com/problems/seat-reservation-manager/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SeatManager.cpp",
+                    "difficulty": "medium",
+                    "id": 1253
+                },
+                {
                     "label": "Top K Frequent Elements",
                     "question": "https://leetcode.com/problems/top-k-frequent-elements/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/topKFrequent.cpp",
                     "difficulty": "medium",
                     "id": 1255
+                },
+                {
+                    "label": "Largest Triplet Product Stream [META]",
+                    "question": "https://www.geeksforgeeks.org/largest-triplet-product-stream",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LargestTripletMultiplication.cpp",
+                    "difficulty": "medium",
+                    "id": 1257
                 },
                 {
                     "label": "Meeting Rooms II [MAANGM and others]",
@@ -1966,25 +1959,11 @@
                     "id": 1256
                 },
                 {
-                    "label": "Largest Triplet Product Stream [FACEBOOK MEDIUM]",
-                    "question": "https://www.geeksforgeeks.org/largest-triplet-product-stream",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LargestTripletMultiplication.cpp",
-                    "difficulty": "medium",
-                    "id": 1257
-                },
-                {
                     "label": "Find K Closest Elements [Can be solved using 4 methods]",
                     "question": "https://leetcode.com/problems/find-k-closest-elements/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findClosestElements.cpp",
                     "difficulty": "medium",
                     "id": 1258
-                },
-                {
-                    "label": "Single Threaded CPU [Google Important]",
-                    "question": "https://leetcode.com/problems/single-threaded-cpu/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Single-ThreadedCPU.cpp",
-                    "difficulty": "medium",
-                    "id": 1259
                 },
                 {
                     "label": "Find K Pairs with Smallest Sums",
@@ -1994,11 +1973,11 @@
                     "id": 1260
                 },
                 {
-                    "label": "K-th Smallest Prime Fraction",
-                    "question": "https://leetcode.com/problems/k-th-smallest-prime-fraction/",
-                    "solution": "-",
+                    "label": "Single Threaded CPU [Google Important]",
+                    "question": "https://leetcode.com/problems/single-threaded-cpu/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Single-ThreadedCPU.cpp",
                     "difficulty": "medium",
-                    "id": 1261
+                    "id": 1259
                 },
                 {
                     "label": "K Closest Points to Origin (Heap/Sorting)",
@@ -2006,6 +1985,20 @@
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/kClosest.cpp",
                     "difficulty": "medium",
                     "id": 1262
+                },
+                {
+                    "label": "K-th Nearest Obstacle Queries",
+                    "question": "https://leetcode.com/problems/k-th-nearest-obstacle-queries/",
+                    "solution": "",
+                    "difficulty": "medium",
+                    "id": 1800
+                },
+                {
+                    "label": "Maximum Sum With at Most K Elements",
+                    "question": "https://leetcode.com/problems/maximum-sum-with-at-most-k-elements/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maximumSumWithKElements.cpp",
+                    "difficulty": "medium",
+                    "id": 1251
                 },
                 {
                     "label": "Kth Smallest Element in a Sorted Matrix",
@@ -2071,18 +2064,25 @@
                     "id": 1271
                 },
                 {
-                    "label": "Maximum Number of Points From Grid Queries( Sort Queries + Heap + BFS )",
-                    "question": "https://leetcode.com/problems/maximum-number-of-points-from-grid-queries/",
-                    "solution": "-",
-                    "difficulty": "hard",
-                    "id": 1272
-                },
-                {
                     "label": "Minimum Interval to Include Each Query(Sort Queries + Heap)",
                     "question": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumIntervalToIncludeEachQuery_Heap.cpp",
                     "difficulty": "hard",
                     "id": 1795
+                },
+                {
+                    "label": "IPO",
+                    "question": "https://leetcode.com/problems/ipo/description/",
+                    "solution": "-",
+                    "difficulty": "hard",
+                    "id": 1261
+                },
+                {
+                    "label": "Minimum Cost to Hire K Workers",
+                    "question": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
+                    "solution": "-",
+                    "difficulty": "hard",
+                    "id": 1120
                 }
             ]
         },
@@ -4391,13 +4391,6 @@
                             "id": 1575
                         },
                         {
-                            "label": "Is Graph Bipartite? (IMP)",
-                            "question": "https://www.geeksforgeeks.org/bipartite-graph/",
-                            "solution": "-",
-                            "difficulty": "medium",
-                            "id": 1576
-                        },
-                        {
                             "label": "Shortest Path with Alternating Colors",
                             "question": "https://leetcode.com/problems/shortest-path-with-alternating-colors/",
                             "solution": "-",
@@ -4704,6 +4697,26 @@
                     ]
                 },
                 {
+                    "title": "Graph Coloring / Bipartite / Cycle Detection",
+                    "info": "This section explores problems based on graph coloring and bipartiteness. A graph is bipartite if its nodes can be colored using two colors such that no two adjacent nodes share the same color. This is equivalent to checking whether the graph contains an odd-length cycle. These concepts are used in cycle detection, scheduling, grouping problems, and more.",
+                    "problems": [
+                        {
+                            "label": "Is Graph Bipartite? (IMP)",
+                            "question": "https://www.geeksforgeeks.org/bipartite-graph/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1576
+                        },
+                        {
+                            "label": "Possible Bipartition",
+                            "question": "https://leetcode.com/problems/possible-bipartition/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1799
+                        }
+                    ]
+                },
+                {
                     "title": "Dijkstra Algorithm Graph (Shortest Path)",
                     "problems": [
                         {
@@ -4801,6 +4814,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumObstacleToReachCorner_Dijkstra.cpp",
                             "difficulty": "hard",
                             "id": 1627
+                        },
+                        {
+                            "label": "Maximum Number of Points From Grid Queries( Sort Queries + Heap + BFS )",
+                            "question": "https://leetcode.com/problems/maximum-number-of-points-from-grid-queries/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1272
                         }
                     ]
                 },
@@ -5573,83 +5593,93 @@
         },
         {
             "title": "Sweep Line",
-            "problems": [
+            "subsections": [
                 {
-                    "label": "Meeting Rooms II",
-                    "question": "https://leetcode.ca/all/253.html",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MeetingRooms_II_SweepLine.cpp",
-                    "difficulty": "medium",
-                    "id": 1728
+                    "title": "Basic Sweep Line Problems",
+                    "problems": [
+                        {
+                            "label": "Meeting Rooms II",
+                            "question": "https://leetcode.ca/all/253.html",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MeetingRooms_II_SweepLine.cpp",
+                            "difficulty": "medium",
+                            "id": 1728
+                        },
+                        {
+                            "label": "Count of Intervals with Maximum Overlap[3 ways for Difference Array/Sweep Line]",
+                            "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MaximumNumberOfOverlappingIntervals_SweepLine.cpp",
+                            "difficulty": "medium",
+                            "id": 1729
+                        },
+                        {
+                            "label": "Describe the Painting",
+                            "question": "https://leetcode.com/problems/describe-the-painting/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/DescribeThePainting.cpp",
+                            "difficulty": "medium",
+                            "id": 1789
+                        },
+                        {
+                            "label": "Brightest Position on Street",
+                            "question": "https://leetcode.ca/2021-10-05-2021-Brightest-Position-on-Street/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/BrightestPositionOnStreet.cpp",
+                            "difficulty": "medium",
+                            "id": 1794
+                        },
+                        {
+                            "label": "My Calendar III",
+                            "question": "https://leetcode.com/problems/my-calendar-iii/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MyCalendar_III.cpp",
+                            "difficulty": "hard",
+                            "id": 1731
+                        },
+                        {
+                            "label": "Employee Free Time",
+                            "question": "https://leetcode.ca/all/759.html",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/EmployeeFreeTime.cpp",
+                            "difficulty": "hard",
+                            "id": 1733
+                        },
+                        {
+                            "label": "Number of Flowers in Full Bloom",
+                            "question": "https://leetcode.com/problems/number-of-flowers-in-full-bloom/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/NumberOfFlowersInFullBloom.cpp",
+                            "difficulty": "hard",
+                            "id": 1736
+                        },
+                        {
+                            "label": "Minimum Interval to Include Each Query",
+                            "question": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MinimumIntervalToIncludeEachQuery.cpp",
+                            "difficulty": "hard",
+                            "id": 1735
+                        },
+                        {
+                            "label": "Skyline Problem(Heap + Sweep Line)",
+                            "question": "https://leetcode.com/problems/the-skyline-problem/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1732
+                        }
+                    ]
                 },
                 {
-                    "label": "Count of Intervals with Maximum Overlap[3 ways for Difference Array/Sweep Line]",
-                    "question": "https://www.geeksforgeeks.org/maximum-number-of-overlapping-intervals/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MaximumNumberOfOverlappingIntervals_SweepLine.cpp",
-                    "difficulty": "medium",
-                    "id": 1729
-                },
-                {
-                    "label": "Describe the Painting",
-                    "question": "https://leetcode.com/problems/describe-the-painting/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/DescribeThePainting.cpp",
-                    "difficulty": "medium",
-                    "id": 1789
-                },
-                {
-                    "label": "Brightest Position on Street",
-                    "question": "https://leetcode.ca/2021-10-05-2021-Brightest-Position-on-Street/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/BrightestPositionOnStreet.cpp",
-                    "difficulty": "medium",
-                    "id": 1794
-                },
-                {
-                    "label": "Merge Intervals(using Difference Array OR Sweep Line)",
-                    "question": "https://leetcode.com/problems/merge-intervals/",
-                    "solution": "",
-                    "difficulty": "medium",
-                    "id": 1798
-                },
-                {
-                    "label": "My Calendar III",
-                    "question": "https://leetcode.com/problems/my-calendar-iii/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MyCalendar_III.cpp",
-                    "difficulty": "hard",
-                    "id": 1731
-                },
-                {
-                    "label": "Employee Free Time",
-                    "question": "https://leetcode.ca/all/759.html",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/EmployeeFreeTime.cpp",
-                    "difficulty": "hard",
-                    "id": 1733
-                },
-                {
-                    "label": "Minimum Interval to Include Each Query",
-                    "question": "https://leetcode.com/problems/minimum-interval-to-include-each-query/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MinimumIntervalToIncludeEachQuery.cpp",
-                    "difficulty": "hard",
-                    "id": 1735
-                },
-                {
-                    "label": "Number of Flowers in Full Bloom",
-                    "question": "https://leetcode.com/problems/number-of-flowers-in-full-bloom/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/NumberOfFlowersInFullBloom.cpp",
-                    "difficulty": "hard",
-                    "id": 1736
-                },
-                {
-                    "label": "Count Integers in Intervals",
-                    "question": "https://leetcode.com/problems/count-integers-in-intervals/",
-                    "solution": "",
-                    "difficulty": "hard",
-                    "id": 1797
-                },
-                {
-                    "label": "Skyline Problem(Heap + Sweep Line)",
-                    "question": "https://leetcode.com/problems/the-skyline-problem/",
-                    "solution": "-",
-                    "difficulty": "hard",
-                    "id": 1732
+                    "title": "Merge Interval Pattern Problems",
+                    "problems": [
+                        {
+                            "label": "Merge Intervals(using Difference Array OR Sweep Line)",
+                            "question": "https://leetcode.com/problems/merge-intervals/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MergeInterval.cpp",
+                            "difficulty": "medium",
+                            "id": 1798
+                        },
+                        {
+                            "label": "Count Integers in Intervals",
+                            "question": "https://leetcode.com/problems/count-integers-in-intervals/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/CountIntegersInIntervals.cpp",
+                            "difficulty": "hard",
+                            "id": 1797
+                        }
+                    ]
                 }
             ]
         },
