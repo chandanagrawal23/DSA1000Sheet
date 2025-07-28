@@ -9,6 +9,7 @@ let uniqueProblems = new Set(); // store unique problem labels
 let uniqueEasy = new Set();
 let uniqueMedium = new Set();
 let uniqueHard = new Set();
+window.dsaDataCache = null;
 
 // For storing notess: problemId -> notes text
 let notes = {};
@@ -612,7 +613,7 @@ function filterProblems(event) {
 
   // Get selected filters from multi-select
   const selectedFilters = getSelectedFilters();
-  console.log('Filtering with search term:', searchTerm, 'filters:', selectedFilters);
+  // console.log('Filtering with search term:', searchTerm, 'filters:', selectedFilters);
 
   const sections = document.querySelectorAll('.collapsible');
   const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
@@ -3354,7 +3355,7 @@ document.addEventListener('DOMContentLoaded', function () {
     searchBox.addEventListener('input', function (e) {
       clearTimeout(searchTimeout);
       searchTimeout = setTimeout(() => {
-        console.log('Search triggered with:', e.target.value);
+        // console.log('Search triggered with:', e.target.value);
         filterProblems(e);
       }, 300); // Debounce for 300ms
     });
@@ -3376,6 +3377,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     .then(data => {
       problemData = data;
+      window.dsaDataCache = data; // <-- Cache it immediately!
 
       // Count unique problems
       countUniqueProblems(data);
@@ -3570,7 +3572,7 @@ function initializeCheckboxes() {
       checkbox.addEventListener('click', function (e) {
         // Stop event propagation to prevent collapsible from toggling
         e.stopPropagation();
-        console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
+        // console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
 
         // If this checkbox is a parent (i.e. not inside a subsection container)
         if (!this.closest('.mini-bars.small')) {
@@ -3621,6 +3623,13 @@ function toggleSections(expand) {
  ***************************************************************/
 let uniqueCountsCache = {}; // Cache for unique problem counts
 function countUniqueProblems(data) {
+    totalEasy = 0;
+  totalMedium = 0;
+  totalHard = 0;
+  uniqueProblems.clear();
+  uniqueEasy.clear();
+  uniqueMedium.clear();
+  uniqueHard.clear();
   // Check if we have cached counts for this section
   if (uniqueCountsCache[currentSection]) {
     // Use cached values
@@ -3727,9 +3736,11 @@ function countUniqueProblems(data) {
 
 // Function to switch between sections
 function switchSection(section) {
+  try { console.timeEnd('SectionLoad'); } catch (e) { }
+  console.time('SectionLoad');
   // Save current section's filter state before switching
   saveFilterState();
-    // Clear the search box when switching sections
+  // Clear the search box when switching sections
   const searchBox = document.getElementById('searchBox');
   if (searchBox) {
     searchBox.value = '';
@@ -3765,55 +3776,86 @@ function switchSection(section) {
   // Load appropriate data - use the correct filename
   const dataFile = section === 'dsa' ? 'dsaWithId-problems.json' : `${section}-problems.json`;
 
-  // Load and display new content
-  fetch(dataFile)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      problemData = data;
+  // ...existing code above...
+
+  // Load and display new content with caching for DSA
+  if (section === 'dsa' && window.dsaDataCache) {
+    problemData = window.dsaDataCache;
+      console.log('[DSA] Using cached data');
+
+    // Count unique problems
+    countUniqueProblems(problemData);
+
+    // Build and update UI
+    buildRectBar();
+    renderSections(problemData);
+
+    requestAnimationFrame(() => {
+      initializeCollapsibles();
+      initializeCheckboxes();
+      loadProgress();
+      loadSectionCompletions();
+      loadSubsectionCompletions();
+
+      requestAnimationFrame(() => {
+        updateGlobalRectBar();
+        updateSectionProgress();
+        initializeTableSorting();
+      });
+    });
+
+    restoreFilterState();
+  } else {
+    console.log(`[${section.toUpperCase()}] Loading data from file: ${dataFile}`);
+    fetch(dataFile)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        problemData = data;
 
       // Count unique problems
-      countUniqueProblems(data);
+        countUniqueProblems(data);
 
       // Build and update UI - optimized order for better performance
-      buildRectBar();
-      renderSections(data);
+        buildRectBar();
+        renderSections(data);
 
       // Batch DOM operations for better performance
-      requestAnimationFrame(() => {
-        initializeCollapsibles();
-        initializeCheckboxes();
-        loadProgress();
-        loadSectionCompletions();
-        loadSubsectionCompletions();
+        requestAnimationFrame(() => {
+          initializeCollapsibles();
+          initializeCheckboxes();
+          loadProgress();
+          loadSectionCompletions();
+          loadSubsectionCompletions();
 
         // Update progress in next frame to avoid layout thrashing
-        requestAnimationFrame(() => {
-          updateGlobalRectBar();
-          updateSectionProgress();
+          requestAnimationFrame(() => {
+            updateGlobalRectBar();
+            updateSectionProgress();
 
           // Initialize table sorting after everything is loaded
-          initializeTableSorting();
+            initializeTableSorting();
+          });
         });
-      });
 
       // Restore filter state for this section
-      restoreFilterState();
-    })
-    .catch(error => {
-      console.error('Error loading data:', error);
-      document.getElementById('sections').innerHTML = `
+        restoreFilterState();
+      })
+      .catch(error => {
+        console.error('Error loading data:', error);
+        document.getElementById('sections').innerHTML = `
         <div style="text-align: center; padding: 2rem; color: var(--error);">
           <h2>Error Loading Data</h2>
           <p>Unable to load ${section.toUpperCase()} problems. Please try again later.</p>
           <p style="color: var(--text-secondary); font-size: 0.9rem;">Error details: ${error.message}</p>
         </div>
       `;
-    });
+      });
+  }
 }
 
 /*
