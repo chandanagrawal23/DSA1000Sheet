@@ -1610,13 +1610,6 @@
                             "solution": "-",
                             "difficulty": "hard",
                             "id": 1211
-                        },
-                        {
-                            "label": "Max Value of Equation ( Monotonic Deque / Heap )",
-                            "question": "https://leetcode.com/problems/max-value-of-equation/",
-                            "solution": "",
-                            "difficulty": "hard",
-                            "id": 1212
                         }
                     ]
                 }
@@ -1968,7 +1961,7 @@
                 {
                     "label": "Find K Pairs with Smallest Sums",
                     "question": "https://leetcode.com/problems/find-k-pairs-with-smallest-sums/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/FindK_PairsWithSmallestSums.cpp",
                     "difficulty": "medium",
                     "id": 1260
                 },
@@ -1989,7 +1982,7 @@
                 {
                     "label": "K-th Nearest Obstacle Queries",
                     "question": "https://leetcode.com/problems/k-th-nearest-obstacle-queries/",
-                    "solution": "",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/KThNearestObstacleQueries.cpp",
                     "difficulty": "medium",
                     "id": 1800
                 },
@@ -2010,7 +2003,7 @@
                 {
                     "label": "Course Schedule III",
                     "question": "https://leetcode.com/problems/course-schedule-iii/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/CourseSchedule_III.cpp",
                     "difficulty": "medium",
                     "id": 1264
                 },
@@ -2022,7 +2015,14 @@
                     "id": 1265
                 },
                 {
-                    "label": "Find Median from Data Stream (IMP MAANGM)",
+                    "label": "Furthest Building You Can Reach(Amazing Problem, IMP, MAANGM)",
+                    "question": "https://leetcode.com/problems/furthest-building-you-can-reach/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/FurthestBuildingYouCanReach.cpp",
+                    "difficulty": "medium",
+                    "id": 1801
+                },
+                {
+                    "label": "Find Median from Data Stream (IMP, MAANGM)",
                     "question": "https://leetcode.com/problems/find-median-from-data-stream",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
                     "difficulty": "hard",
@@ -2045,7 +2045,7 @@
                 {
                     "label": "Range Sum of Sorted Subarray Sums",
                     "question": "https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/RangeSumOfSortedSubarraySums.cpp",
                     "difficulty": "hard",
                     "id": 1269
                 },
@@ -2073,16 +2073,23 @@
                 {
                     "label": "IPO",
                     "question": "https://leetcode.com/problems/ipo/description/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/IPO.cpp",
                     "difficulty": "hard",
                     "id": 1261
                 },
                 {
                     "label": "Minimum Cost to Hire K Workers",
                     "question": "https://leetcode.com/problems/minimum-cost-to-hire-k-workers/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/MinimumCostToHireK_Workers.cpp",
                     "difficulty": "hard",
                     "id": 1120
+                },
+                {
+                    "label": "Max Value of Equation ( Max Heap or Monotonic Deque )",
+                    "question": "https://leetcode.com/problems/max-value-of-equation/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/MaxValueOfEquation.cpp",
+                    "difficulty": "hard",
+                    "id": 1212
                 }
             ]
         },
