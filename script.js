@@ -13,6 +13,8 @@ window.dsaDataCache = null;
 
 // For storing notess: problemId -> notes text
 let notes = {};
+// Add favorites storage
+let favorites = {};
 
 // We'll track which problem's notes is currently being edited
 let currentNotesProblemId = null;
@@ -46,6 +48,50 @@ btn.addEventListener('click', function (e) {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+/***************************************************************
+ * FAVORITE/BOOKMARK FUNCTIONS
+ ***************************************************************/
+function toggleFavorite(star, problemId, event) {
+  // Prevent the click from triggering the link
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const isFavorited = star.getAttribute('data-favorited') === 'true';
+  
+  // Add animation class
+  star.classList.add('animating');
+  
+  // Toggle the favorite state
+  star.setAttribute('data-favorited', !isFavorited);
+  star.textContent = !isFavorited ? 'star' : 'star_border';
+  
+  // Update favorites object
+  if (!isFavorited) {
+    favorites[problemId] = true;
+  } else {
+    delete favorites[problemId];
+  }
+  
+  // Save to localStorage
+  saveFavorites();
+  
+  // Remove animation class after animation completes
+  setTimeout(() => {
+    star.classList.remove('animating');
+  }, 400);
+  
+  // Show toast notification
+  M.toast({
+    html: `<span class="success-toast">${!isFavorited ? 'Added to favorites!' : 'Removed from favorites'}</span>`,
+    classes: 'rounded',
+    displayLength: 1500
+  });
+}
+
+function saveFavorites() {
+  localStorage.setItem(`${currentSection}Favorites`, JSON.stringify(favorites));
+}
 
 /***************************************************************
  * NAVBAR TOOLTIPS - NOW USING PURE CSS
@@ -414,6 +460,7 @@ function loadProgress() {
   // Load notes after DOM is fully loaded
   setTimeout(() => {
     loadNotess();
+    loadFavorites();
   }, 500);
 }
 
@@ -424,7 +471,8 @@ function getSelectedFilters() {
   const activeToggles = document.querySelectorAll('#filterDropdown .filter-toggle.active');
   const filters = {
     difficulties: [],
-    statuses: []
+    statuses: [],
+    specials: []  // ADD THIS LINE
   };
 
   activeToggles.forEach(toggle => {
@@ -433,6 +481,8 @@ function getSelectedFilters() {
       filters.difficulties.push(value);
     } else if (['completed', 'incomplete'].includes(value)) {
       filters.statuses.push(value);
+    } else if (value === 'favourite') {  // ADD THIS CONDITION
+      filters.specials.push(value);
     }
   });
 
@@ -441,7 +491,7 @@ function getSelectedFilters() {
 
 function updateFilterDisplay() {
   const selectedFilters = getSelectedFilters();
-  const totalSelected = selectedFilters.difficulties.length + selectedFilters.statuses.length;
+  const totalSelected = selectedFilters.difficulties.length + selectedFilters.statuses.length + selectedFilters.specials.length;
   const countElement = document.getElementById('selectedCount');
 
   if (totalSelected > 0) {
@@ -758,8 +808,16 @@ function filterProblems(event) {
 
           const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
+          // ADD THIS: Check if the problem is favorited
+        const favoriteIcon = row.querySelector('.inline-favorite-star');
+        const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
+
+        // ADD THIS: Apply special filters (favourite)
+        const specialMatch = selectedFilters.specials.length === 0 ||
+          (selectedFilters.specials.includes('favourite') && isFavorited);
+
           // Only show if all conditions are met
-          if (difficultyEnabled && difficultyMatch && statusMatch && matchesSearch) {
+          if (difficultyEnabled && difficultyMatch && statusMatch && specialMatch && matchesSearch) {
             row.style.display = '';
             hasMatchInSubsection = true;
             hasMatchInSection = true;
@@ -825,8 +883,14 @@ function filterProblems(event) {
 
         const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
-        // Only show if all conditions are met
-        if (difficultyEnabled && difficultyMatch && statusMatch && matchesSearch) {
+        const favoriteIcon = row.querySelector('.inline-favorite-star');
+        const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
+
+        const specialMatch = selectedFilters.specials.length === 0 ||
+          (selectedFilters.specials.includes('favourite') && isFavorited);
+
+        // UPDATE the condition to include specialMatch
+        if (difficultyEnabled && difficultyMatch && statusMatch && specialMatch && matchesSearch) {
           row.style.display = '';
           hasMatchInSection = true;
         } else {
@@ -1338,6 +1402,12 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
               <tr class="${problem.difficulty}">
                 <td data-label="Question">
                   <a href="${problem.question}" target="_blank">${problem.label}</a>
+                  <i class="material-icons inline-favorite-star" 
+                     data-problem-id="${problem.id || problemId}"
+                     data-favorited="false"
+                     onclick="toggleFavorite(this, '${problem.id || problemId}', event)">
+                     star_border
+                  </i>
                 </td>
                 <td data-label="Solution">
                   ${problem.solution && problem.solution !== "-"
@@ -1455,6 +1525,12 @@ function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false)
               <tr class="${problem.difficulty}">
                 <td data-label="Question">
                   <a href="${problem.question}" target="_blank" class="question-link">${problem.label}</a>
+                  <i class="material-icons inline-favorite-star" 
+                     data-problem-id="${problem.id || problemId}"
+                     data-favorited="false"
+                     onclick="toggleFavorite(this, '${problem.id || problemId}', event)">
+                     star_border
+                  </i>
                 </td>
                 <td data-label="Solutions">
                   ${solutionsHtml}
@@ -1490,6 +1566,32 @@ function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false)
         </tbody>
       </table>
     `;
+}
+
+function loadFavorites() {
+  const stored = localStorage.getItem(`${currentSection}Favorites`);
+  if (stored) {
+    favorites = JSON.parse(stored);
+  } else {
+    favorites = {};
+  }
+  
+  // Update favorite icons
+  updateFavoriteIcons();
+}
+
+function updateFavoriteIcons() {
+  document.querySelectorAll('.inline-favorite-star').forEach(star => {
+    const problemId = star.getAttribute('data-problem-id');
+    
+    if (problemId && favorites[problemId]) {
+      star.setAttribute('data-favorited', 'true');
+      star.textContent = 'star';
+    } else {
+      star.setAttribute('data-favorited', 'false');
+      star.textContent = 'star_border';
+    }
+  });
 }
 
 /***************************************************************
@@ -2790,6 +2892,7 @@ function resetAllProgress() {
       if (key && (
         key.includes('SolvedProblems') ||
         key.includes('Notes') ||
+        key.includes('Favorites') ||
         key === 'dsaSolvedProblems' || // Legacy key
         key === 'dsaNotess' || // Legacy key
         key === 'sqlSolvedProblems' ||
@@ -2826,9 +2929,18 @@ function resetAllProgress() {
       subsection.classList.remove('subsection-completed');
     });
 
+    // Reset all favorite stars
+    document.querySelectorAll('.inline-favorite-star').forEach(star => {
+      star.setAttribute('data-favorited', 'false');
+      star.textContent = 'star_border';
+    });
     // Clear the notes object
     if (typeof notes !== 'undefined') {
       notes = {};
+    }
+    // Clear the favorites object
+    if (typeof favorites !== 'undefined') {
+      favorites = {};
     }
 
     // Update all progress displays
