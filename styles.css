@@ -911,6 +911,135 @@ body.dark-mode .mobile-menu-item.active {
 
 }
 
+///////////////
+
+/* iPad 10th Gen and iPad Air (820px width in portrait) */
+@media (min-width: 820px) and (max-width: 833px) {
+    .navbar-container {
+        padding: 0 0.75rem;
+    }
+
+    .navbar-nav {
+        padding: 0 0.25rem;
+        gap: 0.2rem;
+        overflow: visible;
+        flex-wrap: nowrap;
+    }
+
+    .nav-item {
+        padding: 0.75rem 0.9rem;
+        min-width: 75px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+
+    .nav-text {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
+    .nav-item.active .nav-text {
+        font-size: 1.1rem;
+        transform: scale(1.05);
+    }
+
+    .nav-icon i {
+        font-size: 1.3rem;
+    }
+
+    /* Ensure desktop navigation is visible */
+    .desktop-nav {
+        display: flex !important;
+    }
+
+    /* Hide mobile menu button */
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    /* Ensure all nav items and controls are visible */
+    .navbar-nav .nav-item {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Make sure theme toggle and profile are visible */
+    .navbar-controls {
+        display: flex !important;
+        gap: 0.4rem;
+        flex-shrink: 0;
+    }
+
+    .theme-toggle-btn {
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .profile-btn {
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .brand-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .brand-symbol {
+        font-size: 1.75rem;
+    }
+
+    .brand-title {
+        font-size: 1.75rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.85rem;
+    }
+}
+
+/* iPad landscape mode fix (1180px for 10th gen landscape) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    /* Ensure all navbar items are visible in landscape */
+    .navbar-controls {
+        display: flex !important;
+        gap: 0.5rem;
+        flex-shrink: 0;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .theme-toggle-btn,
+    .profile-btn {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Ensure desktop nav shows all items */
+    .desktop-nav {
+        display: flex !important;
+    }
+
+    .navbar-nav {
+        gap: 0.4rem;
+    }
+
+    .nav-item {
+        padding: 1rem 1.25rem;
+        min-width: 90px;
+    }
+}
+
+/////////////
+
 /* ===== DARK MODE STYLES ===== */
 
 /* Dark mode navbar */
@@ -1458,7 +1587,7 @@ body.dark-mode .control-select:hover + .control-icon {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    right: auto;
     background: var(--surface);
     border: 1px solid var(--card-border);
     border-radius: 8px;
