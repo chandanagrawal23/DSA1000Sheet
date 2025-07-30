@@ -911,6 +911,92 @@ body.dark-mode .mobile-menu-item.active {
 
 }
 
+/* iPad landscape mode fix (1180px for 10th gen landscape) */
+@media (min-width: 1025px) and (max-width: 1180px) {
+    /* Container adjustments */
+    .navbar-container {
+        padding: 0 0.5rem !important;
+        justify-content: space-between !important;
+    }
+
+    /* Navigation adjustments */
+    .navbar-nav {
+        gap: 0.25rem !important; /* Reduced gap between nav items */
+        padding: 0 0.25rem !important;
+    }
+
+    /* Individual nav items */
+    .nav-item {
+        padding: 0.75rem 0.85rem !important; /* Reduced padding */
+        min-width: 80px !important; /* Reduced minimum width */
+        height: 48px !important;
+    }
+
+    .nav-text {
+        font-size: 0.9rem !important; /* Slightly smaller text */
+        white-space: nowrap !important;
+    }
+
+    /* Controls section */
+    .navbar-controls {
+        display: flex !important;
+        gap: 0.35rem !important; /* Reduced gap between controls */
+        flex-shrink: 0 !important;
+        margin-left: 0.35rem !important; /* Reduced margin after HLD */
+    }
+
+    /* Theme toggle button */
+    .theme-toggle-btn {
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0 !important;
+    }
+
+    /* Profile button */
+    .profile-btn {
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        margin: 0 !important;
+    }
+
+    /* Brand adjustments if needed */
+    .brand-logo {
+        margin-right: 0.5rem !important;
+    }
+
+    /* Icon sizes */
+    .nav-icon i {
+        font-size: 1.2rem !important;
+    }
+
+    /* Force desktop navigation */
+    .desktop-nav {
+        display: flex !important;
+        margin: 0 !important;
+    }
+
+    /* Hide mobile menu */
+    .mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+/* Additional iPad landscape override to ensure visibility */
+@media screen and (width: 1180px) {
+    .navbar-controls, 
+    .theme-toggle-btn, 
+    .profile-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
 
 /* iPad 10th Gen and iPad Air (820px width in portrait) */
 @media (min-width: 820px) and (max-width: 833px) {
