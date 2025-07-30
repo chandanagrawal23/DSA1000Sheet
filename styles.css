@@ -911,40 +911,39 @@ body.dark-mode .mobile-menu-item.active {
 
 }
 
-///////////////
 
 /* iPad 10th Gen and iPad Air (820px width in portrait) */
 @media (min-width: 820px) and (max-width: 833px) {
     .navbar-container {
-        padding: 0 0.75rem;
+        padding: 0 0.5rem;
     }
 
     .navbar-nav {
-        padding: 0 0.25rem;
-        gap: 0.2rem;
+        padding: 0 0.2rem;
+        gap: 0.15rem;
         overflow: visible;
         flex-wrap: nowrap;
     }
 
     .nav-item {
-        padding: 0.75rem 0.9rem;
-        min-width: 75px;
-        height: 48px;
+        padding: 0.7rem 0.85rem;
+        min-width: 70px;
+        height: 46px;
         flex-shrink: 0;
     }
 
     .nav-text {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         white-space: nowrap;
     }
 
     .nav-item.active .nav-text {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         transform: scale(1.05);
     }
 
     .nav-icon i {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     /* Ensure desktop navigation is visible */
@@ -964,63 +963,90 @@ body.dark-mode .mobile-menu-item.active {
         opacity: 1 !important;
     }
 
-    /* Make sure theme toggle and profile are visible */
+    /* CRITICAL: Ensure navbar controls are visible and properly sized */
     .navbar-controls {
         display: flex !important;
-        gap: 0.4rem;
-        flex-shrink: 0;
+        gap: 0.3rem !important;
+        flex-shrink: 0 !important;
+        margin-left: 0.5rem !important;
     }
 
     .theme-toggle-btn {
-        width: 48px !important;
-        height: 48px !important;
+        width: 46px !important;
+        height: 46px !important;
         display: flex !important;
         opacity: 1 !important;
         visibility: visible !important;
+        background: var(--surface) !important;
+        border: 2px solid var(--card-border) !important;
+        border-radius: 12px !important;
+    }
+
+    .theme-toggle-btn .theme-icon i {
+        font-size: 1.4rem !important;
+        color: var(--text-primary) !important;
     }
 
     .profile-btn {
-        width: 48px !important;
-        height: 48px !important;
+        width: 46px !important;
+        height: 46px !important;
         display: flex !important;
         opacity: 1 !important;
         visibility: visible !important;
     }
 
     .brand-icon {
-        width: 56px;
-        height: 56px;
+        width: 54px;
+        height: 54px;
     }
 
     .brand-symbol {
-        font-size: 1.75rem;
+        font-size: 1.7rem;
     }
 
     .brand-title {
-        font-size: 1.75rem;
+        font-size: 1.7rem;
     }
 
     .brand-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 }
 
 /* iPad landscape mode fix (1180px for 10th gen landscape) */
 @media (min-width: 1025px) and (max-width: 1200px) {
-    /* Ensure all navbar items are visible in landscape */
+    /* CRITICAL: Ensure all navbar items are visible in landscape */
     .navbar-controls {
         display: flex !important;
-        gap: 0.5rem;
-        flex-shrink: 0;
+        gap: 0.5rem !important;
+        flex-shrink: 0 !important;
         opacity: 1 !important;
         visibility: visible !important;
+        margin-left: 1rem !important;
     }
 
-    .theme-toggle-btn,
+    .theme-toggle-btn {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 54px !important;
+        height: 54px !important;
+        background: var(--surface) !important;
+        border: 2px solid var(--card-border) !important;
+        border-radius: 14px !important;
+    }
+    
+    .theme-toggle-btn .theme-icon i {
+        font-size: 1.6rem !important;
+        color: var(--text-primary) !important;
+    }
+
     .profile-btn {
         display: flex !important;
         opacity: 1 !important;
         visibility: visible !important;
+        width: 54px !important;
+        height: 54px !important;
     }
 
     /* Ensure desktop nav shows all items */
@@ -1038,7 +1064,7 @@ body.dark-mode .mobile-menu-item.active {
     }
 }
 
-/////////////
+
 
 /* ===== DARK MODE STYLES ===== */
 
