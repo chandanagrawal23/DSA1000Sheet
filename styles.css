@@ -1022,7 +1022,7 @@ body.dark-mode .mobile-menu-item.active {
         flex-shrink: 0 !important;
         opacity: 1 !important;
         visibility: visible !important;
-        margin-left: 1rem !important;
+        margin-left: 0.5rem !important;
     }
 
     .theme-toggle-btn {
