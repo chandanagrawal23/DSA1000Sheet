@@ -7806,3 +7806,92 @@ body.dark-mode .filter-toggle.filter-special.active {
         font-size: 16px;
     }
 }
+
+/* Ensure table doesn't have extra spacing */
+.problem-table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+/* Row positioning */
+.problem-table tbody tr {
+  position: relative !important;
+}
+
+/* Green bar for completed problems */
+.problem-table tbody tr.solved td:first-child::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  height: calc(100% - 23px) !important; /* Reduced height to match text */
+  width: 4px !important;
+  background-color: #22C55E !important;
+  border-radius: 0 2px 2px 0 !important;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.4) !important;
+  z-index: 2 !important;
+}
+
+/* Ensure proper spacing for the bar */
+.problem-table td:first-child {
+  padding-left: 16px !important;
+  position: relative !important;
+}
+
+/* Dark mode support */
+body.dark-mode .problem-table tbody tr.solved td:first-child::before {
+  background-color: #22C55E !important;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .problem-table tbody tr.solved td:first-child::before {
+    width: 3px !important;
+  }
+  
+  .problem-table td:first-child {
+    padding-left: 12px !important;
+  }
+}
+
+/* Fix for mobile table display */
+@media (max-width: 600px) {
+  .problem-table tbody tr.solved td:first-child::before {
+    width: 3px !important;
+  }
+}
+
+/* CRITICAL FIX: Override mobile difficulty border for solved rows */
+@media screen and (max-width: 600px) {
+  /* Remove the difficulty-based left border for ALL rows first */
+  .problem-table tr {
+    border-left: none !important;
+  }
+  
+  /* Add back a subtle left border for unsolved rows */
+  .problem-table tr:not(.solved) {
+    border-left: 3px solid transparent !important;
+  }
+  
+  /* Ensure green bar shows for solved rows */
+  .problem-table tbody tr.solved {
+    border-left: none !important;
+    position: relative !important;
+  }
+  
+  .problem-table tbody tr.solved td:first-child::before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    height: calc(100% - 23px) !important;
+    width: 3px !important;
+    background-color: #22C55E !important;
+    border-radius: 0 2px 2px 0 !important;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.4) !important;
+    z-index: 10 !important;
+    display: block !important;
+  }
+}

@@ -8,7 +8,8 @@
                     "question": "https://www.geeksforgeeks.org/sum-of-first-n-natural-numbers/",
                     "solution": "-",
                     "difficulty": "easy",
-                    "id": 1001
+                    "id": 1001,
+                    "important": true
                 },
                 {
                     "label": "Check Prime Number",
@@ -2373,7 +2374,8 @@
                             "question": "https://www.geeksforgeeks.org/program-for-factorial-of-a-number/",
                             "solution": "-",
                             "difficulty": "easy",
-                            "id": 1310
+                            "id": 1310,
+                            "important": true
                         },
                         {
                             "label": "Fibonacci Number",
