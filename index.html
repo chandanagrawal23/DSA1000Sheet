@@ -255,6 +255,18 @@
                         </button>
                     </div>
                     <div class="filter-row">
+                        <button class="filter-toggle filter-special favourite" data-filter="special" data-value="favourite">
+                          <span class="checkbox-custom"></span>
+                          <i class="material-icons">star</i>
+                          <span>Favourite</span>
+                        </button>
+                        <button class="filter-toggle filter-special mustdo" data-filter="special" data-value="mustdo">
+                          <span class="checkbox-custom"></span>
+                            <span class="filter-emoji">🎯</span>
+                          <span>Must Do</span>
+                        </button>
+                    </div>
+                    <div class="filter-row">
                         <button class="filter-toggle" data-value="completed" id="filter-completed">
                             <span class="status-badge completed">Done</span>
                         </button>
@@ -264,14 +276,6 @@
                         <button class="filter-clear-btn" id="clearFilters">
                             <i class="material-icons">clear_all</i>
                             <span>Clear</span>
-                        </button>
-                    </div>
-                    <div class="filter-row">
-                      <label>Special:</label>
-                        <button class="filter-toggle filter-special favourite" data-filter="special" data-value="favourite">
-                          <span class="checkbox-custom"></span>
-                          <i class="material-icons">star</i>
-                          <span>Favourite</span>
                         </button>
                     </div>
                 </div>
@@ -339,22 +343,6 @@
         </div>
     </div>
 </footer>
-
-  <!-- Notes Modal -->
-  <div id="notesModal" class="notes-modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 id="notesModalTitle">Problem Notes</h2>
-      </div>
-      <div class="modal-body">
-        <textarea id="notesModalTextarea" placeholder="Write your notes here..."></textarea>
-      </div>
-      <div class="modal-footer">
-        <button onclick="saveNotesModal()" class="btn-save btn">Save</button>
-        <button onclick="closeNotesModal()" class="btn-close btn">Close</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Reset Confirmation Banner -->
   <div id="resetConfirmationBanner" class="reset-confirmation-banner">

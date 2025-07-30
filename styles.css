@@ -2470,89 +2470,6 @@ body.dark-mode .collapsible li.active .collapsible-header:hover {
     overflow: visible !important;
 }
 
-/* Notes Modal */
-.notes-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.notes-modal.active {
-    display: flex;
-}
-
-.notes-modal .modal-content {
-    background: var(--surface);
-    border-radius: 1rem;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: var(--shadow-lg);
-}
-
-.notes-modal .modal-header {
-    background: var(--primary-color);
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 1rem 1rem 0 0;
-}
-
-.notes-modal .modal-header h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.notes-modal .modal-body {
-    padding: 1.5rem;
-}
-
-.notes-modal textarea {
-    width: 100%;
-    min-height: 150px;
-    padding: 0.75rem;
-    background: var(--input-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--card-border);
-    border-radius: 0.5rem;
-    resize: vertical;
-}
-
-.notes-modal textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.notes-modal .modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    border-top: 1px solid var(--card-border);
-}
-
-/* Notes Icon */
-.notes-icon {
-    cursor: pointer;
-    color: var(--text-secondary);
-    transition: all 0.2s;
-}
-
-.notes-icon:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
-
-/* Add this new style for notes icon when notes exist */
-.notes-icon[data-has-notes="true"] {
-    color: var(--success);
-}
 
 /* Enhanced Footer */
 .footer {
@@ -3613,7 +3530,6 @@ body.dark-mode .square-check.hard:checked {
 .nav,
 .rect-chart-container,
 .collapsible,
-.notes-modal .modal-content,
 table,
 th,
 td {
@@ -3924,26 +3840,6 @@ td:first-child {
     background-color: #ff0000;
   }
 
-  /* Mobile icons styling */
-  .notes-icon, .done-icon {
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-
-  .notes-icon {
-    color: var(--text-secondary);
-    transition: all 0.2s;
-  }
-
-  .notes-icon:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
-  }
-
-  .notes-icon[data-has-notes="true"] {
-    color: var(--success);
-  }
-
   .done-icon {
     color: var(--text-secondary);
   }
@@ -4036,9 +3932,6 @@ td:first-child {
     justify-content: center;
   }
 
-  .notes-icon, .done-icon {
-    font-size: 1rem;
-  }
 
   /* Adjust column widths for very small screens */
   .problem-table td:nth-child(1) {
@@ -4187,7 +4080,6 @@ body.dark-mode .control-button:hover {
     /* Improve touch targets for iPad */
     .solution-link,
     .youtube-link,
-    .notes-icon,
     .done-icon {
         min-width: 44px;
         min-height: 44px;
@@ -5490,7 +5382,7 @@ tr.hard .solution-link .github-icon {
 }
 
 /* Notes and Done icons */
-.notes-icon, .done-icon {
+.done-icon {
     font-size: 1.4rem !important; /* Slightly larger icons */
 }
 
@@ -7592,14 +7484,14 @@ body.dark-mode .lld-table .question-link:hover {
   background-color: rgba(139, 92, 246, 0.1);
 }
 
-.problem-table thead tr.sorted-unsolved::after {
+.problem-table thead tr.sorted-unsolved th:first-child::after {
   content: ' ↓';
   color: var(--primary);
   font-weight: bold;
   margin-left: 5px;
 }
 
-.problem-table thead tr.sorted-default::after {
+.problem-table thead tr.sorted-default th:first-child::after {
   content: ' ↑';
   color: var(--text-secondary);
   font-weight: bold;
@@ -7645,6 +7537,7 @@ body.dark-mode .lld-table .question-link:hover {
 /* Make sure the last th has room for the icon */
 .problem-table th:first-child {
   position: relative !important;
+    white-space: nowrap !important;
   padding-left: 35px !important; /* Make room for the icon on the left */
 }
 
@@ -7858,4 +7751,58 @@ body.dark-mode .filter-toggle.filter-special.active {
     background: #FF9800 !important;
     color: white !important;
     border-color: #FF9800 !important;
+}
+/* Question cell layout */
+.question-cell {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+/* Important/Must-Do Bullseye Emoji */
+.important-star {
+    position: absolute !important;
+    top: -12px !important;
+    left: -12px !important;
+    font-size: 24px !important; /* Emoji size */
+    transform: rotate(-10deg);
+    cursor: help;
+    /* Remove text-shadow since it's an emoji */
+    animation: none !important;
+    z-index: 10;
+    display: inline-block !important;
+}
+
+/* Hover effect */
+.important-star:hover {
+    transform: rotate(-10deg) scale(1.15);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .important-star {
+        top: -10px !important;
+        left: -10px !important;
+        font-size: 20px !important;
+    }
+}
+
+/* Style for filter emoji */
+.filter-emoji {
+    font-size: 18px;
+    margin-right: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Adjust spacing when active */
+.filter-toggle.filter-special.mustdo.active .filter-emoji {
+    margin-right: 6px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .filter-emoji {
+        font-size: 16px;
+    }
 }

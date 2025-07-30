@@ -11,13 +11,8 @@ let uniqueMedium = new Set();
 let uniqueHard = new Set();
 window.dsaDataCache = null;
 
-// For storing notess: problemId -> notes text
-let notes = {};
 // Add favorites storage
 let favorites = {};
-
-// We'll track which problem's notes is currently being edited
-let currentNotesProblemId = null;
 
 // Add confetti script dynamically
 const confettiScript = document.createElement('script');
@@ -65,22 +60,22 @@ function toggleFavorite(star, problemId, event) {
   // Toggle the favorite state
   star.setAttribute('data-favorited', !isFavorited);
   star.textContent = !isFavorited ? 'star' : 'star_border';
-  
+
   // Update favorites object
   if (!isFavorited) {
     favorites[problemId] = true;
   } else {
     delete favorites[problemId];
   }
-  
+
   // Save to localStorage
   saveFavorites();
-  
+
   // Remove animation class after animation completes
   setTimeout(() => {
     star.classList.remove('animating');
   }, 400);
-  
+
   // Show toast notification
   M.toast({
     html: `<span class="success-toast">${!isFavorited ? 'Added to favorites!' : 'Removed from favorites'}</span>`,
@@ -124,14 +119,14 @@ function initializeMobileMenu() {
     // Close dropdown when clicking on a menu item
     const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
     mobileMenuItems.forEach(item => {
-      item.addEventListener('click', function() {
+      item.addEventListener('click', function () {
         mobileMenuToggle.classList.remove('active');
         mobileMenuDropdown.classList.remove('active');
       });
     });
 
     // Close on escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && mobileMenuDropdown.classList.contains('active')) {
         mobileMenuToggle.classList.remove('active');
         mobileMenuDropdown.classList.remove('active');
@@ -199,14 +194,14 @@ function triggerCelebration() {
   canvas.style.height = '100vh';
   canvas.style.pointerEvents = 'none';
   canvas.style.zIndex = '99999';
-  
+
   // Account for zoom by scaling the canvas
   const zoomLevel = 0.8; // Your body zoom is 80%
   canvas.width = window.innerWidth / zoomLevel;
   canvas.height = window.innerHeight / zoomLevel;
-  canvas.style.transform = `scale(${1/zoomLevel})`;
+  canvas.style.transform = `scale(${1 / zoomLevel})`;
   canvas.style.transformOrigin = 'top left';
-  
+
   // Add canvas to body
   document.body.appendChild(canvas);
 
@@ -303,7 +298,7 @@ function triggerCelebration() {
 function getGlobalSolved() {
   const icons = document.querySelectorAll('.done-icon');
   let solved = { easy: 0, medium: 0, hard: 0 };
-  
+
   icons.forEach(icon => {
     // Skip if we're not in DSA section
     if (currentSection !== 'dsa') {
@@ -315,11 +310,11 @@ function getGlobalSolved() {
       }
       return;
     }
-    
+
     // For DSA section, check if this is in Puzzles section
     // Need to find the main section, not just any collapsible
     let section = icon.closest('.collapsible.z-depth-1');
-    
+
     // If not found, try to find it through the subsection
     if (!section) {
       const subsection = icon.closest('.subsection-collapsible');
@@ -327,19 +322,19 @@ function getGlobalSolved() {
         section = subsection.closest('.collapsible.z-depth-1');
       }
     }
-    
+
     if (section) {
       const sectionId = section.getAttribute('id');
-      
+
       // Check if this is the Puzzles section by ID
       // The ID is "Puzzles(NotcountedInDSA)" based on the title
-      if (sectionId && (sectionId.toLowerCase() === 'puzzles' || 
-                       sectionId.toLowerCase().includes('puzzles') ||
-                       sectionId === 'Puzzles(NotcountedInDSA)')) {
+      if (sectionId && (sectionId.toLowerCase() === 'puzzles' ||
+        sectionId.toLowerCase().includes('puzzles') ||
+        sectionId === 'Puzzles(NotcountedInDSA)')) {
         return; // Skip Puzzle section problems
       }
     }
-    
+
     // Count the problem if it's solved and not in Puzzle section
     if (icon.getAttribute('data-solved') === 'true') {
       const difficulty = icon.getAttribute('data-difficulty');
@@ -357,7 +352,7 @@ function getGlobalSolved() {
 function toggleSolved(icon) {
   // Check if this problem is in the Puzzle section FIRST
   let section = icon.closest('.collapsible.z-depth-1');
-  
+
   // If not found, try to find it through the subsection
   if (!section) {
     const subsection = icon.closest('.subsection-collapsible');
@@ -365,28 +360,22 @@ function toggleSolved(icon) {
       section = subsection.closest('.collapsible.z-depth-1');
     }
   }
-  
+
   if (section && currentSection === 'dsa') {
     const sectionId = section.getAttribute('id');
-    
-    // Debug log to see what's happening
-    console.log('Toggle Solved - Section ID:', sectionId);
-    
-    // Check if this is the Puzzles section by ID
-    // The ID is "Puzzles(NotcountedInDSA)" based on the title
-    if (sectionId && (sectionId.toLowerCase() === 'puzzles' || 
-                     sectionId.toLowerCase().includes('puzzles') ||
-                     sectionId === 'Puzzles(NotcountedInDSA)')) {
+    if (sectionId && (sectionId.toLowerCase() === 'puzzles' ||
+      sectionId.toLowerCase().includes('puzzles') ||
+      sectionId === 'Puzzles(NotcountedInDSA)')) {
       console.log('This is a Puzzle problem - skipping global update');
-      
+
       // Get current state
       const wasSolved = icon.getAttribute('data-solved') === 'true';
-      
+
       // Toggle the visual state
       icon.setAttribute('data-solved', !wasSolved);
       icon.textContent = !wasSolved ? 'check_box' : 'check_box_outline_blank';
       icon.parentElement.parentElement.classList.toggle('solved', !wasSolved);
-      
+
       // For Puzzle section, only save progress and trigger celebration
       if (!wasSolved) {
         triggerCelebration();
@@ -398,7 +387,7 @@ function toggleSolved(icon) {
       setTimeout(() => {
         checkSectionCompletion(icon);
       }, 100);
-      
+
       // IMPORTANT: Exit here to prevent global updates
       return; // This should prevent the rest of the function from executing
     }
@@ -438,7 +427,7 @@ function saveProgress() {
       solvedProblems[problemId] = true;
     }
   });
-  
+
   localStorage.setItem(`${currentSection}SolvedProblems`, JSON.stringify(solvedProblems));
 }
 
@@ -457,9 +446,8 @@ function loadProgress() {
     });
   }
 
-  // Load notes after DOM is fully loaded
+  // Load favorites after DOM is fully loaded
   setTimeout(() => {
-    loadNotess();
     loadFavorites();
   }, 500);
 }
@@ -482,6 +470,8 @@ function getSelectedFilters() {
     } else if (['completed', 'incomplete'].includes(value)) {
       filters.statuses.push(value);
     } else if (value === 'favourite') {  // ADD THIS CONDITION
+      filters.specials.push(value);
+    } else if (value === 'mustdo') {  // ADD THIS CONDITION
       filters.specials.push(value);
     }
   });
@@ -592,14 +582,14 @@ function setupMultiSelectFilter() {
 
   // Toggle dropdown on click
   if (filterDisplay) {
-    filterDisplay.addEventListener('click', function(e) {
+    filterDisplay.addEventListener('click', function (e) {
       e.stopPropagation();
       filterDropdown.classList.toggle('active');
     });
   }
 
   // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
+  document.addEventListener('click', function (e) {
     if (!e.target.closest('.multi-select-container')) {
       filterDropdown.classList.remove('active');
     }
@@ -608,7 +598,7 @@ function setupMultiSelectFilter() {
   // Handle toggle button clicks
   const toggleButtons = document.querySelectorAll('#filterDropdown .filter-toggle');
   toggleButtons.forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
+    toggle.addEventListener('click', function (e) {
       e.stopPropagation();
       this.classList.toggle('active');
       updateFilterDisplay();
@@ -619,7 +609,7 @@ function setupMultiSelectFilter() {
 
   // Handle clear all button
   if (clearButton) {
-    clearButton.addEventListener('click', function(e) {
+    clearButton.addEventListener('click', function (e) {
       e.stopPropagation();
       toggleButtons.forEach(toggle => {
         toggle.classList.remove('active');
@@ -643,7 +633,7 @@ function setupRandomButton() {
   // console.log('Setting up random button:', randomButton);
   // console.log('Random button position:', randomButton.getBoundingClientRect());
 
-  randomButton.addEventListener('click', function() {
+  randomButton.addEventListener('click', function () {
     openRandomUnsolvedProblem();
   });
 
@@ -809,12 +799,16 @@ function filterProblems(event) {
           const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
 
           // ADD THIS: Check if the problem is favorited
-        const favoriteIcon = row.querySelector('.inline-favorite-star');
-        const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
+          const favoriteIcon = row.querySelector('.inline-favorite-star');
+          const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
 
-        // ADD THIS: Apply special filters (favourite)
-        const specialMatch = selectedFilters.specials.length === 0 ||
-          (selectedFilters.specials.includes('favourite') && isFavorited);
+          // Check if the problem is must-do (important)
+          const importantStar = row.querySelector('.important-star');
+          const isMustDo = importantStar !== null;
+          // ADD THIS: Apply special filters (favourite)
+          const specialMatch = selectedFilters.specials.length === 0 ||
+            (selectedFilters.specials.includes('favourite') && isFavorited) ||
+            (selectedFilters.specials.includes('mustdo') && isMustDo);
 
           // Only show if all conditions are met
           if (difficultyEnabled && difficultyMatch && statusMatch && specialMatch && matchesSearch) {
@@ -886,8 +880,13 @@ function filterProblems(event) {
         const favoriteIcon = row.querySelector('.inline-favorite-star');
         const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
 
+        // ADD THIS: Check if the problem is must-do (important)
+        const importantStar = row.querySelector('.important-star');
+        const isMustDo = importantStar !== null;
+
         const specialMatch = selectedFilters.specials.length === 0 ||
-          (selectedFilters.specials.includes('favourite') && isFavorited);
+          (selectedFilters.specials.includes('favourite') && isFavorited) ||
+          (selectedFilters.specials.includes('mustdo') && isMustDo);
 
         // UPDATE the condition to include specialMatch
         if (difficultyEnabled && difficultyMatch && statusMatch && specialMatch && matchesSearch) {
@@ -943,7 +942,7 @@ function filterProblems(event) {
 function buildRectBar() {
   const container = document.getElementById('rectChartContainer');
   if (!container) return;
-  
+
   // Capitalize the first letter of current section name and format special cases
   let sectionTitle = '';
   if (currentSection === 'dsa') {
@@ -962,7 +961,7 @@ function buildRectBar() {
     // Default formatting for other sections
     sectionTitle = currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
   }
-  
+
   container.innerHTML = `
     <div class="progress-card">
       <h2>${sectionTitle} Progress</h2>
@@ -1092,10 +1091,10 @@ function updateSectionsSolvedCount() {
     // Check if this is a main section (not a subsection)
     if (!sectionElem.classList.contains('subsection-collapsible')) {
       // Skip Puzzle section from section count in DSA
-      if (currentSection === 'dsa' && 
-          (sectionId.toLowerCase() === 'puzzles' || 
-           sectionId.toLowerCase().includes('puzzles') ||
-           sectionId === 'Puzzles(NotcountedInDSA)')) {
+      if (currentSection === 'dsa' &&
+        (sectionId.toLowerCase() === 'puzzles' ||
+          sectionId.toLowerCase().includes('puzzles') ||
+          sectionId === 'Puzzles(NotcountedInDSA)')) {
         return;
       }
 
@@ -1387,20 +1386,22 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
             <th>Question</th>
             <th>Solution</th>
             <th>YouTube</th>
-            <th>Notes</th>
             <th>Done</th>
           </tr>
         </thead>
         <tbody>
           ${problemArray.map((problem, index) => {
     const problemId = `${baseId}-${index}`.replace(/'/g, "$");
-    // Escape any single quotes in the label to prevent breaking the onclick attribute
     const escapedLabel = problem.label.replace(/'/g, "$");
     const isLastRow = index === problemArray.length - 1;
 
     return `
-              <tr class="${problem.difficulty}">
-                <td data-label="Question">
+            <tr class="${problem.difficulty}">
+              <td data-label="Question">
+                <div class="question-cell">
+                  ${problem.important ? `
+                    <span class="important-star" title="Must Do Question">🎯</span>
+                  ` : ''}
                   <a href="${problem.question}" target="_blank">${problem.label}</a>
                   <i class="material-icons inline-favorite-star" 
                      data-problem-id="${problem.id || problemId}"
@@ -1408,43 +1409,35 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
                      onclick="toggleFavorite(this, '${problem.id || problemId}', event)">
                      star_border
                   </i>
-                </td>
-                <td data-label="Solution">
-                  ${problem.solution && problem.solution !== "-"
+                </div>
+              </td>
+              <td data-label="Solution">
+                ${problem.solution && problem.solution !== "-"
         ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><i class="fa-brands fa-github github-icon"></i></a></div>`
         : "-"
       }
-                </td>
-                <td data-label="YouTube">
-                  ${problem.youtube && problem.youtube !== "-"
+              </td>
+              <td data-label="YouTube">
+                ${problem.youtube && problem.youtube !== "-"
         ? `<div class="solution-container"><a href="${problem.youtube}" target="_blank" class="youtube-link"><span style="display:inline-block;">WATCH</span></a></div>`
         : "-"
       }
-                </td>
-                <td data-label="Notes">
-                  <div class="centered-container">
-                    <i class="material-icons notes-icon" 
-                        data-problem-id="${problem.id || problemId}"
-                        onclick="openNotesModal('${problem.id || problemId}', '${escapedLabel}')">
-                        sticky_note_2
-                    </i>
-                  </div>
-                </td>
-                <td data-label="Status" style="position: relative;">
-                  <i class="material-icons done-icon"
-                     data-difficulty="${problem.difficulty}"
-                     data-id="${problemId}"
-                     data-problem-id="${problem.id || problemId}"  
-                     data-solved="false"
-                     onclick="toggleSolved(this)">check_box_outline_blank</i>
-                  ${isLastRow && showCollapseBtn ? `
-                    <button class="subsection-collapse-btn" onclick="smartCollapse(this)" title="Collapse">
-                      <i class="material-icons">keyboard_arrow_up</i>
-                    </button>
-                  ` : ''}
-                </td>
-              </tr>
-            `;
+              </td>
+              <td data-label="Status" style="position: relative;">
+                <i class="material-icons done-icon"
+                   data-difficulty="${problem.difficulty}"
+                   data-id="${problemId}"
+                   data-problem-id="${problem.id || problemId}"  
+                   data-solved="false"
+                   onclick="toggleSolved(this)">check_box_outline_blank</i>
+                ${isLastRow && showCollapseBtn ? `
+                  <button class="subsection-collapse-btn" onclick="smartCollapse(this)" title="Collapse">
+                    <i class="material-icons">keyboard_arrow_up</i>
+                  </button>
+                ` : ''}
+              </td>
+            </tr>
+          `;
   }).join('')}
         </tbody>
       </table>
@@ -1460,7 +1453,6 @@ function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false)
             <th>Question</th>
             <th>Solutions</th>
             <th>Videos</th>
-            <th>Notes</th>
             <th>Done</th>
           </tr>
         </thead>
@@ -1523,7 +1515,11 @@ function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false)
 
     return `
               <tr class="${problem.difficulty}">
-                <td data-label="Question">
+              <td data-label="Question">
+                <div class="question-cell">
+                ${problem.important ? `
+                  <span class="important-star" title="Must Do Question">🎯</span>
+                ` : ''}
                   <a href="${problem.question}" target="_blank" class="question-link">${problem.label}</a>
                   <i class="material-icons inline-favorite-star" 
                      data-problem-id="${problem.id || problemId}"
@@ -1531,21 +1527,13 @@ function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false)
                      onclick="toggleFavorite(this, '${problem.id || problemId}', event)">
                      star_border
                   </i>
-                </td>
+                </div>
+              </td>
                 <td data-label="Solutions">
                   ${solutionsHtml}
                 </td>
                 <td data-label="Videos">
                   ${youtubeHtml}
-                </td>
-                <td data-label="Notes">
-                  <div class="centered-container">
-                        <i class="material-icons notes-icon" 
-                            data-problem-id="${problem.id || problemId}"
-                            onclick="openNotesModal('${problem.id || problemId}', '${escapedLabel}')">
-                            sticky_note_2
-                        </i>
-                  </div>
                 </td>
                 <td data-label="Status" style="position: relative;">
                   <i class="material-icons done-icon"
@@ -1575,7 +1563,7 @@ function loadFavorites() {
   } else {
     favorites = {};
   }
-  
+
   // Update favorite icons
   updateFavoriteIcons();
 }
@@ -1583,7 +1571,7 @@ function loadFavorites() {
 function updateFavoriteIcons() {
   document.querySelectorAll('.inline-favorite-star').forEach(star => {
     const problemId = star.getAttribute('data-problem-id');
-    
+
     if (problemId && favorites[problemId]) {
       star.setAttribute('data-favorited', 'true');
       star.textContent = 'star';
@@ -1633,7 +1621,7 @@ function updateSectionProgress() {
       updateMiniBar(miniBars, 'easy', solved.easy, total.easy);
       updateMiniBar(miniBars, 'medium', solved.medium, total.medium);
       updateMiniBar(miniBars, 'hard', solved.hard, total.hard);
-      
+
       // Update topic title with solved/total count for sections without subsections
       const topicTitle = sectionElem.querySelector('.topic-title');
       if (topicTitle && !sectionElem.querySelector('.subsection-collapsible')) {
@@ -1685,7 +1673,7 @@ function updateSectionProgress() {
     updateMiniBar(subMini, 'easy', solved.easy, total.easy);
     updateMiniBar(subMini, 'medium', solved.medium, total.medium);
     updateMiniBar(subMini, 'hard', solved.hard, total.hard);
-    
+
     // Update subsection title with solved/total count
     const subsectionHeader = subMini.closest('.collapsible-header.subsection-header');
     if (subsectionHeader) {
@@ -1744,7 +1732,7 @@ function updateSectionProgress() {
     updateMiniBar(parentBars, 'easy', solved.easy, total.easy);
     updateMiniBar(parentBars, 'medium', solved.medium, total.medium);
     updateMiniBar(parentBars, 'hard', solved.hard, total.hard);
-    
+
     // Update parent section title with solved/total count
     const topicTitleContainer = parentElem.querySelector('.topic-title');
     if (topicTitleContainer) {
@@ -1759,113 +1747,6 @@ function updateSectionProgress() {
     }
   });
 }
-/***************************************************************
- * NOTES MODAL FUNCTIONS
- ***************************************************************/
-/**
- * Load notes from localStorage with migration support for compatibility
- */
-function loadNotess() {
-  const stored = localStorage.getItem(`${currentSection}Notes`);
-  if (stored) {
-    notes = JSON.parse(stored);
-  } else {
-    notes = {};
-  }
-  // Update notes icons to be green if they have content
-  updateNotesIcons();
-}
-
-// Helper function to update all notes icons based on note content
-function updateNotesIcons() {
-  // console.log("Updating notes icons based on content...");
-  document.querySelectorAll('.notes-icon').forEach(icon => {
-    // Get the problem ID from data attribute
-    let problemId = icon.getAttribute('data-problem-id');
-    
-    if (!problemId) {
-      // Fallback: Extract from onclick if data-problem-id is missing
-      const onclickAttr = icon.getAttribute('onclick');
-      if (onclickAttr) {
-        const match = onclickAttr.match(/openNotesModal\('([^']+)',/);
-        if (match) {
-          problemId = match[1];
-        }
-      }
-    }
-
-    // Set data-has-notes attribute based on whether notes exist and aren't empty
-    if (problemId && notes[problemId] && notes[problemId].trim() !== '') {
-      icon.setAttribute('data-has-notes', 'true');
-    } else {
-      icon.setAttribute('data-has-notes', 'false');
-    }
-  });
-}
-
-/**
- * Updates the openNotesModal function to retrieve notes using stable identifiers
- */
-function openNotesModal(problemId, label) {
-  const doneIcon = document.querySelector(`.done-icon[data-id="${problemId}"]`);
-  const actualProblemId = doneIcon ? doneIcon.getAttribute('data-problem-id') : problemId;
-  
-  currentNotesProblemId = actualProblemId;
-  const modal = document.getElementById('notesModal');
-  const textarea = document.getElementById('notesModalTextarea');
-  const title = document.getElementById('notesModalTitle');
-
-  // Use the actual problem ID to retrieve notes
-  textarea.value = notes[actualProblemId] || '';
-  title.textContent = `Notes: ${label}`;
-
-  modal.classList.add('active');
-}
-
-function closeNotesModal() {
-  document.getElementById('notesModal').classList.remove('active');
-  currentNotesProblemId = null;
-}
-
-/**
- * Updates the saveNotesModal function to use stable identifiers
- * that won't break when problems are reordered
- */
-function saveNotesModal() {
-  if (!currentNotesProblemId) return;
-
-  const text = document.getElementById('notesModalTextarea').value.trim();
-
-  // Simply use the problemId to store notes
-  if (text) {
-    notes[currentNotesProblemId] = text;
-  } else {
-    // If text is empty, remove the note
-    delete notes[currentNotesProblemId];
-  }
-
-  // Save to localStorage with section-specific key
-  localStorage.setItem(`${currentSection}Notes`, JSON.stringify(notes));
-  
-  // Update the notes icon color - find by actual problem ID
-  const notesIcon = document.querySelector(`.notes-icon[data-problem-id="${currentNotesProblemId}"]`);
-  if (notesIcon) {
-    if (text && text.trim() !== '') {
-      notesIcon.setAttribute('data-has-notes', 'true');
-    } else {
-      notesIcon.setAttribute('data-has-notes', 'false');
-    }
-  }
-
-  // Show success message
-  M.toast({
-    html: '<span class="success-toast">Notes saved successfully!</span>',
-    classes: 'rounded green',
-    displayLength: 2000
-  });
-
-  closeNotesModal();
-}
 
 /***************************************************************
  * TABLE SORTING FUNCTIONALITY
@@ -1877,11 +1758,11 @@ function initializeTableSorting() {
   document.querySelectorAll('.problem-table thead tr').forEach(headerRow => {
     // Skip if already initialized
     if (headerRow.hasAttribute('data-sort-initialized')) return;
-    
+
     headerRow.setAttribute('data-sort-initialized', 'true');
     headerRow.style.cursor = 'pointer';
     headerRow.title = 'Click to sort by completion status';
-    
+
     // Add sort indicator to the FIRST th (Question column)
     const firstTh = headerRow.querySelector('th:first-child');
     if (firstTh && !firstTh.querySelector('.sort-indicator')) {
@@ -1898,7 +1779,7 @@ function initializeTableSorting() {
       firstTh.style.position = 'relative';
       firstTh.prepend(sortIndicator); // Use prepend to add at the beginning
     }
-    
+
     headerRow.addEventListener('click', function(e) {
       e.stopPropagation();
       toggleTableSort(this);
@@ -1922,10 +1803,10 @@ function toggleTableSort(headerRow) {
     }));
     tableOriginalOrders.set(table, originalOrder);
   }
-  
+
   // Get current sort state
   const currentSort = headerRow.getAttribute('data-sort-state') || 'default';
-  
+
   if (currentSort === 'default') {
       const sortIcon = headerRow.querySelector('.sort-icon');
       if (sortIcon) {
@@ -1937,9 +1818,9 @@ function toggleTableSort(headerRow) {
     headerRow.setAttribute('data-sort-state', 'unsolved-first');
     headerRow.classList.remove('sorted-default');
     headerRow.classList.add('sorted-unsolved');
-    
+
     sortRowsByCompletion(tbody, rows, 'unsolved-first');
-    
+
     // Show toast notification
     M.toast({
       html: '<span>Sorted: Unsolved problems first</span>',
@@ -2031,42 +1912,42 @@ function sortRowsByCompletion(tbody, rows, sortType) {
     // Separate rows into solved and unsolved
     const unsolvedRows = [];
     const solvedRows = [];
-    
+
     rows.forEach(row => {
       const doneIcon = row.querySelector('.done-icon');
       const isSolved = doneIcon && doneIcon.getAttribute('data-solved') === 'true';
-      
+
       if (isSolved) {
         solvedRows.push(row);
       } else {
         unsolvedRows.push(row);
       }
     });
-    
+
     // Sort each group by difficulty (Easy -> Medium -> Hard)
     const difficultyOrder = { 'easy': 1, 'medium': 2, 'hard': 3 };
-    
+
     const sortByDifficulty = (a, b) => {
-      const aDiff = a.classList.contains('easy') ? 'easy' : 
-                     a.classList.contains('medium') ? 'medium' : 'hard';
-      const bDiff = b.classList.contains('easy') ? 'easy' : 
-                     b.classList.contains('medium') ? 'medium' : 'hard';
+      const aDiff = a.classList.contains('easy') ? 'easy' :
+        a.classList.contains('medium') ? 'medium' : 'hard';
+      const bDiff = b.classList.contains('easy') ? 'easy' :
+        b.classList.contains('medium') ? 'medium' : 'hard';
       return difficultyOrder[aDiff] - difficultyOrder[bDiff];
     };
-    
+
     unsolvedRows.sort(sortByDifficulty);
     solvedRows.sort(sortByDifficulty);
-    
+
     // Clear tbody and append sorted rows
     tbody.innerHTML = '';
-    
+
     // Add unsolved rows first
     unsolvedRows.forEach(row => tbody.appendChild(row));
-    
+
     // Then add solved rows
     solvedRows.forEach(row => tbody.appendChild(row));
 
-        // Now add the collapse button to the NEW last row
+    // Now add the collapse button to the NEW last row
     const allRows = [...unsolvedRows, ...solvedRows];
     if (allRows.length > 0) {
       addCollapseButtonToLastRow(allRows[allRows.length - 1]);
@@ -2149,7 +2030,7 @@ function checkSectionCompletion(icon) {
 
   if (shouldBeCompleted && !isCurrentlyCompleted) {
     markSectionAsCompleted(sectionElement, sectionTitle);
-    
+
     // Show celebration banner for ALL sections including Puzzles
     // Don't skip Puzzle section here - we want the visual feedback
     showCongratulationsBanner(sectionTitle);
@@ -2600,11 +2481,7 @@ function removeProfilePicture() {
   }
 }
 
-// Temporary test function - remove in production
-window.testWelcomeModal = function() {
-  console.log('Manual test of welcome modal');
-  showWelcomeModal();
-};
+
 
 function showCongratulationsBanner(sectionTitle) {
   bannerCallCount++;
@@ -2716,15 +2593,15 @@ function removeSubsectionCompletion(subsectionId) {
 function loadSectionCompletions() {
   // Don't load from localStorage - just compute based on current state
   const collapsibles = document.querySelectorAll('.collapsible');
-  
+
   collapsibles.forEach(sectionElem => {
     const sectionId = sectionElem.getAttribute('id');
     if (!sectionId || sectionElem.classList.contains('subsection-collapsible')) return;
-    
+
     // Count problems
     const allProblems = sectionElem.querySelectorAll('.done-icon');
     const solvedProblems = sectionElem.querySelectorAll('.done-icon[data-solved="true"]');
-    
+
     // If all problems are solved, mark as completed
     // Don't skip Puzzle section here - we want visual feedback
     if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
@@ -2739,15 +2616,15 @@ function loadSectionCompletions() {
 function loadSubsectionCompletions() {
   // Don't load from localStorage - just compute based on current state
   const subsections = document.querySelectorAll('.subsection-collapsible li');
-  
+
   subsections.forEach(subsectionLi => {
     const subsectionHeader = subsectionLi.querySelector('.collapsible-header.subsection-header');
     if (!subsectionHeader) return;
-    
+
     // Count problems in this subsection
     const allProblems = subsectionLi.querySelectorAll('.done-icon');
     const solvedProblems = subsectionLi.querySelectorAll('.done-icon[data-solved="true"]');
-    
+
     // If all problems are solved, mark as completed
     if (allProblems.length > 0 && allProblems.length === solvedProblems.length) {
       const subsectionTitle = subsectionHeader.querySelector('.subsection-title')?.textContent?.split('[')[0]?.trim();
@@ -2885,18 +2762,15 @@ function initResetBannerClickOutside() {
 
 function resetAllProgress() {
   try {
-    // Get all localStorage keys that contain progress or notes data
+    // Get all localStorage keys that contain progress 
     const keysToRemove = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key && (
         key.includes('SolvedProblems') ||
-        key.includes('Notes') ||
         key.includes('Favorites') ||
         key === 'dsaSolvedProblems' || // Legacy key
-        key === 'dsaNotess' || // Legacy key
-        key === 'sqlSolvedProblems' ||
-        key === 'sqlNotes'
+        key === 'sqlSolvedProblems'
       )) {
         keysToRemove.push(key);
       }
@@ -2914,11 +2788,6 @@ function resetAllProgress() {
       icon.parentElement.parentElement.classList.remove('solved');
     });
 
-    // Reset all notes icons
-    document.querySelectorAll('.notes-icon').forEach(icon => {
-      icon.setAttribute('data-has-notes', 'false');
-    });
-
     // Reset all completed sections
     document.querySelectorAll('.section-completed').forEach(section => {
       section.classList.remove('section-completed');
@@ -2934,10 +2803,6 @@ function resetAllProgress() {
       star.setAttribute('data-favorited', 'false');
       star.textContent = 'star_border';
     });
-    // Clear the notes object
-    if (typeof notes !== 'undefined') {
-      notes = {};
-    }
     // Clear the favorites object
     if (typeof favorites !== 'undefined') {
       favorites = {};
@@ -3115,8 +2980,8 @@ function setupTooltipForElement(element) {
 
     // Detect current theme mode
     const isDarkMode = document.body.classList.contains('dark-mode') ||
-                      document.documentElement.classList.contains('dark-mode') ||
-                      window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.contains('dark-mode') ||
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     // Subtle, elegant tooltip design for both modes
     const tooltipColors = isDarkMode ? {
@@ -3196,7 +3061,7 @@ function setupTooltipForElement(element) {
     element._currentTooltip = tooltip;
   };
 
-  element._tooltipMouseLeave = function() {
+  element._tooltipMouseLeave = function () {
     // console.log(`Mouse left ${element.id}`);
 
     // Remove the tooltip
@@ -3250,8 +3115,8 @@ function showFirstCheckboxTooltip() {
   refreshCount++;
   localStorage.setItem('refreshCount', refreshCount);
 
-  // Show tooltip only every 10th refresh
-  if (refreshCount > 5 && refreshCount % 10 !== 0) {
+  // Show tooltip only every 30th refresh
+  if (refreshCount > 1 && refreshCount % 30 !== 0) {
     return;
   }
 
@@ -3318,7 +3183,7 @@ function showFirstCheckboxTooltip() {
       if (existingArrow) {
         existingArrow.remove();
       }
-      
+
       // Add tooltip arrow
       const arrow = document.createElement('div');
       arrow.className = 'filter-tooltip-arrow';
@@ -3333,15 +3198,15 @@ function showFirstCheckboxTooltip() {
         window.removeEventListener('resize', keepTooltipFixed);
         return;
       }
-      
+
       const newCheckboxRect = firstEasyCheckbox.getBoundingClientRect();
-      
+
       // Check if checkbox is visible in viewport
       if (newCheckboxRect.top < 0 || newCheckboxRect.bottom > window.innerHeight) {
         specialTooltip.style.opacity = '0';
         return;
       }
-      
+
       // Position tooltip and make it visible
       specialTooltip.style.left = `${newCheckboxRect.left}px`;
       specialTooltip.style.top = `${newCheckboxRect.top - specialTooltip.offsetHeight - 10}px`;
@@ -3388,9 +3253,9 @@ function fixMobileAlignment() {
       const elements = line.querySelectorAll('*');
       elements.forEach(el => {
         if (el.classList.contains('difficulty-filter-square') ||
-            el.classList.contains('mini-label') ||
-            el.classList.contains('mini-progress') ||
-            el.classList.contains('mini-count')) {
+          el.classList.contains('mini-label') ||
+          el.classList.contains('mini-progress') ||
+          el.classList.contains('mini-count')) {
           // Remove margin and width styles that interfere with grid
           el.style.marginLeft = '';
           el.style.marginRight = '';
@@ -3491,7 +3356,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Global cleanup for tooltips when mouse leaves window
   document.addEventListener('mouseleave', cleanupTooltips);
   window.addEventListener('blur', cleanupTooltips);
-  
+
   // Filter tooltip removed per user request
 
   // Initialize dark mode
@@ -3533,7 +3398,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initResetBannerClickOutside();
 
   loadProgress();
-  loadNotess();
   updateGlobalRectBar();
   updateSectionProgress();
 
@@ -3837,7 +3701,7 @@ function toggleSections(expand) {
  ***************************************************************/
 let uniqueCountsCache = {}; // Cache for unique problem counts
 function countUniqueProblems(data) {
-    totalEasy = 0;
+  totalEasy = 0;
   totalMedium = 0;
   totalHard = 0;
   uniqueProblems.clear();
@@ -3860,7 +3724,7 @@ function countUniqueProblems(data) {
 
   // // If not cached, calculate as normal
   // console.log(`Calculating unique counts for ${currentSection}`);
-  
+
   // Reset counters and sets
   totalEasy = 0;
   totalMedium = 0;
@@ -3890,13 +3754,13 @@ function countUniqueProblems(data) {
       section.problems.forEach(problem => {
         // Use question URL as the unique identifier
         const questionUrl = problem.question;
-        
+
         // Skip problems without a valid URL
         if (!questionUrl || questionUrl === '-') return;
-        
+
         // Extract the base URL without query parameters
         const baseUrl = questionUrl.split('?')[0];
-        
+
         uniqueProblems.add(baseUrl);
         if (problem.difficulty === 'easy') {
           totalEasy++;
@@ -3917,13 +3781,13 @@ function countUniqueProblems(data) {
         subsec.problems.forEach(problem => {
           // Use question URL as the unique identifier
           const questionUrl = problem.question;
-          
+
           // Skip problems without a valid URL
           if (!questionUrl || questionUrl === '-') return;
-          
+
           // Extract the base URL without query parameters
           const baseUrl = questionUrl.split('?')[0];
-          
+
           uniqueProblems.add(baseUrl);
           if (problem.difficulty === 'easy') {
             totalEasy++;
@@ -4009,7 +3873,7 @@ function switchSection(section) {
   // Load and display new content with caching for DSA
   if (section === 'dsa' && window.dsaDataCache) {
     problemData = window.dsaDataCache;
-      console.log('[DSA] Using cached data');
+    console.log('[DSA] Using cached data');
 
     // Count unique problems
     countUniqueProblems(problemData);
@@ -4045,14 +3909,14 @@ function switchSection(section) {
       .then(data => {
         problemData = data;
 
-      // Count unique problems
+        // Count unique problems
         countUniqueProblems(data);
 
-      // Build and update UI - optimized order for better performance
+        // Build and update UI - optimized order for better performance
         buildRectBar();
         renderSections(data);
 
-      // Batch DOM operations for better performance
+        // Batch DOM operations for better performance
         requestAnimationFrame(() => {
           initializeCollapsibles();
           initializeCheckboxes();
@@ -4060,17 +3924,17 @@ function switchSection(section) {
           loadSectionCompletions();
           loadSubsectionCompletions();
 
-        // Update progress in next frame to avoid layout thrashing
+          // Update progress in next frame to avoid layout thrashing
           requestAnimationFrame(() => {
             updateGlobalRectBar();
             updateSectionProgress();
 
-          // Initialize table sorting after everything is loaded
+            // Initialize table sorting after everything is loaded
             initializeTableSorting();
           });
         });
 
-      // Restore filter state for this section
+        // Restore filter state for this section
         restoreFilterState();
       })
       .catch(error => {
