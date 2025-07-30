@@ -1065,6 +1065,96 @@ body.dark-mode .mobile-menu-item.active {
 }
 
 
+/* CRITICAL FIX: Override mobile menu for iPad 10th Gen */
+@media (min-width: 820px) and (max-width: 1180px) {
+    /* Force desktop navigation to show */
+    .desktop-nav {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Force mobile menu to hide */
+    .mobile-menu-btn {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+
+    /* Ensure all nav items are visible */
+    .navbar-nav {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .navbar-nav .nav-item {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Force navbar controls to be visible */
+    .navbar-controls {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        gap: 0.5rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* Force theme toggle to show with proper styling */
+    .theme-toggle-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 50px !important;
+        height: 50px !important;
+        background: var(--surface) !important;
+        border: 2px solid var(--card-border) !important;
+        border-radius: 12px !important;
+    }
+
+    .theme-toggle-btn .theme-icon {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .theme-toggle-btn .theme-icon i {
+        font-size: 1.5rem !important;
+        color: var(--text-primary) !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Force profile button to show */
+    .profile-btn {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+}
+
+/* Additional override for medium screens that might be catching the iPad */
+@media (min-width: 601px) and (max-width: 800px) {
+    /* This was hiding desktop nav - let's fix it for iPad range */
+}
+
+/* Specific override for 820px width */
+@media screen and (width: 820px) {
+    .desktop-nav {
+        display: flex !important;
+    }
+    
+    .mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+
 
 /* ===== DARK MODE STYLES ===== */
 
