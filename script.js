@@ -25,19 +25,33 @@ let currentSection = 'dsa';
 // Track banner calls for debugging
 let bannerCallCount = 0;
 
+// Add throttle helper function here
+function throttle(func, limit) {
+  let inThrottle;
+  return function () {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+}
+
 /***************************************************************
  * GO TO TOP BUTTON
  ***************************************************************/
 
 var btn = document.getElementById('go-to-top-button');
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', throttle(function () {
   if (window.scrollY > 300) {
     btn.classList.add('show');
   } else {
     btn.classList.remove('show');
   }
-});
+}, 100)); // Throttle to execute at most once every 100ms
 
 btn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -1424,12 +1438,11 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
       }
               </td>
               <td data-label="Status" style="position: relative;">
-                <i class="material-icons done-icon"
-                   data-difficulty="${problem.difficulty}"
-                   data-id="${problemId}"
-                   data-problem-id="${problem.id || problemId}"  
-                   data-solved="false"
-                   onclick="toggleSolved(this)">check_box_outline_blank</i>
+              <i class="material-icons done-icon"
+                data-difficulty="${problem.difficulty}"
+                data-id="${problemId}"
+                data-problem-id="${problem.id || problemId}"  
+                data-solved="false">check_box_outline_blank</i>
                 ${isLastRow && showCollapseBtn ? `
                   <button class="subsection-collapse-btn" onclick="smartCollapse(this)" title="Collapse">
                     <i class="material-icons">keyboard_arrow_up</i>
@@ -1536,12 +1549,11 @@ function generateProblemsTableLLD(problemArray, baseId, showCollapseBtn = false)
                   ${youtubeHtml}
                 </td>
                 <td data-label="Status" style="position: relative;">
-                  <i class="material-icons done-icon"
-                     data-difficulty="${problem.difficulty}"
-                     data-id="${problemId}"
-                     data-problem-id="${problem.id || ''}"
-                     data-solved="false"
-                     onclick="toggleSolved(this)">check_box_outline_blank</i>
+                <i class="material-icons done-icon"
+                  data-difficulty="${problem.difficulty}"
+                  data-id="${problemId}"
+                  data-problem-id="${problem.id || problemId}"  
+                  data-solved="false">check_box_outline_blank</i>
                   ${isLastRow && showCollapseBtn ? `
                     <button class="subsection-collapse-btn" onclick="smartCollapse(this)" title="Collapse">
                       <i class="material-icons">keyboard_arrow_up</i>
@@ -1970,16 +1982,6 @@ function addCollapseButtonToLastRow(row) {
   }
 }
 
-// Helper function to initialize checkboxes for a specific table
-function initializeCheckboxesForTable(table) {
-  const checkboxes = table.querySelectorAll('.done-icon');
-  checkboxes.forEach(icon => {
-    // Remove existing onclick to avoid duplicates
-    icon.onclick = null;
-    // Add new onclick
-    icon.onclick = function() { toggleSolved(this); };
-  });
-}
 
 // Helper function to load progress for a specific table
 function loadProgressForTable(table) {
@@ -3341,350 +3343,361 @@ function stopBinaryRain() {
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize Materialize components (excluding tooltips to avoid conflicts)
-  M.Collapsible.init(document.querySelectorAll('.collapsible'));
-  M.Sidenav.init(document.querySelectorAll('.sidenav'));
-  M.Modal.init(document.querySelectorAll('.modal'));
-  M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'));
-
-  // Clean up any existing tooltips first
-  cleanupTooltips();
-
-  // Custom tooltip implementation
-  setupCustomTooltips();
-
-  // Global cleanup for tooltips when mouse leaves window
-  document.addEventListener('mouseleave', cleanupTooltips);
-  window.addEventListener('blur', cleanupTooltips);
-
-  // Filter tooltip removed per user request
-
-  // Initialize dark mode
-  initializeDarkMode();
-
-  // Initialize mobile menu
-  initializeMobileMenu();
-
-  // Navbar tooltips now handled by pure CSS
-
-
-
-
-
-  // Initialize profile button
-  const profileBtn = document.getElementById('profileBtn');
-  if (profileBtn) {
-    profileBtn.addEventListener('click', showProfileModal);
-  }
-
-  // Initialize profile picture upload
-  const profilePictureInput = document.getElementById('profilePictureInput');
-  if (profilePictureInput) {
-    profilePictureInput.addEventListener('change', handleProfilePictureUpload);
-  }
-
-  // Update profile display on page load
-  updateProfileDisplay();
-  // Initialize reset progress button
-  const resetBtn = document.getElementById('resetProgressBtn');
-  if (resetBtn) {
-    resetBtn.addEventListener('click', showResetConfirmation);
-  }
-
-  // Initialize random button
-  setupRandomButton();
-
-  // Initialize reset banner click outside functionality
-  initResetBannerClickOutside();
-
-  loadProgress();
-  updateGlobalRectBar();
-  updateSectionProgress();
-
-  // Add footer text with hyperlink
-  const footer = document.createElement('a');
-  footer.href = 'https://www.youtube.com/@BhajanMarg';
-  footer.target = '_blank';
-  footer.rel = 'noopener noreferrer';
-  footer.className = 'shree-radhe-footer'; // Add class for CSS targeting
-  footer.style.cssText = `
-        position: fixed;
-        bottom: 10px;
-        left: 20px;
-        font-size: 24px;
-        opacity: 0.9;
-        color: var(--text-primary);
-        font-family: 'Noto Sans Devanagari', sans-serif;
-        text-decoration: none;
-        z-index: 1;
-        user-select: none;
-        text-shadow: 0 0 1px rgba(0,0,0,0.1);
-        // transition: opacity 0.3s ease;
+  const rectContainer = document.getElementById('rectChartContainer');
+  if (rectContainer) {
+    rectContainer.innerHTML = `
+      <div class="progress-card skeleton-loading">
+        <h2>Loading DSA Progress...</h2>
+        <div class="skeleton-bar"></div>
+        <div class="skeleton-text"></div>
+        <div class="skeleton-text short"></div>
+      </div>
     `;
-  footer.textContent = 'श्री राधे';
-  footer.addEventListener('mouseover', () => footer.style.opacity = '0.8');
-  footer.addEventListener('mouseout', () => footer.style.opacity = '0.7');
-  document.body.appendChild(footer);
-
-  // Set up search with debouncing
-  const searchBox = document.getElementById('searchBox');
-  if (searchBox) {
-    let searchTimeout;
-    searchBox.addEventListener('input', function (e) {
-      clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(() => {
-        // console.log('Search triggered with:', e.target.value);
-        filterProblems(e);
-      }, 300); // Debounce for 300ms
-    });
-    // console.log('Search listener attached to:', searchBox);
-  } else {
-    console.warn('Search box not found!');
   }
+  // Initialize Materialize components (excluding tooltips to avoid conflicts)
+  setTimeout(() => {
+    M.Collapsible.init(document.querySelectorAll('.collapsible'));
+    M.Sidenav.init(document.querySelectorAll('.sidenav'));
+    M.Modal.init(document.querySelectorAll('.modal'));
+    M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'));
 
-  // Set up multi-select filter
-  setupMultiSelectFilter();
+    // Clean up any existing tooltips first
+    cleanupTooltips();
+
+    // Custom tooltip implementation
+    setupCustomTooltips();
+
+    // Global cleanup for tooltips when mouse leaves window
+    document.addEventListener('mouseleave', cleanupTooltips);
+    window.addEventListener('blur', cleanupTooltips);
+
+    // Filter tooltip removed per user request
+
+    // Initialize dark mode
+    initializeDarkMode();
+
+    // Initialize mobile menu
+    initializeMobileMenu();
+
+    // Navbar tooltips now handled by pure CSS
 
 
 
-  // Load problems data
-  fetch('dsaWithId-problems.json')
-    .then(res => {
-      if (!res.ok) throw new Error('Network response was not ok');
-      return res.json();
-    })
-    .then(data => {
-      problemData = data;
-      window.dsaDataCache = data; // <-- Cache it immediately!
 
-      // Count unique problems
-      countUniqueProblems(data);
 
-      renderSections(data);
+    // Initialize profile button
+    const profileBtn = document.getElementById('profileBtn');
+    if (profileBtn) {
+      profileBtn.addEventListener('click', showProfileModal);
+    }
 
-      initializeCollapsibles();
+    // Initialize profile picture upload
+    const profilePictureInput = document.getElementById('profilePictureInput');
+    if (profilePictureInput) {
+      profilePictureInput.addEventListener('change', handleProfilePictureUpload);
+    }
 
-      // Initialize all checkboxes
-      initializeCheckboxes();
+    // Update profile display on page load
+    updateProfileDisplay();
+    // Initialize reset progress button
+    const resetBtn = document.getElementById('resetProgressBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', showResetConfirmation);
+    }
 
-      buildRectBar();
-      loadProgress();
-      loadSectionCompletions();
-      loadSubsectionCompletions();
-      updateGlobalRectBar();
-      updateSectionProgress();
+    // Initialize random button
+    setupRandomButton();
 
-      // Check if this is the user's first visit and show welcome modal - reduced timeout for faster loading
-      setTimeout(() => {
-        checkFirstVisit();
-      }, 500);
+    // Initialize reset banner click outside functionality
+    initResetBannerClickOutside();
 
-      // Only show filter checkbox tutorial tooltip if user is not a first-time visitor
-      setTimeout(() => {
-        const userProfile = getUserProfile();
-        if (userProfile.hasSeenWelcome) {
-          showFirstCheckboxTooltip();
-        }
-      }, 1500);
-    })
-    .catch(err => {
-      console.error('Error loading problems:', err);
-      document.getElementById('sections').innerHTML = `
-                <div class="card-panel red lighten-4">
-                    <span class="red-text text-darken-4">
-                        <i class="material-icons left">error</i>
-                        Failed to load problems data. Please check your connection and try again.
-                    </span>
-                </div>
-            `;
-    });
+    loadProgress();
+    updateGlobalRectBar();
+    updateSectionProgress();
 
-  // Add event listeners for expand/collapse buttons
-  const expandAllBtn = document.querySelector('.expand-all');
-  const collapseAllBtn = document.querySelector('.collapse-all');
+    // Add footer text with hyperlink
+    const footer = document.createElement('a');
+    footer.href = 'https://www.youtube.com/@BhajanMarg';
+    footer.target = '_blank';
+    footer.rel = 'noopener noreferrer';
+    footer.className = 'shree-radhe-footer'; // Add class for CSS targeting
+    footer.style.cssText = `
+          position: fixed;
+          bottom: 10px;
+          left: 20px;
+          font-size: 24px;
+          opacity: 0.9;
+          color: var(--text-primary);
+          font-family: 'Noto Sans Devanagari', sans-serif;
+          text-decoration: none;
+          z-index: 1;
+          user-select: none;
+          text-shadow: 0 0 1px rgba(0,0,0,0.1);
+          // transition: opacity 0.3s ease;
+      `;
+    footer.textContent = 'श्री राधे';
+    footer.addEventListener('mouseover', () => footer.style.opacity = '0.8');
+    footer.addEventListener('mouseout', () => footer.style.opacity = '0.7');
+    document.body.appendChild(footer);
 
-  if (expandAllBtn) {
-    expandAllBtn.addEventListener('click', function () {
-      const sections = document.querySelectorAll('.collapsible');
-      sections.forEach(section => {
-        const instance = M.Collapsible.getInstance(section);
-        if (instance) {
-          instance.open();
-        }
-        // Also expand subsections if they exist
-        const subsections = section.querySelectorAll('.subsection-collapsible li');
-        subsections.forEach((subsection, index) => {
-          const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
-          if (subsectionInstance) {
-            subsectionInstance.open(index);
+    // Set up search with debouncing
+    const searchBox = document.getElementById('searchBox');
+    if (searchBox) {
+      let searchTimeout;
+      searchBox.addEventListener('input', function (e) {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          // console.log('Search triggered with:', e.target.value);
+          filterProblems(e);
+        }, 300); // Debounce for 300ms
+      });
+      // console.log('Search listener attached to:', searchBox);
+    } else {
+      console.warn('Search box not found!');
+    }
+
+    // Set up multi-select filter
+    setupMultiSelectFilter();
+
+
+
+    // Load problems data
+    fetch('dsaWithId-problems.json')
+      .then(res => {
+        if (!res.ok) throw new Error('Network response was not ok');
+        return res.json();
+      })
+      .then(data => {
+        problemData = data;
+        window.dsaDataCache = data; // <-- Cache it immediately!
+
+        // Count unique problems
+        countUniqueProblems(data);
+
+        renderSections(data);
+
+        initializeCollapsibles();
+
+        document.getElementById('sections').addEventListener('click', function (e) {
+          if (e.target.classList.contains('done-icon')) {
+            e.stopPropagation(); // Prevent event bubbling
+            toggleSolved(e.target);
           }
         });
-      });
-    });
-  }
 
-  if (collapseAllBtn) {
-    collapseAllBtn.addEventListener('click', function () {
-      const sections = document.querySelectorAll('.collapsible');
-      sections.forEach(section => {
-        const instance = M.Collapsible.getInstance(section);
-        if (instance) {
-          instance.close();
-        }
-        // Also collapse subsections if they exist
-        const subsections = section.querySelectorAll('.subsection-collapsible li');
-        subsections.forEach((subsection, index) => {
-          const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
-          if (subsectionInstance) {
-            subsectionInstance.close(index);
+        buildRectBar();
+        loadProgress();
+        loadSectionCompletions();
+        loadSubsectionCompletions();
+        updateGlobalRectBar();
+        updateSectionProgress();
+
+        // Check if this is the user's first visit and show welcome modal - reduced timeout for faster loading
+        setTimeout(() => {
+          checkFirstVisit();
+        }, 500);
+
+        // Only show filter checkbox tutorial tooltip if user is not a first-time visitor
+        setTimeout(() => {
+          const userProfile = getUserProfile();
+          if (userProfile.hasSeenWelcome) {
+            showFirstCheckboxTooltip();
           }
+        }, 1500);
+      })
+      .catch(err => {
+        console.error('Error loading problems:', err);
+        document.getElementById('sections').innerHTML = `
+                  <div class="card-panel red lighten-4">
+                      <span class="red-text text-darken-4">
+                          <i class="material-icons left">error</i>
+                          Failed to load problems data. Please check your connection and try again.
+                      </span>
+                  </div>
+              `;
+      });
+
+    // Add event listeners for expand/collapse buttons
+    const expandAllBtn = document.querySelector('.expand-all');
+    const collapseAllBtn = document.querySelector('.collapse-all');
+
+    if (expandAllBtn) {
+      expandAllBtn.addEventListener('click', function () {
+        const sections = document.querySelectorAll('.collapsible');
+        sections.forEach(section => {
+          const instance = M.Collapsible.getInstance(section);
+          if (instance) {
+            instance.open();
+          }
+          // Also expand subsections if they exist
+          const subsections = section.querySelectorAll('.subsection-collapsible li');
+          subsections.forEach((subsection, index) => {
+            const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
+            if (subsectionInstance) {
+              subsectionInstance.open(index);
+            }
+          });
         });
       });
+    }
+
+    if (collapseAllBtn) {
+      collapseAllBtn.addEventListener('click', function () {
+        const sections = document.querySelectorAll('.collapsible');
+        sections.forEach(section => {
+          const instance = M.Collapsible.getInstance(section);
+          if (instance) {
+            instance.close();
+          }
+          // Also collapse subsections if they exist
+          const subsections = section.querySelectorAll('.subsection-collapsible li');
+          subsections.forEach((subsection, index) => {
+            const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
+            if (subsectionInstance) {
+              subsectionInstance.close(index);
+            }
+          });
+        });
+      });
+    }
+
+    // Add click handlers for navigation (desktop)
+    document.getElementById('dsaLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('dsa');
+      updateDesktopNavActive('dsaLink');
     });
-  }
 
-  // Add click handlers for navigation (desktop)
-  document.getElementById('dsaLink').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('dsa');
-    updateDesktopNavActive('dsaLink');
-  });
+    document.getElementById('blind75Link').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('blind75');
+      updateDesktopNavActive('blind75Link');
+    });
 
-  document.getElementById('blind75Link').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('blind75');
-    updateDesktopNavActive('blind75Link');
-  });
+    document.getElementById('leetcode150Link').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('leetcode150');
+      updateDesktopNavActive('leetcode150Link');
+    });
 
-  document.getElementById('leetcode150Link').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('leetcode150');
-    updateDesktopNavActive('leetcode150Link');
-  });
+    document.getElementById('sqlLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('sql');
+      updateDesktopNavActive('sqlLink');
+    });
 
-  document.getElementById('sqlLink').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('sql');
-    updateDesktopNavActive('sqlLink');
-  });
+    document.getElementById('lldLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('lld');
+      updateDesktopNavActive('lldLink');
+    });
 
-  document.getElementById('lldLink').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('lld');
-    updateDesktopNavActive('lldLink');
-  });
+    document.getElementById('hldLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('hld');
+      updateDesktopNavActive('hldLink');
+    });
 
-  document.getElementById('hldLink').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('hld');
-    updateDesktopNavActive('hldLink');
-  });
+    // Add click handlers for mobile navigation
+    document.getElementById('dsaLinkMobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('dsa');
+      updateMobileMenuActive('dsaLinkMobile');
+    });
 
-  // Add click handlers for mobile navigation
-  document.getElementById('dsaLinkMobile').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('dsa');
-    updateMobileMenuActive('dsaLinkMobile');
-  });
+    document.getElementById('blind75LinkMobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('blind75');
+      updateMobileMenuActive('blind75LinkMobile');
+    });
 
-  document.getElementById('blind75LinkMobile').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('blind75');
-    updateMobileMenuActive('blind75LinkMobile');
-  });
+    document.getElementById('leetcode150LinkMobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('leetcode150');
+      updateMobileMenuActive('leetcode150LinkMobile');
+    });
 
-  document.getElementById('leetcode150LinkMobile').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('leetcode150');
-    updateMobileMenuActive('leetcode150LinkMobile');
-  });
+    document.getElementById('sqlLinkMobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('sql');
+      updateMobileMenuActive('sqlLinkMobile');
+    });
 
-  document.getElementById('sqlLinkMobile').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('sql');
-    updateMobileMenuActive('sqlLinkMobile');
-  });
+    document.getElementById('lldLinkMobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('lld');
+      updateMobileMenuActive('lldLinkMobile');
+    });
 
-  document.getElementById('lldLinkMobile').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('lld');
-    updateMobileMenuActive('lldLinkMobile');
-  });
-
-  document.getElementById('hldLinkMobile').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSection('hld');
-    updateMobileMenuActive('hldLinkMobile');
-  });
+    document.getElementById('hldLinkMobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('hld');
+      updateMobileMenuActive('hldLinkMobile');
+    });
 
 
 
-  /* do not remove this yet, we will need it later
-  document.getElementById('interviewsLink').addEventListener('click', (e) => {
-    e.preventDefault();
-    switchSectionInterview('interviews');
-  });
-  */
+    /* do not remove this yet, we will need it later
+    document.getElementById('interviewsLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSectionInterview('interviews');
+    });
+    */
+  },0);
 });
 
 // Function to initialize checkboxes (copied from working.js)
-function initializeCheckboxes() {
-  // Wait a short time to ensure DOM is fully rendered
-  setTimeout(() => {
-    // console.log('Initializing checkboxes...');
+// function initializeCheckboxes() {
+//   // Wait a short time to ensure DOM is fully rendered
+//   setTimeout(() => {
+//     // console.log('Initializing checkboxes...');
 
-    // Get all checkboxes and remove existing event listeners by cloning
-    const checkboxes = document.querySelectorAll('.square-check');
-    // console.log('Found checkboxes:', checkboxes.length);
-    checkboxes.forEach(checkbox => {
-      const newCheckbox = checkbox.cloneNode(true);
-      checkbox.parentNode.replaceChild(newCheckbox, checkbox);
-    });
+//     // Get all checkboxes and remove existing event listeners by cloning
+//     const checkboxes = document.querySelectorAll('.square-check');
+//     // console.log('Found checkboxes:', checkboxes.length);
+//     checkboxes.forEach(checkbox => {
+//       const newCheckbox = checkbox.cloneNode(true);
+//       checkbox.parentNode.replaceChild(newCheckbox, checkbox);
+//     });
 
-    // Add event listeners to the new checkboxes
-    document.querySelectorAll('.square-check').forEach(checkbox => {
-      // Ensure checkbox is visible and checked by default
-      checkbox.checked = true;
+//     // Add event listeners to the new checkboxes
+//     document.querySelectorAll('.square-check').forEach(checkbox => {
+//       // Ensure checkbox is visible and checked by default
+//       checkbox.checked = true;
 
-      // Add click event listener
-      checkbox.addEventListener('click', function (e) {
-        // Stop event propagation to prevent collapsible from toggling
-        e.stopPropagation();
-        // console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
+//       // Add click event listener
+//       checkbox.addEventListener('click', function (e) {
+//         // Stop event propagation to prevent collapsible from toggling
+//         e.stopPropagation();
+//         // console.log('Checkbox clicked:', this.dataset.section, this.dataset.difficulty, this.checked);
 
-        // If this checkbox is a parent (i.e. not inside a subsection container)
-        if (!this.closest('.mini-bars.small')) {
-          // Get the parent section (collapsible) that contains both parent and child checkboxes
-          const parentSection = this.closest('.collapsible');
-          if (parentSection) {
-            const difficulty = this.dataset.difficulty; // e.g., "easy", "medium", or "hard"
-            // Find all child checkboxes in subsections with the same difficulty
-            const childCheckboxes = parentSection.querySelectorAll(`.mini-bars.small .square-check.${difficulty}`);
-            childCheckboxes.forEach(child => {
-              child.checked = this.checked;
-            });
-          }
-        }
+//         // If this checkbox is a parent (i.e. not inside a subsection container)
+//         if (!this.closest('.mini-bars.small')) {
+//           // Get the parent section (collapsible) that contains both parent and child checkboxes
+//           const parentSection = this.closest('.collapsible');
+//           if (parentSection) {
+//             const difficulty = this.dataset.difficulty; // e.g., "easy", "medium", or "hard"
+//             // Find all child checkboxes in subsections with the same difficulty
+//             const childCheckboxes = parentSection.querySelectorAll(`.mini-bars.small .square-check.${difficulty}`);
+//             childCheckboxes.forEach(child => {
+//               child.checked = this.checked;
+//             });
+//           }
+//         }
 
-        // Filter problems based on the updated state
-        filterProblems(e);
-      });
-    });
+//         // Filter problems based on the updated state
+//         filterProblems(e);
+//       });
+//     });
 
-    // Add event listeners to the labels to prevent event propagation
-    document.querySelectorAll('.difficulty-filter-square').forEach(label => {
-      label.addEventListener('click', function (e) {
-        e.stopPropagation();
-      });
-    });
-  }, 500);
-}
-
-
-
-
-
-
+//     // Add event listeners to the labels to prevent event propagation
+//     document.querySelectorAll('.difficulty-filter-square').forEach(label => {
+//       label.addEventListener('click', function (e) {
+//         e.stopPropagation();
+//       });
+//     });
+//   }, 500);
+// }
 
 function toggleSections(expand) {
   document.querySelectorAll('.collapsible').forEach(section => {
@@ -3884,7 +3897,13 @@ function switchSection(section) {
 
     requestAnimationFrame(() => {
       initializeCollapsibles();
-      initializeCheckboxes();
+      // initializeCheckboxes();
+      document.getElementById('sections').addEventListener('click', function (e) {
+        if (e.target.classList.contains('done-icon')) {
+          e.stopPropagation();
+          toggleSolved(e.target);
+        }
+      });
       loadProgress();
       loadSectionCompletions();
       loadSubsectionCompletions();
@@ -3919,7 +3938,13 @@ function switchSection(section) {
         // Batch DOM operations for better performance
         requestAnimationFrame(() => {
           initializeCollapsibles();
-          initializeCheckboxes();
+          // initializeCheckboxes();
+          document.getElementById('sections').addEventListener('click', function (e) {
+            if (e.target.classList.contains('done-icon')) {
+              e.stopPropagation();
+              toggleSolved(e.target);
+            }
+          });
           loadProgress();
           loadSectionCompletions();
           loadSubsectionCompletions();
