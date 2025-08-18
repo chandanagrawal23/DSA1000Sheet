@@ -40,13 +40,6 @@
                     "id": 1005
                 },
                 {
-                    "label": "Fibonacci Series",
-                    "question": "https://leetcode.com/problems/fibonacci-number/",
-                    "solution": "-",
-                    "difficulty": "easy",
-                    "id": 1006
-                },
-                {
                     "label": "Check Leap Year",
                     "question": "https://www.geeksforgeeks.org/program-check-given-year-leap-year/",
                     "solution": "-",
@@ -297,6 +290,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/SumOfDistances.cpp",
                             "difficulty": "medium",
                             "id": 1038
+                        },
+                        {
+                            "label": "Candy",
+                            "question": "https://leetcode.com/problems/candy/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1006
                         }
                     ]
                 },
@@ -1109,6 +1109,13 @@
                     "id": 1142
                 },
                 {
+                    "label": "Earliest Second to Mark Indices I",
+                    "question": "https://leetcode.com/problems/earliest-second-to-mark-indices-i",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1802
+                },
+                {
                     "label": "Frequency of the Most Frequent Element",
                     "question": "https://leetcode.com/problems/frequency-of-the-most-frequent-element/",
                     "solution": "-",
@@ -1216,7 +1223,7 @@
                 {
                     "label": "Maximum Number of Tasks You Can Assign(Monotonic Queue + Answer on Binary Search)",
                     "question": "https://leetcode.com/problems/maximum-number-of-tasks-you-can-assign/",
-                    "solution": "",
+                    "solution": "-",
                     "difficulty": "hard",
                     "id": 1158
                 },
@@ -1594,7 +1601,7 @@
                         {
                             "label": "Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit",
                             "question": "https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "medium",
                             "id": 1209
                         },
@@ -2011,9 +2018,16 @@
                 {
                     "label": "Maximum Number of Events That Can Be Attended",
                     "question": "https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/",
-                    "solution": "",
+                    "solution": "-",
                     "difficulty": "medium",
                     "id": 1265
+                },
+                {
+                    "label": "Maximum Number of Eaten Apples",
+                    "question": "https://leetcode.com/problems/maximum-number-of-eaten-apples/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/MaximumNumberOfEatenApples.cpp",
+                    "difficulty": "medium",
+                    "id": 1818
                 },
                 {
                     "label": "Furthest Building You Can Reach(Amazing Problem, IMP, MAANGM)",
@@ -2073,7 +2087,7 @@
                 },
                 {
                     "label": "IPO",
-                    "question": "https://leetcode.com/problems/ipo/description/",
+                    "question": "https://leetcode.com/problems/ipo/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/IPO.cpp",
                     "difficulty": "hard",
                     "id": 1261
@@ -2184,7 +2198,7 @@
                 {
                     "label": "Maximize the Minimum Powered City (Sliding Window + Answer on Binary Search)",
                     "question": "https://leetcode.com/problems/maximize-the-minimum-powered-city/",
-                    "solution": "",
+                    "solution": "-",
                     "difficulty": "hard",
                     "id": 1285
                 }
@@ -2556,7 +2570,7 @@
                 {
                     "label": "Combinations",
                     "question": "https://leetcode.com/problems/combinations/",
-                    "solution": "",
+                    "solution": "-",
                     "difficulty": "medium",
                     "id": 1734
                 },
@@ -3212,13 +3226,6 @@
                             "id": 1416
                         },
                         {
-                            "label": "Reverse String",
-                            "question": "https://leetcode.com/problems/reverse-string/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/ReverseString.cpp",
-                            "difficulty": "easy",
-                            "id": 1417
-                        },
-                        {
                             "label": "Valid Anagram",
                             "question": "https://leetcode.com/problems/valid-anagram/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/ValidAnagram.cpp",
@@ -3331,11 +3338,32 @@
                             "id": 1433
                         },
                         {
+                            "label": "Can Make Palindrome from Substring(2D Prefix Sum)",
+                            "question": "https://leetcode.com/problems/can-make-palindrome-from-substring/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/CanMakePalindromeFromSubstring.cpp",
+                            "difficulty": "medium",
+                            "id": 1825
+                        },
+                        {
+                            "label": "Expressive Words",
+                            "question": "https://leetcode.com/problems/expressive-words/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/ExpressiveWords.cpp",
+                            "difficulty": "medium",
+                            "id": 1417
+                        },
+                        {
                             "label": "Next Greater Element III",
                             "question": "https://leetcode.com/problems/next-greater-element-iii/",
                             "solution": "-",
                             "difficulty": "medium",
                             "id": 1434
+                        },
+                        {
+                            "label": "Longest Subsequence Repeated k Times",
+                            "question": "https://leetcode.com/problems/longest-subsequence-repeated-k-times/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1812
                         }
                     ]
                 },
@@ -3477,13 +3505,6 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/MinimumCostForTickets.cpp",
                             "difficulty": "medium",
                             "id": 1452
-                        },
-                        {
-                            "label": "Partition Array for Maximum Sum",
-                            "question": "https://leetcode.com/problems/partition-array-for-maximum-sum/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/PartitionArrayForMaximumSum.cpp",
-                            "difficulty": "medium",
-                            "id": 1453
                         },
                         {
                             "label": "Filling Bookcase Shelves",
@@ -3680,7 +3701,7 @@
                     ]
                 },
                 {
-                    "title": "0/1 Knapsack Pattern",
+                    "title": "0/1 Knapsack (Take/NotTake) Pattern",
                     "problems": [
                         {
                             "label": "0/1 Knapsack Problem",
@@ -3716,6 +3737,13 @@
                             "solution": "-",
                             "difficulty": "medium",
                             "id": 1484
+                        },
+                        {
+                            "label": "Ways to Express an Integer as Sum of Powers",
+                            "question": "https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1819
                         },
                         {
                             "label": "2 Keys Keyboard",
@@ -3950,13 +3978,6 @@
                             "id": 1515
                         },
                         {
-                            "label": "Partition to K Equal Sum Subsets",
-                            "question": "https://leetcode.com/problems/partition-to-k-equal-sum-subsets/",
-                            "solution": "-",
-                            "difficulty": "medium",
-                            "id": 1516
-                        },
-                        {
                             "label": "Stickers to Spell Word",
                             "question": "https://leetcode.com/problems/stickers-to-spell-word/",
                             "solution": "-",
@@ -4025,6 +4046,46 @@
                             "solution": "-",
                             "difficulty": "hard",
                             "id": 1526
+                        }
+                    ]
+                },
+                {
+                    "title": "Partition DP",
+                    "problems": [
+                        {
+                            "label": "Partition Array for Maximum Sum",
+                            "question": "https://leetcode.com/problems/partition-array-for-maximum-sum/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/PartitionArrayForMaximumSum.cpp",
+                            "difficulty": "medium",
+                            "id": 1453
+                        },
+                        {
+                            "label": "Partition Array to Minimize XOR",
+                            "question": "https://leetcode.com/problems/partition-array-to-minimize-xor/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/PartitionArrayToMinimize_XOR.cpp",
+                            "difficulty": "medium",
+                            "id": 1516
+                        },
+                        {
+                            "label": "Partition Array to Minimize Sum of Maximums (Microsoft)",
+                            "question": "https://www.geeksforgeeks.org/dsa/divide-the-array-in-k-segments-such-that-the-sum-of-minimums-is-maximized/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/PartitionArrayToMinimizeSumOfMaximums.cpp",
+                            "difficulty": "medium",
+                            "id": 1821
+                        },
+                        {
+                            "label": "Minimum Difficulty of a Job Schedule(Same as Above)",
+                            "question": "https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1822
+                        },
+                        {
+                            "label": "Minimum Cost to Cut a Stick",
+                            "question": "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1823
                         }
                     ]
                 },
@@ -4338,7 +4399,7 @@
                 {
                     "label": "Find Maximum Area of a Triangle",
                     "question": "https://leetcode.com/problems/find-maximum-area-of-a-triangle/",
-                    "solution": "",
+                    "solution": "-",
                     "difficulty": "medium",
                     "id": 1568
                 },
@@ -4659,7 +4720,7 @@
                         {
                             "label": "Minimum Moves to Move a Box to Their Target Location",
                             "question": "https://leetcode.com/problems/minimum-moves-to-move-a-box-to-their-target-location/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1787
                         }
@@ -4678,7 +4739,7 @@
                         {
                             "label": "Minimum Genetic Mutation",
                             "question": "https://leetcode.com/problems/minimum-genetic-mutation/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "medium",
                             "id": 1786
                         },
@@ -4690,16 +4751,16 @@
                             "id": 1613
                         },
                         {
-                            "label": "Word Ladder II",
+                            "label": "Word Ladder II (BFS+DFS)",
                             "question": "https://leetcode.com/problems/word-ladder-ii/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1614
                         },
                         {
                             "label": "Remove Invalid Parentheses",
                             "question": "https://leetcode.com/problems/remove-invalid-parentheses/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1788
                         }
@@ -4748,6 +4809,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/CheapestFlightsWithinK_Stops.cpp",
                             "difficulty": "medium",
                             "id": 1617
+                        },
+                        {
+                            "label": "Minimum Time to Reach Destination in Directed Graph",
+                            "question": "https://leetcode.com/problems/minimum-time-to-reach-destination-in-directed-graph/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumTimeToReachDestinationInDirectedGraph.cpp",
+                            "difficulty": "medium",
+                            "id": 1820
                         },
                         {
                             "label": "Number of Ways to Arrive at Destination",
@@ -5184,11 +5252,39 @@
                     "id": 1672
                 },
                 {
+                    "label": "Longest Subarray With Maximum Bitwise AND",
+                    "question": "https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1813
+                },
+                {
+                    "label": "Count Number of Maximum Bitwise-OR Subsets",
+                    "question": "https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1814
+                },
+                {
+                    "label": "Smallest Subarrays With Maximum Bitwise OR",
+                    "question": "https://leetcode.com/problems/smallest-subarrays-with-maximum-bitwise-or/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1815
+                },
+                {
                     "label": "Maximum Xor Product",
                     "question": "https://leetcode.com/problems/maximum-xor-product/",
                     "solution": "-",
                     "difficulty": "medium",
                     "id": 1673
+                },
+                {
+                    "label": "Range Product Queries of Powers",
+                    "question": "https://leetcode.com/problems/range-product-queries-of-powers/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/RangeProductQueriesOfPowers.cpp",
+                    "difficulty": "medium",
+                    "id": 1803
                 },
                 {
                     "label": "Substring XOR Queries",
@@ -5773,11 +5869,25 @@
                     "id": 1747
                 },
                 {
+                    "label": "Design A Leaderboard",
+                    "question": "https://leetcode.ca/all/1244.html",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1816
+                },
+                {
                     "label": "Design Memory Allocator",
                     "question": "https://leetcode.com/problems/design-memory-allocator/",
                     "solution": "-",
                     "difficulty": "medium",
                     "id": 1785
+                },
+                {
+                    "label": "Design Authentication Manager",
+                    "question": "https://leetcode.com/problems/design-authentication-manager",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1817
                 },
                 {
                     "label": "Design In Memory File System (TRIE)",
@@ -5813,6 +5923,79 @@
                     "solution": "-",
                     "difficulty": "hard",
                     "id": 1752
+                }
+            ]
+        },
+        {
+            "title": "SQRT Decomposition",
+            "problems": [
+                {
+                    "label": "Sqrt Decomposition Introduction",
+                    "question": "https://www.geeksforgeeks.org/sqrt-decomposition-technique/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1804
+                },
+                {
+                    "label": "Fruits Into Baskets III",
+                    "question": "https://leetcode.com/problems/fruits-into-baskets-iii/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1805
+                },
+                {
+                    "label": "Range Sum Query - Mutable",
+                    "question": "https://leetcode.com/problems/range-sum-query-mutable/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1806
+                },
+                {
+                    "label": "Range Frequency Queries",
+                    "question": "https://leetcode.com/problems/range-frequency-queries/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1807
+                },
+                {
+                    "label": "Sliding Window Maximum",
+                    "question": "https://leetcode.com/problems/sliding-window-maximum/",
+                    "solution": "-",
+                    "difficulty": "hard",
+                    "id": 1808
+                }
+            ]
+        },
+        {
+            "title": "Mo's Algorithm",
+            "problems": [
+                {
+                    "label": "Mo's Algorithm Introduction",
+                    "question": "https://www.geeksforgeeks.org/mo-algorithm-query-square-root-decomposition/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1809
+                },
+                {
+                    "label": "Mo's Algorithm for Range Queries",
+                    "question": "https://www.geeksforgeeks.org/mo-algorithm-range-queries/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1810
+                },
+                {
+                    "label": "Falling Squares",
+                    "question": "https://leetcode.com/problems/falling-squares/",
+                    "solution": "-",
+                    "difficulty": "hard",
+                    "id": 1811
+                },
+                {
+                    "label": "Threshold Majority Queries",
+                    "question": "https://leetcode.com/problems/threshold-majority-queries/",
+                    "solution": "-",
+                    "difficulty": "hard",
+                    "id": 1824
                 }
             ]
         },
