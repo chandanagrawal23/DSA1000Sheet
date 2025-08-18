@@ -9,8 +9,10 @@ let uniqueProblems = new Set(); // store unique problem labels
 let uniqueEasy = new Set();
 let uniqueMedium = new Set();
 let uniqueHard = new Set();
+let sectionsClickHandler = null;
 window.dsaDataCache = null;
-
+let celebrationTimer = null;
+let celebrationInProgress = false;
 // Add favorites storage
 let favorites = {};
 
@@ -184,6 +186,9 @@ function updateDesktopNavActive(activeId) {
  * CELEBRATION FUNCTIONS
  ***************************************************************/
 function triggerCelebration() {
+  if (celebrationInProgress) {
+    return;
+  }
   if (typeof confetti === 'undefined') {
     console.warn('Confetti library not loaded yet');
     return;
@@ -270,7 +275,7 @@ function triggerCelebration() {
       scalar: 1.2,
       gravity: 1.2
     });
-  }, 400);
+  }, 200);
 
   // Bottom corner bursts
   setTimeout(() => {
@@ -290,12 +295,12 @@ function triggerCelebration() {
       scalar: 1.2,
       gravity: 1.2
     });
-  }, 600);
+  }, 200);
 
   // Final big burst
   setTimeout(() => {
     myConfetti({
-      particleCount: 100,
+      particleCount: 30,
       spread: 360,
       origin: { x: 0.5, y: 0.5 },
       colors: colors,
@@ -303,7 +308,8 @@ function triggerCelebration() {
       scalar: 1.2,
       gravity: 1.2
     });
-  }, 800);
+    celebrationInProgress = false;
+  }, 200);
 }
 
 /***************************************************************
@@ -392,7 +398,10 @@ function toggleSolved(icon) {
 
       // For Puzzle section, only save progress and trigger celebration
       if (!wasSolved) {
-        triggerCelebration();
+        clearTimeout(celebrationTimer);
+        celebrationTimer = setTimeout(() => {
+          triggerCelebration();
+        }, 300);
       }
       // IMPORTANT: Still update section progress for mini-bars!
       updateSectionProgress();
@@ -417,7 +426,10 @@ function toggleSolved(icon) {
 
   // If marking as solved, trigger celebration
   if (!wasSolved) {
-    triggerCelebration();
+    clearTimeout(celebrationTimer);
+    celebrationTimer = setTimeout(() => {
+      triggerCelebration();
+    }, 400);
   }
 
   saveProgress();
@@ -442,7 +454,12 @@ function saveProgress() {
     }
   });
 
-  localStorage.setItem(`${currentSection}SolvedProblems`, JSON.stringify(solvedProblems));
+  try {
+    localStorage.setItem(`${currentSection}SolvedProblems`, JSON.stringify(solvedProblems));
+  } catch (e) {
+    console.error('Failed to save progress:', e);
+    // Handle quota exceeded error
+  }
 }
 
 function loadProgress() {
@@ -810,7 +827,9 @@ function filterProblems(event) {
             (selectedFilters.statuses.includes('completed') && isCompleted) ||
             (selectedFilters.statuses.includes('incomplete') && !isCompleted);
 
-          const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
+          const questionLink = row.querySelector('.question-cell a');
+          const problemName = questionLink ? questionLink.textContent.toLowerCase() : '';
+          const matchesSearch = searchTerm === '' || problemName.includes(searchTerm);
 
           // ADD THIS: Check if the problem is favorited
           const favoriteIcon = row.querySelector('.inline-favorite-star');
@@ -889,7 +908,9 @@ function filterProblems(event) {
           (selectedFilters.statuses.includes('completed') && isCompleted) ||
           (selectedFilters.statuses.includes('incomplete') && !isCompleted);
 
-        const matchesSearch = searchTerm ? text.includes(searchTerm) : true;
+        const questionLink = row.querySelector('.question-cell a');
+        const problemName = questionLink ? questionLink.textContent.toLowerCase() : '';
+        const matchesSearch = searchTerm === '' || problemName.includes(searchTerm);
 
         const favoriteIcon = row.querySelector('.inline-favorite-star');
         const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
@@ -947,7 +968,7 @@ function filterProblems(event) {
     });
   }
 
-  console.log('Filtering complete');
+  // console.log('Filtering complete');
 }
 
 /***************************************************************
@@ -3478,12 +3499,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
         initializeCollapsibles();
 
-        document.getElementById('sections').addEventListener('click', function (e) {
+        // document.getElementById('sections').addEventListener('click', function (e) {
+        //   if (e.target.classList.contains('done-icon')) {
+        //     e.stopPropagation(); // Prevent event bubbling
+        //     toggleSolved(e.target);
+        //   }
+        // });
+        // Remove old listener if exists
+        const sectionsElement = document.getElementById('sections');
+        if (sectionsClickHandler) {
+          sectionsElement.removeEventListener('click', sectionsClickHandler);
+        }
+
+        // Create and store new handler
+        sectionsClickHandler = function (e) {
           if (e.target.classList.contains('done-icon')) {
-            e.stopPropagation(); // Prevent event bubbling
+            e.stopPropagation();
             toggleSolved(e.target);
           }
-        });
+        };
+
+        // Add the new listener
+        sectionsElement.addEventListener('click', sectionsClickHandler);
 
         buildRectBar();
         loadProgress();
@@ -3886,7 +3923,7 @@ function switchSection(section) {
   // Load and display new content with caching for DSA
   if (section === 'dsa' && window.dsaDataCache) {
     problemData = window.dsaDataCache;
-    console.log('[DSA] Using cached data');
+    // console.log('[DSA] Using cached data');
 
     // Count unique problems
     countUniqueProblems(problemData);
@@ -3898,12 +3935,22 @@ function switchSection(section) {
     requestAnimationFrame(() => {
       initializeCollapsibles();
       // initializeCheckboxes();
-      document.getElementById('sections').addEventListener('click', function (e) {
+      // Remove old listener if exists
+      const sectionsElement = document.getElementById('sections');
+      if (sectionsClickHandler) {
+        sectionsElement.removeEventListener('click', sectionsClickHandler);
+      }
+
+      // Create and store new handler
+      sectionsClickHandler = function (e) {
         if (e.target.classList.contains('done-icon')) {
           e.stopPropagation();
           toggleSolved(e.target);
         }
-      });
+      };
+
+      // Add the new listener
+      sectionsElement.addEventListener('click', sectionsClickHandler);
       loadProgress();
       loadSectionCompletions();
       loadSubsectionCompletions();
@@ -3917,7 +3964,7 @@ function switchSection(section) {
 
     restoreFilterState();
   } else {
-    console.log(`[${section.toUpperCase()}] Loading data from file: ${dataFile}`);
+    // console.log(`[${section.toUpperCase()}] Loading data from file: ${dataFile}`);
     fetch(dataFile)
       .then(response => {
         if (!response.ok) {
@@ -3939,12 +3986,19 @@ function switchSection(section) {
         requestAnimationFrame(() => {
           initializeCollapsibles();
           // initializeCheckboxes();
-          document.getElementById('sections').addEventListener('click', function (e) {
+          const sectionsElement = document.getElementById('sections');
+          if (sectionsClickHandler) {
+            sectionsElement.removeEventListener('click', sectionsClickHandler);
+          }
+
+          sectionsClickHandler = function (e) {
             if (e.target.classList.contains('done-icon')) {
               e.stopPropagation();
               toggleSolved(e.target);
             }
-          });
+          };
+
+          sectionsElement.addEventListener('click', sectionsClickHandler);
           loadProgress();
           loadSectionCompletions();
           loadSubsectionCompletions();
