@@ -1162,41 +1162,6 @@ function updateSectionsSolvedCount() {
   }
 }
 
-/***************************************************************
- * MINI PROGRESS BARS PER SECTION
- ***************************************************************/
-function updateSectionProgress() {
-  const collapsibles = document.querySelectorAll('.collapsible');
-  collapsibles.forEach(sectionElem => {
-    const sectionId = sectionElem.getAttribute('id');
-    if (!sectionId) return;
-    const rows = sectionElem.querySelectorAll('tbody tr');
-    let solved = { easy: 0, medium: 0, hard: 0 };
-    let total = { easy: 0, medium: 0, hard: 0 };
-    rows.forEach(row => {
-      if (row.classList.contains('easy')) {
-        total.easy++;
-        const icon = row.querySelector('.done-icon');
-        if (icon && icon.getAttribute('data-solved') === 'true') solved.easy++;
-      }
-      if (row.classList.contains('medium')) {
-        total.medium++;
-        const icon = row.querySelector('.done-icon');
-        if (icon && icon.getAttribute('data-solved') === 'true') solved.medium++;
-      }
-      if (row.classList.contains('hard')) {
-        total.hard++;
-        const icon = row.querySelector('.done-icon');
-        if (icon && icon.getAttribute('data-solved') === 'true') solved.hard++;
-      }
-    });
-    const miniBars = sectionElem.querySelector(`.mini-bars[data-id="${sectionId}"]`);
-    if (!miniBars) return;
-    updateMiniBar(miniBars, 'easy', solved.easy, total.easy);
-    updateMiniBar(miniBars, 'medium', solved.medium, total.medium);
-    updateMiniBar(miniBars, 'hard', solved.hard, total.hard);
-  });
-}
 
 function updateMiniBar(miniBarsElem, diff, solved, total) {
   const countElem = miniBarsElem.querySelector(`.mini-count[data-diff="${diff}"]`);
@@ -1619,7 +1584,16 @@ function updateFavoriteIcons() {
  * UPDATE SECTION PROGRESS
  * Now we must also update *subsection* progress bars
  ***************************************************************/
+let updateProgressTimer = null;
 function updateSectionProgress() {
+  // Debounce updates
+  clearTimeout(updateProgressTimer);
+  updateProgressTimer = setTimeout(() => {
+    actualUpdateSectionProgress();
+  }, 100);
+}
+
+function actualUpdateSectionProgress() {
   // 1) Update top-level sections
   const collapsibles = document.querySelectorAll('.collapsible');
   collapsibles.forEach(sectionElem => {
@@ -3878,6 +3852,9 @@ function countUniqueProblems(data) {
 
 // Function to switch between sections
 function switchSection(section) {
+  if (section === 'dsa' && currentSection === 'dsa') {
+    return; // Don't reload if already on DSA
+  }
   try { console.timeEnd('SectionLoad'); } catch (e) { }
   console.time('SectionLoad');
   // Save current section's filter state before switching
