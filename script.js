@@ -3852,8 +3852,8 @@ function countUniqueProblems(data) {
 
 // Function to switch between sections
 function switchSection(section) {
-  if (section === 'dsa' && currentSection === 'dsa') {
-    return; // Don't reload if already on DSA
+  if (section === currentSection) {
+    return; // Don't reload if already on the same section
   }
   try { console.timeEnd('SectionLoad'); } catch (e) { }
   console.time('SectionLoad');
