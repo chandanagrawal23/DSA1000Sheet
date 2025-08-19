@@ -15,6 +15,14 @@ let celebrationTimer = null;
 let celebrationInProgress = false;
 // Add favorites storage
 let favorites = {};
+// Add memory leak prevention
+let activeListeners = [];
+function cleanupListeners() {
+  activeListeners.forEach(({ element, event, handler }) => {
+    if (element) element.removeEventListener(event, handler);
+  });
+  activeListeners = [];
+}
 
 // Add confetti script dynamically
 const confettiScript = document.createElement('script');
@@ -113,23 +121,39 @@ function saveFavorites() {
  * MODERN MOBILE NAVIGATION
  ***************************************************************/
 function initializeMobileMenu() {
+  cleanupListeners();
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
   const mobileMenuDropdown = document.getElementById('mobileMenuDropdown');
 
   if (mobileMenuToggle && mobileMenuDropdown) {
-    // Toggle dropdown on hamburger click
-    mobileMenuToggle.addEventListener('click', function(e) {
+    // Create handler functions
+    const toggleHandler = function (e) {
       e.stopPropagation();
       this.classList.toggle('active');
       mobileMenuDropdown.classList.toggle('active');
-    });
+    };
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
+    const documentHandler = function (e) {
       if (!e.target.closest('.navbar')) {
         mobileMenuToggle.classList.remove('active');
         mobileMenuDropdown.classList.remove('active');
       }
+    };
+
+    // Add listeners ONCE
+    mobileMenuToggle.addEventListener('click', toggleHandler);
+    document.addEventListener('click', documentHandler);
+
+    // Track them for cleanup
+    activeListeners.push({
+      element: mobileMenuToggle,
+      event: 'click',
+      handler: toggleHandler
+    });
+    activeListeners.push({
+      element: document,
+      event: 'click',
+      handler: documentHandler
     });
 
     // Close dropdown when clicking on a menu item
@@ -607,6 +631,7 @@ function restoreFilterState() {
 }
 
 function setupMultiSelectFilter() {
+  cleanupListeners();
   const filterDisplay = document.getElementById('filterDisplay');
   const filterDropdown = document.getElementById('filterDropdown');
   const clearButton = document.getElementById('clearFilters');
@@ -971,6 +996,28 @@ function filterProblems(event) {
   // console.log('Filtering complete');
 }
 
+function syncChildCheckboxes(parentCheckbox) {
+  // Get the parent section ID
+  const parentSectionId = parentCheckbox.dataset.section;
+  const difficulty = parentCheckbox.dataset.difficulty;
+  const isChecked = parentCheckbox.checked;
+  
+  // Find the parent collapsible element
+  const parentCollapsible = document.getElementById(parentSectionId);
+  if (!parentCollapsible) return;
+  
+  // Find all child checkboxes with the same difficulty in this section's subsections
+  const childCheckboxes = parentCollapsible.querySelectorAll(`.subsection-collapsible .square-check.${difficulty}`);
+  
+  // Update all child checkboxes to match parent state
+  childCheckboxes.forEach(childCheckbox => {
+    childCheckbox.checked = isChecked;
+    // IMPORTANT: Trigger filtering for each child checkbox
+    // const event = new Event('click', { bubbles: false });
+    // filterProblems({ target: childCheckbox });
+  });
+}
+
 /***************************************************************
  * BUILD & UPDATE GLOBAL RECTANGULAR PROGRESS BAR
  ***************************************************************/
@@ -1224,6 +1271,7 @@ function generateAccordion(section) {
                 <div class="mini-bar-line">
                   <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
                     <input type="checkbox" class="square-check easy" data-section="${parentId}" data-difficulty="easy" checked
+                      onclick="event.stopPropagation(); syncChildCheckboxes(this); filterProblems(event);"
                       style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
                   </label>
                   <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
@@ -1233,6 +1281,7 @@ function generateAccordion(section) {
                 <div class="mini-bar-line">
                   <label class="difficulty-filter-square" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
                     <input type="checkbox" class="square-check medium" data-section="${parentId}" data-difficulty="medium" checked
+                      onclick="event.stopPropagation(); syncChildCheckboxes(this); filterProblems(event);"
                       style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
                   </label>
                   <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
@@ -1242,6 +1291,7 @@ function generateAccordion(section) {
                 <div class="mini-bar-line">
                   <label class="difficulty-filter-square" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
                     <input type="checkbox" class="square-check hard" data-section="${parentId}" data-difficulty="hard" checked
+                      onclick="event.stopPropagation(); syncChildCheckboxes(this); filterProblems(event);"
                       style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
                   </label>
                   <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
@@ -1285,6 +1335,7 @@ function generateAccordionForSection(sec) {
               <div class="mini-bar-line">
                 <label class="difficulty-filter-square" title="Filter Easy Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
                   <input type="checkbox" class="square-check easy" data-section="${sectionId}" data-difficulty="easy" checked
+                    onclick="event.stopPropagation(); filterProblems(event);"  
                     style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--easy-color); display:block;">
                 </label>
                 <span class="mini-label" style="margin-right:0.25rem;">Easy</span>
@@ -1294,6 +1345,7 @@ function generateAccordionForSection(sec) {
               <div class="mini-bar-line">
                 <label class="difficulty-filter-square" title="Filter Medium Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
                   <input type="checkbox" class="square-check medium" data-section="${sectionId}" data-difficulty="medium" checked
+                    onclick="event.stopPropagation(); filterProblems(event);"  
                     style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--medium-color); display:block;">
                 </label>
                 <span class="mini-label" style="margin-right:0.25rem;">Medium</span>
@@ -1303,6 +1355,7 @@ function generateAccordionForSection(sec) {
               <div class="mini-bar-line">
                 <label class="difficulty-filter-square" title="Filter Hard Problems" style="display:inline-flex; width:24px; height:24px; margin-right:0.25rem;">
                   <input type="checkbox" class="square-check hard" data-section="${sectionId}" data-difficulty="hard" checked
+                    onclick="event.stopPropagation(); filterProblems(event);"  
                     style="opacity:1; position:static; pointer-events:auto; width:22px; height:22px; border-radius:50%; border:3px solid var(--hard-color); display:block;">
                 </label>
                 <span class="mini-label" style="margin-right:0.25rem;">Hard</span>
@@ -1342,7 +1395,8 @@ function generateSubsectionCollapsible(subsection) {
           <div class="mini-bar-line small">
             <label class="difficulty-filter-square small" title="Filter Easy Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
               <input type="checkbox" class="square-check easy" data-section="${subsecTitle}" data-difficulty="easy" checked
-                style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--easy-color); display:block;">
+                onclick="event.stopPropagation(); filterProblems(event);"  
+              style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--easy-color); display:block;">
             </label>
             <span class="mini-label small">Easy</span>
             <div class="mini-progress small"><div class="mini-fill easy-fill" style="width:0%"></div></div>
@@ -1351,6 +1405,7 @@ function generateSubsectionCollapsible(subsection) {
           <div class="mini-bar-line small">
             <label class="difficulty-filter-square small" title="Filter Medium Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
               <input type="checkbox" class="square-check medium" data-section="${subsecTitle}" data-difficulty="medium" checked
+                onclick="event.stopPropagation(); filterProblems(event);"  
                 style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--medium-color); display:block;">
             </label>
             <span class="mini-label small">Medium</span>
@@ -1360,6 +1415,7 @@ function generateSubsectionCollapsible(subsection) {
           <div class="mini-bar-line small">
             <label class="difficulty-filter-square small" title="Filter Hard Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
               <input type="checkbox" class="square-check hard" data-section="${subsecTitle}" data-difficulty="hard" checked
+                onclick="event.stopPropagation(); filterProblems(event);"  
                 style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--hard-color); display:block;">
             </label>
             <span class="mini-label small">Hard</span>
@@ -3084,6 +3140,16 @@ function setupTooltipForElement(element) {
   // Add mouse events
   element.addEventListener('mouseenter', element._tooltipMouseEnter);
   element.addEventListener('mouseleave', element._tooltipMouseLeave);
+  activeListeners.push({
+    element: element,
+    event: 'mouseenter',
+    handler: element._tooltipMouseEnter
+  });
+  activeListeners.push({
+    element: element,
+    event: 'mouseleave',
+    handler: element._tooltipMouseLeave
+  });
 }
 
 // Clean up any stray tooltips (utility function)
@@ -3213,6 +3279,16 @@ function showFirstCheckboxTooltip() {
 
     window.addEventListener('scroll', keepTooltipFixed);
     window.addEventListener('resize', keepTooltipFixed);
+    activeListeners.push({
+      element: window,
+      event: 'scroll',
+      handler: keepTooltipFixed
+    });
+    activeListeners.push({
+      element: window,
+      event: 'resize',
+      handler: keepTooltipFixed
+    });
 
     // Hide tooltip after 3 seconds
     setTimeout(() => {
@@ -3339,6 +3415,7 @@ function stopBinaryRain() {
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function () {
+  cleanupListeners();
   const rectContainer = document.getElementById('rectChartContainer');
   if (rectContainer) {
     rectContainer.innerHTML = `
@@ -3366,7 +3443,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Global cleanup for tooltips when mouse leaves window
     document.addEventListener('mouseleave', cleanupTooltips);
     window.addEventListener('blur', cleanupTooltips);
-
     // Filter tooltip removed per user request
 
     // Initialize dark mode
@@ -3481,6 +3557,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //   }
         // });
         // Remove old listener if exists
+        cleanupListeners();
         const sectionsElement = document.getElementById('sections');
         if (sectionsClickHandler) {
           sectionsElement.removeEventListener('click', sectionsClickHandler);
@@ -3493,10 +3570,13 @@ document.addEventListener('DOMContentLoaded', function () {
             toggleSolved(e.target);
           }
         };
-
         // Add the new listener
         sectionsElement.addEventListener('click', sectionsClickHandler);
-
+        activeListeners.push({
+          element: sectionsElement,
+          event: 'click',
+          handler: sectionsClickHandler
+        });
         buildRectBar();
         loadProgress();
         loadSectionCompletions();
@@ -3912,6 +3992,7 @@ function switchSection(section) {
       initializeCollapsibles();
       // initializeCheckboxes();
       // Remove old listener if exists
+      cleanupListeners();
       const sectionsElement = document.getElementById('sections');
       if (sectionsClickHandler) {
         sectionsElement.removeEventListener('click', sectionsClickHandler);
@@ -3924,9 +4005,14 @@ function switchSection(section) {
           toggleSolved(e.target);
         }
       };
-
       // Add the new listener
       sectionsElement.addEventListener('click', sectionsClickHandler);
+      activeListeners.push({
+        element: sectionsElement,
+        event: 'click',
+        handler: sectionsClickHandler
+      });
+
       loadProgress();
       loadSectionCompletions();
       loadSubsectionCompletions();
@@ -3962,6 +4048,7 @@ function switchSection(section) {
         requestAnimationFrame(() => {
           initializeCollapsibles();
           // initializeCheckboxes();
+          cleanupListeners();
           const sectionsElement = document.getElementById('sections');
           if (sectionsClickHandler) {
             sectionsElement.removeEventListener('click', sectionsClickHandler);
@@ -3973,8 +4060,13 @@ function switchSection(section) {
               toggleSolved(e.target);
             }
           };
-
           sectionsElement.addEventListener('click', sectionsClickHandler);
+          activeListeners.push({
+            element: sectionsElement,
+            event: 'click',
+            handler: sectionsClickHandler
+          });
+
           loadProgress();
           loadSectionCompletions();
           loadSubsectionCompletions();
