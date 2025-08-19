@@ -121,58 +121,45 @@ function saveFavorites() {
  * MODERN MOBILE NAVIGATION
  ***************************************************************/
 function initializeMobileMenu() {
-  cleanupListeners();
   const mobileMenuToggle = document.getElementById('mobileMenuToggle');
   const mobileMenuDropdown = document.getElementById('mobileMenuDropdown');
 
-  if (mobileMenuToggle && mobileMenuDropdown) {
-    // Create handler functions
-    const toggleHandler = function (e) {
-      e.stopPropagation();
-      this.classList.toggle('active');
-      mobileMenuDropdown.classList.toggle('active');
-    };
+  // console.log('Initializing mobile menu...', { toggle: mobileMenuToggle, dropdown: mobileMenuDropdown });
 
-    const documentHandler = function (e) {
-      if (!e.target.closest('.navbar')) {
-        mobileMenuToggle.classList.remove('active');
-        mobileMenuDropdown.classList.remove('active');
-      }
-    };
-
-    // Add listeners ONCE
-    mobileMenuToggle.addEventListener('click', toggleHandler);
-    document.addEventListener('click', documentHandler);
-
-    // Track them for cleanup
-    activeListeners.push({
-      element: mobileMenuToggle,
-      event: 'click',
-      handler: toggleHandler
-    });
-    activeListeners.push({
-      element: document,
-      event: 'click',
-      handler: documentHandler
-    });
-
-    // Close dropdown when clicking on a menu item
-    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
-    mobileMenuItems.forEach(item => {
-      item.addEventListener('click', function () {
-        mobileMenuToggle.classList.remove('active');
-        mobileMenuDropdown.classList.remove('active');
-      });
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && mobileMenuDropdown.classList.contains('active')) {
-        mobileMenuToggle.classList.remove('active');
-        mobileMenuDropdown.classList.remove('active');
-      }
-    });
+  if (!mobileMenuToggle || !mobileMenuDropdown) {
+    // console.error('Mobile menu elements not found!');
+    return;
   }
+
+  // Simple click handler for toggle
+  mobileMenuToggle.onclick = function (e) {
+    e.stopPropagation();
+    const isActive = mobileMenuDropdown.classList.contains('active');
+
+    if (isActive) {
+      mobileMenuToggle.classList.remove('active');
+      mobileMenuDropdown.classList.remove('active');
+    } else {
+      mobileMenuToggle.classList.add('active');
+      mobileMenuDropdown.classList.add('active');
+    }
+  };
+
+  // Close when clicking outside
+  document.onclick = function (e) {
+    if (!e.target.closest('.navbar')) {
+      mobileMenuToggle.classList.remove('active');
+      mobileMenuDropdown.classList.remove('active');
+    }
+  };
+
+  // Close when clicking menu items
+  document.querySelectorAll('.mobile-menu-item').forEach(item => {
+    item.onclick = function () {
+      mobileMenuToggle.classList.remove('active');
+      mobileMenuDropdown.classList.remove('active');
+    };
+  });
 }
 
 // Function to update mobile menu active state
