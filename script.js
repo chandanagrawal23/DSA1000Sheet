@@ -1649,8 +1649,9 @@ function actualUpdateSectionProgress() {
   document.querySelectorAll('.mini-bars.small').forEach(subMini => {
     const subsecId = subMini.getAttribute('data-id');
     if (!subsecId) return;
-    // Collect the rows that belong to that subsection
-    const subRows = document.querySelectorAll(`.collapsible-body.subsection-body table tbody tr`);
+    // Collect the rows that belong to that 
+    const subsectionLi = subMini.closest('li');
+    const subRows = subsectionLi ? subsectionLi.querySelectorAll('tbody tr') : [];
     // But we only want the rows that match that subsection ID prefix
     let solved = { easy: 0, medium: 0, hard: 0 };
     let total = { easy: 0, medium: 0, hard: 0 };
@@ -3764,12 +3765,12 @@ function countUniqueProblems(data) {
     if (currentSection === 'dsa') {
       // Check by title
       if (section.title && section.title.toLowerCase().includes('puzzle')) {
-        console.log('Skipping Puzzle section from total count:', section.title);
+        // console.log('Skipping Puzzle section from total count:', section.title);
         return;
       }
       // Check if title is exactly "Puzzles"
       if (section.title && section.title.trim() === 'Puzzles') {
-        console.log('Skipping Puzzles section from total count');
+        // console.log('Skipping Puzzles section from total count');
         return;
       }
     }
@@ -3855,8 +3856,6 @@ function switchSection(section) {
   if (section === currentSection) {
     return; // Don't reload if already on the same section
   }
-  try { console.timeEnd('SectionLoad'); } catch (e) { }
-  console.time('SectionLoad');
   // Save current section's filter state before switching
   saveFilterState();
   // Clear the search box when switching sections
