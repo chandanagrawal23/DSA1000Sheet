@@ -159,35 +159,6 @@
             ]
         },
         {
-            "title": "HashMap/HashSet",
-            "subsections": [
-                {
-                    "title": "HashSet",
-                    "problems": [
-                        {
-                            "label": "Introduction to HashSet",
-                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
-                            "solution": "-",
-                            "difficulty": "easy",
-                            "id": 1053
-                        }
-                    ]
-                },
-                {
-                    "title": "HashMap",
-                    "problems": [
-                        {
-                            "label": "Introduction to HashMap",
-                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
-                            "solution": "-",
-                            "difficulty": "easy",
-                            "id": 1054
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "title": "Prefix Sum / Difference Array",
             "subsections": [
                 {
@@ -1477,6 +1448,13 @@
                             "solution": "-",
                             "difficulty": "medium",
                             "id": 1192
+                        },
+                        {
+                            "label": "Minimum Operations to Convert All Elements to Zero",
+                            "question": "https://leetcode.com/problems/minimum-operations-to-convert-all-elements-to-zero/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MonotonicStack/MinimumOperationsToConvertAllElementsToZero.cpp",
+                            "difficulty": "medium",
+                            "id": 1827
                         },
                         {
                             "label": "Count Subarrays with Current Element as Max at Start or End[FB]",
@@ -3420,6 +3398,13 @@
                             "id": 1441
                         },
                         {
+                            "label": "Repeated String Match",
+                            "question": "https://leetcode.com/problems/repeated-string-match/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1828
+                        },
+                        {
                             "label": "Shortest Palindrome (KMP)",
                             "question": "https://leetcode.com/problems/shortest-palindrome/",
                             "solution": "-",
@@ -3526,6 +3511,13 @@
                             "solution": "-",
                             "difficulty": "medium",
                             "id": 1456
+                        },
+                        {
+                            "label": "Find Minimum Cost to Remove Array Elements",
+                            "question": "https://leetcode.com/problems/find-minimum-cost-to-remove-array-elements/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1826
                         },
                         {
                             "label": "Best Time to Buy and Sell Stock III",
@@ -3833,6 +3825,20 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumPathSum.cpp",
                             "difficulty": "medium",
                             "id": 1496
+                        },
+                        {
+                            "label": "Maximal Square (DP + Prefix Sum)",
+                            "question": "https://leetcode.com/problems/maximal-square/",
+                            "solution": "",
+                            "difficulty": "medium",
+                            "id": 1829
+                        },
+                        {
+                            "label": "Largest 1-Bordered Square (DP + Prefix Sum)",
+                            "question": "https://leetcode.com/problems/largest-1-bordered-square/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/Largest_1_BorderedSquare.cpp",
+                            "difficulty": "medium",
+                            "id": 1830
                         },
                         {
                             "label": "Maximum Non-Negative Product in a Matrix",
