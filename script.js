@@ -795,16 +795,17 @@ function filterProblems(event) {
     const sectionBody = section.querySelector('.collapsible-body');
     const subsections = sectionBody.querySelectorAll('.subsection-collapsible li');
     let hasMatchInSection = false;
+    let hasAnyProblemsInSection = false; // Track if section has any problems at all
 
     // Handle sections with subsections
     if (subsections.length > 0) {
-      // First, get the parent section's collapsible instance
       const parentInstance = M.Collapsible.getInstance(section);
 
       subsections.forEach((subsection, subIndex) => {
         const subsectionBody = subsection.querySelector('.collapsible-body');
-        const tableRows = subsectionBody.querySelectorAll('tbody tr'); // Only filter tbody rows
+        const tableRows = subsectionBody.querySelectorAll('tbody tr');
         let hasMatchInSubsection = false;
+        let hasAnyProblemsInSubsection = false; // Track if subsection has any problems
 
         // Get difficulty filters for this subsection
         const subsectionId = subsection.querySelector('.mini-bars')?.dataset.id;
@@ -814,21 +815,25 @@ function filterProblems(event) {
         const mediumChecked = subsection.querySelector(`.square-check.medium[data-section="${subsectionId}"]`)?.checked ?? true;
         const hardChecked = subsection.querySelector(`.square-check.hard[data-section="${subsectionId}"]`)?.checked ?? true;
 
-        // Show all difficulties if none are checked
-        const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+        // FIXED: Changed logic - if ALL are unchecked, show NONE (not all)
+        const showNone = !easyChecked && !mediumChecked && !hardChecked;
 
         tableRows.forEach(row => {
+          hasAnyProblemsInSubsection = true; // We have at least one problem
+
           const text = row.textContent.toLowerCase();
           const difficulty = row.classList.contains('easy') ? 'easy' :
             row.classList.contains('medium') ? 'medium' :
               row.classList.contains('hard') ? 'hard' : '';
 
-          const difficultyEnabled = showAllDifficulties ||
+          // FIXED: If all unchecked (showNone), don't show any problems
+          const difficultyEnabled = !showNone && (
             (difficulty === 'easy' && easyChecked) ||
             (difficulty === 'medium' && mediumChecked) ||
-            (difficulty === 'hard' && hardChecked);
+            (difficulty === 'hard' && hardChecked)
+          );
 
-          // Apply difficulty filter
+          // Apply difficulty filter from multi-select
           const difficultyMatch = selectedFilters.difficulties.length === 0 ||
             selectedFilters.difficulties.includes(difficulty);
 
@@ -843,19 +848,16 @@ function filterProblems(event) {
           const problemName = questionLink ? questionLink.textContent.toLowerCase() : '';
           const matchesSearch = searchTerm === '' || problemName.includes(searchTerm);
 
-          // ADD THIS: Check if the problem is favorited
           const favoriteIcon = row.querySelector('.inline-favorite-star');
           const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
 
-          // Check if the problem is must-do (important)
           const importantStar = row.querySelector('.important-star');
           const isMustDo = importantStar !== null;
-          // ADD THIS: Apply special filters (favourite)
+
           const specialMatch = selectedFilters.specials.length === 0 ||
             (selectedFilters.specials.includes('favourite') && isFavorited) ||
             (selectedFilters.specials.includes('mustdo') && isMustDo);
 
-          // Only show if all conditions are met
           if (difficultyEnabled && difficultyMatch && statusMatch && specialMatch && matchesSearch) {
             row.style.display = '';
             hasMatchInSubsection = true;
@@ -865,30 +867,27 @@ function filterProblems(event) {
           }
         });
 
-        // Handle subsection visibility and expansion
-        if (hasMatchInSubsection) {
-          subsection.style.display = '';
-          if (searchTerm) {
-            // First ensure parent section is open
-            if (parentInstance) {
-              parentInstance.open(0);
-            }
+        // FIXED: Always show subsection structure, just indicate if empty
+        subsection.style.display = ''; // Always show subsection
 
-            // Then open the subsection after a small delay
-            setTimeout(() => {
-              const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
-              if (subsectionInstance) {
-                subsectionInstance.open(subIndex);
-              }
-            }, 100);
+        // Only auto-expand if there's a search match
+        if (hasMatchInSubsection && searchTerm) {
+          if (parentInstance) {
+            parentInstance.open(0);
           }
-        } else {
-          subsection.style.display = 'none';
+          setTimeout(() => {
+            const subsectionInstance = M.Collapsible.getInstance(subsection.closest('.subsection-collapsible'));
+            if (subsectionInstance) {
+              subsectionInstance.open(subIndex);
+            }
+          }, 100);
         }
+
+        hasAnyProblemsInSection = hasAnyProblemsInSection || hasAnyProblemsInSubsection;
       });
     } else {
       // Handle sections without subsections
-      const tableRows = sectionBody.querySelectorAll('tbody tr'); // Only filter tbody rows
+      const tableRows = sectionBody.querySelectorAll('tbody tr');
       const sectionId = section.getAttribute('id');
       if (!sectionId) return;
 
@@ -896,24 +895,27 @@ function filterProblems(event) {
       const mediumChecked = section.querySelector(`.square-check.medium[data-section="${sectionId}"]`)?.checked ?? true;
       const hardChecked = section.querySelector(`.square-check.hard[data-section="${sectionId}"]`)?.checked ?? true;
 
-      const showAllDifficulties = !easyChecked && !mediumChecked && !hardChecked;
+      // FIXED: Changed logic - if ALL are unchecked, show NONE (not all)
+      const showNone = !easyChecked && !mediumChecked && !hardChecked;
 
       tableRows.forEach(row => {
+        hasAnyProblemsInSection = true; // We have at least one problem
+
         const text = row.textContent.toLowerCase();
         const difficulty = row.classList.contains('easy') ? 'easy' :
           row.classList.contains('medium') ? 'medium' :
             row.classList.contains('hard') ? 'hard' : '';
 
-        const difficultyEnabled = showAllDifficulties ||
+        // FIXED: If all unchecked (showNone), don't show any problems
+        const difficultyEnabled = !showNone && (
           (difficulty === 'easy' && easyChecked) ||
           (difficulty === 'medium' && mediumChecked) ||
-          (difficulty === 'hard' && hardChecked);
+          (difficulty === 'hard' && hardChecked)
+        );
 
-        // Apply difficulty filter
         const difficultyMatch = selectedFilters.difficulties.length === 0 ||
           selectedFilters.difficulties.includes(difficulty);
 
-        // Apply status filter
         const doneIcon = row.querySelector('.done-icon');
         const isCompleted = doneIcon ? doneIcon.getAttribute('data-solved') === 'true' : false;
         const statusMatch = selectedFilters.statuses.length === 0 ||
@@ -927,7 +929,6 @@ function filterProblems(event) {
         const favoriteIcon = row.querySelector('.inline-favorite-star');
         const isFavorited = favoriteIcon && favoriteIcon.getAttribute('data-favorited') === 'true';
 
-        // ADD THIS: Check if the problem is must-do (important)
         const importantStar = row.querySelector('.important-star');
         const isMustDo = importantStar !== null;
 
@@ -935,7 +936,6 @@ function filterProblems(event) {
           (selectedFilters.specials.includes('favourite') && isFavorited) ||
           (selectedFilters.specials.includes('mustdo') && isMustDo);
 
-        // UPDATE the condition to include specialMatch
         if (difficultyEnabled && difficultyMatch && statusMatch && specialMatch && matchesSearch) {
           row.style.display = '';
           hasMatchInSection = true;
@@ -945,17 +945,14 @@ function filterProblems(event) {
       });
     }
 
-    // Handle section visibility and expansion
-    if (hasMatchInSection) {
-      section.style.display = '';
-      if (searchTerm) {
-        const instance = M.Collapsible.getInstance(section);
-        if (instance) {
-          instance.open(0);
-        }
+    // FIXED: Always show section structure, just indicate if empty
+    section.style.display = ''; // Always show section
+    // Only auto-expand if there's a search match
+    if (hasMatchInSection && searchTerm) {
+      const instance = M.Collapsible.getInstance(section);
+      if (instance) {
+        instance.open(0);
       }
-    } else {
-      section.style.display = 'none';
     }
   });
 
@@ -967,7 +964,6 @@ function filterProblems(event) {
         instance.close(0);
       }
 
-      // Also collapse all subsections
       const subsectionCollapsible = section.querySelector('.subsection-collapsible');
       if (subsectionCollapsible) {
         const subsectionInstance = M.Collapsible.getInstance(subsectionCollapsible);
@@ -979,8 +975,6 @@ function filterProblems(event) {
       }
     });
   }
-
-  // console.log('Filtering complete');
 }
 
 function syncChildCheckboxes(parentCheckbox) {
@@ -3167,9 +3161,14 @@ function showFirstCheckboxTooltip() {
   localStorage.setItem('refreshCount', refreshCount);
 
   // Show tooltip only every 30th refresh
-  if (refreshCount > 1 && refreshCount % 30 !== 0) {
+  // if (refreshCount > 1 && refreshCount % 30 !== 0) {
+  //   return;
+  // }
+  // Show tooltip only every 30th refresh
+  if (refreshCount % 1 == 0) {
     return;
   }
+  
 
   // Find the first collapsible section (this will be the first problem section)
   const firstCollapsible = document.querySelector('.collapsible');
@@ -3918,10 +3917,80 @@ function countUniqueProblems(data) {
   // });
 }
 
+// Add this new function after the switchSection function
+function showComingSoonBanner(section) {
+  const sectionNames = {
+    'sql': 'SQL',
+    'lld': 'Low Level Design (LLD)',
+    'hld': 'High Level Design (HLD)'
+  };
+
+  const sectionsDiv = document.getElementById('sections');
+  const rectChartContainer = document.getElementById('rectChartContainer');
+  const unifiedControlBarWrapper = document.querySelector('.unified-control-bar-wrapper');
+
+  // Hide progress bar and controls
+  if (rectChartContainer) rectChartContainer.style.display = 'none';
+  if (unifiedControlBarWrapper) unifiedControlBarWrapper.style.display = 'none';
+
+  // Update active nav links
+  document.querySelectorAll('.nav-item').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.getElementById(`${section}Link`).classList.add('active');
+
+  document.querySelectorAll('.mobile-menu-item').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.getElementById(`${section}LinkMobile`).classList.add('active');
+
+  // Create coming soon content
+  sectionsDiv.innerHTML = `
+    <div style="min-height: calc(100vh - 200px); display: flex; align-items: center; justify-content: center; padding: 2rem;">
+      <div style="text-align: center; max-width: 600px;">
+        <i class="material-icons" style="font-size: 80px; color: var(--primary); margin-bottom: 1rem;">
+          ${section === 'sql' ? 'storage' : section === 'lld' ? 'architecture' : 'cloud_queue'}
+        </i>
+        
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary);">
+          ${sectionNames[section]}
+        </h1>
+        
+        <div style="display: inline-block; padding: 0.5rem 1.5rem; background: linear-gradient(135deg, var(--warning), #FF6B6B); color: white; border-radius: 30px; font-weight: 600; margin-bottom: 2rem;">
+          COMING SOON
+        </div>
+        
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6;">
+          We're working hard to bring you comprehensive ${sectionNames[section]} practice problems and resources.
+        </p>
+        
+        <div style="margin: 2rem 0;">
+          <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; background: var(--bg-tertiary); border-radius: 30px; border: 2px solid var(--primary);">
+            <i class="material-icons" style="color: var(--primary);">schedule</i>
+            <span style="color: var(--text-secondary);">Expected Launch: <strong style="color: var(--primary);">Coming in Few Weeks</strong></span>
+          </div>
+        </div>
+        
+        <button onclick="switchSection('dsa')" style="padding: 0.75rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+          <i class="material-icons" style="vertical-align: middle; margin-right: 0.5rem;">arrow_back</i>
+          Back to DSA Problems
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+
 // Function to switch between sections
 function switchSection(section) {
   if (section === currentSection) {
     return; // Don't reload if already on the same section
+  }
+  const comingSoonSections = ['sql', 'lld', 'hld'];
+  if (comingSoonSections.includes(section)) {
+    currentSection = section;;
+    showComingSoonBanner(section);
+    return; // Don't proceed with normal section loading
   }
   // Save current section's filter state before switching
   saveFilterState();
