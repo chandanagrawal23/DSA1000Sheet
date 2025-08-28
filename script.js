@@ -782,7 +782,7 @@ function filterProblems(event) {
   const searchBox = document.getElementById('searchBox');
   if (!searchBox) return;
 
-  const searchTerm = searchBox.value.toLowerCase();
+  const searchTerm = searchBox.value.toLowerCase().trim();
 
   // Get selected filters from multi-select
   const selectedFilters = getSelectedFilters();
@@ -867,8 +867,8 @@ function filterProblems(event) {
           }
         });
 
-        // FIXED: Always show subsection structure, just indicate if empty
-        subsection.style.display = ''; // Always show subsection
+        // CHANGED: Hide subsection if no matches when searching, otherwise show
+        subsection.style.display = (searchTerm && !hasMatchInSubsection) ? 'none' : '';
 
         // Only auto-expand if there's a search match
         if (hasMatchInSubsection && searchTerm) {
@@ -945,8 +945,8 @@ function filterProblems(event) {
       });
     }
 
-    // FIXED: Always show section structure, just indicate if empty
-    section.style.display = ''; // Always show section
+    // CHANGED: Hide section if no matches when searching, otherwise show
+    section.style.display = (searchTerm && !hasMatchInSection) ? 'none' : '';
     // Only auto-expand if there's a search match
     if (hasMatchInSection && searchTerm) {
       const instance = M.Collapsible.getInstance(section);
