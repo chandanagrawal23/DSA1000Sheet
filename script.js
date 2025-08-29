@@ -786,7 +786,15 @@ function filterProblems(event) {
 
   // Get selected filters from multi-select
   const selectedFilters = getSelectedFilters();
-  // console.log('Filtering with search term:', searchTerm, 'filters:', selectedFilters);
+  
+  // Check if any filters are active (not just search)
+  const hasActiveFilters = searchTerm || 
+                          selectedFilters.difficulties.length > 0 || 
+                          selectedFilters.statuses.length > 0 || 
+                          selectedFilters.specials.length > 0;
+
+  // NEW: Check if we should auto-expand (only for search, not filters)
+  const shouldAutoExpand = searchTerm !== '';  // Only auto-expand when search has text
 
   const sections = document.querySelectorAll('.collapsible');
   const clickedSection = event?.target?.closest('.collapsible-header')?.parentElement?.querySelector('.collapsible-body');
@@ -867,11 +875,11 @@ function filterProblems(event) {
           }
         });
 
-        // CHANGED: Hide subsection if no matches when searching, otherwise show
-        subsection.style.display = (searchTerm && !hasMatchInSubsection) ? 'none' : '';
+        // FIXED: Hide subsection if no matches when ANY filter is active
+        subsection.style.display = (hasActiveFilters && !hasMatchInSubsection) ? 'none' : '';
 
-        // Only auto-expand if there's a search match
-        if (hasMatchInSubsection && searchTerm) {
+        // Only auto-expand if there's a match and SEARCH is active (not just filters)
+        if (hasMatchInSubsection && shouldAutoExpand) {  // Changed from hasActiveFilters
           if (parentInstance) {
             parentInstance.open(0);
           }
@@ -945,10 +953,11 @@ function filterProblems(event) {
       });
     }
 
-    // CHANGED: Hide section if no matches when searching, otherwise show
-    section.style.display = (searchTerm && !hasMatchInSection) ? 'none' : '';
-    // Only auto-expand if there's a search match
-    if (hasMatchInSection && searchTerm) {
+    // FIXED: Hide section if no matches when ANY filter is active (not just search)
+    section.style.display = (hasActiveFilters && !hasMatchInSection) ? 'none' : '';
+    
+    // Only auto-expand if there's a match and SEARCH is active (not just filters)
+    if (hasMatchInSection && shouldAutoExpand) {  // Changed from hasActiveFilters
       const instance = M.Collapsible.getInstance(section);
       if (instance) {
         instance.open(0);
@@ -956,8 +965,8 @@ function filterProblems(event) {
     }
   });
 
-  // If there's no search term and it's not a checkbox click, collapse all sections
-  if (!searchTerm && !event?.target?.classList.contains('square-check')) {
+  // If there are no active filters and it's not a checkbox click, collapse all sections
+  if (!hasActiveFilters && !event?.target?.classList.contains('square-check')) {
     sections.forEach(section => {
       const instance = M.Collapsible.getInstance(section);
       if (instance) {

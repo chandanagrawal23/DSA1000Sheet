@@ -7855,7 +7855,7 @@ body.dark-mode .inline-favorite-star[data-favorited="true"] {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .inline-favorite-star {
-        font-size: 1rem !important;
+        font-size: 1.4rem !important;
         margin-left: 6px;
     }
     
@@ -8116,4 +8116,52 @@ body.dark-mode .problem-table tbody tr.solved td:first-child::before {
 .dark-mode .skeleton-text {
   background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
   background-size: 200% 100%;
+}
+
+/* Filter operators - Simple and clean */
+.filter-operator {
+    color: #999;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 0 1px;
+}
+
+.filter-row-separator {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 0px 0;  /* Reduced from default */
+    margin: -8px 20px;  /* Negative margin to pull rows closer */
+    border: none;  /* Remove border to save space */
+}
+
+/* Adjust filter row spacing */
+.filter-row {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;  /* Reduced vertical padding */
+    gap: 2px;
+}
+
+/* Dark mode */
+body.dark-mode .filter-operator {
+    color: #666;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .filter-operator,
+    .filter-row-separator {
+        font-size: 9px;
+    }
+    
+    .filter-row {
+        padding: 5px 10px;  /* Even smaller on mobile */
+    }
+    
+    .filter-row-separator {
+        padding: 1px 0;
+        margin: -1px 15px;
+    }
 }
