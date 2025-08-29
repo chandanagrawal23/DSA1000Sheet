@@ -5858,6 +5858,14 @@
                             "id": 1735
                         },
                         {
+                            "label": "Maximum Knowledge (Google,SalesForce, SweepLine + 2 Multiset)",
+                            "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MaximumKnowledgeQuestion.txt",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SweepLine/MaximumKnowledgeSalesforce.cpp",
+                            "difficulty": "hard",
+                            "id": 1841,
+                            "important": true
+                        },
+                        {
                             "label": "Skyline Problem(Heap + Sweep Line)",
                             "question": "https://leetcode.com/problems/the-skyline-problem/",
                             "solution": "-",
