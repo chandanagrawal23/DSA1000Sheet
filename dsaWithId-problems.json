@@ -159,6 +159,91 @@
             ]
         },
         {
+            "title": "HashSet / HashMap",
+            "subsections": [
+                {
+                    "title": "HashSet",
+                    "problems": [
+                        {
+                            "label": "Introduction to HashSet",
+                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
+                            "solution": "-",
+                            "difficulty": "easy",
+                            "id": 1053
+                        },
+                        {
+                            "label": "Contains Duplicate",
+                            "question": "https://leetcode.com/problems/contains-duplicate/",
+                            "solution": "",
+                            "difficulty": "easy",
+                            "id": 1054
+                        },
+                        {
+                            "label": "Intersection of Two Arrays",
+                            "question": "https://leetcode.com/problems/intersection-of-two-arrays/",
+                            "solution": "",
+                            "difficulty": "easy",
+                            "id": 1837
+                        },
+                        {
+                            "label": "Distribute Candies",
+                            "question": "https://leetcode.com/problems/distribute-candies/",
+                            "solution": "",
+                            "difficulty": "easy",
+                            "id": 1838
+                        },
+                        {
+                            "label": "Unique Email Addresses",
+                            "question": "https://leetcode.com/problems/unique-email-addresses/",
+                            "solution": "",
+                            "difficulty": "easy",
+                            "id": 1839
+                        }
+                    ]
+                },
+                {
+                    "title": "HashMap",
+                    "problems": [
+                        {
+                            "label": "Introduction to HashMap",
+                            "question": "https://www.geeksforgeeks.org/hashing-data-structure/",
+                            "solution": "-",
+                            "difficulty": "easy",
+                            "id": 1832
+                        },
+                        {
+                            "label": "First Unique Character in a String",
+                            "question": "https://leetcode.com/problems/first-unique-character-in-a-string/",
+                            "solution": "",
+                            "difficulty": "easy",
+                            "id": 1834
+                        },
+                        {
+                            "label": "Substrings That Begin and End With the Same Letter",
+                            "question": "https://leetcode.ca/2021-12-06-2083-Substrings-That-Begin-and-End-With-the-Same-Letter/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubstringsThatBeginAndEndWithTheSameLetter.cpp",
+                            "difficulty": "medium",
+                            "id": 1835
+                        },
+                        {
+                            "label": "Partition Array Into K-Distinct Groups",
+                            "question": "https://leetcode.com/problems/partition-array-into-k-distinct-groups/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PartitionArrayInto_K_DistinctGroups.cpp",
+                            "difficulty": "medium",
+                            "id": 1836
+                        },
+                        {
+                            "label": "Unique Number of Occurrences",
+                            "question": "https://leetcode.com/problems/unique-number-of-occurrences/",
+                            "solution": "",
+                            "difficulty": "easy",
+                            "id": 1840
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "title": "Prefix Sum / Difference Array",
             "subsections": [
                 {
@@ -3405,6 +3490,14 @@
                             "id": 1828
                         },
                         {
+                            "label": "Hermione Magic Potion Encoding (GoldMan Sachs)",
+                            "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/HermioneMagicPotionEncoding.cpp",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/HermioneMagicPotionEncoding.cpp",
+                            "difficulty": "medium",
+                            "id": 1831,
+                            "important": true
+                        },
+                        {
                             "label": "Shortest Palindrome (KMP)",
                             "question": "https://leetcode.com/problems/shortest-palindrome/",
                             "solution": "-",
@@ -5894,6 +5987,13 @@
                     "solution": "-",
                     "difficulty": "medium",
                     "id": 1817
+                },
+                {
+                    "label": "Design Most Recently Used Queue",
+                    "question": "https://leetcode.ca/2021-04-08-1756-Design-Most-Recently-Used-Queue/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1833
                 },
                 {
                     "label": "Design In Memory File System (TRIE)",
