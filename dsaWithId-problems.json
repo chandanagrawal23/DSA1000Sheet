@@ -219,24 +219,24 @@
                             "id": 1834
                         },
                         {
+                            "label": "Unique Number of Occurrences",
+                            "question": "https://leetcode.com/problems/unique-number-of-occurrences/",
+                            "solution": "",
+                            "difficulty": "easy",
+                            "id": 1835
+                        },
+                        {
                             "label": "Substrings That Begin and End With the Same Letter",
                             "question": "https://leetcode.ca/2021-12-06-2083-Substrings-That-Begin-and-End-With-the-Same-Letter/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubstringsThatBeginAndEndWithTheSameLetter.cpp",
                             "difficulty": "medium",
-                            "id": 1835
+                            "id": 1836
                         },
                         {
                             "label": "Partition Array Into K-Distinct Groups",
                             "question": "https://leetcode.com/problems/partition-array-into-k-distinct-groups/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PartitionArrayInto_K_DistinctGroups.cpp",
                             "difficulty": "medium",
-                            "id": 1836
-                        },
-                        {
-                            "label": "Unique Number of Occurrences",
-                            "question": "https://leetcode.com/problems/unique-number-of-occurrences/",
-                            "solution": "",
-                            "difficulty": "easy",
                             "id": 1840
                         }
                     ]
