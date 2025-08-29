@@ -3478,6 +3478,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize reset banner click outside functionality
     initResetBannerClickOutside();
 
+    const brandLink = document.querySelector('.brand-link');
+    if (brandLink) {
+      brandLink.addEventListener('click', function (e) {
+        e.preventDefault(); // Always prevent default
+
+        if (currentSection === 'dsa') {
+          // Already on DSA, just scroll to top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          // Switch to DSA section without page reload
+          switchSection('dsa');
+          updateDesktopNavActive('dsaLink');
+          updateMobileMenuActive('dsaLinkMobile');
+          // Scroll to top after switching
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }, 100);
+        }
+
+        return false;
+      });
+    }
+
     loadProgress();
     updateGlobalRectBar();
     updateSectionProgress();
