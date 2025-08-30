@@ -7278,6 +7278,7 @@ body.dark-mode .lld-table .question-link:hover {
         margin: 0.5rem 0 0 0 !important;
         padding: 0 !important;
         display: flex !important;
+        flex-direction: row !important; /* Keep horizontal */
         justify-content: space-evenly !important;
         align-items: center !important;
         flex-wrap: nowrap !important;
@@ -7289,14 +7290,14 @@ body.dark-mode .lld-table .question-link:hover {
     .mini-bars .mini-bar-line {
         flex: 1 1 33.333% !important;
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
         justify-content: center !important;
         align-items: center !important;
         min-width: 0 !important;
         max-width: 33.333% !important;
         margin: 0 !important;
         padding: 0.25rem 0.1rem !important;
-        gap: 0.15rem !important;
+        gap: 0.4rem !important;
         text-align: center !important;
         box-sizing: border-box !important;
     }
@@ -8165,3 +8166,108 @@ body.dark-mode .filter-operator {
         margin: -1px 15px;
     }
 }
+
+
+
+
+/* ...existing code... */
+
+/* Progress Management Buttons in Profile Modal */
+.progress-management-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.progress-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid var(--card-border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 44px;
+}
+
+.progress-btn i {
+  font-size: 20px;
+}
+
+.progress-btn.reset-btn {
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #EF4444;
+}
+
+.progress-btn.reset-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #EF4444;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.progress-btn.download-btn {
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #22C55E;
+}
+
+.progress-btn.download-btn:hover {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22C55E;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+}
+
+.progress-hint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+/* Dark mode support */
+body.dark-mode .progress-btn {
+  background: var(--surface);
+  border-color: var(--card-border);
+}
+
+body.dark-mode .progress-btn.reset-btn {
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #EF5350;
+}
+
+body.dark-mode .progress-btn.reset-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #EF5350;
+}
+
+body.dark-mode .progress-btn.download-btn {
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #4CAF50;
+}
+
+body.dark-mode .progress-btn.download-btn:hover {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: #4CAF50;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .progress-management-container {
+    flex-direction: column;
+  }
+  
+  .progress-btn {
+    width: 100%;
+  }
+}
+
+/* ...existing code... */
