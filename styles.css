@@ -7344,6 +7344,39 @@ body.dark-mode .lld-table .question-link:hover {
         line-height: 1.1 !important;
     }
 
+        /* SUBSECTION-SPECIFIC: Row layout with MUCH better spacing */
+.subsection-header .mini-bars .mini-bar-line {
+    gap: 0.2rem !important; /* Reduced gap between elements */
+    padding: 0.6rem 0.6rem !important; /* Less padding to save space */
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Subsection-specific element adjustments for PROPER spacing */
+.subsection-header .mini-bars .difficulty-filter-square {
+    margin: 2 !important; /* Remove all margins */
+    flex-shrink: 0 !important;
+}
+
+.subsection-header .mini-bars .mini-label {
+    margin: 0 0.1rem !important; /* Add horizontal margin for spacing */
+    font-size: 0.25rem !important; /* Fix typo: was 4.65rem */
+}
+
+.subsection-header .mini-bars .mini-progress {
+    margin: 0 0.3rem !important; /* Consistent spacing on both sides */
+    width: 10px !important;
+    height: 4px !important;
+    flex-shrink: 0 !important;
+}
+
+.subsection-header .mini-bars .mini-count {
+    margin: 0 !important; /* Remove margins */
+    font-size: 1rem !important;
+    flex-shrink: 0 !important;
+}
+
     /* CRITICAL: Go to Top button mobile positioning - FINAL OVERRIDE */
     #go-to-top-button {
         bottom: 20px !important;
@@ -7361,6 +7394,146 @@ body.dark-mode .lld-table .question-link:hover {
 
 
 }
+
+/* Extra small screens - even more compact for subsections */
+@media (max-width: 480px) {
+    .subsection-header .mini-bars .mini-bar-line {
+        gap: 0.1rem !important; /* Even smaller gap */
+        padding: 0.2rem 0 !important;
+    }
+
+    .subsection-header .mini-bars .difficulty-filter-square {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .subsection-header .mini-bars .mini-label {
+        font-size: 0.6rem !important;
+    }
+
+    .subsection-header .mini-bars .mini-progress {
+        width: 20px !important;
+        height: 3px !important;
+    }
+
+    .subsection-header .mini-bars .mini-count {
+        font-size: 0.55rem !important;
+    }
+
+    .subsection-header .mini-bars .square-check {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .subsection-header .mini-bars .square-check:checked::after {
+        font-size: 9px !important;
+    }
+}
+
+/* Extremely small screens - Fix subsection mini-bars */
+@media (max-width: 360px) {
+    /* Remove the incorrect width: 5px rule that was breaking layout */
+    .subsection-header .mini-bars {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-evenly !important;
+        align-items: center !important;
+        margin: 0.5rem 0 0 0 !important;
+        padding: 0 !important;
+        gap: 0 !important; /* No gap to maximize space */
+    }
+
+    .subsection-header .mini-bars .mini-bar-line {
+        flex: 1 1 33.333% !important;
+        max-width: 33.333% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0.05rem !important; /* Minimal gap */
+        padding: 0.2rem 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    .subsection-header .mini-bars .difficulty-filter-square,
+    .subsection-header .mini-bars .square-check {
+        width: 14px !important;
+        height: 14px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        border-width: 2px !important;
+    }
+
+    .subsection-header .mini-bars .mini-label {
+        font-size: 0.55rem !important;
+        margin: 0 1px !important; /* Tiny margin for spacing */
+        padding: 0 !important;
+        flex-shrink: 1 !important; /* Allow to shrink if needed */
+        white-space: nowrap !important;
+        line-height: 1 !important;
+    }
+
+    .subsection-header .mini-bars .mini-progress {
+        width: 15px !important; /* Increased from 5px */
+        height: 3px !important;
+        margin: 0 1px !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+    }
+
+    .subsection-header .mini-bars .mini-count {
+        font-size: 0.5rem !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        line-height: 1 !important;
+    }
+
+    /* Checkmark adjustments for tiny checkboxes */
+    .subsection-header .mini-bars .square-check:checked::after {
+        font-size: 8px !important;
+    }
+}
+
+/* For even smaller screens (320px and below) */
+@media (max-width: 320px) {
+    .subsection-header .mini-bars .mini-bar-line {
+        gap: 0 !important; /* No gap at all */
+        padding: 0.15rem 0 !important;
+    }
+
+    .subsection-header .mini-bars .difficulty-filter-square,
+    .subsection-header .mini-bars .square-check {
+        width: 12px !important;
+        height: 12px !important;
+        border-width: 1.5px !important;
+    }
+
+    .subsection-header .mini-bars .mini-label {
+        font-size: 0.5rem !important;
+        display: none !important; /* Hide labels on ultra-small screens */
+    }
+
+    .subsection-header .mini-bars .mini-progress {
+        width: 20px !important; /* Keep progress bar visible */
+        height: 2.5px !important;
+        margin: 0 2px !important;
+    }
+
+    .subsection-header .mini-bars .mini-count {
+        font-size: 0.45rem !important;
+        margin: 0 0 0 1px !important;
+    }
+
+    .subsection-header .mini-bars .square-check:checked::after {
+        font-size: 7px !important;
+    }
+}
+
 
 /* MEDIUM SCREENS - Mobile menu for 601px to 768px */
 @media (min-width: 601px) and (max-width: 800px) {

@@ -174,28 +174,28 @@
                         {
                             "label": "Contains Duplicate",
                             "question": "https://leetcode.com/problems/contains-duplicate/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "easy",
                             "id": 1054
                         },
                         {
                             "label": "Intersection of Two Arrays",
                             "question": "https://leetcode.com/problems/intersection-of-two-arrays/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "easy",
                             "id": 1837
                         },
                         {
                             "label": "Distribute Candies",
                             "question": "https://leetcode.com/problems/distribute-candies/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "easy",
                             "id": 1838
                         },
                         {
                             "label": "Unique Email Addresses",
                             "question": "https://leetcode.com/problems/unique-email-addresses/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "easy",
                             "id": 1839
                         }
@@ -214,14 +214,14 @@
                         {
                             "label": "First Unique Character in a String",
                             "question": "https://leetcode.com/problems/first-unique-character-in-a-string/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "easy",
                             "id": 1834
                         },
                         {
                             "label": "Unique Number of Occurrences",
                             "question": "https://leetcode.com/problems/unique-number-of-occurrences/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "easy",
                             "id": 1835
                         },
@@ -3915,7 +3915,7 @@
                         {
                             "label": "Maximal Square (DP + Prefix Sum)",
                             "question": "https://leetcode.com/problems/maximal-square/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "medium",
                             "id": 1829
                         },
@@ -5159,35 +5159,35 @@
                         {
                             "label": "Sum of Distances in Tree",
                             "question": "https://leetcode.com/problems/sum-of-distances-in-tree/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1842
                         },
                         {
                             "label": "Minimum Edge Reversals So Every Node Is Reachable",
                             "question": "https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1320
                         },
                         {
                             "label": "Count Number of Possible Root Nodes",
                             "question": "https://leetcode.com/problems/count-number-of-possible-root-nodes/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1843
                         },
                         {
                             "label": "Time Taken to Mark All Nodes",
                             "question": "https://leetcode.com/problems/time-taken-to-mark-all-nodes/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1844
                         },
                         {
                             "label": "Difference Between Maximum and Minimum Price Sum",
                             "question": "https://leetcode.com/problems/difference-between-maximum-and-minimum-price-sum/",
-                            "solution": "",
+                            "solution": "-",
                             "difficulty": "hard",
                             "id": 1845
                         }
