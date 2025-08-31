@@ -381,6 +381,10 @@ function getGlobalSolved() {
  * TOGGLE SOLVED
  ***************************************************************/
 function toggleSolved(icon) {
+  // Get problem information for tracking FIRST - ADD THIS!
+  const problemRow = icon.closest('tr');
+  const problemLabel = problemRow?.querySelector('a')?.textContent || 'Unknown';
+  const difficulty = icon.getAttribute('data-difficulty') || 'unknown';
   // Check if this problem is in the Puzzle section FIRST
   let section = icon.closest('.collapsible.z-depth-1');
 
@@ -409,6 +413,8 @@ function toggleSolved(icon) {
 
       // For Puzzle section, only save progress and trigger celebration
       if (!wasSolved) {
+        console.log('Tracking problem completion:', problemLabel);
+        trackEvent('Problem_Interaction', 'problem_completed', `${problemLabel} | ${difficulty}`);
         clearTimeout(celebrationTimer);
         celebrationTimer = setTimeout(() => {
           triggerCelebration();
@@ -437,6 +443,8 @@ function toggleSolved(icon) {
 
   // If marking as solved, trigger celebration
   if (!wasSolved) {
+    console.log('Tracking problem completion:', problemLabel);
+    trackEvent('Problem_Interaction', 'problem_completed', `${problemLabel} | ${difficulty}`);
     clearTimeout(celebrationTimer);
     celebrationTimer = setTimeout(() => {
       triggerCelebration();
@@ -685,6 +693,8 @@ function setupRandomButton() {
 }
 
 function openRandomUnsolvedProblem() {
+  console.log('Random button clicked - tracking event');
+  trackEvent('Feature_Usage', 'random_problem_clicked', 'Random Button');
   // Get all unsolved problems
   const unsolvedProblems = [];
 
@@ -1383,7 +1393,7 @@ function generateSubsectionCollapsible(subsection) {
         <!-- Mini progress bars for this individual subsection -->
         <div class="mini-bars small" data-id="${subsecTitle}">
           <div class="mini-bar-line small">
-            <label class="difficulty-filter-square small" title="Filter Easy Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
+            <label class="difficulty-filter-square small" title="Filter Easy Problems">
               <input type="checkbox" class="square-check easy" data-section="${subsecTitle}" data-difficulty="easy" checked
                 onclick="event.stopPropagation(); filterProblems(event);"  
               style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--easy-color); display:block;">
@@ -1393,7 +1403,7 @@ function generateSubsectionCollapsible(subsection) {
             <span class="mini-count small" data-diff="easy">(0/${totalEasy})</span>
           </div>
           <div class="mini-bar-line small">
-            <label class="difficulty-filter-square small" title="Filter Medium Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
+            <label class="difficulty-filter-square small" title="Filter Medium Problems">
               <input type="checkbox" class="square-check medium" data-section="${subsecTitle}" data-difficulty="medium" checked
                 onclick="event.stopPropagation(); filterProblems(event);"  
                 style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--medium-color); display:block;">
@@ -1403,7 +1413,7 @@ function generateSubsectionCollapsible(subsection) {
             <span class="mini-count small" data-diff="medium">(0/${totalMedium})</span>
           </div>
           <div class="mini-bar-line small">
-            <label class="difficulty-filter-square small" title="Filter Hard Problems" style="display:inline-flex; width:18px; height:18px; margin-right:0.25rem;">
+            <label class="difficulty-filter-square small" title="Filter Hard Problems">
               <input type="checkbox" class="square-check hard" data-section="${subsecTitle}" data-difficulty="hard" checked
                 onclick="event.stopPropagation(); filterProblems(event);"  
                 style="opacity:1; position:static; pointer-events:auto; width:16px; height:16px; border-radius:50%; border:2px solid var(--hard-color); display:block;">
@@ -1448,7 +1458,8 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
                   ${problem.important ? `
                     <span class="important-star" title="Must Do Question">🎯</span>
                   ` : ''}
-                  <a href="${problem.question}" target="_blank">${problem.label}</a>
+                    <a href="${problem.question}" target="_blank" 
+                     onclick="window.trackProblemClick('${escapedLabel}', '${problem.difficulty}', '${baseId}')">${problem.label}</a>
                   <i class="material-icons inline-favorite-star" 
                      data-problem-id="${problem.id || problemId}"
                      data-favorited="false"
@@ -1459,13 +1470,15 @@ function generateProblemsTable(problemArray, baseId, showCollapseBtn = false) {
               </td>
               <td data-label="Solution">
                 ${problem.solution && problem.solution !== "-"
-        ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link"><i class="fa-brands fa-github github-icon"></i></a></div>`
+        ? `<div class="solution-container"><a href="${problem.solution}" target="_blank" class="solution-link" 
+              onclick="window.trackSolutionClick('github_solution', '${escapedLabel}')"><i class="fa-brands fa-github github-icon"></i></a></div>`
         : "-"
       }
               </td>
               <td data-label="YouTube">
                 ${problem.youtube && problem.youtube !== "-"
-        ? `<div class="solution-container"><a href="${problem.youtube}" target="_blank" class="youtube-link"><span style="display:inline-block;">WATCH</span></a></div>`
+        ? `<div class="solution-container"><a href="${problem.youtube}" target="_blank" class="youtube-link"
+             onclick="window.trackSolutionClick('youtube_solution', '${escapedLabel}')"><span style="display:inline-block;">WATCH</span></a></div>`
         : "-"
       }
               </td>
@@ -3410,6 +3423,19 @@ function stopBinaryRain() {
  * INITIALIZATION
  ***************************************************************/
 document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(() => {
+    if (typeof gtag === 'undefined') {
+      console.error('❌ Google Analytics (gtag) is NOT loaded!');
+    } else {
+      console.log('✅ Google Analytics (gtag) is loaded and ready');
+
+      // Send a test event to verify it's working
+      gtag('event', 'tracking_initialized', {
+        'event_category': 'System',
+        'event_label': 'GA Tracking Started'
+      });
+    }
+  }, 1000);
   cleanupListeners();
   const rectContainer = document.getElementById('rectChartContainer');
   if (rectContainer) {
@@ -4015,6 +4041,8 @@ function showComingSoonBanner(section) {
 
 // Function to switch between sections
 function switchSection(section) {
+  console.log(`Switching from ${currentSection} to ${section}`);
+  trackEvent('Navigation', 'section_switch', `from_${currentSection}_to_${section}`);
   if (section === currentSection) {
     return; // Don't reload if already on the same section
   }
@@ -4451,3 +4479,55 @@ function switchSectionInterview(section) {
     });
 }
 */
+
+
+function trackEvent(category, action, label, value = null) {
+  console.log('📊 GA Event:', {
+    category: category,
+    action: action,
+    label: label,
+    value: value
+  });
+
+  if (typeof gtag !== 'undefined') {
+    // GA4 requires different event structure
+    if (action === 'problem_click' || action === 'section_expand' || action === 'problem_completed') {
+      // Send as custom event with parameters
+      gtag('event', action, {
+        'category': category,
+        'label': label,
+        'value': value,
+        'send_to': 'G-KL8WFGBTC1' // Add your measurement ID explicitly 
+      });
+      console.log('✅ Event sent to GA4');
+    } else {
+      // For other events, use the action as event name
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': label,
+        'value': value,
+        'send_to': 'G-KL8WFGBTC1' // Add your measurement ID explicitly
+      });
+      console.log('✅ Event sent to GA4');
+    }
+  } else {
+    console.warn('gtag is not defined!');
+  }
+}
+// Make tracking functions globally available for onclick attributes
+window.trackProblemClick = function (problemLabel, difficulty, section) {
+  trackEvent('Problem_Interaction', 'problem_click', `${problemLabel} | ${difficulty} | ${section}`);
+}
+
+window.trackSolutionClick = function (type, problemLabel) {
+  trackEvent('Solution_Click', type, problemLabel);
+}
+
+
+
+
+
+
+
+
+
