@@ -6,7 +6,7 @@
                 {
                     "label": "Sum of First N Natural Numbers",
                     "question": "https://www.geeksforgeeks.org/sum-of-first-n-natural-numbers/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/SumFirstNNatural.cpp",
                     "difficulty": "easy",
                     "id": 1001,
                     "important": true
@@ -14,77 +14,77 @@
                 {
                     "label": "Check Prime Number",
                     "question": "https://www.geeksforgeeks.org/c-program-to-check-prime-number/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/CheckPrimeNumber.cpp",
                     "difficulty": "easy",
                     "id": 1002
                 },
                 {
                     "label": "Reverse a Number",
                     "question": "https://www.geeksforgeeks.org/write-a-program-to-reverse-digits-of-a-number/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/ReverseNumber.cpp",
                     "difficulty": "easy",
                     "id": 1003
                 },
                 {
                     "label": "Check Palindrome Number",
                     "question": "https://leetcode.com/problems/palindrome-number/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/PalindromeNumber.cpp",
                     "difficulty": "easy",
                     "id": 1004
                 },
                 {
                     "label": "Factorial of a Number",
                     "question": "https://www.geeksforgeeks.org/factorial-large-number/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/FactorialN.cpp",
                     "difficulty": "easy",
                     "id": 1005
                 },
                 {
                     "label": "Check Leap Year",
                     "question": "https://www.geeksforgeeks.org/program-check-given-year-leap-year/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/LeapYear.cpp",
                     "difficulty": "easy",
                     "id": 1007
                 },
                 {
                     "label": "Check Armstrong Number",
                     "question": "https://www.geeksforgeeks.org/program-for-armstrong-numbers/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/ArmStrong.cpp",
                     "difficulty": "easy",
                     "id": 1008
                 },
                 {
                     "label": "Check Palindrome String",
                     "question": "https://leetcode.com/problems/valid-palindrome/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/PalindromicString.cpp",
                     "difficulty": "easy",
                     "id": 1009
                 },
                 {
                     "label": "Find Smallest Element in an Array",
                     "question": "https://www.geeksforgeeks.org/to-find-smallest-and-second-smallest-element-in-an-array/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/SmallestInArray.cpp",
                     "difficulty": "easy",
                     "id": 1010
                 },
                 {
                     "label": "Swap Two Numbers Without Using a Temporary Variable",
                     "question": "https://www.geeksforgeeks.org/swap-two-numbers-without-using-temporary-variable/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/SwapWithoutVar.cpp",
                     "difficulty": "easy",
                     "id": 1011
                 },
                 {
                     "label": "Check if a Number is Perfect Square",
                     "question": "https://www.geeksforgeeks.org/check-if-given-number-is-perfect-square-in-cpp/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/CheckPerfectSquare.cpp",
                     "difficulty": "easy",
                     "id": 1012
                 },
                 {
                     "label": "Find GCD of Two Numbers",
                     "question": "https://leetcode.com/problems/greatest-common-divisor-of-strings/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/HalwaProblems/GcdOfString.cpp",
                     "difficulty": "medium",
                     "id": 1013
                 }
@@ -357,109 +357,6 @@
                     ]
                 },
                 {
-                    "title": "Subarray Sum",
-                    "problems": [
-                        {
-                            "label": "Maximum Subarray Sum – Kadane’s Algorithm",
-                            "question": "https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KadaneMaxSubArraySum.cpp",
-                            "difficulty": "easy",
-                            "id": 1039
-                        },
-                        {
-                            "label": "Best Time to Buy and Sell Stock",
-                            "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BestTimeToBuyAndSellStock.cpp",
-                            "difficulty": "easy",
-                            "id": 1040
-                        },
-                        {
-                            "label": "Subarrays with Sum 0",
-                            "question": "https://www.geeksforgeeks.org/find-if-there-is-a-subarray-with-0-sum/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubarrayWith0sum.cpp",
-                            "difficulty": "medium",
-                            "id": 1041
-                        },
-                        {
-                            "label": "Subarray Sum Equals K",
-                            "question": "https://leetcode.com/problems/subarray-sum-equals-k/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubArraySumK.cpp",
-                            "difficulty": "medium",
-                            "id": 1042
-                        },
-                        {
-                            "label": "Longest Subarray with sum K",
-                            "question": "https://www.geeksforgeeks.org/longest-sub-array-sum-k/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LongestSubarrayWithSumK.cpp",
-                            "difficulty": "medium",
-                            "id": 1043
-                        },
-                        {
-                            "label": "Contiguous Array(Convert values to ±1 then same as Subarray Sum Equals 0)",
-                            "question": "https://leetcode.com/problems/contiguous-array/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ContiguousArray.cpp",
-                            "difficulty": "medium",
-                            "id": 1044
-                        },
-                        {
-                            "label": "Subarray Sums Divisible by K",
-                            "question": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubarraySumsDivisibleByK.cpp",
-                            "difficulty": "medium",
-                            "id": 1045
-                        },
-                        {
-                            "label": "Make Sum Divisible by P",
-                            "question": "https://leetcode.com/problems/make-sum-divisible-by-p/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeSumDivisibleByP.cpp",
-                            "difficulty": "medium",
-                            "id": 1046
-                        },
-                        {
-                            "label": "Maximum Subarray Sum With Length Divisible by K",
-                            "question": "https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSubarraySumWhoseLengthDivByK.cpp",
-                            "difficulty": "medium",
-                            "id": 1047
-                        },
-                        {
-                            "label": "Continuous Subarray Sum",
-                            "question": "https://leetcode.com/problems/continuous-subarray-sum/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ContinuousSubarraySum.cpp",
-                            "difficulty": "medium",
-                            "id": 1048
-                        },
-                        {
-                            "label": "Maximum Sum Circular Subarray",
-                            "question": "https://leetcode.com/problems/maximum-sum-circular-subarray/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumSumCircularSubarray.cpp",
-                            "difficulty": "medium",
-                            "id": 1049
-                        },
-                        {
-                            "label": "Maximum Product Subarray",
-                            "question": "https://leetcode.com/problems/maximum-product-subarray/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumProductSubarray.cpp",
-                            "difficulty": "medium",
-                            "id": 1050
-                        },
-                        {
-                            "label": "Binary Subarrays With Sum",
-                            "question": "https://leetcode.com/problems/binary-subarrays-with-sum/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinarySubarrayWithSum.cpp",
-                            "difficulty": "medium",
-                            "id": 1051
-                        },
-                        {
-                            "label": "Number of Submatrices That Sum to Target",
-                            "question": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberOfSubmatricesThatSumToTarget.cpp",
-                            "difficulty": "hard",
-                            "id": 1052
-                        }
-                    ]
-                },
-                {
                     "title": "Prefix Sum + Difference Array",
                     "problems": [
                         {
@@ -512,6 +409,109 @@
                             "id": 1793
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "title": "Subarray Sum (Kadane's Algorithm)",
+            "problems": [
+                {
+                    "label": "Maximum Subarray Sum – Kadane’s Algorithm",
+                    "question": "https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/KadaneMaxSubArraySum.cpp",
+                    "difficulty": "easy",
+                    "id": 1039
+                },
+                {
+                    "label": "Best Time to Buy and Sell Stock",
+                    "question": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BestTimeToBuyAndSellStock.cpp",
+                    "difficulty": "easy",
+                    "id": 1040
+                },
+                {
+                    "label": "Subarrays with Sum 0",
+                    "question": "https://www.geeksforgeeks.org/find-if-there-is-a-subarray-with-0-sum/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubarrayWith0sum.cpp",
+                    "difficulty": "medium",
+                    "id": 1041
+                },
+                {
+                    "label": "Subarray Sum Equals K",
+                    "question": "https://leetcode.com/problems/subarray-sum-equals-k/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubArraySumK.cpp",
+                    "difficulty": "medium",
+                    "id": 1042
+                },
+                {
+                    "label": "Longest Subarray with sum K",
+                    "question": "https://www.geeksforgeeks.org/longest-sub-array-sum-k/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LongestSubarrayWithSumK.cpp",
+                    "difficulty": "medium",
+                    "id": 1043
+                },
+                {
+                    "label": "Contiguous Array(Convert values to ±1 then same as Subarray Sum Equals 0)",
+                    "question": "https://leetcode.com/problems/contiguous-array/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ContiguousArray.cpp",
+                    "difficulty": "medium",
+                    "id": 1044
+                },
+                {
+                    "label": "Subarray Sums Divisible by K",
+                    "question": "https://leetcode.com/problems/subarray-sums-divisible-by-k/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubarraySumsDivisibleByK.cpp",
+                    "difficulty": "medium",
+                    "id": 1045
+                },
+                {
+                    "label": "Make Sum Divisible by P",
+                    "question": "https://leetcode.com/problems/make-sum-divisible-by-p/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MakeSumDivisibleByP.cpp",
+                    "difficulty": "medium",
+                    "id": 1046
+                },
+                {
+                    "label": "Maximum Subarray Sum With Length Divisible by K",
+                    "question": "https://leetcode.com/problems/maximum-subarray-sum-with-length-divisible-by-k/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSubarraySumWhoseLengthDivByK.cpp",
+                    "difficulty": "medium",
+                    "id": 1047
+                },
+                {
+                    "label": "Continuous Subarray Sum",
+                    "question": "https://leetcode.com/problems/continuous-subarray-sum/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/ContinuousSubarraySum.cpp",
+                    "difficulty": "medium",
+                    "id": 1048
+                },
+                {
+                    "label": "Maximum Sum Circular Subarray",
+                    "question": "https://leetcode.com/problems/maximum-sum-circular-subarray/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumSumCircularSubarray.cpp",
+                    "difficulty": "medium",
+                    "id": 1049
+                },
+                {
+                    "label": "Maximum Product Subarray",
+                    "question": "https://leetcode.com/problems/maximum-product-subarray/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumProductSubarray.cpp",
+                    "difficulty": "medium",
+                    "id": 1050
+                },
+                {
+                    "label": "Binary Subarrays With Sum",
+                    "question": "https://leetcode.com/problems/binary-subarrays-with-sum/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinarySubarrayWithSum.cpp",
+                    "difficulty": "medium",
+                    "id": 1051
+                },
+                {
+                    "label": "Number of Submatrices That Sum to Target",
+                    "question": "https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NumberOfSubmatricesThatSumToTarget.cpp",
+                    "difficulty": "hard",
+                    "id": 1052
                 }
             ]
         },
@@ -1929,7 +1929,7 @@
                         {
                             "label": "Merge K Sorted Lists [IMPORTANT]",
                             "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLinkedLists.cpp",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLists.cpp",
                             "difficulty": "hard",
                             "id": 1245
                         },
@@ -2107,18 +2107,18 @@
                     "id": 1266
                 },
                 {
-                    "label": "Merge K Sorted Lists",
-                    "question": "https://leetcode.com/problems/merge-k-sorted-lists/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/mergeKLists.cpp",
-                    "difficulty": "hard",
-                    "id": 1267
-                },
-                {
                     "label": "Merge K Sorted Arrays",
                     "question": "https://www.geeksforgeeks.org/merge-k-sorted-arrays/",
                     "solution": "-",
                     "difficulty": "hard",
                     "id": 1268
+                },
+                {
+                    "label": "Minimum Range Set from K Arrays (Microsoft SDE2)",
+                    "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/MinimumRangeSetFromK_ArraysQuestionMicrosoft.txt",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Heap/MinimumRangeSetFromK_ArrayMicrosoft.cpp",
+                    "difficulty": "hard",
+                    "id": 1267
                 },
                 {
                     "label": "Range Sum of Sorted Subarray Sums",
@@ -2526,13 +2526,6 @@
                             "solution": "-",
                             "difficulty": "easy",
                             "id": 1319
-                        },
-                        {
-                            "label": "Reverse Linked List II",
-                            "question": "https://leetcode.com/problems/reverse-linked-list-ii/",
-                            "solution": "-",
-                            "difficulty": "medium",
-                            "id": 1320
                         },
                         {
                             "label": "Flatten a Linked List",
@@ -5157,6 +5150,46 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumMagicPathCost_0_K_BFS.cpp",
                             "difficulty": "hard",
                             "id": 1647
+                        }
+                    ]
+                },
+                {
+                    "title": "Re-Rooting Technique",
+                    "problems": [
+                        {
+                            "label": "Sum of Distances in Tree",
+                            "question": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1842
+                        },
+                        {
+                            "label": "Minimum Edge Reversals So Every Node Is Reachable",
+                            "question": "https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1320
+                        },
+                        {
+                            "label": "Count Number of Possible Root Nodes",
+                            "question": "https://leetcode.com/problems/count-number-of-possible-root-nodes/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1843
+                        },
+                        {
+                            "label": "Time Taken to Mark All Nodes",
+                            "question": "https://leetcode.com/problems/time-taken-to-mark-all-nodes/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1844
+                        },
+                        {
+                            "label": "Difference Between Maximum and Minimum Price Sum",
+                            "question": "https://leetcode.com/problems/difference-between-maximum-and-minimum-price-sum/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1845
                         }
                     ]
                 },
