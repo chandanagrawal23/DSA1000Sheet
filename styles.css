@@ -7344,6 +7344,39 @@ body.dark-mode .lld-table .question-link:hover {
         line-height: 1.1 !important;
     }
 
+        /* SUBSECTION-SPECIFIC: Row layout with MUCH better spacing */
+.subsection-header .mini-bars .mini-bar-line {
+    gap: 0.2rem !important; /* Reduced gap between elements */
+    padding: 0.3rem 0.1rem !important; /* Less padding to save space */
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Subsection-specific element adjustments for PROPER spacing */
+.subsection-header .mini-bars .difficulty-filter-square {
+    margin: 0 !important; /* Remove all margins */
+    flex-shrink: 0 !important;
+}
+
+.subsection-header .mini-bars .mini-label {
+    margin: 0 0.1rem !important; /* Add horizontal margin for spacing */
+    font-size: 0.65rem !important; /* Fix typo: was 4.65rem */
+}
+
+.subsection-header .mini-bars .mini-progress {
+    margin: 0 0.3rem !important; /* Consistent spacing on both sides */
+    width: 25px !important;
+    height: 4px !important;
+    flex-shrink: 0 !important;
+}
+
+.subsection-header .mini-bars .mini-count {
+    margin: 0 !important; /* Remove margins */
+    font-size: 1rem !important;
+    flex-shrink: 0 !important;
+}
+
     /* CRITICAL: Go to Top button mobile positioning - FINAL OVERRIDE */
     #go-to-top-button {
         bottom: 20px !important;
