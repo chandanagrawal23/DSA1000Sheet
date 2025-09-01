@@ -5154,46 +5154,6 @@
                     ]
                 },
                 {
-                    "title": "Re-Rooting Technique",
-                    "problems": [
-                        {
-                            "label": "Sum of Distances in Tree",
-                            "question": "https://leetcode.com/problems/sum-of-distances-in-tree/",
-                            "solution": "-",
-                            "difficulty": "hard",
-                            "id": 1842
-                        },
-                        {
-                            "label": "Minimum Edge Reversals So Every Node Is Reachable",
-                            "question": "https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable/",
-                            "solution": "-",
-                            "difficulty": "hard",
-                            "id": 1320
-                        },
-                        {
-                            "label": "Count Number of Possible Root Nodes",
-                            "question": "https://leetcode.com/problems/count-number-of-possible-root-nodes/",
-                            "solution": "-",
-                            "difficulty": "hard",
-                            "id": 1843
-                        },
-                        {
-                            "label": "Time Taken to Mark All Nodes",
-                            "question": "https://leetcode.com/problems/time-taken-to-mark-all-nodes/",
-                            "solution": "-",
-                            "difficulty": "hard",
-                            "id": 1844
-                        },
-                        {
-                            "label": "Difference Between Maximum and Minimum Price Sum",
-                            "question": "https://leetcode.com/problems/difference-between-maximum-and-minimum-price-sum/",
-                            "solution": "-",
-                            "difficulty": "hard",
-                            "id": 1845
-                        }
-                    ]
-                },
-                {
                     "title": "Minimum Spanning Tree ( Prim and Kruskal Algorithm )",
                     "problems": [
                         {
@@ -5265,6 +5225,46 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.cpp",
                             "difficulty": "hard",
                             "id": 1657
+                        }
+                    ]
+                },
+                {
+                    "title": "Re-Rooting Technique",
+                    "problems": [
+                        {
+                            "label": "Count Number of Possible Root Nodes",
+                            "question": "https://leetcode.com/problems/count-number-of-possible-root-nodes/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1843
+                        },
+                        {
+                            "label": "Sum of Distances in Tree",
+                            "question": "https://leetcode.com/problems/sum-of-distances-in-tree/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1842
+                        },
+                        {
+                            "label": "Minimum Edge Reversals So Every Node Is Reachable",
+                            "question": "https://leetcode.com/problems/minimum-edge-reversals-so-every-node-is-reachable/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1320
+                        },
+                        {
+                            "label": "Time Taken to Mark All Nodes",
+                            "question": "https://leetcode.com/problems/time-taken-to-mark-all-nodes/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1844
+                        },
+                        {
+                            "label": "Difference Between Maximum and Minimum Price Sum",
+                            "question": "https://leetcode.com/problems/difference-between-maximum-and-minimum-price-sum/",
+                            "solution": "-",
+                            "difficulty": "hard",
+                            "id": 1845
                         }
                     ]
                 },
