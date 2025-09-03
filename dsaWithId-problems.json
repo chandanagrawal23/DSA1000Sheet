@@ -894,6 +894,13 @@
                             "id": 1105
                         },
                         {
+                            "label": "Divide Array Into Arrays With Max Difference",
+                            "question": "https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/",
+                            "solution": "",
+                            "difficulty": "medium",
+                            "id": 1846
+                        },
+                        {
                             "label": "Maximum Median Sum of Subsequences of Size 3",
                             "question": "https://leetcode.com/problems/maximum-median-sum-of-subsequences-of-size-3/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Sorting/MaximumMedianSumOfSubsequencesOfSize3.cpp",
@@ -4512,6 +4519,151 @@
             ]
         },
         {
+            "title": "Bit Manipulation",
+            "problems": [
+                {
+                    "label": "Number of 1 Bits",
+                    "question": "https://leetcode.com/problems/number-of-1-bits/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/NumberOf1Bits.cpp",
+                    "difficulty": "easy",
+                    "id": 1663
+                },
+                {
+                    "label": "Power of Two",
+                    "question": "http://leetcode.com/problems/power-of-two/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/PowerOfTwo.cpp",
+                    "difficulty": "easy",
+                    "id": 1664
+                },
+                {
+                    "label": "First Letter to Appear Twice",
+                    "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/FirstLettertoAppearTwice.cpp",
+                    "difficulty": "easy",
+                    "id": 1665
+                },
+                {
+                    "label": "Convert a Number to Hexadecimal",
+                    "question": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ConvertANumberToHexadecimal.cpp",
+                    "difficulty": "easy",
+                    "id": 1666
+                },
+                {
+                    "label": "Count Pairs Of Similar Strings( Map + BitMask)",
+                    "question": "https://leetcode.com/problems/count-pairs-of-similar-strings/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfSimilarStrings.cpp",
+                    "difficulty": "easy",
+                    "id": 1667
+                },
+                {
+                    "label": "Subsets",
+                    "question": "https://leetcode.com/problems/subsets/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/Subsets_Using_BIT_Manipulation.cpp",
+                    "difficulty": "medium",
+                    "id": 1668
+                },
+                {
+                    "label": "Single Number II",
+                    "question": "https://leetcode.com/problems/single-number-ii/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/SingleNumber_II.cpp",
+                    "difficulty": "medium",
+                    "id": 1669
+                },
+                {
+                    "label": "Single Number III",
+                    "question": "https://leetcode.com/problems/single-number-iii/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/SingleNumber_III.cpp",
+                    "difficulty": "medium",
+                    "id": 1670
+                },
+                {
+                    "label": "Shortest Subarray With OR at Least K II",
+                    "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ShortestSubarrayWithORatLeastK_II.cpp",
+                    "difficulty": "medium",
+                    "id": 1671
+                },
+                {
+                    "label": "Maximum OR",
+                    "question": "https://leetcode.com/problems/maximum-or/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/Maximum_OR.cpp",
+                    "difficulty": "medium",
+                    "id": 1672
+                },
+                {
+                    "label": "Longest Subarray With Maximum Bitwise AND",
+                    "question": "https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1813
+                },
+                {
+                    "label": "Count Number of Maximum Bitwise-OR Subsets",
+                    "question": "https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1814
+                },
+                {
+                    "label": "Smallest Subarrays With Maximum Bitwise OR",
+                    "question": "https://leetcode.com/problems/smallest-subarrays-with-maximum-bitwise-or/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1815
+                },
+                {
+                    "label": "Maximum Xor Product",
+                    "question": "https://leetcode.com/problems/maximum-xor-product/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1673
+                },
+                {
+                    "label": "Range Product Queries of Powers",
+                    "question": "https://leetcode.com/problems/range-product-queries-of-powers/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/RangeProductQueriesOfPowers.cpp",
+                    "difficulty": "medium",
+                    "id": 1803
+                },
+                {
+                    "label": "Substring XOR Queries",
+                    "question": "https://leetcode.com/problems/substring-xor-queries/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubstringXOR_Queries.cpp",
+                    "difficulty": "medium",
+                    "id": 1674
+                },
+                {
+                    "label": "Minimum Moves to Clean the Classroom (Graph + Bit Manipulation)",
+                    "question": "https://leetcode.com/problems/minimum-moves-to-clean-the-classroom/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/MinimumMovesToCleanTheClassroom.cpp",
+                    "difficulty": "medium",
+                    "id": 1675
+                },
+                {
+                    "label": "Count Pairs of Points With Distance K(Just like Two Sum)",
+                    "question": "https://leetcode.com/problems/count-pairs-of-points-with-distance-k/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfPointsWithDistanceK.cpp",
+                    "difficulty": "medium",
+                    "id": 1676
+                },
+                {
+                    "label": "Shortest Path to Get All Keys",
+                    "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ShortestPathToGetAllKeys.cpp",
+                    "difficulty": "hard",
+                    "id": 1677
+                },
+                {
+                    "label": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+                    "question": "https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/MinimumNumberOfFlipsToConvertBinaryMatrixToZeroMatrix.cpp",
+                    "difficulty": "hard",
+                    "id": 1678
+                }
+            ]
+        },
+        {
             "title": "Graph",
             "subsections": [
                 {
@@ -4908,6 +5060,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumTimeToReachDestinationInDirectedGraph.cpp",
                             "difficulty": "medium",
                             "id": 1820
+                        },
+                        {
+                            "label": "Minimum Cost Path with Edge Reversals",
+                            "question": "https://leetcode.com/problems/minimum-cost-path-with-edge-reversals/",
+                            "solution": "",
+                            "difficulty": "medium",
+                            "id": 1847
                         },
                         {
                             "label": "Number of Ways to Arrive at Destination",
@@ -5311,151 +5470,6 @@
             ]
         },
         {
-            "title": "Bit Manipulation",
-            "problems": [
-                {
-                    "label": "Number of 1 Bits",
-                    "question": "https://leetcode.com/problems/number-of-1-bits/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/NumberOf1Bits.cpp",
-                    "difficulty": "easy",
-                    "id": 1663
-                },
-                {
-                    "label": "Power of Two",
-                    "question": "http://leetcode.com/problems/power-of-two/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/PowerOfTwo.cpp",
-                    "difficulty": "easy",
-                    "id": 1664
-                },
-                {
-                    "label": "First Letter to Appear Twice",
-                    "question": "https://leetcode.com/problems/first-letter-to-appear-twice/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/FirstLettertoAppearTwice.cpp",
-                    "difficulty": "easy",
-                    "id": 1665
-                },
-                {
-                    "label": "Convert a Number to Hexadecimal",
-                    "question": "https://leetcode.com/problems/convert-a-number-to-hexadecimal/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ConvertANumberToHexadecimal.cpp",
-                    "difficulty": "easy",
-                    "id": 1666
-                },
-                {
-                    "label": "Count Pairs Of Similar Strings( Map + BitMask)",
-                    "question": "https://leetcode.com/problems/count-pairs-of-similar-strings/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfSimilarStrings.cpp",
-                    "difficulty": "easy",
-                    "id": 1667
-                },
-                {
-                    "label": "Subsets",
-                    "question": "https://leetcode.com/problems/subsets/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/Subsets_Using_BIT_Manipulation.cpp",
-                    "difficulty": "medium",
-                    "id": 1668
-                },
-                {
-                    "label": "Single Number II",
-                    "question": "https://leetcode.com/problems/single-number-ii/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/SingleNumber_II.cpp",
-                    "difficulty": "medium",
-                    "id": 1669
-                },
-                {
-                    "label": "Single Number III",
-                    "question": "https://leetcode.com/problems/single-number-iii/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/SingleNumber_III.cpp",
-                    "difficulty": "medium",
-                    "id": 1670
-                },
-                {
-                    "label": "Shortest Subarray With OR at Least K II",
-                    "question": "https://leetcode.com/problems/shortest-subarray-with-or-at-least-k-ii/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ShortestSubarrayWithORatLeastK_II.cpp",
-                    "difficulty": "medium",
-                    "id": 1671
-                },
-                {
-                    "label": "Maximum OR",
-                    "question": "https://leetcode.com/problems/maximum-or/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/Maximum_OR.cpp",
-                    "difficulty": "medium",
-                    "id": 1672
-                },
-                {
-                    "label": "Longest Subarray With Maximum Bitwise AND",
-                    "question": "https://leetcode.com/problems/longest-subarray-with-maximum-bitwise-and/",
-                    "solution": "-",
-                    "difficulty": "medium",
-                    "id": 1813
-                },
-                {
-                    "label": "Count Number of Maximum Bitwise-OR Subsets",
-                    "question": "https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/",
-                    "solution": "-",
-                    "difficulty": "medium",
-                    "id": 1814
-                },
-                {
-                    "label": "Smallest Subarrays With Maximum Bitwise OR",
-                    "question": "https://leetcode.com/problems/smallest-subarrays-with-maximum-bitwise-or/",
-                    "solution": "-",
-                    "difficulty": "medium",
-                    "id": 1815
-                },
-                {
-                    "label": "Maximum Xor Product",
-                    "question": "https://leetcode.com/problems/maximum-xor-product/",
-                    "solution": "-",
-                    "difficulty": "medium",
-                    "id": 1673
-                },
-                {
-                    "label": "Range Product Queries of Powers",
-                    "question": "https://leetcode.com/problems/range-product-queries-of-powers/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/RangeProductQueriesOfPowers.cpp",
-                    "difficulty": "medium",
-                    "id": 1803
-                },
-                {
-                    "label": "Substring XOR Queries",
-                    "question": "https://leetcode.com/problems/substring-xor-queries/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SubstringXOR_Queries.cpp",
-                    "difficulty": "medium",
-                    "id": 1674
-                },
-                {
-                    "label": "Minimum Moves to Clean the Classroom (Graph + Bit Manipulation)",
-                    "question": "https://leetcode.com/problems/minimum-moves-to-clean-the-classroom/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/MinimumMovesToCleanTheClassroom.cpp",
-                    "difficulty": "medium",
-                    "id": 1675
-                },
-                {
-                    "label": "Count Pairs of Points With Distance K(Just like Two Sum)",
-                    "question": "https://leetcode.com/problems/count-pairs-of-points-with-distance-k/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/CountPairsOfPointsWithDistanceK.cpp",
-                    "difficulty": "medium",
-                    "id": 1676
-                },
-                {
-                    "label": "Shortest Path to Get All Keys",
-                    "question": "https://leetcode.com/problems/shortest-path-to-get-all-keys/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/ShortestPathToGetAllKeys.cpp",
-                    "difficulty": "hard",
-                    "id": 1677
-                },
-                {
-                    "label": "Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
-                    "question": "https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/",
-                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BitManipulation/MinimumNumberOfFlipsToConvertBinaryMatrixToZeroMatrix.cpp",
-                    "difficulty": "hard",
-                    "id": 1678
-                }
-            ]
-        },
-        {
             "title": "Disjoint Set Unions",
             "subsections": [
                 {
@@ -5549,6 +5563,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/NumberOfOperationsToMakeNetworkConnected.cpp",
                             "difficulty": "medium",
                             "id": 1690
+                        },
+                        {
+                            "label": "Minimum Time for K Connected Components (Binary Search + DSU OR Sorting + DSU)",
+                            "question": "https://leetcode.com/problems/minimum-time-for-k-connected-components/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumTimeForKConnectedComponents.cpp",
+                            "difficulty": "medium",
+                            "id": 1848
                         },
                         {
                             "label": "Similar string groups",
