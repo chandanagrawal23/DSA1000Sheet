@@ -5567,7 +5567,7 @@
                         {
                             "label": "Minimum Time for K Connected Components (Binary Search + DSU OR Sorting + DSU)",
                             "question": "https://leetcode.com/problems/minimum-time-for-k-connected-components/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumTimeForKConnectedComponents.cpp",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinimumTimeForKConnectedComponents.cpp",
                             "difficulty": "medium",
                             "id": 1848
                         },
