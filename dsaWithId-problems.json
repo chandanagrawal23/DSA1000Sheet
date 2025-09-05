@@ -2009,7 +2009,7 @@
                     "id": 1253
                 },
                 {
-                    "label": "Top K Frequent Elements",
+                    "label": "Top K Frequent Elements (Min Heap, Max Heap, Bucket Sort)",
                     "question": "https://leetcode.com/problems/top-k-frequent-elements/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/topKFrequent.cpp",
                     "difficulty": "medium",
@@ -4515,6 +4515,13 @@
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxPointsOnLine.cpp",
                     "difficulty": "hard",
                     "id": 1570
+                },
+                {
+                    "label": "Find the Number of Ways to Place People II (4 approaches)",
+                    "question": "https://leetcode.com/problems/find-the-number-of-ways-to-place-people-ii/",
+                    "solution": "",
+                    "difficulty": "hard",
+                    "id": 1849
                 }
             ]
         },
@@ -6107,14 +6114,14 @@
                 {
                     "label": "Fruits Into Baskets III",
                     "question": "https://leetcode.com/problems/fruits-into-baskets-iii/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SQRT_Decompose/FruitsIntoBaskets_III.cpp",
                     "difficulty": "medium",
                     "id": 1805
                 },
                 {
                     "label": "Range Sum Query - Mutable",
                     "question": "https://leetcode.com/problems/range-sum-query-mutable/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/SQRT_Decompose/RangeSumQuery_Mutable.cpp",
                     "difficulty": "medium",
                     "id": 1806
                 },
