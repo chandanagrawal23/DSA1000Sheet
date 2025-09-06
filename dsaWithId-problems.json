@@ -5572,6 +5572,13 @@
                             "id": 1690
                         },
                         {
+                            "label": "Power Grid Maintenance",
+                            "question": "https://leetcode.com/problems/power-grid-maintenance/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/PowerGridMaintenance.cpp",
+                            "difficulty": "medium",
+                            "id": 1850
+                        },
+                        {
                             "label": "Minimum Time for K Connected Components (Binary Search + DSU OR Sorting + DSU)",
                             "question": "https://leetcode.com/problems/minimum-time-for-k-connected-components/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/MinimumTimeForKConnectedComponents.cpp",
