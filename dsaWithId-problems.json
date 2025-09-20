@@ -2474,6 +2474,13 @@
                             "solution": "-",
                             "difficulty": "easy",
                             "id": 1312
+                        },
+                        {
+                            "label": "Nested List Weight Sum",
+                            "question": "https://leetcode.ca/all/339.html",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/NestedListWeightSum.cpp",
+                            "difficulty": "medium",
+                            "id": 1852
                         }
                     ]
                 },
@@ -3488,6 +3495,13 @@
                             "solution": "-",
                             "difficulty": "medium",
                             "id": 1828
+                        },
+                        {
+                            "label": "Longest Common Prefix Between Adjacent Strings After Removals",
+                            "question": "https://leetcode.com/problems/longest-common-prefix-between-adjacent-strings-after-removals/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/LongestCommonPrefixBetweenAdjacentStringsAfterRemovals.cpp",
+                            "difficulty": "medium",
+                            "id": 1851
                         },
                         {
                             "label": "Hermione Magic Potion Encoding (GoldMan Sachs)",
@@ -6070,6 +6084,34 @@
                     "solution": "-",
                     "difficulty": "medium",
                     "id": 1833
+                },
+                {
+                    "label": "Design a Food Rating System",
+                    "question": "https://leetcode.com/problems/design-a-food-rating-system/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1853
+                },
+                {
+                    "label": "Design Task Manager",
+                    "question": "https://leetcode.com/problems/design-task-manager/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1854
+                },
+                {
+                    "label": "Design Spreadsheet",
+                    "question": "https://leetcode.com/problems/design-spreadsheet/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1855
+                },
+                {
+                    "label": "Implement Router",
+                    "question": "https://leetcode.com/problems/implement-router/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1856
                 },
                 {
                     "label": "Design In Memory File System (TRIE)",
