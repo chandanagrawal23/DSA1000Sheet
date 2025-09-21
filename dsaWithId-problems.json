@@ -2259,6 +2259,20 @@
                     "id": 1282
                 },
                 {
+                    "label": "Minimum Swaps to Group All 1's Together",
+                    "question": "https://leetcode.ca/all/1151.html",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumSwapsToGroupAll_1_Together_I.cpp",
+                    "difficulty": "medium",
+                    "id": 1858
+                },
+                {
+                    "label": "Minimum Swaps to Group All 1's Together II",
+                    "question": "https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumSwapsToGroupAll_1_Together_II.cpp",
+                    "difficulty": "medium",
+                    "id": 1859
+                },
+                {
                     "label": "Sliding Window Maximum[Monotonic Deque or Heap or Map or DP]",
                     "question": "https://leetcode.com/problems/sliding-window-maximum/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/maxSlidingWindowUsingMap.cpp",
