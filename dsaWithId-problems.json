@@ -999,7 +999,14 @@
                             "id": 1118
                         },
                         {
-                            "label": "Minimum Swaps to Sort by Digit Sum",
+                            "label": "Minimum Swaps to Sort an Array(Cycle Detection)",
+                            "question": "https://www.geeksforgeeks.org/dsa/minimum-number-swaps-required-sort-array/",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1857
+                        },
+                        {
+                            "label": "Minimum Swaps to Sort by Digit Sum(Cycle Detection)",
                             "question": "https://leetcode.com/problems/minimum-swaps-to-sort-by-digit-sum/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumSwapsToSortByDigitSum.cpp",
                             "difficulty": "medium",
