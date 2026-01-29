@@ -3680,7 +3680,7 @@
                         {
                             "label": "Maximum Profit in Job Scheduling (IMP) (DP + Binary Search)",
                             "question": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
-                            "solution": "-",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/MaximumProfitInJobScheduling.cpp",
                             "difficulty": "hard",
                             "id": 1460
                         },
@@ -6177,6 +6177,13 @@
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Design/ImplementRouter.cpp",
                     "difficulty": "medium",
                     "id": 1856
+                },
+                {
+                    "label": "Design Auction System",
+                    "question": "https://leetcode.com/problems/design-auction-system/description/",
+                    "solution": "",
+                    "difficulty": "medium",
+                    "id": 1867
                 },
                 {
                     "label": "Design In Memory File System (TRIE)",
