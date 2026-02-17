@@ -5878,6 +5878,13 @@
                     "solution": "-",
                     "difficulty": "hard",
                     "id": 1718
+                },
+                {
+                    "label": "Maximum Subarray XOR Bounded Range(Prefix XOR + Sliding Window + Monotonic Deque + Trie)",
+                    "question": "https://leetcode.com/problems/maximum-subarray-xor-with-bounded-range/",
+                    "solution": "-",
+                    "difficulty": "hard",
+                    "id": 1869
                 }
             ]
         },
