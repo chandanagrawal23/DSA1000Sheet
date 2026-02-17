@@ -5810,6 +5810,13 @@
                     "id": 1709
                 },
                 {
+                    "label": "Maximum Subarray XOR ",
+                    "question": "https://www.geeksforgeeks.org/dsa/find-the-maximum-subarray-xor-in-a-given-array/",
+                    "solution": "https://www.geeksforgeeks.org/dsa/find-the-maximum-subarray-xor-in-a-given-array/",
+                    "difficulty": "medium",
+                    "id": 1868
+                },
+                {
                     "label": "Word Break (Trie + DP)",
                     "question": "https://leetcode.com/problems/word-break/",
                     "solution": "-",
