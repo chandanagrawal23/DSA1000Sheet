@@ -292,6 +292,13 @@
                             "id": 1030
                         },
                         {
+                            "label": "Count Submatrices With Equal Frequency of X and Y",
+                            "question": "https://leetcode.com/problems/count-submatrices-with-equal-frequency-of-x-and-y/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountSubmatricesWithEqualFrequencyX_Y.cpp",
+                            "difficulty": "medium",
+                            "id": 1870
+                        },
+                        {
                             "label": "Range Sum Query 2D - Immutable",
                             "question": "https://leetcode.com/problems/range-sum-query-2d-immutable/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/RangeSumQuery_2DImmutable.cpp",
