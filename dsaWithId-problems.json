@@ -5162,6 +5162,13 @@
                             "id": 1619
                         },
                         {
+                            "label": "Shortest Path With At Most K Consecutive Identical Characters",
+                            "question": "https://leetcode.com/problems/shortest-path-with-at-most-k-consecutive-identical-characters",
+                            "solution": "",
+                            "difficulty": "medium",
+                            "id": 1871
+                        },
+                        {
                             "label": "Minimum Cost to Reach City With Discounts",
                             "question": "https://leetcode.ca/2021-12-16-2093-Minimum-Cost-to-Reach-City-With-Discounts/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToReachCityWithDiscounts.cpp",
