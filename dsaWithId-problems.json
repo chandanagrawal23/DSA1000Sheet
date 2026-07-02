@@ -596,6 +596,13 @@
                     "id": 1064
                 },
                 {
+                    "label": "Partition Array According to Given Pivot",
+                    "question": "https://leetcode.com/problems/partition-array-according-to-given-pivot/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1872
+                },
+                {
                     "label": "Sort Colors[0,1,2] ( Learn Dutch National Flag Problem IMP)",
                     "question": "https://leetcode.com/problems/sort-colors/",
                     "solution": "-",
@@ -5550,6 +5557,18 @@
                             "solution": "-",
                             "difficulty": "medium",
                             "id": 1662
+                        }
+                    ]
+                },
+                {
+                    "title" : "Post-Order DFS / Lambda Recursion Type",
+                    "problems" : [
+                        {
+                            "label": "Finish time of tasks I",
+                            "question": "https://leetcode.com/problems/finish-time-of-tasks-i",
+                            "solution": "-",
+                            "difficulty": "medium",
+                            "id": 1873
                         }
                     ]
                 }
