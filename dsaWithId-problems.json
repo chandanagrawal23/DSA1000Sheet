@@ -5566,7 +5566,7 @@
                         {
                             "label": "Finish time of tasks I",
                             "question": "https://leetcode.com/problems/finish-time-of-tasks-i",
-                            "solution": "-",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FinishTimeTasks_I.cpp",
                             "difficulty": "medium",
                             "id": 1873
                         }
