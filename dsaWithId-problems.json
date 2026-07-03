@@ -5188,6 +5188,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindEdgesInShortestPaths.cpp",
                             "difficulty": "hard",
                             "id": 1621
+                        },
+                        {
+                            "label": "Minimum Weighted Subgraph With The Required Paths ( 3 times Dijkistra )",
+                            "question": "https://leetcode.com/problems/minimum-weighted-subgraph-with-the-required-paths",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumWeightedSubgraphWithTheRequiredPaths.cpp",
+                            "difficulty": "hard",
+                            "id": 1874
                         }
                     ]
                 },
