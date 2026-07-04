@@ -321,7 +321,7 @@
                 {
                     "label": "Decode String",
                     "question": "https://leetcode.com/problems/decode-string/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
                     "difficulty": "medium",
                     "id": 2046
                 },
@@ -489,7 +489,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
                     "difficulty": "medium",
                     "id": 2069
                 },
@@ -579,7 +579,7 @@
                 },
                 {
                     "label": "Next Greater Element I",
-                    "question": "https://leetcode.ca/all/253.html",
+                    "question": "https://leetcode.ca/all/252.html",
                     "solution": "-",
                     "difficulty": "easy",
                     "id": 2082
@@ -724,9 +724,6 @@
                     "difficulty": "medium",
                     "id": 2394
                 }
-            
-            
-            
             ]
         },
         {
@@ -1295,7 +1292,7 @@
                 {
                     "label": "Find Median from Data Stream",
                     "question": "https://leetcode.com/problems/find-median-from-data-stream/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
                     "difficulty": "hard",
                     "id": 2129
                 },
@@ -1315,7 +1312,7 @@
                 },
                 {
                     "label": "Next Greater Element I",
-                    "question": "https://leetcode.ca/all/253.html",
+                    "question": "https://leetcode.ca/all/252.html",
                     "solution": "-",
                     "difficulty": "easy",
                     "id": 2082
@@ -2105,7 +2102,7 @@
                 {
                     "label": "Find Median from Data Stream",
                     "question": "https://leetcode.com/problems/find-median-from-data-stream/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
                     "difficulty": "hard",
                     "id": 2129
                 },
@@ -2119,7 +2116,7 @@
                 {
                     "label": "Decode String",
                     "question": "https://leetcode.com/problems/decode-string/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
                     "difficulty": "medium",
                     "id": 2046
                 },
@@ -2203,7 +2200,7 @@
                 {
                     "label": "Maximum Profit in Job Scheduling",
                     "question": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/MaximumProfitInJobScheduling.cpp",
                     "difficulty": "hard",
                     "id": 2184
                 }
@@ -2341,7 +2338,7 @@
                 {
                     "label": "Basic Calculator II",
                     "question": "https://leetcode.com/problems/basic-calculator-ii/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BasicCalculator_II.cpp",
                     "difficulty": "medium",
                     "id": 2194
                 },
@@ -2698,7 +2695,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
                     "difficulty": "medium",
                     "id": 2069
                 },
@@ -2908,7 +2905,7 @@
                 {
                     "label": "Find Median from Data Stream",
                     "question": "https://leetcode.com/problems/find-median-from-data-stream/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
                     "difficulty": "hard",
                     "id": 2129
                 },
@@ -3027,7 +3024,7 @@
                 {
                     "label": "All Nodes Distance K in Binary Tree",
                     "question": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/AllNodesDistanceK_InBinaryTree.cpp",
                     "difficulty": "medium",
                     "id": 2163
                 },
@@ -3452,7 +3449,7 @@
                 {
                     "label": "Basic Calculator II",
                     "question": "https://leetcode.com/problems/basic-calculator-ii/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BasicCalculator_II.cpp",
                     "difficulty": "medium",
                     "id": 2194
                 },
@@ -3683,7 +3680,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
                     "difficulty": "medium",
                     "id": 2069
                 },
@@ -3697,7 +3694,7 @@
                 {
                     "label": "Find Median from Data Stream",
                     "question": "https://leetcode.com/problems/find-median-from-data-stream/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
                     "difficulty": "hard",
                     "id": 2129
                 },
@@ -3919,7 +3916,7 @@
                 {
                     "label": "Power Grid Maintenance",
                     "question": "https://leetcode.com/problems/power-grid-maintenance/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/PowerGridMaintenance.cpp",
                     "difficulty": "medium",
                     "id": 2291
                 },
@@ -4255,7 +4252,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
                     "difficulty": "medium",
                     "id": 2069
                 },
@@ -4346,7 +4343,7 @@
                 {
                     "label": "Decode String",
                     "question": "https://leetcode.com/problems/decode-string/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
                     "difficulty": "medium",
                     "id": 2046
                 },
@@ -4388,7 +4385,7 @@
                 {
                     "label": "All Nodes Distance K in Binary Tree",
                     "question": "https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/AllNodesDistanceK_InBinaryTree.cpp",
                     "difficulty": "medium",
                     "id": 2163
                 },
@@ -4442,7 +4439,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
                     "difficulty": "medium",
                     "id": 2069
                 },
@@ -5152,7 +5149,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
                     "difficulty": "medium",
                     "id": 2069
                 },
@@ -5208,7 +5205,7 @@
                 {
                     "label": "Detonate the Maximum Bombs",
                     "question": "https://leetcode.com/problems/detonate-the-maximum-bombs/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/DetonateTheMaximumBombs.cpp",
                     "difficulty": "medium",
                     "id": 2365
                 },
@@ -5264,7 +5261,7 @@
                 {
                     "label": "Basic Calculator II",
                     "question": "https://leetcode.com/problems/basic-calculator-ii/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BasicCalculator_II.cpp",
                     "difficulty": "medium",
                     "id": 2194
                 },
@@ -5792,7 +5789,7 @@
                 {
                     "label": "Meeting Rooms II",
                     "question": "https://leetcode.ca/all/253.html",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MeetingRooms_II_heap.cpp",
                     "difficulty": "medium",
                     "id": 2069
                 },
@@ -6210,7 +6207,7 @@
                 {
                     "label": "Decode String",
                     "question": "https://leetcode.com/problems/decode-string/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
                     "difficulty": "medium",
                     "id": 2046
                 },
@@ -6920,7 +6917,7 @@
                 {
                     "label": "Maximum Profit in Job Scheduling",
                     "question": "https://leetcode.com/problems/maximum-profit-in-job-scheduling/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DP/MaximumProfitInJobScheduling.cpp",
                     "difficulty": "hard",
                     "id": 2184
                 },
@@ -6969,7 +6966,7 @@
                 {
                     "label": "Find Median from Data Stream",
                     "question": "https://leetcode.com/problems/find-median-from-data-stream/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/FindMedianfromDataStream.cpp",
                     "difficulty": "hard",
                     "id": 2129
                 },
@@ -6989,7 +6986,7 @@
                 },
                 {
                     "label": "Next Greater Element I",
-                    "question": "https://leetcode.ca/all/253.html",
+                    "question": "https://leetcode.ca/all/252.html",
                     "solution": "-",
                     "difficulty": "easy",
                     "id": 2082
