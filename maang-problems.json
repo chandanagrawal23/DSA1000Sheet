@@ -6691,6 +6691,146 @@
                     "solution": "-",
                     "difficulty": "hard",
                     "id": 2454
+                },
+                {
+                    "label": "The Earliest Moment When Everyone Become Friends",
+                    "question": "https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/TheEarliestMomentWhenEveryoneBecomeFriends.cpp",
+                    "difficulty": "medium",
+                    "id": 2475
+                },
+                {
+                    "label": "Is Subsequence",
+                    "question": "https://leetcode.com/problems/is-subsequence/",
+                    "solution": "-",
+                    "difficulty": "easy",
+                    "id": 2476
+                },
+                {
+                    "label": "Add Strings",
+                    "question": "https://leetcode.com/problems/add-strings/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/AddStrings.cpp",
+                    "difficulty": "easy",
+                    "id": 2198
+                },
+                {
+                    "label": "Max Consecutive Ones III",
+                    "question": "https://leetcode.com/problems/max-consecutive-ones-iii/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/longestOnes.cpp",
+                    "difficulty": "medium",
+                    "id": 2111
+                },
+                {
+                    "label": "Decode String",
+                    "question": "https://leetcode.com/problems/decode-string/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DecodeString.cpp",
+                    "difficulty": "medium",
+                    "id": 2046
+                },
+                {
+                    "label": "First Unique Character in a String",
+                    "question": "https://leetcode.com/problems/first-unique-character-in-a-string/",
+                    "solution": "-",
+                    "difficulty": "easy",
+                    "id": 2266
+                },
+                {
+                    "label": "Check Completeness of a Binary Tree",
+                    "question": "https://leetcode.com/problems/check-completeness-of-a-binary-tree/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 2477
+                },
+                {
+                    "label": "Random Pick Index",
+                    "question": "https://leetcode.com/problems/random-pick-index/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 2220
+                },
+                {
+                    "label": "Insert Delete GetRandom O(1)",
+                    "question": "https://leetcode.com/problems/insert-delete-getrandom-o1/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 2265
+                },
+                {
+                    "label": "Custom Sort String",
+                    "question": "https://leetcode.com/problems/custom-sort-string/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 2205
+                },
+                {
+                    "label": "Coin Change II",
+                    "question": "https://leetcode.com/problems/coin-change-ii/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 2478
+                },
+                {
+                    "label": "Word Ladder",
+                    "question": "https://leetcode.com/problems/word-ladder/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/WordLadder_I.cpp",
+                    "difficulty": "hard",
+                    "id": 2147
+                },
+                {
+                    "label": "Design HashMap",
+                    "question": "https://leetcode.com/problems/design-hashmap/",
+                    "solution": "-",
+                    "difficulty": "easy",
+                    "id": 2267
+                },
+                {
+                    "label": "Nested List Weight Sum II",
+                    "question": "https://leetcode.com/problems/nested-list-weight-sum-ii/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 2376
+                },
+                {
+                    "label": "Search in Rotated Sorted Array",
+                    "question": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 2028
+                },
+                {
+                    "label": "Search a 2D Matrix",
+                    "question": "https://leetcode.com/problems/search-a-2d-matrix/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Search_a_2DMatrix_I.cpp",
+                    "difficulty": "medium",
+                    "id": 2151
+                },
+                {
+                    "label": "Binary Tree Zigzag Level Order Traversal",
+                    "question": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/BinaryTreeZigzagLevelOrderTraversal.cpp",
+                    "difficulty": "medium",
+                    "id": 2121
+                },
+                {
+                    "label": "Count Number of Nice Subarrays",
+                    "question": "https://leetcode.com/problems/count-number-of-nice-subarrays/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/numberOfSubarrays.cpp",
+                    "difficulty": "medium",
+                    "id": 2479
+                },
+                {
+                    "label": "Reverse Linked List",
+                    "question": "https://leetcode.com/problems/reverse-linked-list/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/reverseList.cpp",
+                    "difficulty": "easy",
+                    "id": 2041
+                },
+                {
+                    "label": "Intersection of Two Linked Lists",
+                    "question": "https://leetcode.com/problems/intersection-of-two-linked-lists/",
+                    "solution": "-",
+                    "difficulty": "easy",
+                    "id": 2384
                 }
             ]
         },

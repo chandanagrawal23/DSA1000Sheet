@@ -1195,7 +1195,7 @@ function buildMAANGProgressBar() {
 
   container.innerHTML = `
     <div class="progress-card maang-progress">
-      <h2>MAANG Progress</h2>
+      <h2>MAANG Progress <span id="maangUniqueCount" class="maang-unique-count">(0/0)</span></h2>
       <div class="companies-progress-grid">
         ${companiesHTML}
       </div>
@@ -1209,6 +1209,15 @@ function buildMAANGProgressBar() {
     style.textContent = `
       .maang-progress {
         padding: 1.5rem;
+      }
+
+      .maang-unique-count {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        -webkit-text-fill-color: var(--text-secondary);
+        vertical-align: middle;
+        margin-left: 0.5rem;
       }
       
       .companies-progress-grid {
@@ -1479,6 +1488,20 @@ function updateMAANGProgressBar() {
       }
     });
   });
+
+  // Compute overall UNIQUE solved / total across all MAANG companies
+  const uniqueTotalSet = new Set();
+  const uniqueSolvedSet = new Set();
+  document.querySelectorAll('.collapsible.z-depth-1 .done-icon').forEach(icon => {
+    const pid = icon.getAttribute('data-problem-id');
+    if (!pid) return;
+    uniqueTotalSet.add(pid);
+    if (icon.getAttribute('data-solved') === 'true') uniqueSolvedSet.add(pid);
+  });
+  const uniqueCountElem = document.getElementById('maangUniqueCount');
+  if (uniqueCountElem) {
+    uniqueCountElem.textContent = `(${uniqueSolvedSet.size}/${uniqueTotalSet.size})`;
+  }
 
   // Update each company's display
   Object.keys(companyStats).forEach(companyId => {
@@ -2450,7 +2473,10 @@ function initializeTableSorting() {
 
     headerRow.setAttribute('data-sort-initialized', 'true');
     headerRow.style.cursor = 'pointer';
-    headerRow.title = 'Click to sort by completion status';
+    const isMaangSort = currentSection === 'maang';
+    headerRow.title = isMaangSort
+      ? 'Sort by completion status (unsolved first)'
+      : 'Click to sort by completion status';
 
     // Add sort indicator to the FIRST th (Question column)
     const firstTh = headerRow.querySelector('th:first-child');
@@ -2467,6 +2493,14 @@ function initializeTableSorting() {
       `;
       firstTh.style.position = 'relative';
       firstTh.prepend(sortIndicator); // Use prepend to add at the beginning
+
+      // For MAANG, show a hint that questions are ordered by asking frequency
+      if (isMaangSort && !firstTh.querySelector('.sort-frequency-label')) {
+        const freqLabel = document.createElement('span');
+        freqLabel.className = 'sort-frequency-label';
+        freqLabel.textContent = '(sorted by frequency · last 6 months)';
+        firstTh.appendChild(freqLabel);
+      }
     }
 
     headerRow.addEventListener('click', function(e) {
@@ -2474,6 +2508,20 @@ function initializeTableSorting() {
       toggleTableSort(this);
     });
   });
+}
+
+// Update the MAANG sort hint label + hover title.
+// The label reflects the CURRENT sort; the hover title hints the NEXT action.
+function updateMaangSortHint(headerRow, state) {
+  if (currentSection !== 'maang') return;
+  const label = headerRow.querySelector('.sort-frequency-label');
+  if (state === 'unsolved-first') {
+    if (label) label.textContent = '(sorted by completion status)';
+    headerRow.title = 'Sort by frequency · last 6 months';
+  } else {
+    if (label) label.textContent = '(sorted by frequency · last 6 months)';
+    headerRow.title = 'Sort by completion status (unsolved first)';
+  }
 }
 
 // Replace the toggleTableSort function (around line 1737)
@@ -2507,6 +2555,7 @@ function toggleTableSort(headerRow) {
     headerRow.setAttribute('data-sort-state', 'unsolved-first');
     headerRow.classList.remove('sorted-default');
     headerRow.classList.add('sorted-unsolved');
+    updateMaangSortHint(headerRow, 'unsolved-first');
 
     sortRowsByCompletion(tbody, rows, 'unsolved-first');
 
@@ -2527,6 +2576,7 @@ function toggleTableSort(headerRow) {
     headerRow.setAttribute('data-sort-state', 'default');
     headerRow.classList.remove('sorted-unsolved');
     headerRow.classList.add('sorted-default');
+    updateMaangSortHint(headerRow, 'default');
 
     // First, remove any existing collapse buttons
     rows.forEach(row => {
@@ -3387,14 +3437,45 @@ function collapseRegularSection(button) {
 /***************************************************************
  * RESET PROGRESS FUNCTIONS
  ***************************************************************/
+// Friendly display name for the currently active section
+function getSectionDisplayName() {
+  const names = {
+    dsa: 'DSA',
+    maang: 'MAANG',
+    blind75: 'Blind75',
+    leetcode150: 'LeetCode150',
+    sql: 'SQL',
+    lld: 'LLD',
+    hld: 'HLD'
+  };
+  return names[currentSection] || (currentSection ? currentSection.toUpperCase() : 'this');
+}
+
+// Called from the Profile modal "Reset Progress" button
+function handleResetProgressFromProfile() {
+  // Close the profile modal first, then show the confirmation banner
+  hideProfileModal();
+  setTimeout(showResetConfirmation, 200);
+}
+
 function showResetConfirmation() {
   const banner = document.getElementById('resetConfirmationBanner');
   if (banner) {
+    // Make the banner section-aware
+    const sectionName = getSectionDisplayName();
+    const heading = banner.querySelector('.banner-text h3');
+    const desc = banner.querySelector('.banner-text p');
+    const confirmBtn = banner.querySelector('.btn-confirm');
+    if (heading) heading.textContent = `Reset your ${sectionName} progress?`;
+    if (desc) desc.textContent = `This will permanently clear all solved problems and favorites in the ${sectionName} section. This action cannot be undone.`;
+    if (confirmBtn) confirmBtn.textContent = `Yes, Reset ${sectionName}`;
+
     banner.classList.add('active');
     // Prevent body scroll when banner is open
     document.body.style.overflow = 'hidden';
   }
 }
+
 
 function hideResetConfirmation() {
   const banner = document.getElementById('resetConfirmationBanner');
@@ -3441,26 +3522,19 @@ function initResetBannerClickOutside() {
 
 function resetAllProgress() {
   try {
-    // Get all localStorage keys that contain progress 
-    const keysToRemove = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && (
-        key.includes('SolvedProblems') ||
-        key.includes('Favorites') ||
-        key === 'dsaSolvedProblems' || // Legacy key
-        key === 'sqlSolvedProblems'
-      )) {
-        keysToRemove.push(key);
-      }
-    }
+    // Only reset the CURRENTLY active section's progress
+    const keysToRemove = [
+      `${currentSection}SolvedProblems`,
+      `${currentSection}Favorites`,
+      `filterState_${currentSection}`
+    ];
 
-    // Remove all progress-related keys
+    // Remove only this section's progress-related keys
     keysToRemove.forEach(key => {
       localStorage.removeItem(key);
     });
 
-    // Reset all solved states in the UI
+    // Reset solved states in the UI (only the current section is rendered)
     document.querySelectorAll('.done-icon').forEach(icon => {
       icon.setAttribute('data-solved', 'false');
       icon.textContent = 'check_box_outline_blank';
@@ -3487,20 +3561,25 @@ function resetAllProgress() {
       favorites = {};
     }
 
-    // Update all progress displays
+    // Update progress displays for the current section
     updateGlobalRectBar();
     updateSectionProgress();
+    if (currentSection === 'maang' && typeof updateMAANGProgressBar === 'function') {
+      updateMAANGProgressBar();
+    }
     // Hide the confirmation banner
     hideResetConfirmation();
 
     // Show success message
+    const sectionName = getSectionDisplayName();
     M.toast({
-      html: '<span class="success-toast">All progress and user data have been reset successfully! Welcome modal will appear on next visit.</span>',
+      html: `<span class="success-toast">${sectionName} progress has been reset successfully!</span>`,
       classes: 'rounded green',
-      displayLength: 4000
+      displayLength: 3500
     });
 
-    console.log('Progress reset completed. Removed keys:', keysToRemove);
+    console.log('Progress reset completed for section:', currentSection, 'Removed keys:', keysToRemove);
+
 
   } catch (error) {
     console.error('Error resetting progress:', error);

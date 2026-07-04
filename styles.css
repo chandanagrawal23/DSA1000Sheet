@@ -5744,12 +5744,13 @@ body.dark-mode .tooltip::after {
 }
 
 .banner-content {
-  background: white;
-  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
   padding: 2rem;
   max-width: 500px;
   width: 90%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
   text-align: center;
   animation: bannerSlideIn 0.3s ease-out;
 }
@@ -5776,14 +5777,14 @@ body.dark-mode .tooltip::after {
 
 .banner-text h3 {
   margin: 0 0 0.5rem 0;
-  color: #333;
+  color: var(--text-primary);
   font-size: 1.4rem;
   font-weight: 600;
 }
 
 .banner-text p {
   margin: 0 0 1.5rem 0;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -5813,9 +5814,9 @@ body.dark-mode .tooltip::after {
 }
 
 .btn-cancel {
-  background-color: #e0e0e0;
-  color: #333;
-  border: none;
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
   border-radius: 6px;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -5825,7 +5826,7 @@ body.dark-mode .tooltip::after {
 }
 
 .btn-cancel:hover {
-  background-color: #bdbdbd;
+  background-color: var(--surface-hover, rgba(128, 128, 128, 0.12));
   transform: translateY(-1px);
 }
 
@@ -6918,29 +6919,7 @@ body.dark-mode .subsection-collapse-btn::before {
   animation: subsectionComplete 0.5s ease-out;
 } */
 
-/* Dark mode support for banners */
-.dark-mode .banner-content {
-  background: #2d2d2d;
-  color: #e0e0e0;
-}
-
-.dark-mode .banner-text h3 {
-  color: #e0e0e0;
-}
-
-.dark-mode .banner-text p {
-  color: #b0b0b0;
-}
-
-.dark-mode .btn-cancel {
-  background-color: #424242;
-  color: #e0e0e0;
-}
-
-.dark-mode .btn-cancel:hover {
-  background-color: #616161;
-}
-
+/* Dark mode support for banners (colors handled via CSS variables) */
 .dark-mode .celebration-content {
   background: linear-gradient(135deg, #059669, #047857);
 }
@@ -7860,6 +7839,20 @@ body.dark-mode .lld-table .question-link:hover {
   transition: all 0.2s ease;
   font-family: Arial, sans-serif !important; /* Use Arial for arrows */
 }
+
+/* MAANG frequency-sort hint next to the sort arrows */
+.sort-frequency-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 8px;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
 
 /* Hover state */
 .problem-table thead tr:hover .sort-icon {
