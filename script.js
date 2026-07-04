@@ -1168,7 +1168,7 @@ function buildMAANGProgressBar() {
     { name: 'LinkedIn', logo: 'logos/linkedin.png', id: 'LinkedIn' },
     { name: 'Atlassian', logo: 'logos/atlassian.png', id: 'Atlassian' },
     { name: 'Intuit', logo: 'logos/intuit.png', id: 'Intuit' },
-    { name: 'PayPal', logo: 'logos/paypal.png', id: 'PayPal' },
+    { name: 'Oracle', logo: 'logos/oracle.png', id: 'Oracle' },
     { name: 'Flipkart', logo: 'logos/flipkart.png', id: 'Flipkart' }
   ];
 
@@ -1398,7 +1398,7 @@ function updateMAANGProgressBar() {
     'LinkedIn': 'linkedin',
     'Atlassian': 'atlassian',
     'Intuit': 'intuit',
-    'PayPal': 'paypal',
+    'Oracle': 'oracle',
     'Flipkart': 'flipkart'
   };
 
@@ -1973,7 +1973,7 @@ function getCompanyLogoHTML(companyName) {
     'LinkedIn': 'logos/linkedin.png',
     'Atlassian': 'logos/atlassian.png',
     'Intuit': 'logos/intuit.png',
-    'PayPal': 'logos/paypal.png',
+    'Oracle': 'logos/oracle.png',
     'Flipkart': 'logos/flipkart.png'
   };
 
