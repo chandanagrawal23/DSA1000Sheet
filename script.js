@@ -1175,7 +1175,7 @@ function buildMAANGProgressBar() {
 
   // Build HTML for MAANG progress with ROUNDED SQUARE borders
   let companiesHTML = companies.map(company => `
-    <div class="company-progress-item">
+    <div class="company-progress-item" style="cursor:pointer;" onclick="openCompanySection('${company.id}')">
       <div class="company-logo-wrapper">
         <div class="progress-border" id="${company.id.toLowerCase()}-border"></div>
         <div class="company-logo-container">
@@ -1355,6 +1355,27 @@ function buildMAANGProgressBar() {
   }
 
   updateMAANGProgressBar();
+}
+
+// Open and scroll to a company's section when its logo is clicked
+function openCompanySection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+
+  // Close any other section opened via a company logo
+  document.querySelectorAll('.collapsible.z-depth-1').forEach(other => {
+    if (other !== section) {
+      const otherInstance = M.Collapsible.getInstance(other);
+      if (otherInstance) otherInstance.close(0);
+    }
+  });
+
+  const instance = M.Collapsible.getInstance(section);
+  if (instance) instance.open(0);
+
+  setTimeout(() => {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 150);
 }
 
 // Replace the updateMAANGProgressBar function (around line 1300)
