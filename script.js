@@ -61,7 +61,7 @@ window.addEventListener('scroll', throttle(function () {
   } else {
     btn.classList.remove('show');
   }
-}, 100)); // Throttle to execute at most once every 100ms
+}, 100), { passive: true }); // Throttle to execute at most once every 100ms
 
 btn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -1201,7 +1201,6 @@ function buildMAANGProgressBar() {
       </div>
     </div>
   `;
-  updateMAANGProgressBar();
   // Add styles if not already present
   if (!document.getElementById('maangProgressStyles')) {
     const style = document.createElement('style');
@@ -1391,7 +1390,7 @@ function openCompanySection(sectionId) {
 function updateMAANGProgressBar() {
   if (currentSection !== 'maang') return;
 
-  console.log('Updating MAANG progress bar...'); 
+  // console.log('Updating MAANG progress bar...'); 
 
   // Company IDs mapping
   const companyMapping = {
@@ -1447,7 +1446,7 @@ function updateMAANGProgressBar() {
       return;
     }
 
-    console.log(`Processing company: ${matchedCompanyId} (${sectionId})`);
+    // console.log(`Processing company: ${matchedCompanyId} (${sectionId})`);
 
     // Count problems in this company section
     const sectionBody = section.querySelector('.collapsible-body');
@@ -1579,7 +1578,7 @@ function updateMAANGProgressBar() {
         borderElement.style.border = '';  // Remove inline border to use CSS
       }
 
-      console.log(`${companyId}: Total ${stats.solved}/${stats.total} (Easy: ${stats.easySolved}, Medium: ${stats.mediumSolved}, Hard: ${stats.hardSolved})`);
+      // console.log(`${companyId}: Total ${stats.solved}/${stats.total} (Easy: ${stats.easySolved}, Medium: ${stats.mediumSolved}, Hard: ${stats.hardSolved})`);
     } else {
       // No problems or no data - show empty border
       const isDarkMode = document.body.classList.contains('dark-mode');
@@ -4094,7 +4093,7 @@ function showFirstCheckboxTooltip() {
       specialTooltip.style.opacity = '1';
     };
 
-    window.addEventListener('scroll', keepTooltipFixed);
+    window.addEventListener('scroll', keepTooltipFixed, { passive: true });
     window.addEventListener('resize', keepTooltipFixed);
     activeListeners.push({
       element: window,
@@ -5402,6 +5401,7 @@ let currentCompanyIndex = 0; // Track current company index for sequential rotat
 function setRotatingCompanyIcon() {
   // Function to update the icon
   const updateIcon = () => {
+    if (document.hidden) return; // Skip DOM churn when tab is backgrounded
     const isDarkMode = document.body.classList.contains('dark-mode');
     
     const companies = [
