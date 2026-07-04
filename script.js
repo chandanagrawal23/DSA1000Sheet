@@ -4860,6 +4860,49 @@ function showComingSoonBanner(section) {
 }
 
 
+// HLD section: show a themed landing page that opens the external System Design notes site
+function showHLDRedirectPage() {
+  const HLD_URL = 'https://chandanagrawal23.github.io/System-Design/';
+  const sectionsDiv = document.getElementById('sections');
+  const rectChartContainer = document.getElementById('rectChartContainer');
+  const unifiedControlBarWrapper = document.querySelector('.unified-control-bar-wrapper');
+
+  // Hide progress bar and controls (same as other non-problem views)
+  if (rectChartContainer) rectChartContainer.style.display = 'none';
+  if (unifiedControlBarWrapper) unifiedControlBarWrapper.style.display = 'none';
+
+  // Update active nav links (desktop + mobile)
+  document.querySelectorAll('.nav-item').forEach(link => link.classList.remove('active'));
+  document.getElementById('hldLink')?.classList.add('active');
+  document.querySelectorAll('.mobile-menu-item').forEach(link => link.classList.remove('active'));
+  document.getElementById('hldLinkMobile')?.classList.add('active');
+
+  sectionsDiv.innerHTML = `
+    <div class="hld-redirect-wrapper">
+      <div class="hld-card">
+        <div class="hld-icon"><i class="material-icons">account_tree</i></div>
+        <h1 class="hld-title">High Level Design (HLD)</h1>
+        <p class="hld-subtitle">
+          My complete System Design notes live on a dedicated site — covering scalability,
+          databases, caching, load balancing, and real-world architectures.
+        </p>
+        <div class="hld-features">
+          <span class="hld-chip"><i class="material-icons">hub</i> Scalable Systems</span>
+          <span class="hld-chip"><i class="material-icons">storage</i> Databases &amp; Caching</span>
+          <span class="hld-chip"><i class="material-icons">bolt</i> Real-world Case Studies</span>
+        </div>
+        <a class="hld-cta" href="${HLD_URL}" target="_blank" rel="noopener noreferrer"
+           onclick="trackEvent('Navigation', 'hld_external_open', 'System Design Notes')">
+          <i class="material-icons">open_in_new</i>
+          Open System Design Notes
+          <i class="material-icons arrow">arrow_forward</i>
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+
 // Function to switch between sections
 function switchSection(section) {
   console.log(`Switching from ${currentSection} to ${section}`);
@@ -4867,12 +4910,22 @@ function switchSection(section) {
   if (section === currentSection) {
     return; // Don't reload if already on the same section
   }
-  // const comingSoonSections = ['sql', 'lld', 'hld'];
-  // if (comingSoonSections.includes(section)) {
-  //   currentSection = section;;
-  //   showComingSoonBanner(section);
-  //   return; // Don't proceed with normal section loading
-  // }
+  // HLD redirects to the external System Design notes site
+  if (section === 'hld') {
+    saveFilterState();
+    currentSection = section;
+    const searchBox = document.getElementById('searchBox');
+    if (searchBox) searchBox.value = '';
+    showHLDRedirectPage();
+    return; // Don't proceed with normal section loading
+  }
+  // enable disable the LLD, HLD and SQL
+  const comingSoonSections = ['sql', 'lld'];
+  if (comingSoonSections.includes(section)) {
+    currentSection = section;;
+    showComingSoonBanner(section);
+    return; // Don't proceed with normal section loading
+  }
   // Save current section's filter state before switching
   saveFilterState();
   // Clear the search box when switching sections
