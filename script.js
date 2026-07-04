@@ -441,6 +441,39 @@ function toggleSolved(icon) {
   icon.textContent = !wasSolved ? 'check_box' : 'check_box_outline_blank';
   icon.parentElement.parentElement.classList.toggle('solved', !wasSolved);
 
+  // MAANG SYNC: If in MAANG section, sync across all companies
+  if (currentSection === 'maang') {
+    const problemId = icon.getAttribute('data-problem-id');
+    const affectedSections = new Set(); // Track all affected company sections
+
+    if (problemId) {
+      // Find all other instances of this problem ID and sync them
+      document.querySelectorAll(`.done-icon[data-problem-id="${problemId}"]`).forEach(otherIcon => {
+        if (otherIcon !== icon) {
+          otherIcon.setAttribute('data-solved', !wasSolved);
+          otherIcon.textContent = !wasSolved ? 'check_box' : 'check_box_outline_blank';
+          otherIcon.parentElement.parentElement.classList.toggle('solved', !wasSolved);
+
+          // Track which company sections are affected
+          const companySection = otherIcon.closest('.collapsible.z-depth-1');
+          if (companySection) {
+            affectedSections.add(companySection);
+          }
+        }
+      });
+
+      // Check section completion for ALL affected company sections
+      affectedSections.forEach(companySection => {
+        checkCompanySectionCompletion(companySection);
+      });
+
+      // Force update MAANG progress bar with a small delay to ensure DOM is updated
+      setTimeout(() => {
+        updateMAANGProgressBar();
+      }, 50);
+    }
+  }
+
   // If marking as solved, trigger celebration
   if (!wasSolved) {
     console.log('Tracking problem completion:', problemLabel);
@@ -454,11 +487,30 @@ function toggleSolved(icon) {
   saveProgress();
   updateGlobalRectBar();
   updateSectionProgress();
-
   // Check for section completion/incompletion after updating progress
   setTimeout(() => {
     checkSectionCompletion(icon);
   }, 100);
+}
+
+function checkCompanySectionCompletion(sectionElement) {
+  if (!sectionElement) return;
+
+  const sectionTitle = sectionElement.querySelector('.topic-title')?.textContent;
+  if (!sectionTitle) return;
+
+  const allProblems = sectionElement.querySelectorAll('.done-icon');
+  const solvedProblems = sectionElement.querySelectorAll('.done-icon[data-solved="true"]');
+
+  const isCurrentlyCompleted = sectionElement.classList.contains('section-completed');
+  const shouldBeCompleted = allProblems.length > 0 && allProblems.length === solvedProblems.length;
+
+  if (shouldBeCompleted && !isCurrentlyCompleted) {
+    markSectionAsCompleted(sectionElement, sectionTitle);
+    // Don't show celebration banner for synced sections, only for the one user clicked
+  } else if (!shouldBeCompleted && isCurrentlyCompleted) {
+    markSectionAsIncomplete(sectionElement, sectionTitle);
+  }
 }
 
 /***************************************************************
@@ -1025,6 +1077,11 @@ function buildRectBar() {
   const container = document.getElementById('rectChartContainer');
   if (!container) return;
 
+  if (currentSection === 'maang') {
+    buildMAANGProgressBar();
+    return;
+  }
+
   // Capitalize the first letter of current section name and format special cases
   let sectionTitle = '';
   if (currentSection === 'dsa') {
@@ -1039,6 +1096,9 @@ function buildRectBar() {
     sectionTitle = 'LLD';
   } else if (currentSection === 'hld') {
     sectionTitle = 'HLD';
+  }
+  else if (currentSection === 'maang') {
+    sectionTitle = 'MAANG';
   } else {
     // Default formatting for other sections
     sectionTitle = currentSection.charAt(0).toUpperCase() + currentSection.slice(1);
@@ -1087,7 +1147,504 @@ function buildRectBar() {
   updateGlobalRectBar();
 }
 
+// New function for MAANG progress bar
+function buildMAANGProgressBar() {
+  const container = document.getElementById('rectChartContainer');
+  if (!container) return;
+
+  const isDarkMode = document.body.classList.contains('dark-mode');
+
+  // Company data with logos - dynamically set based on theme
+  const companies = [
+    { name: 'Google', logo: 'logos/google.png', id: 'Google' },
+    { name: 'Microsoft', logo: 'logos/microsoft.png', id: 'Microsoft' },
+    { name: 'Amazon', logo: isDarkMode ? 'logos/amazonWhite.png' : 'logos/amazonBlack.png', id: 'Amazon' },
+    { name: 'Meta', logo: 'logos/meta.png', id: 'Meta' },
+    { name: 'Apple', logo: isDarkMode ? 'logos/appleWhite.png' : 'logos/appleBlack.png', id: 'Apple' },
+    { name: 'Salesforce', logo: 'logos/salesforce.png', id: 'Salesforce' },
+    { name: 'Netflix', logo: 'logos/netflix.png', id: 'Netflix' },
+    { name: 'Adobe', logo: 'logos/adobe.png', id: 'Adobe' },
+    { name: 'Uber', logo: 'logos/uber.png', id: 'Uber' },
+    { name: 'LinkedIn', logo: 'logos/linkedin.png', id: 'LinkedIn' },
+    { name: 'Atlassian', logo: 'logos/atlassian.png', id: 'Atlassian' },
+    { name: 'Intuit', logo: 'logos/intuit.png', id: 'Intuit' },
+    { name: 'PayPal', logo: 'logos/paypal.png', id: 'PayPal' },
+    { name: 'Flipkart', logo: 'logos/flipkart.png', id: 'Flipkart' }
+  ];
+
+
+  // Build HTML for MAANG progress with ROUNDED SQUARE borders
+  let companiesHTML = companies.map(company => `
+    <div class="company-progress-item">
+      <div class="company-logo-wrapper">
+        <div class="progress-border" id="${company.id.toLowerCase()}-border"></div>
+        <div class="company-logo-container">
+          <img src="${company.logo}" alt="${company.name}" class="company-logo-progress" 
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="company-logo-fallback" style="display:none;">
+            <span>${company.name.charAt(0)}</span>
+          </div>
+        </div>
+      </div>
+      <div class="company-name">${company.name}</div>
+      <div class="company-stats" id="${company.id.toLowerCase()}-stats">
+        <span class="solved-count">0/0</span>
+      </div>
+    </div>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="progress-card maang-progress">
+      <h2>MAANG Progress</h2>
+      <div class="companies-progress-grid">
+        ${companiesHTML}
+      </div>
+    </div>
+  `;
+  updateMAANGProgressBar();
+  // Add styles if not already present
+  if (!document.getElementById('maangProgressStyles')) {
+    const style = document.createElement('style');
+    style.id = 'maangProgressStyles';
+    style.textContent = `
+      .maang-progress {
+        padding: 1.5rem;
+      }
+      
+      .companies-progress-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+      }
+      
+      .company-progress-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      
+      .company-logo-wrapper {
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      
+      .progress-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        background: conic-gradient(
+          from 0deg,
+          var(--bg-tertiary) 0deg,
+          var(--bg-tertiary) 360deg
+        );
+        transition: background 0.5s ease;
+      }
+      
+      .company-logo-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      
+      .company-progress-item:hover .company-logo-container {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      }
+      
+      .company-logo-progress {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .company-logo-fallback {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      
+      .company-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 0.95rem;
+      }
+      
+      .company-stats {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+      
+      /* Dark mode specific fixes */
+      .dark-mode .companies-progress-grid {
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(99, 102, 241, 0.1);
+      }
+              .dark-mode .company-logo-container {
+        background: rgb(30, 41, 59);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        border: 1px solid rgba(99, 102, 241, 0.15);
+      }
+
+      .dark-mode .company-progress-item:hover .company-logo-container {
+        background: rgba(51, 65, 85, 0.95);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      }
+
+      .dark-mode .company-name {
+        color: #F8FAFC;
+      }
+
+      .dark-mode .company-stats {
+        color: #94A3B8;
+      }
+
+      .dark-mode .progress-border {
+        background: #374151;
+        border: 2px solid #374151;
+      }
+
+      .dark-mode .company-logo-progress {
+        filter: brightness(1.1);
+      }
+
+      @media (max-width: 768px) {
+        .companies-progress-grid {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          gap: 1rem;
+          padding: 1rem;
+        }
+        
+        .company-logo-wrapper {
+          width: 70px;
+          height: 70px;
+        }
+        
+        .company-logo-container {
+          width: 54px;
+          height: 54px;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  updateMAANGProgressBar();
+}
+
+// Replace the updateMAANGProgressBar function (around line 1300)
+function updateMAANGProgressBar() {
+  if (currentSection !== 'maang') return;
+
+  console.log('Updating MAANG progress bar...'); 
+
+  // Company IDs mapping
+  const companyMapping = {
+    'Google': 'google',
+    'Microsoft': 'microsoft',
+    'Amazon': 'amazon',
+    'Meta': 'meta',
+    'Apple': 'apple',
+    'Salesforce': 'salesforce',
+    'Netflix': 'netflix',
+    'Adobe': 'adobe',
+    'Uber': 'uber',
+    'LinkedIn': 'linkedin',
+    'Atlassian': 'atlassian',
+    'Intuit': 'intuit',
+    'PayPal': 'paypal',
+    'Flipkart': 'flipkart'
+  };
+
+  // Calculate stats for each company
+  let companyStats = {};
+
+  // Initialize stats for all companies
+  Object.values(companyMapping).forEach(companyId => {
+    companyStats[companyId] = { 
+      total: 0, 
+      solved: 0, 
+      easySolved: 0, 
+      mediumSolved: 0, 
+      hardSolved: 0,
+      easyTotal: 0,
+      mediumTotal: 0,
+      hardTotal: 0
+    };
+  });
+
+  // Get problem data from sections
+  const sections = document.querySelectorAll('.collapsible.z-depth-1');
+  sections.forEach(section => {
+    const sectionId = section.getAttribute('id');
+    if (!sectionId) return;
+
+    // Find the matching company ID
+    let matchedCompanyId = null;
+    Object.keys(companyMapping).forEach(key => {
+      if (key.toLowerCase() === sectionId.toLowerCase() || key === sectionId) {
+        matchedCompanyId = companyMapping[key];
+      }
+    });
+
+    if (!matchedCompanyId) {
+      console.log(`No match found for section ID: ${sectionId}`);
+      return;
+    }
+
+    console.log(`Processing company: ${matchedCompanyId} (${sectionId})`);
+
+    // Count problems in this company section
+    const sectionBody = section.querySelector('.collapsible-body');
+    if (!sectionBody) return;
+
+    const problemRows = sectionBody.querySelectorAll('tbody tr');
+    problemRows.forEach(row => {
+      const icon = row.querySelector('.done-icon');
+      if (!icon) return;
+
+      const problemId = icon.getAttribute('data-problem-id');
+      if (!problemId) return;
+
+      const difficulty = icon.getAttribute('data-difficulty');
+      const isSolved = icon.getAttribute('data-solved') === 'true';
+
+      companyStats[matchedCompanyId].total++;
+      
+      // Count by difficulty
+      if (difficulty === 'easy') {
+        companyStats[matchedCompanyId].easyTotal++;
+        if (isSolved) {
+          companyStats[matchedCompanyId].easySolved++;
+          companyStats[matchedCompanyId].solved++;
+        }
+      } else if (difficulty === 'medium') {
+        companyStats[matchedCompanyId].mediumTotal++;
+        if (isSolved) {
+          companyStats[matchedCompanyId].mediumSolved++;
+          companyStats[matchedCompanyId].solved++;
+        }
+      } else if (difficulty === 'hard') {
+        companyStats[matchedCompanyId].hardTotal++;
+        if (isSolved) {
+          companyStats[matchedCompanyId].hardSolved++;
+          companyStats[matchedCompanyId].solved++;
+        }
+      }
+    });
+  });
+
+  // Update each company's display
+  Object.keys(companyStats).forEach(companyId => {
+    const stats = companyStats[companyId];
+
+    // Update text stats
+    const statsElement = document.getElementById(`${companyId}-stats`);
+    if (statsElement) {
+      // Clear existing content and add with new styles
+      statsElement.innerHTML = '';
+      const solvedSpan = document.createElement('span');
+      solvedSpan.className = 'solved-count';
+      solvedSpan.style.fontSize = '0.8rem';  
+      solvedSpan.style.fontWeight = '400';   
+      solvedSpan.style.color = 'var(--text-primary)';  // Make it more prominent
+      solvedSpan.textContent = `${stats.solved}/${stats.total}`;
+      statsElement.appendChild(solvedSpan);
+    }
+
+    const companyNameElement = document.querySelector(`#${companyId}-border`)?.closest('.company-progress-item')?.querySelector('.company-name');
+    if (companyNameElement) {
+      companyNameElement.style.fontSize = '1.1rem';  // Increase font size
+      companyNameElement.style.fontWeight = '600';   // Make it semi-bold
+      companyNameElement.style.color = 'var(--text-primary)';  // Ensure good contrast
+    }
+
+    // Update border with conic gradient based on difficulty
+    const borderElement = document.getElementById(`${companyId}-border`);
+    if (borderElement && stats.total > 0) {
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      const bgColor = isDarkMode ? '#374151' : '#E5E7EB';
+
+      // Calculate the total percentage solved
+      const totalSolvedPercent = (stats.solved / stats.total) * 100;
+
+      // Create gradient only if there are solved problems
+      if (stats.solved > 0) {
+        let currentAngle = 0;
+        let gradient = 'conic-gradient(from 0deg';
+
+        // Add easy portion (green)
+        if (stats.easySolved > 0) {
+          const easyAngle = (stats.easySolved / stats.total) * 360;
+          gradient += `, #10B981 ${currentAngle}deg, #10B981 ${currentAngle + easyAngle}deg`;
+          currentAngle += easyAngle;
+        }
+
+        // Add medium portion (yellow/orange)
+        if (stats.mediumSolved > 0) {
+          const mediumAngle = (stats.mediumSolved / stats.total) * 360;
+          gradient += `, #F59E0B ${currentAngle}deg, #F59E0B ${currentAngle + mediumAngle}deg`;
+          currentAngle += mediumAngle;
+        }
+
+        // Add hard portion (red)
+        if (stats.hardSolved > 0) {
+          const hardAngle = (stats.hardSolved / stats.total) * 360;
+          gradient += `, #EF4444 ${currentAngle}deg, #EF4444 ${currentAngle + hardAngle}deg`;
+          currentAngle += hardAngle;
+        }
+
+        // Fill the rest with background color
+        if (currentAngle < 360) {
+          gradient += `, ${bgColor} ${currentAngle}deg, ${bgColor} 360deg`;
+        }
+
+        gradient += ')';
+
+        // Apply the gradient
+        borderElement.style.background = gradient;
+        borderElement.style.border = '';  // Remove inline border to use CSS
+      } else {
+        // No problems solved - show empty border
+        borderElement.style.background = bgColor;
+        borderElement.style.border = '';  // Remove inline border to use CSS
+      }
+
+      console.log(`${companyId}: Total ${stats.solved}/${stats.total} (Easy: ${stats.easySolved}, Medium: ${stats.mediumSolved}, Hard: ${stats.hardSolved})`);
+    } else {
+      // No problems or no data - show empty border
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      const bgColor = isDarkMode ? '#374151' : '#E5E7EB';
+      borderElement.style.background = bgColor;
+      borderElement.style.border = '';  // Remove inline border to use CSS
+    }
+
+    // ADD HOVER TOOLTIP WITH DIFFICULTY BREAKDOWN
+    const companyProgressItem = document.querySelector(`#${companyId}-border`)?.closest('.company-progress-item');
+    if (companyProgressItem) {
+      // Create tooltip content
+      const tooltipContent = `
+        <div style="text-align: left; min-width: 150px;">
+          <div style="display: flex; align-items: center; margin: 4px 0;">
+            <span style="display: inline-block; width: 12px; height: 12px; background: #10B981; border-radius: 2px; margin-right: 8px;"></span>
+            <span>Easy: ${stats.easySolved}/${stats.easyTotal}</span>
+          </div>
+          <div style="display: flex; align-items: center; margin: 4px 0;">
+            <span style="display: inline-block; width: 12px; height: 12px; background: #F59E0B; border-radius: 2px; margin-right: 8px;"></span>
+            <span>Medium: ${stats.mediumSolved}/${stats.mediumTotal}</span>
+          </div>
+          <div style="display: flex; align-items: center; margin: 4px 0;">
+            <span style="display: inline-block; width: 12px; height: 12px; background: #EF4444; border-radius: 2px; margin-right: 8px;"></span>
+            <span>Hard: ${stats.hardSolved}/${stats.hardTotal}</span>
+          </div>
+        </div>
+      `;
+
+      // Remove existing tooltip event listeners
+      if (companyProgressItem._tooltipMouseEnter) {
+        companyProgressItem.removeEventListener('mouseenter', companyProgressItem._tooltipMouseEnter);
+      }
+      if (companyProgressItem._tooltipMouseLeave) {
+        companyProgressItem.removeEventListener('mouseleave', companyProgressItem._tooltipMouseLeave);
+      }
+
+      // Add hover event listeners
+      companyProgressItem._tooltipMouseEnter = function () {
+        // Remove any existing tooltips
+        const existingTooltips = document.querySelectorAll('.maang-tooltip');
+        existingTooltips.forEach(t => t.remove());
+
+        // Create tooltip element
+        const tooltip = document.createElement('div');
+        tooltip.className = 'maang-tooltip';
+        tooltip.innerHTML = tooltipContent;
+
+        // Style the tooltip
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        tooltip.style.cssText = `
+          position: absolute;
+          bottom: calc(100%);
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 12px;
+          background: ${isDarkMode ? 'rgba(30, 41, 59, 0.95)' : 'rgba(51, 65, 85, 0.95)'};
+          color: #f9fafb;
+          border-radius: 8px;
+          font-size: 13px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+          z-index: 99999;
+          pointer-events: none;
+          border: 1px solid ${isDarkMode ? 'rgba(99, 102, 241, 0.2)' : 'rgba(139, 92, 246, 0.2)'};
+          backdrop-filter: blur(8px);
+          opacity: 0;
+          transition: opacity 0.2s ease;
+          white-space: nowrap;
+        `;
+
+        // Make the container relative for positioning
+        companyProgressItem.style.position = 'relative';
+
+        // Append tooltip
+        companyProgressItem.appendChild(tooltip);
+
+        // Show tooltip with animation
+        requestAnimationFrame(() => {
+          tooltip.style.opacity = '1';
+        });
+
+        // Store reference
+        companyProgressItem._currentTooltip = tooltip;
+      };
+
+      companyProgressItem._tooltipMouseLeave = function () {
+        if (companyProgressItem._currentTooltip) {
+          companyProgressItem._currentTooltip.style.opacity = '0';
+          setTimeout(() => {
+            if (companyProgressItem._currentTooltip) {
+              companyProgressItem._currentTooltip.remove();
+              companyProgressItem._currentTooltip = null;
+            }
+          }, 200);
+        }
+      };
+
+      // Add the event listeners
+      companyProgressItem.addEventListener('mouseenter', companyProgressItem._tooltipMouseEnter);
+      companyProgressItem.addEventListener('mouseleave', companyProgressItem._tooltipMouseLeave);
+    }
+  });
+}
+
 function updateGlobalRectBar() {
+  if (currentSection === 'maang') {
+    updateMAANGProgressBar();
+    return;
+  }
   const solved = getGlobalSolved();
   const overallTotal = totalEasy + totalMedium + totalHard;
   const overallSolved = solved.easy + solved.medium + solved.hard;
@@ -1323,12 +1880,18 @@ function generateAccordionForSection(sec) {
   const mediumCount = sec.problems.filter(p => p.difficulty === 'medium').length;
   const hardCount = sec.problems.filter(p => p.difficulty === 'hard').length;
 
+  // Check if we're in MAANG section and get company logo
+  let iconHTML = '<i class="material-icons">folder</i>';
+  if (currentSection === 'maang') {
+    iconHTML = getCompanyLogoHTML(sec.title);
+  }
+
   return `
       <ul class="collapsible z-depth-1" id="${sectionId}">
         <li>
           <div class="collapsible-header">
             <div style="display:flex; align-items:center; gap:8px;">
-              <i class="material-icons">folder</i>
+              ${iconHTML}
               <span class="topic-title">${sec.title}</span>
             </div>
             <div class="mini-bars" data-id="${sectionId}">
@@ -1372,12 +1935,50 @@ function generateAccordionForSection(sec) {
     `;
 }
 
+// Add this new helper function after the generateAccordionForSection function
+function getCompanyLogoHTML(companyName) {
+  const isDarkMode = document.body.classList.contains('dark-mode');
+
+  const companyLogos = {
+    'Google': 'logos/google.png',
+    'Microsoft': 'logos/microsoft.png',
+    'Amazon': isDarkMode ? 'logos/amazonWhite.png' : 'logos/amazonBlack.png',
+    'Meta': 'logos/meta.png',
+    'Apple': isDarkMode ? 'logos/appleWhite.png' : 'logos/appleBlack.png',
+    'Salesforce': 'logos/salesforce.png',
+    'Netflix': 'logos/netflix.png',
+    'Adobe': 'logos/adobe.png',
+    'Uber': 'logos/uber.png',
+    'LinkedIn': 'logos/linkedin.png',
+    'Atlassian': 'logos/atlassian.png',
+    'Intuit': 'logos/intuit.png',
+    'PayPal': 'logos/paypal.png',
+    'Flipkart': 'logos/flipkart.png'
+  };
+
+  const logoPath = companyLogos[companyName];
+
+  if (logoPath) {
+    return `
+      <img src="${logoPath}" 
+           alt="${companyName}" 
+           class="company-logo-section"
+           style="width: 24px; height: 24px; object-fit: contain;"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <i class="material-icons" style="display:none;">folder</i>
+    `;
+  }
+
+  // Fallback to folder icon if company not found
+  return '<i class="material-icons">folder</i>';
+}
+
+
 /***************************************************************
  * Subsection Collapsible
  ***************************************************************/
 function generateSubsectionCollapsible(subsection) {
   const subsecTitle = subsection.title.replace(/\s+/g, '');
-  // Count total problems in the subsection
   const totalEasy = subsection.problems.filter(p => p.difficulty === 'easy').length;
   const totalMedium = subsection.problems.filter(p => p.difficulty === 'medium').length;
   const totalHard = subsection.problems.filter(p => p.difficulty === 'hard').length;
@@ -2868,7 +3469,6 @@ function resetAllProgress() {
     // Update all progress displays
     updateGlobalRectBar();
     updateSectionProgress();
-
     // Hide the confirmation banner
     hideResetConfirmation();
 
@@ -2899,6 +3499,100 @@ function resetAllProgress() {
 /***************************************************************
  * DARK MODE FUNCTIONS
  ***************************************************************/
+function updateMAANGLogosForTheme(isDarkMode) {
+  // Update Amazon logo
+  const amazonLogo = document.querySelector('img[alt="Amazon"]');
+  if (amazonLogo) {
+    amazonLogo.src = isDarkMode ? 'logos/amazonWhite.png' : 'logos/amazonBlack.png';
+  }
+
+  // Update Apple logo
+  const appleLogo = document.querySelector('img[alt="Apple"]');
+  if (appleLogo) {
+    appleLogo.src = isDarkMode ? 'logos/appleWhite.png' : 'logos/appleBlack.png';
+  }
+
+  if (currentSection === 'maang') {
+    // Update the border background colors for better visibility
+    const isDark = isDarkMode;
+    const bgColor = isDark ? '#374151' : '#E5E7EB';
+
+    // Update all company borders that don't have progress
+    document.querySelectorAll('.progress-border').forEach(border => {
+      // Check if this border has any progress (has a conic-gradient)
+      const currentBg = border.style.background;
+      if (!currentBg || currentBg === bgColor || currentBg.includes(bgColor)) {
+        border.style.background = bgColor;
+      }
+    });
+  }
+}
+
+function updateRotatingIconForCurrentTheme() {
+  // Don't restart the interval, just update the current icon
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  const companies = [
+    { name: 'Google', logo: 'logos/google.png' },
+    { name: 'Adobe', logo: 'logos/adobe.png' },
+    { name: 'Microsoft', logo: 'logos/microsoft.png' },
+    { name: 'Amazon', logo: isDarkMode ? 'logos/amazonWhite.png' : 'logos/amazonBlack.png' },
+    { name: 'Meta', logo: 'logos/meta.png' },
+    { name: 'Apple', logo: isDarkMode ? 'logos/appleWhite.png' : 'logos/appleBlack.png' },
+    { name: 'Netflix', logo: 'logos/netflix.png' },
+    { name: 'Salesforce', logo: 'logos/salesforce.png' }
+  ];
+  
+  // Get current company (use modulo to ensure valid index)
+  const currentCompany = companies[currentCompanyIndex % companies.length];
+  
+  // Update desktop icon immediately if it's Amazon or Apple
+  if (currentCompany.name === 'Amazon' || currentCompany.name === 'Apple') {
+    const desktopIcon = document.getElementById('maangIcon');
+    if (desktopIcon) {
+      const logoPath = currentCompany.logo;
+      desktopIcon.innerHTML = `
+        <img src="${logoPath}" 
+             alt="${currentCompany.name}" 
+             class="company-logo-img"
+             style="width: 36px; height: 36px; object-fit: contain;">
+      `;
+    }
+    
+    // Update mobile icon
+    const mobileLink = document.getElementById('maangLinkMobile');
+    if (mobileLink) {
+      const logoPath = currentCompany.logo;
+      mobileLink.innerHTML = `
+        <img src="${logoPath}" 
+             alt="${currentCompany.name}" 
+             style="width: 28px; height: 28px; object-fit: contain; margin-right: 8px; vertical-align: middle;">
+        <span>MAANG</span>
+      `;
+    }
+  }
+}
+
+// Add this helper function to update logos when theme changes
+function updateCompanyLogosInSections() {
+  if (currentSection !== 'maang') return;
+
+  const isDarkMode = document.body.classList.contains('dark-mode');
+
+  // Update Amazon logos
+  document.querySelectorAll('img[alt="Amazon"]').forEach(img => {
+    if (img.classList.contains('company-logo-section')) {
+      img.src = isDarkMode ? 'logos/amazonWhite.png' : 'logos/amazonBlack.png';
+    }
+  });
+
+  // Update Apple logos
+  document.querySelectorAll('img[alt="Apple"]').forEach(img => {
+    if (img.classList.contains('company-logo-section')) {
+      img.src = isDarkMode ? 'logos/appleWhite.png' : 'logos/appleBlack.png';
+    }
+  });
+}
+
 function initializeDarkMode() {
   const darkModeToggle = document.getElementById('darkModeToggle');
   if (!darkModeToggle) return;
@@ -2914,7 +3608,22 @@ function initializeDarkMode() {
     document.body.classList.toggle('dark-mode', isDark);
     localStorage.setItem('dsaDarkMode', isDark);
     updateDarkModeIcon(isDark);
+
+    // Update MAANG logos if we're in MAANG section
+    if (currentSection === 'maang') {
+      updateMAANGLogosForTheme(isDark);
+      // Force rebuild the MAANG progress bar to update all elements
+      buildMAANGProgressBar();
+      // Update section logos
+      updateCompanyLogosInSections();
+    }
+
+    // Update rotating company icon
+    updateRotatingIconForCurrentTheme();
   });
+
+  // Initialize rotating icon
+  setRotatingCompanyIcon();
 }
 
 function updateDarkModeIcon(isDark) {
@@ -3500,7 +4209,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize random button
     setupRandomButton();
-
     // Initialize reset banner click outside functionality
     initResetBannerClickOutside();
 
@@ -3704,6 +4412,12 @@ document.addEventListener('DOMContentLoaded', function () {
       updateDesktopNavActive('dsaLink');
     });
 
+    document.getElementById('maangLink').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('maang');
+      updateDesktopNavActive('maangLink');
+    });
+
     document.getElementById('blind75Link').addEventListener('click', (e) => {
       e.preventDefault();
       switchSection('blind75');
@@ -3739,6 +4453,13 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       switchSection('dsa');
       updateMobileMenuActive('dsaLinkMobile');
+    });
+
+
+    document.getElementById('maangLinkMobile').addEventListener('click', (e) => {
+      e.preventDefault();
+      switchSection('maang');
+      updateMobileMenuActive('maangLinkMobile');
     });
 
     document.getElementById('blind75LinkMobile').addEventListener('click', (e) => {
@@ -4046,12 +4767,12 @@ function switchSection(section) {
   if (section === currentSection) {
     return; // Don't reload if already on the same section
   }
-  const comingSoonSections = ['sql', 'lld', 'hld'];
-  if (comingSoonSections.includes(section)) {
-    currentSection = section;;
-    showComingSoonBanner(section);
-    return; // Don't proceed with normal section loading
-  }
+  // const comingSoonSections = ['sql', 'lld', 'hld'];
+  // if (comingSoonSections.includes(section)) {
+  //   currentSection = section;;
+  //   showComingSoonBanner(section);
+  //   return; // Don't proceed with normal section loading
+  // }
   // Save current section's filter state before switching
   saveFilterState();
   // Clear the search box when switching sections
@@ -4191,7 +4912,6 @@ function switchSection(section) {
           requestAnimationFrame(() => {
             updateGlobalRectBar();
             updateSectionProgress();
-
             // Initialize table sorting after everything is loaded
             initializeTableSorting();
           });
@@ -4523,11 +5243,87 @@ window.trackSolutionClick = function (type, problemLabel) {
   trackEvent('Solution_Click', type, problemLabel);
 }
 
+let companyIconInterval = null; // Store the interval ID globally
+let currentCompanyIndex = 0; // Track current company index for sequential rotation
 
+function setRotatingCompanyIcon() {
+  // Function to update the icon
+  const updateIcon = () => {
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    
+    const companies = [
+      { name: 'Google', logo: 'logos/google.png' },
+      { name: 'Adobe', logo: 'logos/adobe.png' },
+      { name: 'Microsoft', logo: 'logos/microsoft.png' },
+      { name: 'Amazon', logo: isDarkMode ? 'logos/amazonWhite.png' : 'logos/amazonBlack.png' },
+      { name: 'Meta', logo: 'logos/meta.png' },
+      { name: 'Apple', logo: isDarkMode ? 'logos/appleWhite.png' : 'logos/appleBlack.png' },
+      { name: 'Netflix', logo: 'logos/netflix.png' },
+      { name: 'Salesforce', logo: 'logos/salesforce.png' }
+    ];
+    
+    const company = companies[currentCompanyIndex];
+    
+    // Update desktop icon
+    const desktopIcon = document.getElementById('maangIcon');
+    if (desktopIcon) {
+      desktopIcon.style.transition = 'opacity 0.3s ease';
+      desktopIcon.style.opacity = '0.7';
 
+      setTimeout(() => {
+        desktopIcon.innerHTML = `
+          <img src="${company.logo}" 
+               alt="${company.name}" 
+               class="company-logo-img"
+               style="width: 36px; height: 36px; object-fit: contain;">
+        `;
+        desktopIcon.style.opacity = '1';
+      }, 150);
 
+      // Update tooltip
+      const maangLink = document.getElementById('maangLink');
+      if (maangLink) {
+        maangLink.setAttribute('data-tooltip', 
+          `Prepare for ${company.name} & other MAANG companies 🚀`);
+      }
+    }
 
+    // Update mobile icon
+    const mobileLink = document.getElementById('maangLinkMobile');
+    if (mobileLink) {
+      mobileLink.style.transition = 'opacity 0.3s ease';
+      mobileLink.style.opacity = '0.7';
 
+      setTimeout(() => {
+        mobileLink.innerHTML = `
+          <img src="${company.logo}" 
+               alt="${company.name}" 
+               style="width: 28px; height: 28px; object-fit: contain; margin-right: 8px; vertical-align: middle;">
+          <span>MAANG</span>
+        `;
+        mobileLink.style.opacity = '1';
+      }, 150);
+    }
 
+    // Move to next company
+    currentCompanyIndex = (currentCompanyIndex + 1) % companies.length;
+  };
 
+  // Set initial icon immediately
+  updateIcon();
 
+  // Clear any existing interval
+  if (companyIconInterval) {
+    clearInterval(companyIconInterval);
+  }
+
+  // Change icon every 1 second
+  companyIconInterval = setInterval(updateIcon, 1000);
+}
+
+// Optional: Clear interval when page is unloaded to prevent memory leaks
+window.addEventListener('beforeunload', () => {
+  if (companyIconInterval) {
+    clearInterval(companyIconInterval);
+  }
+});

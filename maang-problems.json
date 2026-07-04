@@ -720,7 +720,7 @@
                 {
                     "label": "Stock Price Fluctuation",
                     "question": "https://leetcode.com/problems/stock-price-fluctuation/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MAANG/StockPriceFluctuation.cpp",
                     "difficulty": "medium",
                     "id": 2394
                 }

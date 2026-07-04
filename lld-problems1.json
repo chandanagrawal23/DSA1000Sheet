@@ -1,0 +1,60 @@
+{
+    "sections": [
+        {
+            "title": "Object Oriented Design",
+            "problems": [
+                {
+                    "label": "Design a Parking Lot",
+                    "difficulty": "medium",
+                    "question": "https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-parking-lot.md",
+                    "solution": "https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-a-parking-lot.md"
+                },
+                {
+                    "label": "Design an ATM",
+                    "difficulty": "medium",
+                    "question": "https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-an-atm.md",
+                    "solution": "https://github.com/tssovi/grokking-the-object-oriented-design-interview/blob/master/object-oriented-design-case-studies/design-an-atm.md"
+                }
+            ]
+        },
+        {
+            "title": "Design Patterns",
+            "subsections": [
+                {
+                    "title": "Creational Patterns",
+                    "problems": [
+                        {
+                            "label": "Implement Singleton Pattern",
+                            "difficulty": "easy",
+                            "question": "https://refactoring.guru/design-patterns/singleton",
+                            "solution": "https://refactoring.guru/design-patterns/singleton/java/example"
+                        },
+                        {
+                            "label": "Implement Factory Method",
+                            "difficulty": "medium",
+                            "question": "https://refactoring.guru/design-patterns/factory-method",
+                            "solution": "https://refactoring.guru/design-patterns/factory-method/java/example"
+                        }
+                    ]
+                },
+                {
+                    "title": "Structural Patterns",
+                    "problems": [
+                        {
+                            "label": "Implement Adapter Pattern",
+                            "difficulty": "medium",
+                            "question": "https://refactoring.guru/design-patterns/adapter",
+                            "solution": "https://refactoring.guru/design-patterns/adapter/java/example"
+                        },
+                        {
+                            "label": "Implement Decorator Pattern",
+                            "difficulty": "medium",
+                            "question": "https://refactoring.guru/design-patterns/decorator",
+                            "solution": "https://refactoring.guru/design-patterns/decorator/java/example"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

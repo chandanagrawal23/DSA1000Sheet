@@ -905,7 +905,8 @@
                             "solution": "https://github.com/anomaly2104/lld-calendar-scheduling-system",
                             "difficulty": "medium",
                             "youtube": "https://www.youtube.com/watch?v=3Q_oYDQ2whs",
-                            "id": 6065
+                            "id": 6065,
+                            "important": true
                         },
                         {
                             "label": "Design Meeting Scheduler",
