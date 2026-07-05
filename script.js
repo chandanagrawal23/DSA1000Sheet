@@ -4435,6 +4435,14 @@ document.addEventListener('DOMContentLoaded', function () {
         updateGlobalRectBar();
         updateSectionProgress();
 
+        // Deep-link: open the section from the URL path (e.g. /maang, /sql, /hld)
+        const pathSection = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+        if (VALID_SECTIONS.includes(pathSection) && pathSection !== 'dsa') {
+          switchSection(pathSection);
+          updateDesktopNavActive(`${pathSection}Link`);
+          updateMobileMenuActive(`${pathSection}LinkMobile`);
+        }
+
         // Check if this is the user's first visit and show welcome modal - reduced timeout for faster loading
         setTimeout(() => {
           checkFirstVisit();
@@ -4902,6 +4910,17 @@ function showHLDRedirectPage() {
 }
 
 
+// Valid sections available for URL routing
+const VALID_SECTIONS = ['dsa', 'maang', 'blind75', 'leetcode150', 'hld', 'sql', 'lld'];
+
+// Keep the browser URL in sync with the active section (clean paths: /dsa == /, /maang, /sql, ...)
+function syncSectionUrl(section) {
+  const path = section === 'dsa' ? '/' : `/${section}`;
+  if (location.pathname !== path) {
+    history.pushState({ section }, '', path);
+  }
+}
+
 // Function to switch between sections
 function switchSection(section) {
   console.log(`Switching from ${currentSection} to ${section}`);
@@ -4909,6 +4928,7 @@ function switchSection(section) {
   if (section === currentSection) {
     return; // Don't reload if already on the same section
   }
+  syncSectionUrl(section);
   // HLD redirects to the external System Design notes site
   if (section === 'hld') {
     saveFilterState();
@@ -5478,5 +5498,16 @@ function setRotatingCompanyIcon() {
 window.addEventListener('beforeunload', () => {
   if (companyIconInterval) {
     clearInterval(companyIconInterval);
+  }
+});
+
+// Handle browser back/forward navigation between sections
+window.addEventListener('popstate', () => {
+  const s = location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase() || 'dsa';
+  const target = VALID_SECTIONS.includes(s) ? s : 'dsa';
+  if (target !== currentSection) {
+    switchSection(target);
+    updateDesktopNavActive(`${target}Link`);
+    updateMobileMenuActive(`${target}LinkMobile`);
   }
 });
