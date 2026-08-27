@@ -2312,6 +2312,25 @@
             ]
         },
         {
+            "title": "Sliding Window Over Interval",
+            "problems": [
+                {
+                    "label": "Maximum White Tiles Covered by a Carpet",
+                    "question": "https://leetcode.com/problems/maximum-white-tiles-covered-by-a-carpet/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1875
+                },
+                {
+                    "label": "Maximum Coins From K Consecutive Bags",
+                    "question": "https://leetcode.com/problems/maximum-coins-from-k-consecutive-bags/",
+                    "solution": "-",
+                    "difficulty": "medium",
+                    "id": 1876
+                }
+            ]
+        },
+        {
             "title": "Dynamic Sliding Window",
             "problems": [
                 {
