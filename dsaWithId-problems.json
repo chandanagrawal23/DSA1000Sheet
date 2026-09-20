@@ -2053,6 +2053,13 @@
                     "id": 1256
                 },
                 {
+                    "label": "Number of Intersecting Interval Pairs II (3 Approaches)",
+                    "question": "https://leetcode.com/problems/number-of-intersecting-interval-pairs-ii/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Number_Intersecting_Interval_Pairs_II.cpp",
+                    "difficulty": "medium",
+                    "id": 1877
+                },
+                {
                     "label": "Find K Closest Elements [Can be solved using 4 methods]",
                     "question": "https://leetcode.com/problems/find-k-closest-elements/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/findClosestElements.cpp",
