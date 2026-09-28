@@ -5202,6 +5202,13 @@
                             "id": 1871
                         },
                         {
+                            "label": "Minimum Cost to Buy Apples I",
+                            "question": "https://leetcode.ca/2022-12-31-2473-Minimum-Cost-to-Buy-Apples/",
+                            "solution": "",
+                            "difficulty": "medium",
+                            "id": 1878
+                        },
+                        {
                             "label": "Minimum Cost to Reach City With Discounts",
                             "question": "https://leetcode.ca/2021-12-16-2093-Minimum-Cost-to-Reach-City-With-Discounts/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToReachCityWithDiscounts.cpp",
@@ -5221,6 +5228,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumWeightedSubgraphWithTheRequiredPaths.cpp",
                             "difficulty": "hard",
                             "id": 1874
+                        },
+                        {
+                            "label": "Minimum Cost to Buy Apples II",
+                            "question": "https://leetcode.com/problems/minimum-cost-to-buy-apples-ii/",
+                            "solution": "",
+                            "difficulty": "hard",
+                            "id": 1879
                         }
                     ]
                 },
