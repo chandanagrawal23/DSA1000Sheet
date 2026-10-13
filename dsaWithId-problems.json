@@ -5424,6 +5424,13 @@
                             "difficulty": "medium",
                             "id": 1644
                         },
+                        {   
+                            "label": "Grid Teleportation Traversal",
+                            "question": "https://leetcode.com/problems/grid-teleportation-traversal/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/GridTeleportationTraversal.cpp",
+                            "difficulty": "medium",
+                            "id": 1880
+                        },
                         {
                             "label": "Minimum Cost to Make at Least One Valid Path in a Grid",
                             "question": "https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/",
