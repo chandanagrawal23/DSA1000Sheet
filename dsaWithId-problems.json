@@ -2467,6 +2467,13 @@
                     "id": 1303
                 },
                 {
+                    "label": "Longest Semi-Repeating Subarray",
+                    "question": "https://leetcode.ca/2025-09-11-3641-Longest-Semi-Repeating-Subarray/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/LongestSemiRepeatingSubarray.cpp",
+                    "difficulty": "medium",
+                    "id": 1882
+                },
+                {
                     "label": "Count the Number of Good Subarrays",
                     "question": "https://leetcode.com/problems/count-the-number-of-good-subarrays/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/CountTheNumberofGoodSubarrays.cpp",
@@ -3574,11 +3581,11 @@
                             "id": 1881
                         },
                         {
-                            "label": "Longest Common Prefix Between Adjacent Strings After Removals",
-                            "question": "https://leetcode.com/problems/longest-common-prefix-between-adjacent-strings-after-removals/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/LongestCommonPrefixBetweenAdjacentStringsAfterRemovals.cpp",
+                            "label": "Maximum Length of Repeated Subarray [ Binary Search + Rabin Karp ]",
+                            "question": "https://leetcode.com/problems/maximum-length-of-repeated-subarray/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/MaximumLengthOfRepeatedSubarray.cpp",
                             "difficulty": "medium",
-                            "id": 1851
+                            "id": 1883
                         },
                         {
                             "label": "Hermione Magic Potion Encoding (GoldMan Sachs)",
