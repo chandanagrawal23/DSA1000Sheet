@@ -3567,6 +3567,13 @@
                             "id": 1828
                         },
                         {
+                            "label": "Equalize Strings by Adding or Removing Characters at Ends (LCSubstr DP or Rabin karp)",
+                            "question": "https://leetcode.ca/2024-05-20-3135-Equalize-Strings-by-Adding-or-Removing-Characters-at-Ends/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/EqualizeStringsByAddingOrRemovingCharactersAtEnds.cpp",
+                            "difficulty": "medium",
+                            "id": 1881
+                        },
+                        {
                             "label": "Longest Common Prefix Between Adjacent Strings After Removals",
                             "question": "https://leetcode.com/problems/longest-common-prefix-between-adjacent-strings-after-removals/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/LongestCommonPrefixBetweenAdjacentStringsAfterRemovals.cpp",
