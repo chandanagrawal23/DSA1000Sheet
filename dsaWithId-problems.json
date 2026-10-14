@@ -3518,9 +3518,9 @@
                     "title": "String Matching",
                     "problems": [
                         {
-                            "label": "Rabin Karp Algorithm",
+                            "label": "Rabin Karp Algorithm / Rolling Hash",
                             "question": "https://www.geeksforgeeks.org/rabin-karp-algorithm-for-pattern-searching/",
-                            "solution": "-",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/RollingHash.cpp",
                             "difficulty": "medium",
                             "id": 1435
                         },
@@ -3593,6 +3593,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/LongestRepeatingAndNonOverlappingSubstring.cpp",
                             "difficulty": "medium",
                             "id": 1884
+                        },
+                        {
+                            "label": "Longest Repeating Substring (Binary Search + Rabin Karp)",
+                            "question": "https://leetcode.ca/all/1062.html",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/LongestRepeatingSubstring.cpp",
+                            "difficulty": "medium",
+                            "id": 1885
                         },
                         {
                             "label": "Hermione Magic Potion Encoding (GoldMan Sachs)",
