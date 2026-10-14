@@ -3588,6 +3588,13 @@
                             "id": 1883
                         },
                         {
+                            "label": "Longest Repeating and Non-Overlapping Substring (DP or Binary Search + Rabin Karp)",
+                            "question": "https://www.geeksforgeeks.org/dsa/longest-repeating-and-non-overlapping-substring",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/LongestRepeatingAndNonOverlappingSubstring.cpp",
+                            "difficulty": "medium",
+                            "id": 1884
+                        },
+                        {
                             "label": "Hermione Magic Potion Encoding (GoldMan Sachs)",
                             "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/HermioneMagicPotionEncoding.cpp",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Strings/HermioneMagicPotionEncoding.cpp",
@@ -5226,7 +5233,7 @@
                             "label": "Minimum Cost to Reach City With Discounts",
                             "question": "https://leetcode.ca/2021-12-16-2093-Minimum-Cost-to-Reach-City-With-Discounts/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToReachCityWithDiscounts.cpp",
-                            "difficulty": "hard",
+                            "difficulty": "medium",
                             "id": 1620
                         },
                         {
