@@ -5413,6 +5413,13 @@
                             "id": 1639
                         },
                         {
+                            "label": "Minimum Cost to Repair Edges to Traverse a Graph",
+                            "question": "https://leetcode.ca/2026-02-24-3807-Minimum-Cost-to-Repair-Edges-to-Traverse-a-Graph/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToRepairEdgesToTraverseAGraph.cpp",
+                            "difficulty": "medium",
+                            "id": 1886
+                        },
+                        {
                             "label": "Swim in Rising Water",
                             "question": "https://leetcode.com/problems/swim-in-rising-water/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/SwimInRisingWater.cpp",
