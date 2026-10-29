@@ -4580,11 +4580,18 @@
                     "id": 1563
                 },
                 {
-                    "label": "Minimum Area Rectangle",
+                    "label": "Minimum Area Rectangle (Google)",
                     "question": "https://leetcode.com/problems/minimum-area-rectangle/",
                     "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumAreaRectangle.cpp",
                     "difficulty": "medium",
                     "id": 1564
+                },
+                {
+                    "label": "Minimum Area Rectangle II (Google)",
+                    "question": "https://leetcode.com/problems/minimum-area-rectangle-ii/",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumAreaRectangle_II.cpp",
+                    "difficulty": "medium",
+                    "id": 1887
                 },
                 {
                     "label": "Separate Squares I (Google, Answer on Binary Search)",
