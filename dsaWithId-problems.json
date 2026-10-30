@@ -5232,7 +5232,7 @@
                         {
                             "label": "Shortest Path With At Most K Consecutive Identical Characters",
                             "question": "https://leetcode.com/problems/shortest-path-with-at-most-k-consecutive-identical-characters",
-                            "solution": "",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/ShortestPathWithAtMostKConsecutiveIdenticalCharacters.cpp",
                             "difficulty": "medium",
                             "id": 1871
                         },
