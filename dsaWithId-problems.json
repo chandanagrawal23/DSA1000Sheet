@@ -5053,13 +5053,6 @@
                             "id": 1604
                         },
                         {
-                            "label": "The Maze II[using BFS]",
-                            "question": "https://leetcode.com/problems/the-maze-ii/",
-                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TheMaze_II_BFS.cpp",
-                            "difficulty": "medium",
-                            "id": 1605
-                        },
-                        {
                             "label": "Walls and Gates",
                             "question": "https://leetcode.ca/all/286.html",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/WallsAndGates.cpp",
@@ -5291,9 +5284,16 @@
                             "id": 1623
                         },
                         {
-                            "label": "The Maze II[using Dijkstra]",
+                            "label": "The Maze II",
                             "question": "https://leetcode.com/problems/the-maze-ii/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TheMaze_II_Dijkistra.cpp",
+                            "difficulty": "medium",
+                            "id": 1624
+                        },
+                                                {
+                            "label": "The Maze III",
+                            "question": "https://leetcode.com/problems/the-maze-iii/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/TheMaze_III_Dijkistra.cpp",
                             "difficulty": "medium",
                             "id": 1624
                         },
