@@ -5290,7 +5290,14 @@
                             "difficulty": "medium",
                             "id": 1624
                         },
-                                                {
+                        {
+                            "label": "Find the Safest Path in a Grid",
+                            "question": "https://leetcode.com/problems/find-the-safest-path-in-a-grid/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindTheSafestPathInAGrid_Dijkistra.cpp",
+                            "difficulty": "medium",
+                            "id": 1889
+                        },
+                        {
                             "label": "The Maze III",
                             "question": "https://leetcode.com/problems/the-maze-iii/",
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/TheMaze_III_Dijkistra.cpp",
@@ -5425,6 +5432,13 @@
                             "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/MinimumCostToRepairEdgesToTraverseAGraph.cpp",
                             "difficulty": "medium",
                             "id": 1886
+                        },
+                        {
+                            "label": "Find the Safest Path in a Grid (BFS + Answer on Binary Search)",
+                            "question": "https://leetcode.com/problems/find-the-safest-path-in-a-grid/",
+                            "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/Graph/FindTheSafestPathInAGrid_ABS.cpp",
+                            "difficulty": "medium",
+                            "id": 1888
                         },
                         {
                             "label": "Swim in Rising Water",
@@ -5920,7 +5934,7 @@
                 {
                     "label": "Replace Words",
                     "question": "https://leetcode.com/problems/replace-words/",
-                    "solution": "-",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TRIE/ReplaceWords.cpp",
                     "difficulty": "medium",
                     "id": 1707
                 },
@@ -5937,6 +5951,13 @@
                     "solution": "-",
                     "difficulty": "medium",
                     "id": 1709
+                },
+                {
+                    "label": "Word Abbreviation",
+                    "question": "https://leetcode.ca/all/527.html",
+                    "solution": "https://github.com/chandanagrawal23/DSA-Sheet/tree/main/TRIE/WordAbbrevation.cpp",
+                    "difficulty": "medium",
+                    "id": 1890
                 },
                 {
                     "label": "Maximum Subarray XOR ",
