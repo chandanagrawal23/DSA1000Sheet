@@ -5986,7 +5986,7 @@
             {
               "label": "Design Search Autocomplete System",
               "question": "https://leetcode.ca/all/642.html",
-              "solution": "-",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/TRIE/AutocompleteSystem.cpp",
               "difficulty": "hard",
               "id": 1712
             },
