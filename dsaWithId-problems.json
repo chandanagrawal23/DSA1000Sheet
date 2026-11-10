@@ -348,6 +348,13 @@
               "id": 1036
             },
             {
+              "label": "Split Array with Equal Sum",
+              "question": "https://leetcode.ca/all/548.html",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/PrefixSum/SplitArrayEqualSum.cpp",
+              "difficulty": "medium",
+              "id": 1894
+            },
+            {
               "label": "Maximum Product of First and Last Elements of a Subsequence",
               "question": "https://leetcode.com/problems/maximum-product-of-first-and-last-elements-of-a-subsequence/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MaximumProductOfFirstandLastElementsOfASubsequence.cpp.cpp",
