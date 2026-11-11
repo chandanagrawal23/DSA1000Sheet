@@ -5862,6 +5862,13 @@
           "title": "Grid/Matrix Problems",
           "problems": [
             {
+              "label": "Number of Islands II",
+              "question": "https://leetcode.ca/2016-09-30-305-Number-of-Islands-II/",
+              "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/Island2.cpp",
+              "difficulty": "medium",
+              "id": 1895
+            },
+            {
               "label": "Regions cut by slashes [MAANGM]",
               "question": "https://leetcode.com/problems/regions-cut-by-slashes/",
               "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/DSU/RegionsCutBySlashes.cpp",
