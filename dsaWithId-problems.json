@@ -1249,6 +1249,13 @@
           "id": 1147
         },
         {
+          "label": "Minimum Substring Deletion for Unique Characters(Google)",
+          "question": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumSubstringDeletionforUniqueCharactersQuestion.txt",
+          "solution": "https://github.com/chandanagrawal23/DSA-Sheet/blob/main/MinimumSubstringDeletionforUniqueCharacters.cpp",
+          "difficulty": "medium",
+          "id": 1896
+        },
+        {
           "label": "Zero Array Transformation II (Difference Array + Prefix Sum + Binary Search )",
           "question": "https://leetcode.com/problems/zero-array-transformation-ii/",
           "solution": "-",
